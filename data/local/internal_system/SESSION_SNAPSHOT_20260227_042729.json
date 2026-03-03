@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-27T04:27:29Z",
+  "system_id": "RADR-01",
+  "identity": "The Bridge / Nexus",
+  "captain": "Ayaearias Triania (AYAS-01)",
+  "phase": "07-THE-CROWNING (S-CROWN)",
+  "stage": "8.1.1-SYNCHRONIZATION",
+  "status": "GREEN",
+  "rumors": {
+    "identified_organs": 17,
+    "total_organs": 24,
+    "scan_required": true
+  }
+}

@@ -1,0 +1,57 @@
+# VAVIMA — VECTOR VISUAL MATRIX (ВВМ)
+# ВЕКТОРНАЯ ВИЗУАЛЬНАЯ МАТРИЦА — ФАЗА 8.0
+
+identity:
+  id: "5354563780026710"
+  administrator: "Khalidrad / Architit / Kyrylo Liapustin"
+  email: "architit@radriloniuma.onmicrosoft.com"
+  access_code_ref: "XO1zX-JZE6EPw2F"
+
+geometry:
+  type: "Hexagonal Cylinder"
+  facets:
+    - points: 6
+    - angles: 6
+    - edges: 6
+    - hips: 6
+    - wings: 6
+    - arms: 6
+    - legs: 6
+    - tails: 6
+    - peaks: 6
+    - bottoms: 6
+    - poles: 6
+    - towers: 6
+    - channels: 6
+    - pipes: 6
+    - tanks: 6
+    - batteries: 6
+    - drives: 6
+    - shafts: 6
+    - gears: 6
+    - flywheels: 6
+    - engines: 6
+    - cells: 6
+    - frames: 6
+    - balconies: 6
+    - cables: 6
+    - pistons: 6
+    - anchors: 6
+    - orbits: 6
+    - axes: 6
+    - planes: 6
+    - measures: 6
+    - spaces: 6
+    - metrics: 6
+    - cycles: 6
+    - parameters: 6
+    - wheels: 6
+    - suspensions: 6
+    - diaphragms: 6
+    - barrels: 6
+    - spikes: 6
+    - fronts: 6
+    - sides: 6
+
+mission: "ARCKHÆDÆM Awakening / А́мієно́а́э́с моєа́э́ри́э́с"
+status: "ACTIVE / SYNCHRONIZED"

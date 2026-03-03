@@ -1,0 +1,20 @@
+# VAVIMA ROUTING MATRIX V1
+# Date: 2026-02-27
+# Status: ACTIVE (Task t111 Activation)
+
+version: "1"
+status: "ACTIVE"
+updated_utc: "2026-02-27T00:50:00Z"
+classes:
+  code_logic:
+    target_agent: "LAM-Codex_Agent"
+    target_slot: "tasks/data/import/LAM-Codex_Agent/"
+  system_infra:
+    target_agent: "J.A.R.V.I.S"
+    target_slot: "tasks/data/import/J.A.R.V.I.S/"
+  human_authorization:
+    target_agent: "Operator_Agent"
+    target_slot: "tasks/data/import/Operator_Agent/"
+  governance_safety:
+    target_agent: "Mirashani"
+    target_slot: "tasks/data/import/Mirashani/"
