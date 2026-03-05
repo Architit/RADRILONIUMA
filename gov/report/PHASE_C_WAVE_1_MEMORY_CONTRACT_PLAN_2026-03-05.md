@@ -25,6 +25,15 @@ Execution model note:
 3. `System-`
    - objective: guard/routing pointer sync for Phase C memory wave.
    - required evidence: guard-plan update + governance checks + commit hash.
+4. `Operator_Agent`
+   - objective: operator memory contract execution with deterministic queue path checks.
+   - required evidence: closure note + verify outputs + commit hash.
+5. `J.A.R.V.I.S`
+   - objective: routing memory contract execution with deterministic target resolution checks.
+   - required evidence: closure note + verify outputs + commit hash.
+6. `LAM_Comunication_Agent`
+   - objective: communication memory contract execution with envelope/backpressure checks.
+   - required evidence: closure note + verify outputs + commit hash.
 
 ## Acceptance Gates
 - Gate G1: owner closure report exists with explicit `DONE/BLOCKED`.

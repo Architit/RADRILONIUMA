@@ -5,7 +5,7 @@
 - phase: `PHASE_C_WAVE_1`
 - task_id: `phaseC_C3_owner_memory_wave_execution`
 - status: `DONE`
-- progress: `3/3 owners done`
+- progress: `6/6 owners done`
 
 ## Owner Sequence Progress
 1. `Archivator_Agent` — `DONE`
@@ -31,6 +31,30 @@
      - `bash scripts/test_entrypoint.sh --patch-runtime` -> `4 passed`
      - `bash scripts/test_entrypoint.sh --governance` -> `3 passed, 15 deselected`
      - `bash scripts/test_entrypoint.sh --all` -> `18 passed`
+4. `Operator_Agent` — `DONE`
+   - owner commit: `706f14cfeb187063e6530206cd28c2095d232a7d`
+   - owner evidence: `gov/report/phaseC_operator_wave1_execution_2026-03-05.md`
+   - verify (owner-side):
+     - `bash scripts/test_entrypoint.sh --memory` -> `6 passed`
+     - `bash scripts/test_entrypoint.sh --patch-runtime` -> `4 passed`
+     - `bash scripts/test_entrypoint.sh --governance` -> `2 passed, 26 deselected`
+     - `bash scripts/test_entrypoint.sh --all` -> `28 passed`
+5. `J.A.R.V.I.S` — `DONE`
+   - owner commit: `0f645c034623e431a78ac76d93e73f8dc61299f9`
+   - owner evidence: `gov/report/phaseC_jarvis_wave1_execution_2026-03-05.md`
+   - verify (owner-side):
+     - `bash scripts/test_entrypoint.sh --memory` -> `6 passed`
+     - `bash scripts/test_entrypoint.sh --patch-runtime` -> `4 passed`
+     - `bash scripts/test_entrypoint.sh --governance` -> `3 passed, 16 deselected`
+     - `bash scripts/test_entrypoint.sh --all` -> `19 passed`
+6. `LAM_Comunication_Agent` — `DONE`
+   - owner commit: `95ce051f2ff846ac6cde5b67fc8965d8e83dcd78`
+   - owner evidence: `gov/report/phaseC_lam_communication_wave1_execution_2026-03-05.md`
+   - verify (owner-side):
+     - `bash scripts/test_entrypoint.sh --memory` -> `6 passed`
+     - `bash scripts/test_entrypoint.sh --patch-runtime` -> `4 passed`
+     - `bash scripts/test_entrypoint.sh --governance` -> `3 passed, 14 deselected`
+     - `bash scripts/test_entrypoint.sh --all` -> `17 passed`
 
 ## Protocol Status
 - c2_marker_policy: `bridge-only`; standalone `C2` marker in owner repos is optional and not required for compliance.
