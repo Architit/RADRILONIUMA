@@ -1,6 +1,6 @@
 # TASK_MAP
 
-last_updated_utc: 2026-03-03T09:00:00Z
+last_updated_utc: 2026-03-05T11:42:00Z
 
 | task_id | title | state | owner | notes |
 |---|---|---|---|---|
@@ -14,3 +14,5 @@ last_updated_utc: 2026-03-03T09:00:00Z
 | phaseB_B1 | patch runtime conflict status + rollback-safe precheck | COMPLETE | RADR-01 | local done; global owner-chain pending |
 | phaseB_B2 | patch runtime governance contract + tests | COMPLETE | RADR-01 | local done; global owner-chain pending |
 | phaseB_G0 | owner-chain global closure plan | COMPLETE | RADR-01 | gov/report/PHASE_B_OWNER_CHAIN_PLAN_2026-03-05.md |
+| phaseB_G1 | owner closure evidence sync (archivator) | COMPLETE | RADR-01 | gov/report/PHASE_B_OWNER_CHAIN_VERIFICATION_2026-03-05.md (owner: Archivator_Agent) |
+| phaseB_G2 | owner closure evidence sync (remaining chain) | IN_PROGRESS | RADR-01 | pending: Operator_Agent, J.A.R.V.I.S, LAM_Comunication_Agent, LAM_Test_Agent, System- |
