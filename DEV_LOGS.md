@@ -77,3 +77,32 @@
 ### [04:43] — EVIDENCE REPORT PREP
 - Prepared governance evidence artifact: `gov/report/BRIDGE_PHASE_START_READINESS_2026-03-05.md`.
 - Final gate includes governance test, `git status -sb`, and `git diff --stat`.
+
+## [2026-03-05] — MASTER ALIGNMENT BRIDGE DIRECTIVE (PHASE A NEXT WAVE)
+
+### [04:46] — INTENT
+- Build Bridge Execution Directive from canonical source chain:
+  - MASTER_ARCHITECTURE_PLAN_V1.md
+  - LOCAL_INTEGRATION_DELEGATION_PLAN_V1.md
+  - TASK_SPEC_PACK_PHASE_A_V1.md
+- Keep execution planning inside existing nodes only (Anti-Sprawl Gate).
+
+### [04:47] — CROSSWALK RESULT
+- MASTER -> fixes Task Spec invariants: derivation_only, fail-fast, patch_sha256 pinning.
+- LOCAL -> fixes delegation map and no-new-agents policy.
+- TASK_SPEC -> provides Phase A executable task IDs, dependencies, and verify commands.
+
+### [04:48] — NEXT EXECUTABLE PACKAGE (PHASE_A_WAVE_1_TASKSPEC_CORE)
+- Owner node: RADRILONIUMA-PROJECT (CASTLE).
+- Task set selected for immediate start:
+  - phaseA_t001_task_spec_contract_v1_1
+  - phaseA_t002_task_spec_validator_contract
+  - phaseA_t013_master_owner_map_evidence
+- Integration points (existing nodes only):
+  - Archivator_Agent (integrity-chain downstream dependencies).
+  - LAM_Test_Agent (regression gate coverage).
+
+### [04:49] — STOP/GO CRITERIA FIXED
+- GO if: preconditions satisfied, patch_sha256 pins match, verifies pass, no conflict_detected.
+- STOP if: hash mismatch, missing preconditions, 3-way apply conflict, regression failure.
+- Evidence artifact: gov/report/MASTER_ALIGNMENT_BRIDGE_DIRECTIVE_2026-03-05.md.
