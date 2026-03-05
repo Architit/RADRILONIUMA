@@ -5,7 +5,7 @@
 - phase: `PHASE_R_WAVE_1`
 - task_id: `phaseR_R2_owner_research_gate_execution`
 - status: `IN_PROGRESS`
-- progress: `4/6 owners done`
+- progress: `5/6 owners done`
 
 ## Owner Sequence Progress
 1. `Archivator_Agent` — `DONE`
@@ -20,7 +20,9 @@
 4. `Operator_Agent` — `DONE`
    - owner commit: `c22158678b20bfd50bab07cea48f4711c7e2e39f`
    - owner evidence: `gov/report/phaseR_operator_research_gate_wave1_execution_2026-03-05.md`
-5. `J.A.R.V.I.S` — `PENDING`
+5. `J.A.R.V.I.S` — `DONE`
+   - owner commit: `b0b748017490a8ca1212d49b7009e4b22f270053`
+   - owner evidence: `gov/report/phaseR_jarvis_research_gate_wave1_execution_2026-03-05.md`
 6. `LAM_Comunication_Agent` — `PENDING`
 
 ## Protocol Status
