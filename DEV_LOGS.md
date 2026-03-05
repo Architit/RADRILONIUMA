@@ -182,3 +182,13 @@
   - `gov/report/PHASE_A_OWNER_CHAIN_VERIFICATION_2026-03-05.md`
 - Decision:
   - Phase A owner chain is complete; next master step is Phase C kickoff.
+
+## [2026-03-05] — PHASE B STATUS CORRECTION
+
+### [06:50] — LOCAL VS GLOBAL CLARIFICATION
+- Clarified scope boundary for Phase B:
+  - `RADRILONIUMA` Phase B closure is `LOCAL_DONE`.
+  - ecosystem-wide Phase B closure remains `GLOBAL_PENDING`.
+- Added owner-chain plan artifact:
+  - `gov/report/PHASE_B_OWNER_CHAIN_PLAN_2026-03-05.md`
+- Updated system/workflow pointers to execute owner-chain global closure before any Phase C kickoff.

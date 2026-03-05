@@ -3,7 +3,9 @@
 - date_utc: 2026-03-05
 - workspace: `/home/architit/work/RADRILONIUMA`
 - phase: `B (Patch Runtime)`
-- protocol_status: `DONE`
+- protocol_status: `LOCAL_DONE`
+- global_status: `GLOBAL_PENDING`
+- status_note: `Phase B closure in this report applies only to RADRILONIUMA local scope; cross-repo owner-chain closure remains pending.`
 
 ## Completed scope
 1. B1: patch runtime guardrails in `devkit/patch.sh`

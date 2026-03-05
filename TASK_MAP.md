@@ -11,5 +11,6 @@ last_updated_utc: 2026-03-03T09:00:00Z
 | phaseA_A1 | Task Spec v1.1 contract enforcement | COMPLETE | RADR-01 | template + validator + contract fail-fast/error_code |
 | phaseA_A2 | validator/governance checks wiring | COMPLETE | RADR-01 | scripts/test_entrypoint.sh --governance wired |
 | phaseA_A3 | closure report with evidence | COMPLETE | RADR-01 | chronolog/PHASE_A_CLOSURE_REPORT_2026-03-05.md |
-| phaseB_B1 | patch runtime conflict status + rollback-safe precheck | COMPLETE | RADR-01 | devkit/patch.sh emits status/error_code + precheck gate |
-| phaseB_B2 | patch runtime governance contract + tests | COMPLETE | RADR-01 | contract/PATCH_RUNTIME_CONTRACT_V1.md + tests/test_patch_runtime_governance.py |
+| phaseB_B1 | patch runtime conflict status + rollback-safe precheck | COMPLETE | RADR-01 | local done; global owner-chain pending |
+| phaseB_B2 | patch runtime governance contract + tests | COMPLETE | RADR-01 | local done; global owner-chain pending |
+| phaseB_G0 | owner-chain global closure plan | COMPLETE | RADR-01 | gov/report/PHASE_B_OWNER_CHAIN_PLAN_2026-03-05.md |
