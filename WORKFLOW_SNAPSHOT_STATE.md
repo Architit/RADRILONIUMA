@@ -6,7 +6,7 @@ branch: master
 timestamp_utc: 2026-03-05T08:47:48Z
 
 ## Current pointer
-phase: PHASE_R_WAVE_1_OWNER_EXECUTION_IN_PROGRESS
+phase: PHASE_R_WAVE_1_OWNER_EXECUTION_DONE
 protocol_scale: +1
 protocol_semantic_en: positive
 goal:
@@ -31,7 +31,7 @@ constraints:
 - task_set:
   - phaseR_R0_wave_kickoff_and_pointer_sync (done)
   - phaseR_R1_research_gate_benchmark_plan (done)
-  - phaseR_R2_owner_research_gate_execution (in progress: 5/6)
+  - phaseR_R2_owner_research_gate_execution (done: 6/6)
 - integration_points:
   - keep Phase A/B evidence chains as `PENDING` snapshots (`6/39`)
   - preserve benchmark comparability (`transport/vector/trigger`) across owners

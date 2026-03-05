@@ -4,8 +4,8 @@
 - workspace: `/home/architit/work/RADRILONIUMA`
 - phase: `PHASE_R_WAVE_1`
 - task_id: `phaseR_R2_owner_research_gate_execution`
-- status: `IN_PROGRESS`
-- progress: `5/6 owners done`
+- status: `DONE`
+- progress: `6/6 owners done`
 
 ## Owner Sequence Progress
 1. `Archivator_Agent` — `DONE`
@@ -23,8 +23,10 @@
 5. `J.A.R.V.I.S` — `DONE`
    - owner commit: `b0b748017490a8ca1212d49b7009e4b22f270053`
    - owner evidence: `gov/report/phaseR_jarvis_research_gate_wave1_execution_2026-03-05.md`
-6. `LAM_Comunication_Agent` — `PENDING`
+6. `LAM_Comunication_Agent` — `DONE`
+   - owner commit: `ffb4c87dca35da68203ecbe6a700ccefc84b02a7`
+   - owner evidence: `gov/report/phaseR_lam_communication_research_gate_wave1_execution_2026-03-05.md`
 
 ## Protocol Status
-- phaseR_r2_status: `IN_PROGRESS`
+- phaseR_r2_status: `DONE`
 - block_reason: `NONE`
