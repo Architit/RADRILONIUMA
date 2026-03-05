@@ -1,6 +1,6 @@
 # TASK_MAP
 
-last_updated_utc: 2026-03-05T14:19:00Z
+last_updated_utc: 2026-03-05T15:10:00Z
 
 | task_id | title | state | owner | notes |
 |---|---|---|---|---|
@@ -20,5 +20,5 @@ last_updated_utc: 2026-03-05T14:19:00Z
 | phaseB_G2 | owner closure evidence sync (remaining chain) | IN_PROGRESS | RADR-01 | pending: remaining non-ready repos (target 39/39) |
 | phaseC_C0 | phase C wave kickoff and pointer sync | COMPLETE | RADR-01 | gov/report/PHASE_C_WAVE_KICKOFF_2026-03-05.md |
 | phaseC_C1 | phase C memory surface preparation | COMPLETE | RADR-01 | gov/report/PHASE_C_WAVE_1_MEMORY_SURFACE_PREP_2026-03-05.md |
-| phaseC_C2 | phase C memory contract wave plan | COMPLETE | RADR-01 | gov/report/PHASE_C_WAVE_1_MEMORY_CONTRACT_PLAN_2026-03-05.md |
+| phaseC_C2 | phase C memory contract wave plan | COMPLETE | RADR-01 | bridge-only governance step; owner repos do not require standalone C2 marker; see gov/report/PHASE_C_WAVE_1_MEMORY_CONTRACT_PLAN_2026-03-05.md |
 | phaseC_C3 | phase C owner memory wave execution | IN_PROGRESS | RADR-01 | progress 1/3: Archivator_Agent done; pending LAM_Test_Agent and System- |

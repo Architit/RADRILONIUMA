@@ -19,5 +19,6 @@
 3. `System-` — `PENDING`
 
 ## Protocol Status
+- c2_marker_policy: `bridge-only`; standalone `C2` marker in owner repos is optional and not required for compliance.
 - phaseC_c3_status: `IN_PROGRESS`
 - block_reason: remaining owners in sequence are not yet executed in this wave.

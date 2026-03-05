@@ -268,3 +268,13 @@
 - Preserved C3 as `IN_PROGRESS`; pending owners:
   - `LAM_Test_Agent`
   - `System-`
+
+### [15:10] — PHASE C C2 COMPLIANCE CLARIFICATION
+- Synced governance wording to remove ambiguity about `phaseC_C2`:
+  - `C2` is a Bridge-only planning/governance step in `RADRILONIUMA`.
+  - Owner repos are compliant without a standalone `C2` marker; required owner evidence remains in C1/C3 execution.
+- Updated artifacts:
+  - `TASK_MAP.md`
+  - `SYSTEM_STATE.md`
+  - `gov/report/PHASE_C_WAVE_1_MEMORY_CONTRACT_PLAN_2026-03-05.md`
+  - `gov/report/PHASE_C_WAVE_1_OWNER_EXECUTION_2026-03-05.md`

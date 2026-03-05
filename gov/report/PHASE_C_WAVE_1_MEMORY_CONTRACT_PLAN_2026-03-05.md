@@ -12,6 +12,10 @@
 3. Keep wave-based progression while Phase A/B remain `PENDING (6/39)`.
 
 ## Owner Execution Sequence (Wave C1)
+Execution model note:
+- `phaseC_C2` is a Bridge (`RADRILONIUMA`) governance/planning step.
+- Owner repositories execute C1/C3 deliverables and are not required to expose a standalone `C2` status marker.
+
 1. `Archivator_Agent`
    - objective: memory hybrid surface kickoff (physical archive + semantic index hooks).
    - required evidence: closure note + verify outputs + commit hash.
