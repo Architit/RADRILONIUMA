@@ -3,15 +3,15 @@
 ## Identity
 repo: RADRILONIUMA
 branch: master
-timestamp_utc: 2026-03-05T11:42:00Z
+timestamp_utc: 2026-03-05T13:55:00Z
 
 ## Current pointer
-phase: PHASE_B_OWNER_CHAIN_GLOBAL_CLOSURE
+phase: PHASE_C_WAVE_KICKOFF
 protocol_scale: +1
 protocol_semantic_en: positive
 goal:
-- Close Phase B owner-chain globally after local Phase B completion.
-- Prepare consolidated downstream evidence for Phase B closure.
+- Start Phase C by wave-based progression.
+- Keep Phase A/B global closure markers in `PENDING` until full readiness.
 - Keep rollout through existing owners only (no-new-agents).
 - Keep delegation strictly within existing nodes (anti-sprawl).
 constraints:
@@ -26,14 +26,14 @@ constraints:
 - TASK_SPEC_PACK_PHASE_A_V1.md => executable Phase A task IDs and verify markers
 
 ## Next executable package
-- wave_id: PHASE_B_OWNER_CHAIN_GLOBAL
-- owner_node: owner-chain (Archivator_Agent -> Operator_Agent -> J.A.R.V.I.S -> LAM_Comunication_Agent -> LAM_Test_Agent -> System-)
+- wave_id: PHASE_C_WAVE_1
+- owner_node: RADRILONIUMA (Bridge governance kickoff)
 - task_set:
-  - phaseB_G1_owner_runtime_alignment
-  - phaseB_G2_owner_closure_evidence_chain
+  - phaseC_C0_wave_kickoff_and_pointer_sync
+  - phaseC_C1_memory_surface_prep
 - integration_points:
-  - downstream owner closure commits/evidence
-  - shared patch runtime status contract (`success/precondition_failed/integrity_mismatch/conflict_detected/apply_failed`)
+  - keep Phase A/B evidence chains as `PENDING` snapshots (`6/39`)
+  - preserve shared runtime status contract (`success/precondition_failed/integrity_mismatch/conflict_detected/apply_failed`)
 
 ## Completion ledger
 - bridge_readiness_closure_commit: 152dec3
@@ -44,6 +44,7 @@ constraints:
 - phaseA_owner_chain_verification: gov/report/PHASE_A_OWNER_CHAIN_VERIFICATION_2026-03-05.md
 - phaseB_owner_chain_plan: gov/report/PHASE_B_OWNER_CHAIN_PLAN_2026-03-05.md
 - phaseB_owner_chain_verification: gov/report/PHASE_B_OWNER_CHAIN_VERIFICATION_2026-03-05.md (in progress)
+- phaseC_wave_kickoff: gov/report/PHASE_C_WAVE_KICKOFF_2026-03-05.md
 
 ## Recent commits
 - 152dec3 governance: bridge readiness gate before phase start (2026-03-05)
