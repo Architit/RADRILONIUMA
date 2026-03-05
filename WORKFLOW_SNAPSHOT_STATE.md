@@ -31,7 +31,7 @@ constraints:
 - task_set:
   - phaseR_R0_wave_kickoff_and_pointer_sync (done)
   - phaseR_R1_research_gate_benchmark_plan (done)
-  - phaseR_R2_owner_research_gate_execution (in progress: 3/6)
+  - phaseR_R2_owner_research_gate_execution (in progress: 4/6)
 - integration_points:
   - keep Phase A/B evidence chains as `PENDING` snapshots (`6/39`)
   - preserve benchmark comparability (`transport/vector/trigger`) across owners

@@ -141,7 +141,7 @@
   - `gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md` (`phaseR_R1=DONE`)
 - next_task: `phaseR_R2_owner_research_gate_execution`
 - execution_evidence:
-  - `gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md` (`IN_PROGRESS`, `3/6`)
+  - `gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md` (`IN_PROGRESS`, `4/6`)
 
 ## Constraints
 - workspace_scope: /home/architit/work/RADRILONIUMA
