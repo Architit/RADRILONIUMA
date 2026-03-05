@@ -155,7 +155,8 @@
 ### [06:05] — B1 PATCH RUNTIME GUARDRAILS
 - Upgraded `devkit/patch.sh` to Phase B behavior:
   - clean-tree precondition (`PATCH_TREE_NOT_CLEAN`);
-  - optional `--sha256` integrity pin check;
+  - mandatory `--sha256` integrity pin check;
+  - mandatory `--task-id` for audit trace chain;
   - conflict-safe precheck via `git apply --check --3way`;
   - machine-readable `status=<...>` + `error_code=<...>`;
   - explicit conflict status `status=conflict_detected`.

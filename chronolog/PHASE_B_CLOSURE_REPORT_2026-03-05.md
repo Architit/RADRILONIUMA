@@ -12,7 +12,8 @@
    - clean-tree precondition gate (`PATCH_TREE_NOT_CLEAN`)
    - conflict-safe precheck (`git apply --check --3way`)
    - conflict status (`status=conflict_detected`, `error_code=PATCH_CONFLICT_DETECTED`)
-   - integrity pin (`--sha256`, mismatch => `PATCH_SHA256_MISMATCH`)
+   - mandatory integrity pin (`--sha256`, mismatch => `PATCH_SHA256_MISMATCH`)
+   - mandatory task identity (`--task-id`) and audit trace chain output
 2. B2: governance contract + tests
    - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
    - `tests/test_patch_runtime_governance.py`
@@ -20,16 +21,15 @@
 
 ## Verification commands and results
 1. `bash scripts/test_entrypoint.sh --patch-runtime`
-   - result: `3 passed`
+   - result: `5 passed`
 2. `bash scripts/test_entrypoint.sh --governance`
-   - result: `status=PASS`, `9 passed, 4 deselected`
+   - result: `status=PASS`, `11 passed, 4 deselected`
 3. `bash scripts/test_entrypoint.sh --all`
-   - result: `13 passed`
+   - result: `15 passed`
 
 ## SHA-256 evidence
-- `devkit/patch.sh`: `1a498d3618058b73a2827af72ea6fce60610ff38466f4315f8c587b9ae97da39`
-- `contract/PATCH_RUNTIME_CONTRACT_V1.md`: `2d2a6c1fe884d4fc1ae2ed418901c7e0900cf81043c2504448ded5bc4528e052`
-- `tests/test_patch_runtime_governance.py`: `4066e56bf539ab2253013557439103cb6d7c93e140ad1fdeca738ca86263a9de`
+- `devkit/patch.sh`: `dce817623d367fcbc388a197f301096b004a56ab3cd2934022bab854bc7afd23`
+- `contract/PATCH_RUNTIME_CONTRACT_V1.md`: `de577d0b32399926e42de78125c93c78df21be7934ede030491bd80aaa49410a`
+- `tests/test_patch_runtime_governance.py`: `5130d6f26acfd2196c699a3386a1694270388ab8da1b4e9d97b83d1eab9dd933`
 - `scripts/test_entrypoint.sh`: `3bfe03b83b6f209b720855f3e7f1c26967c3359bd6b457c6c65834a612ab5d75`
-- `gov/report/PHASE_B_PATCH_RUNTIME_KICKOFF_2026-03-05.md`: `df7c7e3910aaf146c1202d3cb60d71068ebfd25340251c29c2a48c3cdda9a142`
-- `chronolog/PHASE_B_CLOSURE_REPORT_2026-03-05.md`: `computed in final verification output`
+- `gov/report/PHASE_B_PATCH_RUNTIME_KICKOFF_2026-03-05.md`: `ed84f6b8a23f6badd7cce915c48006907769980f7799eaedc1cd8a01b5bbdece`

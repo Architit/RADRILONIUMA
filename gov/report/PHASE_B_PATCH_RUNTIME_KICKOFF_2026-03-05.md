@@ -9,7 +9,8 @@
 1. Patch runtime upgraded in `devkit/patch.sh`:
    - `git apply --check --3way` precheck before apply,
    - `status=conflict_detected` + `error_code=PATCH_CONFLICT_DETECTED`,
-   - optional `--sha256` integrity pin check,
+   - mandatory `--sha256` integrity pin check,
+   - mandatory `--task-id` for audit trace chain,
    - machine-readable status/error fields.
 2. Runtime contract added:
    - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
