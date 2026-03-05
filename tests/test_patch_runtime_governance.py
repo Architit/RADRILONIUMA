@@ -77,10 +77,42 @@ class TestPatchRuntimeGovernance(unittest.TestCase):
     def test_missing_task_id_is_rejected(self) -> None:
         patch_path = self._prepare_patch("hello no task\n", "missing_task.patch")
         digest = hashlib.sha256(patch_path.read_bytes()).hexdigest()
-        res = run(["bash", str(PATCH_SH), "--file", str(patch_path), "--sha256", digest], self.repo)
+        res = run(
+            [
+                "bash",
+                str(PATCH_SH),
+                "--file",
+                str(patch_path),
+                "--sha256",
+                digest,
+                "--spec-file",
+                "task_spec.yaml",
+            ],
+            self.repo,
+        )
         self.assertNotEqual(res.returncode, 0)
         self.assertIn("status=precondition_failed", res.stdout)
         self.assertIn("error_code=PATCH_TASK_ID_REQUIRED", res.stdout)
+
+    def test_missing_spec_file_is_rejected(self) -> None:
+        patch_path = self._prepare_patch("hello no spec\n", "missing_spec.patch")
+        digest = hashlib.sha256(patch_path.read_bytes()).hexdigest()
+        res = run(
+            [
+                "bash",
+                str(PATCH_SH),
+                "--file",
+                str(patch_path),
+                "--sha256",
+                digest,
+                "--task-id",
+                "phaseB_test_missing_spec",
+            ],
+            self.repo,
+        )
+        self.assertNotEqual(res.returncode, 0)
+        self.assertIn("status=precondition_failed", res.stdout)
+        self.assertIn("error_code=PATCH_SPEC_FILE_REQUIRED", res.stdout)
 
     def test_integrity_mismatch_fails_fast(self) -> None:
         patch_path = self._prepare_patch("hello mismatch\n", "mismatch.patch")
@@ -94,6 +126,8 @@ class TestPatchRuntimeGovernance(unittest.TestCase):
                 "0" * 64,
                 "--task-id",
                 "phaseB_test_mismatch",
+                "--spec-file",
+                "task_spec.yaml",
             ],
             self.repo,
         )
@@ -116,6 +150,8 @@ class TestPatchRuntimeGovernance(unittest.TestCase):
                 digest,
                 "--task-id",
                 "phaseB_test_conflict",
+                "--spec-file",
+                "task_spec.yaml",
             ],
             self.repo,
         )

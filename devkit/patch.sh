@@ -15,7 +15,7 @@ DevKit patch helper.
 
 Usage:
   cat change.patch | devkit/patch.sh --sha256 <64hex> --task-id <id>
-  devkit/patch.sh --file <path> --sha256 <64hex> --task-id <id> [--spec-file <path>]
+  devkit/patch.sh --file <path> --sha256 <64hex> --task-id <id> --spec-file <path>
 
 Reads a unified diff, applies it via git in a reproducible way,
 and stages the result.
@@ -25,7 +25,7 @@ Options:
   --file <path>        Read patch from file instead of stdin.
   --sha256 <64hex>     Expected SHA-256 for patch artifact (required).
   --task-id <id>       Task identifier for audit chain (required).
-  --spec-file <path>   Optional task spec file; if provided, spec_hash is computed.
+  --spec-file <path>   Task spec file for mandatory spec_hash in audit chain (required).
 USAGE
 }
 
@@ -33,7 +33,7 @@ PATCH_INPUT_FILE=""
 EXPECTED_SHA256=""
 TASK_ID=""
 SPEC_FILE=""
-SPEC_HASH="none"
+SPEC_HASH=""
 ARTIFACT_HASH="none"
 COMMIT_REF="unknown"
 
@@ -153,14 +153,15 @@ fi
 if [ -z "$TASK_ID" ]; then
   die_status "precondition_failed" "PATCH_TASK_ID_REQUIRED" "--task-id is required"
 fi
+if [ -z "$SPEC_FILE" ]; then
+  die_status "precondition_failed" "PATCH_SPEC_FILE_REQUIRED" "--spec-file is required"
+fi
 
-if [ -n "$SPEC_FILE" ]; then
-  if [ ! -r "$SPEC_FILE" ] || [ -d "$SPEC_FILE" ]; then
-    die_status "precondition_failed" "PATCH_SPEC_NOT_READABLE" "spec file not readable: $SPEC_FILE"
-  fi
-  if ! SPEC_HASH="$(compute_sha256 "$SPEC_FILE")"; then
-    die_status "precondition_failed" "PATCH_SHA256_TOOL_UNAVAILABLE" "sha256 tool unavailable"
-  fi
+if [ ! -r "$SPEC_FILE" ] || [ -d "$SPEC_FILE" ]; then
+  die_status "precondition_failed" "PATCH_SPEC_NOT_READABLE" "spec file not readable: $SPEC_FILE"
+fi
+if ! SPEC_HASH="$(compute_sha256 "$SPEC_FILE")"; then
+  die_status "precondition_failed" "PATCH_SHA256_TOOL_UNAVAILABLE" "sha256 tool unavailable"
 fi
 
 # Rollback safety policy for Phase B: only apply on clean tree.

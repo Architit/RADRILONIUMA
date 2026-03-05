@@ -157,6 +157,7 @@
   - clean-tree precondition (`PATCH_TREE_NOT_CLEAN`);
   - mandatory `--sha256` integrity pin check;
   - mandatory `--task-id` for audit trace chain;
+  - mandatory `--spec-file` for non-empty `spec_hash`;
   - conflict-safe precheck via `git apply --check --3way`;
   - machine-readable `status=<...>` + `error_code=<...>`;
   - explicit conflict status `status=conflict_detected`.

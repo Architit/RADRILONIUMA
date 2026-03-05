@@ -17,13 +17,14 @@ status: ACTIVE
    - `error_code=PATCH_CONFLICT_DETECTED`
 4. Runtime MUST require integrity pin via `--sha256 <64hex>`.
 5. Runtime MUST require task identifier via `--task-id <id>`.
-6. On hash mismatch runtime MUST return:
+6. Runtime MUST require task spec file via `--spec-file <path>` to compute non-empty `spec_hash`.
+7. On hash mismatch runtime MUST return:
    - `status=integrity_mismatch`
    - `error_code=PATCH_SHA256_MISMATCH`
-7. Runtime MUST emit machine-readable fields:
+8. Runtime MUST emit machine-readable fields:
    - `status=<...>`
    - `error_code=<...>`
-8. Runtime MUST emit audit trace chain per attempt:
+9. Runtime MUST emit audit trace chain per attempt:
    - `trace: task_id=<...> spec_hash=<...> artifact_hash=<...> apply_result=<...> commit_ref=<...>`
 
 ## Rollback Policy

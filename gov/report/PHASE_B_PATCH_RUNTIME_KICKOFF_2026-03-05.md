@@ -11,6 +11,7 @@
    - `status=conflict_detected` + `error_code=PATCH_CONFLICT_DETECTED`,
    - mandatory `--sha256` integrity pin check,
    - mandatory `--task-id` for audit trace chain,
+   - mandatory `--spec-file` for non-empty `spec_hash`,
    - machine-readable status/error fields.
 2. Runtime contract added:
    - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
