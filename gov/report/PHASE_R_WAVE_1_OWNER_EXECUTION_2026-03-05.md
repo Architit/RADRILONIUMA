@@ -5,10 +5,12 @@
 - phase: `PHASE_R_WAVE_1`
 - task_id: `phaseR_R2_owner_research_gate_execution`
 - status: `IN_PROGRESS`
-- progress: `0/6 owners done`
+- progress: `1/6 owners done`
 
 ## Owner Sequence Progress
-1. `Archivator_Agent` — `PENDING`
+1. `Archivator_Agent` — `DONE`
+   - owner commit: `0b63defb75ba4107cde9f09649d3dd654f253921`
+   - owner evidence: `gov/report/phaseR_archivator_research_gate_wave1_execution_2026-03-05.md`
 2. `LAM_Test_Agent` — `PENDING`
 3. `System-` — `PENDING`
 4. `Operator_Agent` — `PENDING`
