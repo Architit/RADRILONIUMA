@@ -247,3 +247,14 @@
   - `SYSTEM_STATE.md` -> `current_phase_focus=PHASE_C_WAVE_1_MEMORY_PREP`
   - `TASK_MAP.md` -> `phaseC_C1=COMPLETE`, `phaseC_C2=IN_PROGRESS`
   - `WORKFLOW_SNAPSHOT_STATE.md` -> next task pointer `phaseC_C2_memory_contract_wave_plan`
+
+### [14:08] — PHASE C WAVE-1 C2 (MEMORY CONTRACT PLAN)
+- Completed wave contract planning task:
+  - `phaseC_C2_memory_contract_wave_plan`
+  - evidence: `gov/report/PHASE_C_WAVE_1_MEMORY_CONTRACT_PLAN_2026-03-05.md`
+- Defined owner execution sequence for wave C1:
+  - `Archivator_Agent` -> `LAM_Test_Agent` -> `System-`
+- Updated pointers:
+  - `SYSTEM_STATE.md` -> `current_phase_focus=PHASE_C_WAVE_1_CONTRACT_PLAN`
+  - `TASK_MAP.md` -> `phaseC_C2=COMPLETE`, `phaseC_C3=IN_PROGRESS`
+  - `WORKFLOW_SNAPSHOT_STATE.md` -> next task pointer `phaseC_C3_owner_memory_wave_execution`
