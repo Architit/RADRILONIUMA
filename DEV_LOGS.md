@@ -212,3 +212,12 @@
   - `LAM_Comunication_Agent`
   - `LAM_Test_Agent`
 - `GLOBAL_PENDING` retained intentionally; progress marker set to `5/39`.
+
+### [13:36] — PHASE A READY SUBSET TRACKING (6/39)
+- Corrected Phase A owner-chain status to mirror the same governance rule:
+  - only confirmed ready repositories are counted;
+  - no premature global closure marker.
+- Updated `gov/report/PHASE_A_OWNER_CHAIN_VERIFICATION_2026-03-05.md` to:
+  - `status=IN_PROGRESS`
+  - `progress=6/39 repositories ready`
+  - explicit `PENDING` global status until full owner-chain completion.

@@ -3,8 +3,10 @@
 ## Scope
 - workspace: `/home/architit/work/RADRILONIUMA`
 - objective: verify downstream owner repos for Phase A chain closure before Phase C kickoff
+- status: `IN_PROGRESS`
+- progress: `6/39 repositories ready`
 
-## Verified owner closures
+## Verified owner closures (ready)
 1. `Archivator_Agent`
    - `24a45b45` — `phaseA: close t003/t004 (integrity chain + hybrid archivator cycle)`
    - `80ee6971` — `phaseA: close t014 (cross-repo acceptance report and matrix evidence)`
@@ -19,10 +21,13 @@
 6. `System-`
    - `6b70950` — `phaseA: close t012 (guard identity/owner/delegation/routing sync)`
 
+## Pending owner closures
+1. Remaining ecosystem repos not yet verified in this Phase A wave (target progress: `39/39`).
+
 ## Local spot-check evidence
 1. `Archivator_Agent`: `bash scripts/test_entrypoint.sh --control` -> pass (`9 passed, 14 deselected`)
 2. `Operator_Agent`: `./.venv/bin/python -m pytest -q tests/test_queue_manager.py` -> pass (`8 passed`)
 
 ## Result
-- Phase A owner chain status: `DONE`
-- Bridge decision: proceed to `Phase C (Memory)` kickoff.
+- Phase A owner chain global status: `PENDING`
+- block reason: only `6/39` repositories are marked ready; global closure requires full owner-chain completion.
