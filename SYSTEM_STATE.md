@@ -50,7 +50,7 @@
   - `tests/test_patch_runtime_governance.py`
 - local_closure_status: DONE
 - global_closure_status: PENDING
-- global_closure_progress: 5/39 repositories ready
+- global_closure_progress: 6/39 repositories ready
 
 ## Next Executable Package (Phase B Owner-Chain Global Closure)
 - wave_id: PHASE_B_OWNER_CHAIN_GLOBAL
@@ -66,7 +66,7 @@
   - `chronolog/PHASE_B_CLOSURE_REPORT_2026-03-05.md` (`LOCAL_DONE`)
   - `gov/report/PHASE_B_OWNER_CHAIN_PLAN_2026-03-05.md`
   - `gov/report/PHASE_B_OWNER_CHAIN_VERIFICATION_2026-03-05.md` (`IN_PROGRESS`)
-  - ready repos mirrored: `Archivator_Agent`, `Operator_Agent`, `J.A.R.V.I.S`, `LAM_Comunication_Agent`, `LAM_Test_Agent`
+  - ready repos mirrored: `Archivator_Agent`, `Operator_Agent`, `J.A.R.V.I.S`, `LAM_Comunication_Agent`, `LAM_Test_Agent`, `System-`
 
 ## Constraints
 - workspace_scope: /home/architit/work/RADRILONIUMA

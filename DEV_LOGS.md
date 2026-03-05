@@ -221,3 +221,8 @@
   - `status=IN_PROGRESS`
   - `progress=6/39 repositories ready`
   - explicit `PENDING` global status until full owner-chain completion.
+
+### [13:42] — PHASE B READY SUBSET TRACKING (6/39)
+- Added `System-` owner closure mirror to Phase B verification.
+- Updated Phase B progress marker from `5/39` to `6/39`.
+- `GLOBAL_PENDING` preserved by protocol (wave-based rollout, not global closure).

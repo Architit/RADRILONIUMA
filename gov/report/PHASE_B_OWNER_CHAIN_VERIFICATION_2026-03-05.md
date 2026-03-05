@@ -4,7 +4,7 @@
 - workspace: `/home/architit/work/RADRILONIUMA` (evidence mirror only)
 - objective: record downstream owner-chain closure evidence for Phase B Patch Runtime
 - status: `IN_PROGRESS`
-- progress: `5/39 repositories ready`
+- progress: `6/39 repositories ready`
 
 ## Verified owner closures (ready)
 1. `Archivator_Agent`
@@ -42,10 +42,16 @@
      - `bash scripts/test_entrypoint.sh --patch-runtime` -> pass (`4 passed`)
      - `bash scripts/test_entrypoint.sh --governance` -> pass
      - `bash scripts/test_entrypoint.sh --all` -> pass (`176 passed, 2 skipped`)
+6. `System-`
+   - closure report: `gov/report/phaseB_system_owner_closure_2026-03-05.md`
+   - owner commit: `d928d421c7d9052496fc59730cdcc3b96a237d85`
+   - verification outcomes (owner-side evidence):
+     - `bash scripts/test_entrypoint.sh --patch-runtime` -> pass (`4 passed`)
+     - `bash scripts/test_entrypoint.sh --governance` -> pass
+     - `bash scripts/test_entrypoint.sh --all` -> pass (`15 passed`)
 
 ## Pending owner closures
-1. `System-` (evidence pending bridge mirror in this repository)
-2. Remaining ecosystem repos not yet verified in this Phase B wave (target progress: `39/39`)
+1. Remaining ecosystem repos not yet verified in this Phase B wave (target progress: `39/39`)
 
 ## Shared runtime status alignment
 - `success`
@@ -56,4 +62,4 @@
 
 ## Protocol status
 - Phase B owner chain global status: `PENDING`
-- block reason: only `5/39` repositories are marked ready; global closure requires full owner-chain completion
+- block reason: only `6/39` repositories are marked ready; global closure requires full owner-chain completion
