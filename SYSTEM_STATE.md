@@ -6,7 +6,7 @@
 - governor: Ayaearias Triania (AYAS-01)
 - status: ACTIVE_READY
 - gate: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE = PASS
-- current_phase_focus: PHASE_B_PATCH_RUNTIME
+- current_phase_focus: PHASE_C_MEMORY_KICKOFF
 
 ## Canonical Role Mapping
 - RADRILONIUMA => Captain Bridge (control plane / governance origin)
@@ -45,6 +45,13 @@
   - `devkit/patch.sh` markers (`status=conflict_detected`, `error_code=PATCH_CONFLICT_DETECTED`, `--sha256`)
   - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
   - `tests/test_patch_runtime_governance.py`
+
+## Next Executable Package (Phase C Memory Kickoff)
+- wave_id: PHASE_C_MEMORY_KICKOFF
+- owner_node: Archivator_Agent (hybrid memory core owner)
+- readiness_evidence:
+  - `gov/report/PHASE_A_OWNER_CHAIN_VERIFICATION_2026-03-05.md`
+  - downstream Phase A closure commits (`t003..t012`, `t014`)
 
 ## Constraints
 - workspace_scope: /home/architit/work/RADRILONIUMA
