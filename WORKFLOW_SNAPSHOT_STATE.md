@@ -6,12 +6,12 @@ branch: master
 timestamp_utc: 2026-03-05T03:45:14Z
 
 ## Current pointer
-phase: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE_GATE
+phase: PHASE_B_PATCH_RUNTIME_LOCAL
 protocol_scale: +1
 protocol_semantic_en: positive
 goal:
-- Align next execution wave to MASTER -> LOCAL -> TASK_SPEC chain.
-- Publish Bridge Execution Directive for Phase A next wave.
+- Implement Phase B patch runtime controls in local DevKit surface.
+- Enforce conflict status signaling and rollback-safe precheck.
 - Keep delegation strictly within existing nodes (anti-sprawl).
 constraints:
 - one task per cycle (Intent -> Action -> Verify -> Report -> STOP)
@@ -25,21 +25,21 @@ constraints:
 - TASK_SPEC_PACK_PHASE_A_V1.md => executable Phase A task IDs and verify markers
 
 ## Next executable package
-- wave_id: PHASE_A_WAVE_1_TASKSPEC_CORE
-- owner_node: RADRILONIUMA-PROJECT (CASTLE)
+- wave_id: PHASE_B_PATCH_RUNTIME_LOCAL
+- owner_node: RADRILONIUMA (Bridge local devkit surface)
 - task_set:
-  - phaseA_t001_task_spec_contract_v1_1
-  - phaseA_t002_task_spec_validator_contract
-  - phaseA_t013_master_owner_map_evidence
+  - phaseB_B1_patch_runtime_conflict_status
+  - phaseB_B2_patch_runtime_contract_and_tests
 - integration_points:
-  - Archivator_Agent (downstream dependency: phaseA_t003/t004)
-  - LAM_Test_Agent (regression gate for Phase A)
+  - local `devkit/patch.sh` runtime
+  - local `tests/test_patch_runtime_governance.py` gate
 
 ## Completion ledger
 - bridge_readiness_closure_commit: 152dec3
 - state_updated_for_master_alignment: SYSTEM_STATE.md, WORKFLOW_SNAPSHOT_STATE.md
 - directive_logged: DEV_LOGS.md
 - directive_report_created: gov/report/MASTER_ALIGNMENT_BRIDGE_DIRECTIVE_2026-03-05.md
+- phaseB_runtime_contract: contract/PATCH_RUNTIME_CONTRACT_V1.md
 
 ## Recent commits
 - 152dec3 governance: bridge readiness gate before phase start (2026-03-05)

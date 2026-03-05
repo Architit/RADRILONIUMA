@@ -6,6 +6,7 @@
 - governor: Ayaearias Triania (AYAS-01)
 - status: ACTIVE_READY
 - gate: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE = PASS
+- current_phase_focus: PHASE_B_PATCH_RUNTIME
 
 ## Canonical Role Mapping
 - RADRILONIUMA => Captain Bridge (control plane / governance origin)
@@ -33,6 +34,17 @@
   - task_spec_template markers (derivation_only, patch_sha256, timeout_ms, max_output_tokens)
   - validator markers (Task Spec, fail-fast, error_code)
   - owner-map evidence markers (phaseA_t00*, owner, delegation)
+
+## Current Executable Package (Phase B Local)
+- wave_id: PHASE_B_PATCH_RUNTIME_LOCAL
+- owner_node: RADRILONIUMA (Bridge local devkit surface)
+- task_set:
+  - phaseB_B1_patch_runtime_conflict_status
+  - phaseB_B2_patch_runtime_contract_and_tests
+- required_evidence:
+  - `devkit/patch.sh` markers (`status=conflict_detected`, `error_code=PATCH_CONFLICT_DETECTED`, `--sha256`)
+  - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
+  - `tests/test_patch_runtime_governance.py`
 
 ## Constraints
 - workspace_scope: /home/architit/work/RADRILONIUMA

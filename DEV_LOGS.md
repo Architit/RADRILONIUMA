@@ -149,3 +149,21 @@
   - v1 alias retained as superseded pointer (`TASK_SPEC_VALIDATOR_CONTRACT_V1.md`) to avoid deletion.
 - Governance wiring reaffirmed:
   - `scripts/test_entrypoint.sh --governance` calls validator with `--fail-fast`.
+
+## [2026-03-05] — PHASE B PATCH RUNTIME KICKOFF (LOCAL)
+
+### [06:05] — B1 PATCH RUNTIME GUARDRAILS
+- Upgraded `devkit/patch.sh` to Phase B behavior:
+  - clean-tree precondition (`PATCH_TREE_NOT_CLEAN`);
+  - optional `--sha256` integrity pin check;
+  - conflict-safe precheck via `git apply --check --3way`;
+  - machine-readable `status=<...>` + `error_code=<...>`;
+  - explicit conflict status `status=conflict_detected`.
+
+### [06:07] — B2 CONTRACT + TEST WIRING
+- Added Phase B runtime contract:
+  - `contract/PATCH_RUNTIME_CONTRACT_V1.md`
+- Added governance tests for patch runtime:
+  - `tests/test_patch_runtime_governance.py`
+- Extended test entrypoint:
+  - `scripts/test_entrypoint.sh --patch-runtime`

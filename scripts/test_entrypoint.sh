@@ -52,6 +52,9 @@ case "${1:---all}" in
     python3 scripts/task_spec_validator.py --fail-fast --file devkit/task_spec_template.yaml
     "$PYTEST_BIN" -q tests -k governance
     ;;
+  --patch-runtime)
+    "$PYTEST_BIN" -q tests/test_patch_runtime_governance.py
+    ;;
   --preflight)
     "$PYTEST_BIN" -q tests -k preflight
     ;;
@@ -59,7 +62,7 @@ case "${1:---all}" in
     "$PYTEST_BIN" -q tests --maxfail=1
     ;;
   *)
-    echo "usage: $0 [--all|--unit-only|--integration|--governance|--preflight|--ci]"
+    echo "usage: $0 [--all|--unit-only|--integration|--governance|--patch-runtime|--preflight|--ci]"
     exit 2
     ;;
 esac
