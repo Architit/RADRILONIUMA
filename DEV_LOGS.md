@@ -203,3 +203,12 @@
   - owner commit: `b5efe5c5509e4d88206f88a071954e9dda1c9899`
 - Preserved protocol gate:
   - Phase B global owner-chain remains `PENDING` until remaining owners are verified.
+
+### [13:31] — READY SUBSET TRACKING (5/39)
+- Updated Phase B owner-chain verification to track only confirmed ready repositories:
+  - `Archivator_Agent`
+  - `Operator_Agent`
+  - `J.A.R.V.I.S`
+  - `LAM_Comunication_Agent`
+  - `LAM_Test_Agent`
+- `GLOBAL_PENDING` retained intentionally; progress marker set to `5/39`.
