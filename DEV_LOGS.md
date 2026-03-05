@@ -395,3 +395,16 @@
 - Reconciled bridge status after `C/D/E/F` first-wave closure:
   - `C/D/E/F` first-wave owner execution: `DONE (6/6)` with evidence.
   - residual master gaps explicitly recorded: `Phase R` pending, `Phase A/B global` still `6/39`.
+
+### [08:47] — PHASE R WAVE-1 KICKOFF + RESEARCH GATE PLAN
+- Started Phase R (Research Gate) in bridge wave mode after Phase F first-wave closure.
+- Added kickoff artifact:
+  - `gov/report/PHASE_R_WAVE_KICKOFF_2026-03-05.md` (`phaseR_R0=DONE`)
+- Added research gate plan artifact:
+  - `gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md` (`phaseR_R1=DONE`)
+- Added owner execution tracker:
+  - `gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md` (`phaseR_R2=IN_PROGRESS`, `0/6`)
+- Updated bridge pointers:
+  - `TASK_MAP.md` -> `phaseR_R0=COMPLETE`, `phaseR_R1=COMPLETE`, `phaseR_R2=IN_PROGRESS`
+  - `SYSTEM_STATE.md` -> `current_phase_focus=PHASE_R_WAVE_1_OWNER_EXECUTION_PREP`
+  - `WORKFLOW_SNAPSHOT_STATE.md` -> `phase=PHASE_R_WAVE_1_OWNER_EXECUTION_PREP`

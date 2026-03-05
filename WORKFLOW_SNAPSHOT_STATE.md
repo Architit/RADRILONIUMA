@@ -3,14 +3,14 @@
 ## Identity
 repo: RADRILONIUMA
 branch: master
-timestamp_utc: 2026-03-05T17:49:00Z
+timestamp_utc: 2026-03-05T08:47:48Z
 
 ## Current pointer
-phase: PHASE_F_WAVE_1_OWNER_EXECUTION_DONE
+phase: PHASE_R_WAVE_1_OWNER_EXECUTION_PREP
 protocol_scale: +1
 protocol_semantic_en: positive
 goal:
-- Start Phase F by wave-based progression after Phase E wave-1 closure.
+- Start Phase R by wave-based progression after Phase F wave-1 closure.
 - Keep Phase A/B global closure markers in `PENDING` until full readiness.
 - Keep rollout through existing owners only (no-new-agents).
 - Keep delegation strictly within existing nodes (anti-sprawl).
@@ -26,15 +26,15 @@ constraints:
 - TASK_SPEC_PACK_PHASE_A_V1.md => executable Phase A task IDs and verify markers
 
 ## Next executable package
-- wave_id: PHASE_C_WAVE_1
+- wave_id: PHASE_R_WAVE_1
 - owner_node: RADRILONIUMA (Bridge governance kickoff)
 - task_set:
-  - phaseF_F0_wave_kickoff_and_pointer_sync (done)
-  - phaseF_F1_p0_safety_contract_wave_plan (done)
-  - phaseF_F2_owner_p0_safety_wave_execution (done: 6/6)
+  - phaseR_R0_wave_kickoff_and_pointer_sync (done)
+  - phaseR_R1_research_gate_benchmark_plan (done)
+  - phaseR_R2_owner_research_gate_execution (in progress: 0/6)
 - integration_points:
   - keep Phase A/B evidence chains as `PENDING` snapshots (`6/39`)
-  - preserve shared runtime status contract (`success/precondition_failed/integrity_mismatch/conflict_detected/apply_failed`)
+  - preserve benchmark comparability (`transport/vector/trigger`) across owners
 
 ## Completion ledger
 - bridge_readiness_closure_commit: 152dec3
@@ -58,6 +58,9 @@ constraints:
 - phaseF_wave_kickoff: gov/report/PHASE_F_WAVE_KICKOFF_2026-03-05.md
 - phaseF_p0_safety_contract_plan: gov/report/PHASE_F_WAVE_1_P0_SAFETY_CONTRACT_PLAN_2026-03-05.md
 - phaseF_owner_execution: gov/report/PHASE_F_WAVE_1_OWNER_EXECUTION_2026-03-05.md
+- phaseR_wave_kickoff: gov/report/PHASE_R_WAVE_KICKOFF_2026-03-05.md
+- phaseR_research_gate_plan: gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md
+- phaseR_owner_execution: gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md
 
 ## Recent commits
 - 152dec3 governance: bridge readiness gate before phase start (2026-03-05)

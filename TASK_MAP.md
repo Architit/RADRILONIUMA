@@ -1,6 +1,6 @@
 # TASK_MAP
 
-last_updated_utc: 2026-03-05T17:49:00Z
+last_updated_utc: 2026-03-05T08:47:48Z
 
 | task_id | title | state | owner | notes |
 |---|---|---|---|---|
@@ -31,3 +31,6 @@ last_updated_utc: 2026-03-05T17:49:00Z
 | phaseF_F0 | phase F wave kickoff and pointer sync | COMPLETE | RADR-01 | gov/report/PHASE_F_WAVE_KICKOFF_2026-03-05.md |
 | phaseF_F1 | phase F P0-safety contract wave plan | COMPLETE | RADR-01 | gov/report/PHASE_F_WAVE_1_P0_SAFETY_CONTRACT_PLAN_2026-03-05.md |
 | phaseF_F2 | phase F owner P0-safety wave execution | COMPLETE | RADR-01 | progress 6/6: Archivator_Agent, LAM_Test_Agent, System-, Operator_Agent, J.A.R.V.I.S, LAM_Comunication_Agent done; see gov/report/PHASE_F_WAVE_1_OWNER_EXECUTION_2026-03-05.md |
+| phaseR_R0 | phase R wave kickoff and pointer sync | COMPLETE | RADR-01 | gov/report/PHASE_R_WAVE_KICKOFF_2026-03-05.md |
+| phaseR_R1 | phase R research-gate benchmark/trigger plan | COMPLETE | RADR-01 | gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md |
+| phaseR_R2 | phase R owner research-gate execution | IN_PROGRESS | RADR-01 | first-wave owner execution pending evidence collection (target 6/6) |

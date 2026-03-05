@@ -1,12 +1,12 @@
 # SYSTEM STATE: RADRILONIUMA (RADR-01 / AELARIA)
 
-- timestamp_utc: 2026-03-05T17:49:00Z
+- timestamp_utc: 2026-03-05T08:47:48Z
 - system_id: RADR-01
 - role: Bridge (Captain Bridge)
 - governor: Ayaearias Triania (AYAS-01)
 - status: ACTIVE_READY
 - gate: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE = PASS
-- current_phase_focus: PHASE_F_WAVE_1_OWNER_EXECUTION_DONE
+- current_phase_focus: PHASE_R_WAVE_1_OWNER_EXECUTION_PREP
 
 ## Canonical Role Mapping
 - RADRILONIUMA => Captain Bridge (control plane / governance origin)
@@ -127,6 +127,21 @@
 - next_task: `phaseF_F2_owner_p0_safety_wave_execution`
 - execution_evidence:
   - `gov/report/PHASE_F_WAVE_1_OWNER_EXECUTION_2026-03-05.md` (`DONE`, `6/6`)
+
+## Next Executable Package (Phase R Wave)
+- wave_id: PHASE_R_WAVE_1
+- status: NEXT_WAVE_READY
+- transition_mode: wave-based
+- prerequisite_status_snapshot:
+  - phaseF_wave1: `DONE` (`6/6`)
+  - phaseA_global: `PENDING` (`6/39`)
+  - phaseB_global: `PENDING` (`6/39`)
+- kickoff_evidence:
+  - `gov/report/PHASE_R_WAVE_KICKOFF_2026-03-05.md` (`phaseR_R0=DONE`)
+  - `gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md` (`phaseR_R1=DONE`)
+- next_task: `phaseR_R2_owner_research_gate_execution`
+- execution_evidence:
+  - `gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md` (`IN_PROGRESS`, `0/6`)
 
 ## Constraints
 - workspace_scope: /home/architit/work/RADRILONIUMA
