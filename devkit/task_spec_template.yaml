@@ -1,0 +1,21 @@
+spec_version: "1.1"
+task_id: "phaseA_local_0001"
+goal: "Apply deterministic patch via local devkit runtime"
+constraints:
+  derivation_only: true
+  code_injection_forbidden: true
+preconditions:
+  - type: file_exists
+    path: "./devkit/patch.sh"
+  - type: min_version
+    component: "git"
+    version: ">=2.39"
+artifacts:
+  patch_path: "devkit/patches/example.patch"
+  patch_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+limits:
+  timeout_ms: 30000
+  max_output_tokens: 2048
+expected_result:
+  status: success
+  changed_files_max: 20

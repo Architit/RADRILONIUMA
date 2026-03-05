@@ -49,6 +49,7 @@ case "${1:---all}" in
     run_pytest_allow_empty -q tests -m "not integration"
     ;;
   --governance)
+    python3 scripts/task_spec_validator.py --fail-fast --file devkit/task_spec_template.yaml
     "$PYTEST_BIN" -q tests -k governance
     ;;
   --preflight)

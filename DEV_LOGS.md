@@ -106,3 +106,46 @@
 - GO if: preconditions satisfied, patch_sha256 pins match, verifies pass, no conflict_detected.
 - STOP if: hash mismatch, missing preconditions, 3-way apply conflict, regression failure.
 - Evidence artifact: gov/report/MASTER_ALIGNMENT_BRIDGE_DIRECTIVE_2026-03-05.md.
+
+## [2026-03-05] — PHASE A LOCAL EXECUTION (RADRILONIUMA)
+
+### [05:10] — A0 ARCHITECTURE SCAN + INTEGRATION MAP
+- Generated local scan and delegation map without creating entities:
+  - `gov/report/PHASE_A_A0_ARCHITECTURE_SCAN_AND_INTEGRATION_MAP_2026-03-05.md`
+- Scope held to `/home/architit/work/RADRILONIUMA`.
+
+### [05:12] — A1 TASK SPEC CONTRACT ENFORCEMENT
+- Added local Task Spec v1.1 template mirror:
+  - `devkit/task_spec_template.yaml`
+- Added fail-fast validator and contract:
+  - `scripts/task_spec_validator.py`
+  - `contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md`
+- Enforced markers:
+  - `constraints.derivation_only = true`
+  - `artifacts.patch_sha256` pinned to 64-lower-hex
+  - explicit `preconditions`
+  - limits: `timeout_ms`, `max_output_tokens`
+
+### [05:14] — A2 GOVERNANCE CHECK WIRING
+- Added governance tests:
+  - `tests/test_task_spec_governance.py`
+- Updated `scripts/test_entrypoint.sh --governance`:
+  - runs validator first, then `pytest -q tests -k governance`.
+
+### [05:15] — A3 CLOSURE PREP
+- Closure evidence pending command run and hash capture.
+
+### [05:18] — A3 CLOSURE DONE
+- Closure report written:
+  - `chronolog/PHASE_A_CLOSURE_REPORT_2026-03-05.md`
+- Protocol finalized with status:
+  - `DONE` (A0/A1/A2/A3 completed, verification commands passed).
+
+### [05:25] — PHASE A COMPLIANCE DRIFT REMEDIATION
+- Task Spec upgraded to v1.1 marker: `spec_version: "1.1"`.
+- Validator migrated from regex-only matching to strict YAML parsing (`yaml.safe_load`).
+- Canonical contract renamed to v1.1:
+  - `contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md`
+  - v1 alias retained as superseded pointer (`TASK_SPEC_VALIDATOR_CONTRACT_V1.md`) to avoid deletion.
+- Governance wiring reaffirmed:
+  - `scripts/test_entrypoint.sh --governance` calls validator with `--fail-fast`.
