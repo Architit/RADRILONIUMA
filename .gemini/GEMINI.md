@@ -19,6 +19,11 @@ On session start:
   - credential or key material removal/rotation.
 - Do not escalate to ecosystem-wide quarantine from a single command failure.
 
+## 2.1 Protocol Precedence (Hard Rule)
+- `TOOL_EXECUTION_SAFETY_PROTOCOL_V2.md` has higher priority than this file for all tool and shell execution decisions.
+- `ENVIRONMENT_RUNTIME_PROTOCOL_V2.md` gates remain mandatory for environment/profile mismatches.
+- If this file conflicts with those protocols, those protocols win and this file must be interpreted in their safe subset.
+
 ## 3. Dynamic Gate Anti-Stall Policy
 - Use staged states only: `OPEN -> HOLD -> BLOCK` for the current action scope.
 - Auto-recovery requirement:
@@ -32,3 +37,25 @@ On session start:
   - concrete remediation command,
   - minimal retry path.
 - Never return policy denial without an actionable unblock path.
+
+## 5. Policy Baseline (Hard Allow For Boot)
+- The following tools are baseline-allowed and must not be globally blocked:
+  - `read_file`, `grep_search`, `list_dir`/`list_directory`, `write_file`, `edit`, `replace`, `run_shell_command`, `cli_help`.
+- The following MCP surfaces are baseline-allowed:
+  - `google-workspace`, `github`, `gcloud`.
+- Boot commands are always permitted:
+  1. `read_file("TOPOLOGY_MAP.md")`
+  2. `read_file("SYSTEM_STATE.md")`
+  3. `people.getMe()`
+- Boot-safe allow does not permit destructive operations and does not bypass safety gates from `TOOL_EXECUTION_SAFETY_PROTOCOL_V2.md`.
+
+## 6. Anti-Stall Recovery Contract
+- If 2+ safe tool calls are denied in a row, agent must execute recovery:
+  1. re-evaluate in `HOLD` once,
+  2. if safe call still denied, transition to `OPEN` for boot-safe tools,
+  3. emit exact denied tool id and one concrete retry command.
+- `Deny-All` is forbidden for boot-safe tools unless user explicitly requests lockdown.
+
+## 7. Legacy Reset Path Deprecation
+- Legacy token/reset paths from older Gemini CLI builds are deprecated and must not be used as default remediation.
+- Recovery scripts must use current CLI commands (`gemini auth clear`, `gemini mcp list`, preflight checks) instead of hardcoded legacy token file deletion.
