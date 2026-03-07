@@ -1,10 +1,10 @@
 # GOV_STATUS
 
-last_updated_utc: 2026-03-03T09:00:00Z
+last_updated_utc: 2026-03-07T12:00:00Z
 governance_state: ACTIVE
-drift_state: YELLOW
-drift_reason: bootstrap surfaces were missing before this update
-closure_decision: PARTIAL
+drift_state: GREEN
+drift_reason: diagnostic scan complete, all tests passing, Phase R wave 6/6 closure verified
+closure_decision: READY_FOR_PHASE_08.2
 
 ## Required Pointers
 - roadmap: ROADMAP.md
