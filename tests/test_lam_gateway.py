@@ -172,3 +172,59 @@ def test_size_and_local_hard_limit_push_to_gdrive(tmp_path, monkeypatch) -> None
 
     decision = module.select_provider_for_object(policy, "generic", object_size_bytes=2 * 1024 * 1024)
     assert decision["provider"] == "gdrive"
+
+
+def test_get_rejects_provider_root_escape(tmp_path, monkeypatch) -> None:
+    module = load_gateway_module()
+    state_dir = tmp_path / ".gateway"
+    provider_root = tmp_path / "provider"
+    provider_root.mkdir(parents=True, exist_ok=True)
+    monkeypatch.setenv("LAM_GATEWAY_STATE_DIR", str(state_dir))
+    monkeypatch.setenv("LAM_GATEWAY_POLICY_FILE", str(state_dir / "routing_policy.json"))
+    monkeypatch.setenv("LAM_GATEWAY_INDEX_FILE", str(state_dir / "index.json"))
+    module.STATE_DIR = state_dir
+    module.POLICY_FILE = state_dir / "routing_policy.json"
+    module.INDEX_FILE = state_dir / "index.json"
+    module.ensure_state()
+
+    policy = module.read_json(module.POLICY_FILE, {})
+    policy["providers"]["local"]["root"] = str(provider_root)
+    module.write_json(module.POLICY_FILE, policy)
+
+    class GetArgs:
+        provider = "local"
+        path = "../secret.txt"
+        dst = str(tmp_path / "out.txt")
+
+    try:
+        module.cmd_get(GetArgs())
+        assert False, "cmd_get should reject path escape"
+    except RuntimeError as exc:
+        assert "escapes provider root" in str(exc)
+
+
+def test_put_rejects_name_with_path_separators(tmp_path, monkeypatch) -> None:
+    module = load_gateway_module()
+    state_dir = tmp_path / ".gateway"
+    monkeypatch.setenv("LAM_GATEWAY_STATE_DIR", str(state_dir))
+    monkeypatch.setenv("LAM_GATEWAY_POLICY_FILE", str(state_dir / "routing_policy.json"))
+    monkeypatch.setenv("LAM_GATEWAY_INDEX_FILE", str(state_dir / "index.json"))
+    module.STATE_DIR = state_dir
+    module.POLICY_FILE = state_dir / "routing_policy.json"
+    module.INDEX_FILE = state_dir / "index.json"
+    module.ensure_state()
+
+    source = tmp_path / "example.txt"
+    source.write_text("payload", encoding="utf-8")
+
+    class PutArgs:
+        src = str(source)
+        data_class = "generic"
+        provider = "local"
+        name = "../bad.txt"
+
+    try:
+        module.cmd_put(PutArgs())
+        assert False, "cmd_put should reject unsafe name"
+    except RuntimeError as exc:
+        assert "plain file name" in str(exc)

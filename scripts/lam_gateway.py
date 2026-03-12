@@ -137,6 +137,24 @@ def path_size_bytes(path: Path) -> int:
     return total
 
 
+def path_is_within_root(path: Path, root: Path) -> bool:
+    try:
+        path.relative_to(root)
+        return True
+    except ValueError:
+        return False
+
+
+def validate_object_name(name: str) -> str:
+    clean = name.strip()
+    if not clean:
+        raise RuntimeError("object name must not be empty")
+    parsed = Path(clean)
+    if parsed.is_absolute() or parsed.name != clean or clean in {".", ".."}:
+        raise RuntimeError("object name must be a plain file name without path separators")
+    return clean
+
+
 def append_event(event: dict[str, Any]) -> None:
     safe_mkdir(EVENTS_FILE.parent)
     with EVENTS_FILE.open("a", encoding="utf-8") as fh:
@@ -387,10 +405,13 @@ def cmd_put(args: argparse.Namespace) -> int:
         target_root = Path(policy["providers"][decision["provider"]]["root"])
 
     safe_mkdir(target_root)
+    target_root = target_root.resolve()
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    name = args.name or source.name
+    name = validate_object_name(args.name or source.name)
     rel_path = Path(args.data_class) / f"{stamp}_{name}"
-    dest = target_root / rel_path
+    dest = (target_root / rel_path).resolve()
+    if not path_is_within_root(dest, target_root):
+        raise RuntimeError("resolved destination escapes provider root")
 
     if source.is_dir():
         shutil.copytree(source, dest)
@@ -430,7 +451,10 @@ def cmd_get(args: argparse.Namespace) -> int:
     root = Path(str(providers[args.provider].get("root", "")))
     if not str(root).strip():
         raise RuntimeError(f"provider not configured: {args.provider}")
+    root = root.resolve()
     source = (root / args.path).resolve()
+    if not path_is_within_root(source, root):
+        raise RuntimeError(f"path escapes provider root: {args.path}")
     if not source.exists():
         raise FileNotFoundError(f"path not found in provider={args.provider}: {args.path}")
     dst = Path(args.dst).resolve()
