@@ -1,0 +1,21 @@
+spec_version: "1.1"
+task_id: "TASK_RESONANCE_TEST_001"
+goal: "Capture a Phase A local gateway health snapshot for the ARK storage root"
+constraints:
+  derivation_only: true
+  code_injection_forbidden: true
+preconditions:
+  - type: file_exists
+    path: "./scripts/lam_gateway.py"
+  - type: directory_exists
+    path: "/run/media/architit/DATA_BASE/ARK"
+artifacts:
+  patch_path: "devkit/patches/phase_a_gateway_health_snapshot.patch"
+  patch_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+limits:
+  timeout_ms: 30000
+  max_output_tokens: 2048
+expected_result:
+  status: success
+  action: "SYS_HEALTH_SNAPSHOT"
+  target: "/run/media/architit/DATA_BASE/ARK"
