@@ -43,6 +43,8 @@ def test_select_provider_falls_back_to_local_when_others_unset(tmp_path, monkeyp
     module.INDEX_FILE = Path(str(tmp_path / ".gateway" / "index.json"))
     module.ensure_state()
     policy = module.read_json(module.POLICY_FILE, {})
+    policy.setdefault("routing", {})["local_hard_min_free_gb"] = 0
+    module.write_json(module.POLICY_FILE, policy)
 
     decision = module.select_provider(policy, "generic")
     assert decision["provider"] == "local"
