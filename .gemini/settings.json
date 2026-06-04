@@ -8,6 +8,13 @@
       "args": [
         "/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js"
       ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
     }
   }
 }
