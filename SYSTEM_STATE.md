@@ -1,12 +1,17 @@
 # SYSTEM STATE: RADRILONIUMA (RADR-01 / AELARIA)
 
-- timestamp_utc: 2026-03-05T08:47:48Z
+- timestamp_utc: 2026-06-04T18:30:00Z
 - system_id: RADR-01
 - role: Bridge (Captain Bridge)
 - governor: Ayaearias Triania (AYAS-01)
 - status: ACTIVE_READY
 - gate: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE = PASS
-- current_phase_focus: PHASE_R_WAVE_1_OWNER_EXECUTION_DONE
+- current_phase_focus: PHASE_08.3_RESEARCH_AND_AUTOPILOT_INIT
+- reconcile_gate: IC_DEB_APK_EXE_CONFIRMED = PASS
+- research_gate: IC_RESEARCH_ENGINE_LAB_INIT = PASS
+- autopilot_gate: IC_AUTOPILOT_CORE_INIT = PASS
+- kingdom_gate: IC_KINGDOM_INIT = PASS
+- codex_gate: IC_CODEX_ENGINE_CORE_INIT = PASS
 
 ## Canonical Role Mapping
 - RADRILONIUMA => Captain Bridge (control plane / governance origin)
@@ -148,4 +153,4 @@
 - no_new_agents_or_repos: enforced
 - anti_sprawl_gate: enforced
 - one_cycle_one_atomic_task: enforced
-last_heartbeat_utc: 2026-05-29T14:17:26Z
+last_heartbeat_utc: 2026-06-04T18:30:00Z

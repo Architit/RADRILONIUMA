@@ -9,27 +9,27 @@ This document identifies relocated artifacts currently residing in the **Neutral
 
 | Artifact Path | Native Owner | Target Path (in Repository) | Status |
 | :--- | :--- | :--- | :--- |
-| `core/Aya/MIRROR_STATUS_20260227.md` | AYAS (Ayaearias-Triania) | `gov/asr/MIRROR_STATUS.md` | PENDING |
-| `core/CRTD/HEAL_DIRECTIVE_20260227.md` | CRTD (Croambeth) | `gov/directive/HEAL_DIRECTIVE.md` | PENDING |
-| `core/CRTD/RECOVERED.md` | CRTD (Croambeth) | `gov/status/RECOVERED.md` | PENDING |
-| `core/FMLN/HEARTBEAT.md` | FMLN (Fomanor) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/GLKT/HEARTBEAT.md` | GLKT (Glokha) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/JNSR/HEARTBEAT.md` | JNSR (Jouna) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/KTRD/HEARTBEAT.md` | KTRD (Kitora) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/Larpat/INIT_DIRECTIVE_20260227.md` | LRPT (Larpat) | `gov/directive/INIT.md` | PENDING |
-| `core/Larpat/HEARTBEAT.md` | LRPT (Larpat) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/LVNS/HEARTBEAT.md` | LVNS (Luvia) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/MLVD/HEARTBEAT.md` | MLVD (Melia) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/PLTS/HEARTBEAT.md` | PLTS (Pralia) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/RBTK/HEARTBEAT.md` | RBTK (Aristos) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/RBTK/READY.md` | RBTK (Aristos) | `gov/status/READY.md` | PENDING |
-| `core/SRZJ/HEARTBEAT.md` | SRZJ (Sataris) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/TSPT/HEARTBEAT.md` | TSPT (Taspit) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/VLRM/HEARTBEAT.md` | VLRM (Vilami) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/VRBN/HEARTBEAT.md` | VRBN (Vionori) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/VRLS/HEARTBEAT.md" | VRLS (Vrela) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/XNVR/HEARTBEAT.md" | XNVR (Oxin) | `gov/pulse/HEARTBEAT.md` | PENDING |
-| `core/ZRDG/HEARTBEAT.md" | ZRDG (Zudory) | `gov/pulse/HEARTBEAT.md` | PENDING |
+| `core/Aya/MIRROR_STATUS_20260227.md` | AYAS (Ayaearias-Triania) | `gov/asr/MIRROR_STATUS.md` | RESTORED |
+| `core/CRTD/HEAL_DIRECTIVE_20260227.md` | CRTD (Croambeth) | `gov/directive/HEAL_DIRECTIVE.md` | RESTORED |
+| `core/CRTD/RECOVERED.md` | CRTD (Croambeth) | `gov/status/RECOVERED.md` | RESTORED |
+| `core/FMLN/HEARTBEAT.md` | FMLN (Fomanor) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/GLKT/HEARTBEAT.md` | GLKT (Glokha) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/JNSR/HEARTBEAT.md` | JNSR (Jouna) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/KTRD/HEARTBEAT.md` | KTRD (Kitora) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/Larpat/INIT_DIRECTIVE_20260227.md` | LRPT (Larpat) | `gov/directive/INIT.md` | RESTORED |
+| `core/Larpat/HEARTBEAT.md` | LRPT (Larpat) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/LVNS/HEARTBEAT.md` | LVNS (Luvia) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/MLVD/HEARTBEAT.md` | MLVD (Melia) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/PLTS/HEARTBEAT.md` | PLTS (Pralia) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/RBTK/HEARTBEAT.md` | RBTK (Aristos) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/RBTK/READY.md` | RBTK (Aristos) | `gov/status/READY.md` | RESTORED |
+| `core/SRZJ/HEARTBEAT.md` | SRZJ (Sataris) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/TSPT/HEARTBEAT.md` | TSPT (Taspit) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/VLRM/HEARTBEAT.md` | VLRM (Vilami) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/VRBN/HEARTBEAT.md` | VRBN (Vionori) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/VRLS/HEARTBEAT.md` | VRLS (Vrela) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/XNVR/HEARTBEAT.md` | XNVR (Oxin) | `gov/pulse/HEARTBEAT.md` | RESTORED |
+| `core/ZRDG/HEARTBEAT.md` | ZRDG (Zudory) | `gov/pulse/HEARTBEAT.md` | RESTORED |
 
 ---
 

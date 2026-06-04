@@ -34,3 +34,11 @@ last_updated_utc: 2026-03-05T08:47:48Z
 | phaseR_R0 | phase R wave kickoff and pointer sync | COMPLETE | RADR-01 | gov/report/PHASE_R_WAVE_KICKOFF_2026-03-05.md |
 | phaseR_R1 | phase R research-gate benchmark/trigger plan | COMPLETE | RADR-01 | gov/report/PHASE_R_WAVE_1_RESEARCH_GATE_PLAN_2026-03-05.md |
 | phaseR_R2 | phase R owner research-gate execution | COMPLETE | RADR-01 | progress 6/6: Archivator_Agent (0b63defb75ba4107cde9f09649d3dd654f253921), LAM_Test_Agent (7d95de1889b0dbb37a8bd65fa752eac803039e32), System- (19f0e9e5c2b80baad67e8f22c6bfbf435e130f77), Operator_Agent (c22158678b20bfd50bab07cea48f4711c7e2e39f), J.A.R.V.I.S (b0b748017490a8ca1212d49b7009e4b22f270053), LAM_Comunication_Agent (ffb4c87dca35da68203ecbe6a700ccefc84b02a7) |
+| phase08.2_T0 | phase 08.2 reconciliation kickoff | COMPLETE | RADR-01 | IC_DEB_APK_EXE confirmed by Architect |
+| phase08.2_T1 | quarantine integrity deep scan | COMPLETE | RADR-01 | manifest generated in gov/report/ |
+| phase08.2_T2 | mass restoration execution | COMPLETE | RADR-01 | artifacts moved to native owners |
+| phase08.3_T0 | research engine lab initialization | COMPLETE | RADR-01 | research_lab/ structure established + contract v1 |
+| phase08.3_T1 | autopilot agent core initialization | COMPLETE | RADR-01 | research_lab/core/ contract v1 established |
+| phase08.3_T2 | semantic core v3 mapping | IN_PROGRESS | RADR-01 | mapping new sovereign seeds and body alignment |
+| phase08.3_T3 | trianiuma kingdom initialization | COMPLETE | RADR-01 | kingdom/ structure established + constitution v1 |
+| phase08.3_T4 | codex dev map engine core initialization | COMPLETE | RADR-01 | codex_engine/ structure + contract + blueprint established |
