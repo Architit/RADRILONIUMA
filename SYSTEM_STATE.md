@@ -1,10 +1,11 @@
 # SYSTEM STATE: RADRILONIUMA (RADR-01 / AELARIA)
 
-- timestamp_utc: 2026-06-04T18:30:00Z
+- timestamp_utc: 2026-06-05T18:02:00Z
 - system_id: RADR-01
 - role: Bridge (Captain Bridge)
 - governor: Ayaearias Triania (AYAS-01)
 - status: ACTIVE_READY
+- diagnostic_pending: TASK_DIAG_002 (SYS_HEALTH_SNAPSHOT)
 - gate: MASTER_ALIGNMENT_BRIDGE_DIRECTIVE = PASS
 - current_phase_focus: PHASE_08.3_RESEARCH_AND_AUTOPILOT_INIT
 - reconcile_gate: IC_DEB_APK_EXE_CONFIRMED = PASS
