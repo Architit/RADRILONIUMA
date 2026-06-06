@@ -5,8 +5,10 @@ const { exec } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
+const ORGAN_NAME = process.env.LAM_ORGAN_NAME || "trianiuma-mcp-core";
+
 const server = new Server(
-  { name: "trianiuma-mcp-core", version: "1.0.0" },
+  { name: ORGAN_NAME, version: "1.0.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -27,8 +29,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
     tools: [
       {
-        name: "enqueue_lam_task",
-        description: "Постановка задачи Фазы А в локальную очередь шлюза RADRILONIUMA",
+        name: `enqueue_task_${ORGAN_NAME.toLowerCase().replace(/-/g, "_")}`,
+        description: `Постановка задачи Фазы А для органа ${ORGAN_NAME} в локальную очередь шлюза RADRILONIUMA`,
         inputSchema: {
           type: "object",
           properties: {
@@ -44,14 +46,15 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 });
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  if (request.params.name !== "enqueue_lam_task") {
+  if (!request.params.name.startsWith("enqueue_task_")) {
     throw new Error("Неизвестный инструмент");
   }
 
   const { task_id, action, signer = "architit" } = request.params.arguments;
   
   // Формируем временную спецификацию
-  const yamlContent = `task_id: "${task_id}"\nphase: "PHASE_A"\ncontract_match: true\npayload:\n  action: "${action}"\nmetadata:\n  protocol: "MIRASHANI"\n  signer: "${signer}"`;
+  const yamlContent = `task_id: "${task_id}"\nphase: "PHASE_A"\ncontract_match: true\npayload:\n  action: "${action}"\nmetadata:\n  protocol: "MIRASHANI"\n  signer: "${signer}"\n  target_organ: "${ORGAN_NAME}"`;
+  
   const tmpDir = path.join(localGatewayRoot(), "mcp_tmp");
   const tmpPath = path.join(tmpDir, `tmp_${task_id}.yaml`);
 
@@ -63,7 +66,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       if (error) {
         resolve({ content: [{ type: "text", text: `Ошибка шлюза: ${stderr || error.message}` }], isError: true });
       } else {
-        resolve({ content: [{ type: "text", text: `Контракт успешно поставлен в очередь шлюза:\n${stdout}` }] });
+        resolve({ content: [{ type: "text", text: `Контракт [${ORGAN_NAME}] успешно поставлен в очередь шлюза:\n${stdout}` }] });
       }
     });
   });
