@@ -14,6 +14,7 @@ export PYTEST_ADDOPTS="${PYTEST_ADDOPTS:--p no:cacheprovider}"
 PYTEST_BIN=""
 for candidate in \
   "$ROOT_DIR/.venv/bin/pytest" \
+  "$ROOT_DIR/venv/bin/pytest" \
   "$ROOT_DIR/../.venv/bin/pytest" \
   "${ECO_PYTEST_BIN:-}"
 do
