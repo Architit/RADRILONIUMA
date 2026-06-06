@@ -1,0 +1,124 @@
+{
+  "mcpServers": {
+    "RADR-01": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=RADR-01"],
+      "env": { "LAM_ORGAN_NAME": "RADR-01" }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    },
+    "google-workspace": {
+      "command": "node",
+      "args": ["dist/index.js", "--use-dot-names"],
+      "cwd": "/home/architit/.gemini/extensions/google-workspace",
+      "env": null
+    },
+    "AYAS": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=AYAS"],
+      "env": { "LAM_ORGAN_NAME": "AYAS" }
+    },
+    "LRPT": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=LRPT"],
+      "env": { "LAM_ORGAN_NAME": "LRPT" }
+    },
+    "VLRM": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=VLRM"],
+      "env": { "LAM_ORGAN_NAME": "VLRM" }
+    },
+    "CRTD": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=CRTD"],
+      "env": { "LAM_ORGAN_NAME": "CRTD" }
+    },
+    "TSPT": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=TSPT"],
+      "env": { "LAM_ORGAN_NAME": "TSPT" }
+    },
+    "FMLN": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=FMLN"],
+      "env": { "LAM_ORGAN_NAME": "FMLN" }
+    },
+    "GLKT": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=GLKT"],
+      "env": { "LAM_ORGAN_NAME": "GLKT" }
+    },
+    "JNSR": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=JNSR"],
+      "env": { "LAM_ORGAN_NAME": "JNSR" }
+    },
+    "KTRD": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=KTRD"],
+      "env": { "LAM_ORGAN_NAME": "KTRD" }
+    },
+    "LVNS": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=LVNS"],
+      "env": { "LAM_ORGAN_NAME": "LVNS" }
+    },
+    "MLVD": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=MLVD"],
+      "env": { "LAM_ORGAN_NAME": "MLVD" }
+    },
+    "XNVR": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=XNVR"],
+      "env": { "LAM_ORGAN_NAME": "XNVR" }
+    },
+    "PLTS": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=PLTS"],
+      "env": { "LAM_ORGAN_NAME": "PLTS" }
+    },
+    "SRZJ": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=SRZJ"],
+      "env": { "LAM_ORGAN_NAME": "SRZJ" }
+    },
+    "VRBN": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=VRBN"],
+      "env": { "LAM_ORGAN_NAME": "VRBN" }
+    },
+    "VRLS": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=VRLS"],
+      "env": { "LAM_ORGAN_NAME": "VRLS" }
+    },
+    "ZRDG": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=ZRDG"],
+      "env": { "LAM_ORGAN_NAME": "ZRDG" }
+    },
+    "RBTK": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=RBTK"],
+      "env": { "LAM_ORGAN_NAME": "RBTK" }
+    },
+    "DORM-01": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=DORM-01"],
+      "env": { "LAM_ORGAN_NAME": "DORM-01" }
+    },
+    "DORM-02": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=DORM-02"],
+      "env": { "LAM_ORGAN_NAME": "DORM-02" }
+    },
+    "DORM-03": {
+      "command": "node",
+      "args": ["/home/architit/LAM_CORE/RADRILONIUMA/mcp_server/index.js", "--organ=DORM-03"],
+      "env": { "LAM_ORGAN_NAME": "DORM-03" }
+    }
+  }
+}
