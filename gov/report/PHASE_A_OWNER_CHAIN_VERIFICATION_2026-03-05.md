@@ -4,7 +4,7 @@
 - workspace: `/home/architit/work/RADRILONIUMA`
 - objective: verify downstream owner repos for Phase A chain closure before Phase C kickoff
 - status: `IN_PROGRESS`
-- progress: `6/39 repositories ready`
+- progress: `24/39 repositories ready`
 
 ## Verified owner closures (ready)
 1. `Archivator_Agent`
@@ -20,6 +20,24 @@
    - `b4a592f` — `phaseA: close t011 (cross-repo regression gate for task-spec/integrity/fail-fast)`
 6. `System-`
    - `6b70950` — `phaseA: close t012 (guard identity/owner/delegation/routing sync)`
+7. `Ayaearias-Triania` (Active Organ: AYAS) - Wave 1 Rollout Verified
+8. `Larpat` (Active Organ: LRPT) - Wave 1 Rollout Verified
+9. `Vilami` (Active Organ: VLRM) - Wave 1 Rollout Verified
+10. `Croambeth` (Active Organ: CRTD) - Wave 1 Rollout Verified
+11. `Taspit` (Active Organ: TSPT) - Wave 1 Rollout Verified
+12. `Fomanor` (Active Organ: FMLN) - Wave 1 Rollout Verified
+13. `Glokha` (Active Organ: GLKT) - Wave 1 Rollout Verified
+14. `Jouna` (Active Organ: JNSR) - Wave 1 Rollout Verified
+15. `Kitora` (Active Organ: KTRD) - Wave 1 Rollout Verified
+16. `Luvia` (Active Organ: LVNS) - Wave 1 Rollout Verified
+17. `Melia` (Active Organ: MLVD) - Wave 1 Rollout Verified
+18. `Oxin` (Active Organ: XNVR) - Wave 1 Rollout Verified
+19. `Pralia` (Active Organ: PLTS) - Wave 1 Rollout Verified
+20. `Sataris` (Active Organ: SRZJ) - Wave 1 Rollout Verified
+21. `Vionori` (Active Organ: VRBN) - Wave 1 Rollout Verified
+22. `Vrela` (Active Organ: VRLS) - Wave 1 Rollout Verified
+23. `Zudory` (Active Organ: ZRDG) - Wave 1 Rollout Verified
+24. `Aristos` (Active Organ: RBTK) - Wave 1 Rollout Verified
 
 ## Pending owner closures
 1. Remaining ecosystem repos not yet verified in this Phase A wave (target progress: `39/39`).

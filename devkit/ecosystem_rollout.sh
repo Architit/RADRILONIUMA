@@ -104,13 +104,27 @@ if [ ! -f "$TOPOLOGY_PATH" ]; then
   exit 2
 fi
 
+# Baseline Artifacts
 src_gemini="$ROOT_DIR/.gemini/GEMINI.md"
 src_preflight_sh="$ROOT_DIR/devkit/shell_preflight.sh"
 src_preflight_py="$ROOT_DIR/devkit/shell_preflight_check.py"
 src_base_bash="$ROOT_DIR/devkit/preflight_baseline_commands_bash.txt"
 src_base_pwsh="$ROOT_DIR/devkit/preflight_baseline_commands_powershell.txt"
 
-for f in "$src_gemini" "$src_preflight_sh" "$src_preflight_py" "$src_base_bash" "$src_base_pwsh"; do
+# Phase A Wave 1 Artifacts
+src_task_spec_contract="$ROOT_DIR/contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md"
+src_task_spec_validator="$ROOT_DIR/scripts/task_spec_validator.py"
+src_task_spec_template="$ROOT_DIR/devkit/task_spec_template.yaml"
+src_owner_map="$ROOT_DIR/gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md"
+
+# Phase B Wave Artifacts
+src_patch_runtime_contract="$ROOT_DIR/contract/PATCH_RUNTIME_CONTRACT_V1.md"
+src_patch_runtime_tests="$ROOT_DIR/tests/test_patch_runtime_governance.py"
+src_patch_sh="$ROOT_DIR/devkit/patch.sh"
+
+for f in "$src_gemini" "$src_preflight_sh" "$src_preflight_py" "$src_base_bash" "$src_base_pwsh" \
+         "$src_task_spec_contract" "$src_task_spec_validator" "$src_task_spec_template" "$src_owner_map" \
+         "$src_patch_runtime_contract" "$src_patch_runtime_tests" "$src_patch_sh"; do
   if [ ! -f "$f" ]; then
     echo "ERROR: source file missing: $f" >&2
     exit 2
@@ -166,13 +180,25 @@ run_cmd() {
 
 sync_one() {
   local target="$1"
-  run_cmd mkdir -p "$target/.gemini" "$target/devkit"
+  run_cmd mkdir -p "$target/.gemini" "$target/devkit" "$target/contract" "$target/scripts" "$target/gov/report" "$target/tests"
   run_cmd cp "$src_gemini" "$target/.gemini/GEMINI.md"
   run_cmd cp "$src_preflight_sh" "$target/devkit/shell_preflight.sh"
   run_cmd cp "$src_preflight_py" "$target/devkit/shell_preflight_check.py"
   run_cmd cp "$src_base_bash" "$target/devkit/preflight_baseline_commands_bash.txt"
   run_cmd cp "$src_base_pwsh" "$target/devkit/preflight_baseline_commands_powershell.txt"
-  run_cmd chmod +x "$target/devkit/shell_preflight.sh"
+  
+  # Phase A sync
+  run_cmd cp "$src_task_spec_contract" "$target/contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md"
+  run_cmd cp "$src_task_spec_validator" "$target/scripts/task_spec_validator.py"
+  run_cmd cp "$src_task_spec_template" "$target/devkit/task_spec_template.yaml"
+  run_cmd cp "$src_owner_map" "$target/gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md"
+  
+  # Phase B sync
+  run_cmd cp "$src_patch_runtime_contract" "$target/contract/PATCH_RUNTIME_CONTRACT_V1.md"
+  run_cmd cp "$src_patch_runtime_tests" "$target/tests/test_patch_runtime_governance.py"
+  run_cmd cp "$src_patch_sh" "$target/devkit/patch.sh"
+
+  run_cmd chmod +x "$target/devkit/shell_preflight.sh" "$target/devkit/patch.sh"
 }
 
 smoke_one() {
@@ -201,7 +227,14 @@ git_one() {
     git add .gemini/GEMINI.md devkit/shell_preflight.sh \
       devkit/shell_preflight_check.py \
       devkit/preflight_baseline_commands_bash.txt \
-      devkit/preflight_baseline_commands_powershell.txt || true
+      devkit/preflight_baseline_commands_powershell.txt \
+      contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md \
+      scripts/task_spec_validator.py \
+      devkit/task_spec_template.yaml \
+      gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md \
+      contract/PATCH_RUNTIME_CONTRACT_V1.md \
+      tests/test_patch_runtime_governance.py \
+      devkit/patch.sh || true
 
     if git diff --cached --quiet; then
       printf 'NO_CHANGES %s\n' "$target"
