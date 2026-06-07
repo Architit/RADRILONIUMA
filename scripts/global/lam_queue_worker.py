@@ -11,14 +11,27 @@ from datetime import datetime, timezone
 # Path Configuration
 BASE_DIR = Path(__file__).resolve().parents[2]
 QUEUE_FILE = BASE_DIR / ".gateway" / "queue.json"
+AMC_GRAPH_FILE = BASE_DIR / ".gateway" / "amc_graph.json"
 TELEMETRY_BUFFER = BASE_DIR / ".gateway" / "telemetry_events.jsonl"
 
-# Organ Routing Map
-ORGAN_MAP = {
-    "RADR-01": BASE_DIR / "devkit" / "patch.sh",
-    "CDKS-01": BASE_DIR.parent / "LAM-Codex_Agent" / "devkit" / "patch.sh",
-    "RDTR-01": BASE_DIR.parent / "Roaudter-agent" / "devkit" / "patch.sh",
-}
+def get_routing_map():
+    """Load dynamic routing map from AMC Graph."""
+    if not AMC_GRAPH_FILE.exists():
+        print("[APC] WARNING: AMC Graph missing. Falling back to empty map.")
+        return {}
+    
+    with AMC_GRAPH_FILE.open("r", encoding="utf-8") as f:
+        graph = json.load(f)
+    
+    # Map System ID -> patch.sh path
+    routing = {}
+    for sys_id, meta in graph.get("organs", {}).items():
+        path = Path(meta["path"])
+        patch_script = path / "devkit" / "patch.sh"
+        if patch_script.exists():
+            routing[sys_id] = patch_script
+            
+    return routing
 
 def log_event(event_type, msg, task_id=None):
     """Log structured telemetry event."""
@@ -51,7 +64,7 @@ class QueueLock:
             except:
                 pass
 
-def process_apc_task(task):
+def process_apc_task(task, routing_map):
     """Execute a task using the APC routing logic."""
     payload = task.get("payload", {})
     owner = payload.get("owner", "RADR-01")
@@ -59,7 +72,7 @@ def process_apc_task(task):
     
     print(f"[APC] Processing Task {task['id']} | Owner: {owner} | Intent: {intent}")
     
-    entrypoint = ORGAN_MAP.get(owner)
+    entrypoint = routing_map.get(owner)
     if not entrypoint or not entrypoint.exists():
         return False, f"Unknown or missing entrypoint for organ: {owner}"
     
@@ -97,6 +110,8 @@ def run_worker():
     if not QUEUE_FILE.exists():
         return
 
+    routing_map = get_routing_map()
+
     with QueueLock(QUEUE_FILE):
         try:
             with QUEUE_FILE.open("r", encoding="utf-8") as f:
@@ -128,7 +143,7 @@ def run_worker():
             
             log_event("task.start", f"Starting task {item['id']}", task_id=item['id'])
             
-            ok, msg = process_apc_task(item)
+            ok, msg = process_apc_task(item, routing_map)
             
             if ok:
                 item["status"] = "done"
