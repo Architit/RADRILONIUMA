@@ -34,9 +34,17 @@ EOF
 # Initialize
 echo "[INFO] Initializing Licensing Epoch for Ark Repositories..."
 
-# Find all git repositories under LAM_CORE
+# Find git repositories under LAM_CORE
+TARGET_FILTER="$1"
+
 find /home/architit/LAM_CORE -maxdepth 2 -name ".git" -type d | while read -r git_path; do
     repo_path=$(dirname "$git_path")
+    repo_name=$(basename "$repo_path")
+    
+    if [ -n "$TARGET_FILTER" ] && [ "$repo_name" != "$TARGET_FILTER" ] && [ "$repo_path" != "$TARGET_FILTER" ]; then
+        continue
+    fi
+
     echo "[DEBUG] Processing: $repo_path"
 
     # 1. Inject/Update LICENSE.md

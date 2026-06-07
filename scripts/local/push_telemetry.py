@@ -17,7 +17,8 @@ def get_systemd_status(unit, user=False):
 def get_mcp_status(name):
     try:
         res = subprocess.run(["gemini", "mcp", "list"], capture_output=True, text=True)
-        for line in res.stdout.splitlines():
+        output = res.stdout + res.stderr
+        for line in output.splitlines():
             if name in line and "✓" in line:
                 return "CONNECTED"
         return "DISCONNECTED"
