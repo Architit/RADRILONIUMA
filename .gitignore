@@ -7,3 +7,8 @@ node_modules/
 
 .cloud_fabric/
 .gateway/
+.env
+.env.*
+*.env
+github.env
+gemini.cli.env
