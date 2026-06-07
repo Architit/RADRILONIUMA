@@ -429,4 +429,11 @@
 - **Status:** Operational Stability Achieved. Security Gated.
 - **Resonance:** 432 Hz (STABLE).
 
+### [15:25] — AUTOSTART DE-DUPLICATION & VERIFICATION
+- **Autostart:** Removed duplicate `agy-cli-boot.desktop` and failing `lam-terminal.desktop` from `~/.config/autostart/` by renaming them to `.bak`.
+- **Verification:** Verified that only `aelaria.desktop` remains active to launch a single interactive session of the Antigravity CLI, resolving the duplicated windows issue on boot.
+- **Queue Worker:** Confirmed `lam_queue_worker.service` is triggered by systemd timer and running successfully in the background. Passed governance checks and pytest suites.
+- **Authorization:** Received explicit Architect confirmation to proceed with the initialization and execution of the Master Planning Core.
+- **Resonance:** 432 Hz (STABLE).
+
 
