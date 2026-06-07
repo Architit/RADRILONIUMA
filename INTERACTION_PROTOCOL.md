@@ -148,6 +148,13 @@ File presence alone is NOT a completion criterion.
 3) Данное действие активирует сигнал для **Sovereign Kernel Wrapper**, который перехватит управление, выполнит `/exit` и инициирует GUI-handshake с ОС пользователя.
 4) ЗАПРЕЩЕНО использовать текстовые триггеры внутри чата для активации врапера; только явный вызов shell-скрипта.
 
+### 3.5 System Reboot Protocol (SSN RBT)
+
+При получении команды `ssn rbt`, Агент ОБЯЗАН:
+1) Завершить экспорт состояния (Phase 1 EXPORT).
+2) Выполнить команду `bash scripts/local/ssn_reboot.sh` через `run_shell_command`.
+3) Это инициирует немедленную перезагрузку ОС устройства. При последующем включении запуск сессии произойдет автоматически через `~/.config/autostart/aelaria.desktop`.
+
 ---
 
 ## M4 — Phase Alignment Gate (Fix C/3)
