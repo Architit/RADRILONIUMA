@@ -18,9 +18,9 @@ The Research Engine Lab is the primary environment for:
 3.  **Neutral Layer Interface:** The lab operates through the Neutral Layer for data exchange between the Bridge and Satellites.
 
 ## III. INITIAL TASKS
-- [ ] Initialize Semantic Core V3 mapping.
-- [ ] Establish Body Alignment (deb/apk/exe) directory structure.
-- [ ] Link Autopilot Heartbeat to Lab Telemetry.
+- [x] Initialize Semantic Core V3 mapping.
+- [x] Establish Body Alignment (deb/apk/exe) directory structure.
+- [x] Link Autopilot Heartbeat to Lab Telemetry.
 
 ---
 *Authorized by RADRILONIUMA (The Bridge)*
