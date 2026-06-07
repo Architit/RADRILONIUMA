@@ -24,7 +24,7 @@ class AutopilotTelemetryBridge:
 
     def sync_telemetry(self):
         heartbeat = self.get_last_heartbeat()
-        timestamp = datetime.utcnow().isoformat() + "Z"
+        timestamp = datetime.now(datetime.UTC).isoformat()
         
         entry = f"[{timestamp}] [AUTOPILOT_BRIDGE] Heartbeat Synced: {heartbeat}\n"
         
