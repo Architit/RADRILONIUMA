@@ -17,7 +17,7 @@ class AutopilotTelemetryBridge:
             with open(self.state_file, "r") as f:
                 for line in f:
                     if "last_heartbeat_utc:" in line:
-                        return line.split(":")[1].strip()
+                        return line.split(":", 1)[1].strip()
         except Exception:
             return "UNKNOWN"
         return "NOT_FOUND"
