@@ -530,6 +530,25 @@ def cmd_enqueue_get(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_enqueue_apc(args: argparse.Namespace) -> int:
+    ensure_state()
+    item = {
+        "id": f"apc_{epoch_now()}_{os.getpid()}",
+        "type": "apc_task",
+        "status": "pending",
+        "attempts": 0,
+        "next_run_epoch": epoch_now(),
+        "created_utc": utc_now(),
+        "payload": {
+            "owner": args.owner,
+            "intent": args.intent,
+            "spec_path": str(Path(args.spec).resolve()) if args.spec else "",
+        },
+    }
+    print(json.dumps({"status": "ok", "job": queue_add(item)}, ensure_ascii=True, indent=2))
+    return 0
+
+
 def _process_one_job(policy: dict[str, Any], item: dict[str, Any]) -> tuple[bool, str]:
     try:
         payload = item.get("payload", {})
@@ -583,6 +602,9 @@ def cmd_run_queue(args: argparse.Namespace) -> int:
         if processed >= args.max_jobs:
             break
         if item.get("status") in {"done", "dead"}:
+            continue
+        if item.get("type") == "apc_task":
+            # APC tasks are handled by the global lam_queue_worker
             continue
         if int(item.get("next_run_epoch", 0)) > now:
             continue
@@ -731,6 +753,12 @@ def build_parser() -> argparse.ArgumentParser:
     enqueue_get.add_argument("--path", required=True, help="Path relative to provider root.")
     enqueue_get.add_argument("--dst", required=True, help="Local destination path.")
     enqueue_get.set_defaults(func=cmd_enqueue_get)
+
+    enqueue_apc = sub.add_parser("enqueue-apc", help="Queue autonomous multi-agent task.")
+    enqueue_apc.add_argument("--owner", required=True, help="Target organ (e.g., CDKS-01).")
+    enqueue_apc.add_argument("--intent", default="patch", help="High-level intent (patch|research|sync).")
+    enqueue_apc.add_argument("--spec", default="", help="Optional path to TASK_SPEC.")
+    enqueue_apc.set_defaults(func=cmd_enqueue_apc)
 
     run_queue = sub.add_parser("run-queue", help="Run queued jobs with retry/backoff.")
     run_queue.add_argument("--max-jobs", type=int, default=20, help="Max jobs to process in one run.")

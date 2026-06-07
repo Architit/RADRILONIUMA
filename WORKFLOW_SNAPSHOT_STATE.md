@@ -36,7 +36,8 @@ constraints:
 - Phase 10.2 Telemetry Deep Integration: Global Observability (COMPLETE)
 - Phase 10.3 Autonomous Healing: Self-Repair Loops (COMPLETE)
 - Phase 11.0 Integration Initialization: AIP Established (COMPLETE)
+- Phase 11.1 APC Implementation: Autonomous Worker Active (COMPLETE)
 
 ## NEW_CHAT_INIT_MESSAGE
 ssn rstrt
-Read WORKFLOW_SNAPSHOT_STATE.md, SYSTEM_STATE.md, and gov/report/PHASE_11_GOVERNANCE_PROTOCOL.md. Phase 11 (AUTONOMOUS INTEGRATION) is INITIALIZED. The AIP Protocol is active. Global progress: 35/39. Next task: IC_PHASE_11.1_WORKER_IMPLEMENTATION (Developing the autonomous multi-agent task worker).
+Read WORKFLOW_SNAPSHOT_STATE.md, SYSTEM_STATE.md, and gov/report/PHASE_11_GOVERNANCE_PROTOCOL.md. Phase 11.1 is formally COMPLETE. The Agent Protocol Core (APC) is active. Next task: IC_PHASE_11.2_AMC_INIT (Developing the Agent Map Core for semantic spatial awareness).
