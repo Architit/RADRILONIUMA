@@ -126,6 +126,13 @@ src_patch_sh="$ROOT_DIR/devkit/patch.sh"
 src_memory_contract="$ROOT_DIR/contract/MEMORY_CONTRACT_V1.md"
 src_transport_contract="$ROOT_DIR/contract/TRANSPORT_CONTRACT_V1.md"
 
+# Phase E/F Artifacts
+src_flow_control_contract="$ROOT_DIR/contract/FLOW_CONTROL_CONTRACT_V1.md"
+src_p0_safety_contract="$ROOT_DIR/contract/P0_SAFETY_CONTRACT_V1.md"
+
+# Phase R Artifacts
+src_research_gate_contract="$ROOT_DIR/contract/RESEARCH_GATE_CONTRACT_V1.md"
+
 # Kingdom Artifacts
 src_resident_ayas="$ROOT_DIR/kingdom/residents/AYAS-01_GOVERNOR.md"
 src_resident_radr="$ROOT_DIR/kingdom/residents/RADR-01_BRIDGE.md"
@@ -135,6 +142,8 @@ for f in "$src_gemini" "$src_preflight_sh" "$src_preflight_py" "$src_base_bash" 
          "$src_task_spec_contract" "$src_task_spec_validator" "$src_task_spec_template" "$src_owner_map" \
          "$src_patch_runtime_contract" "$src_patch_runtime_tests" "$src_patch_sh" \
          "$src_memory_contract" "$src_transport_contract" \
+         "$src_flow_control_contract" "$src_p0_safety_contract" \
+         "$src_research_gate_contract" \
          "$src_resident_ayas" "$src_resident_radr" "$src_kingdom_constitution"; do
   if [ ! -f "$f" ]; then
     echo "ERROR: source file missing: $f" >&2
@@ -214,6 +223,13 @@ sync_one() {
   run_cmd cp "$src_memory_contract" "$target/contract/MEMORY_CONTRACT_V1.md"
   run_cmd cp "$src_transport_contract" "$target/contract/TRANSPORT_CONTRACT_V1.md"
 
+  # Phase E/F sync
+  run_cmd cp "$src_flow_control_contract" "$target/contract/FLOW_CONTROL_CONTRACT_V1.md"
+  run_cmd cp "$src_p0_safety_contract" "$target/contract/P0_SAFETY_CONTRACT_V1.md"
+
+  # Phase R sync
+  run_cmd cp "$src_research_gate_contract" "$target/contract/RESEARCH_GATE_CONTRACT_V1.md"
+
   # Kingdom sync
   run_cmd cp "$src_resident_ayas" "$target/kingdom/residents/AYAS-01_GOVERNOR.md"
   run_cmd cp "$src_resident_radr" "$target/kingdom/residents/RADR-01_BRIDGE.md"
@@ -258,6 +274,9 @@ git_one() {
       devkit/patch.sh \
       contract/MEMORY_CONTRACT_V1.md \
       contract/TRANSPORT_CONTRACT_V1.md \
+      contract/FLOW_CONTROL_CONTRACT_V1.md \
+      contract/P0_SAFETY_CONTRACT_V1.md \
+      contract/RESEARCH_GATE_CONTRACT_V1.md \
       kingdom/residents/AYAS-01_GOVERNOR.md \
       kingdom/residents/RADR-01_BRIDGE.md \
       kingdom/laws/KINGDOM_CONSTITUTION_V1.md || true
