@@ -1,0 +1,9 @@
+task_id: "TASK_DIAG_003"
+phase: "PHASE_A"
+contract_match: true
+payload:
+  action: "SYS_HEALTH_SNAPSHOT"
+metadata:
+  protocol: "MIRASHANI"
+  signer: "architit"
+  target_organ: "RADR-01"
