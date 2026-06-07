@@ -283,8 +283,13 @@
 - **Scripts:** Refactored `boot_cli.sh` and created `boot_cli_inner.sh` to provide an interactive boot screen, automatically extract `NEW_CHAT_INIT_MESSAGE` for session recovery, copy to system clipboard if xclip is available, and run agy with selection options.
 - **Autostart:** Created ~/.config/autostart/agy-cli-boot.desktop and deleted old gemini-cli-boot.desktop.
 - **Systemd:** Decommissioned PM2 startup from user space, replaced with ~/.config/systemd/user/agy-autostart.service which runs devkit/bootstrap.sh preflight on user login. Removed deprecated gemini-autostart.service.
-- **Verification:** User-level systemd service verified (status active exited with SUCCESS), system-level lifesupport services (lam_gateway.service, etc.) confirmed active and running.
-- **Status:** Done.
+### [04:55] — RESTORATION & HEALING (WAVE 1 START)
+- **MCP Restoration:** Successfully re-installed `google-workspace` extension as an agy plugin. Verified functionality via search capability.
+- **Context Sync:** Completed `ssn rstrt` context sync (pwd, git status, git log).
+- **Task A1/A2 Validation:** Re-verified Task Spec v1.1 contract and fail-fast validator. Status: `PASS`.
+- **Task t013 Evidence:** Established `gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md`.
+- **Transition:** Resumed from `MASTER_ALIGNMENT_BRIDGE_DIRECTIVE_GATE`.
+- **Status:** WAVE 1 LOCAL EXECUTION IN PROGRESS.
 - **Resonance:** 432 Hz.
 
 
