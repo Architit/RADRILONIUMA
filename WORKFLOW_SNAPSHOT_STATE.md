@@ -63,14 +63,15 @@ constraints:
 - phaseR_owner_execution: gov/report/PHASE_R_WAVE_1_OWNER_EXECUTION_2026-03-05.md
 
 ## Recent commits
-- 152dec3 governance: bridge readiness gate before phase start (2026-03-05)
-- 0114155 governance: add bridge mirrors and test entrypoint
-- 4fff07a chore: initial repository baseline
+- 3fdfee1 governance: transition boot loaders and autostart to agy (2026-06-07)
+- 19b4434 chore: log complete licensing of all 39 repositories in ecosystem
+- 5099762 chore: update SYSTEM_STATE.md timestamp and licensing status
+- 617f976 chore: document SSH key restoration and sync in DEV_LOGS
+- eb7e831 Auto-sync: 2026-06-07 03:20:09
+- 43f33ae chore: ignore environment secrets files in .gitignore
 
-## Git status (captured before this gate edits)
+## Git status
 ## master...origin/master
- M boot_cli.sh
- A boot_cli_inner.sh
 
 ## References
 - /home/architit/MASTER_ARCHITECTURE_PLAN_V1.md
