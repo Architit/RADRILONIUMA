@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
-# SOVEREIGN KERNEL WRAPPER v1.1 (RE-ENGINEERED)
+# SOVEREIGN KERNEL WRAPPER v1.2 (SIGNAL-BASED)
 
-import pexpect
+import os
 import sys
 import subprocess
 import time
+import threading
 from pathlib import Path
 
 # Configuration
 AGY_PATH = "/home/architit/.local/bin/agy"
 BASE_DIR = Path(__file__).resolve().parents[2]
 STATE_FILE = BASE_DIR / "WORKFLOW_SNAPSHOT_STATE.md"
-RESTART_TRIGGER = "[SOVEREIGN_RESTART_INITIATED]"
-
-class RestartRequired(Exception):
-    pass
+SIGNAL_FILE = BASE_DIR / ".gateway" / "ssn_restart.signal"
 
 def get_init_message():
     """Extracts the initiation message from the state file."""
@@ -41,76 +39,75 @@ def request_os_permission():
     except subprocess.CalledProcessError:
         return False
 
+def trigger_exit():
+    """Physically types /exit into the terminal on behalf of the user."""
+    print("\n>>> [KERNEL] Intercepted Restart Signal. Triggering user-mode exit...")
+    try:
+        # Give a small delay to ensure terminal focus
+        time.sleep(1)
+        subprocess.run(['xdotool', 'type', '--delay', '10', '/exit'], check=True)
+        subprocess.run(['xdotool', 'key', 'Return'], check=True)
+    except Exception as e:
+        print(f">>> [KERNEL] ERROR: xdotool failed: {e}")
+
+def signal_monitor_thread(proc):
+    """Background thread that watches for the restart signal."""
+    while proc.poll() is None:
+        if SIGNAL_FILE.exists():
+            SIGNAL_FILE.unlink()
+            trigger_exit()
+            # The session will now terminate naturally
+            break
+        time.sleep(1)
+
 def run_session(auto_inject=None):
-    """Spawns a single Gemini CLI session with environment inheritance."""
+    """Spawns a single Gemini CLI session with signal monitoring."""
     print(">>> [KERNEL] Spawning Sovereign Interface...")
     
-    # Explicitly inherit and sanitize environment
-    env = os.environ.copy()
+    # Ensure signal file is clear
+    if SIGNAL_FILE.exists(): SIGNAL_FILE.unlink()
+
+    # Launch CLI
+    proc = subprocess.Popen([AGY_PATH], env=os.environ.copy())
     
-    child = pexpect.spawn(AGY_PATH, encoding='utf-8', timeout=None, env=env)
-    
-    # Define output filter to catch the trigger
-    def filter_output(b):
-        if RESTART_TRIGGER in b:
-            # We found the trigger. We can't raise an exception from here easily
-            # but we can set a flag or just write it to a temp file.
-            # However, pexpect.interact is tricky. 
-            # A more robust way: use child.expect in a loop instead of interact
-            pass
-        return b
+    # Start monitor thread
+    monitor = threading.Thread(target=signal_monitor_thread, args=(proc,), daemon=True)
+    monitor.start()
 
     if auto_inject:
-        print(f">>> [KERNEL] Auto-injecting context...")
-        time.sleep(5) # Wait for startup
-        child.sendline(auto_inject)
+        # Background injection after startup
+        def inject():
+            time.sleep(6) # Wait for prompt
+            print(f"\n>>> [KERNEL] Auto-injecting context...")
+            try:
+                subprocess.run(['xdotool', 'type', '--delay', '10', auto_inject], check=True)
+                subprocess.run(['xdotool', 'key', 'Return'], check=True)
+            except: pass
+        threading.Thread(target=inject, daemon=True).start()
 
-    # Use a custom read loop instead of interact to ensure we catch the trigger
-    try:
-        while True:
-            # Wait for either the trigger or any other output
-            idx = child.expect([RESTART_TRIGGER, pexpect.EOF, pexpect.TIMEOUT], timeout=0.1)
-            
-            if idx == 0:
-                print("\n>>> [KERNEL] Intercepted Restart Signal. Initiating protocol...")
-                # 1. Clean Exit on behalf of the user
-                child.sendline("/exit")
-                child.expect(pexpect.EOF)
-                raise RestartRequired()
-            
-            if idx == 1:
-                print("\n>>> [KERNEL] Session ended by user.")
-                return False
-                
-            # Print whatever else came out
-            sys.stdout.write(child.before)
-            sys.stdout.flush()
-            
-            # Forward user input
-            # Note: This is a simplified interactive loop. For a production-grade
-            # PTY wrapper, one should use child.interact(), but that makes
-            # interception much more complex. 
-            # Given the requirement, this loop is the most reliable for interception.
-    except RestartRequired:
-        return True
-    except Exception as e:
-        print(f"\n>>> [KERNEL] Runtime Error: {e}")
-        return False
+    # Wait for process to end
+    proc.wait()
+    
+    # Check if restart was requested via signal (indicated by thread death/file removal)
+    # But wait, we can just return a boolean based on whether we should loop
+    return True # By default, allow re-looping unless Handshake fails
 
 def main():
-    should_restart = True
     next_injection = None
     
-    while should_restart:
+    while True:
         try:
-            should_restart = run_session(auto_inject=next_injection)
+            # We always run a session
+            run_session(auto_inject=next_injection)
             
-            if should_restart:
-                if request_os_permission():
-                    next_injection = get_init_message()
-                else:
-                    print(">>> [KERNEL] Handshake Rejected. Halting Sovereign Forest.")
-                    break
+            # After each session, trigger Handshake
+            if request_os_permission():
+                next_injection = get_init_message()
+                print(">>> [KERNEL] Handshake Accepted. Re-cycling...")
+            else:
+                print(">>> [KERNEL] Handshake Rejected. Halting Sovereign Forest.")
+                break
+                
         except KeyboardInterrupt:
             print("\n>>> [KERNEL] Manual Shutdown.")
             break
