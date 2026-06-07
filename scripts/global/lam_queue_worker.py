@@ -95,7 +95,7 @@ def process_apc_task(task, routing_map):
         if "patch_file" in payload:
             cmd.extend(["--file", payload["patch_file"]])
             
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        result = subprocess.run(cmd, cwd=str(entrypoint.parent.parent), capture_output=True, text=True, timeout=300)
         
         if result.returncode == 0:
             return True, result.stdout.strip()
