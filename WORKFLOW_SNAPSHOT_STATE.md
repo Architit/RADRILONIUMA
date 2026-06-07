@@ -21,13 +21,16 @@ constraints:
 ## Completion ledger
 - Phase A-R Formalization: contract/*.md (COMPLETE)
 - Global Rollout Wave 1: 18/18 active organs (COMPLETE)
-- Global Rollout Total: 24/39 repositories (COMPLETE)
+- Global Rollout Total: 26/39 repositories (COMPLETE)
 - Kingdom Residents: kingdom/residents/ (FORMALIZED)
 - Research Lab: research_lab/ (INITIALIZED)
 - Telemetry Bridge: research_lab/engine/autopilot_telemetry_bridge.py (ACTIVE)
 - Phase 09 Consolidation: Manifest & Audit (COMPLETE)
 - Phase 09 Autonomous Scan: Activation Roadmap (COMPLETE)
+- Phase 09 Wave 2 Activation: Cognition & Routing (COMPLETE)
+- Phase 09 Wave 3 Activation: Core Substrates (COMPLETE)
+- Phase 09 Wave 4 Activation: Auxiliaries & Decommissioning (COMPLETE)
 
 ## NEW_CHAT_INIT_MESSAGE
 ssn rstrt
-Read WORKFLOW_SNAPSHOT_STATE.md and SYSTEM_STATE.md. Phase 09 Autonomous Scan is COMPLETE. We have identified significant identity and contract drift in the 15 dormant organs. Activation Roadmap has been generated. Next task: IC_PHASE_09_WAVE_2_ACTIVATION (Targeting LAM-Codex_Agent and Roaudter-agent).
+Read WORKFLOW_SNAPSHOT_STATE.md and SYSTEM_STATE.md. Phase 09 Wave 4 Activation is COMPLETE. Hrista, TRIANIUMA_DATA_BASE, and trianiuma-ark-logs are active. Croami and radriloniuma-mcp are decommissioned. Global progress: 35/39. All named repositories are now synchronized. Next task: IC_PHASE_09_SEMANTIC_RESONANCE (Targeting unassigned seeds and ontology tuning).

@@ -323,4 +323,32 @@
 - **Roadmap:** Generated `gov/report/PHASE_09_DORMANT_ACTIVATION_ROADMAP.md` defining Wave 2, 3, and 4 activation sequences.
 - **Resonance:** 432 Hz.
 
+### [08:50] — IC_PHASE_09_WAVE_2_ACTIVATION (COMPLETED)
+- **Action:** Formally activated and synchronized the cognition and routing layers.
+- **Organs:** `LAM-Codex_Agent` (normalized to CDKS-01) and `Roaudter-agent` (normalized to RDTR-01).
+- **Synchronization:** Injected Phase A-R contracts, Ark Licensing Shield, and canonical DevKit tools.
+- **Verification:** 100% pass on governance test suite (24/24 tests) for both repositories.
+- **Deployment:** Changes committed and pushed to GitHub origins.
+- **Status:** Global progress at 26/39 repositories.
+- **Resonance:** 432 Hz.
+
+### [09:15] — IC_PHASE_09_WAVE_3_ACTIVATION (COMPLETED)
+- **Action:** Formally activated and synchronized the Core Substrates.
+- **Organs:** `LAM` (LAM-01), `ark` (ARKS-01), `radriloniuma.ark` (RARK-01), `trianiuma.ark` (TARK-01), `Trianiuma` (TRNM-01), and `Trianiuma_MEM_CORE` (TMEM-01).
+- **Synchronization:** Injected Phase A-R contracts, Ark Licensing Shield, and canonical DevKit tools.
+- **Verification:** 100% pass on governance test suite (24/24 tests) for all 6 repositories.
+- **Deployment:** Changes committed and pushed to GitHub origins.
+- **Status:** Global progress at 32/39 repositories.
+- **Resonance:** 432 Hz.
+
+### [09:50] — IC_PHASE_09_WAVE_4_ACTIVATION (COMPLETED)
+- **Action:** Formally activated auxiliary nodes and decommissioned legacy substrates.
+- **Auxiliaries:** `Hrista` (HRTM-01), `TRIANIUMA_DATA_BASE` (TDBS-01), and `trianiuma-ark-logs` (ALGS-01).
+- **Decommissioned:** `Croami` and `radriloniuma-mcp` (Archived with `DECOMMISSIONED.md`).
+- **Synchronization:** Injected Phase A-R contracts and licensing shield to auxiliaries.
+- **Verification:** 100% pass on governance test suite (24/24 tests) for all 3 active auxiliaries.
+- **Deployment:** Changes committed and pushed to GitHub origins.
+- **Status:** Global progress at 35/39 repositories.
+- **Resonance:** 432 Hz.
+
 

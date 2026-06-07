@@ -31,9 +31,9 @@
 
 ## Global Alignment Status (Phases A-R)
 - active_core_organs: 18/18 (SYNC_COMPLETE)
-- verified_satellites: 6/6 (SYNC_COMPLETE)
-- global_progress: 24/39 repositories ready
-- dormancy_gate: 15 repositories (DORMANT/PENDING)
+- verified_satellites: 17/17 (SYNC_COMPLETE)
+- global_progress: 35/39 repositories ready
+- dormancy_gate: 4 repositories (PENDING_UNASSIGNED_SEEDS)
 
 ## Current Executable Package
 - wave_id: PHASE_09_PREP
