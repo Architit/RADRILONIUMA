@@ -140,6 +140,14 @@ File presence alone is NOT a completion criterion.
 Для `ssn rstrt`: environment recovery запрещён.
 Для `cld rstrt`: допускается минимальный facts-only environment sync.
 
+### 3.4 Autonomous Sovereign Handshake (Ignition)
+
+При получении интента или команды `ssn rstrt`, Агент ОБЯЗАН:
+1) Завершить экспорт состояния (Phase 1 EXPORT).
+2) Выполнить команду `bash scripts/local/trigger_ssn_rstrt.sh` через `run_shell_command`.
+3) Данное действие активирует сигнал для **Sovereign Kernel Wrapper**, который перехватит управление, выполнит `/exit` и инициирует GUI-handshake с ОС пользователя.
+4) ЗАПРЕЩЕНО использовать текстовые триггеры внутри чата для активации врапера; только явный вызов shell-скрипта.
+
 ---
 
 ## M4 — Phase Alignment Gate (Fix C/3)
