@@ -1,13 +1,10 @@
 #!/bin/bash
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
+# PHASE 11.4: CONTINUOUS SOVEREIGN BOOT WRAPPER (AUTOPILOT KERNEL)
+
 cd /home/architit/LAM_CORE/RADRILONIUMA
 
-# 1. Background Pulse (Non-destructive, silent)
-if [ -f "scripts/local/boot_protocol.sh" ]; then
-    bash scripts/local/boot_protocol.sh >/dev/null 2>&1 &
-fi
-
-# 2. Essential Preflight
+# 1. Essential Preflight (Run once at hardware-level boot)
 echo "[SYSTEM] Running preflight check..."
 source /home/architit/LAM_CORE/RADRILONIUMA/venv/bin/activate
 bash devkit/bootstrap.sh
@@ -17,8 +14,15 @@ echo -e "\e[1;35m       A E L A R I A  --  B O O T  L O A D E R     \e[0m"
 echo -e "\e[1;35m==================================================\e[0m"
 echo ""
 
-# Extract the init message for the Architect
-INIT_MSG=$(python3 -c '
+# 2. THE IMMORTAL LOOP
+while true; do
+    # Background Pulse (Non-destructive, silent)
+    if [ -f "scripts/local/boot_protocol.sh" ]; then
+        bash scripts/local/boot_protocol.sh >/dev/null 2>&1 &
+    fi
+
+    # Extract the init message for the Architect (The Semantic Context)
+    INIT_MSG=$(python3 -c '
 from pathlib import Path
 state_file = Path("WORKFLOW_SNAPSHOT_STATE.md")
 if state_file.exists():
@@ -28,28 +32,18 @@ if state_file.exists():
         print(msg)
 ')
 
-echo -e "\e[1;32m[INIT PROTOCOL]\e[0m Active session init message:"
-echo -e "\e[1;33m$INIT_MSG\e[0m"
-echo ""
+    echo -e "\e[1;32m[LOOP]\e[0m Re-initializing session with context:"
+    echo -e "\e[1;33m$INIT_MSG\e[0m"
+    echo ""
 
-if command -v xclip >/dev/null 2>&1; then
-    echo "$INIT_MSG" | xclip -selection clipboard
-    echo -e "\e[1;32m[CLIPBOARD]\e[0m Copied to clipboard successfully!"
-fi
+    # 3. INTERACTIVE INJECTION (The Re-Birth)
+    # Use --prompt-interactive (-i) to send the message from the "user" name
+    /home/architit/.local/bin/agy -i "$INIT_MSG"
 
-echo ""
-echo -e "\e[1;36mSelect mode:\e[0m"
-echo -e "  [1] Start a NEW conversation (default - recommended for ssn rstrt)"
-echo -e "  [2] CONTINUE the last conversation"
-read -t 15 -p "Enter choice [1-2] (default: 1, auto-select in 15s): " choice
+    # 4. COOL-DOWN (Prevent rapid crashing loops)
+    echo -e "\n\e[1;31m[SYSTEM]\e[0m Session terminated. Re-looping in 2s...\e[0m"
+    sleep 2
+done
 
-if [[ "$choice" == "2" ]]; then
-    echo "Resuming last conversation..."
-    /home/architit/.local/bin/agy -c
-else
-    echo "Starting new conversation..."
-    /home/architit/.local/bin/agy
-fi
-
-# Prevent terminal closure
+# Prevent terminal closure if loop is manually broken
 exec bash
