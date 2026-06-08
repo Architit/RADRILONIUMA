@@ -155,3 +155,23 @@
 [2026-06-07T16:20:52.234784] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 [2026-06-07T16:20:52.234820] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
 [2026-06-07T16:20:52.315781] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.
+[2026-06-08T02:01:04.005909] [RADR_NEXUS] [SYS_BOOT] BIOS/Boot Telemetry Initialization Started
+[2026-06-08T02:01:04.008776] [RADR_NEXUS] [INFO] Scanning primary USB buses for connected organs/devices...
+[2026-06-08T02:01:04.047250] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-06-08T02:01:04.047332] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 002: ID 1532:0090 Razer USA, Ltd Razer Naga Pro
+[2026-06-08T02:01:04.047376] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 003: ID 0bda:58c7 Realtek Semiconductor Corp. Integrated_Webcam_HD
+[2026-06-08T02:01:04.047417] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 004: ID 8087:0a2b Intel Corp. Bluetooth wireless interface
+[2026-06-08T02:01:04.047454] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 005: ID 0a5c:5832 Broadcom Corp. BCM5880 Secure Applications Processor Smartcard reader
+[2026-06-08T02:01:04.047489] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-06-08T02:01:04.047528] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
+[2026-06-08T02:01:04.124510] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.
+[2026-06-08T02:02:49.709975] [RADR_NEXUS] [SYS_BOOT] BIOS/Boot Telemetry Initialization Started
+[2026-06-08T02:02:49.716887] [RADR_NEXUS] [INFO] Scanning primary USB buses for connected organs/devices...
+[2026-06-08T02:02:49.829315] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-06-08T02:02:49.829417] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 002: ID 1532:0090 Razer USA, Ltd Razer Naga Pro
+[2026-06-08T02:02:49.829461] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 003: ID 0bda:58c7 Realtek Semiconductor Corp. Integrated_Webcam_HD
+[2026-06-08T02:02:49.829499] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 004: ID 8087:0a2b Intel Corp. Bluetooth wireless interface
+[2026-06-08T02:02:49.829539] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 005: ID 0a5c:5832 Broadcom Corp. BCM5880 Secure Applications Processor Smartcard reader
+[2026-06-08T02:02:49.829580] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-06-08T02:02:49.829618] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
+[2026-06-08T02:02:49.943269] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.
