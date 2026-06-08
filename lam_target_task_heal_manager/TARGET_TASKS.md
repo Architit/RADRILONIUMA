@@ -1,6 +1,6 @@
 # ⚜️ SOVEREIGN FOREST: TARGETS & MISSIONS MATRIX ⚜️
 
-*Generated at (UTC): 2026-06-08T00:49:40Z*
+*Generated at (UTC): 2026-06-08T00:53:25Z*
 
 > [!NOTE]
 > This matrix is dynamically managed by `lam_target_task_heal_manager` to scan the active state of the Sovereign Forest organs and suggest tasks, campaigns, and healing walkthroughs.
@@ -28,30 +28,32 @@ Here is the list of suggested tasks to advance the current campaign:
 
 ## III.B SOVEREIGN FOREST: 24 TARGET ORGAN TASKS (MINIMAL COMPLIANCE)
 These 24 tasks are dynamically generated to ensure active vital status (heartbeat/breath) across the 24 primary MCP server and organ nodes:
-- [ ] **Task 01 (AYAS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_ayas-01.yaml) — Verify SSH/GCR credentials mapping and run preflight check.
-- [ ] **Task 02 (LRPT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lrpt-01.yaml) — Audit local devkit version and environment baseline.
-- [ ] **Task 03 (VLRM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vlrm-01.yaml) — Generate updated ecosystem topology map.
-- [ ] **Task 04 (CRTD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_crtd-01.yaml) — Run core health and verify system state sync.
-- [ ] **Task 05 (TSPT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_tspt-01.yaml) — Clean up old task specification cache.
-- [ ] **Task 06 (FMLN-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_fmln-01.yaml) — Verify system transition state constraints.
-- [ ] **Task 07 (GLKT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_glkt-01.yaml) — Verify logger formatting and telemetry stream.
-- [ ] **Task 08 (JNSR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_jnsr-01.yaml) — Record the current Phase 11.4 session log entry.
-- [ ] **Task 09 (KTRD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_ktrd-01.yaml) — Run tool preflight baseline sweeps.
-- [ ] **Task 10 (LVNS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lvns-01.yaml) — Verify task queue lease TTL and timeouts.
-- [ ] **Task 11 (MLVD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_mlvd-01.yaml) — Audit package imports for cognitive scripts.
-- [ ] **Task 12 (XNVR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_xnvr-01.yaml) — Verify AMC graph consistency and links.
-- [ ] **Task 13 (PLTS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_plts-01.yaml) — Verify compliance with interaction protocol.
-- [ ] **Task 14 (SRZJ-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_srzj-01.yaml) — Verify zero-trust check constraints on ingress.
-- [ ] **Task 15 (VRBN-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vrbn-01.yaml) — Audit timestamp-utc formatting across files.
-- [ ] **Task 16 (VRLS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vrls-01.yaml) — Verify active target lists in rollout tools.
-- [ ] **Task 17 (ZRDG-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_zrdg-01.yaml) — Verify matrix routing assignments.
-- [ ] **Task 18 (RBTK-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rbtk-01.yaml) — Run genesis validation test suite.
-- [ ] **Task 19 (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01.yaml) — Step 3: Run comprehensive resource and memory performance audit for CDKS-01.
-- [ ] **Task 20 (RDTR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rdtr-01.yaml) — Audit LLM routing provider endpoints.
-- [ ] **Task 21 (LAM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lam-01.yaml) — Verify primary mind core is online.
-- [ ] **Task 22 (ARKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_arks-01.yaml) — Secure database backup integrity.
-- [ ] **Task 23 (TRNM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_trnm-01.yaml) — Audit kingdom constitution compliance.
-- [ ] **Task 24 (ALGS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_algs-01.yaml) — Run global log de-duplication sweep.
+- [ ] **Task 01 (AYAS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_ayas-01_step1.yaml) — Verify SSH/GCR credentials mapping and run preflight check.
+- [ ] **Task 02 (LRPT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lrpt-01_step1.yaml) — Audit local devkit version and environment baseline.
+- [ ] **Task 03 (VLRM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vlrm-01_step1.yaml) — Generate updated ecosystem topology map.
+- [ ] **Task 04 (CRTD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_crtd-01_step1.yaml) — Run core health and verify system state sync.
+- [ ] **Task 05 (TSPT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_tspt-01_step1.yaml) — Clean up old task specification cache.
+- [ ] **Task 06 (FMLN-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_fmln-01_step1.yaml) — Verify system transition state constraints.
+- [ ] **Task 07 (GLKT-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_glkt-01_step1.yaml) — Verify logger formatting and telemetry stream.
+- [ ] **Task 08 (JNSR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_jnsr-01_step1.yaml) — Record the current Phase 11.4 session log entry.
+- [ ] **Task 09 (KTRD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_ktrd-01_step1.yaml) — Run tool preflight baseline sweeps.
+- [ ] **Task 10 (LVNS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lvns-01_step1.yaml) — Verify task queue lease TTL and timeouts.
+- [ ] **Task 11 (MLVD-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_mlvd-01_step1.yaml) — Audit package imports for cognitive scripts.
+- [ ] **Task 12 (XNVR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_xnvr-01_step1.yaml) — Verify AMC graph consistency and links.
+- [ ] **Task 13 (PLTS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_plts-01_step1.yaml) — Verify compliance with interaction protocol.
+- [ ] **Task 14 (SRZJ-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_srzj-01_step1.yaml) — Verify zero-trust check constraints on ingress.
+- [ ] **Task 15 (VRBN-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vrbn-01_step1.yaml) — Audit timestamp-utc formatting across files.
+- [ ] **Task 16 (VRLS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vrls-01_step1.yaml) — Verify active target lists in rollout tools.
+- [ ] **Task 17 (ZRDG-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_zrdg-01_step1.yaml) — Verify matrix routing assignments.
+- [ ] **Task 18 (RBTK-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rbtk-01_step1.yaml) — Run genesis validation test suite.
+- [x] **Task 19a (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step1.yaml) — Run Codex self-refinement checks.
+- [x] **Task 19b (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step2.yaml) — Step 2: Verify post-execution telemetry and check for stability after initial baseline for CDKS-01.
+- [ ] **Task 19c (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step3.yaml) — Step 3: Run comprehensive resource and memory performance audit for CDKS-01.
+- [ ] **Task 20 (RDTR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rdtr-01_step1.yaml) — Audit LLM routing provider endpoints.
+- [ ] **Task 21 (LAM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lam-01_step1.yaml) — Verify primary mind core is online.
+- [ ] **Task 22 (ARKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_arks-01_step1.yaml) — Secure database backup integrity.
+- [ ] **Task 23 (TRNM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_trnm-01_step1.yaml) — Audit kingdom constitution compliance.
+- [ ] **Task 24 (ALGS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_algs-01_step1.yaml) — Run global log de-duplication sweep.
 
 ## IV. SOVEREIGN FOREST ORGAN STATES
 Currently tracking **36** organs (**36** Online, **0** Offline/External):
@@ -99,5 +101,4 @@ Currently tracking **36** organs (**36** Online, **0** Offline/External):
 ```bash
 ## master...origin/master
  M lam_target_task_heal_manager/manager.py
- M scripts/global/lam_queue_worker.py
 ```
