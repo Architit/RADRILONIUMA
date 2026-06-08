@@ -1,6 +1,6 @@
 spec_version: "1.1"
-task_id: "apc_cdks_01_step3_compliance"
-goal: "Execute VAVIMA compliance task for CDKS-01: Step 3: Run comprehensive resource and memory performance audit for CDKS-01."
+task_id: "apc_cdks_01_step4_compliance"
+goal: "Execute VAVIMA compliance task for CDKS-01: Step 4: Perform advanced deep-dive safety and boundary verification for CDKS-01."
 constraints:
   derivation_only: true
   code_injection_forbidden: true
@@ -8,7 +8,7 @@ preconditions:
   - type: file_exists
     path: "./devkit/patch.sh"
 artifacts:
-  patch_path: "devkit/patches/cdks-01_step3_compliance.patch"
+  patch_path: "devkit/patches/cdks-01_step4_compliance.patch"
   patch_sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 limits:
   timeout_ms: 30000
