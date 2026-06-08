@@ -1,6 +1,6 @@
 # ⚜️ SOVEREIGN FOREST: TARGETS & MISSIONS MATRIX ⚜️
 
-*Generated at (UTC): 2026-06-08T00:37:07Z*
+*Generated at (UTC): 2026-06-08T00:40:08Z*
 
 > [!NOTE]
 > This matrix is dynamically managed by `lam_target_task_heal_manager` to scan the active state of the Sovereign Forest organs and suggest tasks, campaigns, and healing walkthroughs.
@@ -71,4 +71,10 @@ Currently tracking **36** organs (**36** Online, **0** Offline/External):
 ## V. GIT STATE & WORKSPACE COMPLIANCE
 ```bash
 ## master...origin/master
+ D data/local/mcp_tmp/tmp_TASK_DIAG_001.yaml
+ D data/local/mcp_tmp/tmp_TASK_DIAG_002.yaml
+ D data/local/mcp_tmp/tmp_TASK_DIAG_003.yaml
+ D data/local/mcp_tmp/tmp_TASK_DIAG_004.yaml
+ D data/local/mcp_tmp/tmp_TASK_HEALTH_SNAPSHOT_20260606.yaml
+?? lam_target_task_heal_manager/cleaner.py
 ```

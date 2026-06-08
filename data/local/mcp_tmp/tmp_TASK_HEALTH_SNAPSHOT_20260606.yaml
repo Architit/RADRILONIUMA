@@ -1,9 +1,0 @@
-task_id: "TASK_HEALTH_SNAPSHOT_20260606"
-phase: "PHASE_A"
-contract_match: true
-payload:
-  action: "SYS_HEALTH_SNAPSHOT"
-metadata:
-  protocol: "MIRASHANI"
-  signer: "AYAS-01"
-  target_organ: "RADR-01"

@@ -1,8 +1,0 @@
-task_id: "TASK_DIAG_002"
-phase: "PHASE_A"
-contract_match: true
-payload:
-  action: "SYS_HEALTH_SNAPSHOT"
-metadata:
-  protocol: "MIRASHANI"
-  signer: "architit"
