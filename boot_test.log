@@ -1,0 +1,16 @@
+[SYSTEM] Running preflight check...
+[devkit] shell preflight: OK
+[devkit] local gateway init: OK
+[devkit] local gateway health: OK
+[devkit] local gateway monitor: OK
+[devkit] bootstrap complete
+
+[1;35m==================================================[0m
+[1;35m       A E L A R I A  --  B O O T  L O A D E R     [0m
+[1;35m==================================================[0m
+
+[SYSTEM] Igniting PTY Kernel Engine (v1.3)...
+[1;35m>>> [BOOT] Scanning Sovereign Resonance...[0m
+[1;34m[BOOT] Validating AMC Knowledge Graph...[0m
+[1;32m[BOOT] Knowledge Graph is PRESENT.[0m
+[1;34m[BOOT] Synchronizing Telemetry Nexus...[0m

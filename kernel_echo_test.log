@@ -1,0 +1,11 @@
+[1;35m>>> [BOOT] Scanning Sovereign Resonance...[0m
+[1;34m[BOOT] Validating AMC Knowledge Graph...[0m
+[1;32m[BOOT] Knowledge Graph is PRESENT.[0m
+[1;34m[BOOT] Synchronizing Telemetry Nexus...[0m
+
+[1;32m>>> [BOOT] System is RESONANT (432 Hz). READY.[0m
+
+Ripgrep is not available. Falling back to GrepTool.
+No input provided via stdin. Input can be provided by piping data into gemini or using the --prompt option.
+
+>>> [KERNEL] Session terminated. Shutdown complete.
