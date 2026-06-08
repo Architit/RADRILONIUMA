@@ -1,0 +1,9 @@
+task_id: "DIAG_RADR_01_011"
+phase: "PHASE_A"
+contract_match: true
+payload:
+  action: "SYS_HEALTH_SNAPSHOT_A1"
+metadata:
+  protocol: "MIRASHANI"
+  signer: "architit"
+  target_organ: "LVNS"
