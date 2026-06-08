@@ -1,0 +1,17 @@
+0 verbose cli /usr/bin/node /usr/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/architit/LAM_CORE/RADRILONIUMA/.npmrc
+5 silly config load:file:/home/architit/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm exec @modelcontextprotocol/server-github
+8 verbose argv "exec" "--yes" "--" "@modelcontextprotocol/server-github"
+9 verbose logfile logs-max:10 dir:/home/architit/.npm/_logs/2026-06-08T13_10_55_527Z-
+10 verbose logfile /home/architit/.npm/_logs/2026-06-08T13_10_55_527Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly logfile done cleaning log files
+14 http fetch GET 200 https://registry.npmjs.org/@modelcontextprotocol%2fserver-github 222ms (cache revalidated)
+15 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+16 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
