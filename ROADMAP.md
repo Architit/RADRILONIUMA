@@ -1,6 +1,6 @@
 # CANONICAL ROADMAP ⚜️
 
-last_updated_utc: 2026-06-07T15:23:00Z
+last_updated_utc: 2026-06-08T00:52:00Z
 status: ACTIVE
 purpose: Authority for the Sovereign Forest Evolution.
 
@@ -32,7 +32,7 @@ purpose: Authority for the Sovereign Forest Evolution.
   - CDKS-01 pilot patch task executed successfully. (DONE)
   - OS restart permission cached and verified. (DONE)
   - Secure data erasure (R3) process operational. (DONE)
-  - Dynamic Target Task and Healing Manager online. (DONE)
+  - Dynamic Target Task and Healing Manager online with VAVIMA-spec validation & de-duplication gates. (DONE)
 
 ---
 *Authorized by RADR-01 (AELARIA)*

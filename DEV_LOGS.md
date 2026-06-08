@@ -485,3 +485,12 @@
 - **Data Erasure:** Implemented the approved zero-out secure deletion procedure in `lam_target_task_heal_manager/cleaner.py` and wiped 5 completed transient R3 YAML specs.
 - **Status:** Phase 11.0 marked COMPLETE. Phase 11.4 ACTIVE. 36/36 organs synchronized and online.
 - **Resonance:** 432 Hz (PURE).
+
+### [02:51] — VAVIMA TASK SPECIFICATION & DE-DUPLICATION PROTECTIONS
+- **Action:** Upgraded target task generation and worker execution safety to prevent repeat runs and ensure strict VAVIMA spec compliance.
+- **Manager:** Updated `lam_target_task_heal_manager/manager.py` to dynamically generate tasks. If a task has been completed in the past, it advances the task step; if it has failed or has duplicated pending runs, it marks it with `🚨 [DOUBLE ATTENTION Required]`. It writes a fully valid VAVIMA task spec YAML file in `lam_target_task_heal_manager/specs/` and validates it against `scripts/task_spec_validator.py`.
+- **Worker:** Enhanced `scripts/global/lam_queue_worker.py` to identify repeated or previously failed pending tasks at runtime, executing strict validation checks (spec file format, SHA-256 hash match, and patch script presence) before any command execution.
+- **Rollout:** Synchronized all modifications across all 36 active target repositories in the ecosystem, and successfully validated the governance test suite.
+- **Status:** Complete. 24/24 VAVIMA compliance specs successfully generated, validated, and linked.
+- **Resonance:** 432 Hz (PURE).
+
