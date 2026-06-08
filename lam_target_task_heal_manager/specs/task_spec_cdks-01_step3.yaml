@@ -1,6 +1,6 @@
 spec_version: "1.1"
 task_id: "apc_cdks_01_step3_compliance"
-goal: "Execute VAVIMA compliance task for CDKS-01: Step 3: Run comprehensive resource and memory performance audit for CDKS-01."
+goal: "Execute VAVIMA compliance task for CDKS-01: 🚨 [DOUBLE ATTENTION Required] Fix execution bug. Previous error: `[patch] ERROR: empty patch input`. Task: Run Codex self-refinement checks."
 constraints:
   derivation_only: true
   code_injection_forbidden: true

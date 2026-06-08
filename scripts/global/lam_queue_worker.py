@@ -154,9 +154,38 @@ def run_worker():
             if item.get("type") != "apc_task":
                 continue
 
-            # Double Attention Check for repeated pending tasks or tasks with history of failure
             owner = item.get("payload", {}).get("owner", "unknown")
             intent = item.get("payload", {}).get("intent", "unknown")
+
+            # Resolve missing sha256 or patch_file from task spec if present
+            spec_path = item.get("payload", {}).get("spec_path")
+            if spec_path and Path(spec_path).exists():
+                try:
+                    import yaml
+                    with open(spec_path, "r", encoding="utf-8") as sf:
+                        spec_data = yaml.safe_load(sf) or {}
+                except Exception:
+                    try:
+                        py = "import json,sys,yaml; print(json.dumps(yaml.safe_load(sys.stdin.read())))"
+                        proc = subprocess.run(["python3", "-c", py], input=Path(spec_path).read_text(encoding="utf-8"), capture_output=True, text=True)
+                        spec_data = json.loads(proc.stdout) if proc.returncode == 0 else {}
+                    except Exception:
+                        spec_data = {}
+                        
+                if spec_data:
+                    artifacts = spec_data.get("artifacts", {})
+                    if "sha256" not in item["payload"] or not item["payload"]["sha256"]:
+                        item["payload"]["sha256"] = artifacts.get("patch_sha256")
+                    if "patch_file" not in item["payload"] or not item["payload"]["patch_file"]:
+                        raw_patch_path = artifacts.get("patch_path")
+                        if raw_patch_path:
+                            entrypoint = routing_map.get(owner)
+                            if entrypoint:
+                                organ_root = entrypoint.parent.parent
+                                resolved_patch = (organ_root / raw_patch_path).resolve()
+                                item["payload"]["patch_file"] = str(resolved_patch)
+
+            # Double Attention Check for repeated pending tasks or tasks with history of failure
             is_repeated = False
             last_failed_run = None
             
