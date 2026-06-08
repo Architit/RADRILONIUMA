@@ -115,7 +115,7 @@ def main():
                     SIGNAL_FILE.unlink()
                     restart_cycle[0] = True
                     
-                    inject_keys("/exit\n")
+                    inject_keys("/exit\r\n")
                     time.sleep(5) 
                     
                     if proc.poll() is None:
@@ -136,7 +136,7 @@ def main():
             def rebirth():
                 time.sleep(8)
                 logging.info("Step 3/3: Re-birth injection...")
-                inject_keys(msg + "\n")
+                inject_keys(msg + "\r\n")
             threading.Thread(target=rebirth, daemon=True).start()
             continue
         else:
