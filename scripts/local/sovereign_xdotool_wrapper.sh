@@ -4,6 +4,15 @@
 
 STATE_FILE="/home/architit/LAM_CORE/RADRILONIUMA/WORKFLOW_SNAPSHOT_STATE.md"
 
+# Auto-detect Xwayland auth for xdotool
+export DISPLAY="${DISPLAY:-:0}"
+XWAYLAND_AUTH=$(find /run/user/$(id -u) -name ".mutter-Xwaylandauth*" 2>/dev/null | head -n 1)
+if [ -n "$XWAYLAND_AUTH" ]; then
+    export XAUTHORITY="$XWAYLAND_AUTH"
+else
+    export XAUTHORITY="${XAUTHORITY:-$HOME/.Xauthority}"
+fi
+
 echo "[WRAPPER] Background Wrapper activated. Monitoring for Handshake..."
 sleep 1
 
