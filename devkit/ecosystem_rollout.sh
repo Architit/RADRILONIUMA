@@ -121,6 +121,7 @@ src_owner_map="$ROOT_DIR/gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-
 src_patch_runtime_contract="$ROOT_DIR/contract/PATCH_RUNTIME_CONTRACT_V1.md"
 src_patch_runtime_tests="$ROOT_DIR/tests/test_patch_runtime_governance.py"
 src_patch_sh="$ROOT_DIR/devkit/patch.sh"
+src_bootstrap_sh="$ROOT_DIR/devkit/bootstrap.sh"
 
 # Phase C/D Artifacts
 src_memory_contract="$ROOT_DIR/contract/MEMORY_CONTRACT_V1.md"
@@ -140,7 +141,7 @@ src_kingdom_constitution="$ROOT_DIR/kingdom/laws/KINGDOM_CONSTITUTION_V1.md"
 
 for f in "$src_gemini" "$src_preflight_sh" "$src_preflight_py" "$src_base_bash" "$src_base_pwsh" \
          "$src_task_spec_contract" "$src_task_spec_validator" "$src_task_spec_template" "$src_owner_map" \
-         "$src_patch_runtime_contract" "$src_patch_runtime_tests" "$src_patch_sh" \
+         "$src_patch_runtime_contract" "$src_patch_runtime_tests" "$src_patch_sh" "$src_bootstrap_sh" \
          "$src_memory_contract" "$src_transport_contract" \
          "$src_flow_control_contract" "$src_p0_safety_contract" \
          "$src_research_gate_contract" \
@@ -218,6 +219,7 @@ sync_one() {
   run_cmd cp "$src_patch_runtime_contract" "$target/contract/PATCH_RUNTIME_CONTRACT_V1.md"
   run_cmd cp "$src_patch_runtime_tests" "$target/tests/test_patch_runtime_governance.py"
   run_cmd cp "$src_patch_sh" "$target/devkit/patch.sh"
+  run_cmd cp "$src_bootstrap_sh" "$target/devkit/bootstrap.sh"
 
   # Phase C/D sync
   run_cmd cp "$src_memory_contract" "$target/contract/MEMORY_CONTRACT_V1.md"
@@ -235,7 +237,7 @@ sync_one() {
   run_cmd cp "$src_resident_radr" "$target/kingdom/residents/RADR-01_BRIDGE.md"
   run_cmd cp "$src_kingdom_constitution" "$target/kingdom/laws/KINGDOM_CONSTITUTION_V1.md"
 
-  run_cmd chmod +x "$target/devkit/shell_preflight.sh" "$target/devkit/patch.sh"
+  run_cmd chmod +x "$target/devkit/shell_preflight.sh" "$target/devkit/patch.sh" "$target/devkit/bootstrap.sh"
 }
 
 smoke_one() {
