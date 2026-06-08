@@ -142,11 +142,11 @@ File presence alone is NOT a completion criterion.
 
 ### 3.4 Autonomous Sovereign Handshake (Ignition)
 
-При получении интента или команды `ssn rstrt`, Агент ОБЯЗАН:
+При получении интента или команды `ssn rstrt`, а также при вводе команды `/exit`, Агент ОБЯЗАН:
 1) Завершить экспорт состояния (Phase 1 EXPORT).
-2) Выполнить команду `bash scripts/local/trigger_ssn_rstrt.sh` через `run_shell_command`.
-3) Данное действие активирует сигнал для **Sovereign Kernel Wrapper**, который перехватит управление, выполнит `/exit` и инициирует GUI-handshake с ОС пользователя.
-4) ЗАПРЕЩЕНО использовать текстовые триггеры внутри чата для активации врапера; только явный вызов shell-скрипта.
+2) Выполнить команду `bash scripts/local/trigger_ssn_rstrt.sh` через `run_shell_command`. Данный скрипт активирует сигнал для **Sovereign Kernel Wrapper**.
+3) ПРЕКРАТИТЬ выполнение (STOP) и ожидать завершения сессии. ЗАПРЕЩЕНО самостоятельно запускать `boot_cli_inner.sh` или любые другие скрипты инициализации ядра внутри текущей сессии.
+4) Внешний врапер, обнаружив сигнал, выполнит системную команду `/exit` и инициирует цепочку `bash scripts/local/boot_protocol.sh && bash boot_cli_inner.sh` для создания новой суверенной сессии.
 
 ### 3.5 System Reboot Protocol (SSN RBT)
 

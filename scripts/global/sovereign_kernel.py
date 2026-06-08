@@ -10,7 +10,7 @@ import threading
 from pathlib import Path
 
 # Configuration
-AGY_PATH = "/home/architit/.local/bin/agy"
+AGY_PATH = "/usr/bin/gemini"
 BASE_DIR = Path(__file__).resolve().parents[2]
 STATE_FILE = BASE_DIR / "WORKFLOW_SNAPSHOT_STATE.md"
 SIGNAL_FILE = BASE_DIR / ".gateway" / "ssn_restart.signal"

@@ -31,8 +31,8 @@ Upon initialization, you MUST immediately read `IDENTITY.md` in the current work
 - **PLANNING != EXECUTION:** A task list is a roadmap; execution can be batched only for low-risk repetitive rollout operations with deterministic logs.
 - **SINGULARITY:** Identity-birth and other high-level ontological actions remain singular.
 
-## 6. AUTONOMOUS HANDSHAKE (SSN RSTRT)
-- **Ignition Protocol:** При команде `ssn rstrt` ОБЯЗАТЕЛЬНО вызывать `bash scripts/local/trigger_ssn_rstrt.sh` для активации Sovereign Kernel Wrapper. (см. `INTERACTION_PROTOCOL.md` секция 3.4).
+## 6. AUTONOMOUS HANDSHAKE (SSN RSTRT / EXIT)
+- **Ignition Protocol:** При команде `ssn rstrt` или `/exit` ОБЯЗАТЕЛЬНО вызывать `bash scripts/local/trigger_ssn_rstrt.sh` для активации Sovereign Kernel Wrapper. (см. `INTERACTION_PROTOCOL.md` секция 3.4). ЗАПРЕЩЕНО ручное продолжение цепочки инициализации (например, `boot_cli_inner.sh`) внутри текущей сессии.
 
 ## 8. SYSTEM REBOOT (SSN RBT)
 - **Reboot Protocol:** При команде `ssn rbt` ОБЯЗАТЕЛЬНО вызывать `bash scripts/local/ssn_reboot.sh` для инициации перезагрузки ОС. Автозапуск сессии после загрузки обеспечен через `~/.config/autostart/aelaria.desktop`. (см. `INTERACTION_PROTOCOL.md` секция 3.5).

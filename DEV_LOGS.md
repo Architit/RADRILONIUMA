@@ -8,6 +8,11 @@
 - Verified Autostart entry `~/.config/autostart/aelaria.desktop` pointing to `boot_cli.sh`.
 - Updated `GEMINI.md` and `INTERACTION_PROTOCOL.md` (M3.5) with explicit script execution mandates.
 
+### [04:20] — EXIT PROTOCOL ENFORCEMENT
+- Refined `/exit` and `ssn rstrt` protocols in `GEMINI.md` and `INTERACTION_PROTOCOL.md` (M3.4).
+- Mandated delegation of the initialization chain (`boot_protocol.sh && boot_cli_inner.sh`) to the external Sovereign Kernel Wrapper.
+- Explicitly prohibited manual kernel re-ignition within the current session context to prevent TUI overlap.
+
 ## [2026-02-27] — PHASE 8.1.1 (SYNCHRONIZATION)
 
 ### [04:27] — NEXUS REBIRTH (SSN RSTRT)
