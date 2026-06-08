@@ -72,11 +72,31 @@ def process_apc_task(task, routing_map):
     
     print(f"[APC] Processing Task {task['id']} | Owner: {owner} | Intent: {intent}")
     
+    if intent == "patch":
+        if "sha256" not in payload or not payload["sha256"]:
+            return False, "Validation failed: 'sha256' payload field is required for 'patch' intent"
+        if "patch_file" not in payload or not payload["patch_file"]:
+            return False, "Validation failed: 'patch_file' payload field is required for 'patch' intent"
+    
     entrypoint = routing_map.get(owner)
     if not entrypoint or not entrypoint.exists():
         return False, f"Unknown or missing entrypoint for organ: {owner}"
     
     try:
+        if intent == "research":
+            organ_root = entrypoint.parent.parent
+            start_script = organ_root / "start.py"
+            if start_script.exists():
+                print(f"[APC] Executing research script for {owner}: start.py")
+                cmd = [sys.executable, str(start_script)]
+                result = subprocess.run(cmd, cwd=str(organ_root), capture_output=True, text=True, timeout=300)
+                if result.returncode == 0:
+                    return True, result.stdout.strip()
+                else:
+                    return False, f"Research execution failed: {result.stderr.strip() or result.stdout.strip()}"
+            else:
+                return False, f"Research intent not supported: start.py missing in {owner}"
+
         # Standard execution via patch.sh if intent is patch/sync
         cmd = ["bash", str(entrypoint)]
         # Add task context if available
@@ -133,6 +153,100 @@ def run_worker():
             # For now, let's focus on apc_task
             if item.get("type") != "apc_task":
                 continue
+
+            # Double Attention Check for repeated pending tasks or tasks with history of failure
+            owner = item.get("payload", {}).get("owner", "unknown")
+            intent = item.get("payload", {}).get("intent", "unknown")
+            is_repeated = False
+            last_failed_run = None
+            
+            for past_item in items:
+                if past_item != item and past_item.get("payload", {}).get("owner") == owner and past_item.get("payload", {}).get("intent") == intent:
+                    is_repeated = True
+                    if past_item.get("status") == "error":
+                        last_failed_run = past_item
+            
+            if is_repeated or last_failed_run:
+                print(f"[APC] [DOUBLE ATTENTION] Task {item['id']} for organ {owner} (intent={intent}) is repeated or has a history of failure.")
+                log_event("task.repeated_warning", f"Repeated task detected for {owner} (intent={intent})", task_id=item['id'])
+                
+                # Perform extra validation pre-checks to fix and prevent repeated failures
+                entrypoint = routing_map.get(owner)
+                if not entrypoint or not entrypoint.exists():
+                    msg = f"Double Attention Pre-check Failure: Devkit patch.sh entrypoint does not exist at {entrypoint} for organ {owner}"
+                    item["status"] = "error"
+                    item["error_msg"] = msg
+                    log_event("task.error", msg, task_id=item['id'])
+                    processed_count += 1
+                    break
+                
+                if intent == "patch":
+                    spec_path = item.get("payload", {}).get("spec_path")
+                    if not spec_path:
+                        msg = "Double Attention Pre-check Failure: 'spec_path' is required for patch intent."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        processed_count += 1
+                        break
+                    
+                    spec_file = Path(spec_path)
+                    if not spec_file.exists():
+                        msg = f"Double Attention Pre-check Failure: Task spec file does not exist at {spec_path}."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        processed_count += 1
+                        break
+                    
+                    # Validate the VAVIMA task spec via task_spec_validator.py
+                    validator_script = BASE_DIR / "scripts" / "task_spec_validator.py"
+                    if validator_script.exists():
+                        cmd = [sys.executable, str(validator_script), "--file", str(spec_file)]
+                        res = subprocess.run(cmd, capture_output=True, text=True)
+                        if res.returncode != 0:
+                            msg = f"Double Attention Pre-check Failure: Task spec failed VAVIMA validation: {res.stdout.strip() or res.stderr.strip()}"
+                            item["status"] = "error"
+                            item["error_msg"] = msg
+                            log_event("task.error", msg, task_id=item['id'])
+                            processed_count += 1
+                            break
+                    
+                    # Validate SHA-256 and patch file existence/hash to prevent crash
+                    patch_file = item.get("payload", {}).get("patch_file")
+                    expected_sha = item.get("payload", {}).get("sha256")
+                    if not patch_file or not expected_sha:
+                        msg = "Double Attention Pre-check Failure: Both 'patch_file' and 'sha256' are required for patch intent."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        processed_count += 1
+                        break
+                    
+                    pf = Path(patch_file)
+                    if not pf.exists():
+                        msg = f"Double Attention Pre-check Failure: Patch file does not exist at {patch_file}."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        processed_count += 1
+                        break
+                    
+                    import hashlib
+                    h = hashlib.sha256()
+                    with pf.open("rb") as f:
+                        for chunk in iter(lambda: f.read(65536), b""):
+                            h.update(chunk)
+                    actual_sha = h.hexdigest()
+                    if actual_sha != expected_sha:
+                        msg = f"Double Attention Pre-check Failure: Patch SHA-256 mismatch. Expected: {expected_sha}, Actual: {actual_sha}."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        processed_count += 1
+                        break
+
+                print(f"[APC] [DOUBLE ATTENTION] All pre-checks passed for repeated task {item['id']}.")
 
             item["status"] = "in_progress"
             item["started_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

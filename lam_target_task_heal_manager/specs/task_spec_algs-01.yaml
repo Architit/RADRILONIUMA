@@ -1,0 +1,18 @@
+spec_version: "1.1"
+task_id: "apc_algs_01_compliance"
+goal: "Execute VAVIMA compliance task for ALGS-01: Run global log de-duplication sweep."
+constraints:
+  derivation_only: true
+  code_injection_forbidden: true
+preconditions:
+  - type: file_exists
+    path: "./devkit/patch.sh"
+artifacts:
+  patch_path: "devkit/patches/algs-01_compliance.patch"
+  patch_sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+limits:
+  timeout_ms: 30000
+  max_output_tokens: 2048
+expected_result:
+  status: success
+  changed_files_max: 5

@@ -66,6 +66,146 @@ def scan_organ(meta):
         "path": path
     }
 
+BASELINE_TASKS = {
+    "AYAS-01": "Verify SSH/GCR credentials mapping and run preflight check.",
+    "LRPT-01": "Audit local devkit version and environment baseline.",
+    "VLRM-01": "Generate updated ecosystem topology map.",
+    "CRTD-01": "Run core health and verify system state sync.",
+    "TSPT-01": "Clean up old task specification cache.",
+    "FMLN-01": "Verify system transition state constraints.",
+    "GLKT-01": "Verify logger formatting and telemetry stream.",
+    "JNSR-01": "Record the current Phase 11.4 session log entry.",
+    "KTRD-01": "Run tool preflight baseline sweeps.",
+    "LVNS-01": "Verify task queue lease TTL and timeouts.",
+    "MLVD-01": "Audit package imports for cognitive scripts.",
+    "XNVR-01": "Verify AMC graph consistency and links.",
+    "PLTS-01": "Verify compliance with interaction protocol.",
+    "SRZJ-01": "Verify zero-trust check constraints on ingress.",
+    "VRBN-01": "Audit timestamp-utc formatting across files.",
+    "VRLS-01": "Verify active target lists in rollout tools.",
+    "ZRDG-01": "Verify matrix routing assignments.",
+    "RBTK-01": "Run genesis validation test suite.",
+    "CDKS-01": "Run Codex self-refinement checks.",
+    "RDTR-01": "Audit LLM routing provider endpoints.",
+    "LAM-01": "Verify primary mind core is online.",
+    "ARKS-01": "Secure database backup integrity.",
+    "TRNM-01": "Audit kingdom constitution compliance.",
+    "ALGS-01": "Run global log de-duplication sweep.",
+}
+
+COMPLIANCE_ORDER = [
+    "AYAS-01",
+    "LRPT-01",
+    "VLRM-01",
+    "CRTD-01",
+    "TSPT-01",
+    "FMLN-01",
+    "GLKT-01",
+    "JNSR-01",
+    "KTRD-01",
+    "LVNS-01",
+    "MLVD-01",
+    "XNVR-01",
+    "PLTS-01",
+    "SRZJ-01",
+    "VRBN-01",
+    "VRLS-01",
+    "ZRDG-01",
+    "RBTK-01",
+    "CDKS-01",
+    "RDTR-01",
+    "LAM-01",
+    "ARKS-01",
+    "TRNM-01",
+    "ALGS-01",
+]
+
+def write_and_validate_vavima_spec(sys_id, task_desc):
+    """Generates a VAVIMA-compliant task spec YAML file and validates it."""
+    spec_dir = BASE_DIR / "lam_target_task_heal_manager" / "specs"
+    spec_dir.mkdir(parents=True, exist_ok=True)
+    spec_file = spec_dir / f"task_spec_{sys_id.lower()}.yaml"
+    
+    patch_name = f"devkit/patches/{sys_id.lower()}_compliance.patch"
+    patch_sha = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    
+    # Write VAVIMA compliance spec
+    yaml_content = f"""spec_version: "1.1"
+task_id: "apc_{sys_id.lower().replace('-', '_')}_compliance"
+goal: "Execute VAVIMA compliance task for {sys_id}: {task_desc}"
+constraints:
+  derivation_only: true
+  code_injection_forbidden: true
+preconditions:
+  - type: file_exists
+    path: "./devkit/patch.sh"
+artifacts:
+  patch_path: "{patch_name}"
+  patch_sha256: "{patch_sha}"
+limits:
+  timeout_ms: 30000
+  max_output_tokens: 2048
+expected_result:
+  status: success
+  changed_files_max: 5
+"""
+    spec_file.write_text(yaml_content, encoding="utf-8")
+    
+    validator_script = BASE_DIR / "scripts" / "task_spec_validator.py"
+    if validator_script.exists():
+        import sys
+        res = subprocess.run([sys.executable, str(validator_script), "--file", str(spec_file)], capture_output=True, text=True)
+        if res.returncode != 0:
+            print(f"[HEAL_MANAGER] Warning: Spec validation failed for {sys_id}: {res.stdout.strip() or res.stderr.strip()}")
+            return spec_file, False
+        return spec_file, True
+    return spec_file, False
+
+def get_dynamic_organ_task(sys_id, queue_items):
+    """Determines the task description based on previous runs to prevent repetition."""
+    base_id = sys_id.split("-")[0]
+    past_runs = []
+    for t in queue_items:
+        owner = t.get("payload", {}).get("owner", "")
+        if owner and (owner == sys_id or owner == base_id or owner.split("-")[0] == base_id):
+            past_runs.append(t)
+            
+    completed_runs = [t for t in past_runs if t.get("status") == "done"]
+    failed_runs = [t for t in past_runs if t.get("status") == "error"]
+    pending_runs = [t for t in past_runs if t.get("status") == "pending"]
+
+    # Base task
+    base_task = BASELINE_TASKS.get(sys_id, "Perform standard system validation.")
+    
+    # 1. Double Attention Check: If it failed recently or is duplicated pending
+    if failed_runs:
+        latest_fail = failed_runs[-1]
+        err_msg = latest_fail.get("error_msg", "unknown error").replace("\n", " ")
+        desc = f"🚨 [DOUBLE ATTENTION Required] Fix execution bug. Previous error: `{err_msg}`. Task: {base_task}"
+        spec_file, ok = write_and_validate_vavima_spec(sys_id, desc)
+        return desc, spec_file, "double_attention"
+    
+    if len(pending_runs) > 1:
+        desc = f"🚨 [DOUBLE ATTENTION Required] Repeated pending tasks detected in queue. Clean queue or check runner. Task: {base_task}"
+        spec_file, ok = write_and_validate_vavima_spec(sys_id, desc)
+        return desc, spec_file, "double_attention"
+
+    # 2. Prevent repetition: If baseline is already done, generate a NEW advanced step
+    num_completed = len(completed_runs)
+    if num_completed > 0:
+        if num_completed == 1:
+            desc = f"Step 2: Verify post-execution telemetry and check for stability after initial baseline for {sys_id}."
+        elif num_completed == 2:
+            desc = f"Step 3: Run comprehensive resource and memory performance audit for {sys_id}."
+        else:
+            desc = f"Step {num_completed + 1}: Perform advanced deep-dive safety and boundary verification for {sys_id}."
+        spec_file, ok = write_and_validate_vavima_spec(sys_id, desc)
+        return desc, spec_file, "new_step"
+
+    # 3. Standard baseline
+    spec_file, ok = write_and_validate_vavima_spec(sys_id, base_task)
+    return base_task, spec_file, "baseline"
+
 def main():
     print("[HEAL_MANAGER] Initiating target task scan...")
     graph = load_amc_graph()
@@ -155,7 +295,7 @@ def main():
             
     if not healing_needed:
         content.append("\n> [!TIP]\n> 🟢 **No healing actions required.** All active organs are online and their local DevKit configurations are complete.")
-
+ 
     content.append("\n## III. CURRENT CAMPAIGN WALKTHROUGH & SUGGESTED TASKS")
     content.append("Here is the list of suggested tasks to advance the current campaign:")
     content.append("- [ ] **Task 1: Verify Telemetry Heartbeat**")
@@ -166,33 +306,16 @@ def main():
     content.append("  - Run `bash devkit/ecosystem_rollout.sh --dry-run` to verify dry-run patch propagation.")
     content.append("- [ ] **Task 4: Run Governance Test Suite**")
     content.append("  - Run `bash scripts/test_entrypoint.sh --governance` to verify 100% compliance.")
-
+ 
     content.append("\n## III.B SOVEREIGN FOREST: 24 TARGET ORGAN TASKS (MINIMAL COMPLIANCE)")
     content.append("These 24 tasks are dynamically generated to ensure active vital status (heartbeat/breath) across the 24 primary MCP server and organ nodes:")
-    content.append("- [ ] **Task 01 (AYAS-01 / Identity):** Verify SSH/GCR credentials mapping and run preflight check.")
-    content.append("- [ ] **Task 02 (LRPT-01 / Tools):** Audit local devkit version and environment baseline.")
-    content.append("- [ ] **Task 03 (VLRM-01 / Vision):** Generate updated ecosystem topology map.")
-    content.append("- [ ] **Task 04 (CRTD-01 / Heart):** Run core health and verify system state sync.")
-    content.append("- [ ] **Task 05 (TSPT-01 / Tasks):** Clean up old task specification cache.")
-    content.append("- [ ] **Task 06 (FMLN-01 / Mode):** Verify system transition state constraints.")
-    content.append("- [ ] **Task 07 (GLKT-01 / Log):** Verify logger formatting and telemetry stream.")
-    content.append("- [ ] **Task 08 (JNSR-01 / Journal):** Record the current Phase 11.4 session log entry.")
-    content.append("- [ ] **Task 09 (KTRD-01 / Kits):** Run tool preflight baseline sweeps.")
-    content.append("- [ ] **Task 10 (LVNS-01 / Flow):** Verify task queue lease TTL and timeouts.")
-    content.append("- [ ] **Task 11 (MLVD-01 / Module):** Audit package imports for cognitive scripts.")
-    content.append("- [ ] **Task 12 (XNVR-01 / Atlas):** Verify AMC graph consistency and links.")
-    content.append("- [ ] **Task 13 (PLTS-01 / Protocol):** Verify compliance with interaction protocol.")
-    content.append("- [ ] **Task 14 (SRZJ-01 / Contract):** Verify zero-trust check constraints on ingress.")
-    content.append("- [ ] **Task 15 (VRBN-01 / Chronolog):** Audit timestamp-utc formatting across files.")
-    content.append("- [ ] **Task 16 (VRLS-01 / Topology):** Verify active target lists in rollout tools.")
-    content.append("- [ ] **Task 17 (ZRDG-01 / Matrix):** Verify matrix routing assignments.")
-    content.append("- [ ] **Task 18 (RBTK-01 / Genesis):** Run genesis validation test suite.")
-    content.append("- [ ] **Task 19 (CDKS-01 / Cognition):** Run Codex self-refinement checks.")
-    content.append("- [ ] **Task 20 (RDTR-01 / Routing):** Audit LLM routing provider endpoints.")
-    content.append("- [ ] **Task 21 (LAM-01 / Mind):** Verify primary mind core is online.")
-    content.append("- [ ] **Task 22 (ARKS-01 / Ark):** Secure database backup integrity.")
-    content.append("- [ ] **Task 23 (TRNM-01 / Kingdom):** Audit kingdom constitution compliance.")
-    content.append("- [ ] **Task 24 (ALGS-01 / Logs):** Run global log de-duplication sweep.")
+    
+    idx = 1
+    for sys_id in COMPLIANCE_ORDER:
+        desc, spec_file, task_type = get_dynamic_organ_task(sys_id, queue_items)
+        spec_link = f"[VAVIMA Spec](file://{spec_file.absolute()})"
+        content.append(f"- [ ] **Task {idx:02d} ({sys_id}):** {spec_link} — {desc}")
+        idx += 1
 
     content.append("\n## IV. SOVEREIGN FOREST ORGAN STATES")
     content.append(f"Currently tracking **{len(organs)}** organs (**{online_count}** Online, **{offline_count}** Offline/External):")
