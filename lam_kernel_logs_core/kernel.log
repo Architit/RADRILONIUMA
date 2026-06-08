@@ -11,3 +11,20 @@
 Ripgrep is not available. Falling back to GrepTool.
 No input provided via stdin. Input can be provided by piping data into gemini or using the --prompt option.
 2026-06-08 05:00:01,973 [INFO] Shutdown.
+2026-06-08 05:27:58,634 [INFO] --- Sovereign Kernel v3.0 (Total Control) Starting ---
+2026-06-08 05:27:58,634 [INFO] State transition: IDLE -> BOOT
+2026-06-08 05:28:06,878 [INFO] INTERCEPT: Restart signal received.
+2026-06-08 05:32:11,238 [INFO] --- Sovereign Kernel v3.0 (Total Control) Starting ---
+2026-06-08 05:32:11,238 [INFO] BOOT PHASE: State=IDLE
+2026-06-08 05:32:19,042 [INFO] Step 2/2: Spawning Primary Session...
+2026-06-08 05:32:38,354 [INFO] SIGNAL DETECTED: Initiating Rebirth Protocol.
+2026-06-08 05:33:58,885 [INFO] --- Sovereign Kernel v3.1 (Honest Proxy) Starting ---
+2026-06-08 05:33:58,886 [INFO] INITIATING SESSION: State=IDLE
+2026-06-08 05:34:39,466 [INFO] SIGNAL DETECTED: Triggering hand-off.
+2026-06-08 05:34:44,466 [WARNING] Process 47995 still alive after /exit. Killing.
+2026-06-08 05:34:44,563 [INFO] INITIATING SESSION: State=WAIT_EXIT
+2026-06-08 05:34:52,106 [INFO] Transition: WAIT_READY (Event-driven mode)
+2026-06-08 05:34:53,913 [WARNING] USER INPUT SUPPRESSED: Protocol active (WAIT_READY)
+2026-06-08 05:34:55,721 [INFO] READY DETECTED via RAW STREAM analysis.
+2026-06-08 05:34:55,722 [INFO] Injection complete. Normal proxy restored.
+2026-06-08 05:35:59,077 [INFO] --- Sovereign Kernel Shutdown ---

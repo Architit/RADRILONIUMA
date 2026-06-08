@@ -1,0 +1,722 @@
+[1780889649.172] FROM_PTY: [8m[?u]11;?\[>q[>4;?m[c[2K[0m
+[1780889649.173] FROM_USER: [?1;2c
+[1780889650.155] FROM_PTY: ]0;◇  Ready (RADRILONIUMA)                                                         
+[1780889650.217] FROM_PTY: [?25l
+[1780889650.217] FROM_PTY: 
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠋ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889650.218] FROM_PTY: [?25l
+[1780889650.219] FROM_PTY: [?1006l[?1002l
+[1780889650.231] FROM_PTY: [?1004h
+[1780889650.232] FROM_PTY: ]0;◇  Ready (RADRILONIUMA)                                                         
+[1780889650.234] FROM_PTY: [?2004h
+[1780889650.287] FROM_PTY: [2J[3J[H
+[1780889650.361] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠙ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889651.909] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠸ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.083] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠴ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.289] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠦ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.356] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠧ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.422] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠇ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.515] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠏ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.634] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠋ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.812] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠙ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889652.957] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠸ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889653.065] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠼ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889653.157] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m    [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m    [38;2;175;175;175mquota[39m       [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m    [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m      75% used
+[4A[4G
+[1780889653.219] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m435.2 MB[39m
+[4A[4G
+[1780889653.521] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+ [38;2;71;150;228m▝[38;2;102;136;217m▜[38;2;132;122;206m▄[38;2;164;113;167m [38;2;195;103;127m [39m   [1m[38;2;255;255;255mGemini CLI[22m[38;2;175;175;175m v0.45.2[39m
+ [38;2;71;150;228m [38;2;102;136;217m [38;2;132;122;206m▝[38;2;164;113;167m▜[38;2;195;103;127m▄[39m
+ [38;2;71;150;228m [38;2;102;136;217m▗[38;2;132;122;206m▟[38;2;164;113;167m▀[38;2;195;103;127m [39m   [1m[38;2;255;255;255mSigned in with Google[22m[38;2;175;175;175m /auth[39m
+ [38;2;71;150;228m▝[38;2;102;136;217m▀[38;2;132;122;206m [38;2;153;116;180m [38;2;174;109;153m [38;2;195;103;127m [39m  [1m[38;2;255;255;255mPlan:[22m Gemini Code Assist in Google One AI Pro[38;2;175;175;175m /upgrade[39m
+
+[38;2;255;255;175m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175mGemini CLI will stop serving requests to Google One and unpaid tiers on June[22m[39m [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175m18. Please migrate to Antigravity CLI before then at[22m[39m                         [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175mhttps://antigravity.google/product/antigravity-cli[22m[39m                           [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [38;2;255;255;255mLearn more: https://goo.gle/gemini-cli-migration[39m                             [38;2;255;255;175m│[39m
+[38;2;255;255;175m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+[?25l
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m435.2 MB[39m
+[4A[4G
+[1780889655.177] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m668.7 MB[39m
+[4A[4G
+[1780889657.171] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m704.6 MB[39m
+[4A[4G
+[1780889659.179] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m882.1 MB[39m
+[4A[4G
+[1780889661.176] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m760.2 MB[39m
+[4A[4G
+[1780889663.182] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m669.9 MB[39m
+[4A[4G
+[1780889665.182] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m843.4 MB[39m
+[4A[4G
+[1780889667.181] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m692.1 MB[39m
+[4A[4G
+[1780889669.184] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m817.5 MB[39m
+[4A[4G
+[1780889671.186] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m848.1 MB[39m
+[4A[4G
+[1780889673.206] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m646.3 MB[39m
+[4A[4G
+[1780889675.200] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m651.3 MB[39m
+[4A[4G
+[1780889677.213] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m788.9 MB[39m
+[4A[4G
+[1780889679.215] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;255;255;175m⚠ [39m [38;2;255;255;175mWarning: GNU screen detected. Some keyboard shortcuts and visual features may[39m
+   [38;2;255;255;175mbehave unexpectedly. For the best experience, consider using tmux or running[39m
+   [38;2;255;255;175mGemini CLI directly in your terminal.[39m
+
+
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m816.8 MB[39m
+[4A[4G
+[1780889679.483] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> /exit[39m                                                                        [49m
+[48;2;95;95;95m                                                                                [49m
+[48;2;95;95;95m   [7m [27m                                                                            [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m816.8 MB[39m
+[4A[4G
+[1780889681.214] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> /exit[39m                                                                        [49m
+[48;2;95;95;95m                                                                                [49m
+[48;2;95;95;95m   [7m [27m                                                                            [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m930.5 MB[39m
+[4A[4G
+[1780889683.246] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> /exit[39m                                                                        [49m
+[48;2;95;95;95m                                                                                [49m
+[48;2;95;95;95m   [7m [27m                                                                            [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     75% used    [38;2;255;255;255m798.0 MB[39m
+[4A[4G
+[1780889693.914] FROM_PTY: [8m[?u]11;?\[>q[>4;?m[c[2K[0m
+[1780889693.914] FROM_USER: [?1;2c
+[1780889695.722] FROM_PTY: ]0;◇  Ready (RADRILONIUMA)                                                         
+[1780889695.786] FROM_PTY: [?25l
+[1780889695.786] FROM_PTY: 
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠋ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889695.787] FROM_PTY: [?25l
+[1780889695.789] FROM_PTY: [?1006l[?1002l
+[1780889695.801] FROM_PTY: [?1004h
+[1780889695.802] FROM_PTY: ]0;◇  Ready (RADRILONIUMA)                                                         
+[1780889695.804] FROM_PTY: [?2004h
+[1780889695.860] FROM_PTY: [2J[3J[H
+[1780889695.928] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠙ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889697.834] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠸ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889698.392] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠴ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889698.711] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠧ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889698.830] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠇ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889698.882] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠏ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.009] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠋ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.075] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠙ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.217] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠹ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.257] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠸ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.336] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+[38;2;135;135;135m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m ⠼ Waiting for authentication... (Press Esc or Ctrl+C to cancel)              [38;2;135;135;135m│[39m
+[38;2;135;135;135m│[39m                                                                              [38;2;135;135;135m│[39m
+[38;2;135;135;135m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.456] FROM_PTY: [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m    [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m    [38;2;175;175;175mquota[39m       [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m    [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m      76% used
+[4A[4G
+[1780889699.507] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m550.3 MB[39m
+[4A[4G
+[1780889699.686] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+ [38;2;71;150;228m▝[38;2;102;136;217m▜[38;2;132;122;206m▄[38;2;164;113;167m [38;2;195;103;127m [39m   [1m[38;2;255;255;255mGemini CLI[22m[38;2;175;175;175m v0.45.2[39m
+ [38;2;71;150;228m [38;2;102;136;217m [38;2;132;122;206m▝[38;2;164;113;167m▜[38;2;195;103;127m▄[39m
+ [38;2;71;150;228m [38;2;102;136;217m▗[38;2;132;122;206m▟[38;2;164;113;167m▀[38;2;195;103;127m [39m   [1m[38;2;255;255;255mSigned in with Google[22m[38;2;175;175;175m /auth[39m
+ [38;2;71;150;228m▝[38;2;102;136;217m▀[38;2;132;122;206m [38;2;153;116;180m [38;2;174;109;153m [38;2;195;103;127m [39m  [1m[38;2;255;255;255mPlan:[22m Gemini Code Assist in Google One AI Pro[38;2;175;175;175m /upgrade[39m
+
+[38;2;255;255;175m╭──────────────────────────────────────────────────────────────────────────────╮[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175mGemini CLI will stop serving requests to Google One and unpaid tiers on June[22m[39m [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175m18. Please migrate to Antigravity CLI before then at[22m[39m                         [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [1m[38;2;255;255;175mhttps://antigravity.google/product/antigravity-cli[22m[39m                           [38;2;255;255;175m│[39m
+[38;2;255;255;175m│[39m [38;2;255;255;255mLearn more: https://goo.gle/gemini-cli-migration[39m                             [38;2;255;255;175m│[39m
+[38;2;255;255;175m╰──────────────────────────────────────────────────────────────────────────────╯[39m
+
+[1780889699.686] FROM_PTY: [?25l
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m550.3 MB[39m
+[4A[4G
+[1780889701.484] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m554.2 MB[39m
+[4A[4G
+[1780889703.485] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m773.8 MB[39m
+[4A[4G
+[1780889705.490] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m688.5 MB[39m
+[4A[4G
+[1780889707.492] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m596.0 MB[39m
+[4A[4G
+[1780889709.493] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m727.2 MB[39m
+[4A[4G
+[1780889711.492] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m800.9 MB[39m
+[4A[4G
+[1780889713.498] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m665.9 MB[39m
+[4A[4G
+[1780889715.498] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m581.8 MB[39m
+[4A[4G
+[1780889725.504] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m233.4 MB[39m
+[4A[4G
+[1780889727.506] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m232.8 MB[39m
+[4A[4G
+[1780889729.508] FROM_PTY: [4B[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G
+
+                                                                [38;2;175;175;175m? for shortcuts[39m
+[2m[38;2;135;135;135m────────────────────────────────────────────────────────────────────────────────[39m[22m
+ [38;2;175;175;175mShift+Tab to accept edits[39m        [38;2;175;175;175m3 GEMINI.md files · 26 MCP servers · 6 skills[39m
+[38;2;95;95;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[39m
+[48;2;95;95;95m [38;2;215;175;255m> [7m[39m [27m[38;2;175;175;175m Type your message or @path/to/file[39m                                         [49m
+[38;2;95;95;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[39m
+ [38;2;175;175;175mworkspace (/directory)[39m    [38;2;175;175;175mbranch[39m   [38;2;175;175;175msandbox[39m       [38;2;175;175;175m/model[39m   [38;2;175;175;175mquota[39m         [38;2;175;175;175mmemory[39m
+ [38;2;255;255;255m~/.../RADRILONIUMA[39m        [38;2;255;255;255mmaster[39m   [38;2;255;135;175mno sandbox[39m    [38;2;255;255;255mAuto[39m     76% used    [38;2;255;255;255m233.7 MB[39m
+[4A[4G
