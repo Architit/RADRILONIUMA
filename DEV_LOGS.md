@@ -470,3 +470,11 @@
 - **Verification:** Reset the task payload inside `.gateway/queue.json` with the required SHA-256 hash and patch file details. Ran the queue worker, which successfully verified, applied, and staged the patch in `LAM-Codex_Agent`.
 - **Status:** Done. CDKS-01 pilot patch committed and pushed to main. `READY.md` transitioned to SUCCESS.
 - **Resonance:** 432 Hz (PURE).
+
+## [2026-06-08] — PHASE 11.4 (PROJECT LIFECYCLE)
+
+### [02:26] — OS RESTART PERMISSION CACHING
+- **Action:** Fixed the issue where the Sovereign Kernel Wrapper prompts the user via zenity for OS restart permissions on every loop restart.
+- **Implementation:** Added permission caching to `.gateway/os_permission_granted`. The wrapper now only requests permission once (when no cached permission file exists), and uses the cached authorization on all subsequent restarts.
+- **Verification:** Ran pytest suite and verified 24/24 tests pass. Confirmed git status clean.
+- **Resonance:** 432 Hz (PURE).

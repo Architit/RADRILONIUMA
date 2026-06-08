@@ -3,7 +3,7 @@
 ## Identity
 repo: RADRILONIUMA
 branch: master
-timestamp_utc: 2026-06-07T17:43:00Z
+timestamp_utc: 2026-06-08T00:26:00Z
 
 ## Current pointer
 phase: PHASE_11_INTEGRATION_ACTIVE
@@ -54,6 +54,8 @@ constraints:
  M DEV_LOGS.md
  M SYSTEM_STATE.md
  M WORKFLOW_SNAPSHOT_STATE.md
+ M scripts/global/sovereign_kernel.py
+ M scripts/global/ssn_daemon.js
 
 ## References
 - INTERACTION_PROTOCOL.md

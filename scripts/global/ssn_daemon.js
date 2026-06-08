@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SIGNAL_FILE = path.join(__dirname, '../../.aelaria_ssn_rstrt');
+const PERMISSION_FILE = path.join(__dirname, '../../.gateway/os_permission_granted');
 const INIT_MSG_SCRIPT = 'from pathlib import Path; state_file = Path("WORKFLOW_SNAPSHOT_STATE.md"); content = state_file.read_text(encoding="utf-8"); print(content.split("## NEW_CHAT_INIT_MESSAGE")[1].strip())';
 
 function sleep(ms) {
@@ -50,9 +51,20 @@ async function runSession() {
             console.log(`>>> [DAEMON] Session terminated (code ${code}).`);
             
             // Request OS Permission
+            if (fs.existsSync(PERMISSION_FILE)) {
+                console.log(">>> [DAEMON] OS Permission already granted (cached).");
+                resolve(true);
+                return;
+            }
+
             try {
                 execSync('zenity --question --title="AELARIA SOVEREIGN KERNEL" --text="Requesting OS permission to activate protocol:\\n\\n[ssn rstrt p1 data export]\\n\\nProceed?" --width=450 --ok-label="ACTIVATE" --cancel-label="HALT"');
                 console.log(">>> [DAEMON] Handshake Accepted.");
+                try {
+                    fs.writeFileSync(PERMISSION_FILE, '');
+                } catch (err) {
+                    console.error("[DAEMON] WARNING: Failed to cache permission:", err.message);
+                }
                 resolve(true);
             } catch (e) {
                 console.log(">>> [DAEMON] Handshake Rejected / Halt.");

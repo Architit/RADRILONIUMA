@@ -25,8 +25,14 @@ def get_init_message():
         pass
     return "ssn rstrt"
 
+PERMISSION_FILE = BASE_DIR / ".gateway" / "os_permission_granted"
+
 def request_os_permission():
-    """Triggers the OS-level GUI handshake."""
+    """Triggers the OS-level GUI handshake or uses cached permission."""
+    if PERMISSION_FILE.exists():
+        print(f"\n>>> [KERNEL] OS Permission already granted (cached in {PERMISSION_FILE.relative_to(BASE_DIR)}).")
+        return True
+
     print("\n>>> [KERNEL] Requesting OS Permission Handshake...")
     cmd = [
         "zenity", "--question", "--title=AELARIA SOVEREIGN KERNEL",
@@ -35,6 +41,11 @@ def request_os_permission():
     ]
     try:
         subprocess.run(cmd, check=True)
+        try:
+            PERMISSION_FILE.touch()
+            print(f">>> [KERNEL] Permission granted and cached to {PERMISSION_FILE.relative_to(BASE_DIR)}.")
+        except Exception as e:
+            print(f">>> [KERNEL] WARNING: Failed to cache permission: {e}")
         return True
     except subprocess.CalledProcessError:
         return False
