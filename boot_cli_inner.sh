@@ -2,6 +2,11 @@
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
 # PHASE 11.4: SOVEREIGN BOOTLOADER (PTY KERNEL SUPREMACIST)
 
+if [[ "${AELARIA_KERNEL_ACTIVE:-0}" == "1" ]]; then
+    echo "[SYSTEM] ERROR: Nested Sovereign Kernel detected. Aborting to prevent TUI collapse."
+    exit 1
+fi
+
 cd /home/architit/LAM_CORE/RADRILONIUMA
 
 # 1. Essential Preflight
@@ -15,10 +20,7 @@ echo -e "\e[1;35m==================================================\e[0m"
 echo ""
 
 # 2. IGNITE SOVEREIGN KERNEL (PTY SUPERVISOR)
-echo "[SYSTEM] Igniting PTY Kernel Engine (v1.1)..."
-# Pass all environment variables explicitly
+echo "[SYSTEM] Igniting PTY Kernel Engine (v1.3)..."
 export AELARIA_KERNEL_ACTIVE=1
-./venv/bin/python3 scripts/global/sovereign_kernel.py
+exec ./venv/bin/python3 scripts/global/sovereign_kernel.py
 
-# Prevent terminal closure
-exec bash

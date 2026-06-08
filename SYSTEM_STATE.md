@@ -4,13 +4,14 @@
 - system_id: RADR-01
 - role: Bridge (Captain Bridge)
 - governor: Ayaearias Triania (AYAS-01)
-- status: HANDOVER_PENDING
+- status: ACTIVE_READY
 - diagnostic_pending: NONE
 - wave_progress: PHASE_11.4 (PROTOCOL_ENFORCED)
 - resonance: 432 Hz
-- last_heartbeat_utc: 2026-06-08T04:25:00Z
+- last_heartbeat_utc: 2026-06-08T04:35:00Z
 
 ## Protocol Sync
-- exit_logic: DELEGATED_TO_WRAPPER
-- restart_logic: DELEGATED_TO_WRAPPER
+- exit_logic: DELEGATED_TO_WRAPPER (v1.3)
+- restart_logic: DELEGATED_TO_WRAPPER (v1.3)
 - trigger_script: scripts/local/trigger_ssn_rstrt.sh
+- kernel_active: YES (Ready for restart)

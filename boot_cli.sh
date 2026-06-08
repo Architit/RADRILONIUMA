@@ -1,5 +1,7 @@
 #!/bin/bash
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
-sleep 4
+# PHASE 11.4: SOVEREIGN BOOTLOADER (IN-PLACE)
+
 cd /home/architit/LAM_CORE/RADRILONIUMA
-x-terminal-emulator -e bash -c "bash /home/architit/LAM_CORE/RADRILONIUMA/boot_cli_inner.sh"
+bash /home/architit/LAM_CORE/RADRILONIUMA/boot_cli_inner.sh
+

@@ -1,6 +1,6 @@
 # DEV LOGS: RADR-01 (THE BRIDGE) ⚜️
 
-## [2026-06-08] — PHASE 11.4 (LIFECYCLE)
+## [2026-06-08] — PHASE 11.4 (PROJECT LIFECYCLE)
 
 ### [03:45] — REBOOT PROTOCOL PURIFICATION
 - Verified System Reboot Protocol (SSN RBT) functionality.
@@ -12,6 +12,16 @@
 - Refined `/exit` and `ssn rstrt` protocols in `GEMINI.md` and `INTERACTION_PROTOCOL.md` (M3.4).
 - Mandated delegation of the initialization chain (`boot_protocol.sh && boot_cli_inner.sh`) to the external Sovereign Kernel Wrapper.
 - Explicitly prohibited manual kernel re-ignition within the current session context to prevent TUI overlap.
+
+### [04:30] — KERNEL ROBUSTNESS & PROTOCOL ALIGNMENT (FIX)
+- **Problem:** Restart mechanism failed on Wayland due to `xdotool` dependency and created nested sub-sessions.
+- **Remediation:** Upgraded `scripts/global/sovereign_kernel.py` to v1.3.
+    - Integrated `boot_protocol.sh` and `bootstrap.sh` into the main loop (compliance with M3.4).
+    - Added `SIGKILL` fallback for process termination on Wayland.
+    - Implemented file-based logging in `lam_kernel_logs_core/kernel.log`.
+    - Added `AELARIA_KERNEL_ACTIVE` env check to ensure sessions are sovereign.
+- **Status:** READY.
+
 
 ## [2026-02-27] — PHASE 8.1.1 (SYNCHRONIZATION)
 
