@@ -123,6 +123,12 @@ src_patch_runtime_tests="$ROOT_DIR/tests/test_patch_runtime_governance.py"
 src_patch_sh="$ROOT_DIR/devkit/patch.sh"
 src_bootstrap_sh="$ROOT_DIR/devkit/bootstrap.sh"
 
+# Target & Heal Manager Artifacts
+src_heal_init="$ROOT_DIR/lam_target_task_heal_manager/__init__.py"
+src_heal_manager="$ROOT_DIR/lam_target_task_heal_manager/manager.py"
+src_heal_cleaner="$ROOT_DIR/lam_target_task_heal_manager/cleaner.py"
+src_heal_tasks_sh="$ROOT_DIR/scripts/regenerate_target_tasks.sh"
+
 # Phase C/D Artifacts
 src_memory_contract="$ROOT_DIR/contract/MEMORY_CONTRACT_V1.md"
 src_transport_contract="$ROOT_DIR/contract/TRANSPORT_CONTRACT_V1.md"
@@ -142,6 +148,7 @@ src_kingdom_constitution="$ROOT_DIR/kingdom/laws/KINGDOM_CONSTITUTION_V1.md"
 for f in "$src_gemini" "$src_preflight_sh" "$src_preflight_py" "$src_base_bash" "$src_base_pwsh" \
          "$src_task_spec_contract" "$src_task_spec_validator" "$src_task_spec_template" "$src_owner_map" \
          "$src_patch_runtime_contract" "$src_patch_runtime_tests" "$src_patch_sh" "$src_bootstrap_sh" \
+         "$src_heal_init" "$src_heal_manager" "$src_heal_cleaner" "$src_heal_tasks_sh" \
          "$src_memory_contract" "$src_transport_contract" \
          "$src_flow_control_contract" "$src_p0_safety_contract" \
          "$src_research_gate_contract" \
@@ -237,7 +244,16 @@ sync_one() {
   run_cmd cp "$src_resident_radr" "$target/kingdom/residents/RADR-01_BRIDGE.md"
   run_cmd cp "$src_kingdom_constitution" "$target/kingdom/laws/KINGDOM_CONSTITUTION_V1.md"
 
-  run_cmd chmod +x "$target/devkit/shell_preflight.sh" "$target/devkit/patch.sh" "$target/devkit/bootstrap.sh"
+  # Target & Heal Manager sync
+  run_cmd mkdir -p "$target/lam_target_task_heal_manager"
+  run_cmd cp "$src_heal_init" "$target/lam_target_task_heal_manager/__init__.py"
+  run_cmd cp "$src_heal_manager" "$target/lam_target_task_heal_manager/manager.py"
+  run_cmd cp "$src_heal_cleaner" "$target/lam_target_task_heal_manager/cleaner.py"
+  run_cmd cp "$src_heal_tasks_sh" "$target/scripts/regenerate_target_tasks.sh"
+
+  run_cmd chmod +x "$target/devkit/shell_preflight.sh" "$target/devkit/patch.sh" "$target/devkit/bootstrap.sh" \
+                  "$target/lam_target_task_heal_manager/manager.py" "$target/lam_target_task_heal_manager/cleaner.py" \
+                  "$target/scripts/regenerate_target_tasks.sh"
 }
 
 smoke_one() {
@@ -274,6 +290,11 @@ git_one() {
       contract/PATCH_RUNTIME_CONTRACT_V1.md \
       tests/test_patch_runtime_governance.py \
       devkit/patch.sh \
+      devkit/bootstrap.sh \
+      lam_target_task_heal_manager/__init__.py \
+      lam_target_task_heal_manager/manager.py \
+      lam_target_task_heal_manager/cleaner.py \
+      scripts/regenerate_target_tasks.sh \
       contract/MEMORY_CONTRACT_V1.md \
       contract/TRANSPORT_CONTRACT_V1.md \
       contract/FLOW_CONTROL_CONTRACT_V1.md \
