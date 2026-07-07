@@ -69,6 +69,111 @@ class SovereignKernel:
         cmd = "bash scripts/local/boot_protocol.sh && bash boot_cli_inner.sh"
         os.execv("/bin/bash", ["bash", "-c", cmd])
 
+    def archive_session_data(self):
+        import shutil
+        logging.info("Running session archiving...")
+        print("\r\n[SYSTEM] Archiving session data (GitHub, Google Drive, OneDrive)...")
+        
+        # 1. Locate the latest transcript in ~/.gemini/antigravity-cli/brain/
+        brain_dir = Path("/home/architit/.gemini/antigravity-cli/brain")
+        if not brain_dir.exists():
+            logging.warning("Brain directory not found, skipping archive.")
+            print("[SYSTEM ERROR] Brain directory not found.")
+            return
+            
+        transcripts = list(brain_dir.glob("*/.system_generated/logs/transcript.jsonl"))
+        if not transcripts:
+            logging.warning("No transcripts found in brain directory.")
+            print("[SYSTEM ERROR] No active transcripts found to archive.")
+            return
+            
+        # Get the latest modified transcript path
+        latest_transcript = max(transcripts, key=lambda p: p.stat().st_mtime)
+        conv_dir = latest_transcript.parent.parent.parent
+        conv_id = conv_dir.name
+        logging.info(f"Latest conversation detected: {conv_id} from {conv_dir}")
+        print(f"[SYSTEM] Staging conversation {conv_id}...")
+        
+        archive_local_dir = BASE_DIR / "data" / "local" / "AELARIA" / "chat_sessions" / conv_id
+        archive_local_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Copy files to the local git staging area
+        files_to_copy = [
+            conv_dir / ".system_generated" / "logs" / "transcript.jsonl",
+            conv_dir / ".system_generated" / "logs" / "transcript_full.jsonl",
+        ]
+        # Copy markdown files (artifacts) in the root of conv_dir
+        for item in conv_dir.iterdir():
+            if item.is_file() and item.suffix == ".md":
+                files_to_copy.append(item)
+                
+        for src in files_to_copy:
+            if src.exists():
+                dst = archive_local_dir / src.name
+                shutil.copy2(src, dst)
+                logging.info(f"Copied {src.name} to local staging")
+                
+        # 2. Push to GitHub
+        try:
+            print("[SYSTEM] Pushing transcripts to GitHub...")
+            subprocess.run(["git", "add", "data/local/AELARIA/chat_sessions/"], cwd=str(BASE_DIR), check=True)
+            commit_msg = f"archive: backup chat session {conv_id}"
+            subprocess.run(["git", "commit", "-m", commit_msg], cwd=str(BASE_DIR), capture_output=True)
+            subprocess.run(["git", "push", "origin", "master"], cwd=str(BASE_DIR), check=True, capture_output=True)
+            print("[SYSTEM] GitHub push complete.")
+        except Exception as e:
+            logging.error(f"GitHub push failed: {e}")
+            print(f"[SYSTEM WARNING] GitHub sync failed: {e}")
+            
+        # 3. Google Drive upload via rclone
+        try:
+            res = subprocess.run(["rclone", "listremotes"], capture_output=True, text=True)
+            remotes = res.stdout.splitlines()
+            if "gdrive:" in remotes:
+                print("[SYSTEM] Uploading to Google Drive...")
+                gdrive_path = f"gdrive:Aelaria_Chat_Sessions/{conv_id}"
+                subprocess.run(["rclone", "copy", str(archive_local_dir), gdrive_path], check=True, capture_output=True)
+                print("[SYSTEM] Google Drive upload complete.")
+            else:
+                logging.warning("Google Drive remote not found in rclone.")
+        except Exception as e:
+            logging.error(f"Google Drive upload failed: {e}")
+            print(f"[SYSTEM WARNING] Google Drive upload failed: {e}")
+            
+        # 4. OneDrive upload
+        try:
+            res = subprocess.run(["rclone", "listremotes"], capture_output=True, text=True)
+            remotes = res.stdout.splitlines()
+            onedrive_uploaded = False
+            for r in remotes:
+                if "onedrive" in r.lower():
+                    print(f"[SYSTEM] Uploading to OneDrive remote '{r}'...")
+                    onedrive_path = f"{r}Aelaria_Chat_Sessions/{conv_id}"
+                    subprocess.run(["rclone", "copy", str(archive_local_dir), onedrive_path], check=True, capture_output=True)
+                    print("[SYSTEM] OneDrive upload complete.")
+                    onedrive_uploaded = True
+                    break
+            
+            # Local OneDrive folder fallback
+            local_onedrive = Path("/home/architit/OneDrive")
+            if not onedrive_uploaded and local_onedrive.exists():
+                print("[SYSTEM] Copying to local OneDrive folder...")
+                onedrive_dest = local_onedrive / "Aelaria_Chat_Sessions" / conv_id
+                onedrive_dest.mkdir(parents=True, exist_ok=True)
+                for f in archive_local_dir.iterdir():
+                    if f.is_file():
+                        shutil.copy2(f, onedrive_dest / f.name)
+                print("[SYSTEM] Local OneDrive copy complete.")
+                onedrive_uploaded = True
+                
+            if not onedrive_uploaded:
+                print("[SYSTEM WARNING] OneDrive not configured.")
+        except Exception as e:
+            logging.error(f"OneDrive upload failed: {e}")
+            print(f"[SYSTEM WARNING] OneDrive copy failed: {e}")
+            
+        print("[SYSTEM] Archive operation complete.\r\n")
+
     def run(self):
         logging.info("--- Sovereign Kernel v4.0 Ignition ---")
         if sys.stdin.isatty():
@@ -80,6 +185,11 @@ class SovereignKernel:
         try:
             while True:
                 self.session_loop()
+                
+                try:
+                    self.archive_session_data()
+                except Exception as e:
+                    logging.error(f"Error in archive_session_data: {e}")
                 
                 if self.state == "RESTARTING":
                     logging.info("Initiating full system restart...")

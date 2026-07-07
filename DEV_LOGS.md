@@ -526,4 +526,13 @@
 - **Portability:** Replaced all hardcoded `/home/architit/LAM_CORE/RADRILONIUMA` path definitions with dynamic location-relative resolvers (`BASH_SOURCE` and Python path resolution) in `boot_cli.sh`, `boot_cli_inner.sh`, `scripts/local/boot_protocol.sh`, `scripts/global/sovereign_kernel.py`, and `auto_sync.sh` to ensure compatibility across Samsung SSD, Samsung Smartphone (Android/Termux), USB Flash Drive, and Dell Ubuntu environments.
 - **Status:** Done and fully operational.
 
+### [16:15] — AUTOMATED CLOUD SESSION ARCHIVER (BACKUP ON EXIT)
+- **Archiver Hook:** Injected `archive_session_data()` hook inside `SovereignKernel.run()` loop in `scripts/global/sovereign_kernel.py`.
+- **Functionality:** Extracts the latest chat session transcript files (`transcript.jsonl`, `transcript_full.jsonl`) and markdown artifacts from the local brain storage.
+- **GitHub Sync:** Copies staging files into `data/local/AELARIA/chat_sessions/<conv_id>/` and runs automated commits and pushes to GitHub `origin/master`.
+- **Google Drive Sync:** Automatically pushes files to Google Drive using `rclone copy` under `gdrive:Aelaria_Chat_Sessions/<conv_id>`.
+- **OneDrive Sync:** Scans for OneDrive remotes configured in `rclone` (or copies locally to `~/OneDrive` fallback) and uploads transcripts.
+- **Status:** Integrated and active.
+
+
 
