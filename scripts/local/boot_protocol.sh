@@ -4,7 +4,7 @@
 # ZERO-PRIVILEGE MODE: No sudo, no state-mutation.
 
 # Path Configuration
-BASE_DIR="/home/architit/LAM_CORE/RADRILONIUMA"
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$BASE_DIR"
 
 echo -e "\e[1;35m>>> [BOOT] Scanning Sovereign Resonance...\e[0m"

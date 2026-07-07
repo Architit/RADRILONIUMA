@@ -6,7 +6,7 @@ import os, sys, time, select, termios, tty, pty, struct, fcntl, signal, logging,
 from pathlib import Path
 
 # Setup logging immediately
-BASE_DIR = Path("/home/architit/LAM_CORE/RADRILONIUMA")
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 LOG_FILE = BASE_DIR / "lam_kernel_logs_core" / "kernel.log"
 os.makedirs(LOG_FILE.parent, exist_ok=True)
 
@@ -30,7 +30,7 @@ class SovereignKernel:
         self.signal_file = BASE_DIR / ".gateway" / "ssn_restart.signal"
         self.exit_signal_file = BASE_DIR / ".gateway" / "ssn_exit.signal"
         self.state_file = BASE_DIR / ".gateway" / "last_session_env.json"
-        self.cli_path = shutil.which("gemini") or shutil.which("agy") or "/usr/bin/gemini"
+        self.cli_path = shutil.which("agy") or shutil.which("gemini") or "/usr/bin/agy"
         self.load_state()
 
     def load_state(self):

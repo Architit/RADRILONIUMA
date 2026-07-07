@@ -516,3 +516,14 @@
 - **Status:** Complete. 24/24 VAVIMA compliance specs successfully generated, validated, and linked.
 - **Resonance:** 432 Hz (PURE).
 
+
+## [2026-07-07] — PHASE 11.4 (PROJECT LIFECYCLE)
+
+### [16:09] — PTY KERNEL ENGINE CLI TRANSITION (AGY RESOLUTION)
+- **Cli Transition:** Switched PTY Kernel Engine primary binary from deprivileged/broken `gemini` (ERR_MODULE_NOT_FOUND due to missing ESM chunk dependency) to `agy` (Antigravity CLI 1.0.6).
+- **Environment:** Configured `export PROOT_NO_SECCOMP=1` globally across `boot_cli.sh`, `boot_cli_inner.sh`, and `REBIRTH.sh` to bypass Seccomp check execution.
+- **Kernel Supervisor:** Updated `scripts/global/sovereign_kernel.py` to prioritize `agy` in CLI path resolution.
+- **Portability:** Replaced all hardcoded `/home/architit/LAM_CORE/RADRILONIUMA` path definitions with dynamic location-relative resolvers (`BASH_SOURCE` and Python path resolution) in `boot_cli.sh`, `boot_cli_inner.sh`, `scripts/local/boot_protocol.sh`, `scripts/global/sovereign_kernel.py`, and `auto_sync.sh` to ensure compatibility across Samsung SSD, Samsung Smartphone (Android/Termux), USB Flash Drive, and Dell Ubuntu environments.
+- **Status:** Done and fully operational.
+
+

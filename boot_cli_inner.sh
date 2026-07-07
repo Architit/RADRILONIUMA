@@ -7,11 +7,12 @@ if [[ "${AELARIA_KERNEL_ACTIVE:-0}" == "1" ]]; then
     exit 1
 fi
 
-cd /home/architit/LAM_CORE/RADRILONIUMA
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 # 1. Essential Preflight
 echo "[SYSTEM] Running preflight check..."
-source /home/architit/LAM_CORE/RADRILONIUMA/venv/bin/activate
+source "$SCRIPT_DIR/venv/bin/activate"
 bash devkit/bootstrap.sh
 
 echo -e "\n\e[1;35m==================================================\e[0m"
@@ -22,5 +23,6 @@ echo ""
 # 2. IGNITE SOVEREIGN KERNEL (PTY SUPERVISOR)
 echo "[SYSTEM] Igniting PTY Kernel Engine (v1.3)..."
 export AELARIA_KERNEL_ACTIVE=1
-/home/architit/LAM_CORE/RADRILONIUMA/venv/bin/python3 scripts/global/sovereign_kernel.py
+export PROOT_NO_SECCOMP=1
+"$SCRIPT_DIR/venv/bin/python3" scripts/global/sovereign_kernel.py
 

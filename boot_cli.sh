@@ -2,16 +2,18 @@
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
 # PHASE 11.4: SOVEREIGN BOOTLOADER (RE-ENTRY LOOP)
 
-cd /home/architit/LAM_CORE/RADRILONIUMA
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+export PROOT_NO_SECCOMP=1
 
 while true; do
     echo "[BOOT] Starting Sovereign Session..."
-    bash /home/architit/LAM_CORE/RADRILONIUMA/boot_cli_inner.sh
+    bash "$SCRIPT_DIR/boot_cli_inner.sh"
     
     # Check if we should exit or if it was a crash/restart
-    if [[ -f "/home/architit/LAM_CORE/RADRILONIUMA/.gateway/ssn_exit.signal" ]]; then
+    if [[ -f "$SCRIPT_DIR/.gateway/ssn_exit.signal" ]]; then
         echo "[BOOT] Exit signal detected. Terminating Bootloader."
-        rm "/home/architit/LAM_CORE/RADRILONIUMA/.gateway/ssn_exit.signal"
+        rm "$SCRIPT_DIR/.gateway/ssn_exit.signal"
         break
     fi
     
