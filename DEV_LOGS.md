@@ -544,3 +544,11 @@
 ### [16:38] — UPDATE INTERCEPTED: @google/gemini-cli
 - Command: npm install -g @google/gemini-cli
 - Action: Routed through RADRILONIUMA OS Gatekeeper.
+
+### [16:40] — UNIVERSAL CROSS-DEVICE CLI & MCP SERVER SYNC SUITE
+- **Universal Installer:** Created `scripts/global/universal_cli_mcp_installer.sh` to automate downloading, installing, updating, and upgrading CLI tools (`gemini`, `agy`) and external/local MCP servers across all devices (Samsung smartphone Termux, Samsung SSD, Dell Ubuntu, USB flash drive).
+- **MCP Integrations:** Configured automatic installation and synchronization for GitHub (`@modelcontextprotocol/server-github`), Google Workspace (local extension), and Microsoft Workspace / OneDrive (`@modelcontextprotocol/server-onedrive`).
+- **Dynamic Config Adaptation:** Injected Python synchronization logic to dynamically rewrite `.agents/mcp_config.json` and `.gemini/settings.json` with portable device-relative paths on execution.
+- **Ecosystem Rollout:** Updated `devkit/ecosystem_rollout.sh` to distribute `universal_cli_mcp_installer.sh` across all 36 active target repositories.
+- **Status:** Integrated, verified, and active.
+
