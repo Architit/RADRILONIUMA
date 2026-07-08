@@ -2,7 +2,7 @@
 # [SENSITIVE] RADRILONIUMA CORE: Cross-OS Access Mapping & Permission Purge
 # Синхронизация системных прав между WSL и Android-узлом. Зачистка аномалий One UI.
 
-CORE_PKG="com.radriloniuma.lamcore" # Замени на точный Package Name твоего APK
+CORE_PKG="com.architit.radriloniuma"
 CORE_ADMIN_RECEIVER="$CORE_PKG/.receiver.AdminReceiver"
 
 echo "🛡️ [MAPPING INIT] Запуск кросс-системного маппинга привилегий..."
