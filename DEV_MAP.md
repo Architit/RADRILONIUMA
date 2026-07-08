@@ -15,3 +15,6 @@ last_updated_utc: 2026-03-03T09:00:00Z
 - scripts/ecosystem_rollout.sh -> forwards to devkit/ecosystem_rollout.sh
 - scripts/test_entrypoint.sh --governance -> task spec validator + governance tests
 - scripts/test_entrypoint.sh --patch-runtime -> phase B patch runtime governance tests
+
+## Hardware Integration (2026.kernel.core)
+- gov/report/2026_KERNEL_CORE_MAPPING_POINTS_INIT_2026-07-08.md

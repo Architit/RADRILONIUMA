@@ -26,6 +26,11 @@ Initialize the architectural mapping points for the new `2026.kernel.core` stand
 - **Hook:** `TOPOLOGY_MAP.md`
 - **Objective:** Integrate `2026.kernel.core` into the Sovereign Forest topology, identifying dependencies with `CDKS` (Codex), `LAM` (Mind Core), and `TRNM` (Kingdom Core).
 
+### Node E: Zero-Trust Hardware Gate (Peripheral Authorization)
+- **Hook:** `sysfs` (`/sys/class/typec/`, `/sys/class/power_supply/`), `TelephonyManager`
+- **Objective:** Enforce multi-factor hardware handshake (SIM ICCID + E-Marker VDM + Charger PDO/VID/PID) before unlocking `[CLEAR]` / `[PUBLIC]` routing layers.
+- **WSL Integration:** API-hooks and bash-aliases to proxy hardware verification state into WSL2 environments, dynamically unblocking access to `Oracle database` and `Github` (e.g., dynamically provisioning SSH keys / DB tokens only upon successful hardware handshake).
+
 ## 3. Next Steps (Gate)
-- Awaiting Explicit Architectural Confirmation from the Architect.
-- Once confirmed, these mapping points will be integrated into the `DEV_MAP.md` and `ROADMAP.md` via the canonical DevKit-contour.
+- Integration of `2026.kernel.core` mapping points into `DEV_MAP.md` and `ROADMAP.md` authorized.
+- Initialization of bash-aliases and API-hooks for WSL (Github/Oracle) hardware-binding.
