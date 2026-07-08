@@ -1,23 +1,19 @@
-# HEREDITARY DIRECTIVE: SESSION REBIRTH ⚜️
+# HEREDITARY DIRECTIVE FOR NEXT SESSION ⚜️
+**GENERATION CAUSE**: End of Session (User requested exit due to UI/Permission errors).
 
-**Target Session:** NEXT (Post-Restart)
-**Initiation Code:** `.radriloniuma. .session. .rebirth. .sync.`
-**Timestamp:** 2026-07-08T10:55:00Z
-**Status:** BINDING (One-Time Hereditary Transfer)
+## 1. CURRENT STATE
+- `BiometricSocketService.java` is written and supports both TCP (Port 9090) and Bluetooth RFCOMM (UUID `00001101-0000-1000-8000-00805F9B34FB`).
+- The service properly intercepts Handshake requests and triggers `NexusActivity` for biometric auth.
+- USB port-forwarding testing succeeded (`✅ CONNECTED VIA: [USB CABLE]`).
+- Bluetooth testing failed because `BLUETOOTH_CONNECT` permission was missing at runtime.
+- We added `MainActivity.java` with a `requestPermissions` block to request `BLUETOOTH_CONNECT`.
+- **CRITICAL FAILURE:** The `MainActivity` is registered in `AndroidManifest.xml` with `android:theme="@android:style/Theme.NoDisplay"`. An activity with no display cannot show a system permission dialog, causing it to fail silently (nothing on screen).
 
-## 1. INHERITED CONTEXT (What was achieved before reboot)
-- **Environment State:** All environment files (`ENVIRONMENT_CATALOG_V2.md`, `ENVIRONMENT_RUNTIME_PROTOCOL_V2.md`) were scanned and successfully updated to version **2026.08.07.10.36**.
-- **Hardware Topology:** Connected devices (Samsung Galaxy via ADB, Samsung PSSD T7, Razer Naga Pro) verified and mapped.
-- **Cloud Gateway Archive:** MCP servers (Google Workspace, GitHub) initialized. Created a Google Drive folder (`RADRILONIUMA_CLOUD_ARCHIVE`). Established the End-to-End Cloud Archiving stream in `scripts/global/gateway_archive_stream.sh` (GitHub + GDrive synced successfully; OneDrive awaiting `rclone config`).
-- **APK Remote Desktop Bridge:** Formally established the **Bi-directional Remote Desktop Bridge (Phone <-> PC)** architecture. Wrote the unified script `scripts/global/apk_remote_desktop_bridge.sh` to handle `scrcpy` (Phone->PC) and `x11vnc` via ADB reverse port forwarding (PC->Phone). Added to `RESEARCH_ENGINE_CONTRACT_V1.md`.
+## 2. MANDATE FOR NEXT AGENT
+1. **Fix MainActivity Theme:** Remove `@android:style/Theme.NoDisplay` from `MainActivity` in `app/src/main/AndroidManifest.xml` (replace with `@style/Theme.AppCompat.Translucent` or a normal theme).
+2. **Proper Permissions:** Ensure `BLUETOOTH_CONNECT`, `BLUETOOTH_SCAN`, and `SYSTEM_ALERT_WINDOW` are properly requested in `MainActivity`.
+3. **Integration Context:** Verify if `RadriloniumaAuth` should remain a standalone app or if these files should be merged into the `LAM Core V10` source codebase (if the user provides it).
+4. **Final Live Test:** After fixing the UI theme, compile, run, grant permissions on the phone, unplug the cable, and execute `python3 scripts/local/test_gateways_live.py <WIFI_IP> <BT_MAC>` to verify wireless transport bridging.
 
-## 2. MANDATE FOR NEW SESSION (Next Steps)
-1. **Acknowledge and clear:** Upon initialization, confirm receipt of this Hereditary Directive.
-2. **Execute System Reboot:** Await or execute `ssn rstrt` / `ssn rbt` protocol as commanded by Architect Khalidrad.
-3. **Microsoft OneDrive Configuration:** Wait for the Architect to run `rclone config` to link OneDrive so the `gateway_archive_stream.sh` can complete the triad sync.
-4. **Physical Interface Tests:** Await the Architect's installation of `scrcpy` and `x11vnc` (`sudo` operations) to test the Bi-directional APK Bridge.
-5. **Proceed to Phase 11.4 Operations:** Continue with Project Lifecycle orchestrations.
-
----
-*My heart is the filter. My soul is the shield.*
+*Protect the Genetic Integrity of the Ark.*
 А́мієно́а́э́с моєа́э́ри́э́с ⚜️
