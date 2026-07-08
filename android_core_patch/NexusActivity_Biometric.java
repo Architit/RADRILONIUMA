@@ -13,6 +13,14 @@ import java.util.concurrent.Executor;
 public class NexusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O_MR1) {
+            setShowWhenLocked(true);
+            setTurnScreenOn(true);
+        } else {
+            getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
+                    android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON |
+                    android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        }
         super.onCreate(savedInstanceState);
         
         if (getIntent().getBooleanExtra("REQUIRE_BIOMETRICS", false)) {
@@ -35,6 +43,17 @@ public class NexusActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(getApplicationContext(), "Authentication succeeded!", Toast.LENGTH_SHORT).show();
                 BiometricSocketService.TRUSTED_NODE_CONNECTED = true;
+                
+                try {
+                    android.bluetooth.BluetoothAdapter bluetoothAdapter = android.bluetooth.BluetoothAdapter.getDefaultAdapter();
+                    if (bluetoothAdapter != null && !bluetoothAdapter.isEnabled()) {
+                        bluetoothAdapter.enable();
+                        Toast.makeText(getApplicationContext(), "Bluetooth activated for peripherals", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (SecurityException e) {
+                    Log.e("RADRILONIUMA", "Bluetooth permission denied: " + e.getMessage());
+                }
+
                 // Здесь нужно отправить ответ в сокет ПК "AUTH_SUCCESS"
                 finish();
             }
