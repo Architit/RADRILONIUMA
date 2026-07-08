@@ -39,25 +39,40 @@ def safe_mkdir(path: Path) -> None:
 
 
 def default_providers() -> dict[str, dict[str, Any]]:
-    gws_root = os.getenv("GATEWAY_GWORKSPACE_ROOT", "").strip()
-    onedrive_root = os.getenv("GATEWAY_ONEDRIVE_ROOT", "").strip()
-    archive_root = os.getenv("GATEWAY_ARCHIVE_ROOT", "").strip()
     providers: dict[str, dict[str, Any]] = {
         "local": {"kind": "fs", "root": str(STATE_DIR / "storage" / "local")},
-        "gdrive": {"kind": "fs", "root": ""},
-        "onedrive": {"kind": "fs", "root": ""},
         "archive": {"kind": "fs", "root": ""},
+        "onedrive": {"kind": "fs", "root": ""},
     }
-    if gws_root:
-        providers["gdrive"]["root"] = str(Path(gws_root) / "LAM_GATEWAY" / REPO_NAME)
-    if onedrive_root:
-        providers["onedrive"]["root"] = str(Path(onedrive_root) / "LAM_GATEWAY" / REPO_NAME)
+    for i in range(1, 5):
+        root_env = os.getenv(f"GATEWAY_GWORKSPACE_ROOT_{i}", "").strip()
+        providers[f"gdrive_{i}"] = {"kind": "fs", "root": ""}
+        if root_env:
+            providers[f"gdrive_{i}"]["root"] = str(Path(root_env) / "LAM_GATEWAY" / REPO_NAME)
+            
+    archive_root = os.getenv("GATEWAY_ARCHIVE_ROOT", "").strip()
+    onedrive_root = os.getenv("GATEWAY_ONEDRIVE_ROOT", "").strip()
     if archive_root:
         providers["archive"]["root"] = str(Path(archive_root) / "LAM_GATEWAY" / REPO_NAME)
+    if onedrive_root:
+        providers["onedrive"]["root"] = str(Path(onedrive_root) / "LAM_GATEWAY" / REPO_NAME)
+        
     return providers
 
 
 def default_policy() -> dict[str, Any]:
+    providers = default_providers()
+    
+    provider_limits = {
+        "local": {"max_object_mb": 512},
+        "archive": {"max_object_mb": 4096},
+        "onedrive": {"max_object_mb": 2048},
+    }
+    for i in range(1, 5):
+        provider_limits[f"gdrive_{i}"] = {"max_object_mb": 2048}
+
+    gdrive_all = [f"gdrive_{i}" for i in range(1, 5)]
+
     return {
         "version": "v1",
         "routing": {
@@ -73,18 +88,15 @@ def default_policy() -> dict[str, Any]:
             "failure_threshold": 3,
             "cooldown_sec": 120,
         },
-        "providers": default_providers(),
-        "provider_limits": {
-            "local": {"max_object_mb": 512},
-            "gdrive": {"max_object_mb": 2048},
-            "onedrive": {"max_object_mb": 2048},
-            "archive": {"max_object_mb": 4096},
-        },
+        "providers": providers,
+        "provider_limits": provider_limits,
         "classes": {
-            "governance": {"providers": ["local", "gdrive", "archive"], "min_free_gb": 2},
-            "memory": {"providers": ["archive", "gdrive", "local"], "min_free_gb": 5},
-            "artifacts": {"providers": ["gdrive", "local", "archive"], "min_free_gb": 2},
-            "generic": {"providers": ["local", "gdrive", "onedrive"], "min_free_gb": 1},
+            "governance": {"providers": ["local"] + gdrive_all + ["archive"], "min_free_gb": 2},
+            "memory": {"providers": ["archive"] + gdrive_all + ["local"], "min_free_gb": 5},
+            "artifacts": {"providers": gdrive_all + ["local", "archive"], "min_free_gb": 2},
+            "generic": {"providers": ["local"] + gdrive_all + ["onedrive"], "min_free_gb": 1},
+            "public_global": {"providers": gdrive_all, "min_free_gb": 5},
+            "private_mesh": {"providers": ["local"] + gdrive_all, "min_free_gb": 2},
         },
     }
 

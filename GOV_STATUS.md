@@ -1,7 +1,7 @@
 # GOV_STATUS ⚜️
 
-last_updated_utc: 2026-06-08T00:40:00Z
-governance_state: ACTIVE
+last_updated_utc: 2026-07-08T09:32:19Z
+governance_state: AUTOPILOT_CORE_ACTIVE
 drift_state: GREEN
 watchdog_state: GREEN
 validating_eye: DEPLOYED
@@ -10,8 +10,8 @@ organs_synchronized: 36/39
 closure_decision: PHASE_11.0_COMPLETE
 
 ## Current Focus
-- Phase: 11.4_PROJECT_LIFECYCLE
-- Objective: Orchestrate and execute multi-agent workflows under AIP
+- Phase: AUTOPILOT_AGENT_CORE_INIT
+- Objective: Watchdog Enforcement, Strategic Delegation, Mirror Synchronization
 - Status: ACTIVE
 
 ## Required Pointers
