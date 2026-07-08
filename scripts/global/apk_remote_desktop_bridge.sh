@@ -17,8 +17,13 @@ function stream_phone_to_pc() {
         echo "Ошибка: scrcpy не установлен. Запустите: $0 install"
         exit 1
     fi
-    # Запуск scrcpy с оптимизацией
-    scrcpy --max-fps 60 --window-title "RADRILONIUMA APK - Phone Interface"
+    # Запуск scrcpy в режиме удержания без сна (-w)
+    # Флаг -S убран, так как Samsung Knox блокирует трансляцию экрана блокировки (чёрный экран).
+    echo ">>> Будим устройство для биометрической аутентификации..."
+    adb shell input keyevent KEYCODE_WAKEUP || true
+    echo ">>> ВНИМАНИЕ: Разблокируйте телефон отпечатком пальца."
+    echo ">>> После разблокировки нажмите Alt+O (или Super+O) в окне scrcpy, чтобы погасить физический экран телефона."
+    scrcpy -w --max-fps 60 --window-title "RADRILONIUMA APK - Phone Interface"
 }
 
 function stream_pc_to_phone() {
