@@ -1,0 +1,6 @@
+[MASTER]
+ignore=Architit_LAM_Codex,venv,.git
+fail-under=8.0
+
+[MESSAGES CONTROL]
+disable=missing-docstring,line-too-long,duplicate-code,trailing-whitespace,consider-using-with,too-few-public-methods,invalid-name,bare-except,multiple-statements,too-many-branches,too-many-statements,broad-exception-caught,unused-import,bad-indentation,unspecified-encoding,too-many-locals,redefined-outer-name,subprocess-run-check,trailing-newlines
