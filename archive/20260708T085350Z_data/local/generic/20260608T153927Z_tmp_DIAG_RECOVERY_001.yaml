@@ -1,0 +1,9 @@
+task_id: "DIAG_RECOVERY_001"
+phase: "PHASE_A"
+contract_match: true
+payload:
+  action: "SYS_HEALTH_SNAPSHOT"
+metadata:
+  protocol: "MIRASHANI"
+  signer: "architit"
+  target_organ: "AYAS"

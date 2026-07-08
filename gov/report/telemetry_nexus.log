@@ -214,3 +214,33 @@
 [2026-07-07T22:05:20.780869] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 [2026-07-07T22:05:20.780898] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
 [2026-07-07T22:05:20.862045] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.
+[2026-07-08T10:56:17.151111] [RADR_NEXUS] [SYS_BOOT] BIOS/Boot Telemetry Initialization Started
+[2026-07-08T10:56:17.153619] [RADR_NEXUS] [INFO] Scanning primary USB buses for connected organs/devices...
+[2026-07-08T10:56:17.273073] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-07-08T10:56:17.273155] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 002: ID 048d:1234 Integrated Technology Express, Inc. Chipsbank CBM2199 Flash Drive
+[2026-07-08T10:56:17.273199] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 003: ID 1532:008f Razer USA, Ltd Razer Naga Pro
+[2026-07-08T10:56:17.273235] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 004: ID 04e8:4001 Samsung Electronics Co., Ltd PSSD T7
+[2026-07-08T10:56:17.273270] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 005: ID 0bda:58c7 Realtek Semiconductor Corp. Integrated_Webcam_HD
+[2026-07-08T10:56:17.273318] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 006: ID 8087:0a2b Intel Corp. Bluetooth wireless interface
+[2026-07-08T10:56:17.273354] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 007: ID 0a5c:5832 Broadcom Corp. BCM5880 Secure Applications Processor Smartcard reader
+[2026-07-08T10:56:17.273396] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-07-08T10:56:17.273433] [RADR_NEXUS] [INFO] Detected Node: Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-07-08T10:56:17.273468] [RADR_NEXUS] [INFO] Detected Node: Bus 003 Device 002: ID 04e8:6860 Samsung Electronics Co., Ltd Galaxy series, misc. (MTP mode)
+[2026-07-08T10:56:17.273503] [RADR_NEXUS] [INFO] Detected Node: Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-07-08T10:56:17.273538] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
+[2026-07-08T10:56:17.412139] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.
+[2026-07-08T11:00:32.304953] [RADR_NEXUS] [SYS_BOOT] BIOS/Boot Telemetry Initialization Started
+[2026-07-08T11:00:32.308081] [RADR_NEXUS] [INFO] Scanning primary USB buses for connected organs/devices...
+[2026-07-08T11:00:32.346197] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-07-08T11:00:32.346271] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 002: ID 048d:1234 Integrated Technology Express, Inc. Chipsbank CBM2199 Flash Drive
+[2026-07-08T11:00:32.346311] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 003: ID 1532:008f Razer USA, Ltd Razer Naga Pro
+[2026-07-08T11:00:32.346358] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 004: ID 04e8:4001 Samsung Electronics Co., Ltd PSSD T7
+[2026-07-08T11:00:32.346393] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 005: ID 0bda:58c7 Realtek Semiconductor Corp. Integrated_Webcam_HD
+[2026-07-08T11:00:32.346461] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 006: ID 8087:0a2b Intel Corp. Bluetooth wireless interface
+[2026-07-08T11:00:32.346497] [RADR_NEXUS] [INFO] Detected Node: Bus 001 Device 007: ID 0a5c:5832 Broadcom Corp. BCM5880 Secure Applications Processor Smartcard reader
+[2026-07-08T11:00:32.346540] [RADR_NEXUS] [INFO] Detected Node: Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-07-08T11:00:32.346574] [RADR_NEXUS] [INFO] Detected Node: Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+[2026-07-08T11:00:32.346610] [RADR_NEXUS] [INFO] Detected Node: Bus 003 Device 002: ID 04e8:6860 Samsung Electronics Co., Ltd Galaxy series, misc. (MTP mode)
+[2026-07-08T11:00:32.346646] [RADR_NEXUS] [INFO] Detected Node: Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+[2026-07-08T11:00:32.346685] [RADR_NEXUS] [INFO] Verifying dataflow parameters and driver hooks...
+[2026-07-08T11:00:32.424458] [RADR_NEXUS] [INFO] Telemetry Nexus Scan Complete. Monitoring active.

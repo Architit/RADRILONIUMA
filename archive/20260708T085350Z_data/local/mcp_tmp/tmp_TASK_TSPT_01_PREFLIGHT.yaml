@@ -1,0 +1,9 @@
+task_id: "TASK_TSPT_01_PREFLIGHT"
+phase: "PHASE_A"
+contract_match: true
+payload:
+  action: "SYS_HEALTH_SNAPSHOT"
+metadata:
+  protocol: "MIRASHANI"
+  signer: "RADR-01"
+  target_organ: "TSPT"
