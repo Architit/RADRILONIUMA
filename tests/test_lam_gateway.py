@@ -138,6 +138,8 @@ def test_monitor_auto_switch_reorders_unreachable_provider(tmp_path, monkeypatch
     module.ensure_state()
 
     policy = module.read_json(module.POLICY_FILE, {})
+    if "gdrive" not in policy["providers"]:
+        policy["providers"]["gdrive"] = {}
     policy["providers"]["gdrive"]["root"] = ""
     policy["classes"]["generic"]["providers"] = ["gdrive", "local"]
     module.write_json(module.POLICY_FILE, policy)
@@ -166,9 +168,17 @@ def test_size_and_local_hard_limit_push_to_gdrive(tmp_path, monkeypatch) -> None
     module.ensure_state()
 
     policy = module.read_json(module.POLICY_FILE, {})
+    if "gdrive" not in policy["providers"]:
+        policy["providers"]["gdrive"] = {}
     policy["providers"]["gdrive"]["root"] = str(gdrive_root)
     policy["classes"]["generic"]["providers"] = ["local", "gdrive"]
     policy["routing"]["local_hard_min_free_gb"] = 10**9
+    if "provider_limits" not in policy:
+        policy["provider_limits"] = {}
+    if "local" not in policy["provider_limits"]:
+        policy["provider_limits"]["local"] = {}
+    if "gdrive" not in policy["provider_limits"]:
+        policy["provider_limits"]["gdrive"] = {}
     policy["provider_limits"]["local"]["max_object_mb"] = 1
     policy["provider_limits"]["gdrive"]["max_object_mb"] = 200
     module.write_json(module.POLICY_FILE, policy)

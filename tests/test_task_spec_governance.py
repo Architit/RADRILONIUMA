@@ -1,4 +1,9 @@
 # Copyright (c) 2026-06-07 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
+"""
+Tests for the task specification governance validator.
+"""
+# pylint: disable=duplicate-code, missing-function-docstring
+
 import importlib.util
 import sys
 import tempfile
@@ -20,6 +25,10 @@ _SPEC.loader.exec_module(MODULE)
 
 
 class TestTaskSpecGovernance(unittest.TestCase):
+    """
+    Test suite for validating task specification governance rules.
+    """
+
     def test_template_contract_markers_present(self):
         text = TEMPLATE_PATH.read_text(encoding="utf-8")
         self.assertIn('spec_version: "1.1"', text)
@@ -48,7 +57,9 @@ limits:
   timeout_ms: 1000
   max_output_tokens: 100
 """
-        with tempfile.NamedTemporaryFile("w+", suffix=".yaml", delete=False, encoding="utf-8") as tmp:
+        with tempfile.NamedTemporaryFile(
+            "w+", suffix=".yaml", delete=False, encoding="utf-8"
+        ) as tmp:
             tmp.write(text)
             tmp_path = Path(tmp.name)
         issues = MODULE.validate_file(tmp_path, fail_fast=False)
@@ -71,7 +82,9 @@ limits:
   timeout_ms: 1000
   max_output_tokens: 100
 """
-        with tempfile.NamedTemporaryFile("w+", suffix=".yaml", delete=False, encoding="utf-8") as tmp:
+        with tempfile.NamedTemporaryFile(
+            "w+", suffix=".yaml", delete=False, encoding="utf-8"
+        ) as tmp:
             tmp.write(text)
             tmp_path = Path(tmp.name)
         issues = MODULE.validate_file(tmp_path, fail_fast=False)
@@ -94,7 +107,9 @@ limits:
   timeout_ms: 1000
   max_output_tokens: 100
 """
-        with tempfile.NamedTemporaryFile("w+", suffix=".yaml", delete=False, encoding="utf-8") as tmp:
+        with tempfile.NamedTemporaryFile(
+            "w+", suffix=".yaml", delete=False, encoding="utf-8"
+        ) as tmp:
             tmp.write(text)
             tmp_path = Path(tmp.name)
         issues = MODULE.validate_file(tmp_path, fail_fast=False)

@@ -1,0 +1,14 @@
+[Wed  8 Jul 18:59:48 CEST 2026] >> Triggered by: usb
+[Wed  8 Jul 18:59:48 CEST 2026] >> Waiting for Android Biometric Auth...
+[Wed  8 Jul 18:59:48 CEST 2026] >> Auth failed or timeout. Access DENIED.
+[Wed  8 Jul 19:01:40 CEST 2026] >> Triggered by: usb
+[Wed  8 Jul 19:01:40 CEST 2026] >> Waiting for Android Biometric Auth...
+[Wed  8 Jul 19:01:55 CEST 2026] >> Auth failed or timeout. Access DENIED.
+[Wed  8 Jul 19:04:02 CEST 2026] >> Triggered by: usb
+[Wed  8 Jul 19:04:02 CEST 2026] >> Waiting for Android Biometric Auth...
+[Wed  8 Jul 19:04:02 CEST 2026] >> Zero-Trust Biometric Auth SUCCESS. Trust granted.
+[Wed  8 Jul 19:04:02 CEST 2026] >> Bridge launched.
+[Wed  8 Jul 19:06:09 CEST 2026] >> Triggered by: usb
+[Wed  8 Jul 19:06:09 CEST 2026] >> Waiting for Android Biometric Auth...
+[Wed  8 Jul 19:06:14 CEST 2026] >> Zero-Trust Biometric Auth SUCCESS. Trust granted.
+[Wed  8 Jul 19:06:14 CEST 2026] >> Bridge launched.
