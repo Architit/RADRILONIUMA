@@ -29,10 +29,10 @@ class USBGateway(TransportGateway):
                 self.connected = True
                 return True
         except ConnectionRefusedError:
-            logging.info("[STATUS] USB Gateway Offline (Cable disconnected or port forwarding inactive)")
+            print("[STATUS] USB Gateway Offline (Cable disconnected or port forwarding inactive)")
             return False
         except Exception:
-            logging.info("[STATUS] USB Gateway Offline")
+            print("[STATUS] USB Gateway Offline")
             return False
 
 class WiFiGateway(TransportGateway):
@@ -45,10 +45,10 @@ class WiFiGateway(TransportGateway):
                 self.connected = True
                 return True
         except (ConnectionRefusedError, OSError):
-            logging.info("[STATUS] Wi-Fi Gateway Offline (Device unreachable or Doze mode active)")
+            print("[STATUS] Wi-Fi Gateway Offline (Device unreachable or listener off)")
             return False
         except Exception:
-            logging.info("[STATUS] Wi-Fi Gateway Offline")
+            print("[STATUS] Wi-Fi Gateway Offline")
             return False
 
 class BluetoothGateway(TransportGateway):
@@ -68,10 +68,10 @@ class BluetoothGateway(TransportGateway):
             else:
                 return False
         except (ConnectionRefusedError, OSError):
-            logging.info("[STATUS] Bluetooth Gateway Offline (Target out of range or listener off)")
+            print("[STATUS] Bluetooth Gateway Offline (Target out of range or listener off)")
             return False
         except Exception:
-            logging.info("[STATUS] Bluetooth Gateway Offline")
+            print("[STATUS] Bluetooth Gateway Offline")
             return False
 
 def discover_best_gateway(wifi_ip, bluetooth_mac):
