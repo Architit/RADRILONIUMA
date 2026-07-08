@@ -1,6 +1,6 @@
 # ENVIRONMENT RUNTIME PROTOCOL V2
 
-version: v2.0.0
+version: 2026.08.07.10.36
 status: ACTIVE
 mode: contracts-first, observability-first, derivation-only
 scope: deterministic runtime/profile gates for environment-sensitive operations
