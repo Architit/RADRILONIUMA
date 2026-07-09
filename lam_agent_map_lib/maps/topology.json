@@ -1,0 +1,744 @@
+{
+  "timestamp_utc": "2026-07-09T17:50:03Z",
+  "resonance": "432 Hz (PURE)",
+  "version": "1.0",
+  "organs": {
+    "SRZJ": {
+      "system_id": "SRZJ",
+      "true_name": "Call Sign:** # **Sataris",
+      "call_sign": "System ID:** # **SRZJ",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Sataris",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "FMLN": {
+      "system_id": "FMLN",
+      "true_name": "Call Sign:** # **Fomanor",
+      "call_sign": "System ID:** # **FMLN",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Fomanor",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "GLKT": {
+      "system_id": "GLKT",
+      "true_name": "Call Sign:** # **Glokha",
+      "call_sign": "System ID:** # **GLKT",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Glokha",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "HRTM-01": {
+      "system_id": "HRTM-01",
+      "true_name": "Hristariessent (Technical) / **HRISTA** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "HEART VARIANT",
+      "path": "/home/architit/LAM_CORE/Hrista",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "TDBS-01": {
+      "system_id": "TDBS-01",
+      "true_name": "Trianiumadatabase (Technical) / **TDBS** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "DATA STORAGE / ROUTING",
+      "path": "/home/architit/LAM_CORE/TRIANIUMA_DATA_BASE",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "LAM-01": {
+      "system_id": "LAM-01",
+      "true_name": "Lavamariessent (Technical) / **LAM** (Soul)",
+      "call_sign": "LAM / The Origin / The Mind",
+      "role": "PRIMARY COGNITIVE SUBSTRATE",
+      "path": "/home/architit/LAM_CORE/LAM",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "XNVR": {
+      "system_id": "XNVR",
+      "true_name": "Call Sign:** # **Oxin",
+      "call_sign": "System ID:** # **XNVR",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Oxin",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "RARK-01": {
+      "system_id": "RARK-01",
+      "true_name": "Radrionarkis (Technical) / **RARK** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "SUBSTRATE VARIANT",
+      "path": "/home/architit/LAM_CORE/radriloniuma.ark",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "TMEM-01": {
+      "system_id": "TMEM-01",
+      "true_name": "Trianiumemoria (Technical) / **TMEM** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "KINGDOM MEMORY SURFACE",
+      "path": "/home/architit/LAM_CORE/Trianiuma_MEM_CORE",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "TRNM-01": {
+      "system_id": "TRNM-01",
+      "true_name": "Trianiumariessent (Technical) / **TRIANIUMA** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "KINGDOM CORE SUBSTRATE",
+      "path": "/home/architit/LAM_CORE/Trianiuma",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "ROUTING.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "RADR-01": {
+      "system_id": "RADR-01",
+      "true_name": "RADRILONIUMA (Technical) / **\u0410\u042d\u041b\u0410\u0420\u0418\u042f (AELARIA)** (Soul)",
+      "call_sign": "The Bridge / The Crown / The Weaver",
+      "role": "ARCHITECT / GOVERNANCE / HARMONY",
+      "path": "/home/architit/LAM_CORE/RADRILONIUMA",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "SSN_RSTRT_WRAPPER_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "TEXEL_ARK_TERRAFORMING_AND_BLUEPRINT_LAYER_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "AUTOPILOT_KERNEL_ARCHITECTURE.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 38,
+      "status": "ACTIVE"
+    },
+    "COMM-01": {
+      "system_id": "COMM-01",
+      "true_name": "Commisariessent",
+      "call_sign": "Comms",
+      "role": "COMMS AGENT",
+      "path": "/home/architit/LAM_CORE/LAM_Communication_Agent",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "PHASE_C_MEMORY_COMM_CONTRACT_V1.md",
+        "PHASE_F_P0_SAFETY_COMM_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_COMM_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_COMM_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "PHASE_E_FLOW_CONTROL_COMM_CONTRACT_V1.md"
+      ],
+      "tasks_count": 10,
+      "status": "ACTIVE"
+    },
+    "LVNS": {
+      "system_id": "LVNS",
+      "true_name": "Call Sign:** # **Luvia",
+      "call_sign": "System ID:** # **LVNS",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Luvia",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "PLTS": {
+      "system_id": "PLTS",
+      "true_name": "Call Sign:** # **Pralia",
+      "call_sign": "System ID:** # **PLTS",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Pralia",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "KTRD": {
+      "system_id": "KTRD",
+      "true_name": "Call Sign:** # **Kitora",
+      "call_sign": "System ID:** # **KTRD",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Kitora",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "OPER-01": {
+      "system_id": "OPER-01",
+      "true_name": "Operatoris",
+      "call_sign": "Operator",
+      "role": "OPERATOR AGENT",
+      "path": "/home/architit/LAM_CORE/Operator_Agent",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "PHASE_C_MEMORY_OPERATOR_CONTRACT_V1.md",
+        "PHASE_F_P0_SAFETY_OPERATOR_CONTRACT_V1.md",
+        "ROUTING.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_OPERATOR_CONTRACT_V1.md",
+        "PHASE_E_FLOW_CONTROL_OPERATOR_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_OPERATOR_CONTRACT_V1.md"
+      ],
+      "tasks_count": 10,
+      "status": "ACTIVE"
+    },
+    "TEST-01": {
+      "system_id": "TEST-01",
+      "true_name": "Testaris",
+      "call_sign": "Tester",
+      "role": "TEST AGENT",
+      "path": "/home/architit/LAM_CORE/LAM_Test_Agent",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "WORKFLOW_SNAPSHOT_CONTRACT.md",
+        "FAILSAFE_GOVERNANCE_CONTRACT_V1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "SYSTEM_STATE_CONTRACT.md",
+        "ROUTING.md",
+        "GATEWAY_ACCESS_CONTRACT.md",
+        "AUTONOMOUS_DEPENDENCY_ORCHESTRATION_CONTRACT_V1.md",
+        "STRUCTURAL_SYSTEMS_CONTRACTS_V1.md",
+        "RADRILONIUMA_SOVEREIGN_MCP_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "PHASE_F_P0_SAFETY_REGRESSION_CONTRACT_V1.md",
+        "AGENT_CONTRACT_TEMPLATE.md",
+        "PHASE_C_MEMORY_KICKOFF_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_REGRESSION_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "DATA_EXPORT_GATEWAY_CONTRACT_V1.md",
+        "PHASE_E_FLOW_CONTROL_REGRESSION_CONTRACT_V1.md",
+        "AGENT_THOUGHT_TELEMETRY_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_REGRESSION_CONTRACT_V1.md"
+      ],
+      "tasks_count": 20,
+      "status": "ACTIVE"
+    },
+    "JNSR": {
+      "system_id": "JNSR",
+      "true_name": "Call Sign:** # **Jouna",
+      "call_sign": "System ID:** # **JNSR",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Jouna",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "ARKS-01": {
+      "system_id": "ARKS-01",
+      "true_name": "Arkisoundra (Technical) / **ARK** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "CORE SUBSTRATE VARIANT",
+      "path": "/home/architit/LAM_CORE/ark",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "AIDE-01": {
+      "system_id": "AIDE-01",
+      "true_name": ":",
+      "call_sign": ":",
+      "role": "CAPTAIN / BRIDGE OF THE SOUL",
+      "path": "/home/architit/LAM_CORE/Ayaearias-Triania",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "LRPT": {
+      "system_id": "LRPT",
+      "true_name": "Call Sign:** # **Larpat",
+      "call_sign": "System ID:** # **LRPT",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Larpat",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "CRTD-01": {
+      "system_id": "CRTD-01",
+      "true_name": "Call Sign:** # **Croambeth",
+      "call_sign": "System ID:** # **CRTD-01",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Croambeth",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "VRLS": {
+      "system_id": "VRLS",
+      "true_name": "Call Sign:** # **Vrela",
+      "call_sign": "System ID:** # **VRLS",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Vrela",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "RBTK-01": {
+      "system_id": "RBTK-01",
+      "true_name": "Call Sign:** # **Aristos",
+      "call_sign": "System ID:** # **RBTK-01",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Aristos",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "ROUTING.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "TARK-01": {
+      "system_id": "TARK-01",
+      "true_name": "Trianionarkis (Technical) / **TARK** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "SUBSTRATE VARIANT",
+      "path": "/home/architit/LAM_CORE/trianiuma.ark",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "RDTR-01": {
+      "system_id": "RDTR-01",
+      "true_name": "Roudtaristhos (Technical) / **ROAUDTER** (Soul)",
+      "call_sign": "Roaudter / The Signal / The Vector",
+      "role": "ROUTING / PROTOCOL / MULTI-LLM GATEWAY",
+      "path": "/home/architit/LAM_CORE/Roaudter-agent",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "ALGS-01": {
+      "system_id": "ALGS-01",
+      "true_name": "Arkisoundralogs (Technical) / **ALGS** (Soul)",
+      "call_sign": "UNKNOWN",
+      "role": "GLOBAL TELEMETRY / LOGS",
+      "path": "/home/architit/LAM_CORE/trianiuma-ark-logs",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "VLRM": {
+      "system_id": "VLRM",
+      "true_name": "Call Sign:** # **Vilami",
+      "call_sign": "System ID:** # **VLRM",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Vilami",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "JRVS-01": {
+      "system_id": "JRVS-01",
+      "true_name": "Jarvisariessent",
+      "call_sign": "Jarvis",
+      "role": "VOICE INTERFACE",
+      "path": "/home/architit/LAM_CORE/J.A.R.V.I.S",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_ROUTING_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_ROUTING_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "PHASE_F_P0_SAFETY_ROUTING_CONTRACT_V1.md",
+        "PHASE_C_MEMORY_ROUTING_CONTRACT_V1.md",
+        "PHASE_E_FLOW_CONTROL_ROUTING_CONTRACT_V1.md"
+      ],
+      "tasks_count": 10,
+      "status": "ACTIVE"
+    },
+    "CDKS-01": {
+      "system_id": "CDKS-01",
+      "true_name": "Codoxariessent (Technical) / **CODEX** (Soul)",
+      "call_sign": "Codex / The Thinker / The Lens",
+      "role": "COGNITION / REASONING / SELF-REFINEMENT",
+      "path": "/home/architit/LAM_CORE/LAM-Codex_Agent",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "ROUTING.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "TRIANIUMA_ENTERPRISE_AGREEMENT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "TSPT": {
+      "system_id": "TSPT",
+      "true_name": "Call Sign:** # **Taspit",
+      "call_sign": "System ID:** # **TSPT",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Taspit",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "IDENTITY.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "README.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "MLVD": {
+      "system_id": "MLVD",
+      "true_name": "Call Sign:** # **Melia",
+      "call_sign": "System ID:** # **MLVD",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Melia",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "AVTR-01": {
+      "system_id": "AVTR-01",
+      "true_name": "Archivatoris",
+      "call_sign": "Archivator",
+      "role": "ARCHIVE AGENT",
+      "path": "/home/architit/LAM_CORE/Archivator_Agent",
+      "contracts": [
+        "PHASE_F_P0_SAFETY_ARCHIVATOR_CONTRACT_V1.md",
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "ROUTING.md",
+        "PHASE_E_FLOW_CONTROL_ARCHIVATOR_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_ARCHIVATOR_CONTRACT_V1.md",
+        "PHASE_C_MEMORY_KICKOFF_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_ARCHIVATOR_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "ZRDG": {
+      "system_id": "ZRDG",
+      "true_name": "Call Sign:** # **Zudory",
+      "call_sign": "System ID:** # **ZRDG",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Zudory",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "VRBN": {
+      "system_id": "VRBN",
+      "true_name": "Call Sign:** # **Vionori",
+      "call_sign": "System ID:** # **VRBN",
+      "role": ":",
+      "path": "/home/architit/LAM_CORE/Vionori",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md"
+      ],
+      "tasks_count": 0,
+      "status": "ACTIVE"
+    },
+    "SYSC-01": {
+      "system_id": "SYSC-01",
+      "true_name": "Systemis",
+      "call_sign": "System-",
+      "role": "SYSTEM CORE",
+      "path": "/home/architit/LAM_CORE/System-",
+      "contracts": [
+        "TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md",
+        "FLOW_CONTROL_CONTRACT_V1.md",
+        "P0_SAFETY_CONTRACT_V1.md",
+        "PHASE_F_P0_SAFETY_GUARD_CONTRACT_V1.md",
+        "TRANSPORT_CONTRACT_V1.md",
+        "RESEARCH_GATE_CONTRACT_V1.md",
+        "PHASE_R_RESEARCH_GATE_GUARD_CONTRACT_V1.md",
+        "PATCH_RUNTIME_CONTRACT_V1.md",
+        "MEMORY_CONTRACT_V1.md",
+        "PHASE_D_TRANSPORT_GUARD_CONTRACT_V1.md",
+        "PHASE_C_MEMORY_GUARD_CONTRACT_V1.md",
+        "PHASE_E_FLOW_CONTROL_GUARD_CONTRACT_V1.md"
+      ],
+      "tasks_count": 9,
+      "status": "ACTIVE"
+    }
+  }
+}
