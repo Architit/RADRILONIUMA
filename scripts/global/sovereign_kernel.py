@@ -222,7 +222,8 @@ class SovereignKernel:
         pid, fd = pty.fork()
         if pid == 0:
             try:
-                os.setpgrp()
+                try: os.setpgrp()
+                except OSError: pass
                 os.chdir(self.current_cwd)
                 # Ensure child doesn't relaunch itself too aggressively if kernel is managing it
                 os.environ["GEMINI_CLI_NO_RELAUNCH"] = "1"

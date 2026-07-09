@@ -4,4 +4,4 @@
 
 echo "[SYSTEM] Initiating OS-level Reboot Handshake..."
 # Using the provided PIN: 3773
-echo 3773 | sudo -S reboot
+echo 3773 | sudo -S systemctl reboot -i

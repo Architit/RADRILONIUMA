@@ -39,8 +39,8 @@
 26-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:5:19-47
 27            android:exported="true"
 27-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:7:19-42
-28            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-28-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:6:19-78
+28            android:theme="@style/Theme.Transparent" >
+28-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:6:19-59
 29            <intent-filter>
 29-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:8:13-11:29
 30                <action android:name="android.intent.action.MAIN" />

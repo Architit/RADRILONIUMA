@@ -25,7 +25,7 @@
         <activity
             android:name="com.radriloniuma.auth.AuthActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@style/Theme.Transparent" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

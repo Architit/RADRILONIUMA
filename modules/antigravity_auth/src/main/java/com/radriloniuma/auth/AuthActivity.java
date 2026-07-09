@@ -46,6 +46,7 @@ public class AuthActivity extends AppCompatActivity {
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("RADRILONIUMA OS")
                 .setSubtitle("Antigravity Auth: Подтвердите личность")
+                .setNegativeButtonText("Отмена")
                 .setAllowedAuthenticators(androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG)
                 .build();
 

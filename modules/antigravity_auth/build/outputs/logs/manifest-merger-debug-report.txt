@@ -69,7 +69,7 @@ ADDED from /home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/mai
 	android:exported
 		ADDED from /home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:7:19-42
 	android:theme
-		ADDED from /home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:6:19-78
+		ADDED from /home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:6:19-59
 	android:name
 		ADDED from /home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:5:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
