@@ -1,4 +1,4 @@
-#Thu Jul 09 14:37:47 CEST 2026
+#Thu Jul 09 14:38:44 CEST 2026
 base.0=/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex

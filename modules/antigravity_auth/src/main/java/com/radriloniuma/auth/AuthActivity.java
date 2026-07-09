@@ -32,6 +32,7 @@ public class AuthActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
+                android.util.Log.i("AuthActivity", "ANTIGRAVITY_AUTH_SUCCESS");
                 setResult(RESULT_OK);
                 finish();
             }

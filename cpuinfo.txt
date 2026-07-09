@@ -1,0 +1,238 @@
+Load: 15.04 / 15.43 / 15.61
+CPU usage from 186564ms to 3317ms ago (2026-07-09 14:46:19.912 to 2026-07-09 14:49:23.159):
+  20% 1290/system_server: 8.8% user + 11% kernel / faults: 75568 minor 4812 major
+  3% 94/kswapd0: 0% user + 3% kernel
+  2% 17113/com.google.android.apps.photos: 0.8% user + 1.1% kernel / faults: 17719 minor 16281 major
+  1.7% 17840/com.instagram.android: 0.8% user + 0.9% kernel / faults: 11710 minor 13070 major
+  1.6% 540/logd: 0.3% user + 1.2% kernel / faults: 1398 minor 72 major
+  1.4% 4029/com.google.android.providers.media.module: 0.7% user + 0.7% kernel / faults: 5397 minor 3791 major
+  1.4% 2471/com.google.android.gms.persistent: 0.8% user + 0.6% kernel / faults: 20679 minor 2736 major
+  1% 605/keystore2: 0.3% user + 0.7% kernel / faults: 599 minor 338 major
+  1% 1996/com.android.bluetooth: 0.5% user + 0.5% kernel / faults: 2193 minor 1380 major
+  0.9% 18521/com.google.android.gms: 0.4% user + 0.4% kernel / faults: 16659 minor 7344 major
+  0.3% 1101/gpsd: 0% user + 0.2% kernel / faults: 56 minor 222 major
+  0.7% 6407/com.android.vending: 0.3% user + 0.4% kernel / faults: 9843 minor 15617 major
+  0.7% 858/statsd: 0.4% user + 0.3% kernel / faults: 4 minor 40 major
+  0.6% 1912/com.android.systemui: 0.3% user + 0.3% kernel / faults: 5789 minor 5938 major
+  0.6% 879/android.hardware.sensors@2.0-service.multihal: 0.1% user + 0.5% kernel / faults: 1 minor 6 major
+  0.5% 16393/logcat: 0.1% user + 0.4% kernel / faults: 1 major
+  0.5% 14/rcu_preempt: 0% user + 0.5% kernel
+  0.5% 169/fast_switch_post_worker_dm_cpucl0: 0% user + 0.5% kernel
+  0.5% 918/surfaceflinger: 0.2% user + 0.3% kernel / faults: 197 minor 372 major
+  0.5% 15682/kworker/u16:4-writeback: 0% user + 0.5% kernel / faults: 3 minor 2 major
+  0.4% 908/audioserver: 0.2% user + 0.2% kernel / faults: 517 minor 806 major
+  0.4% 541/lmkd: 0% user + 0.4% kernel / faults: 10 major
+  0.4% 165/chub_log_kthread: 0% user + 0.4% kernel
+  0.4% 4188/com.sec.android.sdhms: 0.2% user + 0.2% kernel / faults: 1809 minor 1919 major
+  0.4% 9765/kworker/u16:1-shub_dev_wq: 0% user + 0.4% kernel / faults: 4 major
+  0.3% 4049/com.samsung.android.smartsuggestions: 0.1% user + 0.1% kernel / faults: 4107 minor 2720 major
+  0.3% 877/android.hardware.graphics.composer@2.4-service: 0.1% user + 0.2% kernel / faults: 4 major
+  0.3% 18569/android.process.acore: 0.1% user + 0.1% kernel / faults: 2383 minor 1556 major
+  0.3% 166/irq/258-119f0000.contxthub: 0% user + 0.3% kernel
+  0.2% 857/netd: 0% user + 0.2% kernel / faults: 3099 minor 39 major
+  0.2% 1739/com.android.phone: 0.1% user + 0% kernel / faults: 1346 minor 917 major
+  0.2% 191/simpleinteractive: 0% user + 0.2% kernel
+  0.2% 7670/com.samsung.android.providers.media: 0.1% user + 0.1% kernel / faults: 1669 minor 1885 major
+  0.2% 2064/com.sec.imsservice: 0% user + 0.1% kernel / faults: 408 minor 945 major
+  0.2% 6516/com.microsoft.appmanager: 0% user + 0.1% kernel / faults: 1504 minor 3775 major
+  0.1% 170/fast_switch_post_worker_dm_cpucl1: 0% user + 0.1% kernel
+  0.1% 17638/com.samsung.android.beaconmanager: 0.1% user + 0% kernel / faults: 73 minor 2 major
+  0.1% 2802/com.samsung.android.easysetup:IcControlService: 0% user + 0% kernel / faults: 704 minor 792 major
+  0.1% 859/zygote64: 0% user + 0.1% kernel / faults: 1377 minor
+  0.1% 608/android.hardware.security.keymint-service: 0% user + 0.1% kernel / faults: 4 minor 12 major
+  0.1% 28417/kworker/1:0H: 0% user + 0.1% kernel
+  0% 1727/com.android.systemui:multiwindowui: 0% user + 0% kernel / faults: 5947 minor 1785 major
+  0.1% 630/f2fs_ckpt-254:60: 0% user + 0.1% kernel
+  0.1% 1089/wificond: 0% user + 0% kernel / faults: 6 minor 81 major
+  0.1% 4919/com.samsung.android.wifi.ai: 0% user + 0% kernel / faults: 308 minor 82 major
+  0.1% 13/ksoftirqd/0: 0% user + 0.1% kernel
+  0.1% 546/psimon: 0% user + 0.1% kernel
+  0.1% 4044/com.google.android.googlequicksearchbox:interactor: 0% user + 0% kernel / faults: 1881 minor 4596 major
+  0.1% 8770/com.samsung.android.app.contacts: 0% user + 0% kernel / faults: 618 minor 830 major
+  0.1% 15975/kworker/0:0-events: 0% user + 0.1% kernel
+  0.1% 17103/kworker/0:0H-kverityd: 0% user + 0.1% kernel
+  0.1% 868/android.hardware.bluetooth@1.1-service: 0% user + 0.1% kernel / faults: 3 minor 11 major
+  0.1% 17033/com.facebook.services: 0% user + 0% kernel / faults: 1883 minor 2086 major
+  0.1% 1881/com.android.networkstack.process: 0% user + 0% kernel / faults: 910 minor 937 major
+  0.1% 13598/kworker/2:2H-kblockd: 0% user + 0.1% kernel
+  0.1% 12019/com.samsung.android.mdecservice: 0% user + 0% kernel / faults: 33 minor 119 major
+  0.1% 394/ueventd: 0% user + 0% kernel / faults: 1 major
+  0.1% 1080/mediaserver: 0% user + 0% kernel / faults: 408 minor 564 major
+  0.1% 14424/com.google.android.deskclock: 0% user + 0% kernel / faults: 261 minor 103 major
+  0% 542/servicemanager: 0% user + 0% kernel / faults: 18 major
+  0% 867/android.hardware.audio.service: 0% user + 0% kernel / faults: 111 minor 481 major
+  0% 881/android.hardware.wifi@1.0-service: 0% user + 0% kernel / faults: 12 minor 64 major
+  0% 899/vendor.samsung.hardware.thermal@1.0-service: 0% user + 0% kernel
+  0% 7063/kworker/6:2H-kverityd: 0% user + 0% kernel
+  0% 1/init: 0% user + 0% kernel / faults: 4 minor 22 major
+  0% 1109/media.swcodec: 0% user + 0% kernel / faults: 181 minor 215 major
+  0% 11103/kworker/u17:2-ufs_clk_gating_0: 0% user + 0% kernel
+  0% 26279/android.process.media: 0% user + 0% kernel / faults: 27 minor 83 major
+  0% 2426/com.sec.android.app.launcher: 0% user + 0% kernel / faults: 1123 minor 1466 major
+  0% 294/ufs_perf_0: 0% user + 0% kernel
+  0% 3085/com.sec.location.nsflp2: 0% user + 0% kernel / faults: 131 minor 140 major
+  0% 17763/kworker/u17:0-ufs_clk_gating_0: 0% user + 0% kernel
+  0% 587/iod: 0% user + 0% kernel
+  0% 1122/vendor.samsung.hardware.biometrics.fingerprint-service: 0% user + 0% kernel
+  0% 1893/kworker/0:8H-kblockd: 0% user + 0% kernel
+  0% 1911/com.sec.epdg: 0% user + 0% kernel / faults: 82 minor 34 major
+  0% 11503/com.samsung.android.app.routines: 0% user + 0% kernel / faults: 105 minor 241 major
+  0% 31971/com.google.android.googlequicksearchbox:googleapp: 0% user + 0% kernel / faults: 155 minor 299 major
+  0% 26/ksoftirqd/1: 0% user + 0% kernel
+  0% 33/ksoftirqd/2: 0% user + 0% kernel
+  0% 893/vendor.samsung.hardware.health-service: 0% user + 0% kernel
+  0% 1104/rild: 0% user + 0% kernel / faults: 33 minor 206 major
+  0% 1707/iptables-restore: 0% user + 0% kernel
+  0% 3061/com.google.android.ext.services: 0% user + 0% kernel / faults: 643 minor 1035 major
+  0% 17155/com.osp.app.signin: 0% user + 0% kernel / faults: 161 minor 179 major
+  0% 17809/com.sec.android.provider.badge: 0% user + 0% kernel / faults: 424 minor 487 major
+  0% 2355/kworker/0:6H-kblockd: 0% user + 0% kernel
+  0% 13026/kworker/0:12H-fsverity_read_queue: 0% user + 0% kernel
+  0% 14837/kworker/3:3H-kblockd: 0% user + 0% kernel
+  0% 19026/android.process.acore: 0% user + 0% kernel / faults: 157 minor 14 major
+  0% 40/ksoftirqd/3: 0% user + 0% kernel
+  0% 894/ip6tables-restore: 0% user + 0% kernel
+  0% 916/perfmond: 0% user + 0% kernel / faults: 1 minor 5 major
+  0% 20203/com.android.vending:background: 0% user + 0% kernel / faults: 114 minor 296 major
+  0% 47/ksoftirqd/4: 0% user + 0% kernel
+  0% 54/ksoftirqd/5: 0% user + 0% kernel
+  0% 182/thermal_LITTLE: 0% user + 0% kernel
+  0% 2937/eris: 0% user + 0% kernel / faults: 3 minor 6 major
+  0% 6031/com.microsoft.familysafety: 0% user + 0% kernel / faults: 63 minor 108 major
+  0% 15014/com.samsung.android.honeyboard: 0% user + 0% kernel / faults: 26 minor 2 major
+  0% 180/thermal_BIG: 0% user + 0% kernel
+  0% 183/thermal_G3D: 0% user + 0% kernel
+  0% 886/android.hardware.memtrack-service.exynos: 0% user + 0% kernel
+  0% 18128/com.samsung.android.rubin.app: 0% user + 0% kernel / faults: 125 minor 339 major
+  0% 18470/kworker/0:3H-fsverity_read_queue: 0% user + 0% kernel
+  0% 23187/adbd: 0% user + 0% kernel / faults: 1188 minor 93 major
+  0% 604/android.system.suspend-service: 0% user + 0% kernel / faults: 2 major
+  0% 11891/kworker/1:1-events: 0% user + 0% kernel
+  0% 17825/com.sec.android.provider.badge: 0% user + 0% kernel / faults: 247 minor 342 major
+  0% 21731/kworker/7:19H-fsverity_read_queue: 0% user + 0% kernel
+  0% 22685/kworker/2:0-events: 0% user + 0% kernel
+  0% 61/ksoftirqd/6: 0% user + 0% kernel
+  0% 266/tz_worker_thread/0: 0% user + 0% kernel
+  0% 268/tz_worker_thread/2: 0% user + 0% kernel
+  0% 535/prng_seeder: 0% user + 0% kernel / faults: 2 minor 4 major
+  0% 885/vendor.samsung.hardware.light-service: 0% user + 0% kernel / faults: 15 minor 51 major
+  0% 888/samsung.hardware.media.c2@1.2-service: 0% user + 0% kernel / faults: 40 minor 159 major
+  0% 14982/kworker/7:0-events: 0% user + 0% kernel
+  0% 16053/kworker/5:2-events: 0% user + 0% kernel
+  0% 22226/kworker/3:0-five_wq: 0% user + 0% kernel
+  0% 17/rcu_exp_gp_kthread_worker: 0% user + 0% kernel
+  0% 68/ksoftirqd/7: 0% user + 0% kernel
+  0% 271/tz_worker_thread/5: 0% user + 0% kernel
+  0% 272/tz_worker_thread/6: 0% user + 0% kernel
+  0% 273/tz_worker_thread/7: 0% user + 0% kernel
+  0% 543/hwservicemanager: 0% user + 0% kernel / faults: 4 minor 14 major
+  0% 561/watchdogd: 0% user + 0% kernel
+  0% 1062/cameraserver: 0% user + 0% kernel / faults: 43 minor 166 major
+  0% 1070/smdexe: 0% user + 0% kernel
+  0% 1755/wpa_supplicant: 0% user + 0% kernel / faults: 19 minor 83 major
+  0% 2089/com.samsung.sec.android.teegris.tui_service: 0% user + 0% kernel
+  0% 3090/perfsdkserver: 0% user + 0% kernel
+  0% 4149/com.sec.android.diagmonagent: 0% user + 0% kernel / faults: 184 minor 357 major
+  0% 4880/com.google.android.apps.messaging: 0% user + 0% kernel / faults: 48 minor 124 major
+  0% 8187/kworker/5:3H-kblockd: 0% user + 0% kernel
+  0% 11605/kworker/4:1-events: 0% user + 0% kernel
+  0% 11610/kworker/0:2H-fsverity_read_queue: 0% user + 0% kernel
+  0% 29868/kworker/6:4H-fsverity_read_queue: 0% user + 0% kernel
+  0% 244/crtc0_kthread: 0% user + 0% kernel
+  0% 267/tz_worker_thread/1: 0% user + 0% kernel
+  0% 270/tz_worker_thread/4: 0% user + 0% kernel
+  0% 275/tz_iwlog_thread: 0% user + 0% kernel
+  0% 562/vold: 0% user + 0% kernel / faults: 1 major
+  0% 873/android.hardware.graphics.allocator@4.0-service: 0% user + 0% kernel / faults: 62 minor 53 major
+  0% 1011/sbauth: 0% user + 0% kernel
+  0% 1075/media.extractor: 0% user + 0% kernel / faults: 96 minor 336 major
+  0% 3894/com.google.android.inputmethod.latin: 0% user + 0% kernel / faults: 38 minor 95 major
+  0% 4245/com.samsung.android.mcfds: 0% user + 0% kernel / faults: 114 minor 326 major
+  0% 6027/com.microsoft.appmanager:accsvc: 0% user + 0% kernel / faults: 3 minor 3 major
+  0% 11366/kworker/6:0-events: 0% user + 0% kernel
+  0% 16272/com.samsung.android.mdx.kit: 0% user + 0% kernel / faults: 48 minor 143 major
+  0% 18380/com.microsoft.appmanager:pnsvc: 0% user + 0% kernel / faults: 50 minor 164 major
+  0% 2/kthreadd: 0% user + 0% kernel
+  0% 52/migration/5: 0% user + 0% kernel
+  0% 184/thermal_NPU: 0% user + 0% kernel
+  0% 185/thermal_ISP: 0% user + 0% kernel
+  0% 186/thermal_CP: 0% user + 0% kernel
+  0% 256/panel-bl-thread: 0% user + 0% kernel
+  0% 269/tz_worker_thread/3: 0% user + 0% kernel
+  0% 277/tz_iwsock: 0% user + 0% kernel
+  0% 544/vndservicemanager: 0% user + 0% kernel
+  0% 594/tzdaemon: 0% user + 0% kernel / faults: 44 minor 33 major
+  0% 631/f2fs_discard-254:60: 0% user + 0% kernel
+  0% 633/vendor.samsung.hardware.security.proca@2.0-service: 0% user + 0% kernel / faults: 2 minor
+  0% 634/vaultkeeperd: 0% user + 0% kernel / faults: 9 minor
+  0% 880/android.hardware.usb@1.3-service.coral: 0% user + 0% kernel
+  0% 884/vendor.samsung.hardware.hyper-service: 0% user + 0% kernel / faults: 3 major
+  0% 1004/ewlogd: 0% user + 0% kernel / faults: 1 major
+  0% 1010/traced: 0% user + 0% kernel / faults: 9 minor 15 major
+  0% 1079/media.metrics: 0% user + 0% kernel / faults: 133 minor 291 major
+  0% 1094/media.codec: 0% user + 0% kernel / faults: 42 minor 162 major
+  0% 1103/vendor.samsung.hardware.gnss-service: 0% user + 0% kernel / faults: 36 minor 130 major
+  0% 1107/wtasd: 0% user + 0% kernel / faults: 7 minor 44 major
+  0% 1117/abox_log: 0% user + 0% kernel
+  0% 1275/multiclientd: 0% user + 0% kernel / faults: 4 major
+  0% 2035/com.sec.sve: 0% user + 0% kernel / faults: 14 minor 38 major
+  0% 2050/com.android.nfc: 0% user + 0% kernel / faults: 29 minor 53 major
+  0% 6494/com.microsoft.appmanager:permsvc: 0% user + 0% kernel
+  0% 11875/kworker/4:2H-kverityd: 0% user + 0% kernel
+  0% 11951/kworker/4:5H-kblockd: 0% user + 0% kernel
+  0% 12299/com.samsung.android.audiomirroring: 0% user + 0% kernel / faults: 74 minor 160 major
+  0% 15695/com.samsung.accessory.budsunitemgr: 0% user + 0% kernel / faults: 125 minor 344 major
+  0% 17997/kworker/7:0H-kblockd: 0% user + 0% kernel
+  0% 17998/com.sec.android.daemonapp: 0% user + 0% kernel / faults: 105 minor 68 major
+  0% 18210/com.sec.android.daemonapp:weather_content_provider: 0% user + 0% kernel / faults: 14 minor 5 major
+ +0% 18898/com.azure.authenticator: 0% user + 0% kernel
+ +0% 18914/kworker/5:0H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 18964/com.samsung.android.scloud: 0% user + 0% kernel
+ +0% 19096/kworker/6:2: 0% user + 0% kernel
+ +0% 19112/kworker/7:2H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19119/kworker/u16:0-blk_sec_common: 0% user + 0% kernel
+ +0% 19120/kworker/7:4H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19269/com.microsoft.skydrive: 0% user + 0% kernel
+ +0% 19271/kworker/4:0H-kverityd: 0% user + 0% kernel
+ +0% 19280/kworker/7:5H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19350/com.samsung.cmh: 0% user + 0% kernel
+ +0% 19448/kbase_event: 0% user + 0% kernel
+ +0% 19774/kworker/4:4H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19775/kworker/4:6H-kblockd: 0% user + 0% kernel
+ +0% 19776/kworker/4:7H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19777/kworker/4:8H-kblockd: 0% user + 0% kernel
+ +0% 19778/kworker/5:1H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19779/kworker/4:9H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19780/kworker/5:2H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 19881/org.telegram.messenger: 0% user + 0% kernel
+ +0% 19957/kbase_event: 0% user + 0% kernel
+ +0% 19970/com.samsung.android.smartsuggestions:search: 0% user + 0% kernel
+ +0% 20006/com.android.chrome: 0% user + 0% kernel
+ +0% 20029/com.android.systemui:edgelighting: 0% user + 0% kernel
+ +0% 20045/kworker/5:5H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 20046/kworker/5:6H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 20047/kworker/5:7H-kblockd: 0% user + 0% kernel
+ +0% 20048/kworker/5:9H-kverityd: 0% user + 0% kernel
+ +0% 20058/kbase_event: 0% user + 0% kernel
+ +0% 20103/kworker/7:2: 0% user + 0% kernel
+ +0% 20107/com.sec.android.gallery3d: 0% user + 0% kernel
+ +0% 20109/com.sec.android.app.voicenote: 0% user + 0% kernel
+ +0% 20111/com.samsung.android.callassistant: 0% user + 0% kernel
+ +0% 20129/com.android.providers.calendar: 0% user + 0% kernel
+ +0% 20205/com.samsung.android.scpm: 0% user + 0% kernel
+ +0% 20291/com.google.android.gms.persistent: 0% user + 0% kernel
+ +0% 20346/com.google.android.gms: 0% user + 0% kernel
+ +0% 20395/kworker/7:6H-fsverity_read_queue: 0% user + 0% kernel
+ +0% 20396/kworker/7:7H-kblockd: 0% user + 0% kernel
+ +0% 20397/kworker/7:8H-kverityd: 0% user + 0% kernel
+ +0% 20443/kworker/4:0-events: 0% user + 0% kernel
+ +0% 20544/com.samsung.android.ce: 0% user + 0% kernel
+ +0% 20640/kworker/6:6H-kverityd: 0% user + 0% kernel
+ +0% 20734/com.google.android.as.oss: 0% user + 0% kernel
+ +0% 20736/com.facebook.katana: 0% user + 0% kernel
+ +0% 20759/kworker/u17:1-kbase_pm_poweroff_wait: 0% user + 0% kernel
+ +0% 20800/kbase_event: 0% user + 0% kernel
+ +0% 20883/com.samsung.storyservice: 0% user + 0% kernel
+ +0% 20904/com.google.android.googlequicksearchbox:search: 0% user + 0% kernel
+ +0% 21074/dumpsys: 0% user + 0% kernel
+14% TOTAL: 7.7% user + 5.3% kernel + 0.6% iowait + 0.6% irq + 0.3% softirq
