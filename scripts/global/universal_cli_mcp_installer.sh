@@ -32,10 +32,10 @@ done
 echo ">>> [STEP 2] Downloading & upgrading external MCP servers (GitHub, Microsoft Workspace, OneDrive)..."
 if command -v npm >/dev/null 2>&1; then
   echo ">>> [MCP] Caching @modelcontextprotocol/server-github..."
-  npx -y @modelcontextprotocol/server-github --version 2>/dev/null || true
+  echo "" | npx -y @modelcontextprotocol/server-github 2>/dev/null || true
   
   echo ">>> [MCP] Caching @modelcontextprotocol/server-onedrive (Microsoft Workspace)..."
-  npx -y @modelcontextprotocol/server-onedrive --version 2>/dev/null || true
+  echo "" | npx -y @modelcontextprotocol/server-onedrive 2>/dev/null || true
 fi
 
 # 3. Build / Update Local MCP Server & Google Workspace Extension
