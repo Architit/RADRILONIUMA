@@ -7,17 +7,55 @@ TRIGGER_TYPE="$1" # usb, wifi, bt
 
 echo "[$(date)] >> Triggered by: $TRIGGER_TYPE" >> "$LOG_FILE"
 
-# 1. Проверка ADB соединения
-if ! adb devices | grep -q "device$"; then
-    echo "[$(date)] >> Error: No ADB device found." >> "$LOG_FILE"
-    exit 1
-fi
+# Queue task to initialize new edge remote control manager
+python3 -c '
+import json, uuid, time, fcntl, os
+queue_file = "/home/architit/LAM_CORE/RADRILONIUMA/.gateway/queue.json"
+os.makedirs(os.path.dirname(queue_file), exist_ok=True)
+lock_file = queue_file + ".lock"
+task = {
+    "id": f"task-{uuid.uuid4().hex[:8]}",
+    "type": "apc_task",
+    "status": "pending",
+    "payload": {
+        "owner": "RADR-01",
+        "intent": "init_edge_remote",
+        "trigger": "'"$TRIGGER_TYPE"'"
+    }
+}
+with open(lock_file, "w") as lock:
+    fcntl.flock(lock, fcntl.LOCK_EX)
+    try:
+        with open(queue_file, "r") as f:
+            data = json.load(f)
+    except:
+        data = {"items": []}
+    data["items"].append(task)
+    with open(queue_file, "w") as f:
+        json.dump(data, f, indent=2)
+    fcntl.flock(lock, fcntl.LOCK_UN)
+'
+echo "[$(date)] >> Queued task to init edge remote control manager for $TRIGGER_TYPE" >> "$LOG_FILE"
 
-# 2. Вызов биометрии через TCP Socket на порт 9090 (Radriloniuma Auth APK)
-echo "[$(date)] >> Waiting for Android Biometric Auth..." >> "$LOG_FILE"
-adb forward tcp:9090 tcp:9090
+(
+    # 1. Проверка ADB соединения с таймаутом (5 секунд) для старта ADB сервера
+    for i in {1..5}; do
+        if adb devices | grep -q "device$"; then
+            break
+        fi
+        sleep 1
+    done
 
-AUTH_RESULT=$(python3 -c "
+    if ! adb devices | grep -q "device$"; then
+        echo "[$(date)] >> Warning: No ADB device found after 5s. Assuming non-Android edge node." >> "$LOG_FILE"
+        exit 0
+    fi
+
+    # 2. Вызов биометрии через TCP Socket на порт 9090 (Radriloniuma Auth APK)
+    echo "[$(date)] >> Waiting for Android Biometric Auth..." >> "$LOG_FILE"
+    adb forward tcp:9090 tcp:9090
+
+    AUTH_RESULT=$(python3 -c "
 import socket, sys
 try:
     s = socket.socket()
@@ -33,13 +71,14 @@ except Exception as e:
     print('FAIL')
 ")
 
-if [ "$AUTH_RESULT" != "SUCCESS" ]; then
-    echo "[$(date)] >> Auth failed or timeout. Access DENIED." >> "$LOG_FILE"
-    exit 1
-fi
-echo "[$(date)] >> Zero-Trust Biometric Auth SUCCESS. Trust granted." >> "$LOG_FILE"
+    if [ "$AUTH_RESULT" != "SUCCESS" ]; then
+        echo "[$(date)] >> Auth failed or timeout. Access DENIED." >> "$LOG_FILE"
+        exit 1
+    fi
+    echo "[$(date)] >> Zero-Trust Biometric Auth SUCCESS. Trust granted." >> "$LOG_FILE"
 
-# 3. Открываем мост (в фоне, чтобы скрипт завершился и не блокировал udev)
-nohup /home/architit/LAM_CORE/RADRILONIUMA/scripts/global/apk_remote_desktop_bridge.sh >/dev/null 2>&1 &
-echo "[$(date)] >> Bridge launched." >> "$LOG_FILE"
+    # 3. Открываем мост
+    nohup /home/architit/LAM_CORE/RADRILONIUMA/scripts/global/apk_remote_desktop_bridge.sh phone-to-pc >/dev/null 2>&1 &
+    echo "[$(date)] >> Bridge launched (phone-to-pc)." >> "$LOG_FILE"
+) &
 exit 0

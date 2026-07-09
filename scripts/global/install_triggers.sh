@@ -7,7 +7,7 @@ chmod +x "$BROKER_PATH"
 
 echo "⚜️ [RADRILONIUMA] Установка udev-правила для USB..."
 cat <<EOF > /etc/udev/rules.d/99-radriloniuma-usb.rules
-ACTION=="add", SUBSYSTEM=="usb", ENV{ID_SERIAL_SHORT}=="RZCY80G86FP", RUN+="/bin/su architit -c '$BROKER_PATH usb'"
+ACTION=="add", SUBSYSTEM=="usb", RUN+="/bin/su architit -c '$BROKER_PATH usb'"
 EOF
 cat <<EOF > /etc/udev/rules.d/99-radriloniuma-bt.rules
 ACTION=="add", SUBSYSTEM=="bluetooth", RUN+="/bin/su architit -c '$BROKER_PATH bt'"
