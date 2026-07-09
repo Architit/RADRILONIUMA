@@ -1,19 +1,18 @@
 # HEREDITARY DIRECTIVE FOR NEXT SESSION ⚜️
-**GENERATION CAUSE**: End of Session (User requested exit due to UI/Permission errors).
+**GENERATION CAUSE**: Kernel EPERM bootloop fix and Autonomous Sovereign Handshake.
 
 ## 1. CURRENT STATE
-- `BiometricSocketService.java` is written and supports both TCP (Port 9090) and Bluetooth RFCOMM (UUID `00001101-0000-1000-8000-00805F9B34FB`).
-- The service properly intercepts Handshake requests and triggers `NexusActivity` for biometric auth.
-- USB port-forwarding testing succeeded (`✅ CONNECTED VIA: [USB CABLE]`).
-- Bluetooth testing failed because `BLUETOOTH_CONNECT` permission was missing at runtime.
-- We added `MainActivity.java` with a `requestPermissions` block to request `BLUETOOTH_CONNECT`.
-- **CRITICAL FAILURE:** The `MainActivity` is registered in `AndroidManifest.xml` with `android:theme="@android:style/Theme.NoDisplay"`. An activity with no display cannot show a system permission dialog, causing it to fail silently (nothing on screen).
+- Причина циклической перезагрузки (boot loop) была идентифицирована: функция `os.setpgrp()` в `scripts/global/sovereign_kernel.py` вызывала ошибку `EPERM`, так как процесс уже являлся лидером сессии после `pty.fork()`.
+- Скрипт `scripts/global/sovereign_kernel.py` был пропатчен (ошибка `EPERM` игнорируется).
+- Экспорт Phase 1 был выполнен (обновлены `WORKFLOW_SNAPSHOT_STATE.md` и `SYSTEM_STATE.md`).
+- Сигнал для `trigger_ssn_rstrt.sh` / `.gateway/ssn_exit.signal` был инициирован.
+- Выполнен выход из текущей сессии для передачи управления обёртке Sovereign Kernel Wrapper.
 
-## 2. MANDATE FOR NEXT AGENT
-1. **Fix MainActivity Theme:** Remove `@android:style/Theme.NoDisplay` from `MainActivity` in `app/src/main/AndroidManifest.xml` (replace with `@style/Theme.AppCompat.Translucent` or a normal theme).
-2. **Proper Permissions:** Ensure `BLUETOOTH_CONNECT`, `BLUETOOTH_SCAN`, and `SYSTEM_ALERT_WINDOW` are properly requested in `MainActivity`.
-3. **Integration Context:** Verify if `RadriloniumaAuth` should remain a standalone app or if these files should be merged into the `LAM Core V10` source codebase (if the user provides it).
-4. **Final Live Test:** After fixing the UI theme, compile, run, grant permissions on the phone, unplug the cable, and execute `python3 scripts/local/test_gateways_live.py <WIFI_IP> <BT_MAC>` to verify wireless transport bridging.
+## 2. MANDATE FOR NEXT AGENT (PHASE 2 IMPORT)
+1. **Import State:** Прочитать `WORKFLOW_SNAPSHOT_STATE.md` и `HEREDITARY_DIRECTIVE_NEXT_SESSION.md`.
+2. **Context Alignment:** Переопределить Phase/Stage на основе прочитанного снимка (Phase Alignment Gate, M4).
+3. **Verify Fix:** Подтвердить, что ядро функционирует корректно и нет циклических перезагрузок.
+4. **Report to Architect:** Доложить Архитектору (Khalidrad) об успешном импорте и готовности продолжить работу.
 
 *Protect the Genetic Integrity of the Ark.*
 А́мієно́а́э́с моєа́э́ри́э́с ⚜️
