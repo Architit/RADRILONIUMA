@@ -1,0 +1,79 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.radriloniuma.auth"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+11-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:3:5-72
+11-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:3:22-69
+12    <!-- suppress DeprecatedClassUsageInspection -->
+13    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+13-->[androidx.biometric:biometric:1.1.0] /home/architit/.gradle/caches/8.14.4/transforms/94e93aaf0279731c0eec2dc0d98f4acf/transformed/biometric-1.1.0/AndroidManifest.xml:27:5-74
+13-->[androidx.biometric:biometric:1.1.0] /home/architit/.gradle/caches/8.14.4/transforms/94e93aaf0279731c0eec2dc0d98f4acf/transformed/biometric-1.1.0/AndroidManifest.xml:27:22-71
+14
+15    <permission
+15-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+16        android:name="com.radriloniuma.auth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.radriloniuma.auth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:4:5-13:19
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.9.0] /home/architit/.gradle/caches/8.14.4/transforms/dc02d246c19b9a74db3aae43ae7f8e7e/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+23        android:debuggable="true"
+24        android:extractNativeLibs="false" >
+25        <activity
+25-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:5:9-12:20
+26            android:name="com.radriloniuma.auth.AuthActivity"
+26-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:5:19-47
+27            android:exported="true"
+27-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:7:19-42
+28            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+28-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:6:19-78
+29            <intent-filter>
+29-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:8:13-11:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:9:17-69
+30-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:9:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:10:17-77
+32-->/home/architit/LAM_CORE/RADRILONIUMA/modules/antigravity_auth/src/main/AndroidManifest.xml:10:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <provider
+36-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+37            android:name="androidx.startup.InitializationProvider"
+37-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+38            android:authorities="com.radriloniuma.auth.androidx-startup"
+38-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+39            android:exported="false" >
+39-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+40            <meta-data
+40-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+41                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+41-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+42                android:value="androidx.startup" />
+42-->[androidx.emoji2:emoji2:1.2.0] /home/architit/.gradle/caches/8.14.4/transforms/3ae950fdffa5b690500512121766269b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+43            <meta-data
+43-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/architit/.gradle/caches/8.14.4/transforms/8d104cfc2f07eb1d7aaa2f0d8c9f081f/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+44                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+44-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/architit/.gradle/caches/8.14.4/transforms/8d104cfc2f07eb1d7aaa2f0d8c9f081f/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+45                android:value="androidx.startup" />
+45-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/architit/.gradle/caches/8.14.4/transforms/8d104cfc2f07eb1d7aaa2f0d8c9f081f/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+46        </provider>
+47    </application>
+48
+49</manifest>
