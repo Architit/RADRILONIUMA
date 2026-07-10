@@ -12,7 +12,7 @@ const DB_PATH = path.join(__dirname, '.quota_db.json');
 let quotaState = {
     accounts: {
         "denua": { key: "AIzaSy_DENUA_КЛЮЧ...", unlocks_at: 0 },
-        "elafea": { key: "MASKED_SECRET_KEY", unlocks_at: 0 },
+        "elafea": { key: process.env.ELAFEA_API_KEY, unlocks_at: 0 },
         "trianiuma": { key: "AIzaSy_TRIANIUMA_КЛЮЧ...", unlocks_at: 0 }
     },
     active_slot: "elafea"
