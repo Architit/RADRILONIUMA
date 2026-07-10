@@ -1,0 +1,55 @@
+{
+    "arch": "x86_64",
+    "build": "hecca717_1",
+    "build_number": 1,
+    "build_string": "hecca717_1",
+    "channel": "conda-forge",
+    "constrains": [
+        "expat 2.8.1.*"
+    ],
+    "depends": [
+        "__glibc >=2.17,<3.0.a0",
+        "libgcc >=14"
+    ],
+    "extracted_package_dir": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.1-hecca717_1",
+    "files": [
+        "lib/libexpat.so.1",
+        "lib/libexpat.so.1.12.1"
+    ],
+    "fn": "libexpat-2.8.1-hecca717_1.conda",
+    "license": "MIT",
+    "license_family": "MIT",
+    "link": {
+        "source": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.1-hecca717_1",
+        "type": 1
+    },
+    "md5": "b24d3c612f71e7aa74158d92106318b2",
+    "name": "libexpat",
+    "package_tarball_full_path": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.1-hecca717_1.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "lib/libexpat.so.1",
+                "path_type": "softlink",
+                "sha256_in_prefix": "c995a80395904d85c4d35f4a185c3bae2fcdc562141dd6106c8ebe29571d33b3",
+                "size_in_bytes": 195520
+            },
+            {
+                "_path": "lib/libexpat.so.1.12.1",
+                "path_type": "hardlink",
+                "sha256": "c995a80395904d85c4d35f4a185c3bae2fcdc562141dd6106c8ebe29571d33b3",
+                "sha256_in_prefix": "c995a80395904d85c4d35f4a185c3bae2fcdc562141dd6106c8ebe29571d33b3",
+                "size_in_bytes": 195520
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "16feffd9ddbbe5b718515d38ee376c685ba95491cd901244e24671d20b952a77",
+    "size": 77856,
+    "subdir": "linux-64",
+    "timestamp": 1781203599,
+    "url": "https://conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.1-hecca717_1.conda",
+    "version": "2.8.1"
+}

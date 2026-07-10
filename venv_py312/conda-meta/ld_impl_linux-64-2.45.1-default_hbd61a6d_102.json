@@ -1,0 +1,54 @@
+{
+    "arch": "x86_64",
+    "build": "default_hbd61a6d_102",
+    "build_number": 102,
+    "build_string": "default_hbd61a6d_102",
+    "channel": "conda-forge",
+    "constrains": [
+        "binutils_impl_linux-64 2.45.1"
+    ],
+    "depends": [
+        "__glibc >=2.17,<3.0.a0",
+        "zstd >=1.5.7,<1.6.0a0"
+    ],
+    "extracted_package_dir": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.45.1-default_hbd61a6d_102",
+    "files": [
+        "bin/x86_64-conda-linux-gnu-ld",
+        "x86_64-conda-linux-gnu/bin/ld"
+    ],
+    "fn": "ld_impl_linux-64-2.45.1-default_hbd61a6d_102.conda",
+    "license": "GPL-3.0-only",
+    "link": {
+        "source": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.45.1-default_hbd61a6d_102",
+        "type": 1
+    },
+    "md5": "18335a698559cdbcd86150a48bf54ba6",
+    "name": "ld_impl_linux-64",
+    "package_tarball_full_path": "/home/architit/.local/share/mamba/pkgs/https/conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.45.1-default_hbd61a6d_102.tar.bz2",
+    "paths_data": {
+        "paths": [
+            {
+                "_path": "bin/x86_64-conda-linux-gnu-ld",
+                "path_type": "hardlink",
+                "sha256": "569cb6ad7db15e66d540e4dab54ae02d5c4660308fdf19cb8d75837f96b2cbd7",
+                "sha256_in_prefix": "a031e39a0110c600058e6769c0e327996de3eaa030d453e6bf7f589f2ecd8f4e",
+                "size_in_bytes": 2917192
+            },
+            {
+                "_path": "x86_64-conda-linux-gnu/bin/ld",
+                "path_type": "softlink",
+                "sha256_in_prefix": "a031e39a0110c600058e6769c0e327996de3eaa030d453e6bf7f589f2ecd8f4e",
+                "size_in_bytes": 2917192
+            }
+        ],
+        "paths_version": 1
+    },
+    "platform": "linux",
+    "requested_spec": "",
+    "sha256": "3d584956604909ff5df353767f3a2a2f60e07d070b328d109f30ac40cd62df6c",
+    "size": 728002,
+    "subdir": "linux-64",
+    "timestamp": 1774197446,
+    "url": "https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.45.1-default_hbd61a6d_102.conda",
+    "version": "2.45.1"
+}
