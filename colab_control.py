@@ -40,7 +40,7 @@ if not tab:
             "--remote-debugging-port=9222",
             "--remote-allow-origins=*",
             "--user-data-dir=/tmp/chrome-debug-profile",
-            "https://colab.research.google.com/drive/14u6kgKq0cunCFrs07rGq5XjR47HrrYlM"
+            "https://colab.research.google.com/drive/14u6kgKq0cunCFrs07rGq5XjR47HrrYIM"
         ],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
