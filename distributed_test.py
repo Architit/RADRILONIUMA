@@ -2,8 +2,8 @@ import ray
 import socket
 import time
 
-# Connect to the running Ray cluster (auto-detects local head node)
-ray.init(address="auto")
+# Connect to the remote Ray cluster on Colab
+ray.init(address="100.112.225.15:6379")
 
 @ray.remote
 def get_node_info():
