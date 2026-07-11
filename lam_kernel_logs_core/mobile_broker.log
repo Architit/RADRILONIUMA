@@ -519,3 +519,5 @@
 [сб 11 июль 2026 01:16:15 CEST] >> Queued task to init edge remote control manager for usb
 [сб 11 июль 2026 01:16:15 CEST] >> Waiting for Android Biometric Auth...
 [сб 11 июль 2026 01:16:15 CEST] >> Auth failed or timeout. Access DENIED.
+[вс 12 июль 2026 00:13:13 CEST] >> Triggered by: bt
+[вс 12 июль 2026 00:13:14 CEST] >> Queued task to init edge remote control manager for bt
