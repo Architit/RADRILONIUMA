@@ -521,3 +521,6 @@
 [сб 11 июль 2026 01:16:15 CEST] >> Auth failed or timeout. Access DENIED.
 [вс 12 июль 2026 00:13:13 CEST] >> Triggered by: bt
 [вс 12 июль 2026 00:13:14 CEST] >> Queued task to init edge remote control manager for bt
+[вс 12 июль 2026 00:28:45 CEST] >> Triggered by: bt
+[вс 12 июль 2026 00:28:46 CEST] >> Queued task to init edge remote control manager for bt
+[вс 12 июль 2026 00:28:51 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
