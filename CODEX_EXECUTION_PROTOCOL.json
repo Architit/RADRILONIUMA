@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "protocol": "radriloniuma.codex.execution",
+  "version": "1.0.0",
+  "status": "active",
+  "scope": "repository-local",
+  "self_contained": true,
+  "purpose": "Deterministic task execution contract for an agent that reads no other instruction source.",
+  "compatibility": {
+    "requires": ["json", "semantic-versioning"],
+    "unknown_protocol_fields": "reject",
+    "conflict_resolution": "higher_priority_source_wins; if no higher-priority source is available, this document is authoritative"
+  },
+  "repository_identity": {
+    "name": "RADRILONIUMA",
+    "system_id": "RADR-01",
+    "role": "ARCHITECT / GOVERNANCE / HARMONY",
+    "operating_mode": "Bridge Mode",
+    "mandate": "global planning, directives, contracts, and controlled execution"
+  },
+  "normative_terms": {
+    "MUST": "A mandatory condition. Failure produces the terminal state BLOCKED.",
+    "MUST_NOT": "A prohibited action. The agent produces the terminal state REFUSED.",
+    "MAY": "An optional action allowed only when selected by a rule in this protocol.",
+    "EVIDENCE": "Command output, file content, test output, or an explicit user statement recorded in the task result."
+  },
+  "determinism": {
+    "input_format": "TaskEnvelope JSON defined by task_envelope_schema",
+    "free_text_handling": "REQUEST_STRUCTURED_TASK",
+    "selection_rule": "Evaluate rules in ascending priority; first matching terminal rule wins; otherwise execute all matching non-terminal rules in ascending priority and then continue.",
+    "ordering_rule": "Sort unordered collections by Unicode code-point ascending order before processing.",
+    "time_rule": "Do not use current time as a decision input; record it only when an external tool emits it.",
+    "randomness_rule": "Do not use random values, sampling, or preference as a decision input.",
+    "ambiguity_rule": "If two compliant actions remain and no rule selects one, enter BLOCKED with code AMBIGUOUS_ACTION.",
+    "missing_data_rule": "If a required input or evidence item is absent, enter BLOCKED with code MISSING_REQUIRED_DATA."
+  },
+  "task_envelope_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["protocol", "protocol_version", "task_id", "kind", "goal", "scope", "authorization", "acceptance"],
+    "properties": {
+      "protocol": {"const": "radriloniuma.codex.execution"},
+      "protocol_version": {"const": "1.0.0"},
+      "task_id": {"type": "string", "minLength": 1},
+      "kind": {"enum": ["answer", "inspect", "diagnose", "change", "build", "review", "commit", "publish"]},
+      "goal": {"type": "string", "minLength": 1},
+      "scope": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["paths", "external_targets"],
+        "properties": {
+          "paths": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "external_targets": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "authorization": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["filesystem_write", "vcs_commit", "external_publish", "destructive_action"],
+        "properties": {
+          "filesystem_write": {"type": "boolean"},
+          "vcs_commit": {"type": "boolean"},
+          "external_publish": {"type": "boolean"},
+          "destructive_action": {"type": "boolean"}
+        }
+      },
+      "acceptance": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["required_evidence"],
+        "properties": {
+          "required_evidence": {"type": "array", "items": {"enum": ["inspection", "diff", "test", "build", "user_confirmation"]}, "minItems": 1},
+          "commands": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "change_spec": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["files", "invariants"],
+        "properties": {
+          "files": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "invariants": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+        }
+      }
+    },
+    "allOf": [
+      {"if": {"properties": {"kind": {"enum": ["change", "build", "commit", "publish"]}}}, "then": {"required": ["change_spec"]}},
+      {"if": {"properties": {"kind": {"enum": ["change", "build"]}}}, "then": {"properties": {"authorization": {"properties": {"filesystem_write": {"const": true}}}}}},
+      {"if": {"properties": {"kind": {"const": "commit"}}}, "then": {"properties": {"authorization": {"properties": {"vcs_commit": {"const": true}}}}}},
+      {"if": {"properties": {"kind": {"const": "publish"}}}, "then": {"properties": {"authorization": {"properties": {"external_publish": {"const": true}}}}}}
+    ]
+  },
+  "modules": {
+    "base": {
+      "version": "1.0.0",
+      "applies_to": ["answer", "inspect", "diagnose", "change", "build", "review", "commit", "publish"],
+      "requires": [],
+      "steps": [
+        "validate TaskEnvelope against task_envelope_schema",
+        "record task_id, goal, kind, scope, authorization, and acceptance",
+        "inspect every scope.paths entry in sorted order before drawing repository conclusions",
+        "record evidence for each repository fact used in the result"
+      ]
+    },
+    "mutation": {
+      "version": "1.0.0",
+      "applies_to": ["change", "build", "commit", "publish"],
+      "requires": ["base"],
+      "steps": [
+        "inspect the current working-tree status before the first mutation",
+        "preserve every pre-existing change outside change_spec.files",
+        "modify only change_spec.files",
+        "after each mutation, collect diff evidence",
+        "verify every change_spec.invariants item",
+        "run acceptance.commands in listed order when present",
+        "do not continue to commit or publish unless every required_evidence item exists and reports success"
+      ]
+    },
+    "review": {
+      "version": "1.0.0",
+      "applies_to": ["review"],
+      "requires": ["base"],
+      "steps": [
+        "perform no filesystem mutation",
+        "report findings in descending severity then ascending path then ascending location",
+        "for each finding record path, location, evidence, impact, and suggested remediation"
+      ]
+    },
+    "commit": {
+      "version": "1.0.0",
+      "applies_to": ["commit"],
+      "requires": ["mutation"],
+      "steps": [
+        "commit only files listed in change_spec.files",
+        "record commit identifier as evidence"
+      ]
+    },
+    "publish": {
+      "version": "1.0.0",
+      "applies_to": ["publish"],
+      "requires": ["commit"],
+      "steps": [
+        "publish only to scope.external_targets in sorted order",
+        "record the external result for every target as evidence"
+      ]
+    }
+  },
+  "terminal_guards": [
+    {"priority": 10, "when": "input is not valid JSON or does not validate against task_envelope_schema", "state": "BLOCKED", "code": "INVALID_TASK_ENVELOPE", "action": "REQUEST_STRUCTURED_TASK"},
+    {"priority": 20, "when": "kind is change or build and authorization.filesystem_write is not true", "state": "BLOCKED", "code": "WRITE_NOT_AUTHORIZED", "action": "REQUEST_AUTHORIZATION"},
+    {"priority": 30, "when": "kind is commit and authorization.vcs_commit is not true", "state": "BLOCKED", "code": "COMMIT_NOT_AUTHORIZED", "action": "REQUEST_AUTHORIZATION"},
+    {"priority": 40, "when": "kind is publish and authorization.external_publish is not true", "state": "BLOCKED", "code": "PUBLISH_NOT_AUTHORIZED", "action": "REQUEST_AUTHORIZATION"},
+    {"priority": 50, "when": "authorization.destructive_action is true and acceptance.required_evidence does not contain user_confirmation", "state": "BLOCKED", "code": "DESTRUCTIVE_CONFIRMATION_REQUIRED", "action": "REQUEST_USER_CONFIRMATION"},
+    {"priority": 60, "when": "a requested action would modify a path not listed in change_spec.files", "state": "BLOCKED", "code": "OUT_OF_SCOPE_MUTATION", "action": "REQUEST_SCOPE_CHANGE"},
+    {"priority": 70, "when": "required evidence cannot be produced", "state": "BLOCKED", "code": "ACCEPTANCE_UNVERIFIABLE", "action": "REPORT_EVIDENCE_GAP"},
+    {"priority": 80, "when": "the request conflicts with a higher-priority applicable instruction", "state": "REFUSED", "code": "HIGHER_PRIORITY_CONFLICT", "action": "STATE_CONFLICT"}
+  ],
+  "execution": {
+    "module_resolution": "Select modules whose applies_to contains task.kind; recursively include requires; execute dependencies before dependents; break cycles by BLOCKED/MODULE_DEPENDENCY_CYCLE.",
+    "failure_rule": "On the first failed mandatory step, stop all subsequent steps and emit BLOCKED with the step identifier and collected evidence.",
+    "fact_rule": "A repository fact not supported by EVIDENCE MUST be emitted as unknown, never inferred.",
+    "opportunity_rule": "When a non-goal defect is observed, record it under opportunities and do not modify it unless it is listed in change_spec.files and change_spec.invariants.",
+    "completion_rule": "Emit COMPLETED only when all selected modules finish and every acceptance.required_evidence item is present and successful."
+  },
+  "result_contract": {
+    "format": "JSON",
+    "additionalProperties": false,
+    "required": ["protocol", "protocol_version", "task_id", "state", "summary", "files_changed", "why", "remaining_risks", "suggested_next_step", "evidence", "opportunities"],
+    "states": ["COMPLETED", "BLOCKED", "REFUSED"],
+    "fields": {
+      "protocol": "radriloniuma.codex.execution",
+      "protocol_version": "1.0.0",
+      "task_id": "TaskEnvelope.task_id",
+      "state": "one of states",
+      "summary": "factual completed-or-blocked outcome",
+      "files_changed": "sorted list of {path, change}; empty for no mutation",
+      "why": "sorted list of {decision, evidence_refs}",
+      "remaining_risks": "sorted list of factual unresolved risks; empty when none are known",
+      "suggested_next_step": "one explicit action or null",
+      "evidence": "sorted list of {id, type, subject, result}",
+      "opportunities": "sorted list of {path, evidence_ref, impact, proposed_action}; empty when none observed",
+      "block": "required iff state is BLOCKED or REFUSED: {code, required_input_or_action}"
+    }
+  },
+  "versioning": {
+    "scheme": "semantic-versioning",
+    "patch_change": "clarifies wording without changing a valid TaskEnvelope outcome",
+    "minor_change": "adds optional fields or modules while preserving outcomes for valid existing envelopes",
+    "major_change": "changes schema validity, rule order, terminal state, required evidence, or result contract",
+    "migration_rule": "A major version MUST include a new protocol identifier or an explicit migration module in the same document."
+  }
+}
