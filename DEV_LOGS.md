@@ -605,6 +605,5 @@
 ### [20:38] — SAMSUNG ANDROID TERMUX VENV PATH PATCH & DEPRECATION WORKAROUND
 - **Startup Patching:** Located the phone's startup directory `/storage/emulated/0/ATPLT_STARTUP_MANAGER` and patched `~/agy_starter.sh` inside the proot/ubuntu container to source the `venv` before calling `./agy`, successfully resolving `ImportError: cannot import name 'genai' from 'google'`.
 - **Model Resolution:** Patched `/root/ios.gateway/heal_manager.py` to target the stable `gemini-2.0-flash` model, resolving `404 NOT_FOUND` for the deprecated/retired `gemini-2.5-flash` model.
-- **Quota Exhaustion Gate:** Run executed successfully, but API returned `429 RESOURCE_EXHAUSTED` (limit 0) for the current Google account API key (`AIzaSyDWLyNFxzemAtBVr_oc3SOWe8ZdxHQ6GcU`).
+- **Quota Exhaustion Gate:** Run executed successfully, but the current Google account API key returned `429 RESOURCE_EXHAUSTED` (limit 0). The credential value is intentionally not recorded in this log.
 - **Status:** Awaiting user input of the new Google Account Gemini API Key to initialize the new session.
-
