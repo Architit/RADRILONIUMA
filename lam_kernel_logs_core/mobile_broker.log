@@ -1000,3 +1000,6 @@
 [чт 30 июль 2026 19:25:17 CEST] >> Triggered by: bt
 [чт 30 июль 2026 19:25:18 CEST] >> Queued task to init edge remote control manager for bt
 [чт 30 июль 2026 19:25:23 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 19:41:31 CEST] >> Triggered by: bt
+[чт 30 июль 2026 19:41:31 CEST] >> Queued task to init edge remote control manager for bt
+[чт 30 июль 2026 19:41:36 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
