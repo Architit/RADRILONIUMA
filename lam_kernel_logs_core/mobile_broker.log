@@ -1148,3 +1148,74 @@
 [чт 30 июль 2026 22:36:43 CEST] >> Queued task to init edge remote control manager for usb
 [чт 30 июль 2026 22:36:43 CEST] >> Triggered by: bt
 [чт 30 июль 2026 22:36:43 CEST] >> Queued task to init edge remote control manager for bt
+[чт 30 июль 2026 22:45:38 CEST] >> Triggered by: bt
+[чт 30 июль 2026 22:45:39 CEST] >> Queued task to init edge remote control manager for bt
+[чт 30 июль 2026 22:45:44 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 22:46:47 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:46:47 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:46:47 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:46:47 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:46:52 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 22:46:53 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 22:47:04 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:04 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:04 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:05 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:10 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 22:47:10 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[чт 30 июль 2026 22:47:11 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:11 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:11 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:11 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:11 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:11 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:12 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:13 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:13 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:14 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:14 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:14 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:14 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:14 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:14 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:15 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:15 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:15 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:15 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:15 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:15 CEST] >> Triggered by: usb
+[чт 30 июль 2026 22:47:15 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:15 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:16 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:16 CEST] >> Queued task to init edge remote control manager for usb
+[чт 30 июль 2026 22:47:16 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:16 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:16 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:16 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:17 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:17 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:17 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:17 CEST] >> Waiting for Android Biometric Auth...
+[чт 30 июль 2026 22:47:17 CEST] >> Auth failed or timeout. Access DENIED.
+[чт 30 июль 2026 22:47:17 CEST] >> Auth failed or timeout. Access DENIED.

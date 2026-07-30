@@ -20,6 +20,10 @@ echo -e "\e[1;35m       A E L A R I A  --  B O O T  L O A D E R     \e[0m"
 echo -e "\e[1;35m==================================================\e[0m"
 echo ""
 
+# 1.5 Account Selection Gatekeeper
+echo "[SYSTEM] Initializing Account Selection Gatekeeper..."
+"$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py"
+
 # 2. IGNITE SOVEREIGN KERNEL (PTY SUPERVISOR)
 echo "[SYSTEM] Igniting PTY Kernel Engine (v1.3)..."
 export AELARIA_KERNEL_ACTIVE=1

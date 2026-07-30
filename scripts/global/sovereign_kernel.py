@@ -227,6 +227,12 @@ class SovereignKernel:
                 os.chdir(self.current_cwd)
                 # Ensure child doesn't relaunch itself too aggressively if kernel is managing it
                 os.environ["GEMINI_CLI_NO_RELAUNCH"] = "1"
+                acc_selector = BASE_DIR / "scripts" / "local" / "account_selector.py"
+                if acc_selector.exists():
+                    try:
+                        subprocess.run([sys.executable, str(acc_selector)])
+                    except Exception as e:
+                        logging.warning(f"Account selector failed: {e}")
                 os.execv(self.cli_path, [self.cli_path])
             except Exception as e:
                 print(f"Failed to exec {self.cli_path}: {e}")
