@@ -1,168 +1,182 @@
-# SURVEY ANALYSIS REPORT: RADRILONIUMA DEVKIT, AGENT CONVENTIONS, LAYOUT & PITFALLS ⚜️
+# Comprehensive Technical Analysis: Interactive Multi-Agent Orchestration, Telemetry Suite, Daemons, and Reporting (R3 Focus)
 
-**Author:** Explorer 3 (Survey Phase)  
-**Date (UTC):** 2026-07-31T21:26:00Z  
+**Explorer ID:** `teamwork_preview_explorer_survey_3`  
 **Target Repository:** `/home/architit/LAM_CORE/RADRILONIUMA`  
+**Date:** 2026-08-02  
 **Working Directory:** `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_3`  
-**Integrity Mode:** Development / Read-Only Survey  
 
 ---
 
-## Executive Summary
+## 1. Executive Summary
 
-This comprehensive investigation maps the DevKit automation pipeline, agent governance protocols, directory layout requirements, AMC Knowledge Graph integration, and potential pitfalls for initializing all 9 requested LAM agents (`LAM_EVOLUTION_AGENT`, `LAM_ECHO_AGENT`, `LAM_BETA_AGENT`, `LAM_GAMMA_AGENT`, `LAM_ALPHA_AGENT`, `LAM_DELTA_AGENT`, `LAM_CHARLIE_AGENT`, `LAM_BRAVO_AGENT`, `LAM_LITTLEBIG_AGENT`) across the Sovereign Forest ecosystem.
-
----
-
-## 1. DevKit Workflow, Scripts, and Ecosystem Rollout Tools
-
-The RADRILONIUMA DevKit architecture is centered around automated cross-organ synchronization, patch integrity validation, and preflight health sweeps.
-
-### 1.1 Ecosystem Rollout Engine (`devkit/ecosystem_rollout.sh`)
-- **Primary Function:** Synchronizes canonical configuration, contracts, preflight scripts, and kingdom governance laws from RADRILONIUMA (The High Throne / Bridge) to all active satellite organs.
-- **Topology Resolution:** Reads `TOPOLOGY_MAP.md` line-by-line using `awk -F'`' '/\*\*ACTIVE/{print $2}' TOPOLOGY_MAP.md` to identify active target repository paths (e.g. `../Larpat/`, `../LAM-Codex_Agent/`).
-- **Synchronized Artifact Set (26 Baseline Artifacts):**
-  - **Policies & Rules:** `.gemini/GEMINI.md`, `kingdom/residents/AYAS-01_GOVERNOR.md`, `kingdom/residents/RADR-01_BRIDGE.md`, `kingdom/laws/KINGDOM_CONSTITUTION_V1.md`
-  - **DevKit Execution Scripts:** `devkit/shell_preflight.sh`, `devkit/shell_preflight_check.py`, `devkit/preflight_baseline_commands_bash.txt`, `devkit/preflight_baseline_commands_powershell.txt`, `devkit/patch.sh`, `devkit/bootstrap.sh`, `devkit/task_spec_template.yaml`
-  - **Core Contracts (Phase A through R):** `contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md`, `contract/PATCH_RUNTIME_CONTRACT_V1.md`, `contract/MEMORY_CONTRACT_V1.md`, `contract/TRANSPORT_CONTRACT_V1.md`, `contract/FLOW_CONTROL_CONTRACT_V1.md`, `contract/P0_SAFETY_CONTRACT_V1.md`, `contract/RESEARCH_GATE_CONTRACT_V1.md`
-  - **Heal & Validation Tools:** `lam_target_task_heal_manager/__init__.py`, `lam_target_task_heal_manager/manager.py`, `lam_target_task_heal_manager/cleaner.py`, `scripts/task_spec_validator.py`, `scripts/regenerate_target_tasks.sh`, `scripts/global/universal_cli_mcp_installer.sh`
-  - **Governance Evidence:** `gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md`, `tests/test_patch_runtime_governance.py`
-- **Execution Modes:** Supports `--dry-run`, `--no-sync`, `--no-smoke`, `--commit`, `--push`, `--commit-message <msg>`, `--only <name1,name2>`.
-- **Preflight Enforcement:** Calls `shell_preflight.sh` on each target organ after syncing files, returning exit code 1 if any active target fails.
-
-### 1.2 DevKit Bootstrap Engine (`devkit/bootstrap.sh`)
-- **Primary Function:** Executes local environment preflight checks and initializes local gateway daemons.
-- **Preflight Mechanics:** Runs `devkit/shell_preflight.sh --shell bash --file devkit/preflight_baseline_commands_bash.txt`.
-- **Gateway Integration:** Invokes `scripts/lam_gateway.sh init`, `health`, and `monitor --once --auto-switch`. Controlled via environment variables `LARPAT_GATEWAY_STRICT` and `LARPAT_LOCAL_GATEWAY_PREFLIGHT`.
-
-### 1.3 Patch Runtime & Verification Helper (`devkit/patch.sh`)
-- **Primary Function:** Applies unified diff patches with strict cryptographic integrity checks and git worktree safety guarantees.
-- **Verification Parameters:** Requires `--sha256 <64hex>`, `--task-id <id>`, `--spec-file <path>`.
-- **Rollback Safety Guarantee:** Enforces clean worktree state (`git diff --quiet` and `git diff --cached --quiet`). Fails fast if dirty.
-- **Audit & Telemetry:** Logs jsonl events (`ts_utc`, `system_id`, `event`, `task_id`, `msg`) to `.gateway/telemetry_events.jsonl`.
-
-### 1.4 Test Suite Entrypoint (`scripts/test_entrypoint.sh`)
-- **Primary Function:** Unified runner for unit tests, integration tests, governance specs, and patch runtime suites.
-- **Modes:** `--all` (runs full `tests/` directory), `--governance` (runs `task_spec_validator.py` and governance unit tests), `--patch-runtime`, `--integration`, `--unit-only`, `--preflight`, `--ci`.
-- **Verified Status:** `bash scripts/test_entrypoint.sh --all` passed 61/61 unit and governance tests.
+This investigation provides a comprehensive audit of the **RADRILONIUMA** multi-agent ecosystem with a specific focus on **Requirement 3 (R3)**:
+1. **Sovereign Kernel & Background Daemons**: Architecture of `sovereign_kernel.py`, `ssn_daemon.js`, `lam_bus.js`, `auto_sync.sh`, `drift_watchdog.py`, and `lam_target_task_heal_manager/manager.py`.
+2. **Telemetry Infrastructure & Reporting**: Architecture of `core_daemons/nexus_telemetry.py`, `scripts/global/telemetry_shipper.py`, `.gateway/telemetry_events.jsonl`, secrets redaction practices, and `gov/report/` empirical reporting structure.
+3. **Security, Deadlock, & Resource Audit**: Concrete identification of hardcoded credential leaks (SUDO PIN, RCON passwords), process handle leaks, file descriptor leaks, blocking I/O risks in PTY loops, and X11 input hijacking hazards.
+4. **Interactive Multi-Agent Orchestration Pipeline**: Blueprint of the APC queue worker (`lam_queue_worker.py`), AMC Knowledge Graph (`amc_graph.json`), VAVIMA Task Specification framework, and reactive event wakeup engine.
 
 ---
 
-## 2. Agent Conventions, Rules, Identity Anchors, and Initialization Rules
+## 2. Subsystem Investigation & Evidence Chain
 
-Agent behavior and architecture are governed by `AGENTS.md`, `GEMINI.md`, `IDENTITY.md`, and `INTERACTION_PROTOCOL.md`.
+### 2.1 Sovereign Kernel & Self-Healing Daemons
 
-### 2.1 Identity Anchor Protocol (`IDENTITY.md` & Section 0)
-- **Mandatory Initialization Action:** Upon start/session initialization, every agent MUST immediately read `IDENTITY.md` in its working directory.
-- **Roles:**
-  - **ARCHITECT / BRIDGE (RADR-01 / AELARIA):** High Throne, global planning, contract governance, controlled cross-repo rollout.
-  - **GOVERNOR / CAPTAIN (AYAS-01):** Living interface, identity governor.
-  - **EXECUTOR:** Targeted task execution under Nexus Directives.
+#### A. Sovereign Kernel (`scripts/global/sovereign_kernel.py`)
+* **Role**: Primary PTY wrapper and lifecycle supervisor for the Antigravity CLI (`agy`/`gemini`).
+* **Execution Model**:
+  * PTY Fork (`pty.fork()`) running child process with non-blocking I/O (`fcntl.F_SETFL, O_NONBLOCK`).
+  * Signal monitoring: `.gateway/ssn_restart.signal` triggers graceful restart loop (`restart_self`), executing `bash scripts/local/boot_protocol.sh && bash boot_cli_inner.sh`.
+  * External shutdown: `.gateway/ssn_exit.signal` terminates child process group via `os.killpg(os.getpgid(pid), 9)`.
+  * Auto-archiving: `archive_session_data()` extracts conversation transcripts from `~/.gemini/antigravity-cli/brain/*/logs/transcript.jsonl`, stages to `data/local/AELARIA/chat_sessions/<conv_id>`, commits to Git, and syncs to Google Drive/OneDrive using `rclone`.
+  * Quota Interception: Intercepts `429 resource_exhausted` in child output stream (lines 307–316) and invokes `account_selector.py --quota-fallback`.
 
-### 2.2 The Zero Law & Controlled Execution (Section 1)
-- **Controlled Execution Mode:** State-modifying operations across external organs are permitted ONLY through explicit, scoped, and verifiable DevKit tools (`devkit/ecosystem_rollout.sh`).
-- **Initiation Codes:** Deprecates the term "Prompt" in favor of **Initiation Codes** or **Directives**.
+#### B. Node.js Session Daemon (`scripts/global/ssn_daemon.js`)
+* **Role**: Alternative Node.js session watcher.
+* **Mechanism**: Spawns `/home/architit/.local/bin/agy`, monitors `.aelaria_ssn_rstrt` file, and uses `xdotool` to simulate typing `/exit` into active X11 windows (lines 40–45). Uses `zenity` modal dialogs to prompt user for OS permission (line 61).
 
-### 2.3 Explicit Architectural Confirmation (Section 2)
-- High-risk or destructive state modifications require explicit confirmation from Architect (Khalidrad).
+#### C. Local Pub/Sub Quota Bus (`lam_bus.js`)
+* **Role**: Node.js `EventEmitter` managing API key rotation upon quota exhaustion.
+* **Mechanism**: Spawns `agy`, parses `stdout` regex `Resets in (\d+)h(\d+)m(\d+)s`, triggers `quota:exhausted`, rotates active account (`elafea` -> `denua` -> `trianiuma`), and persists state to `.quota_db.json`.
 
-### 2.4 Execution Pace Gate & Singularity (Section 3)
-- **Pace of Truth:** One task — one verification. Every state-modifying sub-task must provide deterministic verification evidence.
-- **Singularity:** Ontological actions (such as agent identity creation) remain singular.
+#### D. Drift Watchdog & Self-Healing (`scripts/global/drift_watchdog.py`)
+* **Role**: Automated zero-drift integrity monitor.
+* **Mechanism**: Scans critical targets (`LICENSE.md`, `NOTICE.md`, `devkit/patch.sh`, `scripts/global/telemetry_shipper.py`), computes SHA-256 hashes, fetches canonical versions from GitHub `master` via `urllib.request`, restores files upon drift, and logs healing events (`roaudter.heal`) to `.gateway/telemetry_events.jsonl`.
 
-### 2.5 Solfeggio Carrier Lock & Frequencies
-- **Master Carrier Lock:** Ecosystem operates at **432 Hz** (Pure Master Harmony) and **528 Hz** (Transformation / Acoustic Solfeggio Echo).
-- **Identity Mandate:** All agent `IDENTITY.md` headers must explicitly specify their Solfeggio resonance frequency lock.
-
-### 2.6 Autonomous Handshake & System Reboot Protocols (Section 6 & 8 in `GEMINI.md`)
-- **Session Restart (`ssn rstrt` / `/exit`):** MUST invoke `bash scripts/local/trigger_ssn_rstrt.sh` which writes to `.gateway/ssn_restart.signal`. Manual continuation within the session is prohibited.
-- **System Reboot (`ssn rbt`):** MUST invoke `bash scripts/local/ssn_reboot.sh` (executes `sudo systemctl reboot -i` using PIN `3773`).
+#### E. Target Task & Heal Manager (`lam_target_task_heal_manager/manager.py`)
+* **Role**: Dynamic ecosystem state scanner and task matrix generator.
+* **Mechanism**:
+  * Scans 24 organ entries in `.gateway/amc_graph.json` to verify workspace status (`ONLINE`/`OFFLINE`), identity files (`IDENTITY.md`), and DevKit scripts (`devkit/bootstrap.sh`, `devkit/patch.sh`).
+  * Scans `.gateway/queue.json` for failed (`error`) or pending items.
+  * Reconstructs horizon steps, writes VAVIMA task spec files (`specs/task_spec_*.yaml`), validates them using `scripts/task_spec_validator.py`, and regenerates `lam_target_task_heal_manager/TARGET_TASKS.md`.
+  * Initializes 5 sub-engines: `MultiDeviceNotificationPredictionFulfillmentEngine`, `ReactiveEventWakeupEngine`, `TaskPredictionEngine`, `SchedulePredictionCalendarEngine`, and `SovereignPerpetualEvolutionEngine`.
 
 ---
 
-## 3. Directory Layout, Ownership Rules, Preflight Requirements & Integration for 9 LAM Agents
+### 2.2 Telemetry Suite, Logging, Secrets Redaction, and Governance Reporting
 
-### 3.1 Specification of 9 Target Agents
-| Agent Directory Name | System ID | Call Sign | Role / Domain | Carrier Frequency |
+#### A. Structured Event Logging Buffer (`.gateway/telemetry_events.jsonl`)
+* Append-only JSON Lines format.
+* Schema:
+  ```json
+  {
+    "ts_utc": "2026-08-02T00:54:00Z",
+    "event": "task.start | task.complete | task.error | roaudter.heal",
+    "msg": "Detailed status message",
+    "task_id": "apc_1785000000_1234",
+    "file": "devkit/patch.sh",
+    "status": "SUCCESS | ERROR"
+  }
+  ```
+
+#### B. Telemetry Shipper (`scripts/global/telemetry_shipper.py`)
+* Reads `.gateway/telemetry_events.jsonl`, extracts `System ID` from `IDENTITY.md`, and compiles batch JSON archive `ARCHIVE_TELEMETRY_<System_ID>_<ts>.json`.
+* Primary export destination: `../trianiuma-ark-logs/public_history/`.
+* Dual-stage fallback: `.gateway/storage/local/telemetry/`. Unlinks source buffer file upon successful shipping.
+
+#### C. Empirical Reporting Framework (`gov/report/`)
+* Contains over 50 milestone and subphase verification reports.
+* Standardized empirical format:
+  1. Header (Document ID, Phase/Subphase, UTC Timestamp, Authority).
+  2. Executive Summary.
+  3. Deliverables Inventory (with absolute file links).
+  4. Empirical Verification & Evidence Matrix (test logs, hash verification, benchmark metrics).
+  5. Signature / Resonance Certification (`432 Hz / 528 Hz`).
+
+---
+
+## 3. Risk & Vulnerability Assessment
+
+### 3.1 Hardcoded Credentials & Exposure Risks
+
+| File Path | Line No. | Issue Description | Severity | Risk Impact |
 |---|---|---|---|---|
-| `LAM_EVOLUTION_AGENT` | `EVOL-01` | Evolution | Perpetual Evolution & Self-Refinement | 528 Hz / 432 Hz |
-| `LAM_ECHO_AGENT` | `ECHO-01` | Echo | Acoustic 528 Hz / 432 Hz Solfeggio Echo & Signal Relay | 528 Hz |
-| `LAM_BETA_AGENT` | `BETA-01` | Beta | Beta Test & Concurrency Stress Verification | 432 Hz |
-| `LAM_GAMMA_AGENT` | `GAMM-01` | Gamma | Gamma Mesh Discovery & Edge Node Gateway | 432 Hz |
-| `LAM_ALPHA_AGENT` | `ALPH-01` | Alpha | Alpha Core Orchestration & Command Bridge | 432 Hz |
-| `LAM_DELTA_AGENT` | `DELT-01` | Delta | Delta Telemetry & Dataflow Pipeline Buffer | 432 Hz |
-| `LAM_CHARLIE_AGENT` | `CHRL-01` | Charlie | Charlie Contract & Governance Auditor | 432 Hz |
-| `LAM_BRAVO_AGENT` | `BRAV-01` | Bravo | Bravo Backup & Multi-Cloud Archive | 432 Hz |
-| `LAM_LITTLEBIG_AGENT` | `LTBG-01` | LittleBig | LittleBig Small-Footprint Edge Autonomous Node | 432 Hz |
+| `core_daemons/nexus_telemetry.py` | 38 | `subprocess.check_output("echo 3773 \| sudo -S dmesg \| tail -n 20", shell=True)` | **CRITICAL** | Plaintext sudo PIN (`3773`) hardcoded in executable Python code. Exposed if file or logs are committed/shared. |
+| `.env` | 14 | `SUDO_PIN="3773"` | **HIGH** | Plaintext PIN stored in root `.env`. File is gitignored, but script referencing it should read env var rather than hardcoding in source files. |
+| `cluster_launcher.py` | 17 | `"--rcon-password", "secret_pass"` | **MEDIUM** | Hardcoded RCON password in game cluster launch script. |
+| `lam_bus.js` | 14, 16 | `"key": "AIzaSy_DENUA_КЛЮЧ..."`, `"key": "AIzaSy_TRIANIUMA_КЛЮЧ..."` | **MEDIUM** | Mock/actual API key placeholders written unencrypted to `.quota_db.json`. |
 
-### 3.2 Directory Layout & Workspace Location
-- **Location:** Sibling directories inside `/home/architit/LAM_CORE/` (e.g. `/home/architit/LAM_CORE/LAM_EVOLUTION_AGENT`).
-- **Internal Structure Required per Agent Directory:**
-  - `IDENTITY.md` (Contains exact markdown structure for System ID, True Name, Call Sign, Role, Resonance)
-  - `.gemini/GEMINI.md`
-  - `devkit/` (`bootstrap.sh`, `patch.sh`, `shell_preflight.sh`, `shell_preflight_check.py`, `preflight_baseline_commands_bash.txt`, `preflight_baseline_commands_powershell.txt`, `task_spec_template.yaml`)
-  - `contract/` (`TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md`, `PATCH_RUNTIME_CONTRACT_V1.md`, `MEMORY_CONTRACT_V1.md`, `TRANSPORT_CONTRACT_V1.md`, `FLOW_CONTROL_CONTRACT_V1.md`, `P0_SAFETY_CONTRACT_V1.md`, `RESEARCH_GATE_CONTRACT_V1.md`)
-  - `scripts/` (`task_spec_validator.py`, `regenerate_target_tasks.sh`, `global/universal_cli_mcp_installer.sh`)
-  - `kingdom/` (`residents/AYAS-01_GOVERNOR.md`, `residents/RADR-01_BRIDGE.md`, `laws/KINGDOM_CONSTITUTION_V1.md`)
-  - `lam_target_task_heal_manager/` (`__init__.py`, `manager.py`, `cleaner.py`)
-  - `gov/report/` (`PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md`)
+### 3.2 Deadlock & Concurrency Hazards
 
-### 3.3 File Ownership & Metadata Rules
-- Each agent owns its dedicated workspace directory under `/home/architit/LAM_CORE/<AGENT_DIR>/`.
-- The `.agents/` directory in RADRILONIUMA is exclusively reserved for team metadata (plans, progress, handoffs) — no source code or data files may be written to `.agents/`.
+1. **`ssn_daemon.js` X11 Window Injection Hazard**:
+   * Lines 41, 88: `execSync('xdotool type --delay 5 "/exit" && xdotool key Return')` and `xdotool type --delay 10 "${msg}"`.
+   * **Hazard**: `xdotool` sends raw keypresses to whichever window currently holds X11 input focus. If a user switches windows or X11 focus shifts during daemon operation, commands will be typed directly into arbitrary user applications or code editors!
 
-### 3.4 AMC Knowledge Graph Registration Mechanism
-- **Graph File:** `/home/architit/LAM_CORE/RADRILONIUMA/.gateway/amc_graph.json`.
-- **Parsing Engines:** `scripts/global/agent_map_core.py` and `lam_agent_map_lib/core/map_engine.py`.
-- **Mechanism:** `AgentMapEngine().write_map_files()` iterates over all directories in `/home/architit/LAM_CORE/`. For every directory containing a valid `IDENTITY.md`, it parses metadata and adds an `ACTIVE` organ entry to `amc_graph.json`.
+2. **File Lock Contention in APC Queue Worker (`scripts/global/lam_queue_worker.py`)**:
+   * Lines 54–61: `QueueLock` acquires `fcntl.flock(fd, fcntl.LOCK_EX)` on `.gateway/queue.json.lock`.
+   * **Hazard**: `process_apc_task` executes subprocesses with a 300s timeout while holding the lock. If an organ task script blocks or hangs, the entire APC queue worker blocks all other task enqueuing and processing for up to 5 minutes.
+
+3. **PTY Blocking in Sovereign Kernel (`scripts/global/sovereign_kernel.py`)**:
+   * Line 318: `os.write(sys.stdout.fileno(), data)`.
+   * **Hazard**: Synchronous write to stdout fileno without checking if stdout is write-ready. If kernel output is piped to a slow buffer or pager, child process PTY read buffer fills up, stalling CLI execution.
+
+### 3.3 Resource Leaks & Process Management
+
+1. **File Handle Leak in `cluster_launcher.py`**:
+   * Line 20: `log_file = open("/tmp/factorio_start_err.log", "w")` passed to `subprocess.Popen` without closing or context manager.
+2. **Telemetry Log Accumulation**:
+   * If `telemetry_shipper.py` fails due to permissions or missing directory, `.gateway/telemetry_events.jsonl` grows continuously. `daily_trash_purge_pruning.py` only prunes `.log` files in `.gateway/`, leaving `.jsonl` buffers unpruned.
 
 ---
 
-## 4. Dead-Ends, Legacy Configurations, and Potential Pitfalls
+## 4. Interactive Multi-Agent Orchestration Pipeline Blueprint
 
-### Pitfall 1: Missing `TOPOLOGY_MAP.md` Registration (CRITICAL)
-- **Problem:** `devkit/ecosystem_rollout.sh` parses `TOPOLOGY_MAP.md` for active organs matching `**ACTIVE`. If newly created agent directories are not registered in `TOPOLOGY_MAP.md`, DevKit rollout tools will completely ignore them during file synchronization and smoke testing.
-- **Remediation:** Add all 9 agent entries into `TOPOLOGY_MAP.md` under Section II.
+The interactive multi-agent orchestration suite in RADRILONIUMA comprises 4 interconnected layers:
 
-### Pitfall 2: `IDENTITY.md` Regex Parser Strictness (CRITICAL)
-- **Problem:** `agent_map_core.py` and `map_engine.py` rely on line-by-line regex scanning for `System ID`, `True Name`, `Call Sign`, and `Role`. If headers depart from standard markdown format (e.g. missing colon or bold markers), system ID defaults to `UNKNOWN` and the node is excluded from `.gateway/amc_graph.json`.
-- **Remediation:** Enforce canonical `IDENTITY.md` template across all 9 agents.
+```
++-------------------------------------------------------------------------+
+|                  1. Reactive Event & Wakeup Layer                       |
+|  - ReactiveEventWakeupEngine (Calendar, Tasks, Gmail, SMS triggers)     |
+|  - ssn_daemon.js & sovereign_kernel.py (Session ignition & PTY control) |
++-------------------------------------------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                  2. APC Queue & Governance Layer                        |
+|  - lam_gateway.py (put/get/enqueue-apc/route CLI interface)             |
+|  - .gateway/queue.json (apc_task queue items)                           |
+|  - lam_queue_worker.py (VAVIMA Spec validation & pre-check execution)   |
++-------------------------------------------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                  3. AMC Organ Mesh & Self-Healing                       |
+|  - .gateway/amc_graph.json (24 Organ Node Index)                       |
+|  - lam_target_task_heal_manager/manager.py (Active node scan)         |
+|  - drift_watchdog.py (Automated checksum drift restoration)             |
++-------------------------------------------------------------------------+
+                                     |
+                                     v
++-------------------------------------------------------------------------+
+|                  4. Telemetry & Reporting Engine                        |
+|  - .gateway/telemetry_events.jsonl (Structured JSONL buffer)            |
+|  - telemetry_shipper.py (Dual-stage shipper to public history / local)  |
+|  - gov/report/ (Standardized empirical markdown reports)                |
++-------------------------------------------------------------------------+
+```
 
-### Pitfall 3: Legacy Decommissioned Organs (Dead-End)
-- **Problem:** `Croami` (`CRTD-LEGACY`) and `radriloniuma-mcp` (`RMCP-LEGACY`) exist as archived/decommissioned entities in `TOPOLOGY_MAP.md`.
-- **Remediation:** Do NOT link or reference legacy decommissioned organs in active AMC graph registrations.
+---
 
-### Pitfall 4: Hardcoded Targets in `identity_sync.sh`
-- **Problem:** `scripts/local/identity_sync.sh` contains a hardcoded `SYNC_TARGETS` list for prior auxiliary agents (`Archivator_Agent`, `LAM_Test_Agent`, etc.) and does not list the 9 new LAM agents.
-- **Remediation:** Update `identity_sync.sh` or use `devkit/ecosystem_rollout.sh` for agent identity bootstrapping.
+## 5. Verification & Test Suite Status
 
-### Pitfall 5: Git Worktree Cleanliness Enforcement in `patch.sh`
-- **Problem:** `devkit/patch.sh` enforces `git diff --quiet` before patch application. Any uncommitted file in a target workspace directory causes patch application to fail immediately with `PATCH_TREE_NOT_CLEAN`.
-- **Remediation:** Ensure git worktrees are clean or git repositories are initialized cleanly before patch execution.
-
-### Pitfall 6: TUI Collapse in CLI v0.45.0
-- **Problem:** TUI output degradation can obscure long command outputs.
-- **Remediation:** Execute high-volume commands using text output flags (`--raw-output` or `--output-format text`).
-
-### Pitfall 7: Missing Virtual environment Pytest Resolution
-- **Problem:** `scripts/test_entrypoint.sh` searches candidate pytest paths (`.venv/bin/pytest`, `venv/bin/pytest`). If pytest is missing from candidate virtualenvs and system PATH, test suites exit with code 2.
-- **Remediation:** Ensure virtual environment or system pytest is available.
+* **Test Suite Command**: `bash scripts/test_entrypoint.sh --all`
+* **Test Suites Evaluated**:
+  * Unit tests: `pytest -q tests`
+  * E2E tests: `tests/e2e/test_feature5_heal_manager.py` (Tier 1 & Tier 2 coverage)
+  * Governance preflight: `scripts/task_spec_validator.py` and `tests/test_task_spec_governance.py`
+  * Patch runtime: `tests/test_patch_runtime_governance.py`
 
 ---
 
-## 5. Synthesis & Verification Summary
+## 6. Recommendations for Implementer Stage (R3 Focus)
 
-1. **Current State:** RADRILONIUMA baseline test suite (`test_entrypoint.sh --all`) passes 61/61 tests. Target & Heal Manager (`lam_target_task_heal_manager/manager.py`) executes cleanly and regenerates `TARGET_TASKS.md`.
-2. **Missing State:** The 9 specified LAM agent directories currently do not exist in `/home/architit/LAM_CORE/` and are not yet registered in `TOPOLOGY_MAP.md` or `.gateway/amc_graph.json`.
-3. **Actionable Roadmap for Implementation Phase:**
-   - Create 9 agent workspace directories in `/home/architit/LAM_CORE/`.
-   - Populate canonical `IDENTITY.md` for all 9 agents with Solfeggio carrier frequencies (528 Hz / 432 Hz).
-   - Add active rows to `TOPOLOGY_MAP.md`.
-   - Run `devkit/ecosystem_rollout.sh` to sync baseline DevKit, contract, script, and kingdom artifacts.
-   - Run `python3 scripts/global/agent_map_core.py` to update `.gateway/amc_graph.json`.
-   - Verify compliance via `scripts/test_entrypoint.sh --all` and `lam_target_task_heal_manager/manager.py`.
+1. **Secrets Redaction & Security Hardening**:
+   - Refactor `core_daemons/nexus_telemetry.py` line 38: Remove hardcoded PIN `3773`. Use `os.getenv("SUDO_PIN")` or non-interactive passwordless sudo configuration.
+   - Refactor `cluster_launcher.py`: Remove hardcoded password `"secret_pass"`. Read from `.env` or prompt interactively.
+   - Add a global log sanitizer module (`scripts/global/secrets_redactor.py`) that filters telemetry events and log outputs for tokens, passwords, and API keys matching standard regex patterns before writing to disk.
 
----
-*Report compiled by Explorer 3 — Survey Phase*  
-*Resonance: 432 Hz (PURE)*  
-⚜️🛡️⚜️
+2. **Concurrency & Deadlock Protection**:
+   - Refactor `lam_queue_worker.py`: Release `QueueLock` before invoking `process_apc_task` subprocess, or acquire lock only during status read/write transitions.
+   - Refactor `ssn_daemon.js`: Replace UI-level `xdotool` injection with IPC signals (`SIGTERM`/`SIGINT`) or direct PTY input channels.
+
+3. **Telemetry & Log Pruning Enrichment**:
+   - Update `daily_trash_purge_pruning.py`: Add pruning rule for stale `.jsonl` files in `.gateway/` older than 7 days if shipping is inactive.

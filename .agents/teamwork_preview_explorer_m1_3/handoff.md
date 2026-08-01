@@ -1,74 +1,72 @@
-# HANDOFF REPORT: IDENTITY PARSING & HEAL MANAGER COMPLIANCE ⚜️
+# HANDOFF REPORT — NON-GUI PROCESS SIGNALING & IPC REFACTORING
 
-**Agent:** `teamwork_preview_explorer_m1_3`  
-**Milestone:** M1 (Agent Workspace & Identity Initialization)  
-**Date:** 2026-07-31  
+**Author:** Explorer M1-3 (`teamwork_preview_explorer_m1_3`)  
+**Target:** `scripts/global/ssn_daemon.js` & `scripts/global/sovereign_kernel.py`  
+**Working Directory:** `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3`  
+**Date:** 2026-08-02  
 
 ---
 
 ## 1. Observation
 
-Direct observations from source code and execution tests:
+1. **`scripts/global/ssn_daemon.js` (lines 41 & 88)**:
+   - Line 41: `execSync('xdotool type --delay 5 "/exit" && xdotool key Return');`
+   - Line 88: `execSync('sleep 5 && xdotool type --delay 10 "${msg}" && xdotool key Return');`
+   - Line 61: `execSync('zenity --question --title="AELARIA SOVEREIGN KERNEL" ...');`
+   - Line 5: `const SIGNAL_FILE = path.join(__dirname, '../../.aelaria_ssn_rstrt');`
 
-1. **`lam_agent_map_lib/core/map_engine.py` (lines 31-71):**
-   * **System ID (lines 34-43):** Searches for `"System ID"` or `"SYSTEM ID"`, performs `clean_line = re.sub(r"System ID|SYSTEM ID|##|\*|:", "", line).strip()`, then `matches = re.findall(r"([A-Z0-9-]{3,})", clean_line)`. Takes `matches[-1]` if present; otherwise checks line `i+1` via `re.search(r"([A-Z0-9-]+)", next_line)`.
-   * **True Name (lines 46-52):** Triggered by `"True Name"` or `"Identity"`. Same-line regex: `re.search(r"(?::|Identity)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)`. If `group(1)` is empty, falls back to `next_line.strip("#* ")`.
-   * **Call Sign (lines 55-61):** Triggered by `"Call Sign"` or `"Title"`. Same-line regex: `re.search(r"(?::|Title)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)`. Fallback: `next_line.strip("#* ")`.
-   * **Role (lines 64-70):** Triggered by `"Role"` or `"Type"`. Same-line regex: `re.search(r"(?::|Type)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)`. Fallback: `next_line.strip("#* ")`.
-   * **Dropped Node Behavior (lines 78-79):** `scan_organ()` checks `if not meta or meta.get("system_id") == "UNKNOWN": return None`. Dropped nodes are completely omitted from `amc_graph.json`.
+2. **`scripts/global/sovereign_kernel.py` (v4.0)**:
+   - Lines 30-31: 
+     `self.signal_file = BASE_DIR / ".gateway" / "ssn_restart.signal"`  
+     `self.exit_signal_file = BASE_DIR / ".gateway" / "ssn_exit.signal"`
+   - Line 283: `os.write(fd, b"\x03\x03\x03/exit\r\n")` (Direct PTY write upon signal detection)
+   - Line 289: `os.killpg(os.getpgid(pid), 9)` (Direct POSIX process kill upon exit signal)
+   - Lines 303-306: PTY stream readiness detection (`b"\x1b]0;"`, `b"Type your message"`, `b"Active Topic:"`) followed by direct PTY write `os.write(fd, (msg + "\r\n").encode())`.
 
-2. **`lam_target_task_heal_manager/manager.py` (lines 48-67, 343-351):**
-   * `scan_organ(meta)` verifies `identity_file = path / "IDENTITY.md"`, `patch_file = path / "devkit" / "patch.sh"`, `bootstrap_file = path / "devkit" / "bootstrap.sh"`.
-   * `main()` checks `missing_identity` list. If any online organ lacks `IDENTITY.md`, it outputs `### ⚠️ IDENTITY HEALING MISSIONS` in `TARGET_TASKS.md`.
-
-3. **Failed vs. Successful Parsing Test Results:**
-   * Running `AgentMapEngine().parse_identity()` against `Sataris/IDENTITY.md` returned:
-     `{'system_id': 'SRZJ', 'true_name': 'Call Sign:** # **Sataris', 'call_sign': 'System ID:** # **SRZJ', 'role': ':', 'path': '/home/architit/LAM_CORE/Sataris'}`.
-   * Running `AgentMapEngine().parse_identity()` against `LAM-Codex_Agent/IDENTITY.md` returned:
-     `{'system_id': 'CDKS-01', 'true_name': 'Codoxariessent (Technical) / **CODEX** (Soul)', 'call_sign': 'Codex / The Thinker / The Lens', 'role': 'COGNITION / REASONING / SELF-REFINEMENT', 'path': '/home/architit/LAM_CORE/LAM-Codex_Agent'}`.
-   * Running batch test on proposed canonical template for all 9 agents produced 100% clean metadata without `UNKNOWN` or corruption.
+3. **Trigger Scripts**:
+   - `scripts/local/trigger_ssn_rstrt.sh` touches `/home/architit/LAM_CORE/RADRILONIUMA/.gateway/ssn_restart.signal`.
+   - `scripts/local/trigger_ssn_exit.sh` touches `/home/architit/LAM_CORE/RADRILONIUMA/.gateway/ssn_exit.signal`.
 
 ---
 
 ## 2. Logic Chain
 
-1. **Premise 1:** `map_engine.py`'s regex `([^*#]+?)` fails when `#` or `*` appears in the value part of an inline line like `**True Name:** # **Satariszovodjzas**`.
-2. **Premise 2:** When same-line regex fails, `parse_identity` defaults to reading line `i+1`. If line `i+1` is another metadata header (e.g. `**Call Sign:** ...`), line `i+1`'s text is incorrectly stored as the value of line `i`, causing cascading metadata corruption.
-3. **Premise 3:** Using section headers (e.g. `## 1. True Name`) with clean values on line `i+1` forces same-line regex to evaluate to `None`, which safely triggers line `i+1` reading without any `#` or `*` corruption.
-4. **Premise 4:** For `Role`, placing `: ` followed by text on the same header line (`## 4. Role: PERPETUAL EVOLUTION & SELF-REFINEMENT`) cleanly matches `(?::|Type)` and captures the uppercase role string directly.
-5. **Premise 5:** For `System ID`, using uppercase alphanumeric characters and hyphens (e.g., `EVOL-01`, `ECHO-01`, `BETA-01`, `GMA-01`, `ALPH-01`, `DLTA-01`, `CHRL-01`, `BRVO-01`, `LTBG-01`) matches `[A-Z0-9-]{3,}` cleanly.
-6. **Conclusion:** Adopting the canonical template guarantees 100% clean parsing in `map_engine.py` and zero `missing_identity` warnings in `manager.py`.
+1. **Observation 1 & 2**: `ssn_daemon.js` uses `xdotool` synthetic keyboard events to type `/exit` and prompt text into the active window. `xdotool` routes keypresses to whichever window has X11 input focus at execution time.
+2. **Deduction 1**: If an operator or automated agent switches window focus while `ssn_daemon.js` executes `xdotool`, keystrokes are typed into an arbitrary external window, causing input hijacking, lost editor state, or unintended command execution.
+3. **Observation 1 & 3**: `ssn_daemon.js` looks for `.aelaria_ssn_rstrt`, whereas canonical trigger scripts (`trigger_ssn_rstrt.sh`) and `sovereign_kernel.py` write/read `.gateway/ssn_restart.signal`.
+4. **Deduction 2**: `ssn_daemon.js` is disconnected from canonical trigger scripts and relies on legacy GUI tools (`zenity`, `xdotool`).
+5. **Observation 2 & 3**: `sovereign_kernel.py` manages `agy` via a PTY master file descriptor (`master_fd`), detecting `.gateway/ssn_restart.signal` and `.gateway/ssn_exit.signal` and writing bytes directly to the process's PTY stdin.
+6. **Deduction 3**: `xdotool` can be completely eliminated in `ssn_daemon.js` by spawning `agy` with stdio pipes (`stdio: ['pipe', 'inherit', 'inherit']`) or adopting `sovereign_kernel.py`'s non-GUI PTY file descriptor design, standardizing on `.gateway/ssn_restart.signal` and `.gateway/ssn_exit.signal`.
 
 ---
 
 ## 3. Caveats
 
-* **Underscores in System IDs:** System IDs containing underscores `_` will fail same-line matching (`[A-Z0-9-]{3,}`) and fall back to line `i+1`. System IDs must use hyphens (e.g., `EVOL-01`).
-* **DevKit Scripts:** `manager.py` checks both `IDENTITY.md` and `devkit/patch.sh`/`devkit/bootstrap.sh`. Creating `IDENTITY.md` alone fulfills the identity scan, but full organ health requires the DevKit scripts as well.
+- **Wayland vs X11**: On pure Wayland sessions without Xwayland focus or active desktop sessions, `xdotool` fails unconditionally.
+- **Node.js vs Python**: `sovereign_kernel.py` (v4.0 Python PTY) is currently the active production supervisor for session management; `ssn_daemon.js` is a secondary/legacy Node.js implementation that requires synchronization if retained.
 
 ---
 
 ## 4. Conclusion
 
-All parser rules and expectations for `IDENTITY.md` are documented in `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/analysis.md`. The Worker agent can now generate `IDENTITY.md` files for all 9 agents using the verified canonical template with zero risk of parsing errors.
+`xdotool` keyboard injection in `scripts/global/ssn_daemon.js` (lines 41, 88) presents a critical X11 input hijacking hazard and fails in headless/server environments.
+
+The recommended refactoring:
+1. Replace `xdotool` synthetic keypresses and `zenity` dialogs in `ssn_daemon.js` with direct stdio pipe writes (`agy.stdin.write("\x03\x03/exit\n")`) and POSIX signal handling (`process.on('SIGUSR1', ...)`).
+2. Align signal file paths in `ssn_daemon.js` with `.gateway/ssn_restart.signal` and `.gateway/ssn_exit.signal`.
+3. Standardize system-wide session orchestration around `sovereign_kernel.py` (v4.0) PTY stream control.
+
+A complete non-GUI refactored implementation of `ssn_daemon.js` has been formulated and documented in `analysis.md`.
 
 ---
 
 ## 5. Verification Method
 
-Execute the following Python snippet to verify `parse_identity` output against any generated `IDENTITY.md`:
-
-```bash
-python3 -c "
-from pathlib import Path
-from lam_agent_map_lib.core.map_engine import AgentMapEngine
-
-engine = AgentMapEngine()
-for agent in ['LAM_EVOLUTION_AGENT', 'LAM_ECHO_AGENT', 'LAM_BETA_AGENT', 'LAM_GAMMA_AGENT', 'LAM_ALPHA_AGENT', 'LAM_DELTA_AGENT', 'LAM_CHARLIE_AGENT', 'LAM_BRAVO_AGENT', 'LAM_LITTLEBIG_AGENT']:
-    p = Path(f'/home/architit/LAM_CORE/{agent}/IDENTITY.md')
-    if p.exists():
-        print(agent, '->', engine.parse_identity(p))
-"
-```
-
-Invalidation Condition: If any returned dict contains `"UNKNOWN"` or corrupted values like `Call Sign:** # ...`, the test fails.
+1. **Inspect Reports**:
+   - Verify detailed analysis in `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/analysis.md`.
+2. **Static Inspection of `ssn_daemon.js`**:
+   - `view_file` on `scripts/global/ssn_daemon.js` lines 41 & 88 to verify `xdotool` usage.
+3. **Static Inspection of `sovereign_kernel.py`**:
+   - `view_file` on `scripts/global/sovereign_kernel.py` lines 278-306 to verify non-GUI PTY stream control.
+4. **Test Suite Verification**:
+   - Execute `bash scripts/test_entrypoint.sh` to confirm governance test suite passes.

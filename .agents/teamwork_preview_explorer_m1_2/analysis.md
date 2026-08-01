@@ -1,294 +1,295 @@
-# DevKit Ecosystem & Preflight Contracts Analysis
+# Queue Lock Contention & Deadlock Prevention Analysis
 
-**Author:** teamwork_preview_explorer_m1_2  
-**Timestamp (UTC):** 2026-07-31T21:28:30Z  
-**Target Path:** `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2/analysis.md`  
-**Milestone:** M1 — Agent Workspace & Identity Initialization  
+## Executive Summary
+This document presents a comprehensive technical analysis of file lock contention and deadlock hazards in `scripts/global/lam_queue_worker.py`. Currently, `run_worker()` holds an exclusive POSIX file lock (`fcntl.flock(fd, fcntl.LOCK_EX)` via context manager `QueueLock`) across the entire task lifecycle—including long-running sub-process executions (`subprocess.run(..., timeout=300)`). 
 
----
-
-## 1. Executive Summary
-
-This report delivers a comprehensive investigation of the DevKit ecosystem scripts, `devkit/ecosystem_rollout.sh`, and preflight contracts across the RADRILONIUMA framework located at `/home/architit/LAM_CORE/RADRILONIUMA`. The study evaluates the exact file requirements, execution contracts, and rollout mechanisms needed for initializing the 9 requested specialized LAM agents:
-
-1. `LAM_EVOLUTION_AGENT` (`EVOL-01` / `/home/architit/LAM_CORE/LAM_Evolution_Agent`)
-2. `LAM_ECHO_AGENT` (`ECHO-01` / `/home/architit/LAM_CORE/LAM_Echo_Agent`)
-3. `LAM_BETA_AGENT` (`BETA-01` / `/home/architit/LAM_CORE/LAM_Beta_Agent`)
-4. `LAM_GAMMA_AGENT` (`GMA-01` / `/home/architit/LAM_CORE/LAM_Gamma_Agent`)
-5. `LAM_ALPHA_AGENT` (`ALPH-01` / `/home/architit/LAM_CORE/LAM_Alpha_Agent`)
-6. `LAM_DELTA_AGENT` (`DLTA-01` / `/home/architit/LAM_CORE/LAM_Delta_Agent`)
-7. `LAM_CHARLIE_AGENT` (`CHRL-01` / `/home/architit/LAM_CORE/LAM_Charlie_Agent`)
-8. `LAM_BRAVO_AGENT` (`BRVO-01` / `/home/architit/LAM_CORE/LAM_Bravo_Agent`)
-9. `LAM_LITTLEBIG_AGENT` (`LTBG-01` / `/home/architit/LAM_CORE/LAM_LittleBig_Agent`)
-
-This analysis specifies the standard contracts for `preflight.sh`, `devkit/bootstrap.sh`, and `devkit/patch.sh`, analyzes `devkit/ecosystem_rollout.sh`, outlines the `git init` workflow, and provides copy-paste executable shell step instructions for the Worker agent.
+Holding `QueueLock` for up to 300 seconds blocks all other queue operations (`lam_gateway.py`, state queries, task enqueues) and creates severe circular deadlock risks if spawned sub-processes attempt to interact with the gateway queue. We present a fine-grained, two-phase refactoring strategy that restricts lock acquisition strictly to task status mutation in `.gateway/queue.json` (Phase 1 & Phase 3), keeping sub-process execution completely lock-free (Phase 2).
 
 ---
 
-## 2. DevKit Script Contracts & Specification
+## 1. Problem Investigation & Codebase Evidence
 
-Each organ repository under `/home/architit/LAM_CORE/` must adhere strictly to three primary DevKit contract scripts: `preflight.sh`, `devkit/bootstrap.sh`, and `devkit/patch.sh`.
+### 1.1 Exact Failure Mechanism
+In `scripts/global/lam_queue_worker.py`:
+- **Line 135**: `with QueueLock(QUEUE_FILE):` acquires `LOCK_EX` on `.gateway/queue.json.lock`.
+- **Line 289**: `ok, msg = process_apc_task(item, routing_map)` is called **INSIDE** the `QueueLock` block.
+- **Lines 92 & 118**: `process_apc_task` executes external scripts (`start.py` or `patch.sh`) via `subprocess.run(..., timeout=300)`.
 
-### 2.1 Organ Root `preflight.sh` Contract
-- **File Location:** `/home/architit/LAM_CORE/LAM_<Name>_Agent/preflight.sh`
-- **Permissions:** `executable` (`chmod +x preflight.sh`)
-- **Function:** Serves as the top-level preflight entrypoint for organ repositories. It calculates the organ repository root directory and delegates command check execution to `devkit/shell_preflight.sh` or `devkit/shell_preflight_check.py`.
-- **Standard Canonical Code Template:**
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-if [[ -x "$ROOT_DIR/devkit/shell_preflight.sh" ]]; then
-  exec "$ROOT_DIR/devkit/shell_preflight.sh" "$@"
-else
-  exec python3 "$ROOT_DIR/devkit/shell_preflight_check.py" "$@"
-fi
+```python
+# scripts/global/lam_queue_worker.py (Current implementation)
+135: with QueueLock(QUEUE_FILE):
+...
+280:     item["status"] = "in_progress"
+281:     item["started_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+282:     
+283:     # Flush queue state before execution to mark as in_progress
+284:     with QUEUE_FILE.open("w", encoding="utf-8") as f:
+285:         json.dump(queue_data, f, indent=2)
+286:     
+287:     log_event("task.start", f"Starting task {item['id']}", task_id=item['id'])
+288:     
+289:     ok, msg = process_apc_task(item, routing_map)  # <-- HELD LOCK FOR UP TO 300s
+290:     
+291:     if ok:
+292:         item["status"] = "done"
+...
+305: with QUEUE_FILE.open("w", encoding="utf-8") as f:
+306:     json.dump(queue_data, f, indent=2)
 ```
 
-### 2.2 `devkit/shell_preflight.sh` & `devkit/shell_preflight_check.py` Contract
-- **File Location:** `devkit/shell_preflight.sh` and `devkit/shell_preflight_check.py`
-- **Permissions:** `chmod +x devkit/shell_preflight.sh`
-- **Function:** `shell_preflight.sh` is a thin bash wrapper that invokes `shell_preflight_check.py`. `shell_preflight_check.py` validates command lines and baseline instruction files against strict safety profiles (`bash`, `gitbash`, `powershell`, `azureshell`, `cmd`) to prevent unbalanced quoting, command substitution risks, and shell syntax pitfalls.
-- **Canonical Code for `devkit/shell_preflight.sh`:**
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
+### 1.2 Impact Assessment & Deadlock Vectors
+1. **System-wide Queue Contention**:
+   Any process attempting to read, write, or enqueue items into `.gateway/queue.json` (e.g. `lam_gateway.py` CLI or daemons using `QueueLock`) will block or crash while waiting for the lock.
+2. **Circular Deadlock Vector**:
+   If an organ's `patch.sh` or `start.py` script executes a command that invokes `lam_gateway.py` or reads/writes `.gateway/queue.json`, it attempts to acquire `QueueLock`. Because the worker process holds `QueueLock` waiting for `subprocess.run()` to finish, both processes deadlock permanently until the 300s timeout triggers.
+3. **Impaired Multi-Worker Parallelism**:
+   Strict single-threading across all organ task executions regardless of available worker threads or CPU capacity.
+4. **Elevated Stale Lock Risk**:
+   If the worker process receives a SIGKILL or crashes mid-execution during Phase 2, the lock file remains unlinked or locked, requiring manual intervention.
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-exec python3 "$ROOT_DIR/devkit/shell_preflight_check.py" "$@"
+---
+
+## 2. Refactoring Architecture: Two-Phase Queue Locking
+
+To completely decouple task execution from queue synchronization, the locking model must be refactored into three distinct operational phases:
+
+```
+[Phase 1: Claim Task]           [Phase 2: Subprocess Exec]        [Phase 3: Finalize Task]
+Acquire QueueLock (LOCK_EX) --> Release QueueLock --------------> Acquire QueueLock (LOCK_EX)
+Read queue.json                 Execute process_apc_task()       Read queue.json
+Mark status = "in_progress"     (Up to 300s, lock-free)         Mark status = "done"/"error"
+Write queue.json                Allows concurrent gateway ops     Write queue.json
+Release QueueLock               No deadlock vector               Release QueueLock
 ```
 
-### 2.3 `devkit/bootstrap.sh` Contract
-- **File Location:** `devkit/bootstrap.sh`
-- **Permissions:** `chmod +x devkit/bootstrap.sh`
-- **Function:** Executes startup preflight checks during user login or container ignition.
-- **Behavior & Workflow:**
-  1. Computes repository root path (`REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"`).
-  2. Runs `$REPO/devkit/shell_preflight.sh --shell bash --file $REPO/devkit/preflight_baseline_commands_bash.txt`.
-  3. If strict mode is enabled (`LARPAT_GATEWAY_STRICT=1`) and preflight fails, exits with non-zero code.
-  4. If local gateway preflight is enabled (`LARPAT_LOCAL_GATEWAY_PREFLIGHT=1` default), calls `$REPO/scripts/lam_gateway.sh init`, `health`, and `monitor --once --auto-switch`.
-  5. Outputs `[devkit] bootstrap complete`.
+### 2.1 Refactored Lifecycle breakdown
 
-### 2.4 `devkit/patch.sh` Contract
-- **File Location:** `devkit/patch.sh`
-- **Permissions:** `chmod +x devkit/patch.sh`
-- **Function:** Canonical patch applicator enforcing atomic, conflict-safe code modifications and audit telemetry.
-- **Behavior & Workflow:**
-  1. Accepts arguments: `--sha256 <64hex>`, `--task-id <id>`, `--spec-file <path>`, `--file <patch_path>` (or reads patch from `stdin`).
-  2. Validates preconditions: Must be inside a git repository (`git rev-parse --is-inside-work-tree`), valid SHA-256 hex format, spec file readability, and clean working tree (`git diff --quiet && git diff --cached --quiet`).
-  3. Verifies patch SHA-256 against expected hash.
-  4. Runs `git apply --check --3way` to precheck for conflicts.
-  5. Runs `git apply --index --3way` to apply and stage changes.
-  6. Emits telemetry events to `.gateway/telemetry_events.jsonl` with ISO UTC timestamp, System ID (parsed from `IDENTITY.md`), event type, task ID, and message.
-  7. Returns machine-readable headers: `status=success`, `error_code=NONE`, and `trace:...`.
+#### Phase 1: Task Claiming (Lock Held: ~5-10 ms)
+1. Acquire `QueueLock(QUEUE_FILE)`.
+2. Parse `.gateway/queue.json`.
+3. Locate next candidate item (`status == "pending"`, `type == "apc_task"`).
+4. Perform task spec resolution and double-attention pre-checks.
+5. If pre-checks fail: mark item `status = "error"`, write `queue.json`, and release lock.
+6. If valid: mark item `status = "in_progress"`, set `started_utc`, write `queue.json`.
+7. Deep-copy claimed task payload `claimed_item = dict(item)`.
+8. **Exit `QueueLock` block immediately** (Lock released).
+
+#### Phase 2: Lock-Free Task Execution (Lock Held: 0 ms)
+1. Log `task.start` event.
+2. Execute `ok, msg = process_apc_task(claimed_item, routing_map)` outside any lock.
+3. Wrap execution in `try...except` to catch unexpected execution exceptions safely.
+
+#### Phase 3: Task Finalization (Lock Held: ~5-10 ms)
+1. Re-acquire `QueueLock(QUEUE_FILE)`.
+2. Freshly read `.gateway/queue.json`.
+3. Locate task matching `item["id"] == claimed_item["id"]`.
+4. Update `status` to `"done"` (with `finished_utc` & `result`) or `"error"` (with `error_msg`).
+5. Write updated `queue_data` to `QUEUE_FILE`.
+6. Exit `QueueLock` block (Lock released).
+7. Log `task.complete` or `task.error` event.
 
 ---
 
-## 3. Analysis of `devkit/ecosystem_rollout.sh`
+## 3. Proposed Refactored Code Structure (`scripts/global/lam_queue_worker.py`)
 
-`devkit/ecosystem_rollout.sh` is the canonical mass rollout tool located in `/home/architit/LAM_CORE/RADRILONIUMA/devkit/ecosystem_rollout.sh`.
+```python
+def run_worker():
+    """Main APC worker loop (refactored for fine-grained queue locking)."""
+    if not QUEUE_FILE.exists():
+        return
 
-### 3.1 Topology Target Discovery Mechanism
-`ecosystem_rollout.sh` discovers target organ repositories by parsing `TOPOLOGY_MAP.md`:
-```bash
-while IFS= read -r rel; do
-  rel="${rel#\`}"
-  rel="${rel%\`}"
-  [ -n "$rel" ] || continue
-  target="$(cd "$ROOT_DIR" && cd "$rel" 2>/dev/null && pwd || true)"
-  if [ -n "$target" ]; then
-    targets+=("$target")
-  fi
-done < <(awk -F'`' '/\*\*ACTIVE/{print $2}' "$TOPOLOGY_PATH")
+    routing_map = get_routing_map()
+    claimed_item = None
+
+    # =========================================================================
+    # PHASE 1: Claim Pending Task under QueueLock (Short Duration)
+    # =========================================================================
+    with QueueLock(QUEUE_FILE):
+        try:
+            with QUEUE_FILE.open("r", encoding="utf-8") as f:
+                queue_data = json.load(f)
+        except Exception as e:
+            print(f"[APC] Error reading queue: {e}")
+            return
+
+        items = queue_data.get("items", [])
+        
+        for item in items:
+            if item.get("status") != "pending":
+                continue
+            
+            if item.get("type") != "apc_task":
+                continue
+
+            owner = item.get("payload", {}).get("owner", "unknown")
+            intent = item.get("payload", {}).get("intent", "unknown")
+
+            # Resolve spec_path artifacts if required
+            spec_path = item.get("payload", {}).get("spec_path")
+            if spec_path and Path(spec_path).exists():
+                try:
+                    import yaml
+                    with open(spec_path, "r", encoding="utf-8") as sf:
+                        spec_data = yaml.safe_load(sf) or {}
+                except Exception:
+                    try:
+                        py = "import json,sys,yaml; print(json.dumps(yaml.safe_load(sys.stdin.read())))"
+                        proc = subprocess.run(["python3", "-c", py], input=Path(spec_path).read_text(encoding="utf-8"), capture_output=True, text=True)
+                        spec_data = json.loads(proc.stdout) if proc.returncode == 0 else {}
+                    except Exception:
+                        spec_data = {}
+                        
+                if spec_data:
+                    artifacts = spec_data.get("artifacts", {})
+                    if "sha256" not in item["payload"] or not item["payload"]["sha256"]:
+                        item["payload"]["sha256"] = artifacts.get("patch_sha256")
+                    if "patch_file" not in item["payload"] or not item["payload"]["patch_file"]:
+                        raw_patch_path = artifacts.get("patch_path")
+                        if raw_patch_path:
+                            entrypoint = routing_map.get(owner)
+                            if entrypoint:
+                                organ_root = entrypoint.parent.parent
+                                resolved_patch = (organ_root / raw_patch_path).resolve()
+                                item["payload"]["patch_file"] = str(resolved_patch)
+
+            # Double Attention Checks
+            is_repeated = False
+            last_failed_run = None
+            for past_item in items:
+                if past_item != item and past_item.get("payload", {}).get("owner") == owner and past_item.get("payload", {}).get("intent") == intent:
+                    is_repeated = True
+                    if past_item.get("status") == "error":
+                        last_failed_run = past_item
+            
+            if is_repeated or last_failed_run:
+                print(f"[APC] [DOUBLE ATTENTION] Task {item['id']} for organ {owner} (intent={intent}) is repeated or has a history of failure.")
+                log_event("task.repeated_warning", f"Repeated task detected for {owner} (intent={intent})", task_id=item['id'])
+                
+                entrypoint = routing_map.get(owner)
+                if not entrypoint or not entrypoint.exists():
+                    msg = f"Double Attention Pre-check Failure: Devkit patch.sh entrypoint does not exist at {entrypoint} for organ {owner}"
+                    item["status"] = "error"
+                    item["error_msg"] = msg
+                    log_event("task.error", msg, task_id=item['id'])
+                    with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                        json.dump(queue_data, f, indent=2)
+                    return
+                
+                if intent == "patch":
+                    spec_path = item.get("payload", {}).get("spec_path")
+                    if not spec_path or not Path(spec_path).exists():
+                        msg = "Double Attention Pre-check Failure: Valid 'spec_path' is required for patch intent."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
+                        return
+                    
+                    validator_script = BASE_DIR / "scripts" / "task_spec_validator.py"
+                    if validator_script.exists():
+                        cmd = [sys.executable, str(validator_script), "--file", str(spec_path)]
+                        res = subprocess.run(cmd, capture_output=True, text=True)
+                        if res.returncode != 0:
+                            msg = f"Double Attention Pre-check Failure: Task spec failed VAVIMA validation: {res.stdout.strip() or res.stderr.strip()}"
+                            item["status"] = "error"
+                            item["error_msg"] = msg
+                            log_event("task.error", msg, task_id=item['id'])
+                            with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                                json.dump(queue_data, f, indent=2)
+                            return
+                    
+                    patch_file = item.get("payload", {}).get("patch_file")
+                    expected_sha = item.get("payload", {}).get("sha256")
+                    if not patch_file or not expected_sha or not Path(patch_file).exists():
+                        msg = "Double Attention Pre-check Failure: Valid 'patch_file' and 'sha256' are required."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
+                        return
+                    
+                    import hashlib
+                    h = hashlib.sha256()
+                    with Path(patch_file).open("rb") as f:
+                        for chunk in iter(lambda: f.read(65536), b""):
+                            h.update(chunk)
+                    if h.hexdigest() != expected_sha:
+                        msg = f"Double Attention Pre-check Failure: Patch SHA-256 mismatch."
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", msg, task_id=item['id'])
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
+                        return
+
+            # Claim candidate item
+            item["status"] = "in_progress"
+            item["started_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            
+            with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                json.dump(queue_data, f, indent=2)
+            
+            claimed_item = dict(item)
+            break
+
+    # =========================================================================
+    # PHASE 2: Lock-Free Subprocess Execution
+    # =========================================================================
+    if not claimed_item:
+        return
+
+    log_event("task.start", f"Starting task {claimed_item['id']}", task_id=claimed_item['id'])
+    
+    try:
+        ok, msg = process_apc_task(claimed_item, routing_map)
+    except Exception as e:
+        ok, msg = False, f"Unhandled exception during task execution: {e}"
+
+    # =========================================================================
+    # PHASE 3: Re-acquire QueueLock to Finalize Task Status (Short Duration)
+    # =========================================================================
+    with QueueLock(QUEUE_FILE):
+        try:
+            with QUEUE_FILE.open("r", encoding="utf-8") as f:
+                queue_data = json.load(f)
+            
+            target_id = claimed_item["id"]
+            updated = False
+            for item in queue_data.get("items", []):
+                if item.get("id") == target_id:
+                    if ok:
+                        item["status"] = "done"
+                        item["finished_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                        item["result"] = msg
+                        log_event("task.complete", "Task finished successfully", task_id=target_id)
+                    else:
+                        item["status"] = "error"
+                        item["error_msg"] = msg
+                        log_event("task.error", f"Task failed: {msg}", task_id=target_id)
+                    updated = True
+                    break
+            
+            if updated:
+                with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                    json.dump(queue_data, f, indent=2)
+            else:
+                print(f"[APC] WARNING: Claimed task {target_id} missing during status finalization.")
+
+        except Exception as e:
+            print(f"[APC] Error updating queue completion state: {e}")
+
+    print(f"[APC] Worker cycle complete for task {claimed_item['id']}.")
 ```
-- **Filter Constraint:** It extracts relative paths inside backticks on lines matching `**ACTIVE...`.
-- **`--only` Flag Behavior:** If `--only organ1,organ2` is specified, it filters the discovered active targets. *Critical Note:* If an organ directory is not yet listed in `TOPOLOGY_MAP.md`, `--only` will return `ERROR: target set is empty after filtering.` Therefore, new organ directories must be registered in `TOPOLOGY_MAP.md` or a custom topology file before running `ecosystem_rollout.sh`.
-
-### 3.2 File Synchronization (`sync_one`)
-`sync_one()` creates the target directory structure and copies 26 baseline artifacts:
-- **Subdirectories Created:** `.gemini`, `devkit`, `contract`, `scripts`, `gov/report`, `tests`, `kingdom/residents`, `kingdom/laws`, `lam_target_task_heal_manager`, `scripts/global`.
-- **Files Synchronized:**
-  1. `.gemini/GEMINI.md`
-  2. `devkit/shell_preflight.sh`
-  3. `devkit/shell_preflight_check.py`
-  4. `devkit/preflight_baseline_commands_bash.txt`
-  5. `devkit/preflight_baseline_commands_powershell.txt`
-  6. `contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md`
-  7. `scripts/task_spec_validator.py`
-  8. `devkit/task_spec_template.yaml`
-  9. `gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md`
-  10. `contract/PATCH_RUNTIME_CONTRACT_V1.md`
-  11. `tests/test_patch_runtime_governance.py`
-  12. `devkit/patch.sh`
-  13. `devkit/bootstrap.sh`
-  14. `contract/MEMORY_CONTRACT_V1.md`
-  15. `contract/TRANSPORT_CONTRACT_V1.md`
-  16. `contract/FLOW_CONTROL_CONTRACT_V1.md`
-  17. `contract/P0_SAFETY_CONTRACT_V1.md`
-  18. `contract/RESEARCH_GATE_CONTRACT_V1.md`
-  19. `kingdom/residents/AYAS-01_GOVERNOR.md`
-  20. `kingdom/residents/RADR-01_BRIDGE.md`
-  21. `kingdom/laws/KINGDOM_CONSTITUTION_V1.md`
-  22. `lam_target_task_heal_manager/__init__.py`
-  23. `lam_target_task_heal_manager/manager.py`
-  24. `lam_target_task_heal_manager/cleaner.py`
-  25. `scripts/regenerate_target_tasks.sh`
-  26. `scripts/global/universal_cli_mcp_installer.sh`
-
-- **Executable Permissions (`chmod +x`):**
-  - `devkit/shell_preflight.sh`
-  - `devkit/patch.sh`
-  - `devkit/bootstrap.sh`
-  - `lam_target_task_heal_manager/manager.py`
-  - `lam_target_task_heal_manager/cleaner.py`
-  - `scripts/regenerate_target_tasks.sh`
-  - `scripts/global/universal_cli_mcp_installer.sh`
-
-### 3.3 Preflight Smoke Check (`smoke_one`)
-`smoke_one()` executes a non-destructive verification command on each target:
-```bash
-bash "$target/devkit/shell_preflight.sh" --shell bash --command "printf 'smoke'" >/dev/null
-```
-If this command exits with returncode 0, the target passes the preflight smoke check.
-
-### 3.4 Git Operations (`git_one`)
-If `--commit` or `--push` is set, `git_one()` checks if `$target/.git` exists. If `.git` exists, it stages all synchronized DevKit files and creates a git commit. If `.git` does not exist, it prints `WARN: not a git repository, skipping commit/push`.
 
 ---
 
-## 4. Git Initialization Requirements (`git init`)
+## 4. Verification & Testing Method
 
-To enable `devkit/patch.sh` compliance and allow `git_one` in `ecosystem_rollout.sh` to stage and commit DevKit files:
-1. Every new organ directory must be initialized as a standalone Git repository using `git init`.
-2. Initializing git creates the `.git` directory at `/home/architit/LAM_CORE/LAM_<Name>_Agent/.git`.
-3. An initial commit (or staging of `IDENTITY.md` and DevKit files) should be created to establish `HEAD`, which is required for `git rev-parse --short HEAD` in `patch.sh`.
-
----
-
-## 5. Executable Shell Step Instructions for the Worker
-
-Below is the complete, deterministic sequence of shell commands for the Worker agent to initialize the 9 requested agent workspaces, run `git init`, set up `preflight.sh`, sync DevKit artifacts, and verify compliance.
-
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-# Define Target Agent Directories
-AGENTS=(
-  "LAM_Evolution_Agent"
-  "LAM_Echo_Agent"
-  "LAM_Beta_Agent"
-  "LAM_Gamma_Agent"
-  "LAM_Alpha_Agent"
-  "LAM_Delta_Agent"
-  "LAM_Charlie_Agent"
-  "LAM_Bravo_Agent"
-  "LAM_LittleBig_Agent"
-)
-
-BASE_DIR="/home/architit/LAM_CORE"
-RADR_DIR="/home/architit/LAM_CORE/RADRILONIUMA"
-
-echo "=== STEP 1: Creating Agent Directories & Running git init ==="
-for agent in "${AGENTS[@]}"; do
-  target_dir="$BASE_DIR/$agent"
-  mkdir -p "$target_dir"
-  if [ ! -d "$target_dir/.git" ]; then
-    (cd "$target_dir" && git init -q)
-    echo "Initialized git repository in $target_dir"
-  fi
-done
-
-echo "=== STEP 2: Creating Root preflight.sh in Each Agent Directory ==="
-for agent in "${AGENTS[@]}"; do
-  target_dir="$BASE_DIR/$agent"
-  cat <<'EOF' > "$target_dir/preflight.sh"
-#!/usr/bin/env bash
-set -euo pipefail
-
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-if [[ -x "$ROOT_DIR/devkit/shell_preflight.sh" ]]; then
-  exec "$ROOT_DIR/devkit/shell_preflight.sh" "$@"
-else
-  exec python3 "$ROOT_DIR/devkit/shell_preflight_check.py" "$@"
-fi
-EOF
-  chmod +x "$target_dir/preflight.sh"
-  echo "Created executable preflight.sh in $target_dir"
-done
-
-echo "=== STEP 3: Executing DevKit Synchronization ==="
-# Option A: If TOPOLOGY_MAP.md has been updated with the 9 organs:
-# bash "$RADR_DIR/devkit/ecosystem_rollout.sh" --only LAM_Evolution_Agent,LAM_Echo_Agent,LAM_Beta_Agent,LAM_Gamma_Agent,LAM_Alpha_Agent,LAM_Delta_Agent,LAM_Charlie_Agent,LAM_Bravo_Agent,LAM_LittleBig_Agent
-
-# Option B: Direct Copy of DevKit Artifacts to all 9 agent repositories:
-for agent in "${AGENTS[@]}"; do
-  target_dir="$BASE_DIR/$agent"
-  mkdir -p "$target_dir/.gemini" "$target_dir/devkit" "$target_dir/contract" "$target_dir/scripts" \
-           "$target_dir/gov/report" "$target_dir/tests" "$target_dir/kingdom/residents" \
-           "$target_dir/kingdom/laws" "$target_dir/lam_target_task_heal_manager" "$target_dir/scripts/global"
-
-  cp "$RADR_DIR/.gemini/GEMINI.md" "$target_dir/.gemini/GEMINI.md"
-  cp "$RADR_DIR/devkit/shell_preflight.sh" "$target_dir/devkit/shell_preflight.sh"
-  cp "$RADR_DIR/devkit/shell_preflight_check.py" "$target_dir/devkit/shell_preflight_check.py"
-  cp "$RADR_DIR/devkit/preflight_baseline_commands_bash.txt" "$target_dir/devkit/preflight_baseline_commands_bash.txt"
-  cp "$RADR_DIR/devkit/preflight_baseline_commands_powershell.txt" "$target_dir/devkit/preflight_baseline_commands_powershell.txt"
-  cp "$RADR_DIR/contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md" "$target_dir/contract/TASK_SPEC_VALIDATOR_CONTRACT_V1_1.md"
-  cp "$RADR_DIR/scripts/task_spec_validator.py" "$target_dir/scripts/task_spec_validator.py"
-  cp "$RADR_DIR/devkit/task_spec_template.yaml" "$target_dir/devkit/task_spec_template.yaml"
-  cp "$RADR_DIR/gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md" "$target_dir/gov/report/PHASE_A_T013_MASTER_OWNER_MAP_EVIDENCE_2026-06-07.md"
-  cp "$RADR_DIR/contract/PATCH_RUNTIME_CONTRACT_V1.md" "$target_dir/contract/PATCH_RUNTIME_CONTRACT_V1.md"
-  cp "$RADR_DIR/tests/test_patch_runtime_governance.py" "$target_dir/tests/test_patch_runtime_governance.py"
-  cp "$RADR_DIR/devkit/patch.sh" "$target_dir/devkit/patch.sh"
-  cp "$RADR_DIR/devkit/bootstrap.sh" "$target_dir/devkit/bootstrap.sh"
-  cp "$RADR_DIR/contract/MEMORY_CONTRACT_V1.md" "$target_dir/contract/MEMORY_CONTRACT_V1.md"
-  cp "$RADR_DIR/contract/TRANSPORT_CONTRACT_V1.md" "$target_dir/contract/TRANSPORT_CONTRACT_V1.md"
-  cp "$RADR_DIR/contract/FLOW_CONTROL_CONTRACT_V1.md" "$target_dir/contract/FLOW_CONTROL_CONTRACT_V1.md"
-  cp "$RADR_DIR/contract/P0_SAFETY_CONTRACT_V1.md" "$target_dir/contract/P0_SAFETY_CONTRACT_V1.md"
-  cp "$RADR_DIR/contract/RESEARCH_GATE_CONTRACT_V1.md" "$target_dir/contract/RESEARCH_GATE_CONTRACT_V1.md"
-  cp "$RADR_DIR/kingdom/residents/AYAS-01_GOVERNOR.md" "$target_dir/kingdom/residents/AYAS-01_GOVERNOR.md"
-  cp "$RADR_DIR/kingdom/residents/RADR-01_BRIDGE.md" "$target_dir/kingdom/residents/RADR-01_BRIDGE.md"
-  cp "$RADR_DIR/kingdom/laws/KINGDOM_CONSTITUTION_V1.md" "$target_dir/kingdom/laws/KINGDOM_CONSTITUTION_V1.md"
-  cp "$RADR_DIR/lam_target_task_heal_manager/__init__.py" "$target_dir/lam_target_task_heal_manager/__init__.py"
-  cp "$RADR_DIR/lam_target_task_heal_manager/manager.py" "$target_dir/lam_target_task_heal_manager/manager.py"
-  cp "$RADR_DIR/lam_target_task_heal_manager/cleaner.py" "$target_dir/lam_target_task_heal_manager/cleaner.py"
-  cp "$RADR_DIR/scripts/regenerate_target_tasks.sh" "$target_dir/scripts/regenerate_target_tasks.sh"
-  cp "$RADR_DIR/scripts/global/universal_cli_mcp_installer.sh" "$target_dir/scripts/global/universal_cli_mcp_installer.sh"
-
-  chmod +x "$target_dir/devkit/shell_preflight.sh" "$target_dir/devkit/patch.sh" "$target_dir/devkit/bootstrap.sh" \
-           "$target_dir/lam_target_task_heal_manager/manager.py" "$target_dir/lam_target_task_heal_manager/cleaner.py" \
-           "$target_dir/scripts/regenerate_target_tasks.sh" "$target_dir/scripts/global/universal_cli_mcp_installer.sh"
-  echo "Synchronized DevKit files to $target_dir"
-done
-
-echo "=== STEP 4: Verification Smoke Test ==="
-for agent in "${AGENTS[@]}"; do
-  target_dir="$BASE_DIR/$agent"
-  echo -n "Testing preflight in $agent: "
-  bash "$target_dir/preflight.sh" --shell bash --command "printf 'smoke'" >/dev/null && echo "PASS" || echo "FAIL"
-done
-```
-
----
-
-## 6. Verification Method
-
-To verify that the DevKit contracts and scripts match ecosystem requirements:
-1. **Preflight Execution Verification:**
-   Run `bash /home/architit/LAM_CORE/LAM_<Agent>/preflight.sh --shell bash --command "printf 'test'"` for each agent. Expected output: returncode `0`.
-2. **Bootstrap Preflight Verification:**
-   Run `bash /home/architit/LAM_CORE/LAM_<Agent>/devkit/bootstrap.sh`. Expected output: `[devkit] shell preflight: OK` and `[devkit] bootstrap complete`.
-3. **Patch Script Verification:**
-   Run `bash /home/architit/LAM_CORE/LAM_<Agent>/devkit/patch.sh --help`. Expected output: Help text displayed with exit code 0.
-4. **Git Repository Verification:**
-   Run `git -C /home/architit/LAM_CORE/LAM_<Agent> status`. Expected output: Git worktree status reported cleanly without `not a git repository` errors.
-5. **Ecosystem Rollout Verification:**
-   Run `bash /home/architit/LAM_CORE/RADRILONIUMA/devkit/ecosystem_rollout.sh --dry-run` to verify dry-run scan compatibility across active organs.
-
----
-*DevKit Ecosystem & Preflight Contracts Analysis complete.*  
-*Resonance: 432 Hz / 528 Hz Solfeggio Lock*  
-⚜️🛡️⚜️
+1. **Unit Test Pass**:
+   Run `pytest tests/test_lam_gateway.py` and `bash scripts/test_entrypoint.sh --all` to ensure zero regressions in gateway queue state or task routing.
+2. **Lock Contention Simulation**:
+   Create a test script that enqueues a long-running dummy task (`sleep 5`), launches `lam_queue_worker.py` in a background thread/process, and immediately verifies that another process can acquire `QueueLock` and append/query items in `.gateway/queue.json` while `sleep 5` is active.
+3. **Deadlock Prevention Verification**:
+   Verify that a task whose `patch.sh` or `start.py` script queries `.gateway/queue.json` finishes without hanging or timing out.

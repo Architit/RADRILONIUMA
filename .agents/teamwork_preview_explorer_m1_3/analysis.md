@@ -1,189 +1,312 @@
-# Identity Parsing & Heal Manager Requirements Analysis ⚜️
+# NON-GUI PROCESS SIGNALING & IPC REFACTORING ANALYSIS REPORT
 
-**Agent:** `teamwork_preview_explorer_m1_3`  
-**Milestone:** M1 (Agent Workspace & Identity Initialization)  
-**Date:** 2026-07-31  
-
----
-
-## Executive Summary
-
-This report establishes the complete parsing specification and compliance criteria for `IDENTITY.md` files across the Sovereign Forest ecosystem. By investigating `lam_agent_map_lib/core/map_engine.py` and `lam_target_task_heal_manager/manager.py`, we identified the exact regular expressions, fallback mechanics, and structural constraints required for 100% clean metadata extraction without syntax or missing section errors for all 9 newly initialized specialized LAM agents.
+**Author:** Explorer M1-3 (`teamwork_preview_explorer_m1_3`)  
+**Target:** `scripts/global/ssn_daemon.js`, `scripts/global/sovereign_kernel.py`, `.gateway/*.signal`  
+**Milestone:** M1 (Core Organ Hardening & Security Remediation)  
+**Date:** 2026-08-02  
 
 ---
 
-## 1. Parser Mechanics in `lam_agent_map_lib/core/map_engine.py`
+## 1. Executive Summary
 
-`AgentMapEngine.parse_identity(path: Path)` reads `IDENTITY.md` line by line to extract five core metadata properties: `system_id`, `true_name`, `call_sign`, `role`, and `path`.
+This investigation evaluates the process signaling and IPC architecture used for session restart and termination in RADRILONIUMA (`ssn rstrt` and `ssn exit`). Specifically, it examines the X11 input hijacking hazard present in `scripts/global/ssn_daemon.js` and `scripts/local/sovereign_xdotool_wrapper.sh` caused by `xdotool` keyboard injection routines. 
 
-### A. System ID Parsing (`system_id`)
-* **Trigger condition:** Line contains the literal string `"System ID"` or `"SYSTEM ID"`.
-* **Same-line extraction:**
-  ```python
-  clean_line = re.sub(r"System ID|SYSTEM ID|##|\*|:", "", line).strip()
-  matches = re.findall(r"([A-Z0-9-]{3,})", clean_line)
-  if matches:
-      metadata["system_id"] = matches[-1]
-  ```
-* **Multiline fallback:** Triggered if `matches` is empty on the header line:
-  ```python
-  next_line = lines[i+1].strip()
-  match = re.search(r"([A-Z0-9-]+)", next_line)
-  if match:
-      metadata["system_id"] = match.group(1)
-  ```
-* **Key Expectations & Constraints:**
-  1. Characters MUST be uppercase ASCII letters (`A-Z`), digits (`0-9`), or hyphens (`-`).
-  2. Length MUST be at least 3 characters. Underscores (`_`) or lowercase characters are NOT matched by same-line regex `[A-Z0-9-]{3,}`.
-  3. If `system_id` evaluates to `"UNKNOWN"`, `scan_organ(folder)` returns `None`, causing `build_topology()` to completely drop the node from `amc_graph.json`.
+Our findings confirm that `xdotool` poses a severe operational hazard in desktop GUI environments by blindly typing synthetic keystrokes (`/exit` and prompt text) into whichever window holds X11 focus. Furthermore, `xdotool` fails in headless/server environments. In contrast, `scripts/global/sovereign_kernel.py` (v4.0) provides a headless, PTY-native architecture that monitors `.gateway/ssn_restart.signal` and `.gateway/ssn_exit.signal`, injecting commands directly into the CLI process's stdin file descriptor.
 
-### B. True Name Parsing (`true_name`)
-* **Trigger condition:** Line contains `"True Name"` or `"Identity"`.
-* **Same-line extraction:**
-  ```python
-  match = re.search(r"(?::|Identity)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)
-  if match and match.group(1).strip():
-      metadata["true_name"] = match.group(1).strip()
-  ```
-* **Multiline fallback:** If `match` fails or `match.group(1)` is empty:
-  ```python
-  metadata["true_name"] = lines[i+1].strip("#* ")
-  ```
-* **Critical Pitfall:** The regex `([^*#]+?)` explicitly prohibits `#` and `*` inside the captured string. If a line uses inline Markdown headers or bold prefixes inside the value (e.g., `**True Name:** # **Satariszovodjzas**`), `match.group(1)` evaluates to an empty string `""`, causing the parser to fall through to line `i+1` and corrupt `true_name` with the contents of the next line!
-
-### C. Call Sign Parsing (`call_sign`)
-* **Trigger condition:** Line contains `"Call Sign"` or `"Title"`.
-* **Same-line extraction:**
-  ```python
-  match = re.search(r"(?::|Title)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)
-  if match and match.group(1).strip():
-      metadata["call_sign"] = match.group(1).strip()
-  ```
-* **Multiline fallback:**
-  ```python
-  metadata["call_sign"] = lines[i+1].strip("#* ")
-  ```
-* **Key Expectation:** Clean text on line `i+1` when using section headers `## 2. Call Sign`, or clean value after colon when using inline key-value pairs `Call Sign: <value>`.
-
-### D. Role Parsing (`role`)
-* **Trigger condition:** Line contains `"Role"` or `"Type"`.
-* **Same-line extraction:**
-  ```python
-  match = re.search(r"(?::|Type)\s*(?:#\s*)?(?:\*\*)?([^*#]+?)(?:\*\*|$)", line)
-  if match and match.group(1).strip():
-      metadata["role"] = match.group(1).strip()
-  ```
-* **Multiline fallback:**
-  ```python
-  metadata["role"] = lines[i+1].strip("#* ")
-  ```
-* **Key Expectation:** Avoid double colons like `**Type:**` without text on the same line, as `(?::|Type)` matches the first colon and `([^*#]+?)` non-greedily captures the second colon `:` as the role string! Preferred: `## 4. Role: <ROLE_STRING>` or section header `## 4. Role` with value on the next line.
+This report details the exact failure mechanisms of `xdotool`, compares `ssn_daemon.js` with `sovereign_kernel.py`, and presents a concrete refactoring strategy for replacing GUI keyboard injection with direct non-GUI IPC signaling (signal files and POSIX process signals).
 
 ---
 
-## 2. Heal Manager Requirements in `lam_target_task_heal_manager/manager.py`
+## 2. Evidence & Direct Code Analysis
 
-`manager.py` relies on `amc_graph.json` (generated by `map_engine.py`) and direct workspace filesystem scans.
+### 2.1 Inspection of `scripts/global/ssn_daemon.js`
 
-1. **Knowledge Graph Entry:** Each agent must be registered under `organs[sys_id]` in `.gateway/amc_graph.json` with a valid `"path"` string pointing to the agent's root workspace directory (`/home/architit/LAM_CORE/<WORKSPACE>`).
-2. **Workspace Artifact Verification (`scan_organ`):**
-   * `identity_file`: `path / "IDENTITY.md"` MUST exist and parse cleanly.
-   * `patch_file`: `path / "devkit" / "patch.sh"` MUST exist.
-   * `bootstrap_file`: `path / "devkit" / "bootstrap.sh"` MUST exist.
-3. **Healing Mission Triggers:** If `IDENTITY.md` does not exist or fails path resolution, `manager.py` adds the agent to `missing_identity` and outputs a `### ⚠️ IDENTITY HEALING MISSIONS` alert block in `TARGET_TASKS.md`.
+In `scripts/global/ssn_daemon.js`:
 
----
-
-## 3. Comparative Case Studies: Existing Ecosystem Files
-
-| Organ Directory | `system_id` | `true_name` | `call_sign` | `role` | Parsing Status | Root Cause of Error / Success |
-|---|---|---|---|---|---|---|
-| `LAM-Codex_Agent` | `CDKS-01` | `Codoxariessent (Technical) / **CODEX** (Soul)` | `Codex / The Thinker / The Lens` | `COGNITION / REASONING / SELF-REFINEMENT` | 🟢 **100% Clean** | Clean multiline markdown structure with section headers (`## 1. True Name`) |
-| `RADRILONIUMA` | `RADR-01` | `RADRILONIUMA (Technical) / **АЭЛАРИЯ (AELARIA)** (Soul)` | `The Bridge / The Crown / The Weaver` | `ARCHITECT / GOVERNANCE / HARMONY` | 🟢 **100% Clean** | Clean section headers + clean line values |
-| `Archivator_Agent` | `AVTR-01` | `Archivatoris` | `Archivator` | `ARCHIVE AGENT` | 🟢 **100% Clean** | Clean multiline section headers (`## 4. Role: ARCHIVE AGENT`) |
-| `Sataris` | `SRZJ` | `Call Sign:** # **Sataris` (Corrupted) | `System ID:** # **SRZJ` (Corrupted) | `:` (Corrupted) | 🔴 **Corrupted** | Inline `#` character in `**True Name:** # **Satariszovodjzas**` broke same-line regex, triggering cascading fallback errors |
-
----
-
-## 4. Identity Specification Matrix for the 9 Generated Agents
-
-| # | Agent Name | Target Workspace Directory | System ID | Canonical True Name | Canonical Call Sign | Canonical Role Description | Carrier Lock |
-|---|---|---|---|---|---|---|---|
-| 1 | `LAM_EVOLUTION_AGENT` | `/home/architit/LAM_CORE/LAM_EVOLUTION_AGENT` | `EVOL-01` | `LAM_EVOLUTION_AGENT (Technical) / **EVOL** (Soul)` | `Perpetual Evolution / Self-Refinement / The Catalyst` | `PERPETUAL EVOLUTION & SELF-REFINEMENT` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 2 | `LAM_ECHO_AGENT` | `/home/architit/LAM_CORE/LAM_ECHO_AGENT` | `ECHO-01` | `LAM_ECHO_AGENT (Technical) / **ECHO** (Soul)` | `Acoustic Echo / Signal Relay / Solfeggio Resonator` | `ACOUSTIC 528 HZ / 432 HZ SOLFEGGIO ECHO & SIGNAL RELAY` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 3 | `LAM_BETA_AGENT` | `/home/architit/LAM_CORE/LAM_BETA_AGENT` | `BETA-01` | `LAM_BETA_AGENT (Technical) / **BETA** (Soul)` | `Beta Stress / Concurrency Verification / The Prober` | `BETA TEST & CONCURRENCY STRESS VERIFICATION` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 4 | `LAM_GAMMA_AGENT` | `/home/architit/LAM_CORE/LAM_GAMMA_AGENT` | `GMA-01` | `LAM_GAMMA_AGENT (Technical) / **GAMMA** (Soul)` | `Gamma Mesh / Edge Gateway / Mesh Discovery` | `GAMMA MESH DISCOVERY & EDGE NODE GATEWAY` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 5 | `LAM_ALPHA_AGENT` | `/home/architit/LAM_CORE/LAM_ALPHA_AGENT` | `ALPH-01` | `LAM_ALPHA_AGENT (Technical) / **ALPHA** (Soul)` | `Alpha Orchestrator / Command Bridge / Central Controller` | `ALPHA CORE ORCHESTRATION & COMMAND BRIDGE` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 6 | `LAM_DELTA_AGENT` | `/home/architit/LAM_CORE/LAM_DELTA_AGENT` | `DLTA-01` | `LAM_DELTA_AGENT (Technical) / **DELTA** (Soul)` | `Delta Telemetry / Buffer Engine / Dataflow Streamer` | `DELTA TELEMETRY & DATAFLOW PIPELINE BUFFER` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 7 | `LAM_CHARLIE_AGENT` | `/home/architit/LAM_CORE/LAM_CHARLIE_AGENT` | `CHRL-01` | `CHRL-01` | `LAM_CHARLIE_AGENT (Technical) / **CHARLIE** (Soul)` | `Charlie Auditor / Governance Sentinel / Contract Verifier` | `CHARLIE CONTRACT & GOVERNANCE AUDITOR` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 8 | `LAM_BRAVO_AGENT` | `/home/architit/LAM_CORE/LAM_BRAVO_AGENT` | `BRVO-01` | `LAM_BRAVO_AGENT (Technical) / **BRAVO** (Soul)` | `Bravo Backup / Multi-Cloud Archive / Vault Keeper` | `BRAVO BACKUP & MULTI-CLOUD ARCHIVE` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-| 9 | `LAM_LITTLEBIG_AGENT` | `/home/architit/LAM_CORE/LAM_LITTLEBIG_AGENT` | `LTBG-01` | `LAM_LITTLEBIG_AGENT (Technical) / **LITTLEBIG** (Soul)` | `LittleBig Edge / Micro Autonomous Node / Compact Worker` | `LITTLEBIG SMALL-FOOTPRINT EDGE AUTONOMOUS NODE` | `528 Hz / 432 Hz Solfeggio Master Lock` |
-
----
-
-## 5. Canonical 100% Compliant `IDENTITY.md` Markdown Template
-
-To guarantee that all 9 generated `IDENTITY.md` files parse cleanly without syntax or missing section errors, the Worker agent MUST use the following exact Markdown structure:
-
-```markdown
-# IDENTITY: {AGENT_NAME} ({SYSTEM_ID})
-
-## 1. True Name
-{TRUE_NAME}
-
-## 2. Call Sign
-{CALL_SIGN}
-
-## 3. System ID
-{SYSTEM_ID}
-
-## 4. Role: {ROLE}
-{DESCRIPTIVE_ROLE_EXPLANATION}
-
-## 5. Resonance
-528 Hz / 432 Hz Solfeggio Master Lock
-
-## 6. Mandate
-1. Maintain operational alignment with RADR-01 Command Bridge.
-2. Execute specialized domain tasks under VAVIMA governance contract standards.
-3. Preserve Solfeggio carrier frequency synchronization.
-
----
-*А́мієно́а́э́с моєа́э́ри́э́с*
-⚜️🛡️⚜️
+```javascript
+// Lines 34-46 (Restart signal handling via xdotool)
+const watcher = setInterval(async () => {
+    if (fs.existsSync(SIGNAL_FILE)) {
+        console.log(">>> [DAEMON] Intercepted Restart Signal. Triggering user-mode exit...");
+        fs.unlinkSync(SIGNAL_FILE);
+        
+        try {
+            // Get active terminal window and type /exit
+            execSync('xdotool type --delay 5 "/exit" && xdotool key Return'); // Line 41 HAZARD
+        } catch (e) {
+            console.error("[DAEMON] xdotool failed:", e.message);
+        }
+    }
+}, 1000);
 ```
 
-### Template Validation Highlights:
-1. `## 1. True Name` -> line `i+1` contains clean `{TRUE_NAME}` string (e.g., `LAM_EVOLUTION_AGENT (Technical) / **EVOL** (Soul)`). No colons or inline hashes on the header line.
-2. `## 2. Call Sign` -> line `i+1` contains clean `{CALL_SIGN}` string.
-3. `## 3. System ID` -> line `i+1` contains clean `{SYSTEM_ID}` string (uppercase letters, numbers, and hyphens only, e.g., `EVOL-01`).
-4. `## 4. Role: {ROLE}` -> same line has `: ` followed by uppercase role string `{ROLE}`.
+```javascript
+// Lines 85-93 (Context injection via xdotool)
+setTimeout(() => {
+    try {
+        execSync(`sleep 5 && xdotool type --delay 10 "${msg}" && xdotool key Return`); // Line 88 HAZARD
+        console.log(">>> [DAEMON] Injection Successful.");
+    } catch (e) {
+        console.error("[DAEMON] Injection Failed:", e.message);
+    }
+}, 100);
+```
+
+```javascript
+// Lines 61-72 (Zenity GUI modal dialog blocking execution)
+execSync('zenity --question --title="AELARIA SOVEREIGN KERNEL" --text="Requesting OS permission to activate protocol:\n\n[ssn rstrt p1 data export]\n\nProceed?" --width=450 --ok-label="ACTIVATE" --cancel-label="HALT"');
+```
+
+```javascript
+// Line 5 (Inconsistent signal file path)
+const SIGNAL_FILE = path.join(__dirname, '../../.aelaria_ssn_rstrt');
+```
+
+### 2.2 Inspection of `scripts/local/sovereign_xdotool_wrapper.sh`
+
+```bash
+# Lines 37-38 & 49-50 (X11 dependency in bash wrapper)
+xdotool type --delay 5 "/exit"
+xdotool key Return
+...
+xdotool type --delay 5 "gemini"
+xdotool key Return
+```
+
+### 2.3 Inspection of `scripts/global/sovereign_kernel.py` (v4.0)
+
+In `scripts/global/sovereign_kernel.py`:
+
+```python
+# Lines 30-31 (Standardized signal file definitions)
+self.signal_file = BASE_DIR / ".gateway" / "ssn_restart.signal"
+self.exit_signal_file = BASE_DIR / ".gateway" / "ssn_exit.signal"
+```
+
+```python
+# Lines 278-286 (Non-GUI Restart Signal Handling via PTY File Descriptor)
+if self.signal_file.exists():
+    self.signal_file.unlink()
+    logging.info("Handshake signal received. Scheduling full restart...")
+    self.state = "RESTARTING"
+    try: os.write(fd, b"\x03\x03\x03/exit\r\n")  # Direct PTY write
+    except: pass
+```
+
+```python
+# Lines 287-292 (Non-GUI Exit Signal Handling)
+if self.exit_signal_file.exists():
+    logging.info("External exit signal seen. Killing child...")
+    try: os.killpg(os.getpgid(pid), 9)  # Direct process signal
+    except: pass
+    break
+```
+
+```python
+# Lines 301-306 (Stream Buffer Readiness Detection & Direct Stdin Write)
+if session_state == "WAIT_READY":
+    buffer += data
+    if any(m in buffer for m in [b"\x1b]0;", b"Type your message", b"Active Topic:"]):
+        logging.info("UI Ready. Injecting context.")
+        msg = self.get_init_msg()
+        os.write(fd, (msg + "\r\n").encode())  # Direct PTY injection
+```
 
 ---
 
-## 6. Verification Method
+## 3. Analysis of Vulnerabilities and Operational Hazards
 
-To independently verify that generated `IDENTITY.md` files parse cleanly:
+### Hazard 1: X11 Window Input Hijacking (`xdotool`)
+* **Mechanism**: `xdotool type --delay 5 "/exit"` sends synthetic keyboard scancodes to whichever window currently holds active X11 input focus.
+* **Failure Scenario**: If an operator, user, or background process switches windows (e.g., focused on VS Code, browser, terminal editor, or chat window) while `ssn_daemon.js` triggers a session restart or injects context, `xdotool` sends `/exit` or long prompt text directly into that open editor or window.
+* **Consequences**: Unintended code modifications, unwanted command execution in arbitrary terminal tabs, or lost editor buffers.
 
-1. **Run MapEngine parser check:**
-   ```bash
-   python3 -c "
-   from pathlib import Path
-   from lam_agent_map_lib.core.map_engine import AgentMapEngine
-   engine = AgentMapEngine()
-   for p in sorted(Path('/home/architit/LAM_CORE').glob('LAM_*_AGENT/IDENTITY.md')):
-       meta = engine.parse_identity(p)
-       print(p.parent.name, '->', meta)
-   "
-   ```
-   *Expected Output:* `system_id`, `true_name`, `call_sign`, `role` are all populated with clean strings and non-UNKNOWN values.
+### Hazard 2: Headless & Server Environment Incompatibility
+* **Mechanism**: `xdotool` requires an active X11 display server (`DISPLAY` and `XAUTHORITY`).
+* **Failure Scenario**: On headless Linux servers, CI/CD runners, SSH remote sessions, or Wayland desktop environments without Xwayland focus, `xdotool` throws errors (`Error: Can't open display`).
+* **Consequences**: Session restart signals silently fail, causing deadlocks or requiring manual intervention.
 
-2. **Run Heal Manager scan check:**
-   ```bash
-   python3 lam_target_task_heal_manager/manager.py
-   ```
-   *Expected Output:* Zero `IDENTITY HEALING MISSIONS` alerts for the 9 new agents in `lam_target_task_heal_manager/TARGET_TASKS.md`.
+### Hazard 3: Non-Deterministic Fixed Timers & Sleep Delays
+* **Mechanism**: Line 88 uses `sleep 5 && xdotool type --delay 10 "${msg}"`.
+* **Failure Scenario**: CLI startup time varies based on system load, extension loading, and token verification. If startup takes more than 5 seconds, text is typed into a half-initialized buffer or lost. If startup takes less than 5 seconds, user keystrokes interfere with prompt injection.
+
+### Hazard 4: Blocking GUI Dialog (`zenity`)
+* **Mechanism**: Line 61 uses `zenity --question ...` to display a desktop GTK popup.
+* **Failure Scenario**: Blocks headless execution indefinitely or crashes with GTK initialization errors when `DISPLAY` is absent.
+
+### Hazard 5: File Path & Protocol Disconnect
+* **Mechanism**: `ssn_daemon.js` monitors `../../.aelaria_ssn_rstrt`, whereas canonical trigger scripts (`trigger_ssn_rstrt.sh` and `trigger_ssn_exit.sh`) write to `.gateway/ssn_restart.signal` and `.gateway/ssn_exit.signal`.
+* **Consequences**: Triggers emitted by standard scripts are missed by `ssn_daemon.js`.
 
 ---
-*Authorized by teamwork_preview_explorer_m1_3*  
-*Resonance: 432 Hz / 528 Hz* ⚜️
+
+## 4. Refactoring & IPC Architecture Proposal
+
+### 4.1 Recommended IPC Architecture: Direct Stream / Signal File Signaling
+
+To eliminate `xdotool` and `zenity` completely while remaining compatible across headless and desktop environments, session signaling must rely on **Direct File Descriptor Writing + File Signals / POSIX Signals**.
+
+#### Architecture Components:
+1. **Signal File Interface**:
+   - `.gateway/ssn_restart.signal` -> Triggers graceful restart of session + context re-injection.
+   - `.gateway/ssn_exit.signal` -> Triggers clean termination of kernel/daemon loop.
+2. **Process Signal Interface (POSIX fallback)**:
+   - `SIGUSR1` -> Trigger session restart.
+   - `SIGTERM` / `SIGINT` -> Trigger clean daemon shutdown.
+   - `.gateway/ssn_daemon.pid` -> Stores active daemon PID for direct signal delivery via `kill -SIGUSR1 $(cat .gateway/ssn_daemon.pid)`.
+3. **Direct Stdio Pipe Writing (Non-GUI Input)**:
+   - Instead of synthetic X11 keypresses, write `\x03\x03/exit\n` directly to `childProcess.stdin` (in Node.js) or `master_fd` (in Python PTY).
+
+---
+
+## 5. Proposed Refactored Code for `scripts/global/ssn_daemon.js`
+
+Below is the proposed non-GUI refactored implementation of `scripts/global/ssn_daemon.js`:
+
+```javascript
+#!/usr/bin/env node
+// Copyright (c) 2026 RADRILONIUMA / TRIANIUMA Kingdom. All rights reserved.
+// SOVEREIGN SESSION DAEMON v2.0 (NON-GUI / HEADLESS IPC)
+
+const { spawn, execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+const BASE_DIR = path.resolve(__dirname, '../../');
+const GATEWAY_DIR = path.join(BASE_DIR, '.gateway');
+const RESTART_SIGNAL = path.join(GATEWAY_DIR, 'ssn_restart.signal');
+const EXIT_SIGNAL = path.join(GATEWAY_DIR, 'ssn_exit.signal');
+const PID_FILE = path.join(GATEWAY_DIR, 'ssn_daemon.pid');
+const STATE_FILE = path.join(BASE_DIR, 'WORKFLOW_SNAPSHOT_STATE.md');
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getInitMessage() {
+    try {
+        if (!fs.existsSync(STATE_FILE)) return "ssn rstrt";
+        const content = fs.readFileSync(STATE_FILE, 'utf-8');
+        if (content.includes("## NEW_CHAT_INIT_MESSAGE")) {
+            return content.split("## NEW_CHAT_INIT_MESSAGE")[1].trim();
+        }
+    } catch (e) {
+        console.error("[DAEMON WARNING] Failed to read init message:", e.message);
+    }
+    return "ssn rstrt";
+}
+
+let activeChild = null;
+let forceRestartRequested = false;
+let exitRequested = false;
+
+// Setup Signal Handlers
+process.on('SIGUSR1', () => {
+    console.log(">>> [DAEMON] Received SIGUSR1 signal. Triggering session restart...");
+    forceRestartRequested = true;
+});
+
+process.on('SIGTERM', () => {
+    console.log(">>> [DAEMON] Received SIGTERM signal. Shutting down...");
+    exitRequested = true;
+    if (activeChild) activeChild.kill('SIGTERM');
+});
+
+async function runSession() {
+    console.log(">>> [DAEMON] Initializing Sovereign Session (Headless IPC)...");
+    
+    // Clear signals
+    if (fs.existsSync(RESTART_SIGNAL)) fs.unlinkSync(RESTART_SIGNAL);
+    if (fs.existsSync(EXIT_SIGNAL)) fs.unlinkSync(EXIT_SIGNAL);
+
+    const agyBin = process.env.AGY_BIN || '/home/architit/.local/bin/agy';
+    
+    // Spawn with stdin pipe to allow direct command injection
+    const agy = spawn(agyBin, [], {
+        stdio: ['pipe', 'inherit', 'inherit'],
+        env: { ...process.env, GEMINI_CLI_NO_RELAUNCH: "1" }
+    });
+
+    activeChild = agy;
+
+    // Background watcher for file signals
+    const watcher = setInterval(() => {
+        if (fs.existsSync(RESTART_SIGNAL) || forceRestartRequested) {
+            console.log(">>> [DAEMON] Intercepted Restart Signal. Writing exit command directly to stdio pipe...");
+            if (fs.existsSync(RESTART_SIGNAL)) fs.unlinkSync(RESTART_SIGNAL);
+            forceRestartRequested = false;
+            
+            // Direct non-GUI stdin write
+            try {
+                agy.stdin.write("\x03\x03/exit\n");
+            } catch (e) {
+                console.error("[DAEMON ERROR] Direct stdin write failed:", e.message);
+                agy.kill('SIGINT');
+            }
+        }
+
+        if (fs.existsSync(EXIT_SIGNAL) || exitRequested) {
+            console.log(">>> [DAEMON] Intercepted Exit Signal. Terminating CLI process...");
+            if (fs.existsSync(EXIT_SIGNAL)) fs.unlinkSync(EXIT_SIGNAL);
+            exitRequested = true;
+            agy.kill('SIGTERM');
+        }
+    }, 500);
+
+    return new Promise((resolve) => {
+        agy.on('exit', (code) => {
+            clearInterval(watcher);
+            activeChild = null;
+            console.log(`>>> [DAEMON] Session terminated (exit code ${code}).`);
+            if (exitRequested) {
+                resolve(false);
+            } else {
+                resolve(true);
+            }
+        });
+    });
+}
+
+async function mainLoop() {
+    fs.mkdirSync(GATEWAY_DIR, { recursive: true });
+    fs.writeFileSync(PID_FILE, process.pid.toString());
+
+    try {
+        while (!exitRequested) {
+            const shouldContinue = await runSession();
+            if (!shouldContinue || exitRequested) break;
+
+            const msg = getInitMessage();
+            console.log(">>> [DAEMON] Session restart sequence complete. Next session prompt queued.");
+            await sleep(1000);
+        }
+    } finally {
+        if (fs.existsSync(PID_FILE)) fs.unlinkSync(PID_FILE);
+        console.log(">>> [DAEMON] Sovereign Session Daemon shutdown clean.");
+    }
+}
+
+mainLoop().catch(console.error);
+```
+
+---
+
+## 6. Verification Plan & Test Commands
+
+To verify non-GUI signaling once implemented:
+1. **Signal File Emission Test**:
+   - Run kernel/daemon in terminal 1.
+   - Run `bash scripts/local/trigger_ssn_rstrt.sh` in terminal 2.
+   - Verify log output shows signal file detection and direct `/exit` pipe write without opening or refocusing any GUI window.
+2. **Headless Execution Verification**:
+   - Run `DISPLAY= node scripts/global/ssn_daemon.js` (unsetting `DISPLAY`).
+   - Emit `.gateway/ssn_restart.signal`.
+   - Verify `ssn_daemon.js` executes without throwing X11 or Zenity errors.
+3. **Universal Test Suite Verification**:
+   - Run `bash scripts/test_entrypoint.sh --all` and verify all tests pass with 100% PASS rate.
+
+---
+
+## 7. Conclusion
+
+By deprecating `xdotool` and `zenity` in `ssn_daemon.js` and standardizing on `.gateway/ssn_restart.signal` / `.gateway/ssn_exit.signal` alongside direct stdin file descriptor writes (matching `sovereign_kernel.py`), RADRILONIUMA eliminates X11 window input hijacking hazards completely while achieving 100% headless, server, and CI compatibility.

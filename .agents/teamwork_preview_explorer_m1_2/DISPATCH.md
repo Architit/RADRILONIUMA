@@ -1,19 +1,14 @@
-## 2026-07-31T19:27:11Z
-<USER_REQUEST>
-You are teamwork_preview_explorer_m1_2.
-Your working directory is: /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2
+## 2026-08-01T22:59:04Z
+You are Explorer M1-2 (`teamwork_preview_explorer_m1_2`). Your working directory is `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2`.
 
-Task: Investigate the DevKit ecosystem scripts, devkit/ecosystem_rollout.sh, and preflight requirements for the 9 requested agents to ensure preflight.sh, devkit/bootstrap.sh, and devkit/patch.sh match standard DevKit contracts.
+MUST READ before starting:
+- `/home/architit/LAM_CORE/RADRILONIUMA/ORIGINAL_REQUEST.md`
+- `/home/architit/LAM_CORE/RADRILONIUMA/PROJECT.md`
 
-Relevant Files:
-- /home/architit/LAM_CORE/RADRILONIUMA/ORIGINAL_REQUEST.md
-- /home/architit/LAM_CORE/RADRILONIUMA/PROJECT.md
-- /home/architit/LAM_CORE/RADRILONIUMA/.agents/sub_orch_m1/SCOPE.md
-- /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_1/analysis.md
-- /home/architit/LAM_CORE/RADRILONIUMA/devkit/ecosystem_rollout.sh
-- /home/architit/LAM_CORE/RADRILONIUMA/devkit/shell_preflight.sh
+Focus: Queue Lock Contention & Deadlock Prevention (`scripts/global/lam_queue_worker.py`).
+Investigate:
+1. `scripts/global/lam_queue_worker.py`: File lock contention where `QueueLock` (`fcntl.flock(fd, fcntl.LOCK_EX)`) is held during long subprocess execution (up to 300s).
+2. Analyze how to refactor queue file locking so `QueueLock` is acquired only to pop/update task status in `.gateway/queue.json`, and strictly RELEASED before launching subprocess execution, then re-acquired to write completion/failure status.
 
-Examine how devkit/ecosystem_rollout.sh copies or generates devkit/bootstrap.sh, devkit/patch.sh, and preflight.sh for organ repositories, and how git init should be run. Provide executable shell step instructions for the Worker.
-
-Write your report to /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2/analysis.md and send a summary message back.
-</USER_REQUEST>
+Write detailed analysis to `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2/analysis.md` and handoff report to `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_2/handoff.md`.
+Communicate completion back to parent via `send_message`.

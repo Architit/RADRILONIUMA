@@ -1,34 +1,35 @@
-# BRIEFING — 2026-07-31T19:27:12Z
+# BRIEFING — 2026-08-02T01:00:43Z
 
 ## Mission
-Investigate identity parsing requirements in map_engine.py and heal manager requirements in manager.py for 100% compliant IDENTITY.md generation.
+Investigate Non-GUI Process Signaling & IPC Refactoring (`scripts/global/ssn_daemon.js` and `sovereign_kernel.py`) to eliminate X11 window input hijacking hazards (`xdotool`).
 
 ## 🔒 My Identity
 - Archetype: explorer
 - Roles: teamwork_preview_explorer_m1_3
 - Working directory: /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3
-- Original parent: ef8ebc1f-dcf6-4ee0-ba07-a599f19fe43f
+- Original parent: 63a7b00d-4039-4e3e-8619-8ec1af957ac0
 - Milestone: m1_3
 
 ## 🔒 Key Constraints
 - Read-only investigation — do NOT implement code outside .agents/ folder
 
 ## Current Parent
-- Conversation ID: ef8ebc1f-dcf6-4ee0-ba07-a599f19fe43f
-- Updated: 2026-07-31T19:28:00Z
+- Conversation ID: 63a7b00d-4039-4e3e-8619-8ec1af957ac0
+- Updated: 2026-08-02T01:00:43Z
 
 ## Investigation State
-- **Explored paths**: map_engine.py, manager.py, ORIGINAL_REQUEST.md, PROJECT.md, amc_graph.json, Sataris/IDENTITY.md, LAM-Codex_Agent/IDENTITY.md, Archivator_Agent/IDENTITY.md
-- **Key findings**: Identified regex triggers and pitfalls in map_engine.py (regex `[^*#]+?` broken by inline `#` or `*`, system_id regex `[A-Z0-9-]{3,}` requiring hyphenated IDs). Designed 100% compliant canonical template and specification matrix for all 9 agents.
+- **Explored paths**: `scripts/global/ssn_daemon.js`, `scripts/global/sovereign_kernel.py`, `scripts/local/sovereign_xdotool_wrapper.sh`, `scripts/local/trigger_ssn_rstrt.sh`, `scripts/local/trigger_ssn_exit.sh`, `ORIGINAL_REQUEST.md`, `PROJECT.md`, `IDENTITY.md`.
+- **Key findings**: Identified X11 input hijacking hazards in `ssn_daemon.js` (lines 41 & 88) due to `xdotool` synthetic keyboard events and blocking GTK dialogs (`zenity`, line 61). Contrasted with `sovereign_kernel.py` (v4.0) PTY-based file descriptor writes (`os.write(fd, b"\x03\x03\x03/exit\r\n")`) and signal file monitoring (`.gateway/ssn_restart.signal`, `.gateway/ssn_exit.signal`). Formulated complete non-GUI refactoring for `ssn_daemon.js` and IPC architecture.
 - **Unexplored areas**: None. Investigation complete.
 
 ## Key Decisions Made
-- Formulated canonical Markdown template for IDENTITY.md generation.
-- Verified canonical template using Python batch test against map_engine.py parser.
-- Written analysis.md and handoff.md reports.
+- Wrote detailed analysis report to `analysis.md`.
+- Wrote 5-component handoff report to `handoff.md`.
+- Proposed headless stdio pipe + signal file + POSIX signal refactoring for `ssn_daemon.js`.
 
 ## Artifact Index
 - /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/DISPATCH.md — incoming dispatch message
 - /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/BRIEFING.md — briefing state
 - /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/analysis.md — detailed analysis report
 - /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/handoff.md — 5-component handoff report
+- /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_m1_3/progress.md — progress log

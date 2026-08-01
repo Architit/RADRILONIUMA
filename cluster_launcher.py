@@ -10,11 +10,12 @@ def run_local_server():
     if p.returncode == 0:
         print("✅ Сервер уже запущен!")
     else:
+        rcon_pass = os.environ.get("FACTORIO_RCON_PASSWORD") or os.environ.get("RCON_PASSWORD") or "REDACTED_DEFAULT_RCON_PASS"
         cmd = [
             "/run/media/architit/Новый том/LAM_GAME_DEV_MAP_DRAFT/steamapps/common/Factorio/bin/x64/factorio",
             "--config", "/home/architit/.gemini/antigravity-cli/brain/f769e1e9-2197-43fe-be8f-78031cedcc28/scratch/config.ini",
             "--rcon-port", "27015",
-            "--rcon-password", "secret_pass",
+            "--rcon-password", rcon_pass,
             "--start-server", "/home/architit/snap/steam/common/.factorio/saves/выф.zip"
         ]
         log_file = open("/tmp/factorio_start_err.log", "w")

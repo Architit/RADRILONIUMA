@@ -126,12 +126,14 @@ def process_apc_task(task, routing_map):
         return False, str(e)
 
 def run_worker():
-    """Main APC worker loop (one-pass)."""
+    """Main APC worker loop (3-phase locking architecture)."""
     if not QUEUE_FILE.exists():
         return
 
     routing_map = get_routing_map()
+    claimed_task = None
 
+    # PHASE 1: Claim Task under QueueLock
     with QueueLock(QUEUE_FILE):
         try:
             with QUEUE_FILE.open("r", encoding="utf-8") as f:
@@ -141,16 +143,10 @@ def run_worker():
             return
 
         items = queue_data.get("items", [])
-        now_epoch = int(time.time())
-        processed_count = 0
 
         for item in items:
             if item.get("status") != "pending":
                 continue
-            
-            # Simple priority/time check (already implicitly sorted by enqueue)
-            # APC only handles 'apc_task' and legacy 'put'/'get' if needed
-            # For now, let's focus on apc_task
             if item.get("type") != "apc_task":
                 continue
 
@@ -206,7 +202,8 @@ def run_worker():
                     item["status"] = "error"
                     item["error_msg"] = msg
                     log_event("task.error", msg, task_id=item['id'])
-                    processed_count += 1
+                    with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                        json.dump(queue_data, f, indent=2)
                     break
                 
                 if intent == "patch":
@@ -216,7 +213,8 @@ def run_worker():
                         item["status"] = "error"
                         item["error_msg"] = msg
                         log_event("task.error", msg, task_id=item['id'])
-                        processed_count += 1
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
                         break
                     
                     spec_file = Path(spec_path)
@@ -225,7 +223,8 @@ def run_worker():
                         item["status"] = "error"
                         item["error_msg"] = msg
                         log_event("task.error", msg, task_id=item['id'])
-                        processed_count += 1
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
                         break
                     
                     # Validate the VAVIMA task spec via task_spec_validator.py
@@ -238,7 +237,8 @@ def run_worker():
                             item["status"] = "error"
                             item["error_msg"] = msg
                             log_event("task.error", msg, task_id=item['id'])
-                            processed_count += 1
+                            with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                                json.dump(queue_data, f, indent=2)
                             break
                     
                     # Validate SHA-256 and patch file existence/hash to prevent crash
@@ -249,7 +249,8 @@ def run_worker():
                         item["status"] = "error"
                         item["error_msg"] = msg
                         log_event("task.error", msg, task_id=item['id'])
-                        processed_count += 1
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
                         break
                     
                     pf = Path(patch_file)
@@ -258,7 +259,8 @@ def run_worker():
                         item["status"] = "error"
                         item["error_msg"] = msg
                         log_event("task.error", msg, task_id=item['id'])
-                        processed_count += 1
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
                         break
                     
                     import hashlib
@@ -272,7 +274,8 @@ def run_worker():
                         item["status"] = "error"
                         item["error_msg"] = msg
                         log_event("task.error", msg, task_id=item['id'])
-                        processed_count += 1
+                        with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                            json.dump(queue_data, f, indent=2)
                         break
 
                 print(f"[APC] [DOUBLE ATTENTION] All pre-checks passed for repeated task {item['id']}.")
@@ -285,29 +288,48 @@ def run_worker():
                 json.dump(queue_data, f, indent=2)
             
             log_event("task.start", f"Starting task {item['id']}", task_id=item['id'])
-            
-            ok, msg = process_apc_task(item, routing_map)
-            
-            if ok:
-                item["status"] = "done"
-                item["finished_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-                item["result"] = msg
-                log_event("task.complete", "Task finished successfully", task_id=item['id'])
-            else:
-                item["status"] = "error"
-                item["error_msg"] = msg
-                log_event("task.error", f"Task failed: {msg}", task_id=item['id'])
-            
-            processed_count += 1
-            # Break after one task to keep cycles short and allow re-prioritization
-            break 
+            claimed_task = item
+            break
 
-        # Final save
-        with QUEUE_FILE.open("w", encoding="utf-8") as f:
-            json.dump(queue_data, f, indent=2)
+    if not claimed_task:
+        return
+
+    # PHASE 2: Execute Subprocess Task WITHOUT QueueLock
+    ok, msg = process_apc_task(claimed_task, routing_map)
+
+    # PHASE 3: Re-acquire QueueLock to Update Completion Status
+    with QueueLock(QUEUE_FILE):
+        try:
+            with QUEUE_FILE.open("r", encoding="utf-8") as f:
+                queue_data = json.load(f)
             
-    if processed_count > 0:
-        print(f"[APC] Worker cycle complete. Processed {processed_count} tasks.")
+            items = queue_data.get("items", [])
+            target_item = None
+            for item in items:
+                if item.get("id") == claimed_task["id"]:
+                    target_item = item
+                    break
+            
+            if target_item:
+                if ok:
+                    target_item["status"] = "done"
+                    target_item["finished_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                    target_item["result"] = msg
+                    log_event("task.complete", "Task finished successfully", task_id=claimed_task['id'])
+                else:
+                    target_item["status"] = "error"
+                    target_item["error_msg"] = msg
+                    log_event("task.error", f"Task failed: {msg}", task_id=claimed_task['id'])
+                
+                with QUEUE_FILE.open("w", encoding="utf-8") as f:
+                    json.dump(queue_data, f, indent=2)
+            else:
+                print(f"[APC] Task {claimed_task['id']} not found in queue during status update.")
+        except Exception as e:
+            print(f"[APC] Error updating task status in queue: {e}")
+
+    print(f"[APC] Worker cycle complete. Processed task {claimed_task['id']}.")
 
 if __name__ == "__main__":
     run_worker()
+
