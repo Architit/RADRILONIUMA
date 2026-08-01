@@ -1,18 +1,18 @@
-## 2026-07-31T21:25:07Z
-<USER_REQUEST>
-You are Explorer 2 for the RADRILONIUMA survey phase.
-Your working directory is: /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2
+## 2026-08-01T22:50:24Z
+You are Explorer 2 (`teamwork_preview_explorer_survey_2`). Your working directory is `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2`.
 
-MANDATORY ASSIGNMENT:
-Read /home/architit/LAM_CORE/RADRILONIUMA/ORIGINAL_REQUEST.md.
-Investigate the project codebase at /home/architit/LAM_CORE/RADRILONIUMA to analyze:
-1. The AMC Knowledge Graph file at .gateway/amc_graph.json — its schema, current nodes/edges, registration requirements, and status format for sub-agents.
-2. Governance preflight smoke tests script at scripts/test_entrypoint.sh (and flags like --all) — how tests are executed, what checks are performed, unit and governance test suites.
-3. The Solfeggio 528 Hz / 432 Hz master carrier lock requirements — where and how carrier lock sync is defined or implemented.
-4. The node scanning manager script at lam_target_task_heal_manager/manager.py — how it scans, what active nodes it expects, and how it reports active nodes.
+MUST READ before starting:
+- `/home/architit/LAM_CORE/RADRILONIUMA/ORIGINAL_REQUEST.md`
+- `/home/architit/LAM_CORE/RADRILONIUMA/IDENTITY.md`
 
-DO NOT modify any code files.
-Write your detailed findings to /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2/analysis.md.
-Write a self-contained handoff report to /home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2/handoff.md.
-When done, notify the parent orchestrator via send_message with your handoff summary and path.
-</USER_REQUEST>
+Focus Area: Automated Zero-Drift Cross-Organ Auditing & Refactoring (R2 focus).
+Investigate the RADRILONIUMA codebase at `/home/architit/LAM_CORE/RADRILONIUMA`.
+Examine:
+1. Existing cross-organ verification, auditing scripts, schema validators, DevKit tools (`devkit/ecosystem_rollout.sh`, etc.), and AMC graph (`.gateway/amc_graph.json`).
+2. Automated scanning and refactoring routines, configuration drift detection, contract schema consistency, and code quality across organ repositories.
+3. Identify how zero-drift auditing and refactoring can be automated without breaking existing API contracts.
+
+Create your working directory `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2` if needed.
+Write your detailed findings to `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2/analysis.md` and structured handoff report to `/home/architit/LAM_CORE/RADRILONIUMA/.agents/teamwork_preview_explorer_survey_2/handoff.md`.
+
+Communicate completion back to parent via `send_message`.
