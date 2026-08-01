@@ -1,6 +1,6 @@
 # ⚜️ SOVEREIGN FOREST: TARGETS & MISSIONS MATRIX ⚜️
 
-*Generated at (UTC): 2026-07-08T09:26:16Z*
+*Generated at (UTC): 2026-08-01T22:48:15Z*
 
 > [!NOTE]
 > This matrix is dynamically managed by `lam_target_task_heal_manager` to scan the active state of the Sovereign Forest organs and suggest tasks, campaigns, and healing walkthroughs.
@@ -46,12 +46,7 @@ These 24 tasks are dynamically generated to ensure active vital status (heartbea
 - [ ] **Task 16 (VRLS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_vrls-01_step1.yaml) — Verify active target lists in rollout tools.
 - [ ] **Task 17 (ZRDG-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_zrdg-01_step1.yaml) — Verify matrix routing assignments.
 - [ ] **Task 18 (RBTK-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rbtk-01_step1.yaml) — Run genesis validation test suite.
-- [x] **Task 19a (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step1.yaml) — Run Codex self-refinement checks.
-- [x] **Task 19b (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step2.yaml) — Step 2: Verify post-execution telemetry and check for stability after initial baseline for CDKS-01.
-- [x] **Task 19c (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step3.yaml) — Step 3: Run comprehensive resource and memory performance audit for CDKS-01.
-- [x] **Task 19d (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step4.yaml) — Step 4: Perform advanced deep-dive safety and boundary verification for CDKS-01.
-- [x] **Task 19e (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step5.yaml) — Step 5: Perform advanced deep-dive safety and boundary verification for CDKS-01.
-- [ ] **Task 19f (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step6.yaml) — Step 6: Perform advanced deep-dive safety and boundary verification for CDKS-01.
+- [ ] **Task 19 (CDKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_cdks-01_step1.yaml) — Run Codex self-refinement checks.
 - [ ] **Task 20 (RDTR-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_rdtr-01_step1.yaml) — Audit LLM routing provider endpoints.
 - [ ] **Task 21 (LAM-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_lam-01_step1.yaml) — Verify primary mind core is online.
 - [ ] **Task 22 (ARKS-01):** [VAVIMA Spec](file:///home/architit/LAM_CORE/RADRILONIUMA/lam_target_task_heal_manager/specs/task_spec_arks-01_step1.yaml) — Secure database backup integrity.
@@ -102,5 +97,6 @@ Currently tracking **36** organs (**36** Online, **0** Offline/External):
 
 ## V. GIT STATE & WORKSPACE COMPLIANCE
 ```bash
-## master...origin/master
+## master...origin/master [впереди 60]
+ M lam_target_task_heal_manager/TARGET_TASKS.md
 ```

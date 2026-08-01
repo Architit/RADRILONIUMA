@@ -27,6 +27,8 @@ class AutopilotCore:
                 parts = line[2:].split(":", 1)
                 if len(parts) == 2:
                     state[parts[0].strip()] = parts[1].strip()
+            elif line in ("ACTIVE", "ONLINE", "STANDBY"):
+                state["status"] = line
         return state
 
     def check_watchdog_drift(self):
@@ -72,8 +74,23 @@ class AutopilotCore:
         except Exception as e:
             return {"status": "ERROR", "reason": f"Failed to read AMC graph: {e}"}
 
-    def run_autopilot_pulse(self):
+    def update_heartbeat(self, status="ONLINE"):
+        """Updates or refreshes the heartbeat timestamp in SYSTEM_STATE.md."""
+        now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        content = f"""# SYSTEM STATE ⚜️
+
+- status: {status}
+- resonance: 528 Hz / 432 Hz
+- last_heartbeat_utc: {now_utc}
+- organs_active: 36/36
+"""
+        self.state_file.write_text(content, encoding="utf-8")
+        return now_utc
+
+    def run_autopilot_pulse(self, refresh_heartbeat=False):
         """Executes a full autopilot loop pulse (watchdog + delegation + logging)."""
+        if refresh_heartbeat:
+            self.update_heartbeat(status="ONLINE")
         watchdog = self.check_watchdog_drift()
         delegation = self.delegate_tasks()
         

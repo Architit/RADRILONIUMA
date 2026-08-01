@@ -1,0 +1,9 @@
+{
+  "directive_id": "EXEC-TG-DISPATCH-ANA-002",
+  "status": "DISPATCHED",
+  "timestamp": "2026-07-30T23:16:04+02:00",
+  "target": "Анастасия / @Анастия",
+  "transport": "Telegram Dispatch Link (xdg-open / Phone Bridge)",
+  "payload_summary": "Status report on KvK foundation, Revolut compliance lock, and Wise Business transition.",
+  "system": "RADRILONIUMA.CORE"
+}

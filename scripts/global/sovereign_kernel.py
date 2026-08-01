@@ -64,6 +64,10 @@ class SovereignKernel:
         if self.old_termios:
             termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.old_termios)
         
+        # Очистить буфер терминала (включая scrollback)
+        sys.stdout.write("\033[3J\033c\033[2J\033[H")
+        sys.stdout.flush()
+        
         # Re-exec boot protocol chain
         # Note: We use /bin/bash -c to execute the && chain
         cmd = "bash scripts/local/boot_protocol.sh && bash boot_cli_inner.sh"
@@ -198,10 +202,14 @@ class SovereignKernel:
                 if self.exit_signal_file.exists():
                     self.exit_signal_file.unlink()
                     logging.info("Exit signal detected. Shutting down...")
+                    sys.stdout.write("\033[3J\033c\033[2J\033[H")
+                    sys.stdout.flush()
                     break
                 
                 logging.info("Session ended normally. Restarting in 1s (Sovereign Loop)...")
                 time.sleep(1)
+                sys.stdout.write("\033[3J\033c\033[2J\033[H")
+                sys.stdout.flush()
         except KeyboardInterrupt:
             logging.info("KeyboardInterrupt. Exiting.")
         finally:
@@ -230,9 +238,11 @@ class SovereignKernel:
                 acc_selector = BASE_DIR / "scripts" / "local" / "account_selector.py"
                 if acc_selector.exists():
                     try:
-                        subprocess.run([sys.executable, str(acc_selector)])
+                        # 1. Check if Primary Master account has recovered and prompt user if so
+                        subprocess.run([sys.executable, str(acc_selector), "--check-recovery"])
                     except Exception as e:
-                        logging.warning(f"Account selector failed: {e}")
+                        logging.warning(f"Account selector recovery check failed: {e}")
+
                 os.execv(self.cli_path, [self.cli_path])
             except Exception as e:
                 print(f"Failed to exec {self.cli_path}: {e}")
@@ -294,9 +304,17 @@ class SovereignKernel:
                             logging.info("UI Ready. Injecting context.")
                             msg = self.get_init_msg()
                             os.write(fd, (msg + "\r\n").encode())
-                            session_state = "NORMAL"
-                            buffer = b""
-                    
+                    # Quota Exhaustion Auto-Intercept
+                    lower_data = data.lower()
+                    if any(kw in lower_data for kw in [b"resource_exhausted", b"quota_exceeded", b"429 resource_exhausted"]):
+                        logging.warning("Quota exhaustion (429) detected in child CLI output stream.")
+                        acc_selector = BASE_DIR / "scripts" / "local" / "account_selector.py"
+                        if acc_selector.exists():
+                            try:
+                                subprocess.run([sys.executable, str(acc_selector), "--quota-fallback", "lkises01@gmail.com"])
+                            except Exception as e:
+                                logging.warning(f"Quota fallback invocation failed: {e}")
+
                     os.write(sys.stdout.fileno(), data)
                 except: break
                 

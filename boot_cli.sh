@@ -21,3 +21,6 @@ while true; do
     sleep 2
 done
 
+# Clear the screen and scrollback buffer
+printf '\033[3J\033[H\033[2J'
+

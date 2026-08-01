@@ -40,6 +40,11 @@ xdotool key Return
 echo "[WRAPPER] Waiting for session to close..."
 sleep 4
 
+# Очистить буфер терминала (включая историю прокрутки)
+xdotool type --delay 5 "reset"
+xdotool key Return
+sleep 2
+
 # 3. потом в том же терминале после завершения сессии ввести gemini начать новую сессию
 xdotool type --delay 5 "gemini"
 xdotool key Return

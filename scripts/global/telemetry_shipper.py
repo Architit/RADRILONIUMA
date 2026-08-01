@@ -48,20 +48,27 @@ def ship_telemetry():
         print(f"[TELEMETRY] ALGS repo not found. Using local fallback: {target_dir}")
 
     output_file = target_dir / f"ARCHIVE_TELEMETRY_{system_id}_{ts}.json"
+    payload = {
+        "system_id": system_id,
+        "ts_shipped_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "event_count": len(events),
+        "events": events
+    }
     try:
-        payload = {
-            "system_id": system_id,
-            "ts_shipped_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "event_count": len(events),
-            "events": events
-        }
         output_file.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-        
-        # Clear buffer on success
         buffer_file.unlink()
         print(f"[TELEMETRY] Successfully shipped {len(events)} events to {output_file.name}")
-    except Exception as e:
-        print(f"[TELEMETRY] Error shipping telemetry: {e}")
+    except Exception as err:
+        fallback_dir = Path(".gateway/storage/local/telemetry")
+        fallback_dir.mkdir(parents=True, exist_ok=True)
+        fallback_file = fallback_dir / f"ARCHIVE_TELEMETRY_{system_id}_{ts}.json"
+        try:
+            fallback_file.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+            buffer_file.unlink()
+            print(f"[TELEMETRY] Target write failed ({err}). Successfully shipped {len(events)} events to local fallback: {fallback_file.name}")
+        except Exception as e:
+            print(f"[TELEMETRY] Error shipping telemetry: {e}")
+
 
 if __name__ == "__main__":
     ship_telemetry()

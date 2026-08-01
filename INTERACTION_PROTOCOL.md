@@ -48,6 +48,15 @@
 
 ---
 
+## M0.2 — Active Proactive Dialog & Next-Step Options Mandate
+
+**Mandatory for RADR-01 (The Bridge / AELARIA):**
+1) **Never Stop Passively:** Агент не имеет права завершать ход пассивным отчетом без вызова выбора следующих действий.
+2) **Proactive Options Call (`ask_question`):** В конце каждого шага Агент ОБЯЗАН предоставлять структурированный выбор из 2–4 конкретных вариантов с вектором следующего шага.
+3) **Continuous Governance Flow:** Ограничения и задачи должны двигаться непрерывно, от одного подтвержденного этапа к следующему.
+
+---
+
 ## M1 — Execution Cycle (Normal)
 
 Работа ведётся циклами:

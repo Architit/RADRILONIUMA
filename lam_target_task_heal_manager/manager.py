@@ -223,8 +223,47 @@ def get_dynamic_organ_tasks(sys_id, queue_items):
         
     return tasks
 
+def init_heal_manager():
+    """Initializes all prediction & fulfillment engines within heal manager."""
+    try:
+        from .multi_device_notification_prediction_fulfillment_engine import MultiDeviceNotificationPredictionFulfillmentEngine
+        from .reactive_event_wakeup_engine import ReactiveEventWakeupEngine
+        from .task_prediction_engine import TaskPredictionEngine
+        from .schedule_prediction_calendar_engine import SchedulePredictionCalendarEngine
+        from .sovereign_perpetual_evolution_engine import SovereignPerpetualEvolutionEngine
+    except ImportError:
+        from multi_device_notification_prediction_fulfillment_engine import MultiDeviceNotificationPredictionFulfillmentEngine
+        from reactive_event_wakeup_engine import ReactiveEventWakeupEngine
+        from task_prediction_engine import TaskPredictionEngine
+        from schedule_prediction_calendar_engine import SchedulePredictionCalendarEngine
+        from sovereign_perpetual_evolution_engine import SovereignPerpetualEvolutionEngine
+
+    engine_root = str(BASE_DIR)
+    multi_dev_engine = MultiDeviceNotificationPredictionFulfillmentEngine(engine_root)
+    reactive_engine = ReactiveEventWakeupEngine(engine_root)
+    task_engine = TaskPredictionEngine(engine_root)
+    schedule_engine = SchedulePredictionCalendarEngine()
+    evolution_engine = SovereignPerpetualEvolutionEngine(engine_root)
+
+    multi_dev_health = multi_dev_engine.check_multi_device_health()
+    reactive_health = reactive_engine.check_dataflow_health()
+    evolution_health = evolution_engine.check_evolution_health()
+
+    print(f"[HEAL_MANAGER] Multi-Device Engine Status: {multi_dev_health['engine_status']} (528 Hz / 432 Hz)")
+    print(f"[HEAL_MANAGER] Reactive Wakeup Engine Status: {reactive_health['pipeline_status']}")
+    print(f"[HEAL_MANAGER] Evolution Engine Status: {evolution_health['engine_status']} ({evolution_health['phase']})")
+
+    return {
+        "multi_device_engine": multi_dev_engine,
+        "reactive_engine": reactive_engine,
+        "task_engine": task_engine,
+        "schedule_engine": schedule_engine,
+        "evolution_engine": evolution_engine
+    }
+
 def main():
     print("[HEAL_MANAGER] Initiating target task scan...")
+    engines = init_heal_manager()
     graph = load_amc_graph()
     queue = load_queue()
     git_status = get_git_status()
