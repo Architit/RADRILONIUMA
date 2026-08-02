@@ -345,6 +345,27 @@ def select_account_interactive():
     print("\033[1;35m==================================================\033[0m")
     print("\033[1;35m    A E L A R I A  --  A C C O U N T  S E L E C T   \033[0m")
     print("\033[1;35m==================================================\033[0m")
+
+    active_email = get_active_account()
+    if active_email:
+        print(f"\033[1;32mCurrent Active Account: {active_email}\033[0m")
+        try:
+            with open("/dev/tty", "r") as tty:
+                sys.stdout.write("Do you want to switch to a different account? [y/N]: ")
+                sys.stdout.flush()
+                choice = tty.readline().strip().lower()
+        except Exception:
+            try:
+                sys.stdout.write("Do you want to switch to a different account? [y/N]: ")
+                sys.stdout.flush()
+                choice = input().strip().lower()
+            except Exception:
+                choice = "n"
+
+        if choice != "y" and choice != "yes":
+            sync_active_account_non_interactive()
+            return
+
     print("\033[1;34m[SYSTEM] Directing account selection to Google Account Chooser in browser...\033[0m")
     launch_browser_account_chooser(wait_for_user=True)
 
@@ -384,10 +405,8 @@ def launch_browser_account_chooser(wait_for_user=True):
     opened = False
     if shutil.which("google-chrome"):
         try:
-            subprocess.Popen(["google-chrome", "--show-profile-picker"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            time.sleep(0.5)
             subprocess.Popen(["google-chrome", "--new-window", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print("\033[1;32m[ACCOUNT SELECTOR] Google Chrome Profile Chooser ('Кто использует Chrome?') and Account Chooser opened.\033[0m")
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened in Google Chrome.\033[0m")
             opened = True
         except Exception as e:
             print(f"[ACCOUNT SELECTOR WARNING] Failed to launch Google Chrome: {e}")
