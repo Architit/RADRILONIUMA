@@ -338,56 +338,11 @@ def handle_quota_exhaustion(exhausted_email=None):
 
 def select_account_interactive():
     save_current_tokens_to_profile()
-    accounts = load_accounts()
-    hierarchy = load_hierarchy()
-    active_email = get_active_account()
-
     print("\033[1;35m==================================================\033[0m")
     print("\033[1;35m    A E L A R I A  --  A C C O U N T  S E L E C T   \033[0m")
     print("\033[1;35m==================================================\033[0m")
-    print("\033[1;34m[SYSTEM] Session Account Manager & Hierarchy Check.\033[0m")
-    print("\033[1;33mSelect Google Account (Sorted by Hierarchy Rank):\033[0m\n")
-
-    for idx, acc in enumerate(accounts, 1):
-        rank, tier = get_account_rank(acc, hierarchy)
-        marker = " (Current Active)" if acc == active_email else ""
-        print(f"  [{idx}] {acc} [{tier} / Rank {rank}]{marker}")
-
-    browser_opt = len(accounts) + 1
-    custom_opt = len(accounts) + 2
-    print(f"  [{browser_opt}] Open Google Account Chooser in Browser (OAuth)")
-    print(f"  [{custom_opt}] Enter custom / new email address\n")
-
-    sys.stdout.write(f"Select option [1-{custom_opt}] (default 1): ")
-    sys.stdout.flush()
-
-    choice = ""
-    if sys.stdin.isatty():
-        try:
-            choice = sys.stdin.readline().strip()
-        except Exception:
-            choice = ""
-
-    if not choice or choice == "1":
-        selected = accounts[0] if accounts else "lkises01@gmail.com"
-    else:
-        try:
-            val = int(choice)
-            if 1 <= val <= len(accounts):
-                selected = accounts[val - 1]
-            elif val == browser_opt:
-                launch_browser_account_chooser(wait_for_user=True)
-                return
-            elif val == custom_opt:
-                sys.stdout.write("Enter email address: ")
-                sys.stdout.flush()
-                selected = sys.stdin.readline().strip() or (accounts[0] if accounts else "lkises01@gmail.com")
-            else:
-                selected = accounts[0] if accounts else "lkises01@gmail.com"
-        except ValueError:
-            selected = accounts[0] if accounts else "lkises01@gmail.com"
-
-    save_active_account(selected)
+    print("\033[1;34m[SYSTEM] Directing account selection to Google Account Chooser in browser...\033[0m")
+    launch_browser_account_chooser(wait_for_user=True)
 
 def launch_browser_account_chooser(wait_for_user=True):
     oauth_client_id = "1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com"
