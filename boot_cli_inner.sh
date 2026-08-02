@@ -21,9 +21,15 @@ echo -e "\e[1;35m       A E L A R I A  --  B O O T  L O A D E R     \e[0m"
 echo -e "\e[1;35m==================================================\e[0m"
 echo ""
 
-# 1.5 Account Selection Gatekeeper (Browser-Native / Non-interactive Sync)
+# 1.5 Account Selection Gatekeeper (Token Profile Sync & Interactive Chooser)
 echo "[SYSTEM] Initializing Account Selection Gatekeeper..."
-"$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py" --non-interactive
+if [ "${FORCE_BROWSER_AUTH:-0}" == "1" ]; then
+    "$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py" --browser-auth
+elif [ "${SKIP_ACCOUNT_SELECT:-0}" == "1" ]; then
+    "$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py" --non-interactive
+else
+    "$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py" --select
+fi
 
 ACTIVE_EMAIL=$("$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/local/account_selector.py" --get-active)
 if [ -n "$ACTIVE_EMAIL" ]; then

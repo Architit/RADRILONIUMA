@@ -8,18 +8,76 @@ import json
 import time
 import argparse
 import subprocess
+import shutil
+import base64
 from pathlib import Path
 
 HOME = Path.home()
-CLI_ACCOUNTS_FILE = HOME / ".gemini" / "antigravity-cli" / "google_accounts.json"
+CLI_DIR = HOME / ".gemini" / "antigravity-cli"
+CLI_ACCOUNTS_FILE = CLI_DIR / "google_accounts.json"
+CLI_TOKEN_FILE = CLI_DIR / "antigravity-oauth-token"
+CLI_CREDS_FILE = CLI_DIR / "oauth_creds.json"
+
 GEMINI_ACCOUNTS_FILE = HOME / ".gemini" / "google_accounts.json"
 GATEWAY_ACCOUNT_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "active_account.json"
 QUOTA_EXHAUSTED_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "quota_exhausted.json"
 HIERARCHY_CONFIG_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "account_hierarchy.json"
+PROFILES_DIR = HOME / ".config" / "antigravity_profiles"
 
 QUOTA_RESET_WINDOW_SEC = 86400
 
-DEFAULT_HIERARCHY = []
+DEFAULT_HIERARCHY = [
+    {"email": "lkises01@gmail.com", "rank": 1, "tier": "PRIMARY_MASTER"},
+    {"email": "elafeatriania@gmail.com", "rank": 2, "tier": "SECONDARY_RESERVE"},
+    {"email": "denua7723@gmail.com", "rank": 3, "tier": "SPECIALIZED_NODE"}
+]
+
+def get_email_from_token_file(path):
+    if not path.exists():
+        return ""
+    try:
+        data = json.loads(path.read_text())
+        token = data.get("id_token") or (data.get("token") if isinstance(data.get("token"), dict) else {}).get("id_token")
+        if token:
+            parts = token.split(".")
+            if len(parts) >= 2:
+                p_str = parts[1]
+                p_str += "=" * ((4 - len(p_str) % 4) % 4)
+                payload = json.loads(base64.urlsafe_b64decode(p_str))
+                return payload.get("email", "")
+    except Exception:
+        pass
+    return ""
+
+def save_current_tokens_to_profile():
+    current_email = get_email_from_token_file(CLI_TOKEN_FILE) or get_email_from_token_file(CLI_CREDS_FILE)
+    if not current_email:
+        return
+    profile_dir = PROFILES_DIR / current_email
+    profile_dir.mkdir(parents=True, exist_ok=True)
+    for src in [CLI_TOKEN_FILE, CLI_CREDS_FILE, CLI_ACCOUNTS_FILE]:
+        if src.exists():
+            try:
+                shutil.copy2(src, profile_dir / src.name)
+            except Exception:
+                pass
+
+def restore_tokens_from_profile(email):
+    profile_dir = PROFILES_DIR / email
+    if not profile_dir.exists():
+        return False
+    restored = False
+    for fname in ["antigravity-oauth-token", "oauth_creds.json", "google_accounts.json"]:
+        src = profile_dir / fname
+        dst = CLI_DIR / fname
+        if src.exists():
+            try:
+                CLI_DIR.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+                restored = True
+            except Exception:
+                pass
+    return restored
 
 def load_hierarchy():
     if HIERARCHY_CONFIG_FILE.exists():
@@ -40,6 +98,16 @@ def load_accounts():
     known_emails = [item["email"] for item in hierarchy]
     
     accounts = list(known_emails)
+
+    if PROFILES_DIR.exists():
+        for p in PROFILES_DIR.iterdir():
+            if p.is_dir() and "@" in p.name and p.name not in accounts:
+                accounts.append(p.name)
+
+    token_email = get_email_from_token_file(CLI_TOKEN_FILE) or get_email_from_token_file(CLI_CREDS_FILE)
+    if token_email and token_email not in accounts:
+        accounts.append(token_email)
+
     for path in [CLI_ACCOUNTS_FILE, GEMINI_ACCOUNTS_FILE]:
         if path.exists():
             try:
@@ -62,6 +130,11 @@ def load_accounts():
     return sorted(unique_accounts, key=sort_key)
 
 def get_active_account():
+    token_email = get_email_from_token_file(CLI_TOKEN_FILE) or get_email_from_token_file(CLI_CREDS_FILE)
+    if token_email:
+        save_gateway_active_account_record(token_email)
+        return token_email
+
     if GATEWAY_ACCOUNT_FILE.exists():
         try:
             data = json.loads(GATEWAY_ACCOUNT_FILE.read_text())
@@ -75,27 +148,12 @@ def get_active_account():
             data = json.loads(GEMINI_ACCOUNTS_FILE.read_text())
             act = data.get("active")
             if act:
-                save_active_account(act)
                 return act
         except Exception:
             pass
-    launch_browser_account_chooser()
     return ""
 
-def save_active_account(email):
-    hierarchy = load_hierarchy()
-    known_emails = [item["email"] for item in hierarchy]
-
-    try:
-        GEMINI_ACCOUNTS_FILE.parent.mkdir(parents=True, exist_ok=True)
-        old_accs = [a for a in known_emails if a != email]
-        GEMINI_ACCOUNTS_FILE.write_text(json.dumps({
-            "active": email,
-            "old": old_accs
-        }, indent=2))
-    except Exception:
-        pass
-
+def save_gateway_active_account_record(email):
     try:
         GATEWAY_ACCOUNT_FILE.parent.mkdir(parents=True, exist_ok=True)
         GATEWAY_ACCOUNT_FILE.write_text(json.dumps({
@@ -105,14 +163,40 @@ def save_active_account(email):
     except Exception:
         pass
 
+def save_active_account(email):
+    save_current_tokens_to_profile()
+    tokens_restored = restore_tokens_from_profile(email)
+
+    hierarchy = load_hierarchy()
+    known_emails = [item["email"] for item in hierarchy]
+
     try:
-        profile_dir = HOME / ".config" / "antigravity_profiles" / email
+        GEMINI_ACCOUNTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+        old_accs = [a for a in known_emails if a != email]
+        data_str = json.dumps({"active": email, "old": old_accs}, indent=2)
+        GEMINI_ACCOUNTS_FILE.write_text(data_str)
+        CLI_ACCOUNTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+        CLI_ACCOUNTS_FILE.write_text(data_str)
+    except Exception:
+        pass
+
+    save_gateway_active_account_record(email)
+
+    try:
+        profile_dir = PROFILES_DIR / email
         profile_dir.mkdir(parents=True, exist_ok=True)
+        if get_email_from_token_file(CLI_TOKEN_FILE) == email:
+            save_current_tokens_to_profile()
     except Exception:
         pass
 
     rank, tier = get_account_rank(email, hierarchy)
     print(f"\033[1;32m[ACCOUNT SELECTOR] Active Account set to: {email} [{tier} / Rank {rank}]\033[0m\n")
+
+    cli_token_email = get_email_from_token_file(CLI_TOKEN_FILE)
+    if cli_token_email != email:
+        print(f"\033[1;33m[ACCOUNT SELECTOR WARNING] OAuth tokens for '{email}' not found in profile (CLI Auth: '{cli_token_email or 'None'}').\033[0m")
+        launch_browser_account_chooser()
 
 def get_exhausted_accounts():
     if not QUOTA_EXHAUSTED_FILE.exists():
@@ -151,7 +235,6 @@ def create_calendar_quota_sleep_block(email):
     Registers a Quota Sleep block in Google Calendar when quota exhaustion occurs.
     """
     print(f"\033[1;34m[CALENDAR ACTIVATION] Registering Quota Sleep event in Google Calendar for {email}...\033[0m")
-    # Logged to gateway state
     sleep_state_file = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "calendar_quota_sleep.json"
     try:
         sleep_state_file.parent.mkdir(parents=True, exist_ok=True)
@@ -254,12 +337,10 @@ def handle_quota_exhaustion(exhausted_email=None):
     return selected
 
 def select_account_interactive():
-    if check_primary_recovery_and_prompt():
-        return
-
+    save_current_tokens_to_profile()
     accounts = load_accounts()
     hierarchy = load_hierarchy()
-    exhausted_map = get_exhausted_accounts()
+    active_email = get_active_account()
 
     print("\033[1;35m==================================================\033[0m")
     print("\033[1;35m    A E L A R I A  --  A C C O U N T  S E L E C T   \033[0m")
@@ -269,42 +350,46 @@ def select_account_interactive():
 
     for idx, acc in enumerate(accounts, 1):
         rank, tier = get_account_rank(acc, hierarchy)
-        marker = " (Current Active)" if acc == get_active_account() else ""
-        status = " \033[1;31m(Quota Limit)\033[0m" if acc in exhausted_map else ""
-        print(f"  [{idx}] {acc} [{tier} / Rank {rank}]{marker}{status}")
-    print(f"  [{len(accounts)+1}] Enter custom / new email address\n")
+        marker = " (Current Active)" if acc == active_email else ""
+        print(f"  [{idx}] {acc} [{tier} / Rank {rank}]{marker}")
 
-    sys.stdout.write(f"Select option [1-{len(accounts)+1}] (default 1): ")
+    browser_opt = len(accounts) + 1
+    custom_opt = len(accounts) + 2
+    print(f"  [{browser_opt}] Open Google Account Chooser in Browser (OAuth)")
+    print(f"  [{custom_opt}] Enter custom / new email address\n")
+
+    sys.stdout.write(f"Select option [1-{custom_opt}] (default 1): ")
     sys.stdout.flush()
 
-    choice = None
+    choice = ""
     if sys.stdin.isatty():
         try:
             choice = sys.stdin.readline().strip()
         except Exception:
             choice = ""
-    else:
-        choice = ""
 
     if not choice or choice == "1":
-        selected = accounts[0]
+        selected = accounts[0] if accounts else "lkises01@gmail.com"
     else:
         try:
             val = int(choice)
             if 1 <= val <= len(accounts):
                 selected = accounts[val - 1]
-            elif val == len(accounts) + 1:
+            elif val == browser_opt:
+                launch_browser_account_chooser(wait_for_user=True)
+                return
+            elif val == custom_opt:
                 sys.stdout.write("Enter email address: ")
                 sys.stdout.flush()
-                selected = sys.stdin.readline().strip() or accounts[0]
+                selected = sys.stdin.readline().strip() or (accounts[0] if accounts else "lkises01@gmail.com")
             else:
-                selected = accounts[0]
+                selected = accounts[0] if accounts else "lkises01@gmail.com"
         except ValueError:
-            selected = accounts[0]
+            selected = accounts[0] if accounts else "lkises01@gmail.com"
 
     save_active_account(selected)
 
-def launch_browser_account_chooser():
+def launch_browser_account_chooser(wait_for_user=True):
     oauth_client_id = "1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com"
     redirect_uri = "https://antigravity.google/oauth-callback"
     scope = "https://www.googleapis.com/auth/cloud-platform"
@@ -313,24 +398,48 @@ def launch_browser_account_chooser():
     account_chooser_url = f"https://accounts.google.com/AccountChooser?continue={urllib.parse.quote(raw_auth_url)}"
 
     print("\033[1;34m[SYSTEM] Launching Native Browser Authentication via Google Account Chooser...\033[0m")
+    opened = False
     if shutil.which("google-chrome"):
         try:
             subprocess.Popen(["google-chrome", "--new-window", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened in Google Chrome.\033[0m\n")
-            return
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened in Google Chrome.\033[0m")
+            opened = True
         except Exception as e:
             print(f"[ACCOUNT SELECTOR WARNING] Failed to launch Google Chrome: {e}")
-    if shutil.which("xdg-open"):
+    if not opened and shutil.which("xdg-open"):
         try:
             subprocess.Popen(["xdg-open", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened via xdg-open.\033[0m\n")
-            return
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened via xdg-open.\033[0m")
+            opened = True
         except Exception as e:
             print(f"[ACCOUNT SELECTOR WARNING] Failed xdg-open: {e}")
 
-    print(f"\033[1;33m[SYSTEM] Open this URL in Chrome:\033[0m\n{account_chooser_url}\n")
+    if not opened:
+        print(f"\033[1;33m[SYSTEM] Open this URL in Chrome:\033[0m\n{account_chooser_url}\n")
+
+    if wait_for_user:
+        print("\n\033[1;36m==================================================\033[0m")
+        print("\033[1;36m  ⏳ AWAITING GOOGLE ACCOUNT SELECTION IN BROWSER ⏳  \033[0m")
+        print("\033[1;36m==================================================\033[0m")
+        print("\033[1;33mPlease select/authorize your account in the browser window.\033[0m")
+        print("\033[1;32mPress [ENTER] here in console after choosing account to ignite session...\033[0m")
+        sys.stdout.flush()
+        if sys.stdin.isatty():
+            try:
+                sys.stdin.readline()
+            except Exception:
+                pass
+        else:
+            time.sleep(3)
+        
+        token_email = get_email_from_token_file(CLI_TOKEN_FILE) or get_email_from_token_file(CLI_CREDS_FILE)
+        if token_email:
+            save_gateway_active_account_record(token_email)
+            save_current_tokens_to_profile()
+            print(f"\033[1;32m[ACCOUNT SELECTOR] Authenticated & Active Account set to: {token_email}\033[0m\n")
 
 def sync_active_account_non_interactive():
+    save_current_tokens_to_profile()
     active = get_active_account()
     hierarchy = load_hierarchy()
     rank, tier = get_account_rank(active, hierarchy)
@@ -351,7 +460,7 @@ def main():
         return
 
     if args.browser_auth:
-        launch_browser_account_chooser()
+        launch_browser_account_chooser(wait_for_user=True)
         return
 
     if args.exhausted_email:
@@ -370,8 +479,10 @@ def main():
         sync_active_account_non_interactive()
         return
 
-    sync_active_account_non_interactive()
+    if sys.stdin.isatty():
+        select_account_interactive()
+    else:
+        sync_active_account_non_interactive()
 
 if __name__ == "__main__":
     main()
-
