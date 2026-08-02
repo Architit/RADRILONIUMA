@@ -384,8 +384,10 @@ def launch_browser_account_chooser(wait_for_user=True):
     opened = False
     if shutil.which("google-chrome"):
         try:
+            subprocess.Popen(["google-chrome", "--show-profile-picker"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            time.sleep(0.5)
             subprocess.Popen(["google-chrome", "--new-window", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened in Google Chrome.\033[0m")
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Chrome Profile Chooser ('Кто использует Chrome?') and Account Chooser opened.\033[0m")
             opened = True
         except Exception as e:
             print(f"[ACCOUNT SELECTOR WARNING] Failed to launch Google Chrome: {e}")

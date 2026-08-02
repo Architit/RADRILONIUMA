@@ -237,6 +237,7 @@ class SovereignKernel:
                 except OSError: pass
                 os.chdir(self.current_cwd)
                 # Ensure child doesn't relaunch itself too aggressively if kernel is managing it
+                os.environ["PATH"] = f"/tmp/bin:{os.environ.get('PATH', '')}"
                 os.environ["GEMINI_CLI_NO_RELAUNCH"] = "1"
                 acc_selector = BASE_DIR / "scripts" / "local" / "account_selector.py"
                 if acc_selector.exists():
