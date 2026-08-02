@@ -261,17 +261,21 @@ def check_primary_recovery_and_prompt():
         print(f"\033[1;33mPrimary Master Account [{primary_email}] is now FULLY AVAILABLE.\033[0m")
         print(f"\033[1;34mCurrent active account: [{active_email}]\033[0m\n")
 
-        sys.stdout.write(f"Do you want to switch back to Primary Master [{primary_email}]? [Y/n]: ")
-        sys.stdout.flush()
-
         choice = ""
-        if sys.stdin.isatty():
+        try:
+            with open("/dev/tty", "r") as tty:
+                sys.stdout.write(f"Do you want to switch back to Primary Master [{primary_email}]? [Y/n]: ")
+                sys.stdout.flush()
+                choice = tty.readline().strip().lower()
+        except Exception:
             try:
-                choice = sys.stdin.readline().strip().lower()
+                sys.stdout.write(f"Do you want to switch back to Primary Master [{primary_email}]? [Y/n]: ")
+                sys.stdout.flush()
+                choice = input().strip().lower()
             except Exception:
                 choice = ""
 
-        if not choice or choice == "y" or choice == "yes":
+        if choice == "y" or choice == "yes":
             save_active_account(primary_email)
             print(f"\033[1;32m[PRIMARY RECOVERY] Switched back to Primary Master Account: {primary_email}\033[0m\n")
             return True
@@ -346,11 +350,35 @@ def select_account_interactive():
 
 def launch_browser_account_chooser(wait_for_user=True):
     oauth_client_id = "1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com"
-    redirect_uri = "https://antigravity.google/oauth-callback"
+    redirect_port = 43210
+    redirect_uri = f"http://127.0.0.1:{redirect_port}"
     scope = "https://www.googleapis.com/auth/cloud-platform"
     raw_auth_url = f"https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id={oauth_client_id}&redirect_uri={redirect_uri}&response_type=code&scope={scope}"
     import urllib.parse
     account_chooser_url = f"https://accounts.google.com/AccountChooser?continue={urllib.parse.quote(raw_auth_url)}"
+
+    import threading
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+    
+    class AuthHandler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            html = "<html><head><title>Success</title></head><body><script>window.close();</script><h2>Auth successful! You can close this window.</h2></body></html>"
+            self.wfile.write(html.encode("utf-8"))
+            threading.Thread(target=self.server.shutdown).start()
+        def log_message(self, format, *args):
+            pass
+
+    try:
+        server = HTTPServer(('127.0.0.1', redirect_port), AuthHandler)
+    except Exception as e:
+        print(f"\033[1;31m[ERROR] Failed to start local web server on port {redirect_port}: {e}\033[0m")
+        redirect_uri = "https://antigravity.google/oauth-callback"
+        raw_auth_url = f"https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id={oauth_client_id}&redirect_uri={redirect_uri}&response_type=code&scope={scope}"
+        account_chooser_url = f"https://accounts.google.com/AccountChooser?continue={urllib.parse.quote(raw_auth_url)}"
+        server = None
 
     print("\033[1;34m[SYSTEM] Launching Native Browser Authentication via Google Account Chooser...\033[0m")
     opened = False
@@ -376,16 +404,22 @@ def launch_browser_account_chooser(wait_for_user=True):
         print("\n\033[1;36m==================================================\033[0m")
         print("\033[1;36m  ⏳ AWAITING GOOGLE ACCOUNT SELECTION IN BROWSER ⏳  \033[0m")
         print("\033[1;36m==================================================\033[0m")
-        print("\033[1;33mPlease select/authorize your account in the browser window.\033[0m")
-        print("\033[1;32mPress [ENTER] here in console after choosing account to ignite session...\033[0m")
-        sys.stdout.flush()
-        if sys.stdin.isatty():
-            try:
-                sys.stdin.readline()
-            except Exception:
-                pass
+        if server:
+            print("\033[1;33mPlease select/authorize your account in the browser window.\033[0m")
+            print("\033[1;32mWaiting for browser callback to close window automatically...\033[0m")
+            server.serve_forever()
+            server.server_close()
         else:
-            time.sleep(3)
+            print("\033[1;33mPlease select/authorize your account in the browser window.\033[0m")
+            print("\033[1;32mPress [ENTER] here in console after choosing account to ignite session...\033[0m")
+            sys.stdout.flush()
+            if sys.stdin.isatty():
+                try:
+                    sys.stdin.readline()
+                except Exception:
+                    pass
+            else:
+                time.sleep(3)
         
         token_email = get_email_from_token_file(CLI_TOKEN_FILE) or get_email_from_token_file(CLI_CREDS_FILE)
         if token_email:
