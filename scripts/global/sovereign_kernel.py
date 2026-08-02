@@ -326,7 +326,10 @@ class SovereignKernel:
                         acc_selector = BASE_DIR / "scripts" / "local" / "account_selector.py"
                         if acc_selector.exists():
                             try:
-                                subprocess.run([sys.executable, str(acc_selector), "--quota-fallback", "lkises01@gmail.com"])
+                                res = subprocess.run([sys.executable, str(acc_selector), "--get-active"], capture_output=True, text=True)
+                                active_acc = res.stdout.strip()
+                                if active_acc:
+                                    subprocess.run([sys.executable, str(acc_selector), "--quota-fallback", active_acc])
                             except Exception as e:
                                 logging.warning(f"Quota fallback invocation failed: {e}")
 

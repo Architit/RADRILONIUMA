@@ -21,7 +21,19 @@ def get_active_account(root_dir: Path) -> str:
                 return data["active"].strip()
         except Exception:
             pass
-    return "lkises01@gmail.com"
+    gemini_file = Path.home() / ".gemini" / "google_accounts.json"
+    if gemini_file.exists():
+        try:
+            data = json.loads(gemini_file.read_text())
+            if isinstance(data, dict) and data.get("active"):
+                act = data["active"].strip()
+                if act:
+                    account_file.parent.mkdir(parents=True, exist_ok=True)
+                    account_file.write_text(json.dumps({"active": act, "selected_at": time.time()}, indent=2))
+                    return act
+        except Exception:
+            pass
+    return ""
 
 def sanitize_prefix(email: str) -> str:
     user_part = email.split("@")[0]
@@ -78,16 +90,12 @@ def verify_onedrive(prefix: str, remotes: list[str]) -> tuple[bool, str]:
     target_remote = f"onedrive_{prefix}:"
     if target_remote in remotes:
         return True, f"OneDrive remote {target_remote} verified."
-    if "onedrive:" in remotes:
-        return True, f"Fallback remote onedrive: found (target: {target_remote})."
     return False, f"OneDrive remote {target_remote} not found in rclone remotes."
 
 def verify_gdrive(prefix: str, remotes: list[str]) -> tuple[bool, str]:
     target_remote = f"gdrive_{prefix}:"
     if target_remote in remotes:
         return True, f"Google Drive remote {target_remote} verified."
-    if "gdrive:" in remotes:
-        return True, f"Fallback remote gdrive: found (target: {target_remote})."
     return False, f"Google Drive remote {target_remote} not found in rclone remotes."
 
 def generate_manual_handoff(root_dir: Path, email: str, prefix: str, issues: list[str]):
@@ -140,6 +148,12 @@ rclone config create gdrive_{prefix} drive scope drive
 def main():
     root_dir = Path(__file__).resolve().parent.parent.parent
     email = get_active_account(root_dir)
+    if not email:
+        print("[CELL VERIFIER] No active account found! Handoff to browser auth required.")
+        handoff_file = root_dir / "MANUAL_ACTION_REQUIRED.md"
+        handoff_file.write_text("# [MANUAL ACTION REQUIRED] NO ACTIVE ACCOUNT\n\nВ системе нет активного пользователя.\n\nЗапустите `scripts/local/account_selector.py`, чтобы открыть браузер и авторизоваться через Google Account Chooser (OAuth). После успешного входа система создаст для вас новую изолированную ячейку (CELL).\n", encoding="utf-8")
+        sys.exit(10)
+
     prefix = sanitize_prefix(email)
 
     print(f"=== RADRILONIUMA CELL VERIFIER ===")

@@ -4,6 +4,8 @@
 
 ### ОБНАРУЖЕННЫЕ ПРОБЛЕМЫ:
 - GitHub: Missing SSH key at /home/architit/.config/antigravity_profiles/lkises01@gmail.com/id_rsa
+- OneDrive: OneDrive remote onedrive_lkises01: not found in rclone remotes.
+- Google Drive: Google Drive remote gdrive_lkises01: not found in rclone remotes.
 
 ---
 

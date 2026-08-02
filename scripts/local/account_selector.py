@@ -19,11 +19,7 @@ HIERARCHY_CONFIG_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "accou
 
 QUOTA_RESET_WINDOW_SEC = 86400
 
-DEFAULT_HIERARCHY = [
-    {"email": "lkises01@gmail.com", "rank": 1, "tier": "PRIMARY_MASTER", "role": "Primary Sovereign Hub"},
-    {"email": "elafeatriania@gmail.com", "rank": 2, "tier": "SECONDARY_RESERVE", "role": "Secondary Operational Node"},
-    {"email": "denua... (YouTube Music)", "rank": 3, "tier": "SPECIALIZED_NODE", "role": "Media / Audio Node"}
-]
+DEFAULT_HIERARCHY = []
 
 def load_hierarchy():
     if HIERARCHY_CONFIG_FILE.exists():
@@ -69,16 +65,22 @@ def get_active_account():
     if GATEWAY_ACCOUNT_FILE.exists():
         try:
             data = json.loads(GATEWAY_ACCOUNT_FILE.read_text())
-            return data.get("active")
+            act = data.get("active")
+            if act:
+                return act
         except Exception:
             pass
     if GEMINI_ACCOUNTS_FILE.exists():
         try:
             data = json.loads(GEMINI_ACCOUNTS_FILE.read_text())
-            return data.get("active")
+            act = data.get("active")
+            if act:
+                save_active_account(act)
+                return act
         except Exception:
             pass
-    return "lkises01@gmail.com"
+    launch_browser_account_chooser()
+    return ""
 
 def save_active_account(email):
     hierarchy = load_hierarchy()
@@ -165,11 +167,11 @@ def create_calendar_quota_sleep_block(email):
 
 def check_primary_recovery_and_prompt():
     hierarchy = load_hierarchy()
-    primary_email = hierarchy[0]["email"] if hierarchy else "lkises01@gmail.com"
+    primary_email = hierarchy[0]["email"] if hierarchy else ""
     active_email = get_active_account()
     exhausted_map = get_exhausted_accounts()
 
-    if active_email != primary_email and primary_email not in exhausted_map:
+    if primary_email and active_email and active_email != primary_email and primary_email not in exhausted_map:
         print("\n\033[1;36m==================================================\033[0m")
         print("\033[1;36m ⚡ PRIMARY ACCOUNT QUOTA RECOVERED / RESET DETECTED ⚡ \033[0m")
         print("\033[1;36m==================================================\033[0m")

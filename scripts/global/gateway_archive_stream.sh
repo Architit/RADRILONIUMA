@@ -23,7 +23,7 @@ if [ $VERIFY_STATUS -ne 0 ]; then
 fi
 
 # Phase 3: Transit Data Flow (Executed only if verification passes)
-ACTIVE_EMAIL=$(python3 -c "import json, pathlib; p=pathlib.Path('.gateway/active_account.json'); print(json.loads(p.read_text()).get('active','lkises01@gmail.com') if p.exists() else 'lkises01@gmail.com')")
+ACTIVE_EMAIL=$(python3 -c "import json, pathlib; p=pathlib.Path('.gateway/active_account.json'); print(json.loads(p.read_text()).get('active','') if p.exists() else '')")
 PREFIX=$(python3 -c "import re; print(re.sub(r'[^a-zA-Z0-9_]', '_', '$ACTIVE_EMAIL'.split('@')[0]))")
 
 echo ">>> [TRANSIT STREAM] Активная ячейка: $ACTIVE_EMAIL (префикс: $PREFIX)"
@@ -44,17 +44,11 @@ fi
 
 # 3. Google Drive Sync (gdrive_{PREFIX}:Aelaria_Chat_Sessions)
 GDRIVE_REMOTE="gdrive_${PREFIX}:"
-if ! rclone listremotes | grep -q "^${GDRIVE_REMOTE}"; then
-    GDRIVE_REMOTE="gdrive:"
-fi
 echo ">>> [3/4 GOOGLE DRIVE] Синхронизация дельты в ${GDRIVE_REMOTE}Aelaria_Chat_Sessions..."
 rclone sync "$ROOT_DIR/data" "${GDRIVE_REMOTE}Aelaria_Chat_Sessions" --progress || echo ">>> [GOOGLE DRIVE] Ошибка rclone sync."
 
 # 4. OneDrive Sync (onedrive_{PREFIX}:Aelaria_Chat_Sessions)
 ONEDRIVE_REMOTE="onedrive_${PREFIX}:"
-if ! rclone listremotes | grep -q "^${ONEDRIVE_REMOTE}"; then
-    ONEDRIVE_REMOTE="onedrive:"
-fi
 echo ">>> [4/4 ONEDRIVE] Синхронизация дельты в ${ONEDRIVE_REMOTE}Aelaria_Chat_Sessions..."
 rclone sync "$ROOT_DIR/data" "${ONEDRIVE_REMOTE}Aelaria_Chat_Sessions" --progress || echo ">>> [ONEDRIVE] Ошибка rclone sync."
 
