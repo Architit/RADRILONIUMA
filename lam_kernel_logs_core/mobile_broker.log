@@ -1701,3 +1701,19 @@
 [вс 02 авг 2026 11:45:14 CEST] >> Waiting for Android Biometric Auth...
 [вс 02 авг 2026 11:45:14 CEST] >> Auth failed or timeout. Access DENIED.
 [вс 02 авг 2026 11:45:14 CEST] >> Auth failed or timeout. Access DENIED.
+[вс 02 авг 2026 11:59:08 CEST] >> Triggered by: bt
+[вс 02 авг 2026 11:59:08 CEST] >> Queued task to init edge remote control manager for bt
+[вс 02 авг 2026 11:59:08 CEST] >> Waiting for Android Biometric Auth...
+[вс 02 авг 2026 11:59:08 CEST] >> Auth failed or timeout. Access DENIED.
+[вс 02 авг 2026 11:59:31 CEST] >> Triggered by: usb
+[вс 02 авг 2026 11:59:31 CEST] >> Triggered by: usb
+[вс 02 авг 2026 11:59:32 CEST] >> Queued task to init edge remote control manager for usb
+[вс 02 авг 2026 11:59:32 CEST] >> Queued task to init edge remote control manager for usb
+[вс 02 авг 2026 11:59:32 CEST] >> Triggered by: usb
+[вс 02 авг 2026 11:59:32 CEST] >> Triggered by: usb
+[вс 02 авг 2026 11:59:32 CEST] >> Queued task to init edge remote control manager for usb
+[вс 02 авг 2026 11:59:32 CEST] >> Queued task to init edge remote control manager for usb
+[вс 02 авг 2026 11:59:37 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[вс 02 авг 2026 11:59:37 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[вс 02 авг 2026 11:59:37 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
+[вс 02 авг 2026 11:59:37 CEST] >> Warning: No ADB device found after 5s. Assuming non-Android edge node.
