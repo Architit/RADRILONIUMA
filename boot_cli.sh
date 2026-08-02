@@ -5,15 +5,17 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 export PROOT_NO_SECCOMP=1
+unset AELARIA_KERNEL_ACTIVE
 
 while true; do
     echo "[BOOT] Starting Sovereign Session..."
+    unset AELARIA_KERNEL_ACTIVE
     bash "$SCRIPT_DIR/boot_cli_inner.sh"
     
     # Check if we should exit or if it was a crash/restart
     if [[ -f "$SCRIPT_DIR/.gateway/ssn_exit.signal" ]]; then
         echo "[BOOT] Exit signal detected. Terminating Bootloader."
-        rm "$SCRIPT_DIR/.gateway/ssn_exit.signal"
+        rm -f "$SCRIPT_DIR/.gateway/ssn_exit.signal"
         break
     fi
     

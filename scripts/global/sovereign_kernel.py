@@ -68,6 +68,9 @@ class SovereignKernel:
         sys.stdout.write("\033[3J\033c\033[2J\033[H")
         sys.stdout.flush()
         
+        # Reset kernel active environment flag prior to re-exec
+        os.environ.pop("AELARIA_KERNEL_ACTIVE", None)
+
         # Re-exec boot protocol chain
         # Note: We use /bin/bash -c to execute the && chain
         cmd = "bash scripts/local/boot_protocol.sh && bash boot_cli_inner.sh"
@@ -242,6 +245,18 @@ class SovereignKernel:
                         subprocess.run([sys.executable, str(acc_selector), "--check-recovery"])
                     except Exception as e:
                         logging.warning(f"Account selector recovery check failed: {e}")
+
+                    # Sync active account config dir in child environment
+                    try:
+                        res = subprocess.run([sys.executable, str(acc_selector), "--get-active"], capture_output=True, text=True)
+                        active_email = res.stdout.strip()
+                        if active_email:
+                            profile_dir = Path.home() / ".config" / "antigravity_profiles" / active_email
+                            profile_dir.mkdir(parents=True, exist_ok=True)
+                            os.environ["ANTIGRAVITY_CONFIG_DIR"] = str(profile_dir)
+                            os.environ["GEMINI_CONFIG_DIR"] = str(profile_dir)
+                    except Exception as e:
+                        logging.warning(f"Failed setting profile config dir: {e}")
 
                 os.execv(self.cli_path, [self.cli_path])
             except Exception as e:

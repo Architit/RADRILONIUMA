@@ -103,6 +103,12 @@ def save_active_account(email):
     except Exception:
         pass
 
+    try:
+        profile_dir = HOME / ".config" / "antigravity_profiles" / email
+        profile_dir.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+
     rank, tier = get_account_rank(email, hierarchy)
     print(f"\033[1;32m[ACCOUNT SELECTOR] Active Account set to: {email} [{tier} / Rank {rank}]\033[0m\n")
 
@@ -283,7 +289,7 @@ def select_account_interactive():
     else:
         try:
             val = int(choice)
-            if 1 <= val <= len(available_accounts):
+            if 1 <= val <= len(accounts):
                 selected = accounts[val - 1]
             elif val == len(accounts) + 1:
                 sys.stdout.write("Enter email address: ")
@@ -296,12 +302,55 @@ def select_account_interactive():
 
     save_active_account(selected)
 
+def launch_browser_account_chooser():
+    oauth_client_id = "1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com"
+    redirect_uri = "https://antigravity.google/oauth-callback"
+    scope = "https://www.googleapis.com/auth/cloud-platform"
+    raw_auth_url = f"https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id={oauth_client_id}&redirect_uri={redirect_uri}&response_type=code&scope={scope}"
+    import urllib.parse
+    account_chooser_url = f"https://accounts.google.com/AccountChooser?continue={urllib.parse.quote(raw_auth_url)}"
+
+    print("\033[1;34m[SYSTEM] Launching Native Browser Authentication via Google Account Chooser...\033[0m")
+    if shutil.which("google-chrome"):
+        try:
+            subprocess.Popen(["google-chrome", "--new-window", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened in Google Chrome.\033[0m\n")
+            return
+        except Exception as e:
+            print(f"[ACCOUNT SELECTOR WARNING] Failed to launch Google Chrome: {e}")
+    if shutil.which("xdg-open"):
+        try:
+            subprocess.Popen(["xdg-open", account_chooser_url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print("\033[1;32m[ACCOUNT SELECTOR] Google Account Chooser opened via xdg-open.\033[0m\n")
+            return
+        except Exception as e:
+            print(f"[ACCOUNT SELECTOR WARNING] Failed xdg-open: {e}")
+
+    print(f"\033[1;33m[SYSTEM] Open this URL in Chrome:\033[0m\n{account_chooser_url}\n")
+
+def sync_active_account_non_interactive():
+    active = get_active_account()
+    hierarchy = load_hierarchy()
+    rank, tier = get_account_rank(active, hierarchy)
+    print(f"\033[1;32m[ACCOUNT SELECTOR] Active Account: {active} [{tier} / Rank {rank}]\033[0m\n")
+
 def main():
     parser = argparse.ArgumentParser(description="Account Selector, Hierarchy & Google Calendar Quota Sleep Manager")
     parser.add_argument("--quota-fallback", "--exhausted", dest="exhausted_email", type=str, help="Trigger quota exhaustion fallback & Calendar sleep block for specified email")
     parser.add_argument("--check-recovery", action="store_true", help="Check primary account quota recovery and prompt switch back")
     parser.add_argument("--select", action="store_true", help="Force interactive account selection")
+    parser.add_argument("--browser-auth", action="store_true", help="Launch Google Account Chooser in browser")
+    parser.add_argument("--non-interactive", action="store_true", help="Sync active account non-interactively without console prompts")
+    parser.add_argument("--get-active", action="store_true", help="Output only the active account email address")
     args = parser.parse_args()
+
+    if args.get_active:
+        print(get_active_account())
+        return
+
+    if args.browser_auth:
+        launch_browser_account_chooser()
+        return
 
     if args.exhausted_email:
         handle_quota_exhaustion(args.exhausted_email)
@@ -315,10 +364,12 @@ def main():
         select_account_interactive()
         return
 
-    if os.environ.get("SKIP_ACCOUNT_SELECT") == "1":
+    if args.non_interactive or os.environ.get("SKIP_ACCOUNT_SELECT") == "1":
+        sync_active_account_non_interactive()
         return
 
-    select_account_interactive()
+    sync_active_account_non_interactive()
 
 if __name__ == "__main__":
     main()
+
