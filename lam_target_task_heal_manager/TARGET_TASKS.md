@@ -1,6 +1,6 @@
 # ⚜️ SOVEREIGN FOREST: TARGETS & MISSIONS MATRIX ⚜️
 
-*Generated at (UTC): 2026-08-01T23:04:04Z*
+*Generated at (UTC): 2026-08-02T13:35:09Z*
 
 > [!NOTE]
 > This matrix is dynamically managed by `lam_target_task_heal_manager` to scan the active state of the Sovereign Forest organs and suggest tasks, campaigns, and healing walkthroughs.
@@ -98,44 +98,8 @@ Currently tracking **36** organs (**36** Online, **0** Offline/External):
 ## V. GIT STATE & WORKSPACE COMPLIANCE
 ```bash
 ## master...origin/master
- M .agents/orchestrator_r2/BRIEFING.md
- M .agents/orchestrator_r2/progress.md
- M .agents/teamwork_preview_explorer_m1_1/BRIEFING.md
- M .agents/teamwork_preview_explorer_m1_1/DISPATCH.md
- M .agents/teamwork_preview_explorer_m1_1/analysis.md
- M .agents/teamwork_preview_explorer_m1_1/handoff.md
- M .agents/teamwork_preview_explorer_m1_2/BRIEFING.md
- M .agents/teamwork_preview_explorer_m1_2/DISPATCH.md
- M .agents/teamwork_preview_explorer_m1_2/analysis.md
- M .agents/teamwork_preview_explorer_m1_2/handoff.md
- M .agents/teamwork_preview_explorer_m1_3/BRIEFING.md
- M .agents/teamwork_preview_explorer_m1_3/DISPATCH.md
- M .agents/teamwork_preview_explorer_m1_3/analysis.md
- M .agents/teamwork_preview_explorer_m1_3/handoff.md
- M .agents/teamwork_preview_explorer_m1_3/progress.md
- M .agents/teamwork_preview_explorer_survey_3/BRIEFING.md
- M .agents/teamwork_preview_explorer_survey_3/analysis.md
- M .agents/teamwork_preview_explorer_survey_3/handoff.md
- M .agents/teamwork_preview_explorer_survey_3/progress.md
- M .agents/teamwork_preview_reviewer_m1_1/BRIEFING.md
- M .agents/teamwork_preview_reviewer_m1_1/DISPATCH.md
- M .agents/teamwork_preview_reviewer_m1_2/BRIEFING.md
- M .agents/teamwork_preview_reviewer_m1_2/DISPATCH.md
- M .agents/teamwork_preview_worker_m1_1/BRIEFING.md
- M .agents/teamwork_preview_worker_m1_1/DISPATCH.md
- M .agents/teamwork_preview_worker_m1_1/handoff.md
- M .agents/teamwork_preview_worker_m1_1/progress.md
- M PROJECT.md
- M cluster_launcher.py
- M core_daemons/nexus_telemetry.py
- M gov/report/telemetry_nexus.log
  M lam_target_task_heal_manager/TARGET_TASKS.md
- M scripts/global/lam_queue_worker.py
- M scripts/global/ssn_daemon.js
-?? .agents/orchestrator_r2/PROJECT.md
-?? .agents/teamwork_preview_auditor_m1_1/
-?? .agents/teamwork_preview_challenger_m1_1/
-?? .agents/teamwork_preview_challenger_m1_2/
-?? .agents/teamwork_preview_explorer_m1_2/progress.md
-?? .agents/teamwork_preview_worker_m1_1/changes.md
+?? tests/test_account_selector.py
+?? tests/test_cell_verifier.py
+?? tests/test_drift_telemetry_governance.py
 ```
