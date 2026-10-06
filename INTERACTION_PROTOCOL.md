@@ -1137,3 +1137,33 @@ Canonical contract:
 3) Organs are linked via 'git subtree' or reference pointers.
 4) Direct content modification in LRPT/ within Nexus is FORBIDDEN.
 5) Materialization sequence: Create Repo -> Seed Content -> Link to Nexus.
+
+---
+
+# Interaction protocol supplement — hourly execution and durable state
+
+Added 2026-10-06 at 10:38 UTC / 12:38 Europe/Amsterdam, at the user's direction.
+
+This supplement adds the user's operating preferences to the RADRILONIUMA work protocol. It does not replace earlier protocol text.
+
+## Hourly execution phases
+
+- Plan active work in explicit one-hour blocks. Record each block in both UTC and Europe/Amsterdam local time.
+- Give each block a phase ID, one concrete outcome, verification evidence, current status, and next action.
+- Keep the phase/status table in `EXECUTION_LOG.md`. Append new rows for new evidence; do not erase or rewrite earlier history. If a status changes, append a new row that supersedes the older status and points back to it.
+- The master plan holds stable objectives and links to the running table. Update the plan only when scope or accepted phase criteria change.
+- A one-hour block is an execution window, not permission to start an unbounded/background process. At the end, stop or report the actual state and the next block.
+
+## Source and durable copies
+
+- Keep the canonical working copy local first; record file paths and SHA-256 values for release artifacts.
+- Save project records to the exact, user-confirmed Google Drive folder and GitHub repository. Verify each upload by reading back metadata or a checksum before saying it is saved.
+- Do not infer that a connected cloud account is the correct family account from the first result. If the expected CORE path is missing, do not silently substitute another account or destination.
+- OneDrive migration remains a separate gated operation: Microsoft reauthorization, exact account/target, manifest, and budget must be confirmed before copying or deleting user data.
+- Rclone is used only with supported storage backends such as the configured Google Drive remote. GitHub is managed with Git/GitHub, not by inventing an unsupported Rclone backend or alias.
+
+## Android debugging attachment
+
+- Check the newest user-provided or locally available Wireless Debugging screenshot for the device IP, pairing endpoint, and connect endpoint.
+- Use pairing codes only for the immediate pairing attempt. Do not include them in logs, progress tables, uploads, or responses.
+- After pairing, connect to the separate ADB endpoint and verify the serial/package inventory. If both endpoints refuse or time out, record the network finding and request a fresh screen or an authorized USB/ADB transport; do not keep retrying stale ports.
