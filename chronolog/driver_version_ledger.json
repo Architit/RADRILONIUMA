@@ -1,0 +1,615 @@
+{
+  "last_sync_utc": "2026-10-14T02:08:24.998467+00:00",
+  "os": "Microsoft Windows 11 Home 24H2 (Build 26100)",
+  "driver_count": 76,
+  "drivers": [
+    {
+      "DeviceName": "Hyper-V Virtual Switch Extension Adapter",
+      "DeviceID": "ROOT\\VMS_VSMP\\0000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Remote Desktop Device Redirector Bus",
+      "DeviceID": "ROOT\\RDPBUS\\0000",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Streaming Service Proxy",
+      "DeviceID": "SW\\{96E080C7-143C-11D1-B40F-00A0C9223196}\\{3C0D501A-140B-11D1-B40F-00A0C9223196}",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Plug and Play Software Device Enumerator",
+      "DeviceID": "ROOT\\SYSTEM\\0000",
+      "DriverVersion": "10.0.26100.4202",
+      "DriverDate": "/Date(1747958400000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft System Management BIOS Driver",
+      "DeviceID": "ROOT\\MSSMBIOS\\0000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "NDIS Virtual Network Adapter Enumerator",
+      "DeviceID": "ROOT\\NDISVIRTUALBUS\\0000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Hyper-V Virtual Disk Server",
+      "DeviceID": "ROOT\\STORVSP\\0000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Basic Render Driver",
+      "DeviceID": "ROOT\\BASICRENDER\\0000",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Hyper-V PCI Server",
+      "DeviceID": "ROOT\\VPCIVSP\\0000",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft UEFI-Compliant System",
+      "DeviceID": "ACPI_HAL\\UEFI\\0",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "ACPI Fixed Feature Button",
+      "DeviceID": "ACPI\\FIXEDBUTTON\\2&DABA3FF&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\INT340E\\2&DABA3FF&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "ACPI Processor Aggregator",
+      "DeviceID": "ACPI\\ACPI000C\\2&DABA3FF&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Windows Management Interface for ACPI",
+      "DeviceID": "ACPI\\PNP0C14\\TBFP",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "ACPI Power Button",
+      "DeviceID": "ACPI\\PNP0C0C\\2&DABA3FF&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "ACPI Lid",
+      "DeviceID": "ACPI\\PNP0C0D\\2&DABA3FF&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\PNP0C02\\1",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\PNP0C02\\5",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\PNP0C02\\PCHRESV",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Intel(R) Display Audio",
+      "DeviceID": "HDAUDIO\\FUNC_01&VEN_8086&DEV_2809&SUBSYS_80860101&REV_1000\\4&21F6CD7&0&0201",
+      "DriverVersion": "8.20.0.922",
+      "DriverDate": "/Date(1460764800000)/",
+      "Manufacturer": "Intel(R) Corporation",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "High Definition Audio Device",
+      "DeviceID": "HDAUDIO\\FUNC_01&VEN_14F1&DEV_510F&SUBSYS_17AA3822&REV_1001\\4&21F6CD7&0&0001",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1787616000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "High Definition Audio Controller",
+      "DeviceID": "PCI\\VEN_8086&DEV_9D70&SUBSYS_380817AA&REV_21\\3&11583659&0&FB",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1788480000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "ELAN Input Device",
+      "DeviceID": "ACPI\\ETD0642\\4&2AC86429&0",
+      "DriverVersion": "11.15.0.18",
+      "DriverDate": "/Date(1443052800000)/",
+      "Manufacturer": "ELAN",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\INT3F0D\\4&2AC86429&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "System timer",
+      "DeviceID": "ACPI\\PNP0100\\4&2AC86429&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "System CMOS/real time clock",
+      "DeviceID": "ACPI\\PNP0B00\\4&2AC86429&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Motherboard resources",
+      "DeviceID": "ACPI\\PNP0C02\\2",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Programmable interrupt controller",
+      "DeviceID": "ACPI\\PNP0000\\4&2AC86429&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "High precision event timer",
+      "DeviceID": "ACPI\\PNP0103\\0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Legacy device",
+      "DeviceID": "ACPI\\INT0800\\4&2AC86429&0",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Intel",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft ACPI-Compliant Embedded Controller",
+      "DeviceID": "ACPI\\PNP0C09\\1",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "PCI standard ISA bridge",
+      "DeviceID": "PCI\\VEN_8086&DEV_9D48&SUBSYS_380817AA&REV_21\\3&11583659&0&F8",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Wi-Fi Direct Virtual Adapter",
+      "DeviceID": "{5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\\VWIFIMP_WFD\\5&2A1D2FD1&0&12",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Wi-Fi Direct Virtual Adapter",
+      "DeviceID": "{5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\\VWIFIMP_WFD\\5&2A1D2FD1&0&11",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Intel(R) Dual Band Wireless-AC 3165",
+      "DeviceID": "PCI\\VEN_8086&DEV_3166&SUBSYS_42108086&REV_99\\84EF18FFFF113B3100",
+      "DriverVersion": "19.51.7.2",
+      "DriverDate": "/Date(1506902400000)/",
+      "Manufacturer": "Intel Corporation",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "PCI Express Root Port",
+      "DeviceID": "PCI\\VEN_8086&DEV_9D15&SUBSYS_380817AA&REV_F1\\3&11583659&0&E5",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Realtek PCIe GBE Family Controller",
+      "DeviceID": "PCI\\VEN_10EC&DEV_8168&SUBSYS_383717AA&REV_15\\01000000684CE00000",
+      "DriverVersion": "10.10.714.2016",
+      "DriverDate": "/Date(1468454400000)/",
+      "Manufacturer": "Realtek",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "PCI Express Root Port",
+      "DeviceID": "PCI\\VEN_8086&DEV_9D14&SUBSYS_380817AA&REV_F1\\3&11583659&0&E0",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Standard SATA AHCI Controller",
+      "DeviceID": "PCI\\VEN_8086&DEV_9D03&SUBSYS_380817AA&REV_21\\3&11583659&0&B8",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Standard SATA AHCI Controller",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth LE Enumerator",
+      "DeviceID": "BTH\\MS_BTHLE\\6&363DA2C3&0&3",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Bluetooth Device (Personal Area Network)",
+      "DeviceID": "BTH\\MS_BTHPAN\\6&363DA2C3&0&2",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Avrcp Transport Driver",
+      "DeviceID": "BTHENUM\\{0000110E-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1788393600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Avrcp Transport Driver",
+      "DeviceID": "BTHENUM\\{0000110C-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1788393600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Hands-Free Audio device",
+      "DeviceID": "BTHHFENUM\\BTHHFPAUDIO\\8&2DD0D17D&0&97",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1787529600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Hands-Free Profile AudioGateway role",
+      "DeviceID": "BTHENUM\\{0000111E-0000-1000-8000-00805F9B34FB}_VID&000105D6_PID&000A\\7&25D6463A&0&DB9ADA2E72C5_C00000000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1711843200000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Avrcp Transport Driver",
+      "DeviceID": "BTHENUM\\{0000110E-0000-1000-8000-00805F9B34FB}_VID&000105D6_PID&000A\\7&25D6463A&0&DB9ADA2E72C5_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1788393600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Avrcp Transport Driver",
+      "DeviceID": "BTHENUM\\{0000110C-0000-1000-8000-00805F9B34FB}_VID&000105D6_PID&000A\\7&25D6463A&0&DB9ADA2E72C5_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1788393600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth A2dp Source",
+      "DeviceID": "BTHENUM\\{0000110B-0000-1000-8000-00805F9B34FB}_VID&000105D6_PID&000A\\7&25D6463A&0&DB9ADA2E72C5_C00000000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1711843200000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Bluetooth Device",
+      "DeviceID": "BTHENUM\\DEV_DB9ADA2E72C5\\7&25D6463A&0&BLUETOOTHDEVICE_DB9ADA2E72C5",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Bluetooth Device",
+      "DeviceID": "BTHENUM\\DEV_C0D5E2B66FAE\\7&25D6463A&0&BLUETOOTHDEVICE_C0D5E2B66FAE",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Phonebook Access Pse Service",
+      "DeviceID": "BTHENUM\\{0000112F-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Sim Access Service",
+      "DeviceID": "BTHENUM\\{0000112D-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Hands-Free Audio device",
+      "DeviceID": "BTHHFENUM\\BTHHFPAUDIO\\8&DD26724&0&97",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1787529600000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Hands-Free Profile Handsfree role",
+      "DeviceID": "BTHENUM\\{0000111F-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1711843200000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Personal Area Network NAP Service",
+      "DeviceID": "BTHENUM\\{00001116-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Personal Area Network Service",
+      "DeviceID": "BTHENUM\\{00001115-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Headset Audio Gateway Service",
+      "DeviceID": "BTHENUM\\{00001112-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth A2dp Sink",
+      "DeviceID": "BTHENUM\\{0000110A-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.1",
+      "DriverDate": "/Date(1711843200000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Object Push Service",
+      "DeviceID": "BTHENUM\\{00001105-0000-1000-8000-00805F9B34FB}_VID&00010075_PID&0100\\7&25D6463A&0&C0D5E2B66FAE_C00000000",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Bluetooth Enumerator",
+      "DeviceID": "BTH\\MS_BTHBRB\\6&363DA2C3&0&1",
+      "DriverVersion": "10.0.26100.9444",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Bluetooth Device (RFCOMM Protocol TDI)",
+      "DeviceID": "BTH\\MS_RFCOMM\\6&363DA2C3&0&0",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Intel(R) Wireless Bluetooth(R)",
+      "DeviceID": "USB\\VID_8087&PID_0A2A\\5&2889B90E&0&7",
+      "DriverVersion": "20.100.10.11",
+      "DriverDate": "/Date(1678838400000)/",
+      "Manufacturer": "Intel Corporation",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Intel(R) HD Graphics 520",
+      "DeviceID": "PCI\\VEN_8086&DEV_1916&SUBSYS_380817AA&REV_07\\3&11583659&0&10",
+      "DriverVersion": "20.19.15.4474",
+      "DriverDate": "/Date(1465776000000)/",
+      "Manufacturer": "Intel Corporation",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "PCI standard host CPU bridge",
+      "DeviceID": "PCI\\VEN_8086&DEV_1904&SUBSYS_380817AA&REV_08\\3&11583659&0&00",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "PCI Express Root Complex",
+      "DeviceID": "ACPI\\PNP0A08\\0",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft ACPI-Compliant System",
+      "DeviceID": "ACPI_HAL\\PNP0C08\\0",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Charge Arbitration Driver",
+      "DeviceID": "ROOT\\CAD\\0000",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard system devices)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "UMBus Root Bus Enumerator",
+      "DeviceID": "ROOT\\UMBUS\\0000",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Kernel Debug Network Adapter",
+      "DeviceID": "ROOT\\KDNIC\\0000",
+      "DriverVersion": "10.0.26100.8521",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Virtual Drive Enumerator",
+      "DeviceID": "ROOT\\VDRVROOT\\0000",
+      "DriverVersion": "10.0.26100.1591",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Composite Bus Enumerator",
+      "DeviceID": "ROOT\\COMPOSITEBUS\\0000",
+      "DriverVersion": "10.0.26100.1150",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Hyper-V Virtualization Infrastructure Driver",
+      "DeviceID": "ROOT\\VID\\0000",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Hypervisor Service",
+      "DeviceID": "ROOT\\HVSERVICE\\0000",
+      "DriverVersion": "10.0.26100.8972",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Basic Display Driver",
+      "DeviceID": "ROOT\\BASICDISPLAY\\0000",
+      "DriverVersion": "10.0.26100.8521",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "(Standard display types)",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Microsoft Hyper-V Virtual Machine Bus Provider",
+      "DeviceID": "ROOT\\VMBUS\\0000",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    },
+    {
+      "DeviceName": "Volume Manager",
+      "DeviceID": "ROOT\\VOLMGR\\0000",
+      "DriverVersion": "10.0.26100.9278",
+      "DriverDate": "/Date(1150848000000)/",
+      "Manufacturer": "Microsoft",
+      "IsSigned": true
+    }
+  ]
+}

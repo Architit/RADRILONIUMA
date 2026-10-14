@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "timestamp_utc": "2026-10-14T02:08:24.998467+00:00",
+  "swarm_status": "RESONANCE_ESTABLISHED",
+  "nodes": {
+    "node_alpha": {
+      "id": "SWARM-ALPHA-COORDINATOR",
+      "role": "Master Orchestrator / Federation Core",
+      "substrate": "WSL2 Ubuntu 22.04 LTS (Kernel 5.15.167.4-microsoft-standard-WSL2)",
+      "gateway_port": 3000,
+      "status": "ONLINE",
+      "active_daemons": [
+        "core-gateway",
+        "bot-service",
+        "c-monitor-daemon",
+        "trianiuma-mcp-core"
+      ]
+    },
+    "node_beta": {
+      "id": "SWARM-BETA-HOST-SENTINEL",
+      "role": "Host Supervisor & Hardware Bus Agent",
+      "substrate": "Microsoft Windows 11 Home 24H2 (Build 26100, Lenovo 80Q7)",
+      "cpu": "Intel Core i5-6200U @ 2.30GHz",
+      "status": "ONLINE"
+    },
+    "node_gamma": {
+      "id": "SWARM-GAMMA-DATA-VAULT",
+      "role": "Persistent Storage & Knowledge Matrix",
+      "hardware": "Samsung PSSD T7 (1000 GB, Serial: K383408X0SNLM7S)",
+      "partitions": {
+        "D:": {
+          "mount": "/mnt/d",
+          "fs": "NTFS",
+          "role": "Final Archives & Ubuntu Images"
+        },
+        "E:": {
+          "mount": "/mnt/e",
+          "label": "DATA_BASE",
+          "fs": "NTFS",
+          "role": "RADRILONIUMA_OS & Memory Core"
+        }
+      },
+      "status": "PAIRED_ACTIVE"
+    },
+    "node_delta": {
+      "id": "SWARM-DELTA-EDGE-DROID",
+      "role": "Mobile Edge Worker & Sensor Fabric",
+      "hardware": "Samsung Galaxy Droid (Atesirt, Serial: RZCY80G86FP)",
+      "bus": "USB Composite (VID: 04E8, PID: 6860)",
+      "dataset": "/mnt/d/ATESIRT/ATESIRT_FULL_DATASET.tar",
+      "status": "CONNECTED_STANDBY"
+    },
+    "node_epsilon": {
+      "id": "SWARM-EPSILON-GENESIS-SEED",
+      "role": "Cold Boot Recovery & Deployment Seed",
+      "hardware": "VendorCo ProductCode (250 GB Removable USB, Serial: 5981171117099154059)",
+      "volume_f": {
+        "mount": "/mnt/f",
+        "fs": "FAT32",
+        "os": "Ubuntu 26.04 Resolute Raccoon Live",
+        "seed": "Edge_Node_Core_Export.tar.gz"
+      },
+      "status": "PAIRED_MOUNTED"
+    }
+  }
+}

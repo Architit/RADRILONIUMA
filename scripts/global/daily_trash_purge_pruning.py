@@ -22,11 +22,14 @@ class DailyTrashPurgeEngine:
         purged_dirs = []
         bytes_freed = 0
         
-        for path in self.root_dir.rglob("__pycache__"):
-            if path.is_dir():
-                bytes_freed += sum(f.stat().st_size for f in path.rglob("*") if f.is_file())
-                shutil.rmtree(path, ignore_errors=True)
-                purged_dirs.append(str(path))
+        for root, dirs, files in os.walk(self.root_dir):
+            dirs[:] = [d for d in dirs if not d.startswith("venv") and d not in (".git", "node_modules", "archive")]
+            if "__pycache__" in dirs:
+                path = Path(root) / "__pycache__"
+                if path.is_dir():
+                    bytes_freed += sum(f.stat().st_size for f in path.rglob("*") if f.is_file())
+                    shutil.rmtree(path, ignore_errors=True)
+                    purged_dirs.append(str(path))
                 
         pytest_cache = self.root_dir / ".pytest_cache"
         if pytest_cache.exists():
@@ -62,7 +65,7 @@ class DailyTrashPurgeEngine:
         }
 
 if __name__ == "__main__":
-    root = os.getenv("ROOT_DIR", os.getcwd())
+    root = os.getenv("ROOT_DIR", "/root/RADRILONIUMA")
     engine = DailyTrashPurgeEngine(root)
     c_res = engine.purge_temporary_caches()
     l_res = engine.prune_expired_logs()

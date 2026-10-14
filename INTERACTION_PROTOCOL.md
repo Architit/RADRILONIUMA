@@ -1167,3 +1167,33 @@ This supplement adds the user's operating preferences to the RADRILONIUMA work p
 - Check the newest user-provided or locally available Wireless Debugging screenshot for the device IP, pairing endpoint, and connect endpoint.
 - Use pairing codes only for the immediate pairing attempt. Do not include them in logs, progress tables, uploads, or responses.
 - After pairing, connect to the separate ADB endpoint and verify the serial/package inventory. If both endpoints refuse or time out, record the network finding and request a fresh screen or an authorized USB/ADB transport; do not keep retrying stale ports.
+
+---
+
+## M49 — Cluster Mesh Session Lifecycle Mandate: Initiator Cascade Order (SSN RBT / SSN STRT)
+
+Added 2026-10-14 at 09:38 UTC / 11:38 Europe/Amsterdam, at the Sovereign User's direct mandate.
+
+### 1. Fundamental Cascade Axiom (INITIATOR_REBOOTS_LAST)
+Узел кластера (DEV_01 Bushmaster Win11, DEV_02 Atesirt Redmi, DEV_03 WSL2 Core, DEV_04 Storage Vault, DEV_05 LAO Swarm Matrix), инициирующий протоколы сессионного перезапуска (\ssn rbt\) или сессионного запуска (\ssn strt\), **ОБЯЗАН** выполнить протоколы на всех остальных узлах сети кластера и только после успешного завершения и подтверждения (ACK) перезагружать свой собственный узел.
+
+### 2. Запрет на преждевременный локальный перезапуск (ERR_INITIATOR_EARLY_REBOOT_ORPHAN)
+Строго запрещается инициирующему узлу перезапускать свои локальные сервисы, терминалы или ядро до того, как все подчиненные и смежные узлы сети подтвердили исполнение протокола.
+*Обоснование:* Ранний перезапуск узла-инициатора разрушает координационную шину, обрывает сетевые соединения (Wi-Fi Hotspot, ADB, SSE, mTLS) и оставляет удаленные устройства в рассинхронизированном и зависшем состоянии («перезагрузился только ноут, а рабочий стол и телефон зависли»).
+
+### 3. Каноничный 4-фазный порядок исполнения (Canonical 4-Phase Execution Sequence)
+1. **Фаза 1: Определение инициатора и рассылка предвестника (\PREFLIGHT_BROADCAST\):**
+   - Узел-инициатор регистрирует себя в журнале и генерирует \eboot_token\.
+   - На все подключенные сетевые узлы передается предварительный квант-сигнал готовности к перезагрузке сессии (SSE \/api/stream\, TCP/Socket, ADB).
+2. **Фаза 2: Каскадное исполнение на удаленных узлах (\REMOTE_NODES_EXECUTION\):**
+   - **DEV_02 (Atesirt Redmi Note 15):** Перезапуск клиентского портала, обновление видеотрансляции рабочего стола, воспроизведение гармонического тона 528 Гц, сброс кэшей сессии.
+   - **DEV_04 (Samsung T7 Vault / Genesis Seed):** Синхронизация дисковых буферов, аудит файловых систем NTFS/FAT32, обновление журнала хроники накопителей (\STORAGE_CHRONICLE.md\).
+   - **DEV_05 (LAO Swarm Matrix / 528-Slot Chamber):** Верификация 528 слотов духов роя, проверка 68 органов \mc_graph.json\, импульс нейроконвейера (\cluster_orchestrator.py\).
+3. **Фаза 3: Сбор квитанций готовности (\COLLECT_REMOTE_ACKS\):**
+   - Узел-инициатор ожидает положительный статус \ACK_READY\ от 100% активных узлов кластера.
+   - Фиксация статуса в \.gateway/amc_graph.json\ и \last_ssn_reboot.txt\.
+4. **Фаза 4: Перезапуск узла-инициатора в последнюю очередь (\INITIATOR_FINAL_REBOOT\):**
+   - **Только после получения подтверждений от всех узлов** инициатор выполняет перезапуск своих локальных компонентов:
+     * Если инициатор DEV_03 (WSL2): перезапуск демонов PM2 (\core-gateway\, \utopilot-core\, \ot-service\, \c-monitor-daemon\), установка сигнала \.gateway/ssn_restart.signal\.
+     * Если инициатор DEV_01 (Win11): выравнивание мульти-оконного окружения на рабочем столе (\C:\setup\launch_desktop_windows.ps1\), воспроизведение победного аккорда Сольфеджио (otification_success.wav\).
+

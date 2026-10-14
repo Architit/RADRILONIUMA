@@ -81,3 +81,8 @@ Provide deterministic realtime workflow strategy with:
 
 ## Compatibility
 Policy-only. No runtime logic. No execution-path impact.
+
+## Initiator Node Cascade Obligation (Order: Remote Nodes First -> Initiator Last)
+- **Mandate:** An initiating node executing \ssn rbt\ (Session Reboot) or \ssn strt\ (Session Start) MUST execute and confirm the reboot protocol across all other mesh cluster nodes first.
+- **Sequence:** \initiator_preflight -> remote_nodes_sync_reboot -> verify_all_peer_acks -> initiator_self_reboot\.
+- **Constraint:** Initiator local restart is strictly deferred until 100% of peer nodes (DEV_01, DEV_02, DEV_03, DEV_04, DEV_05) report \ACK_READY\. Early initiator shutdown/reboot is prohibited (\ERR_INITIATOR_EARLY_REBOOT_ORPHAN\).

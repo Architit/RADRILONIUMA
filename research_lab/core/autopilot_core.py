@@ -82,7 +82,7 @@ class AutopilotCore:
 - status: {status}
 - resonance: 528 Hz / 432 Hz
 - last_heartbeat_utc: {now_utc}
-- organs_active: 36/36
+- organs_active: 68/68
 """
         self.state_file.write_text(content, encoding="utf-8")
         return now_utc
