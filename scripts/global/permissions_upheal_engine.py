@@ -15,15 +15,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger("PermissionsUphealEngine")
 
 RADRILONIUMA_ROOT = "/root/RADRILONIUMA"
+# Unified Single Sovereign Package (all 8 fragmented legacy packages purged & archived)
 TARGET_PACKAGES = [
-    "com.radriloniuma",
-    "com.architit.radriloniuma",
-    "com.radriloniuma.debug",
-    "com.radriloniuma.os.debug",
-    "com.radriloniuma.auth",
-    "com.architit.radriloniuma.auth",
-    "com.radriloniuma.studio",
-    "com.radriloniuma.studio.v2"
+    "com.architit.radriloniuma"
 ]
 
 def run_cmd(cmd: List[str], env=None) -> tuple[int, str]:
