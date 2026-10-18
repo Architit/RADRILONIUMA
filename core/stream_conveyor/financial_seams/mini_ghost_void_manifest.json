@@ -1,0 +1,102 @@
+{
+  "operator_id": "OP_02_MINI_GHOST_VOID",
+  "call_sign": "Mini Ghost // Void",
+  "telegram_handle": "@Karl_Galageer",
+  "telegram_id": "6365581133",
+  "birthday": "19 October",
+  "profile_badges": ["🦣", "🤺", "🎒 #156,055"],
+  "assigned_role": "Headquarters Operator / Supreme Financial Seams Warden",
+  "clearance_level": "LEVEL_0_SOVEREIGN_ACCESS",
+  "carrier_resonance": "528 Hz / 432 Hz",
+  "activation_date_utc": "2026-10-18T07:00:00Z",
+  "shift_assignment": {
+    "shift_name": "Shift 3 / Sovereign Liquidity Guard",
+    "duration_hours": "5-8 hours (Flexible Circadian)",
+    "predecessor": "Operator Ken (Shift 1 & 2)",
+    "handover_status": "COMPLETED_HANDOVER"
+  },
+  "financial_seams_matrix": {
+    "european_fiat_corridor": {
+      "n26": {
+        "institution": "N26 Bank AG",
+        "region": "European Union (Germany)",
+        "currency": "EUR",
+        "role": "Fast Operational SEPA Buffer & Card Rails",
+        "liquidity_allocation_pct": 15,
+        "max_daily_limit_eur": 5000,
+        "aml_protocol": "Strict Same-Name Transfers (N26 <-> Kraken / N26 <-> Wise). No Direct P2P with Strangers."
+      },
+      "ing": {
+        "institution": "ING DiBa / ING Groep NV",
+        "region": "European Union (Netherlands / Germany)",
+        "currency": "EUR",
+        "role": "Anchor Institutional Savings & Proof-of-Funds Vault",
+        "liquidity_allocation_pct": 30,
+        "max_daily_limit_eur": 25000,
+        "aml_protocol": "Primary Corporate/Personal Capital Store. SEPA/SWIFT with Tier-1 Regulated Institutions Only (Kraken)."
+      }
+    },
+    "global_clearing_corridor": {
+      "wise": {
+        "institution": "Wise Payments Ltd",
+        "region": "Global (UK / EU / US)",
+        "currencies": ["EUR", "USD", "GBP", "PLN", "CHF"],
+        "role": "Multi-Currency Cross-Border Converter & Virtual Debit Rails",
+        "liquidity_allocation_pct": 10,
+        "max_daily_limit_eur": 10000,
+        "aml_protocol": "Zero Direct Crypto Mentions. Bridge Only via ING/N26 Personal IBANs."
+      }
+    },
+    "ukrainian_fiat_corridor": {
+      "monobank": {
+        "institution": "Monobank (Universal Bank)",
+        "region": "Ukraine",
+        "currency": "UAH",
+        "role": "Primary Ukrainian Retail & FOP Settlement Gateway",
+        "liquidity_allocation_pct": 10,
+        "max_monthly_limit_uah": 350000,
+        "aml_protocol": "Card P2P within NBU limits (150k UAH/mo) or FOP 3rd group invoices with foreign contracts."
+      },
+      "privatbank": {
+        "institution": "PrivatBank (State Owned)",
+        "region": "Ukraine",
+        "currency": "UAH",
+        "role": "State Backstop & Backup UAH Settlement Rails",
+        "liquidity_allocation_pct": 5,
+        "max_monthly_limit_uah": 200000,
+        "aml_protocol": "Backup card and SWIFT recipient. Strictly verified merchant P2P only."
+      }
+    },
+    "crypto_exchange_corridor": {
+      "kraken": {
+        "institution": "Kraken (Payward Inc)",
+        "role": "Primary Tier-1 Fiat-Crypto Gateway (EUR <-> Crypto)",
+        "deposit_rails": ["SEPA Instant (Bank Frick / ClearJunction)", "SWIFT"],
+        "assets_traded": ["BTC", "ETH", "USDT", "USDC", "SOL"],
+        "security_rating": "AAA (100% Proof of Reserves, Hardware 2FA)",
+        "policy": "Spot Purchases -> Immediate Auto-Withdrawal to Trust Wallet"
+      },
+      "bybit": {
+        "institution": "Bybit Fintech Ltd",
+        "role": "High-Volume P2P Liquidity, Derivatives Hedging & Stablecoin Yield",
+        "deposit_rails": ["Bybit P2P (UAH/EUR Verified Merchants)", "Crypto On-Chain"],
+        "assets_traded": ["USDT", "BTC", "ETH", "SOL", "MNT"],
+        "p2p_safety_rules": "Trade only with PRO merchants, >= 99% completion rate, >= 500 completed orders, strict matching cardholder names."
+      }
+    },
+    "sovereign_cold_storage_corridor": {
+      "trustwallet": {
+        "platform": "Trust Wallet Core (Non-Custodial Multi-Chain)",
+        "role": "Apex Capital Preservation & Cold Liquidity Anchor",
+        "supported_chains": ["EVM (Arbitrum, Ethereum, Polygon, BSC)", "Solana", "TRC-20", "Bitcoin"],
+        "liquidity_allocation_pct": 70,
+        "security_policy": "Zero Cloud Backup. Mnemonic stored strictly offline on PSSD T7 Vault. Inviolable self-custody."
+      }
+    }
+  },
+  "emergency_kill_switch_protocol": {
+    "action": "Immediate freeze of API keys and withdrawal to Trust Wallet / ING cold buffer",
+    "triggers": ["Suspicious login IP", "Bank compliance audit notice", "P2P dispute", "CEX withdrawal halt rumor"],
+    "channel_escalation": "Telegram Bot Broadcast -> Windows Toast -> Android Notification"
+  }
+}

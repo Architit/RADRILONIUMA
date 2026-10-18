@@ -74,9 +74,11 @@ CHANNEL_DEFINITIONS = [
     {"id": "kvk", "name": "KvK (Kamer van Koophandel) Dutch Registry", "category": "FINTECH_BANKING", "protocol": "KvK Handelsregister API"},
     {"id": "wise", "name": "Wise (TransferWise) Multi-Currency Rail", "category": "FINTECH_BANKING", "protocol": "Wise REST API"},
     {"id": "n26", "name": "N26 Open Banking PSD2 Connector", "category": "FINTECH_BANKING", "protocol": "Open Banking / OAuth2"},
+    {"id": "ing", "name": "ING Bank DiBa & Wholesale Open Banking PSD2", "category": "FINTECH_BANKING", "protocol": "ING PSD2 REST API"},
     {"id": "monobank", "name": "Monobank Personal & Corporate API", "category": "FINTECH_BANKING", "protocol": "Monobank Webhooks / REST"},
     {"id": "privatbank", "name": "PrivatBank Privat24 Business Gateway", "category": "FINTECH_BANKING", "protocol": "Privat24 Merchant API"},
     {"id": "bybit", "name": "Bybit v5 Market Data & Trade WebSocket", "category": "FINTECH_CRYPTO", "protocol": "Bybit v5 WS / REST"},
+    {"id": "kraken", "name": "Kraken Pro Financial Rail & Crypto Exchange Gateway", "category": "FINTECH_CRYPTO", "protocol": "Kraken WebSockets / REST API"},
     {"id": "trustwallet", "name": "Trust Wallet Core Multi-Asset Bridge", "category": "FINTECH_CRYPTO", "protocol": "WalletCore / JSON-RPC"},
     {"id": "wallet_web3", "name": "TON Connect & EVM Web3 Wallet Hub", "category": "FINTECH_CRYPTO", "protocol": "TON Connect / EIP-1193"}
 ]
