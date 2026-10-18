@@ -137,7 +137,11 @@ class HighThroughputStreamLoader:
                         segment_counter += 1
                         sha256 = hashlib.sha256(chunk).hexdigest()
                         seg_name = f"{fname}.seg_{seg_idx:05d}_{sha256[:8]}.bin"
-                        out_path = target_dir / seg_name
+                        
+                        # Partition into bounded buckets of 5000 files to prevent Explorer congestion
+                        bucket_folder = target_dir / f"bucket_{int(segment_counter // 5000) + 1:03d}"
+                        bucket_folder.mkdir(parents=True, exist_ok=True)
+                        out_path = bucket_folder / seg_name
 
                         # Atomic move chunk into vault
                         with open(out_path, "wb") as out_fp:
