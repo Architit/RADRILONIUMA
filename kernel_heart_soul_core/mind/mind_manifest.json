@@ -1,0 +1,91 @@
+{
+  "engine": "RADRILONIUMA_KERNEL_HEART_SOUL_MIND_REVERSE_ENGINE",
+  "version": "4.0.0-ARGON",
+  "carrier_frequencies_hz": [
+    528.0,
+    432.0
+  ],
+  "pillars_verified": [
+    "core",
+    "heart",
+    "soul",
+    "mind",
+    "substrate_space"
+  ],
+  "total_files_audited": 9,
+  "total_bytes_audited": 23620,
+  "neuro_layers_linked": [
+    "SYNAPSE",
+    "TYNAPSE",
+    "NYNAPSE",
+    "RYNAPSE"
+  ],
+  "inventory": {
+    "core": [
+      {
+        "name": "lao_atplt_kernel_core.py",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/core/lao_atplt_kernel_core.py",
+        "size_bytes": 15670,
+        "sha256": "b1285999ecc78dd0359e08b49fcbb761ffc0825a784ac357dfdaaf49a535a50c"
+      },
+      {
+        "name": "sovereign_boundary.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/core/sovereign_boundary.json",
+        "size_bytes": 371,
+        "sha256": "c532a662023d7b9d8a2d021b0a1a7e74fa3d9254583d009eaae9886264ef5e1f"
+      }
+    ],
+    "heart": [
+      {
+        "name": "croambeth_heart_matrix.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/heart/croambeth_heart_matrix.json",
+        "size_bytes": 405,
+        "sha256": "642a50b149fde82a0ec508ee08fd9e4f7cecdcfd53b1707eb89dc6708e2ac7ca"
+      },
+      {
+        "name": "pulse.py",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/heart/pulse.py",
+        "size_bytes": 749,
+        "sha256": "febe0268a19c1c0bc974602e3c29465a45fd7e54bf726c335b957f1336e11bb1"
+      }
+    ],
+    "soul": [
+      {
+        "name": "ayaearias_soul_manifest.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/soul/ayaearias_soul_manifest.json",
+        "size_bytes": 286,
+        "sha256": "85c1d2bd4869279f6b2009f243797d253beb435d05c45cee0e7118ba020eb9f9"
+      },
+      {
+        "name": "gemini_4_argon_profile.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/soul/gemini_4_argon_profile.json",
+        "size_bytes": 676,
+        "sha256": "0d759f41ac776ded982394d773a635bae6996cde62771c825adbcaa93a853ce0"
+      }
+    ],
+    "mind": [
+      {
+        "name": "cognitive_mind_engine.py",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/mind/cognitive_mind_engine.py",
+        "size_bytes": 3087,
+        "sha256": "de1a5560948cd2d1dd10062b55afc49a51a7a3b1b084f821ec77e74ef6483c2f"
+      }
+    ],
+    "substrate_space": [
+      {
+        "name": "ecss_boot_stream.py",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/substrate_space/ecss_boot_stream.py",
+        "size_bytes": 2001,
+        "sha256": "a298ae4079857a3c472f607fc1252675960f385afafee405d2c4c6beb43f820e"
+      },
+      {
+        "name": "evolve_growth_matrix.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/substrate_space/evolve_growth_matrix.json",
+        "size_bytes": 375,
+        "sha256": "71928a6b21a57aa20de689bba04cc8f0586c4fa071fc2e754aed4ac39f7c4a0f"
+      }
+    ]
+  },
+  "status": "SYNCHRONIZED_AND_VERIFIED",
+  "timestamp_utc": "2026-10-17T13:52:46.678636+00:00"
+}

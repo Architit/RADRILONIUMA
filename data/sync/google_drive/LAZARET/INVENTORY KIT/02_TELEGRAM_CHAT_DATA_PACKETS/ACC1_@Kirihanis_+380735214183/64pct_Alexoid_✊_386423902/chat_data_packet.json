@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.650415+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 386423902,
+    "title": "Alexoid ✊",
+    "username": "@TheSashaMiami",
+    "phone": "+380931225090",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 64,
+    "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+    "rationale": "Отправлено приглашение в проект (13.10.2026), собеседник еще не ответил",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-13 21:51",
+      "direction": "OUT (Вы)",
+      "text": "Я сейчас запускаю здесь, в Алмере, большой проект — мы создаём круглосуточный координационный штаб и регистрир"
+    }
+  ]
+}

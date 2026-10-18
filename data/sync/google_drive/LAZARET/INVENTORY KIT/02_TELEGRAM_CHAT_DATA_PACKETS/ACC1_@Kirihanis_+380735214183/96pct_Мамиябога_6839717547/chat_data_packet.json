@@ -1,0 +1,50 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.300341+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 6839717547,
+    "title": "Мамиябога",
+    "username": "",
+    "phone": "+31614685166",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 96,
+    "priority_tier": "P0_CRITICAL (ЖДЕТ ВАШЕГО ОТВЕТА)",
+    "rationale": "Входящее личное сообщение за октябрь — собеседник ждет ответа",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 16161,
+      "date_utc": "2026-01-05 14:06",
+      "direction": "OUT (Вы)",
+      "text": ""
+    },
+    {
+      "id": 16331,
+      "date_utc": "2026-06-25 07:37",
+      "direction": "OUT (Вы)",
+      "text": "https://t.me/+jyjKbHSh0bs5MTY0"
+    },
+    {
+      "id": 16364,
+      "date_utc": "2026-06-25 07:49",
+      "direction": "OUT (Вы)",
+      "text": "https://t.me/c/3021887925/34"
+    },
+    {
+      "id": 16376,
+      "date_utc": "2026-06-25 07:51",
+      "direction": "OUT (Вы)",
+      "text": "https://t.me/+jyjKbHSh0bs5MTY0"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.941037+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": -1001638681318,
+    "title": "Украинцы в Нидерландах",
+    "username": "@UkrainiansintheNetherlands2",
+    "phone": "",
+    "chat_type": "GROUP_CHAT",
+    "unread_count": 56,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 18,
+    "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+    "rationale": "Публичная группа без личного @упоминания (непрочитанных: 56)",
+    "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-15 17:54",
+      "direction": "IN (Собеседник)",
+      "text": "Ищу перевозчика Варшава🇵🇱 - НИДЕРЛАНДЫ 🇳🇱 ‼️ 1 взрослый  2 детей  собака  Несколько чемоданов"
+    }
+  ]
+}

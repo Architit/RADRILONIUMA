@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.018541+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 7228221584,
+    "title": "ArsenBaza",
+    "username": "@BazaArsenMark_bot",
+    "phone": "",
+    "chat_type": "BOT",
+    "unread_count": 1,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 8,
+    "priority_tier": "P4_BOT (Авто-бот)",
+    "rationale": "Сервисный бот — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-15 12:09",
+      "direction": "IN (Собеседник)",
+      "text": "Как выглядит тюремный биохакинг и биомеханика.  #ИзПисемАрсенаБлизким 05.10   Болдинская осень у меня какая-то"
+    }
+  ]
+}

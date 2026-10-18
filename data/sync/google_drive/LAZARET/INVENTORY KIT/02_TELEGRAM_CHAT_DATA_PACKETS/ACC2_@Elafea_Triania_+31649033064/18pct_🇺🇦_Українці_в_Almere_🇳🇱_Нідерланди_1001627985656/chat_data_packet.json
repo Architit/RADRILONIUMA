@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.856026+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": -1001627985656,
+    "title": "🇺🇦 Українці в Almere 🇳🇱 Нідерланди",
+    "username": "",
+    "phone": "",
+    "chat_type": "GROUP_CHAT",
+    "unread_count": 2117,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 18,
+    "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+    "rationale": "Публичная группа без личного @упоминания (непрочитанных: 2117)",
+    "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-17 16:52",
+      "direction": "IN (Собеседник)",
+      "text": "С 5 стирки в8 сушке"
+    }
+  ]
+}

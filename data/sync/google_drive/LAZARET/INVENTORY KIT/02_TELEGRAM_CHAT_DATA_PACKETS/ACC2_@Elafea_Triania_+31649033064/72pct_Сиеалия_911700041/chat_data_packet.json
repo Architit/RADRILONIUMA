@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.559201+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": 911700041,
+    "title": "Сиеалия",
+    "username": "@alenwtf",
+    "phone": "+79954928880",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 72,
+    "priority_tier": "P1_HIGH (Входящее без ответа)",
+    "rationale": "Последнее сообщение за собеседником (входящее)",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-06-25 07:51",
+      "direction": "IN (Собеседник)",
+      "text": "Это пишет мой бот. Если я не отвечаю, значит я занята или сплю..) Пиши, я отвечу чуть позже 🤩"
+    }
+  ]
+}

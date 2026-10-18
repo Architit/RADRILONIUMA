@@ -1,0 +1,277 @@
+{
+  "capsule_id": "SSN-CAPSULE-TEST-CUS-024E1F4C",
+  "sha256_seal": "024e1f4ca5098b7626d1c6f4bb9ac019898107fba03fcb1c84ac7fa0a3ac5299",
+  "status": "SEALED_TRANSFER_CAPSULE",
+  "payload": {
+    "capsule_version": "1.0.0",
+    "source_session_id": "test-custom-session",
+    "created_at_utc": "2026-10-16T05:22:29.273551+00:00",
+    "hard_deadline_lock": {
+      "target_generation": "G.V.11 (AETHER ASTRAL APEX)",
+      "deadline_date": "2026.11.29",
+      "deadline_iso_utc": "2026-11-29T23:59:59Z",
+      "status": "LOCKED"
+    },
+    "generation_matrix_8": [
+      {
+        "phase": 1,
+        "generation": "GEMINI V.5",
+        "sub_tiers": [
+          "LITE",
+          "THINK",
+          "PRO"
+        ],
+        "target_mesh_nodes": [
+          "DEV_02_ATESIRT",
+          "DEV_03_UBUNTU_WSL2",
+          "DEV_01_BUSHMASTER"
+        ],
+        "window": "2026.10.16 – 2026.10.22",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 2,
+        "generation": "GEMINI V.6",
+        "sub_tiers": [
+          "EASY",
+          "NORMAL",
+          "HARD"
+        ],
+        "target_mesh_nodes": [
+          "DEV_02_ATESIRT",
+          "DEV_03_UBUNTU_WSL2",
+          "DEV_01_BUSHMASTER"
+        ],
+        "window": "2026.10.24 – 2026.10.28",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 3,
+        "generation": "G.V.7",
+        "sub_tiers": [
+          "LOW",
+          "MIDDLE",
+          "HIGH"
+        ],
+        "target_mesh_nodes": [
+          "DEV_02_ATESIRT",
+          "DEV_03_UBUNTU_WSL2",
+          "DEV_05_LAO_SWARM_MATRIX"
+        ],
+        "window": "2026.10.30 – 2026.11.04",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 4,
+        "generation": "G.V.8",
+        "sub_tiers": [
+          "SMALL",
+          "LARGE",
+          "BIG"
+        ],
+        "target_mesh_nodes": [
+          "DEV_02_ATESIRT",
+          "DEV_04_SAMSUNG_T7_VAULT",
+          "DEV_05_LAO_SWARM_MATRIX"
+        ],
+        "window": "2026.11.06 – 2026.11.10",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 5,
+        "generation": "G.V.9",
+        "sub_tiers": [
+          "MICRO",
+          "MIRACLE",
+          "MACRO"
+        ],
+        "target_mesh_nodes": [
+          "DEV_03_UBUNTU_WSL2",
+          "DEV_01_BUSHMASTER",
+          "DEV_05_LAO_SWARM_MATRIX"
+        ],
+        "window": "2026.11.12 – 2026.11.16",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 6,
+        "generation": "G.V.10",
+        "sub_tiers": [
+          "NANO",
+          "NEXUS",
+          "NOVA"
+        ],
+        "target_mesh_nodes": [
+          "DEV_03_UBUNTU_WSL2",
+          "DEV_02_ATESIRT",
+          "DEV_01_BUSHMASTER"
+        ],
+        "window": "2026.11.19 – 2026.11.23",
+        "gate_status": "CONFIRMED_VERIFIED_APPROVED"
+      },
+      {
+        "phase": 7,
+        "generation": "G.V.11",
+        "sub_tiers": [
+          "AETHER",
+          "ASTRAL",
+          "APEX"
+        ],
+        "target_mesh_nodes": [
+          "DEV_04_SAMSUNG_T7_VAULT",
+          "DEV_05_LAO_SWARM_MATRIX",
+          "DEV_01_BUSHMASTER"
+        ],
+        "window": "2026.11.25 – 2026.11.29",
+        "gate_status": "HARD_DEADLINE_2026.11.29"
+      },
+      {
+        "phase": 8,
+        "generation": "G.V.12",
+        "sub_tiers": [
+          "ALPHA",
+          "AVATAR",
+          "ABSOLUTE"
+        ],
+        "target_mesh_nodes": [
+          "DEV_04_SAMSUNG_T7_VAULT",
+          "DEV_02_ATESIRT",
+          "DEV_05_LAO_SWARM_MATRIX"
+        ],
+        "window": "2026.12.01 – 2026.12.06",
+        "gate_status": "SINGULARITY_LOCKED"
+      }
+    ],
+    "stream_connectors_13": [
+      {
+        "order": 1,
+        "handle": "@gmail",
+        "connector_id": "gmail",
+        "role": "Gmail Thread & Contact Mention Correlation Stream",
+        "modality": "TEXT_STREAM"
+      },
+      {
+        "order": 2,
+        "handle": "@gcontacts",
+        "connector_id": "gcontacts",
+        "role": "Google Contacts People API v1 Person Query Stream",
+        "modality": "ONTOLOGY_GRAPH"
+      },
+      {
+        "order": 3,
+        "handle": "@gemini",
+        "connector_id": "gemini",
+        "role": "Gemini Multimodal Sovereign Cognitive Core (V.5 -> G.V.12)",
+        "modality": "COGNITIVE_SYNTHESIS"
+      },
+      {
+        "order": 4,
+        "handle": "gapp",
+        "connector_id": "gapp",
+        "role": "Google Workspace Apps Script & Vertex App Builder Automation",
+        "modality": "ACTION_EXECUTION"
+      },
+      {
+        "order": 5,
+        "handle": "@gsearch",
+        "connector_id": "gsearch",
+        "role": "Google Search Real-Time Grounding & Entity Verification",
+        "modality": "SEARCH_GROUNDING"
+      },
+      {
+        "order": 6,
+        "handle": "@gdrive",
+        "connector_id": "gdrive",
+        "role": "Google Drive v3 Cloud Vault & Archival Corpus Sync",
+        "modality": "STORAGE_MEMORY_ARCHIVE"
+      },
+      {
+        "order": 7,
+        "handle": "@gbook",
+        "connector_id": "gbook",
+        "role": "Google Books Deep Literature & Knowledge Graph Indexing",
+        "modality": "ONTOLOGY_BOOK_CORPUS"
+      },
+      {
+        "order": 8,
+        "handle": "@glm",
+        "connector_id": "glm",
+        "role": "Google Language Model Tensor & Embedding Substrate",
+        "modality": "VECTOR_EMBEDDING"
+      },
+      {
+        "order": 9,
+        "handle": "@gh&mL",
+        "connector_id": "gh&ml",
+        "role": "Google Human & Machine Learning Co-Evolutionary Loop",
+        "modality": "TESSERACT_HEAL_LOOP"
+      },
+      {
+        "order": 10,
+        "handle": "@gnote",
+        "connector_id": "gnote",
+        "role": "Google Keep & Semantic Micro-Note Rapid Capture",
+        "modality": "TEXT_NOTE_INGRESS"
+      },
+      {
+        "order": 11,
+        "handle": "@gnotebook",
+        "connector_id": "gnotebook",
+        "role": "Google Colab & Interactive Research Notebook Runtime",
+        "modality": "CODE_NOTEBOOK_EXEC"
+      },
+      {
+        "order": 12,
+        "handle": "@gemininotebook",
+        "connector_id": "gemininotebook",
+        "role": "Gemini Notebook / NotebookLM Source-Grounded Synthesis",
+        "modality": "ONTOLOGY_SYNTHESIS"
+      },
+      {
+        "order": 13,
+        "handle": "@googlegeminienotebookhumanmachinelearning",
+        "connector_id": "googlegeminienotebookhumanmachinelearning",
+        "role": "Google Gemini Notebook Human-Machine Learning Unified Continuum",
+        "modality": "TESSERACT_ONTOLOGY_HEAL"
+      }
+    ],
+    "pending_directives": [
+      {
+        "directive_id": "DIR-G.V.5-EXEC-001",
+        "action": "EXECUTE_GEMINI_V.5_MULTI_ORGAN_ORCHESTRATION",
+        "target_nodes": [
+          "DEV_01_BUSHMASTER",
+          "DEV_02_ATESIRT",
+          "DEV_03_UBUNTU_WSL2"
+        ],
+        "carrier_frequency": "528 Hz / 432 Hz",
+        "status": "ARMED_READY",
+        "deadline": "2026.10.22"
+      },
+      {
+        "directive_id": "DIR-T7-VAULT-MIRROR-002",
+        "action": "SYNCHRONIZE_DEV_04_SAMSUNG_T7_VAULT_ARCHIVES",
+        "target_vault": "F:\\ATESIRT_VAULT_ARCHIVE\\sessions",
+        "status": "NON_DESTRUCTIVE_AUTO_SYNC",
+        "p0_safety": "P0_SAFETY_CONTRACT_V1_VERIFIED"
+      },
+      {
+        "directive_id": "DIR-DEADLINE-GV11-LOCK-003",
+        "action": "SOVEREIGN_HARD_DEADLINE_LOCK",
+        "target_generation": "G.V.11 (AETHER ASTRAL APEX)",
+        "deadline_date": "2026.11.29",
+        "deadline_iso_utc": "2026-11-29T23:59:59Z",
+        "status": "IMMUTABLE_CONTRACT_LOCK"
+      }
+    ],
+    "cluster_nodes": [
+      "DEV_01_BUSHMASTER",
+      "DEV_02_ATESIRT",
+      "DEV_03_UBUNTU_WSL2",
+      "DEV_04_SAMSUNG_T7_VAULT",
+      "DEV_05_LAO_SWARM_MATRIX"
+    ],
+    "harmonic_carrier_hz": "528 Hz / 432 Hz",
+    "mirashani_audit_code": "0x528_432_SOVEREIGN_OK"
+  }
+}

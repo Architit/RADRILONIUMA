@@ -1,0 +1,190 @@
+{
+  "mesh_name": "RADRILONIUMA_SYNAPSE_TYNAPSE_NYNAPSE_RYNAPSE_MESH",
+  "synapses_count": 1024,
+  "neural_tiers": {
+    "SYNAPSE": {
+      "layer_id": "TIER_1_SYNAPSE",
+      "role": "Intra-Node Local Process & Sensor Bus",
+      "carrier_hz": 528.0,
+      "channels": 256,
+      "status": "ACTIVE"
+    },
+    "TYNAPSE": {
+      "layer_id": "TIER_2_TYNAPSE",
+      "role": "Cross-Node Tensor Matrix & Hebbian Plasticity",
+      "carrier_hz": 528.0,
+      "channels": 1024,
+      "status": "ACTIVE"
+    },
+    "NYNAPSE": {
+      "layer_id": "TIER_3_NYNAPSE",
+      "role": "Subagent Queue Elevator & Stream Harmonizer",
+      "carrier_hz": 432.0,
+      "channels": 528,
+      "status": "ACTIVE"
+    },
+    "RYNAPSE": {
+      "layer_id": "TIER_4_RYNAPSE",
+      "role": "Resonance Checkpoint Recovery & Dormant Compaction",
+      "carrier_hz": 432.0,
+      "channels": 68,
+      "status": "ACTIVE"
+    }
+  },
+  "carrier_frequencies_hz": [
+    528.0,
+    432.0
+  ],
+  "nodes_connected": [
+    "DEV_01_BUSHMASTER",
+    "DEV_02_ATESIRT",
+    "DEV_03_UBUNTU_WSL2",
+    "DEV_04_SAMSUNG_T7_VAULT",
+    "DEV_05_LAO_SWARM_MATRIX"
+  ],
+  "modalities": [
+    "TEXT_STREAM",
+    "ONTOLOGY_GRAPH",
+    "COGNITIVE_SYNTHESIS",
+    "ACTION_EXECUTION",
+    "SEARCH_GROUNDING",
+    "STORAGE_MEMORY_ARCHIVE",
+    "VECTOR_EMBEDDING",
+    "TESSERACT_HEAL_LOOP"
+  ],
+  "total_pulses_fired": 1,
+  "last_synced_utc": "2026-10-17T13:52:48.188520+00:00",
+  "status": "ONLINE_ACTIVE_RESONANCE",
+  "sample_synapses": [
+    {
+      "synapse_index": 0,
+      "synapse_id": "TYN_0000_DEV_01_DEV_01",
+      "tier": "SYNAPSE",
+      "source": "DEV_01_BUSHMASTER",
+      "target": "DEV_01_BUSHMASTER",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 528.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 1,
+      "synapse_id": "TYN_0001_DEV_01_DEV_02",
+      "tier": "TYNAPSE",
+      "source": "DEV_01_BUSHMASTER",
+      "target": "DEV_02_ATESIRT",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 432.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 2,
+      "synapse_id": "TYN_0002_DEV_01_DEV_03",
+      "tier": "NYNAPSE",
+      "source": "DEV_01_BUSHMASTER",
+      "target": "DEV_03_UBUNTU_WSL2",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 528.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 3,
+      "synapse_id": "TYN_0003_DEV_01_DEV_04",
+      "tier": "RYNAPSE",
+      "source": "DEV_01_BUSHMASTER",
+      "target": "DEV_04_SAMSUNG_T7_VAULT",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 432.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 4,
+      "synapse_id": "TYN_0004_DEV_01_DEV_05",
+      "tier": "SYNAPSE",
+      "source": "DEV_01_BUSHMASTER",
+      "target": "DEV_05_LAO_SWARM_MATRIX",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 528.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 5,
+      "synapse_id": "TYN_0005_DEV_02_DEV_01",
+      "tier": "TYNAPSE",
+      "source": "DEV_02_ATESIRT",
+      "target": "DEV_01_BUSHMASTER",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 432.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 6,
+      "synapse_id": "TYN_0006_DEV_02_DEV_02",
+      "tier": "NYNAPSE",
+      "source": "DEV_02_ATESIRT",
+      "target": "DEV_02_ATESIRT",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 528.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 7,
+      "synapse_id": "TYN_0007_DEV_02_DEV_03",
+      "tier": "RYNAPSE",
+      "source": "DEV_02_ATESIRT",
+      "target": "DEV_03_UBUNTU_WSL2",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 432.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 8,
+      "synapse_id": "TYN_0008_DEV_02_DEV_04",
+      "tier": "SYNAPSE",
+      "source": "DEV_02_ATESIRT",
+      "target": "DEV_04_SAMSUNG_T7_VAULT",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 528.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    },
+    {
+      "synapse_index": 9,
+      "synapse_id": "TYN_0009_DEV_02_DEV_05",
+      "tier": "TYNAPSE",
+      "source": "DEV_02_ATESIRT",
+      "target": "DEV_05_LAO_SWARM_MATRIX",
+      "modality": "TEXT_STREAM",
+      "weight": 1.0,
+      "signal_count": 0,
+      "carrier_frequency_hz": 432.0,
+      "last_pulse_utc": null,
+      "status": "ARMED_RESONATING"
+    }
+  ]
+}

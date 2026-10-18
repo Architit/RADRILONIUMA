@@ -1,0 +1,22 @@
+{
+  "package_name": "org.radriloniuma.edge.droid",
+  "app_name": "RADRILONIUMA Mobile Edge",
+  "artifact": "radriloniuma.apk",
+  "version_code": 20261014,
+  "version_name": "4.0.0-ARGON",
+  "architecture": "universal_arm64_v8a",
+  "capabilities": [
+    "BLE_PROXIMITY_BROADCAST",
+    "FIDO2_WEBAUTHN_HYBRID_BRIDGE",
+    "CROSS_OS_SOCKET_STREAM_CLIENT",
+    "SENSOR_TELEMETRY_INGEST",
+    "NEURAL_SUBSTRATE_OFFLOAD"
+  ],
+  "hierarchy_binding": {
+    "sys_mount": "/sdcard/RADRILONIUMA",
+    "remote_endpoint": "http://192.168.137.19:8080/stream",
+    "wsl2_gateway": "http://192.168.137.1:3000"
+  },
+  "delta_force_node": "TRI-DELTA-04-APK-DROID",
+  "status": "MANIFEST_REGISTERED"
+}

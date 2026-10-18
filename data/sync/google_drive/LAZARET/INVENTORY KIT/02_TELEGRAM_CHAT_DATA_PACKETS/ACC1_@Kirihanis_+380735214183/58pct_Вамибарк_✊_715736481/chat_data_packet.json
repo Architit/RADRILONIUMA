@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.768202+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 715736481,
+    "title": "Вамибарк ✊",
+    "username": "@Wanderfate",
+    "phone": "+380916086925",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 58,
+    "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+    "rationale": "Недавний личный диалог (последняя реплика ваша)",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-13 23:05",
+      "direction": "OUT (Вы)",
+      "text": "+++)"
+    }
+  ]
+}

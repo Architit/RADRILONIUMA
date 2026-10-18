@@ -1,0 +1,753 @@
+{
+  "total_chat_packets": 83,
+  "generated_at_utc": "2026-10-17T18:03:30.132274+00:00",
+  "packets": [
+    {
+      "account": "@Kirihanis",
+      "chat_id": 6839717547,
+      "title": "Мамиябога",
+      "confidence_pct": 96,
+      "priority_tier": "P0_CRITICAL (ЖДЕТ ВАШЕГО ОТВЕТА)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/96pct_Мамиябога_6839717547"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 638074051,
+      "title": "Михагут",
+      "confidence_pct": 96,
+      "priority_tier": "P0_CRITICAL (ЖДЕТ ВАШЕГО ОТВЕТА)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/96pct_Михагут_638074051"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 1331972020,
+      "title": "Кен",
+      "confidence_pct": 85,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/85pct_Кен_1331972020"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 7309440444,
+      "title": "Vachargrd",
+      "confidence_pct": 85,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/85pct_Vachargrd_7309440444"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 506133104,
+      "title": "Папаций 🩶",
+      "confidence_pct": 85,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/85pct_Папаций_🩶_506133104"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 6724282948,
+      "title": "Бабушка 🩵",
+      "confidence_pct": 85,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_03 (Лазарет & Медико-гуманитарный контур) + KIT_01 (Охрана и связь)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/85pct_Бабушка_🩵_6724282948"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1002353574081,
+      "title": "RADRILONIUMA🌱",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/82pct_RADRILONIUMA🌱_1002353574081"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1002781324076,
+      "title": "Ušumgal⚜",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/82pct_Ušumgal⚜_1002781324076"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1002971920850,
+      "title": "Офіційна сторінка Alnovum, Almere 🇺🇦🇳🇱",
+      "confidence_pct": 78,
+      "priority_tier": "P1_RESIDENCE_HQ (Чат локации Almere)",
+      "assigned_inventory_kit": "KIT_03 (Лазарет & Медико-гуманитарный контур) + KIT_01 (Охрана и связь)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/78pct_Офіційна_сторінка_Alnovum,_Almere_🇺🇦🇳🇱_1002971920850"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 6365581133,
+      "title": "Mini Ghost // Void",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Mini_Ghost____Void_6365581133"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 1484659915,
+      "title": "Rayomi 🦍",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Rayomi_🦍_1484659915"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 610786157,
+      "title": "-=═╬ 𝕲𝕺𝕷𝕺𝖁𝕶𝕺 ╬═=-",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_-=═╬_𝕲𝕺𝕷𝕺𝖁𝕶𝕺_╬═=-_610786157"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 550319560,
+      "title": "Zoradard ✊",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Zoradard_✊_550319560"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 8601172452,
+      "title": "Sliiimee",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Sliiimee_8601172452"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 7562267293,
+      "title": "Чапи",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Чапи_7562267293"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 5956548804,
+      "title": "Nik ✊",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Nik_✊_5956548804"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 517128996,
+      "title": "Настёна",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Настёна_517128996"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 473431300,
+      "title": "Сеасония",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Сеасония_473431300"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 669955605,
+      "title": "Слав",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Слав_669955605"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 386423902,
+      "title": "Alexoid ✊",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Alexoid_✊_386423902"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 8196725634,
+      "title": "Oleksii Dovbnia",
+      "confidence_pct": 64,
+      "priority_tier": "P2_FOLLOW_UP (Рассылка о проекте в Алмере — ждет реакции)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/64pct_Oleksii_Dovbnia_8196725634"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1004466397044,
+      "title": "6-ВзглядАсасина-6",
+      "confidence_pct": 60,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/60pct_6-ВзглядАсасина-6_1004466397044"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1004428138289,
+      "title": "The Last Ray",
+      "confidence_pct": 60,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/60pct_The_Last_Ray_1004428138289"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 785577166,
+      "title": "Наздарданд ✊",
+      "confidence_pct": 58,
+      "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/58pct_Наздарданд_✊_785577166"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 1395392950,
+      "title": "Дима 10",
+      "confidence_pct": 58,
+      "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/58pct_Дима_10_1395392950"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 715736481,
+      "title": "Вамибарк ✊",
+      "confidence_pct": 58,
+      "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/58pct_Вамибарк_✊_715736481"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 1989698164,
+      "title": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+      "confidence_pct": 58,
+      "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/58pct_𝕶𝖔𝖇𝖆𝖗𝖉_☬_Trianium_🪷_1989698164"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001590593397,
+      "title": "Нідерландська криївка",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Нідерландська_криївка_1001590593397"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001793619846,
+      "title": "🇺🇦UAjobsNL🇳🇱 job Netherland | работа Нидерланды",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_🇺🇦UAjobsNL🇳🇱_job_Netherland___работа_Нидерланды_1001793619846"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1002110672245,
+      "title": "Нидерланды. - Релокация",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Нидерланды._-_Релокация_1002110672245"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001747973467,
+      "title": "Нидерланды | Экспаты | Чат",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Нидерланды___Экспаты___Чат_1001747973467"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001451375823,
+      "title": "Нідерланди Амстердам",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Нідерланди_Амстердам_1001451375823"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001998916322,
+      "title": "Тури з Нідерландів «ДаПоїхали» Європою",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Тури_з_Нідерландів_«ДаПоїхали»_Європою_1001998916322"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001528035483,
+      "title": "Українці в Альмере, Нідерланди",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Українці_в_Альмере,_Нідерланди_1001528035483"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001638681318,
+      "title": "Украинцы в Нидерландах",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/18pct_Украинцы_в_Нидерландах_1001638681318"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -2072976968768,
+      "title": "Cocoon Messages",
+      "confidence_pct": 10,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/10pct_Cocoon_Messages_2072976968768"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 551136684,
+      "title": "Skillbox",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/08pct_Skillbox_551136684"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 1985737506,
+      "title": "Walt (ранее Кошелёк)",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/08pct_Walt_(ранее_Кошелёк)_1985737506"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": 7228221584,
+      "title": "ArsenBaza",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/08pct_ArsenBaza_7228221584"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1003149984129,
+      "title": "Technology News",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_Technology_News_1003149984129"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001124946559,
+      "title": "Леонардо Дайвинчик",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_Леонардо_Дайвинчик_1001124946559"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001398895326,
+      "title": "Иван Халилов ДЛЯ СВОИХ🔥",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_Иван_Халилов_ДЛЯ_СВОИХ🔥_1001398895326"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001085702236,
+      "title": "Денис Борисов",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_Денис_Борисов_1001085702236"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1001539733514,
+      "title": "Амрита • На связи с Душой",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_Амрита_•_На_связи_с_Душой_1001539733514"
+    },
+    {
+      "account": "@Kirihanis",
+      "chat_id": -1002092333473,
+      "title": "ςηяਘυύ ηёς ɞ ૦ɾⲏ૯",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC1_@Kirihanis_+380735214183/05pct_ςηяਘυύ_ηёς_ɞ_૦ɾⲏ૯_1002092333473"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1002353574081,
+      "title": "RADRILONIUMA🌱",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/82pct_RADRILONIUMA🌱_1002353574081"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1002781324076,
+      "title": "Ušumgal⚜",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/82pct_Ušumgal⚜_1002781324076"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1004428138289,
+      "title": "The Last Ray",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/82pct_The_Last_Ray_1004428138289"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -5461948390,
+      "title": "LastBeam",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/82pct_LastBeam_5461948390"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -4260352616,
+      "title": "Happy House “Ušumgal”",
+      "confidence_pct": 82,
+      "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/82pct_Happy_House_“Ušumgal”_4260352616"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1001613859473,
+      "title": "Best Western Plus",
+      "confidence_pct": 78,
+      "priority_tier": "P1_RESIDENCE_HQ (Чат локации Almere)",
+      "assigned_inventory_kit": "KIT_03 (Лазарет & Медико-гуманитарный контур) + KIT_01 (Охрана и связь)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/78pct_Best_Western_Plus_1001613859473"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1001998933483,
+      "title": "Louis Armstrongweg 2.0",
+      "confidence_pct": 78,
+      "priority_tier": "P1_RESIDENCE_HQ (Чат локации Almere)",
+      "assigned_inventory_kit": "KIT_03 (Лазарет & Медико-гуманитарный контур) + KIT_01 (Охрана и связь)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/78pct_Louis_Armstrongweg_2.0_1001998933483"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 777000,
+      "title": "Telegram",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Telegram_777000"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 963688838,
+      "title": "Владислав",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Владислав_963688838"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 8902340516,
+      "title": "Taco",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Taco_8902340516"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 1989698164,
+      "title": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_𝕶𝖔𝖇𝖆𝖗𝖉_☬_1989698164"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 8914567346,
+      "title": "Brok",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Brok_8914567346"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 8883818624,
+      "title": "Maksy",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Maksy_8883818624"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 911700041,
+      "title": "Сиеалия",
+      "confidence_pct": 72,
+      "priority_tier": "P1_HIGH (Входящее без ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/72pct_Сиеалия_911700041"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 6839717547,
+      "title": "Мамиябога",
+      "confidence_pct": 65,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/65pct_Мамиябога_6839717547"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 138016500,
+      "title": "Братишка Денис",
+      "confidence_pct": 65,
+      "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/65pct_Братишка_Денис_138016500"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 761429035,
+      "title": "Yura Build",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Yura_Build_761429035"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 443098772,
+      "title": "Янковский",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Янковский_443098772"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 701701743,
+      "title": "Anton",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Anton_701701743"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 8370059411,
+      "title": "Jhan",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Jhan_8370059411"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 1378526052,
+      "title": "Амрита",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Амрита_1378526052"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 785577166,
+      "title": "Sazaria",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Sazaria_785577166"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 718355662,
+      "title": "Ваня🪩",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Ваня🪩_718355662"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 6479773514,
+      "title": "Trianiuma",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Trianiuma_6479773514"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 815634106,
+      "title": "Aнжелика",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Aнжелика_815634106"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 497931403,
+      "title": "Bro",
+      "confidence_pct": 25,
+      "priority_tier": "P3_ARCHIVE (Архивный диалог)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/25pct_Bro_497931403"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1001627985656,
+      "title": "🇺🇦 Українці в Almere 🇳🇱 Нідерланди",
+      "confidence_pct": 18,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/18pct_🇺🇦_Українці_в_Almere_🇳🇱_Нідерланди_1001627985656"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -2073021887925,
+      "title": "Trianiuma Messages",
+      "confidence_pct": 10,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/10pct_Trianiuma_Messages_2073021887925"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -5083861366,
+      "title": "Kggddt_-0",
+      "confidence_pct": 10,
+      "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+      "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/10pct_Kggddt_-0_5083861366"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 1234060895,
+      "title": "Дайвинчик | Leo – знакомства, общение и новые друзья",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/08pct_Дайвинчик___Leo_–_знакомства,_общение_и_новые_друзья_1234060895"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 1985737506,
+      "title": "Walt (ранее Кошелёк)",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/08pct_Walt_(ранее_Кошелёк)_1985737506"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 470000,
+      "title": "Volunteer Support",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/08pct_Volunteer_Support_470000"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 93372553,
+      "title": "BotFather",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/08pct_BotFather_93372553"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": 424000,
+      "title": "Volunteer Support",
+      "confidence_pct": 8,
+      "priority_tier": "P4_BOT (Авто-бот)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/08pct_Volunteer_Support_424000"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1001224624669,
+      "title": "Telegram Tips",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/05pct_Telegram_Tips_1001224624669"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1002155991313,
+      "title": "Almere Info - Team Ukraine",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/05pct_Almere_Info_-_Team_Ukraine_1002155991313"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1002270771552,
+      "title": "Kwartiertje Pauze",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/05pct_Kwartiertje_Pauze_1002270771552"
+    },
+    {
+      "account": "@Elafea_Triania",
+      "chat_id": -1003021887925,
+      "title": "Trianiuma",
+      "confidence_pct": 5,
+      "priority_tier": "P4_CHANNEL (Инфо-канал)",
+      "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL",
+      "packet_dir": "02_TELEGRAM_CHAT_DATA_PACKETS/ACC2_@Elafea_Triania_+31649033064/05pct_Trianiuma_1003021887925"
+    }
+  ]
+}

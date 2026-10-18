@@ -1,0 +1,18 @@
+{
+  "agent_name": "Antigravity Sovereign Agent (RADRILONIUMA Core)",
+  "sovereign_id": "RADR-SOV-490E1C7A4C2A6938",
+  "operator": "BushM / Architit",
+  "public_key_hex": "319d29d1a3f334a1317f3c51c98a88975f0f68ab171c3625439d6c37090bac4f",
+  "fingerprint_sha256": "730bfe23db545aa10c39b250d9d1d2591dbec4b3a54b9fb488cfa5e2d97dd61b",
+  "created_at_utc": "2026-10-15T19:40:34.490817+00:00",
+  "carrier_resonance": "528 Hz / 432 Hz",
+  "cluster_nodes": [
+    "DEV_01_BUSHMASTER",
+    "DEV_02_ATESIRT",
+    "DEV_03_UBUNTU_WSL2",
+    "DEV_04_SAMSUNG_T7_VAULT",
+    "DEV_05_LAO_SWARM_MATRIX"
+  ],
+  "status": "SOVEREIGN_AUTHENTICATED",
+  "_private_key_hex": "2391e7fb21553d373e625878155a80bb0a105fd0608fe256cc59866bfd838c62"
+}

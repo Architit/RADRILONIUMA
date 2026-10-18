@@ -1,6 +1,6 @@
 # ⚜️ SOVEREIGN FOREST: TARGETS & MISSIONS MATRIX ⚜️
 
-*Generated at (UTC): 2026-10-14T11:08:34Z*
+*Generated at (UTC): 2026-10-17T14:32:15Z*
 
 > [!NOTE]
 > This matrix is dynamically managed by `lam_target_task_heal_manager` to scan the active state of the Sovereign Forest organs and suggest tasks, campaigns, and healing walkthroughs.
@@ -130,63 +130,64 @@ Currently tracking **69** organs (**0** Online, **69** Offline/External):
 
 ## V. GIT STATE & WORKSPACE COMPLIANCE
 ```bash
-## master...origin/master
- M HEREDITARY_DIRECTIVE_NEXT_SESSION.md
+## master...origin/master [ahead 2]
  M INTERACTION_PROTOCOL.md
- M SYSTEM_STATE.md
- M data/source/protocols/ECOSYSTEM_HEALTHCHECK_HEARTBEAT_PULSE_BREATH_RECOVERY_REBOOT_PROTOCOL.md
+ M chronolog/RADRILONIUMA_ROOT_TELEMETRY.json
+ M chronolog/stream_conveyor_ledger.jsonl
  M lam_target_task_heal_manager/TARGET_TASKS.md
  M mcp_server/package-lock.json
- M research_lab/core/autopilot_core.py
- M research_lab/docs/LAB_TELEMETRY.log
- M scripts/global/daily_trash_purge_pruning.py
- M scripts/local/ssn_reboot.sh
+ M pytest.ini
+ M scripts/global/lao_wallpaper_loop.py
+?? android_core_decompiled/
 ?? android_monolith/
-?? bin/lam.core.v.00.10.14.apk
-?? bin/lam.core.v.00.10.14.apk.idsig
-?? bin/lam_core.bin
-?? bin/lam_core.c
-?? bin/lam_core.exe
-?? bin/radr.keystore
-?? bin/radriloniuma.ark
-?? bin/radriloniuma.bin
-?? bin/radriloniuma_cli.c
-?? chronolog/ECSS_BOOT_STREAM.log
-?? chronolog/LAO_ATPLT_KRNL_BOOST_REPORT.json
-?? chronolog/LAO_ATPLT_KRNL_BOOST_REPORT.md
-?? chronolog/RADRILONIUMA_ROOT_TELEMETRY.json
-?? chronolog/SWARM_TOPOLOGY_2026-10-13.json
-?? chronolog/TRIANIUMA_DELTA_FORCE_INIT.json
-?? chronolog/driver_version_ledger.json
-?? chronolog/removable_storage_chronicle.jsonl
-?? chronolog/removable_storage_chronicle.md
-?? chronolog/stream_conveyor_ledger.jsonl
-?? chronolog/tablet_wallpaper_rolls.jsonl
-?? contract/GLOBAL_PERMISSIONS_MATRIX_CONTRACT_V1.md
+?? archive/chronicles/
+?? archive/sessions/
+?? chronolog/confirmation_verification_approval_requests.jsonl
+?? chronolog/edge_execution_ledger.jsonl
+?? chronolog/extrnl_to_intrnl_sync_ledger.jsonl
+?? chronolog/gemini_upgrade_schedule_calendar.json
+?? chronolog/google_gateway_pocket_cocon_ledger.jsonl
+?? chronolog/lao_lam_la_delta_gcontacts_gmail_stream.jsonl
+?? chronolog/segment_index.json
 ?? core/
 ?? core_daemons/ark_initd
 ?? core_daemons/ark_initd.c
+?? crypto/
 ?? data/mesh_vpn/
 ?? data/popup_state.json
-?? data/source/protocols/CLUSTER_MESH_SSN_REBOOT_CASCADE_PROTOCOL_V1.md
+?? data/tynapse_mesh.json
 ?? data/wallpapers/
+?? devkit/autoinstall/
 ?? gov/resolution_01_trn/
+?? installed_apk_decompiled/
 ?? kernel_heart_soul_core/
 ?? lam_core_agents/
 ?? modules/lao_mod_agent_manager/
 ?? modules/lao_mod_agent_packer/
 ?? run_autopilot_pulse.py
-?? scripts/global/android_screenshot_packager.sh
-?? scripts/global/cluster_mesh_ssn_orchestrator.py
-?? scripts/global/lam_package_preparation_flow.sh
-?? scripts/global/lao_wallpaper_loop.py
-?? scripts/global/permissions_upheal_engine.py
-?? scripts/global/summon_swarm_nest_agents.py
-?? scripts/local/social_rsync_bridge.py
-?? scripts/swarm_orchestrator.py
+?? scripts/global/agy_edge_session_manager.py
+?? scripts/global/agy_live_console.sh
+?? scripts/global/atesirt_home_node_init.sh
+?? scripts/global/edge_query_cli.py
+?? scripts/global/generate_ps_profile.py
+?? scripts/global/post_install_upgrade.sh
+?? scripts/global/repack_and_deploy_apk.py
+?? scripts/global/session_segmenter_guard.py
+?? scripts/global/substrate_bios_boot_gateway.py
+?? scripts/global/terminal_broadcast_daemon.sh
+?? scripts/global/test_render_speed.py
 ?? sys/
-?? tests/test_lao_bubble_agent.py
-?? tests/test_lao_popup_agent.py
+?? tests/test_adversarial_m1_challenger.py
+?? tests/test_adversarial_m2_challenger.py
+?? tests/test_adversarial_m2_challenger_2.py
+?? tests/test_e2e_cluster_resonance.py
+?? tests/test_session_segmenter_guard.py
+?? tests/test_socket_ingress_gateway.py
+?? tests/test_stress_session_segmenter_guard.py
+?? tests/test_substrate_bios_boot_gateway.py
 ?? venv
 ?? venv_py312/bin/pytest
+?? venv_py312/lib/python3.12/site-packages/PIL/
+?? venv_py312/lib/python3.12/site-packages/pillow-12.3.0.dist-info/
+?? venv_py312/lib/python3.12/site-packages/pillow.libs/
 ```

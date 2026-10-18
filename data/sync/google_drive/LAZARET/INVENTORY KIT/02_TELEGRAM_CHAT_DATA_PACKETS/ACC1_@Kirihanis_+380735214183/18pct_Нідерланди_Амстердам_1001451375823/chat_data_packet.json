@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.883077+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": -1001451375823,
+    "title": "Нідерланди Амстердам",
+    "username": "@NiderlandyUA",
+    "phone": "",
+    "chat_type": "GROUP_CHAT",
+    "unread_count": 1305,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 18,
+    "priority_tier": "P3_PUBLIC_GROUP (Общий чат ЕС/НЛ)",
+    "rationale": "Публичная группа без личного @упоминания (непрочитанных: 1305)",
+    "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-17 14:18",
+      "direction": "IN (Собеседник)",
+      "text": "Со всем уважением, но вопрос - почему вы спрашиваете об этом здесь??? Тут инфа 50/50 в лучшем случае. Пойди к "
+    }
+  ]
+}

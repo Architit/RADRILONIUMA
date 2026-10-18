@@ -1,0 +1,15 @@
+{
+  "contract": "KERNEL_BOUNDARY_CONTRACT_V2",
+  "kernel_version": "5.15.167.4-WSL2-SOVEREIGN",
+  "boundary_enforcement": {
+    "memory_integrity": "STABLE",
+    "ipc_sandbox": "PERMISSIVE_FEDERATION",
+    "driver_bus_bridge": "ONLINE"
+  },
+  "protected_realms": [
+    "/root/RADRILONIUMA",
+    "/root/workspace",
+    "/mnt/e/RADRILONIUMA_OS",
+    "/mnt/d/ATESIRT"
+  ]
+}

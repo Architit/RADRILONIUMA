@@ -1,0 +1,56 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.189843+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": -1002781324076,
+    "title": "Ušumgal⚜",
+    "username": "",
+    "phone": "",
+    "chat_type": "GROUP_CHAT",
+    "unread_count": 8,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 82,
+    "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+    "rationale": "Целевая группа ядра проекта (IN (Собеседник))",
+    "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)"
+  },
+  "recent_messages": [
+    {
+      "id": 79,
+      "date_utc": "2026-10-06 19:11",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    },
+    {
+      "id": 80,
+      "date_utc": "2026-10-06 23:04",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    },
+    {
+      "id": 81,
+      "date_utc": "2026-10-07 15:05",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    },
+    {
+      "id": 82,
+      "date_utc": "2026-10-11 15:10",
+      "direction": "IN (Собеседник)",
+      "text": "https://share.gemini.google/UsEXTpOtZzKA"
+    },
+    {
+      "id": 83,
+      "date_utc": "2026-10-11 15:44",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    }
+  ]
+}

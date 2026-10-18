@@ -1,0 +1,56 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.349590+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 7309440444,
+    "title": "Vachargrd",
+    "username": "@kisssslaa",
+    "phone": "+31685994925",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 85,
+    "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+    "rationale": "Ключевой личный/семейный контакт — ваше сообщение отправлено, ожидание обратной связи",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 257188,
+      "date_utc": "2026-10-17 12:28",
+      "direction": "IN (Собеседник)",
+      "text": "[MessageMediaDocument]"
+    },
+    {
+      "id": 257189,
+      "date_utc": "2026-10-17 12:28",
+      "direction": "OUT (Вы)",
+      "text": "Сейчас неудобно"
+    },
+    {
+      "id": 257190,
+      "date_utc": "2026-10-17 12:29",
+      "direction": "OUT (Вы)",
+      "text": "Наберу минут через 20 30"
+    },
+    {
+      "id": 257191,
+      "date_utc": "2026-10-17 12:30",
+      "direction": "OUT (Вы)",
+      "text": "Оке открою и подготовлю заранее"
+    },
+    {
+      "id": 257192,
+      "date_utc": "2026-10-17 12:30",
+      "direction": "OUT (Вы)",
+      "text": "Но работать только на нал либо ждать"
+    }
+  ]
+}

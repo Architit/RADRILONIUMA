@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:30.065564+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": -1002155991313,
+    "title": "Almere Info - Team Ukraine",
+    "username": "@almereinfoteamukraine",
+    "phone": "",
+    "chat_type": "CHANNEL_BROADCAST",
+    "unread_count": 75,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 5,
+    "priority_tier": "P4_CHANNEL (Инфо-канал)",
+    "rationale": "Канал вещания — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-16 09:29",
+      "direction": "IN (Собеседник)",
+      "text": "У середу, 18 листопада, ми разом з вами організовуємо вечір, присвячений Україні! Долучитеся?  Ви можете напис"
+    }
+  ]
+}

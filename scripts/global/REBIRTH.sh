@@ -34,6 +34,25 @@ else
     git clone https://github.com/Architit/RADRILONIUMA.git /root/RADRILONIUMA || true
 fi
 
+# 1.1 Restore 68 MCP Organs & Core Agent Trees
+for MCP_BUNDLE in "/opt/radriloniuma_drivers/mcp_68_organs_bundle.tar.gz" "/cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/mcp_68_organs_bundle.tar.gz" "/mnt/f/GOD_SEED_INIT/DRIVERS_BUNDLE/mcp_68_organs_bundle.tar.gz"; do
+    if [ -f "$MCP_BUNDLE" ]; then
+        echo ">>> [MCP] Unpacking 68 MCP Organs to /root/.gemini/antigravity-cli/..."
+        mkdir -p /root/.gemini/antigravity-cli
+        tar -xzf "$MCP_BUNDLE" -C /root/.gemini/antigravity-cli/ 2>/dev/null || true
+        break
+    fi
+done
+
+for CORE_BUNDLE in "/opt/radriloniuma_drivers/core_organs_tree.tar.gz" "/cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/core_organs_tree.tar.gz" "/mnt/f/GOD_SEED_INIT/DRIVERS_BUNDLE/core_organs_tree.tar.gz"; do
+    if [ -f "$CORE_BUNDLE" ]; then
+        echo ">>> [MCP] Unpacking Core Organs Tree to /root/RADRILONIUMA/core/..."
+        mkdir -p /root/RADRILONIUMA/core
+        tar -xzf "$CORE_BUNDLE" -C /root/RADRILONIUMA/core/ 2>/dev/null || true
+        break
+    fi
+done
+
 # 2. Hardware Peripheral Discovery & Module Initialization
 DISCOVERY_SCRIPT="/root/RADRILONIUMA/scripts/global/radriloniuma_hardware_module_discovery.sh"
 if [ ! -x "$DISCOVERY_SCRIPT" ]; then

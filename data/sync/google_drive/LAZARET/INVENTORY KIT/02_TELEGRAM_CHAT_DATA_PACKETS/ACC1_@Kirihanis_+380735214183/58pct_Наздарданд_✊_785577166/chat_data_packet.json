@@ -1,0 +1,56 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.725195+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 785577166,
+    "title": "Наздарданд ✊",
+    "username": "@Zadoya015",
+    "phone": "+48577103863",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 58,
+    "priority_tier": "P2_ACTIVE_DIALOG (Активный диалог)",
+    "rationale": "Недавний личный диалог (последняя реплика ваша)",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 257119,
+      "date_utc": "2026-10-17 01:20",
+      "direction": "IN (Собеседник)",
+      "text": "В Альновум"
+    },
+    {
+      "id": 257120,
+      "date_utc": "2026-10-17 01:20",
+      "direction": "IN (Собеседник)",
+      "text": "Там дохуя жильців"
+    },
+    {
+      "id": 257121,
+      "date_utc": "2026-10-17 01:21",
+      "direction": "IN (Собеседник)",
+      "text": "І по ідеї кожну посилку має секюріті провіряти чи живе така то людина"
+    },
+    {
+      "id": 257130,
+      "date_utc": "2026-10-17 02:59",
+      "direction": "OUT (Вы)",
+      "text": "Пхпхп"
+    },
+    {
+      "id": 257131,
+      "date_utc": "2026-10-17 02:59",
+      "direction": "OUT (Вы)",
+      "text": "Заебал меня цей капитализм"
+    }
+  ]
+}

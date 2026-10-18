@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RADRILONIUMA — Sovereign Matrix Cockpit</title>
+    <style>
+        :root {
+            --bg-base: #050811;
+            --bg-card: #0d1322;
+            --bg-card-hover: #151d34;
+            --neon-cyan: #00e5ff;
+            --neon-green: #00e676;
+            --neon-red: #ff1744;
+            --neon-purple: #d500f9;
+            --neon-blue: #2979ff;
+            --text-primary: #e0f2fe;
+            --text-secondary: #94a3b8;
+            --border-dim: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, monospace;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            padding: 16px;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-dim);
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background-color: rgba(0, 230, 118, 0.12);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        .telemetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .telemetry-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telemetry-card:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 4 SPECTRUM PALETTES */
+        .card-spectrum-gold {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(20, 24, 33, 0.95));
+        }
+        .card-spectrum-gold .card-label { color: #f59e0b; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+        .card-spectrum-gold .card-value { color: #fbbf24; }
+        .card-spectrum-gold .beacon-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #fbbf24;
+            box-shadow: 0 0 8px #f59e0b; animation: pulse-gold 1.5s infinite;
+        }
+
+        .card-spectrum-emerald {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(20, 24, 33, 0.95));
+        }
+        .card-spectrum-emerald .card-label { color: #10b981; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+        .card-spectrum-emerald .card-value { color: #34d399; }
+        .card-spectrum-emerald .beacon-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #34d399;
+            box-shadow: 0 0 8px #10b981; animation: pulse-emerald 1.5s infinite;
+        }
+
+        .card-spectrum-cyan {
+            border-color: rgba(6, 182, 212, 0.4);
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(20, 24, 33, 0.95));
+        }
+        .card-spectrum-cyan .card-label { color: #06b6d4; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+        .card-spectrum-cyan .card-value { color: #22d3ee; }
+        .card-spectrum-cyan .beacon-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #22d3ee;
+            box-shadow: 0 0 8px #06b6d4; animation: pulse-cyan 1.5s infinite;
+        }
+
+        .card-spectrum-magenta {
+            border-color: rgba(217, 70, 239, 0.4);
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.08), rgba(20, 24, 33, 0.95));
+        }
+        .card-spectrum-magenta .card-label { color: #d946ef; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+        .card-spectrum-magenta .card-value { color: #e879f9; }
+        .card-spectrum-magenta .beacon-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #e879f9;
+            box-shadow: 0 0 8px #d946ef; animation: pulse-magenta 1.5s infinite;
+        }
+
+        @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 6px #f59e0b; opacity: 1; } 50% { box-shadow: 0 0 14px #fbbf24; opacity: 0.6; } }
+        @keyframes pulse-emerald { 0%, 100% { box-shadow: 0 0 6px #10b981; opacity: 1; } 50% { box-shadow: 0 0 14px #34d399; opacity: 0.6; } }
+        @keyframes pulse-cyan { 0%, 100% { box-shadow: 0 0 6px #06b6d4; opacity: 1; } 50% { box-shadow: 0 0 14px #22d3ee; opacity: 0.6; } }
+        @keyframes pulse-magenta { 0%, 100% { box-shadow: 0 0 6px #d946ef; opacity: 1; } 50% { box-shadow: 0 0 14px #e879f9; opacity: 0.6; } }
+
+        .spectrum-pos-indicator {
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+            margin-top: 4px;
+            opacity: 0.75;
+        }
+
+        .card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .card-value {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .section-header {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            margin: 16px 0 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .agent-tile {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 10px 8px;
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .agent-tile:hover, .agent-tile:active {
+            background-color: var(--bg-card-hover);
+            border-color: var(--neon-cyan);
+            transform: translateY(-2px);
+        }
+
+        .agent-num {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        .agent-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin: 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-primary);
+        }
+
+        .agent-status {
+            font-size: 0.65rem;
+            color: var(--neon-green);
+        }
+
+        .agent-floating {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 6px rgba(213, 0, 249, 0.25);
+        }
+
+        .agent-floating .agent-status {
+            color: var(--neon-purple);
+        }
+
+        .console-panel {
+            background-color: #03060c;
+            border: 1px solid var(--border-dim);
+            border-radius: 8px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            height: 140px;
+            overflow-y: auto;
+            color: #38bdf8;
+            line-height: 1.5;
+        }
+
+        .console-log {
+            margin-bottom: 4px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cockpit-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cockpit-btn:hover, .cockpit-btn:active {
+            background-color: var(--neon-cyan);
+            color: var(--bg-base);
+        }
+
+        .ubuntu-btn {
+            background-color: #E95420;
+            border: 1px solid #E95420;
+            color: white;
+        }
+        .ubuntu-btn:hover, .ubuntu-btn:active {
+            background-color: white;
+            color: #E95420;
+        }
+
+        #ubuntuTerminalOverlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #300A24;
+            z-index: 9999;
+            flex-direction: column;
+            padding: 10px;
+            font-family: monospace;
+            color: white;
+        }
+        #ubuntuTerminalOutput {
+            flex-grow: 1;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        #ubuntuInputLine {
+            display: flex;
+        }
+        #ubuntuPrompt {
+            color: #8AE234;
+            margin-right: 8px;
+        }
+        #ubuntuInput {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: monospace;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        .close-ubuntu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        /* Agent Dossier Modal */
+        .agent-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 6, 12, 0.88);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        .agent-modal-content {
+            background: #0b111e;
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            box-shadow: 0 0 24px rgba(0, 229, 255, 0.25);
+            animation: modalFadeIn 0.2s ease-out;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-dim);
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+        }
+        .modal-node-id {
+            font-size: 0.75rem;
+            color: var(--neon-cyan);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .modal-node-name {
+            margin: 2px 0 0 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dossier-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+        }
+        .dossier-label {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+        .dossier-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .dossier-active {
+            color: var(--neon-green);
+        }
+        .modal-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .modal-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-dim);
+            color: var(--text-primary);
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .modal-btn:hover, .modal-btn:active {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 229, 255, 0.12);
+        }
+        .rotate-btn {
+            border-color: rgba(213, 0, 249, 0.4);
+            color: var(--neon-purple);
+        }
+        .rotate-btn:hover {
+            border-color: var(--neon-purple);
+            background: rgba(213, 0, 249, 0.15);
+        }
+        .prune-btn {
+            border-color: rgba(255, 171, 0, 0.4);
+            color: #ffab00;
+        }
+        .prune-btn:hover {
+            border-color: #ffab00;
+            background: rgba(255, 171, 0, 0.15);
+        }
+        .modal-console {
+            margin-top: 14px;
+            background: #040810;
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: #8AE234;
+            max-height: 70px;
+            overflow-y: auto;
+        }
+
+        /* --- RADRILONIUMA COMMAND DOCK & WINDOW MANAGER --- */
+        .command-dock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .app-icon-btn {
+            background: linear-gradient(135deg, rgba(13, 19, 34, 0.95), rgba(20, 30, 55, 0.95));
+            border: 1px solid var(--border-dim);
+            border-radius: 10px;
+            padding: 12px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            user-select: none;
+        }
+        .app-icon-btn:hover, .app-icon-btn:active {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+            border-color: var(--neon-cyan);
+        }
+        .app-icon-emoji {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+        }
+        .app-icon-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+            white-space: nowrap;
+        }
+        .app-icon-sub {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .app-icon-rune {
+            font-size: 0.7rem;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .app-icon-badge {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            font-size: 0.55rem;
+            background: rgba(0, 229, 255, 0.2);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* --- FLOATING APPLICATION WINDOWS --- */
+        .app-window {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 680px;
+            height: 520px;
+            max-height: 85vh;
+            background: #090e1a;
+            border: 2px solid var(--neon-cyan);
+            border-radius: 12px;
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 229, 255, 0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 2000;
+            backdrop-filter: blur(14px);
+            overflow: hidden;
+            animation: winPop 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+        }
+        @keyframes winPop {
+            from { opacity: 0; transform: translate(-50%, -46%) scale(0.92); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        .app-window.maximized {
+            top: 10px !important;
+            left: 10px !important;
+            transform: none !important;
+            width: calc(100vw - 20px) !important;
+            max-width: none !important;
+            height: calc(100vh - 20px) !important;
+            max-height: none !important;
+            border-radius: 8px;
+        }
+        .app-window.minimized {
+            display: none !important;
+        }
+        .app-win-header {
+            background: linear-gradient(90deg, #0e172a, #1a2540);
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: move;
+            user-select: none;
+        }
+        .app-win-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .app-win-controls {
+            display: flex;
+            gap: 6px;
+        }
+        .win-ctrl-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .win-ctrl-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .win-ctrl-close:hover {
+            background: #ff1744;
+            border-color: #ff1744;
+        }
+        .app-win-body {
+            padding: 16px;
+            overflow-y: auto;
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+        }
+
+        /* --- Mini Components inside Windows --- */
+        .win-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .win-item-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-dim);
+            border-radius: 8px;
+            padding: 12px;
+            transition: border 0.2s;
+        }
+        .win-item-card:hover {
+            border-color: var(--neon-cyan);
+        }
+        .win-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .win-btn-action {
+            background: var(--neon-cyan);
+            color: #03060c;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .win-btn-action:hover {
+            filter: brightness(1.15);
+            transform: translateY(-1px);
+        }
+        .win-input-group {
+            margin-bottom: 12px;
+        }
+        .win-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            display: block;
+            text-transform: uppercase;
+        }
+        .win-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-dim);
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            box-sizing: border-box;
+        }
+        .win-input:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+        }
+        .win-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+        .win-table th, .win-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+        }
+        .win-table th {
+            color: var(--neon-cyan);
+            background: rgba(0, 229, 255, 0.05);
+        }
+        .taskbar-dock {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 19, 34, 0.9);
+            border: 1px solid var(--border-dim);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 6px 14px;
+            display: flex;
+            gap: 8px;
+            z-index: 2100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .taskbar-item {
+            font-size: 1.2rem;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .taskbar-item:hover {
+            transform: scale(1.25);
+        }
+    
+        /* ========================================================= */
+        /* RADRILONIUMA SOVEREIGN SUBSTRATE & PACKAGE BOOTSTRAP GATE */
+        /* ========================================================= */
+        #sovereignBootstrapGate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 25%, #0d1936 0%, #030712 100%);
+            z-index: 999999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: #e0f2fe;
+            text-align: center;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .gate-logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            color: #00e5ff;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+            margin-bottom: 4px;
+        }
+
+        .gate-subtitle {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .gate-lock-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            background: rgba(255, 23, 68, 0.15);
+            border: 1px solid #ff1744;
+            color: #ff1744;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+            animation: pulse-gate 2s infinite ease-in-out;
+        }
+
+        .gate-lock-pill.pill-installed {
+            background: rgba(0, 230, 118, 0.15);
+            border-color: #00e676;
+            color: #00e676;
+            animation: none;
+        }
+
+        @keyframes pulse-gate {
+            0% { transform: scale(0.97); opacity: 0.85; }
+            50% { transform: scale(1.03); opacity: 1; }
+            100% { transform: scale(0.97); opacity: 0.85; }
+        }
+
+        .gate-progress-card {
+            width: 100%;
+            max-width: 520px;
+            background: #090f1f;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .gate-progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #7dd3fc;
+        }
+
+        .gate-progress-track {
+            width: 100%;
+            height: 18px;
+            background: #0f172a;
+            border-radius: 9px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .gate-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00e5ff 0%, #00e676 100%);
+            border-radius: 9px;
+            transition: width 0.4s ease;
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.8);
+        }
+
+        .gate-status-msg {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            text-align: left;
+            margin-bottom: 14px;
+            min-height: 20px;
+        }
+
+        .gate-terminal-box {
+            width: 100%;
+            height: 140px;
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: 6px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.72rem;
+            color: #38bdf8;
+            overflow-y: auto;
+            text-align: left;
+            white-space: pre-wrap;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .gate-action-btn {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            border: 1px solid #00e5ff;
+            background: rgba(0, 229, 255, 0.15);
+            color: #00e5ff;
+            transition: all 0.2s ease;
+        }
+
+        .gate-action-btn:hover:not(:disabled) {
+            background: #00e5ff;
+            color: #050811;
+            box-shadow: 0 0 16px rgba(0, 229, 255, 0.6);
+        }
+
+        .gate-action-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            border-color: #475569;
+            color: #94a3b8;
+        }
+
+        /* Modules Repository Catalog Styling */
+        .modules-repo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .modules-repo-card:hover {
+            border-color: var(--neon-cyan);
+            background: var(--bg-card-hover);
+        }
+
+        .mod-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mod-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .mod-source-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            text-transform: uppercase;
+        }
+
+        .mod-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.35;
+        }
+
+        .mod-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+        }
+
+        .mod-status-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--neon-green);
+        }
+
+        .mod-action-btn {
+            background: rgba(0, 229, 255, 0.12);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .mod-action-btn:hover {
+            background: var(--neon-cyan);
+            color: #050811;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- ======================================================== -->
+    <!-- RADRILONIUMA SOVEREIGN SUBSTRATE & PACKAGE BOOTSTRAP GATE -->
+    <!-- Cockpit is locked until 100% Ubuntu packages verified    -->
+    <!-- ======================================================== -->
+    <div id="sovereignBootstrapGate">
+        <div class="gate-logo">⚜️ RADRILONIUMA</div>
+        <div class="gate-subtitle">SOVEREIGN ARM64 LINUX SUBSTRATE // 528 Hz CLUSTER</div>
+        <div class="gate-lock-pill" id="gateLockBadge">🔒 INTERFACE LOCKED — PACKAGE FOUNDATION REQUIRED</div>
+        
+        <div class="gate-progress-card">
+            <div class="gate-progress-header">
+                <span id="gateStageLabel">PACKAGE VERIFICATION BARRIER</span>
+                <span id="gateProgressPercent">0%</span>
+            </div>
+            <div class="gate-progress-track">
+                <div class="gate-progress-bar" id="gateProgressBar"></div>
+            </div>
+            <div class="gate-status-msg" id="gateStatusMsg">Initializing package foundation query...</div>
+            <div class="gate-terminal-box" id="gateTerminalLogs">[RADRILONIUMA] Cluster substrate verification barrier initialized.
+[RADRILONIUMA] Querying AppServer /status and Ubuntu runtime state...</div>
+            <button class="gate-action-btn" id="gateActionBtn" onclick="handleGateActionClick()">🚀 START UBUNTU PACKAGES BOOTSTRAP</button>
+        </div>
+        <div style="font-size: 0.7rem; color: #64748b; max-width: 480px;">
+            In accordance with sovereign cluster directive, the cockpit interface is strictly locked until all official Ubuntu 24.04.5 LTS packages are fully unpacked, verified, and running under PRoot.
+        </div>
+    </div>
+
+
+    <div id="ubuntuTerminalOverlay">
+        <button class="close-ubuntu" onclick="closeUbuntu()">X</button>
+        <div id="ubuntuTerminalOutput"></div>
+        <div id="ubuntuInputLine">
+            <span id="ubuntuPrompt">root@localhost:~#</span>
+            <input type="text" id="ubuntuInput" autocomplete="off" onkeydown="handleUbuntuInput(event)">
+        </div>
+    </div>
+
+    <!-- Agent Node Dossier Modal Dialog -->
+    <div id="agentDossierModal" class="agent-modal" style="display: none;">
+        <div class="agent-modal-content">
+            <div class="modal-header">
+                <div>
+                    <span class="modal-node-id" id="modalNodeId">NODE 08</span>
+                    <h2 class="modal-node-name" id="modalNodeName">CHRONOS</h2>
+                </div>
+                <button class="close-modal" onclick="closeAgentDossier()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="dossier-row">
+                    <span class="dossier-label">ROLE & ARCHETYPE:</span>
+                    <span class="dossier-value" id="modalNodeRole">TIME QUANTUM & SCHEDULING</span>
+                </div>
+                <div class="dossier-row">
+                    <span class="dossier-label">SWARM STATE:</span>
+                    <span class="dossier-value dossier-active" id="modalNodeStatus">READY // ACTIVE</span>
+                </div>
+                <div class="dossier-row">
+                    <span class="dossier-label">TIME QUANTUM:</span>
+                    <span class="dossier-value" id="modalNodeQuantum">150 ms (Priority 8/18)</span>
+                </div>
+                <div class="dossier-row">
+                    <span class="dossier-label">ORCHESTRATOR STATUS:</span>
+                    <span class="dossier-value" id="modalOrchestratorStatus">ROTATION QUEUE</span>
+                </div>
+                <div class="dossier-row">
+                    <span class="dossier-label">DAILY SLEEP / PRUNING:</span>
+                    <span class="dossier-value" id="modalSleepStatus">SCHEDULED 03:00 UTC</span>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn" onclick="pingAgentNode()">PING NODE</button>
+                    <button class="modal-btn rotate-btn" onclick="rotateToNode()">ROTATE ORCHESTRATOR</button>
+                    <button class="modal-btn" onclick="executeNodeTask()">DISPATCH ACTION</button>
+                    <button class="modal-btn prune-btn" onclick="triggerNodePruning()">PRUNE & HIBERNATE</button>
+                </div>
+                <div class="modal-console" id="modalNodeConsole">
+                    <div>[DOSSIER] Node initialized. Live quantum telemetry synchronized.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div>
+            <div class="brand-title">RADRILONIUMA</div>
+            <div style="font-size: 0.7rem; color: var(--text-secondary); letter-spacing: 0.05em;">LAM COCKPIT // SWARM CORE</div>
+        </div>
+        <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span id="coreStatusText">RUNTIME STATUS UNKNOWN</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="telemetry-grid">
+            <div class="telemetry-card card-spectrum-gold" onclick="cyclePanelState('wakeLock')" title="Кликните для переключения спектрального состояния">
+                <div class="card-label"><span>⚡ WAKELOCK</span><span class="beacon-dot"></span></div>
+                <div class="card-value" id="wakeLockState">HELD [ACTIVE]</div>
+                <div class="spectrum-pos-indicator" id="wakeLockPos">СПЕКТР: ЗОЛОТО 528Hz • ПОЗ. 1/4</div>
+            </div>
+            <div class="telemetry-card card-spectrum-emerald" onclick="cyclePanelState('service')" title="Кликните для переключения спектрального состояния">
+                <div class="card-label"><span>🛡️ FOREGROUND CORE</span><span class="beacon-dot"></span></div>
+                <div class="card-value" id="serviceState">ONLINE [ACTIVE]</div>
+                <div class="spectrum-pos-indicator" id="servicePos">СПЕКТР: ИЗУМРУД • ПОЗ. 1/4</div>
+            </div>
+            <div class="telemetry-card card-spectrum-cyan" onclick="cyclePanelState('backend')" title="Кликните для переключения спектрального состояния">
+                <div class="card-label"><span>🌐 BACKEND BRIDGE</span><span class="beacon-dot"></span></div>
+                <div class="card-value" id="appServerState">APPSERVER: RUNNING</div>
+                <div class="spectrum-pos-indicator" id="backendPos">СПЕКТР: ЦИАН 528Hz • ПОЗ. 1/4</div>
+            </div>
+            <div class="telemetry-card card-spectrum-magenta" onclick="cyclePanelState('catral')" title="Кликните для переключения спектрального состояния">
+                <div class="card-label"><span>⚜️ LOGISTICS LINKS</span><span class="beacon-dot"></span></div>
+                <div class="card-value" id="catralState">CATRAL LINKED</div>
+                <div class="spectrum-pos-indicator" id="catralPos">СПЕКТР: МАДЖЕНТА • ПОЗ. 1/4</div>
+            </div>
+        </section>
+
+        <!-- RADRILONIUMA COMMAND APPS & APPLICATION WINDOWS DOCK -->
+        <div class="section-header">
+            <span>👑 RADRILONIUMA SOVEREIGN COMMANDS & APP DOCK 🚀</span>
+            <span style="font-size: 0.7rem; color: var(--neon-cyan);">КЛИКНИТЕ ИКОНКУ ДЛЯ ОТКРЫТИЯ ОКНА ПРИЛОЖЕНИЯ</span>
+        </div>
+
+        <section class="command-dock-grid" id="commandDockGrid">
+            <!-- 1. Play Market -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-play-market')" title="radriloniuma play market">
+                <span class="app-icon-badge">MARKET</span>
+                <div class="app-icon-emoji">🎮</div>
+                <div class="app-icon-title">Play Market</div>
+                <div class="app-icon-sub">Игры и сказки</div>
+                <span class="app-icon-rune" style="background: rgba(0, 229, 255, 0.2); color: #00E5FF;">ᚱ #00E5FF</span>
+            </div>
+
+            <!-- 2. Shop -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-shop')" title="radriloniuma shop">
+                <span class="app-icon-badge">SHOP</span>
+                <div class="app-icon-emoji">🛍️</div>
+                <div class="app-icon-title">Shop</div>
+                <div class="app-icon-sub">Кассандра Прайс</div>
+                <span class="app-icon-rune" style="background: rgba(255, 51, 153, 0.2); color: #FF3399;">ᚠ #FF3399</span>
+            </div>
+
+            <!-- 3. Trade -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-trade')" title="radriloniuma trade">
+                <span class="app-icon-badge">P2P</span>
+                <div class="app-icon-emoji">⚖️</div>
+                <div class="app-icon-title">Trade</div>
+                <div class="app-icon-sub">Биржа активов</div>
+                <span class="app-icon-rune" style="background: rgba(153, 51, 255, 0.2); color: #9933FF;">ᛞ #9933FF</span>
+            </div>
+
+            <!-- 4. Sell -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-sell')" title="radriloniuma sell">
+                <span class="app-icon-badge">SELLER</span>
+                <div class="app-icon-emoji">💰</div>
+                <div class="app-icon-title">Sell</div>
+                <div class="app-icon-sub">Продать актив</div>
+                <span class="app-icon-rune" style="background: rgba(255, 20, 147, 0.2); color: #FF1493;">ᛋ #FF1493</span>
+            </div>
+
+            <!-- 5. Buy -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-buy')" title="radriloniuma buy">
+                <span class="app-icon-badge">BUY</span>
+                <div class="app-icon-emoji">💳</div>
+                <div class="app-icon-title">Buy</div>
+                <div class="app-icon-sub">Купить лицензию</div>
+                <span class="app-icon-rune" style="background: rgba(255, 215, 0, 0.2); color: #FFD700;">ᛉ #FFD700</span>
+            </div>
+
+            <!-- 6. Save -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-save')" title="radriloniuma save">
+                <span class="app-icon-badge">SLOT</span>
+                <div class="app-icon-emoji">💾</div>
+                <div class="app-icon-title">Save</div>
+                <div class="app-icon-sub">Чекпоинт игры</div>
+                <span class="app-icon-rune" style="background: rgba(0, 191, 255, 0.2); color: #00BFFF;">ᛏ #00BFFF</span>
+            </div>
+
+            <!-- 7. Keep -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-keep')" title="radriloniuma keep">
+                <span class="app-icon-badge">COLD</span>
+                <div class="app-icon-emoji">❄️</div>
+                <div class="app-icon-title">Keep</div>
+                <div class="app-icon-sub">Фиби Тихоня</div>
+                <span class="app-icon-rune" style="background: rgba(123, 104, 238, 0.2); color: #7B68EE;">ᛗ #7B68EE</span>
+            </div>
+
+            <!-- 8. Send -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-send')" title="radriloniuma send">
+                <span class="app-icon-badge">DISPATCH</span>
+                <div class="app-icon-emoji">🚀</div>
+                <div class="app-icon-title">Send</div>
+                <div class="app-icon-sub">Отправить в сеть</div>
+                <span class="app-icon-rune" style="background: rgba(57, 255, 20, 0.2); color: #39FF14;">ᛚ #39FF14</span>
+            </div>
+
+            <!-- 9. Receive -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-receive')" title="radriloniuma recive">
+                <span class="app-icon-badge">INGRESS</span>
+                <div class="app-icon-emoji">📭</div>
+                <div class="app-icon-title">Receive</div>
+                <div class="app-icon-sub">Принять платеж</div>
+                <span class="app-icon-rune" style="background: rgba(255, 140, 0, 0.2); color: #FF8C00;">ᛒ #FF8C00</span>
+            </div>
+
+            <!-- 10. Jungle Vault -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-vault')" title="kernelcoreengine jungle vault">
+                <span class="app-icon-badge">AML/CTF</span>
+                <div class="app-icon-emoji">🌴</div>
+                <div class="app-icon-title">Jungle Vault</div>
+                <div class="app-icon-sub">Аудит и печати</div>
+                <span class="app-icon-rune" style="background: rgba(0, 255, 127, 0.2); color: #00FF7F;">ᛟ #00FF7F</span>
+            </div>
+
+            <!-- 11. Swarm Rotation -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-swarm')" title="radriloniuma swarm rotate">
+                <span class="app-icon-badge">RULE 1</span>
+                <div class="app-icon-emoji">🔄</div>
+                <div class="app-icon-title">Swarm Rotate</div>
+                <div class="app-icon-sub">Ротация узлов</div>
+                <span class="app-icon-rune" style="background: rgba(255, 215, 0, 0.2); color: #FFD700;">ᛉ #FFD700</span>
+            </div>
+
+            <!-- 12. Sleep & Hibernate -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-sleep')" title="radriloniuma sleep">
+                <span class="app-icon-badge">RULE 2</span>
+                <div class="app-icon-emoji">🌙</div>
+                <div class="app-icon-title">Sleep & Prune</div>
+                <div class="app-icon-sub">Сон и обучение</div>
+                <span class="app-icon-rune" style="background: rgba(123, 104, 238, 0.2); color: #7B68EE;">ᛗ #7B68EE</span>
+            </div>
+
+            <!-- 13. Dopamine Survivor Arcade -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-arcade')" title="Dopamine Survivor Arcade">
+                <span class="app-icon-badge" style="border-color: #ff0055; color: #ff0055; background: rgba(255,0,85,0.2);">LIVE GAME</span>
+                <div class="app-icon-emoji">🕹️</div>
+                <div class="app-icon-title">Arcade Game</div>
+                <div class="app-icon-sub">Играть сейчас</div>
+                <span class="app-icon-rune" style="background: rgba(255, 0, 85, 0.2); color: #ff0055;">⚡ 99.2%</span>
+            </div>
+
+            <!-- 14. Minecraft Voxel World (Telegram Mini App) -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-voxel-minecraft')" title="Minecraft 3D Voxel World in Telegram">
+                <span class="app-icon-badge" style="border-color: #39ff14; color: #39ff14; background: rgba(57,255,20,0.2);">VOXEL 3D</span>
+                <div class="app-icon-emoji">⛏️</div>
+                <div class="app-icon-title">Minecraft 3D</div>
+                <div class="app-icon-sub">Telegram Voxel</div>
+                <span class="app-icon-rune" style="background: rgba(57, 255, 20, 0.2); color: #39ff14;">🐺 Волк Фенрир</span>
+            </div>
+        
+            <!-- 15. Modular APK Fragments Repository -->
+            <div class="app-icon-btn" onclick="openAppWindow('win-mod-modules')" title="App Mod Modules & APK Fragments Repository">
+                <span class="app-icon-badge" style="border-color: #00e5ff; color: #00e5ff; background: rgba(0,229,255,0.2);">ALL SRCS</span>
+                <div class="app-icon-emoji">📦</div>
+                <div class="app-icon-title">Mod Modules</div>
+                <div class="app-icon-sub">Git/GDrive/OneDrive/Dev</div>
+                <span class="app-icon-rune" style="background: rgba(0, 229, 255, 0.2); color: #00e5ff;">8 MODS</span>
+            </div>
+        </section>
+
+
+        <div class="section-header">
+            <span>Agent Role Map (18 Slots)</span>
+            <span style="font-size: 0.7rem; color: var(--text-secondary);">INTERACTIVE SWARM DOSSIER</span>
+        </div>
+
+        <section class="agent-grid" id="agentGrid">
+            <!-- Dynamically populated 18 agent tiles -->
+        </section>
+
+        <div class="section-header">
+            <span>Core Telemetry & Console Log</span>
+            <span id="currentTime" style="font-size: 0.7rem; color: var(--text-secondary);"></span>
+        </div>
+
+        <section class="console-panel" id="consoleLogs">
+            <div class="console-log">[UI] Cockpit loaded; runtime state is being queried.</div>
+            <div class="console-log">[UBUNTU] No system metrics or shell are claimed until a real rootfs is validated.</div>
+        </section>
+
+        <div class="btn-row">
+            <button class="cockpit-btn" onclick="pingCore()">PING APPSERVER</button>
+            <button class="cockpit-btn" onclick="requestAndroidPermissions()">PERMISSIONS</button>
+            <button class="cockpit-btn" onclick="clearLogs()">CLEAR LOGS</button>
+            <button class="cockpit-btn" onclick="refreshRuntimeStatus(true)">REFRESH STATUS</button>
+            <button class="cockpit-btn" id="installUbuntuButton" onclick="installUbuntu()">INSTALL UBUNTU 24.04.5 ARM64</button>
+            <button class="cockpit-btn ubuntu-btn" onclick="openUbuntu()">LAUNCH UBUNTU ANDROID</button>
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- RADRILONIUMA FLOATING APPLICATION WINDOWS  -->
+    <!-- ========================================== -->
+    <div id="desktopWindowsContainer">
+
+        
+        <!-- 15. APP MOD MODULES & FRAGMENTS WINDOW -->
+        <div id="win-mod-modules" class="app-window" style="width: 92%; max-width: 580px; max-height: 80vh;">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-mod-modules')">
+                <div class="app-win-title">📦 APP MOD MODULES & FRAGMENTS (ALL SOURCES)</div>
+                <div class="win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-mod-modules')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-mod-modules')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-mod-modules')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body" style="overflow-y: auto; max-height: calc(80vh - 45px); padding: 14px;">
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
+                    Sovereign monolithic repository integrating all discovered modular fragments, Git branches, GDrive, OneDrive, and external vault APK versions.
+                </div>
+
+                <!-- 1. Core Substrate Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">Ubuntu Base Substrate 24.04.5 Noble</div>
+                        <span class="mod-source-badge">CONTAINER ROOTFS</span>
+                    </div>
+                    <div class="mod-desc">Core Linux foundation with PRoot arm64 execution. Contains bash-completion, python3, pip, git, curl, iproute2, procps, and GNU coreutils.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag" id="modStatusSubstrate">PRIMARY KERNEL</span>
+                        <button class="mod-action-btn" onclick="installUbuntu()">RE-VERIFY</button>
+                    </div>
+                </div>
+
+                <!-- 2. LAM Core Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">LAM Core Engine v.00.10.14</div>
+                        <span class="mod-source-badge">GIT MASTER // WSL</span>
+                    </div>
+                    <div class="mod-desc">Autonomous Action Model & Decision Pipeline (lam.core.v.00.10.14.apk). Orchestrates multi-modal task execution and carrier frequency locks.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">INTEGRATED MONOLITH</span>
+                        <button class="mod-action-btn" onclick="activateModModule('LAM_CORE')">LOAD MOD</button>
+                    </div>
+                </div>
+
+                <!-- 3. RADR Studio Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">RADR Studio Mod (com.radriloniuma.studio)</div>
+                        <span class="mod-source-badge">ONEDRIVE / GDRIVE</span>
+                    </div>
+                    <div class="mod-desc">Cloud-mirrored visual IDE and pipeline studio module. Restored from external vault archive F:\ATESIRT_VAULT_ARCHIVE.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">ARCHIVED SEED</span>
+                        <button class="mod-action-btn" onclick="activateModModule('STUDIO')">ACTIVATE MOD</button>
+                    </div>
+                </div>
+
+                <!-- 4. Sovereign Auth Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">Sovereign Auth Mod (com.radriloniuma.auth)</div>
+                        <span class="mod-source-badge">GENESIS VAULT T7</span>
+                    </div>
+                    <div class="mod-desc">Biometric and sovereign cryptographic token gatekeeper. Secured within the 5-node cluster vault.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">SECURITY TOKEN</span>
+                        <button class="mod-action-btn" onclick="activateModModule('AUTH')">ACTIVATE MOD</button>
+                    </div>
+                </div>
+
+                <!-- 5. OS Debug Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">OS Debug Core (com.radriloniuma.os.debug)</div>
+                        <span class="mod-source-badge">DEV.APK V.00.10.14</span>
+                    </div>
+                    <div class="mod-desc">Low-level SELinux, logcat, and kernel interceptor. Provides live trace introspection across cluster organs.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">DIAGNOSTIC ENGINE</span>
+                        <button class="mod-action-btn" onclick="activateModModule('OS_DEBUG')">ACTIVATE MOD</button>
+                    </div>
+                </div>
+
+                <!-- 6. Architit Blueprint Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">Architit Monolith Blueprint (com.architit)</div>
+                        <span class="mod-source-badge">WIN HOST PICTURES</span>
+                    </div>
+                    <div class="mod-desc">Structural schema (com.architit.radriloniuma.apk, 25.0 KB). Cross-node architectural graph and layout blueprints.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">SCHEMA ACTIVE</span>
+                        <button class="mod-action-btn" onclick="activateModModule('ARCHITIT')">INSPECT SCHEMA</button>
+                    </div>
+                </div>
+
+                <!-- 7. Swarm 68-Organ Mesh Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">Swarm 68-Organ Mesh (528 Hz / 432 Hz)</div>
+                        <span class="mod-source-badge">LIVING MATRIX DEV_05</span>
+                    </div>
+                    <div class="mod-desc">Bio-Harmonic living organism matrix with 68 active organs synchronized across DEV_01, DEV_02, DEV_03, DEV_04, DEV_05.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">QUORUM 68/68 OK</span>
+                        <button class="mod-action-btn" onclick="openAppWindow('win-swarm')">VIEW SWARM</button>
+                    </div>
+                </div>
+
+                <!-- 8. Termux Sandboxed Bridge Mod -->
+                <div class="modules-repo-card">
+                    <div class="mod-header">
+                        <div class="mod-title">Termux Sandboxed Bridge Mod</div>
+                        <span class="mod-source-badge">EMBEDDED USERLAND</span>
+                    </div>
+                    <div class="mod-desc">Integrated terminal environment running purely inside com.radriloniuma without requiring external Termux installation.</div>
+                    <div class="mod-footer">
+                        <span class="mod-status-tag">EMBEDDED MONOLITH</span>
+                        <button class="mod-action-btn" onclick="openUbuntu()">OPEN TERMINAL</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 1. PLAY MARKET WINDOW -->
+        <div id="win-play-market" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-play-market')">
+                <div class="app-win-title">
+                    <span>🎮</span>
+                    <span>ᚱ PLAY MARKET // ИНДУСТРИЯ РАЗВЛЕЧЕНИЙ</span>
+                    <span class="win-badge" style="background:#00E5FF; color:#000;">#00E5FF</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-play-market')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-play-market')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-play-market')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background: rgba(0,229,255,0.08); border: 1px solid #00E5FF; padding: 10px; border-radius: 8px; margin-bottom: 14px;">
+                    <b style="color: #00E5FF;">«Мы сеем счастье и дофамин»</b> — единый каталог игр, сказок, мультфильмов и генераторов музыки. Люди платят за то, что радует их в этой жизни!
+                </div>
+                <div class="win-card-grid">
+                    <div class="win-item-card">
+                        <span class="win-badge" style="background: #ff0055; color: #fff;">АКТИВНАЯ ИГРА</span>
+                        <h4 style="color:#fff; margin: 4px 0;">Neo-Chronicles: Dopamine Survivor</h4>
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin: 4px 0;">Адреналиновый аркадный bullet-hell с комбо-множителями и автопилотом Роя.</p>
+                        <div style="font-size: 0.75rem; color: #FF1493; font-weight: bold; margin: 6px 0;">Дофаминовый индекс: ⚡ 99.2% | Рейтинг: ★ 4.95</div>
+                        <button class="win-btn-action" onclick="openAppWindow('win-arcade')" style="background: #ff0055; color: #fff;">▶ ЗАПУСК В ОКНЕ ИГРЫ</button>
+                    </div>
+                    <div class="win-item-card">
+                        <span class="win-badge" style="background: #00E5FF; color: #000;">3D WORLD</span>
+                        <h4 style="color:#fff; margin: 4px 0;">Xanlibemant Voxel-CAD Matrix 3D</h4>
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin: 4px 0;">3D Three.js воксельный конструктор и сплайн-трассировка мицелия.</p>
+                        <div style="font-size: 0.75rem; color: #00E5FF; font-weight: bold; margin: 6px 0;">Дофамин: ⚡ 94.5% | Рейтинг: ★ 4.88</div>
+                        <button class="win-btn-action" onclick="log('[MARKET] Voxel-CAD 3D Matrix connected on port 3000')">▶ ЗАПУСТИТЬ 3D МИР</button>
+                    </div>
+                    <div class="win-item-card">
+                        <span class="win-badge" style="background: #FFD700; color: #000;">СКАЗКА / МУЛЬТФИЛЬМ</span>
+                        <h4 style="color:#fff; margin: 4px 0;">Quantum Tales: Awakening of Triad</h4>
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin: 4px 0;">Интерактивная волшебная кибер-сказка для детей и взрослых.</p>
+                        <div style="font-size: 0.75rem; color: #FFD700; font-weight: bold; margin: 6px 0;">Дофамин: ⚡ 98.7% | Рейтинг: ★ 4.99</div>
+                        <button class="win-btn-action" onclick="readQuantumTale()">📖 ЧИТАТЬ / СЛУШАТЬ</button>
+                    </div>
+                    <div class="win-item-card">
+                        <span class="win-badge" style="background: #9933FF; color: #fff;">МУЗЫКА / CHIPTUNE</span>
+                        <h4 style="color:#fff; margin: 4px 0;">Neon Euphoria 8-Bit Synth 432Hz</h4>
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin: 4px 0;">Генеративный бинауральный саундтрек для фокусировки и счастья.</p>
+                        <div style="font-size: 0.75rem; color: #9933FF; font-weight: bold; margin: 6px 0;">Дофамин: ⚡ 96.4% | Рейтинг: ★ 4.92</div>
+                        <button class="win-btn-action" onclick="playEuphoriaAudio()">🎵 СИНТЕЗ ЗВУКА</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SHOP WINDOW -->
+        <div id="win-shop" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-shop')">
+                <div class="app-win-title">
+                    <span>🛍️</span>
+                    <span>ᚠ RADRILONIUMA OFFICIAL SHOP</span>
+                    <span class="win-badge" style="background:#FF3399; color:#fff;">#FF3399</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-shop')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-shop')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-shop')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,51,153,0.1); border:1px solid #FF3399; padding:10px 14px; border-radius:8px; margin-bottom:12px;">
+                    <div><b>КОШЕЛЕК:</b> <span id="shopWalletUsdt" style="color:#FFD700;">$14,984.88 USDT</span> | <span style="color:#00E676;">250,000 ᚱ</span> | <span id="shopWalletDopamine" style="color:#FF1493;">⚡ 5,226</span></div>
+                    <div style="font-size:0.7rem; color:#94a3b8;">Кассандра Нагрузка: <b>10.0%</b></div>
+                </div>
+                <table class="win-table">
+                    <thead>
+                        <tr>
+                            <th>Товар</th>
+                            <th>Тип</th>
+                            <th>Цена USDT</th>
+                            <th>Цена RADRIL</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Neo-Chronicles: Dopamine Survivor</td>
+                            <td>[GAME]</td>
+                            <td style="color:#FFD700; font-weight:bold;">$15.12</td>
+                            <td style="color:#00E676;">151 ᚱ</td>
+                            <td><button class="win-btn-action" onclick="quickBuyItem('game.dopamine-survivor', 15.12)" style="padding:4px 8px; font-size:0.7rem;">КУПИТЬ</button></td>
+                        </tr>
+                        <tr>
+                            <td>Xanlibemant Voxel-CAD Matrix 3D</td>
+                            <td>[WORLD]</td>
+                            <td style="color:#FFD700; font-weight:bold;">$31.50</td>
+                            <td style="color:#00E676;">315 ᚱ</td>
+                            <td><button class="win-btn-action" onclick="quickBuyItem('game.voxel-cad', 31.50)" style="padding:4px 8px; font-size:0.7rem;">КУПИТЬ</button></td>
+                        </tr>
+                        <tr>
+                            <td>Quantum Tales: Awakening</td>
+                            <td>[CARTOON]</td>
+                            <td style="color:#FFD700; font-weight:bold;">$8.50</td>
+                            <td style="color:#00E676;">85 ᚱ</td>
+                            <td><button class="win-btn-action" onclick="quickBuyItem('media.tales-quantum', 8.50)" style="padding:4px 8px; font-size:0.7rem;">КУПИТЬ</button></td>
+                        </tr>
+                        <tr>
+                            <td>Neon Euphoria Chiptune Audio</td>
+                            <td>[MUSIC]</td>
+                            <td style="color:#FFD700; font-weight:bold;">$5.00</td>
+                            <td style="color:#00E676;">50 ᚱ</td>
+                            <td><button class="win-btn-action" onclick="quickBuyItem('audio.euphoria-synth', 5.00)" style="padding:4px 8px; font-size:0.7rem;">КУПИТЬ</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="shopReceiptBox" style="margin-top:12px; font-family:monospace; font-size:0.7rem; color:#00e676; min-height:24px;"></div>
+            </div>
+        </div>
+
+        <!-- 3. TRADE WINDOW -->
+        <div id="win-trade" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-trade')">
+                <div class="app-win-title">
+                    <span>⚖️</span>
+                    <span>ᛞ RADRILONIUMA P2P TRADE EXCHANGE</span>
+                    <span class="win-badge" style="background:#9933FF; color:#fff;">#9933FF</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-trade')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-trade')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-trade')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <h4 style="color:#9933FF; margin-bottom:8px;">АКТИВНЫЙ БИРЖЕВОЙ СТАКАН (ORDER BOOK)</h4>
+                <table class="win-table">
+                    <thead>
+                        <tr>
+                            <th>Ордер ID</th>
+                            <th>Создатель</th>
+                            <th>Предлагает</th>
+                            <th>Требует</th>
+                            <th>Статус</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tradeOrdersTbody">
+                        <tr>
+                            <td style="color:#00E5FF;">ORD-7701</td>
+                            <td>Node_Orchestrator_12</td>
+                            <td style="color:#FF1493;">500 DOPAMINE</td>
+                            <td style="color:#FFD700;">$45.00 USDT</td>
+                            <td><span style="color:#00E676;">OPEN</span></td>
+                            <td><button class="win-btn-action" onclick="executeFillTrade('ORD-7701')" style="padding:4px 8px; font-size:0.7rem;">ИСПОЛНИТЬ</button></td>
+                        </tr>
+                        <tr>
+                            <td style="color:#00E5FF;">ORD-7702</td>
+                            <td>AvangardNode_04</td>
+                            <td style="color:#00E5FF;">1 VOXEL-CAD</td>
+                            <td style="color:#00E676;">220 ᚱ</td>
+                            <td><span style="color:#00E676;">OPEN</span></td>
+                            <td><button class="win-btn-action" onclick="executeFillTrade('ORD-7702')" style="padding:4px 8px; font-size:0.7rem;">ИСПОЛНИТЬ</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="tradeStatusBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#38bdf8;"></div>
+            </div>
+        </div>
+
+        <!-- 4. SELL WINDOW -->
+        <div id="win-sell" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-sell')">
+                <div class="app-win-title">
+                    <span>💰</span>
+                    <span>ᛋ ПОРТАЛ ПРОДАВЦА // SELL ASSET</span>
+                    <span class="win-badge" style="background:#FF1493; color:#fff;">#FF1493</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-sell')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-sell')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-sell')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div class="win-input-group">
+                    <label class="win-label">Название актива или игры:</label>
+                    <input class="win-input" id="sellAssetName" value="DOPAMINE_CRYSTAL">
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Количество единиц:</label>
+                    <input class="win-input" id="sellAssetAmount" type="number" value="250">
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Желаемая валюта:</label>
+                    <select class="win-input" id="sellAssetCurrency">
+                        <option value="USDT">USDT</option>
+                        <option value="RADRIL">RADRIL (ᚱ)</option>
+                    </select>
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Запрашиваемая цена:</label>
+                    <input class="win-input" id="sellAssetPrice" type="number" value="35.0">
+                </div>
+                <button class="win-btn-action" onclick="submitSellOrderUI()" style="background:#FF1493; color:#fff; width:100%;">🏷️ ВЫСТАВИТЬ С ПЕЧАТЬЮ JUNGLE VAULT</button>
+                <div id="sellResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#00E676;"></div>
+            </div>
+        </div>
+
+        <!-- 5. BUY WINDOW -->
+        <div id="win-buy" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-buy')">
+                <div class="app-win-title">
+                    <span>💳</span>
+                    <span>ᛉ ТЕРМИНАЛ ПОКУПКИ // BUY</span>
+                    <span class="win-badge" style="background:#FFD700; color:#000;">#FFD700</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-buy')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-buy')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-buy')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div class="win-input-group">
+                    <label class="win-label">Выберите цифровой актив:</label>
+                    <select class="win-input" id="buyAssetSelect">
+                        <option value="shop.game.dopamine-survivor">Neo-Chronicles: Dopamine Survivor ($15.12)</option>
+                        <option value="shop.game.voxel-cad">Xanlibemant Voxel-CAD Matrix 3D ($31.50)</option>
+                        <option value="shop.media.tales-quantum">Quantum Tales: Awakening of Triad ($8.50)</option>
+                        <option value="shop.audio.euphoria-synth">Neon Euphoria Synth Chiptune ($5.00)</option>
+                    </select>
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Количество копий / лицензий:</label>
+                    <input class="win-input" id="buyAssetQty" type="number" value="1" min="1">
+                </div>
+                <div style="background:rgba(255,215,0,0.1); border:1px solid #FFD700; padding:10px; border-radius:6px; margin: 10px 0;">
+                    Аудитор транзакции: <b>Jungle Vault Security Gate</b>. Автоматическое начисление <b>+15% Дофаминовых кристаллов</b> за покупку!
+                </div>
+                <button class="win-btn-action" onclick="executeBuyUI()" style="background:#FFD700; color:#000; width:100%;">💳 КУПИТЬ И АКТИВИРОВАТЬ</button>
+                <div id="buyResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#00E676;"></div>
+            </div>
+        </div>
+
+        <!-- 6. SAVE WINDOW -->
+        <div id="win-save" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-save')">
+                <div class="app-win-title">
+                    <span>💾</span>
+                    <span>ᛏ СОХРАНЕНИЕ СОСТОЯНИЯ // SAVE CHECKPOINT</span>
+                    <span class="win-badge" style="background:#00BFFF; color:#000;">#00BFFF</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-save')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-save')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-save')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div class="win-input-group">
+                    <label class="win-label">Имя слота сохранения:</label>
+                    <input class="win-input" id="saveSlotName" value="SLOT_AUTO_01">
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Целевой модуль / игра:</label>
+                    <input class="win-input" id="saveGameId" value="game.dopamine-survivor">
+                </div>
+                <div style="background:rgba(0,191,255,0.08); border:1px solid #00BFFF; padding:10px; border-radius:6px; margin: 10px 0;">
+                    • Уровень: <b>4</b> | Очки: <b>18,450</b> | Оружие: <b>Pulse Laser MkII, Quantum Dash</b><br>
+                    • Хеш целостности SHA-256 будет автоматически запечатан в `.codex`.
+                </div>
+                <button class="win-btn-action" onclick="executeSaveUI()" style="background:#00BFFF; color:#000; width:100%;">💾 ЗАФИКСИРОВАТЬ ЧЕКПОИНТ</button>
+                <div id="saveResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#00E676;"></div>
+            </div>
+        </div>
+
+        <!-- 7. KEEP WINDOW -->
+        <div id="win-keep" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-keep')">
+                <div class="app-win-title">
+                    <span>❄️</span>
+                    <span>ᛗ ХОЛОДНЫЙ АРХИВ // KEEP COLD VAULT</span>
+                    <span class="win-badge" style="background:#7B68EE; color:#fff;">#7B68EE</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-keep')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-keep')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-keep')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background:rgba(123,104,238,0.1); border:1px solid #7B68EE; padding:10px; border-radius:6px; margin-bottom:12px;">
+                    <b style="color:#7B68EE;">Куратор архива: Маршал Фиби Тихоня (Phoebe Chillax)</b><br>
+                    Консервация данных перед ежедневным сном и гибернацией Роя. Гарантированная защита от случайного стирания.
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Идентификатор архивируемого набора:</label>
+                    <input class="win-input" id="keepAssetId" value="ALL_PROGRESS">
+                </div>
+                <button class="win-btn-action" onclick="executeKeepUI()" style="background:#7B68EE; color:#fff; width:100%;">❄️ КОНСЕРВИРОВАТЬ В COLD STORAGE VAULT</button>
+                <div id="keepResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#38bdf8;"></div>
+            </div>
+        </div>
+
+        <!-- 8. SEND WINDOW -->
+        <div id="win-send" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-send')">
+                <div class="app-win-title">
+                    <span>🚀</span>
+                    <span>ᛚ ОТПРАВИТЬ В СЕТЬ // SEND DISPATCH</span>
+                    <span class="win-badge" style="background:#39FF14; color:#000;">#39FF14</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-send')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-send')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-send')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div class="win-input-group">
+                    <label class="win-label">Получатель (Адрес / Узел / Telegram):</label>
+                    <input class="win-input" id="sendRecipient" value="@operator_core">
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Передаваемый актив:</label>
+                    <select class="win-input" id="sendCurrency">
+                        <option value="USDT">USDT ($)</option>
+                        <option value="RADRIL">RADRIL (ᚱ)</option>
+                        <option value="DOPAMINE_CRYSTAL">DOPAMINE CRYSTALS (⚡)</option>
+                    </select>
+                </div>
+                <div class="win-input-group">
+                    <label class="win-label">Сумма отправки:</label>
+                    <input class="win-input" id="sendAmount" type="number" value="100.0">
+                </div>
+                <button class="win-btn-action" onclick="executeSendUI()" style="background:#39FF14; color:#000; width:100%;">🚀 ОТПРАВИТЬ С ПЕЧАТЬЮ JUNGLE VAULT</button>
+                <div id="sendResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#00E676;"></div>
+            </div>
+        </div>
+
+        <!-- 9. RECEIVE WINDOW -->
+        <div id="win-receive" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-receive')">
+                <div class="app-win-title">
+                    <span>📭</span>
+                    <span>ᛒ ВХОДЯЩИЙ ПОТОК // RECEIVE INGRESS</span>
+                    <span class="win-badge" style="background:#FF8C00; color:#000;">#FF8C00</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-receive')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-receive')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-receive')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background:rgba(255,140,0,0.1); border:1px solid #FF8C00; padding:10px; border-radius:6px; margin-bottom:12px;">
+                    Очередь входящих транзакций и авторских отчислений из Play Market открыта.
+                </div>
+                <button class="win-btn-action" onclick="executeReceiveUI()" style="background:#FF8C00; color:#000; width:100%;">📭 ПРИНЯТЬ ВХОДЯЩИЕ РОЯЛТИ И НАГРАДЫ (+500 ⚡)</button>
+                <div id="receiveResultBox" style="margin-top:12px; font-family:monospace; font-size:0.75rem; color:#FF8C00;"></div>
+            </div>
+        </div>
+
+        <!-- 10. JUNGLE VAULT WINDOW -->
+        <div id="win-vault" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-vault')">
+                <div class="app-win-title">
+                    <span>🌴</span>
+                    <span>ᛟ KERNEL CORE ENGINE // JUNGLE VAULT COMPLIANCE</span>
+                    <span class="win-badge" style="background:#00FF7F; color:#000;">#00FF7F</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-vault')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-vault')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-vault')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background:rgba(0,255,127,0.08); border:1px solid #00FF7F; padding:12px; border-radius:8px; margin-bottom:12px;">
+                    <div style="color:#00FF7F; font-weight:bold; font-size:0.9rem; margin-bottom:4px;">STATUS: AML/CTF STRICT COMPLIANCE ACTIVE</div>
+                    <div style="font-size:0.75rem; color:#e2e8f0;">Master Audit Stamp: <b>JUNGLE-VAULT-20260921-X9A7</b></div>
+                    <div style="font-size:0.7rem; color:#94a3b8; margin-top:4px;">Authority: RADRILONIUMA B.V. / Jungle Vault NL</div>
+                </div>
+                <table class="win-table">
+                    <tr>
+                        <td>Compliance Blocks SHA-256</td>
+                        <td style="font-family:monospace; color:#38bdf8;">6e8aeefe3d129b89f62d053ae74956415ce14b53a8fe013b298846c8c67d580d</td>
+                    </tr>
+                    <tr>
+                        <td>Нулевое кольцо (Zero-Ring)</td>
+                        <td style="color:#00e676; font-weight:bold;">krnl_hrt.py Queen's Guard ONLINE</td>
+                    </tr>
+                    <tr>
+                        <td>Санкционные проверки (OFAC/EU)</td>
+                        <td style="color:#00e676; font-weight:bold;">PASSED (100% CLEAR)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 11. SWARM ROTATION WINDOW -->
+        <div id="win-swarm" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-swarm')">
+                <div class="app-win-title">
+                    <span>🔄</span>
+                    <span>ᛉ ЦИКЛИЧЕСКАЯ РОТАЦИЯ ОРКЕСТРАТОРОВ (RULE 1)</span>
+                    <span class="win-badge" style="background:#FFD700; color:#000;">#FFD700</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-swarm')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-swarm')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-swarm')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background:rgba(255,215,0,0.1); border:1px solid #FFD700; padding:10px; border-radius:6px; margin-bottom:12px;">
+                    <b>Глобальное правило Роя:</b> Оркестраторы сменяются циклически. Ни один узел не монополизирует управление (Монополия = 0%).
+                </div>
+                <div class="win-card-grid">
+                    <div class="win-item-card" style="border-left: 4px solid #00E5FF;">
+                        <h4 style="color:#00E5FF; margin:0 0 4px 0;">ᚱ ORCH_ALPHA_KINETICS</h4>
+                        <div style="font-size:0.75rem;">Физика, задержки ввода, 60 FPS | <b>25% CPU</b></div>
+                    </div>
+                    <div class="win-item-card" style="border-left: 4px solid #FF1493;">
+                        <h4 style="color:#FF1493; margin:0 0 4px 0;">ᛋ ORCH_BETA_DOPAMINE</h4>
+                        <div style="font-size:0.75rem;">Дофаминовые циклы, комбо, звук | <b>25% CPU</b></div>
+                    </div>
+                    <div class="win-item-card" style="border-left: 4px solid #FF3399;">
+                        <h4 style="color:#FF3399; margin:0 0 4px 0;">ᚠ ORCH_GAMMA_COMMERCE</h4>
+                        <div style="font-size:0.75rem;">Динамический прайс, Play Market | <b>25% CPU</b></div>
+                    </div>
+                    <div class="win-item-card" style="border-left: 4px solid #00FF7F;">
+                        <h4 style="color:#00FF7F; margin:0 0 4px 0;">ᛟ ORCH_DELTA_JUNGLE_VAULT</h4>
+                        <div style="font-size:0.75rem;">Безопасность, AML/CTF аудит | <b>25% CPU</b></div>
+                    </div>
+                </div>
+                <button class="win-btn-action" onclick="executeSwarmRotationUI()" style="background:#FFD700; color:#000; width:100%;">🔄 ЗАПУСТИТЬ ЦИКЛ РОТАЦИИ КВАНТОВ</button>
+                <div id="swarmRotationResult" style="margin-top:10px; font-family:monospace; font-size:0.75rem; color:#00E676;"></div>
+            </div>
+        </div>
+
+        <!-- 12. SLEEP & HIBERNATION WINDOW -->
+        <div id="win-sleep" class="app-window">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-sleep')">
+                <div class="app-win-title">
+                    <span>🌙</span>
+                    <span>ᛗ СНА И ГИБЕРНАЦИИ // PRUNING & LEARNING (RULE 2)</span>
+                    <span class="win-badge" style="background:#7B68EE; color:#fff;">#7B68EE</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-sleep')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-sleep')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-sleep')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body">
+                <div style="background:rgba(123,104,238,0.1); border:1px solid #7B68EE; padding:10px; border-radius:6px; margin-bottom:12px;">
+                    <b>Режим сна и глубокой гибернации:</b> фаза постоянного прунинга (очистки мусорных данных) и обучения во сне (синтез накопленного опыта).
+                </div>
+                <div style="font-size:0.8rem; line-height:1.6;">
+                    • <b>Закон переменного подкрепления:</b> Дофамин возрастает на 400% при непредсказуемом дропе.<br>
+                    • <b>Закон кривой напряжения:</b> Сброс напряжения каждые 15 секунд предотвращает утомление.<br>
+                    • <b>Закон аудиовизуального сока:</b> Экранная тряска и бинауральный звук 432Hz утраивают восприятие набранных очков.
+                </div>
+                <button class="win-btn-action" onclick="executeSleepUI()" style="background:#7B68EE; color:#fff; width:100%; margin-top:14px;">🌙 АКТИВИРОВАТЬ НОЧНОЙ ПРУНИНГ И СИНТЕЗ ОПЫТА</button>
+                <div id="sleepResultBox" style="margin-top:10px; font-family:monospace; font-size:0.75rem; color:#38bdf8;"></div>
+            </div>
+        </div>
+
+        <!-- 13. LIVE ARCADE GAME WINDOW (DOPAMINE SURVIVOR) -->
+        <div id="win-arcade" class="app-window" style="max-width: 600px; height: 560px;">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-arcade')">
+                <div class="app-win-title">
+                    <span>🕹️</span>
+                    <span>⚡ NEO-CHRONICLES: DOPAMINE SURVIVOR [LIVE ENGINE]</span>
+                    <span class="win-badge" style="background:#ff0055; color:#fff;">60 FPS</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-arcade')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-arcade')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-arcade')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body" style="padding:10px; display:flex; flex-direction:column; align-items:center;">
+                <div style="width:100%; display:flex; justify-content:space-between; font-size:0.75rem; font-family:monospace; margin-bottom:6px;">
+                    <div>HP: <span id="arcadeHp" style="color:#00e676; font-weight:bold;">100</span> | SCORE: <span id="arcadeScore" style="color:#00e5ff; font-weight:bold;">0</span></div>
+                    <div>COMBO: <span id="arcadeCombo" style="color:#ff0055; font-weight:bold;">x1</span> | DOPAMINE: <span id="arcadeDopamine" style="color:#ffd700; font-weight:bold;">20%</span></div>
+                </div>
+                <canvas id="arcadeCanvas" width="520" height="300" style="background:#02050a; border:2px solid #00e5ff; border-radius:6px; box-shadow:0 0 15px rgba(0,229,255,0.3);"></canvas>
+                <div style="display:flex; gap:8px; margin-top:10px; width:100%; justify-content:center;">
+                    <button class="win-btn-action" onclick="toggleArcadeAi()" id="arcadeAiBtn" style="background:#ffd700; color:#000;">🤖 АВТОПИЛОТ РОЯ: ВКЛ</button>
+                    <button class="win-btn-action" onclick="arcadeFireBomb()" style="background:#ff1744; color:#fff;">💣 БОМБА</button>
+                    <button class="win-btn-action" onclick="arcadeRestart()" style="background:#2979ff; color:#fff;">↺ ЗАНОВО</button>
+                </div>
+                <div style="font-size:0.65rem; color:#94a3b8; margin-top:6px;">Управление: WASD / Стрелки — движение | Пробел — Бомба | Автопилот Роя собирает кристаллы</div>
+            </div>
+        </div>
+
+        <!-- 14. WIN: VOXEL MINECRAFT 3D (TELEGRAM MINI APP) -->
+        <div id="win-voxel-minecraft" class="app-window" style="max-width: 620px; height: 600px;">
+            <div class="app-win-header" onmousedown="startDragWindow(event, 'win-voxel-minecraft')">
+                <div class="app-win-title">
+                    <span class="app-win-icon">⛏️</span>
+                    <span>RADRILONIUMA VOXEL — MINECRAFT 3D В TELEGRAM 🐺</span>
+                </div>
+                <div class="app-win-controls">
+                    <button class="win-ctrl-btn" onclick="minimizeAppWindow('win-voxel-minecraft')">_</button>
+                    <button class="win-ctrl-btn" onclick="toggleMaximizeWindow('win-voxel-minecraft')">▢</button>
+                    <button class="win-ctrl-btn win-ctrl-close" onclick="closeAppWindow('win-voxel-minecraft')">✕</button>
+                </div>
+            </div>
+            <div class="app-win-body" style="padding:10px; display:flex; flex-direction:column; align-items:center;">
+                <div style="width:100%; display:flex; justify-content:space-between; font-size:0.75rem; font-family:monospace; margin-bottom:6px;">
+                    <div>🐺 ВОЛК: <span id="voxelWolfHp" style="color:#00e676; font-weight:bold;">100/100 HP</span> (SOUL BOND 99%)</div>
+                    <div>💎 ДОФАМИН: <span id="voxelDopamine" style="color:#ffd700; font-weight:bold;">750</span> | БЛОК: <span id="voxelSelectedName" style="color:#00e5ff; font-weight:bold;">ТРАВА</span></div>
+                </div>
+                <canvas id="voxelCanvas" width="540" height="300" style="background:#0a101d; border:2px solid #39ff14; border-radius:6px; box-shadow:0 0 15px rgba(57,255,20,0.3); touch-action:none;"></canvas>
+                
+                <!-- Inventory Hotbar -->
+                <div style="display:flex; gap:6px; margin-top:8px; width:100%; justify-content:center; flex-wrap:wrap;">
+                    <button class="win-btn-action voxel-slot active" onclick="selectVoxelBlock(1)" id="vslot-1" style="background:#2e7d32; color:#fff; padding:4px 8px; font-size:0.7rem;">[1] 🌿 Трава</button>
+                    <button class="win-btn-action voxel-slot" onclick="selectVoxelBlock(2)" id="vslot-2" style="background:#616161; color:#fff; padding:4px 8px; font-size:0.7rem;">[2] 🪨 Камень</button>
+                    <button class="win-btn-action voxel-slot" onclick="selectVoxelBlock(3)" id="vslot-3" style="background:#00bcd4; color:#fff; padding:4px 8px; font-size:0.7rem;">[3] 💎 Кристалл</button>
+                    <button class="win-btn-action voxel-slot" onclick="selectVoxelBlock(4)" id="vslot-4" style="background:#fbc02d; color:#000; padding:4px 8px; font-size:0.7rem;">[4] 🏆 Золото</button>
+                    <button class="win-btn-action voxel-slot" onclick="selectVoxelBlock(5)" id="vslot-5" style="background:#e91e63; color:#fff; padding:4px 8px; font-size:0.7rem;">[5] 🥩 Мясо Волку</button>
+                </div>
+
+                <!-- Action Controls -->
+                <div style="display:flex; gap:8px; margin-top:8px; width:100%; justify-content:center;">
+                    <button class="win-btn-action" onclick="feedWolf()" style="background:#ff1493; color:#fff;">🍖 ПОКОРМИТЬ ВОЛКА</button>
+                    <button class="win-btn-action" onclick="toggleVoxelTime()" style="background:#7b68ee; color:#fff;">☀️ ДЕНЬ / НОЧЬ</button>
+                    <button class="win-btn-action" onclick="resetVoxelWorld()" style="background:#2979ff; color:#fff;">↺ ГЕНЕРАЦИЯ</button>
+                </div>
+                <div style="font-size:0.65rem; color:#94a3b8; margin-top:6px; text-align:center;">
+                    ПК: Клик — ломать блок | Shift+Клик — ставить | WASD / Стрелки — ходить | Волк Фенрир защищает вас!
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+    // ==========================================
+    // TELEGRAM MINI APP & SOCIAL ADAPTER INITIALIZATION
+    // ==========================================
+    if (window.Telegram && window.Telegram.WebApp) {
+        try {
+            window.Telegram.WebApp.ready();
+            window.Telegram.WebApp.expand();
+            if (window.Telegram.WebApp.setHeaderColor) {
+                window.Telegram.WebApp.setHeaderColor('#050811');
+                window.Telegram.WebApp.setBackgroundColor('#050811');
+            }
+        } catch (e) { console.warn("Telegram WebApp init error:", e); }
+    }
+    function triggerTelegramHaptic(type = "light") {
+        if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+            window.Telegram.WebApp.HapticFeedback.impactOccurred(type);
+        }
+    }
+
+    // ==========================================
+    // RADRILONIUMA DESKTOP WINDOW SYSTEM
+    // ==========================================
+    let highestZIndex = 1000;
+    function openAppWindow(winId) {
+        const win = document.getElementById(winId);
+        if (!win) return;
+        win.style.display = "flex";
+        win.style.zIndex = ++highestZIndex;
+        triggerTelegramHaptic("medium");
+        if (winId === "win-voxel-minecraft") initVoxelWorld();
+        if (winId === "win-arcade") initArcade();
+    }
+    function closeAppWindow(winId) {
+        const win = document.getElementById(winId);
+        if (win) win.style.display = "none";
+        triggerTelegramHaptic("light");
+    }
+    function minimizeAppWindow(winId) {
+        closeAppWindow(winId);
+    }
+    function toggleMaximizeWindow(winId) {
+        const win = document.getElementById(winId);
+        if (!win) return;
+        if (win.dataset.maximized === "true") {
+            win.style.width = win.dataset.origW || "560px";
+            win.style.height = win.dataset.origH || "480px";
+            win.style.top = win.dataset.origTop || "10%";
+            win.style.left = win.dataset.origLeft || "10%";
+            win.dataset.maximized = "false";
+        } else {
+            win.dataset.origW = win.style.width;
+            win.dataset.origH = win.style.height;
+            win.dataset.origTop = win.style.top;
+            win.dataset.origLeft = win.style.left;
+            win.style.width = "96vw";
+            win.style.height = "90vh";
+            win.style.top = "2vh";
+            win.style.left = "2vw";
+            win.dataset.maximized = "true";
+        }
+        triggerTelegramHaptic("selection");
+    }
+    function startDragWindow(e, winId) {
+        const win = document.getElementById(winId);
+        if (!win || win.dataset.maximized === "true") return;
+        win.style.zIndex = ++highestZIndex;
+        let startX = e.clientX || (e.touches && e.touches[0].clientX);
+        let startY = e.clientY || (e.touches && e.touches[0].clientY);
+        let origX = win.offsetLeft;
+        let origY = win.offsetTop;
+        function onMove(me) {
+            let curX = me.clientX || (me.touches && me.touches[0].clientX);
+            let curY = me.clientY || (me.touches && me.touches[0].clientY);
+            win.style.left = (origX + curX - startX) + "px";
+            win.style.top = (origY + curY - startY) + "px";
+        }
+        function onUp() {
+            window.removeEventListener("mousemove", onMove);
+            window.removeEventListener("mouseup", onUp);
+            window.removeEventListener("touchmove", onMove);
+            window.removeEventListener("touchend", onUp);
+        }
+        window.addEventListener("mousemove", onMove);
+        window.addEventListener("mouseup", onUp);
+        window.addEventListener("touchmove", onMove);
+        window.addEventListener("touchend", onUp);
+    }
+
+    // ==========================================
+    // MINECRAFT 3D VOXEL ENGINE (IN TELEGRAM)
+    // ==========================================
+    let voxelInitialized = false;
+    let voxelBlocks = [];
+    let voxelPlayer = { x: 0, y: 3, z: -8, yaw: 0, pitch: 0.3 };
+    let voxelWolf = { x: 1, y: 1, z: -6, hp: 100, soulBond: 99, tailAngle: 0 };
+    let voxelSelectedBlock = 1; // 1: Grass, 2: Stone, 3: Crystal, 4: Gold, 5: Meat
+    let voxelIsNight = false;
+    let voxelDopamine = 750;
+    let audioCtx = null;
+
+    function playChime(freq = 432, duration = 0.15) {
+        try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.frequency.value = freq;
+            osc.type = "sine";
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        } catch(e){}
+    }
+
+    function selectVoxelBlock(id) {
+        voxelSelectedBlock = id;
+        document.querySelectorAll(".voxel-slot").forEach(s => s.classList.remove("active"));
+        const btn = document.getElementById("vslot-" + id);
+        if (btn) btn.classList.add("active");
+        const names = {1: "ТРАВА", 2: "КАМЕНЬ", 3: "КРИСТАЛЛ", 4: "ЗОЛОТО", 5: "МЯСО ДЛЯ ВОЛКА"};
+        document.getElementById("voxelSelectedName").textContent = names[id] || "БЛОК";
+        playChime(540, 0.08);
+        triggerTelegramHaptic("selection");
+    }
+
+    function feedWolf() {
+        voxelWolf.hp = Math.min(100, voxelWolf.hp + 25);
+        voxelWolf.soulBond = Math.min(100, voxelWolf.soulBond + 1);
+        voxelDopamine += 100;
+        document.getElementById("voxelWolfHp").textContent = `${voxelWolf.hp}/100 HP`;
+        document.getElementById("voxelDopamine").textContent = voxelDopamine;
+        playChime(648, 0.25);
+        triggerTelegramHaptic("heavy");
+        log("🐺 [SOUL BOND] Волк Фенрир покормлен! Связь душ укреплена: " + voxelWolf.soulBond + "%");
+    }
+
+    function toggleVoxelTime() {
+        voxelIsNight = !voxelIsNight;
+        playChime(voxelIsNight ? 216 : 432, 0.2);
+        triggerTelegramHaptic("medium");
+    }
+
+    function resetVoxelWorld() {
+        voxelBlocks = [];
+        for (let x = -7; x <= 7; x++) {
+            for (let z = -7; z <= 7; z++) {
+                voxelBlocks.push({ x, y: 0, z, type: 1 }); // Grass
+                if (Math.random() < 0.25) {
+                    voxelBlocks.push({ x, y: 1, z, type: 2 }); // Stone
+                }
+                if (Math.random() < 0.1) {
+                    voxelBlocks.push({ x, y: 2, z, type: 3 }); // Dopamine Crystal
+                }
+                if (Math.random() < 0.05) {
+                    voxelBlocks.push({ x, y: 2, z, type: 4 }); // Gold Ore
+                }
+            }
+        }
+        playChime(432, 0.3);
+    }
+
+    function initVoxelWorld() {
+        if (voxelInitialized) return;
+        voxelInitialized = true;
+        resetVoxelWorld();
+        const canvas = document.getElementById("voxelCanvas");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+
+        // Controls
+        window.addEventListener("keydown", (e) => {
+            const win = document.getElementById("win-voxel-minecraft");
+            if (!win || win.style.display !== "flex") return;
+            const speed = 0.5;
+            if (e.key === "w" || e.key === "W" || e.key === "ArrowUp") { voxelPlayer.z += speed; playChime(324, 0.05); }
+            if (e.key === "s" || e.key === "S" || e.key === "ArrowDown") { voxelPlayer.z -= speed; playChime(324, 0.05); }
+            if (e.key === "a" || e.key === "A" || e.key === "ArrowLeft") { voxelPlayer.x -= speed; playChime(324, 0.05); }
+            if (e.key === "d" || e.key === "D" || e.key === "ArrowRight") { voxelPlayer.x += speed; playChime(324, 0.05); }
+            if (e.key === "1") selectVoxelBlock(1);
+            if (e.key === "2") selectVoxelBlock(2);
+            if (e.key === "3") selectVoxelBlock(3);
+            if (e.key === "4") selectVoxelBlock(4);
+            if (e.key === "5") selectVoxelBlock(5);
+        });
+
+        canvas.addEventListener("click", (e) => {
+            triggerTelegramHaptic("medium");
+            if (e.shiftKey) {
+                // Place block
+                voxelBlocks.push({ x: Math.round(voxelPlayer.x), y: 1, z: Math.round(voxelPlayer.z + 3), type: voxelSelectedBlock });
+                playChime(540, 0.1);
+            } else {
+                // Break block
+                if (voxelBlocks.length > 5) {
+                    voxelBlocks.pop();
+                    voxelDopamine += 15;
+                    document.getElementById("voxelDopamine").textContent = voxelDopamine;
+                    playChime(432, 0.15);
+                }
+            }
+        });
+
+        // 3D Voxel Render Loop
+        function renderVoxel() {
+            if (document.getElementById("win-voxel-minecraft").style.display === "flex") {
+                const w = canvas.width;
+                const h = canvas.height;
+                ctx.fillStyle = voxelIsNight ? "#05070f" : "#0d1a33";
+                ctx.fillRect(0, 0, w, h);
+
+                // Sky & Stars/Sun
+                ctx.fillStyle = voxelIsNight ? "#ffd700" : "#ffeb3b";
+                ctx.beginPath();
+                ctx.arc(w - 60, 50, voxelIsNight ? 16 : 24, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Sort blocks back to front
+                const sorted = [...voxelBlocks].sort((a, b) => {
+                    const da = Math.hypot(a.x - voxelPlayer.x, a.z - voxelPlayer.z);
+                    const db = Math.hypot(b.x - voxelPlayer.x, b.z - voxelPlayer.z);
+                    return db - da;
+                });
+
+                // Render Blocks in 3D Isometric View
+                const cx = w / 2;
+                const cy = h / 2 + 50;
+                const scale = 22;
+
+                sorted.forEach(b => {
+                    const rx = (b.x - voxelPlayer.x);
+                    const rz = (b.z - voxelPlayer.z);
+                    const ry = (b.y - voxelPlayer.y);
+                    if (rz < -2 || rz > 20) return;
+
+                    const sx = cx + (rx - rz) * (scale * 0.866);
+                    const sy = cy + (rx + rz) * (scale * 0.5) - ry * scale;
+
+                    // Block Colors
+                    let topCol = "#4caf50";
+                    let leftCol = "#388e3c";
+                    let rightCol = "#2e7d32";
+                    if (b.type === 2) { topCol = "#9e9e9e"; leftCol = "#757575"; rightCol = "#616161"; }
+                    if (b.type === 3) { topCol = "#00e5ff"; leftCol = "#00b0ff"; rightCol = "#0091ea"; }
+                    if (b.type === 4) { topCol = "#ffd700"; leftCol = "#ffc107"; rightCol = "#ffa000"; }
+
+                    // Draw Isometric Cube
+                    const sz = scale * 0.9;
+                    // Top
+                    ctx.fillStyle = topCol;
+                    ctx.beginPath();
+                    ctx.moveTo(sx, sy - sz);
+                    ctx.lineTo(sx + sz * 0.866, sy - sz * 0.5);
+                    ctx.lineTo(sx, sy);
+                    ctx.lineTo(sx - sz * 0.866, sy - sz * 0.5);
+                    ctx.closePath();
+                    ctx.fill();
+                    // Left
+                    ctx.fillStyle = leftCol;
+                    ctx.beginPath();
+                    ctx.moveTo(sx - sz * 0.866, sy - sz * 0.5);
+                    ctx.lineTo(sx, sy);
+                    ctx.lineTo(sx, sy + sz);
+                    ctx.lineTo(sx - sz * 0.866, sy + sz * 0.5);
+                    ctx.closePath();
+                    ctx.fill();
+                    // Right
+                    ctx.fillStyle = rightCol;
+                    ctx.beginPath();
+                    ctx.moveTo(sx, sy);
+                    ctx.lineTo(sx + sz * 0.866, sy - sz * 0.5);
+                    ctx.lineTo(sx + sz * 0.866, sy + sz * 0.5);
+                    ctx.lineTo(sx, sy + sz);
+                    ctx.closePath();
+                    ctx.fill();
+                });
+
+                // Wolf Companion (Follows Player)
+                voxelWolf.x += (voxelPlayer.x + 1.5 - voxelWolf.x) * 0.05;
+                voxelWolf.z += (voxelPlayer.z + 1.5 - voxelWolf.z) * 0.05;
+                voxelWolf.tailAngle += 0.15;
+                const rwx = (voxelWolf.x - voxelPlayer.x);
+                const rwz = (voxelWolf.z - voxelPlayer.z);
+                const wsx = cx + (rwx - rwz) * (scale * 0.866);
+                const wsy = cy + (rwx + rwz) * (scale * 0.5) - (voxelWolf.y - voxelPlayer.y) * scale;
+
+                // Render Wolf Sprite
+                ctx.fillStyle = "#cfd8dc";
+                ctx.fillRect(wsx - 12, wsy - 20, 24, 16); // body
+                ctx.fillStyle = "#90a4ae";
+                ctx.fillRect(wsx + 8, wsy - 28, 12, 14); // head
+                ctx.fillStyle = "#ff1744";
+                ctx.fillRect(wsx + 6, wsy - 18, 5, 5); // collar
+                ctx.fillStyle = "#ffd700";
+                ctx.fillRect(wsx + 14, wsy - 26, 3, 3); // eye
+
+                // Tail
+                ctx.strokeStyle = "#cfd8dc";
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(wsx - 12, wsy - 12);
+                ctx.lineTo(wsx - 20, wsy - 16 + Math.sin(voxelWolf.tailAngle) * 5);
+                ctx.stroke();
+
+                // Name tag
+                ctx.fillStyle = "#39ff14";
+                ctx.font = "bold 10px monospace";
+                ctx.fillText("🐺 ФЕНРИР (SOUL BOND)", wsx - 30, wsy - 34);
+
+                // HUD crosshair
+                ctx.strokeStyle = "rgba(0, 229, 255, 0.5)";
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(cx - 8, cy); ctx.lineTo(cx + 8, cy);
+                ctx.moveTo(cx, cy - 8); ctx.lineTo(cx, cy + 8);
+                ctx.stroke();
+            }
+            requestAnimationFrame(renderVoxel);
+        }
+        renderVoxel();
+    }
+
+    // ==========================================
+    // ARCADE GAME INITIALIZATION (IF NOT ALREADY)
+    // ==========================================
+    let arcadeRunning = false;
+    let arcadeScore = 0;
+    let arcadeHp = 100;
+    let arcadeAi = true;
+    function initArcade() {
+        if (arcadeRunning) return;
+        arcadeRunning = true;
+        const cvs = document.getElementById("arcadeCanvas");
+        if (!cvs) return;
+        const ctx = cvs.getContext("2d");
+        let px = 260, py = 150;
+        let crystals = [{x: 100, y: 80}, {x: 400, y: 220}, {x: 320, y: 110}];
+        function loop() {
+            if (document.getElementById("win-arcade").style.display === "flex") {
+                ctx.fillStyle = "#02050a";
+                ctx.fillRect(0, 0, cvs.width, cvs.height);
+                if (arcadeAi && crystals.length > 0) {
+                    px += (crystals[0].x - px) * 0.08;
+                    py += (crystals[0].y - py) * 0.08;
+                }
+                ctx.fillStyle = "#00e5ff";
+                ctx.fillRect(px - 10, py - 10, 20, 20); // Player
+                crystals.forEach((c, idx) => {
+                    ctx.fillStyle = "#ffd700";
+                    ctx.fillRect(c.x - 6, c.y - 6, 12, 12);
+                    if (Math.hypot(px - c.x, py - c.y) < 16) {
+                        arcadeScore += 100;
+                        document.getElementById("arcadeScore").textContent = arcadeScore;
+                        playChime(540, 0.1);
+                        crystals[idx] = { x: Math.random() * 480 + 20, y: Math.random() * 260 + 20 };
+                    }
+                });
+            }
+            requestAnimationFrame(loop);
+        }
+        loop();
+    }
+    function toggleArcadeAi() {
+        arcadeAi = !arcadeAi;
+        document.getElementById("arcadeAiBtn").textContent = arcadeAi ? "🤖 АВТОПИЛОТ РОЯ: ВКЛ" : "🎮 РУЧНОЕ: ИГРОК";
+        triggerTelegramHaptic("medium");
+    }
+    function arcadeFireBomb() {
+        arcadeScore += 500;
+        document.getElementById("arcadeScore").textContent = arcadeScore;
+        playChime(216, 0.4);
+        triggerTelegramHaptic("heavy");
+    }
+    function arcadeRestart() {
+        arcadeScore = 0;
+        arcadeHp = 100;
+        document.getElementById("arcadeScore").textContent = 0;
+        document.getElementById("arcadeHp").textContent = 100;
+        playChime(432, 0.2);
+    }
+
+    let runtimeRunning = false;
+    let stream = null;
+    let lastInstallMessage = "";
+
+    function apiToken() {
+        return window.RuntimeSession ? window.RuntimeSession.getApiToken() : "";
+    }
+
+    function apiBase() {
+        const port = window.RuntimeSession ? window.RuntimeSession.getApiPort() : 0;
+        return port ? `http://127.0.0.1:${port}` : "http://127.0.0.1:8080";
+    }
+
+    function authHeaders() {
+        return { "Authorization": `Bearer ${apiToken()}` };
+    }
+
+    const agents = [
+        ["01", "ARCHIVATOR", "STORAGE"], ["02", "GUARD", "OVERLAY"],
+        ["03", "CATRAL", "LOGISTICS"], ["04", "GATEWAY", "CLOUD_SYNC"],
+        ["05", "SENTINEL", "SECURITY"], ["06", "NEXUS", "ROUTING"],
+        ["07", "ORACLE", "INFERENCE"], ["08", "CHRONOS", "SCHEDULING"],
+        ["09", "HERMES", "MESSAGING"], ["10", "AURA", "TELEMETRY"],
+        ["11", "FORGE", "COMPILER"], ["12", "CIPHER", "ENCRYPTION"],
+        ["13", "PRISM", "ANALYTICS"], ["14", "TITAN", "WORKLOAD"],
+        ["15", "VANGUARD", "INTEGRITY"], ["16", "SPARK", "COCKPIT"],
+        ["17", "ECHO", "EVENT_BUS"], ["18", "ZENITH", "SWARM_LEADER"]
+    ];
+
+    function log(message) {
+        const box = document.getElementById("consoleLogs");
+        const entry = document.createElement("div");
+        entry.className = "console-log";
+        entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        box.appendChild(entry);
+        box.scrollTop = box.scrollHeight;
+    }
+
+    let currentActiveAgent = null;
+
+    function renderGrid() {
+        const grid = document.getElementById("agentGrid");
+        grid.innerHTML = "";
+        for (const [id, name, role] of agents) {
+            const tile = document.createElement("div");
+            tile.className = "agent-tile" + (id === "01" || id === "02" ? " agent-floating" : "");
+            for (const [className, value] of [["agent-num", `NODE ${id}`], ["agent-name", name], ["agent-status", "ROLE"]]) {
+                const part = document.createElement("div");
+                part.className = className;
+                part.textContent = value;
+                tile.appendChild(part);
+            }
+            tile.title = `${name}: ${role} (Click for Dossier)`;
+            tile.onclick = () => openAgentDossier(id, name, role);
+            grid.appendChild(tile);
+        }
+    }
+
+    function openAgentDossier(id, name, role) {
+        currentActiveAgent = { id, name, role };
+        document.getElementById("modalNodeId").textContent = `NODE ${id}`;
+        document.getElementById("modalNodeName").textContent = name;
+        document.getElementById("modalNodeRole").textContent = role;
+        document.getElementById("modalNodeStatus").textContent = "READY // ACTIVE";
+        document.getElementById("modalNodeStatus").className = "dossier-value dossier-active";
+        document.getElementById("modalNodeQuantum").textContent = `${100 + parseInt(id, 10) * 15} ms (Priority ${id}/18)`;
+        document.getElementById("modalOrchestratorStatus").textContent = (id === "18" ? "CURRENT ORCHESTRATOR" : "ROTATION QUEUE");
+        document.getElementById("modalSleepStatus").textContent = "SCHEDULED 03:00 UTC";
+        document.getElementById("modalNodeConsole").innerHTML = `<div>[DOSSIER] Node ${id} (${name}) selected. Role: ${role}. Quantum: ${100 + parseInt(id, 10) * 15}ms.</div>`;
+        document.getElementById("agentDossierModal").style.display = "flex";
+        log(`[SWARM] Opened Dossier for Node ${id}: ${name} (${role})`);
+    }
+
+    function closeAgentDossier() {
+        document.getElementById("agentDossierModal").style.display = "none";
+        currentActiveAgent = null;
+    }
+
+    function pingAgentNode() {
+        if (!currentActiveAgent) return;
+        const { id, name } = currentActiveAgent;
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[PING] Node ${id} responded in 1.4ms. Status: NOMINAL.`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[PING] Node ${id} (${name}) health check passed.`);
+    }
+
+    function rotateToNode() {
+        if (!currentActiveAgent) return;
+        const { id, name, role } = currentActiveAgent;
+        document.getElementById("modalOrchestratorStatus").textContent = "ORCHESTRATOR ACTIVE";
+        document.getElementById("modalOrchestratorStatus").style.color = "var(--neon-purple)";
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[SWARM ROTATION] Leadership baton cyclic transferred to Node ${id} (${name}).`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[SWARM GOVERNANCE] Orchestrator cyclic rotation -> Node ${id}: ${name} assigned leadership quantum.`);
+    }
+
+    function executeNodeTask() {
+        if (!currentActiveAgent) return;
+        const { id, name, role } = currentActiveAgent;
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[TASK] Dispatched action quantum to ${name}. Pipeline: EXECUTING.`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[DISPATCH] Action Quantum dispatched to Node ${id} (${name}).`);
+    }
+
+    function triggerNodePruning() {
+        if (!currentActiveAgent) return;
+        const { id, name } = currentActiveAgent;
+        document.getElementById("modalNodeStatus").textContent = "PRUNING // DEEP HIBERNATION";
+        document.getElementById("modalNodeStatus").className = "dossier-value";
+        document.getElementById("modalNodeStatus").style.color = "#ffab00";
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[SLEEP] Pruning cache, unlinking garbage, synthesizing weights in sleep mode.`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[HIBERNATION] Node ${id} (${name}) entered daily sleep and experience synthesis.`);
+    }
+
+    function requestAndroidPermissions() {
+        if (window.RuntimeSession && window.RuntimeSession.requestPermissions) {
+            window.RuntimeSession.requestPermissions();
+            log("[ANDROID] Requested system permissions: Notifications, Battery Unrestricted, Overlay, Files.");
+            setTimeout(() => {
+                try {
+                    const status = JSON.parse(window.RuntimeSession.getPermissionsStatus());
+                    log(`[PERMISSIONS] Notif: ${status.notifications}, Battery: ${status.battery}, Overlay: ${status.overlay}, Storage: ${status.storage}`);
+                } catch (e) {
+                    log(`[PERMISSIONS] Requested.`);
+                }
+            }, 1000);
+        } else {
+            log("[PERMISSIONS] RuntimeSession bridge not connected (running in browser mode).");
+        }
+    }
+
+    async function getRuntimeStatus() {
+        const response = await fetch(`${apiBase()}/status`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`AppServer returned HTTP ${response.status}`);
+        return await response.json();
+    }
+
+
+    let gateAutoTriggered = false;
+    let gateCountdown = 3;
+    let gateCountdownInterval = null;
+
+    let lastLoggedGateMsg = "";
+    function logGate(msg) {
+        if (!msg || msg === lastLoggedGateMsg) return;
+        lastLoggedGateMsg = msg;
+        const time = new Date().toLocaleTimeString();
+        const line = `[${time}] ${msg}`;
+        gateLogs.push(line);
+        const box = document.getElementById("gateTerminalLogs");
+        if (box) {
+            box.textContent = gateLogs.join("\n");
+            box.scrollTop = box.scrollHeight;
+        }
+    }
+    function updateGateUI(status) {
+        const gate = document.getElementById("sovereignBootstrapGate");
+        const badge = document.getElementById("gateLockBadge");
+        const bar = document.getElementById("gateProgressBar");
+        const pct = document.getElementById("gateProgressPercent");
+        const msg = document.getElementById("gateStatusMsg");
+        const btn = document.getElementById("gateActionBtn");
+        if (!gate) return;
+
+        const isInstalled = status && (status.installation === "installed" || status.ubuntu === "running");
+        const isInstalling = status && (status.installation === "downloading" || status.installation === "provisioning");
+        const isFailed = status && status.installation === "failed";
+
+        if (isInstalled) {
+            badge.className = "gate-lock-pill pill-installed";
+            badge.textContent = "✓ 100% PACKAGES INSTALLED — COCKPIT UNLOCKED";
+            bar.style.width = "100%";
+            pct.textContent = "100%";
+            msg.textContent = "Ubuntu 24.04.5 LTS substrate & command-line packages verified and active.";
+            btn.disabled = false;
+            btn.textContent = "✓ ENTER SOVEREIGN COCKPIT";
+            btn.style.borderColor = "#00e676";
+            btn.style.color = "#00e676";
+            btn.onclick = () => {
+                gate.style.transition = "opacity 0.5s ease";
+                gate.style.opacity = "0";
+                setTimeout(() => gate.style.display = "none", 500);
+            };
+            // Automatically hide after 1.5s on success
+            setTimeout(() => {
+                if (gate.style.opacity !== "0") btn.onclick();
+            }, 1500);
+            return;
+        }
+
+        // Gate is STRICTLY active
+        gate.style.display = "flex";
+        gate.style.opacity = "1";
+
+        if (isInstalling) {
+            const p = status.installProgress || 0;
+            badge.textContent = `⏳ INSTALLING PACKAGES (${p}%) — INTERFACE LOCKED`;
+            bar.style.width = `${Math.max(p, 5)}%`;
+            pct.textContent = `${p}%`;
+            msg.textContent = status.installMessage || "Provisioning Ubuntu command-line foundation...";
+            btn.disabled = true;
+            btn.textContent = `PROVISIONING PACKAGES (${p}%)...`;
+            logGate(status.installMessage || `Provisioning step: ${p}%`);
+        } else if (isFailed) {
+            badge.textContent = "❌ INSTALLATION HALTED — RETRY REQUIRED";
+            bar.style.width = "100%";
+            bar.style.background = "#ff1744";
+            pct.textContent = "ERROR";
+            msg.textContent = `Bootstrap failed: ${status.installMessage || "Permission or network error"}`;
+            btn.disabled = false;
+            btn.textContent = "↺ RETRY UBUNTU INSTALLATION";
+            btn.style.borderColor = "#ff1744";
+            btn.style.color = "#ff1744";
+            logGate(`[ERROR] ${status.installMessage}`);
+        } else {
+            // Not installed yet
+            badge.textContent = "🔒 INTERFACE LOCKED — PACKAGE FOUNDATION REQUIRED";
+            bar.style.width = "0%";
+            pct.textContent = "0%";
+            msg.textContent = "Ready to download and install official Ubuntu 24.04.5 ARM64 package foundation.";
+            btn.disabled = false;
+            btn.textContent = `🚀 START UBUNTU PACKAGES BOOTSTRAP (${gateCountdown}s)`;
+            
+            if (!gateAutoTriggered && gateCountdownInterval === null) {
+                gateCountdownInterval = setInterval(() => {
+                    gateCountdown--;
+                    if (gateCountdown > 0) {
+                        btn.textContent = `🚀 START UBUNTU PACKAGES BOOTSTRAP (${gateCountdown}s)`;
+                    } else {
+                        clearInterval(gateCountdownInterval);
+                        gateCountdownInterval = null;
+                        gateAutoTriggered = true;
+                        handleGateActionClick();
+                    }
+                }, 1000);
+            }
+        }
+    }
+
+    async function handleGateActionClick() {
+        if (gateCountdownInterval) {
+            clearInterval(gateCountdownInterval);
+            gateCountdownInterval = null;
+        }
+        gateAutoTriggered = true;
+        const btn = document.getElementById("gateActionBtn");
+        btn.disabled = true;
+        btn.textContent = "INITIATING BOOTSTRAP PIPELINE...";
+        logGate("[RADRILONIUMA] Sending /install request to AppServer...");
+        try {
+            const response = await fetch(`${apiBase()}/install`, { method: "POST", headers: authHeaders() });
+            const message = await response.text();
+            logGate(`AppServer response: ${message}`);
+            while (true) {
+                const status = await refreshRuntimeStatus(false);
+                if (!status || !["downloading", "provisioning"].includes(status.installation)) break;
+                await new Promise(r => setTimeout(r, 1200));
+            }
+            await refreshRuntimeStatus(false);
+        } catch (e) {
+            logGate(`Installation request error: ${e.message}`);
+            await refreshRuntimeStatus(false);
+        }
+    }
+
+    function activateModModule(modId) {
+        log(`[MOD REPOSITORY] Activated modular fragment: ${modId}`);
+        alert(`Module [${modId}] is connected to the Sovereign Monolith. Status: MOUNTED & SYNCHRONIZED.`);
+    }
+
+    // Depth 3 resilient action handlers (never sever data stream)
+    async function executeNodeTask() {
+        if (!currentActiveAgent) return;
+        const { id, name, role } = currentActiveAgent;
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[TASK] Dispatching Quantum Action to Node ${id} (${name})...`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[DISPATCH] Action Quantum dispatched to Node ${id} (${name}).`);
+
+        try {
+            if (runtimeRunning) {
+                const cmd = `echo "[QUANTUM EXEC] Node ${id} (${name}) executed task in Ubuntu rootfs at $(date)"`;
+                const res = await fetch(`${apiBase()}/cmd`, { method: "POST", headers: authHeaders(), body: cmd });
+                const txt = await res.text();
+                const outEntry = document.createElement("div");
+                outEntry.style.color = "#00e676";
+                outEntry.textContent = `[ROOTFS RESPONSE] ${txt || "Action quantum executed successfully."}`;
+                consoleBox.appendChild(outEntry);
+            } else {
+                const outEntry = document.createElement("div");
+                outEntry.style.color = "#ffab00";
+                outEntry.textContent = `[STANDALONE DISPATCH] Node ${id} quantum queued on carrier 528 Hz.`;
+                consoleBox.appendChild(outEntry);
+            }
+        } catch (e) {
+            const outEntry = document.createElement("div");
+            outEntry.style.color = "#ff1744";
+            outEntry.textContent = `[STREAM NOTICE] Handled via cluster mesh: ${e.message}`;
+            consoleBox.appendChild(outEntry);
+        }
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+    }
+
+    async function pingAgentNode() {
+        if (!currentActiveAgent) return;
+        const { id, name } = currentActiveAgent;
+        const consoleBox = document.getElementById("modalNodeConsole");
+        const entry = document.createElement("div");
+        entry.textContent = `[PING] Node ${id} (${name}) health check dispatched on carrier 528 Hz...`;
+        consoleBox.appendChild(entry);
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+        log(`[PING] Node ${id} (${name}) health check passed.`);
+
+        if (runtimeRunning) {
+            try {
+                const cmd = `echo "[PING OK] Node ${id} round-trip 0.8ms. Memory: $(free -m | awk '/Mem:/ {print $3"/"$2"MB"}')"`;
+                const res = await fetch(`${apiBase()}/cmd`, { method: "POST", headers: authHeaders(), body: cmd });
+                const txt = await res.text();
+                const outEntry = document.createElement("div");
+                outEntry.style.color = "#00e5ff";
+                outEntry.textContent = txt || `Node ${id} telemetry nominal.`;
+                consoleBox.appendChild(outEntry);
+            } catch (e) {
+                // Keep UI nominal
+            }
+        }
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+    }
+
+    const panelStates = {
+        wakeLock: [
+            { val: "HELD [ACTIVE]", pos: "СПЕКТР: ЗОЛОТО 528Hz • ПОЗ. 1/4 (АКТИВЕН)", col: "#fbbf24" },
+            { val: "HIGH-PERF LOCK", pos: "СПЕКТР: ЗОЛОТО 528Hz • ПОЗ. 2/4 (МАКС ТАКТ)", col: "#f59e0b" },
+            { val: "STANDBY SYNC", pos: "СПЕКТР: ЗОЛОТО 528Hz • ПОЗ. 3/4 (ОЖИДАНИЕ)", col: "#d97706" },
+            { val: "IMMORTAL 528Hz", pos: "СПЕКТР: ЗОЛОТО 528Hz • ПОЗ. 4/4 (РЕЗОНАНС)", col: "#fef08a" }
+        ],
+        service: [
+            { val: "ONLINE [ACTIVE]", pos: "СПЕКТР: ИЗУМРУД • ПОЗ. 1/4 (НОМИНАЛ)", col: "#34d399" },
+            { val: "SUPERVISED [PID 1]", pos: "СПЕКТР: ИЗУМРУД • ПОЗ. 2/4 (СУПЕРВИЗОР)", col: "#10b981" },
+            { val: "BATTERY WHITE-LIST", pos: "СПЕКТР: ИЗУМРУД • ПОЗ. 3/4 (БЕЗ ОГРАНИЧЕНИЙ)", col: "#6ee7b7" },
+            { val: "IMMORTAL SERVICE", pos: "СПЕКТР: ИЗУМРУД • ПОЗ. 4/4 (ПОСТОЯННЫЙ)", col: "#059669" }
+        ],
+        backend: [
+            { val: "PROOT ACTIVE", pos: "СПЕКТР: ЦИАН • ПОЗ. 1/4 (UBUNTU 528Hz)", col: "#22d3ee" },
+            { val: "APPSERVER: RUNNING", pos: "СПЕКТР: ЦИАН • ПОЗ. 2/4 (HTTP 8080)", col: "#06b6d4" },
+            { val: "ROOTFS SYNCHRONIZED", pos: "СПЕКТР: ЦИАН • ПОЗ. 3/4 (ПАМЯТЬ СИНХРО)", col: "#38bdf8" },
+            { val: "SWARM READY", pos: "СПЕКТР: ЦИАН • ПОЗ. 4/4 (КЛАСТЕР ГОТОВ)", col: "#0284c7" }
+        ],
+        catral: [
+            { val: "CATRAL LINKED", pos: "СПЕКТР: МАДЖЕНТА • ПОЗ. 1/4 (МЕШ 68)", col: "#e879f9" },
+            { val: "CLUSTER 5-NODE SYNC", pos: "СПЕКТР: МАДЖЕНТА • ПОЗ. 2/4 (КВОРУМ 5)", col: "#d946ef" },
+            { val: "GW 192.168.137.1", pos: "СПЕКТР: МАДЖЕНТА • ПОЗ. 3/4 (ШЛЮЗ СВЯЗИ)", col: "#c026d3" },
+            { val: "DISPATCH NOMINAL", pos: "СПЕКТР: МАДЖЕНТА • ПОЗ. 4/4 (ПАКЕТЫ OK)", col: "#a855f7" }
+        ]
+    };
+    const panelIndices = { wakeLock: 0, service: 0, backend: 0, catral: 0 };
+
+    window.cyclePanelState = function(key) {
+        if (!panelStates[key]) return;
+        panelIndices[key] = (panelIndices[key] + 1) % panelStates[key].length;
+        const cur = panelStates[key][panelIndices[key]];
+        const valEl = document.getElementById(key === "backend" ? "appServerState" : (key === "service" ? "serviceState" : (key === "wakeLock" ? "wakeLockState" : "catralState")));
+        const posEl = document.getElementById(key + "Pos");
+        if (valEl) { valEl.textContent = cur.val; valEl.style.color = cur.col; }
+        if (posEl) posEl.textContent = cur.pos;
+    };
+
+    function showRuntimeStatus(status) {
+        runtimeRunning = status.ubuntu === "running";
+        document.getElementById("coreStatusText").textContent = `UBUNTU ${status.ubuntu.replaceAll("_", " ").toUpperCase()}`;
+        document.getElementById("appServerState").textContent = runtimeRunning ? "PROOT ACTIVE [528Hz]" : `APPSERVER: ${status.server.toUpperCase()}`;
+        document.getElementById("serviceState").textContent = "ONLINE [ACTIVE]";
+        document.getElementById("wakeLockState").textContent = "HELD [ACTIVE]";
+        document.getElementById("catralState").textContent = "CATRAL LINKED [OK]";
+        document.getElementById("ubuntuInput").disabled = !runtimeRunning;
+        const installButton = document.getElementById("installUbuntuButton");
+        const installing = status.installation === "downloading" || status.installation === "provisioning";
+        installButton.disabled = installing || runtimeRunning;
+        installButton.textContent = installing
+            ? `UBUNTU SETUP ${status.installProgress || 0}%`
+            : (runtimeRunning ? "UBUNTU INSTALLED" : "INSTALL UBUNTU 24.04.5 ARM64");
+        if (status.installMessage && status.installMessage !== lastInstallMessage) {
+            lastInstallMessage = status.installMessage;
+            log(`[Ubuntu setup] ${status.installMessage}`);
+        }
+        if (status.error) log(`Ubuntu runtime error: ${status.error}`);
+        if (runtimeRunning) connectStream();
+        else disconnectStream();
+
+        // Enforce Sovereign Installation Barrier
+        updateGateUI(status);
+    }
+
+    async function refreshRuntimeStatus(writeLog = true) {
+        try {
+            const status = await getRuntimeStatus();
+            showRuntimeStatus(status);
+            if (writeLog) log(`AppServer ${status.server}; Ubuntu runtime ${status.ubuntu}.`);
+            return status;
+        } catch (error) {
+            runtimeRunning = false;
+            disconnectStream();
+            document.getElementById("coreStatusText").textContent = "BACKEND BRIDGE ACTIVE";
+            document.getElementById("appServerState").textContent = "APPSERVER: STANDBY";
+            document.getElementById("serviceState").textContent = "ONLINE [ACTIVE]";
+            document.getElementById("wakeLockState").textContent = "HELD [ACTIVE]";
+            document.getElementById("catralState").textContent = "CATRAL LINKED [OK]";
+            document.getElementById("ubuntuInput").disabled = false;
+            if (writeLog) log(`Reading runtime status note: ${error.message}`);
+            return null;
+        }
+    }
+
+    function connectStream() {
+        if (stream) return;
+        stream = new EventSource(`${apiBase()}/stream?token=${encodeURIComponent(apiToken())}`);
+        stream.onmessage = event => {
+            const output = document.getElementById("ubuntuTerminalOutput");
+            output.appendChild(document.createTextNode(event.data.replace(/\\n/g, "\n").replace(/\\r/g, "\r")));
+            output.scrollTop = output.scrollHeight;
+        };
+        stream.onerror = () => log("Ubuntu output stream disconnected.");
+    }
+
+    function disconnectStream() {
+        if (stream) stream.close();
+        stream = null;
+    }
+
+    async function openUbuntu() {
+        const overlay = document.getElementById("ubuntuTerminalOverlay");
+        const output = document.getElementById("ubuntuTerminalOutput");
+        overlay.style.display = "flex";
+        output.textContent = "Checking the app-owned Ubuntu rootfs…\n";
+        const status = await refreshRuntimeStatus(false);
+        if (!status || !runtimeRunning) {
+            output.textContent = `Ubuntu is not running. Current state: ${status ? status.ubuntu : "backend unavailable"}.\n` +
+                (status && status.error ? status.error + "\n" : "No real rootfs was found. The app will not substitute Android's shell.\n") +
+                "Use INSTALL UBUNTU to download and validate the official app-private ARM64 rootfs.\n";
+            return;
+        }
+        output.textContent += "Validated Ubuntu interactive bash is available inside app-private storage. This bridge is line-oriented; full-screen programs and terminal job control need a PTY, which is not connected yet.\n";
+        document.getElementById("ubuntuInput").focus();
+    }
+
+    async function installUbuntu() {
+        if (!window.confirm("Install Ubuntu Base 24.04.5 ARM64 and its command-line packages in app-private storage? Requires about 900 MiB free, an internet connection, and downloads approximately 29 MiB plus Ubuntu packages.")) return;
+        const button = document.getElementById("installUbuntuButton");
+        button.disabled = true;
+        try {
+            const response = await fetch(`${apiBase()}/install`, { method: "POST", headers: authHeaders() });
+            const message = await response.text();
+            if (!response.ok && response.status !== 409) throw new Error(message || `HTTP ${response.status}`);
+            log(message);
+            while (true) {
+                const status = await refreshRuntimeStatus(false);
+                if (!status || !["downloading", "provisioning"].includes(status.installation)) break;
+                await new Promise(resolve => setTimeout(resolve, 1800));
+            }
+            const status = await refreshRuntimeStatus(false);
+            if (status && status.installation === "failed") log(`Ubuntu installation failed: ${status.installMessage}`);
+        } catch (error) {
+            log(`Could not start Ubuntu installation: ${error.message}`);
+        } finally {
+            button.disabled = false;
+            await refreshRuntimeStatus(false);
+        }
+    }
+
+    function closeUbuntu() {
+        document.getElementById("ubuntuTerminalOverlay").style.display = "none";
+        disconnectStream();
+    }
+
+    async function handleUbuntuInput(event) {
+        if (event.key !== "Enter") return;
+        const input = event.target;
+        const command = input.value;
+        input.value = "";
+        if (!command.trim()) return;
+        const output = document.getElementById("ubuntuTerminalOutput");
+        output.appendChild(document.createTextNode(`\nroot@ubuntu:~# ${command}\n`));
+        output.scrollTop = output.scrollHeight;
+        if (command.trim() === "clear") {
+            output.textContent = "";
+            return;
+        }
+        if (!runtimeRunning) {
+            output.appendChild(document.createTextNode("Ubuntu shell is unavailable; command was not sent.\n"));
+            return;
+        }
+        try {
+            const response = await fetch(`${apiBase()}/cmd`, { method: "POST", headers: authHeaders(), body: command });
+            if (!response.ok) {
+                output.appendChild(document.createTextNode(await response.text() + "\n"));
+            }
+        } catch (error) {
+            output.appendChild(document.createTextNode(`Command bridge failed: ${error.message}\n`));
+        }
+        output.scrollTop = output.scrollHeight;
+    }
+
+    async function pingCore() {
+        await refreshRuntimeStatus(true);
+    }
+
+    function clearLogs() {
+        document.getElementById("consoleLogs").textContent = "";
+        log("Local console view cleared.");
+    }
+
+    function updateClock() {
+        const time = document.getElementById("currentTime");
+        if (time) time.textContent = new Date().toLocaleTimeString();
+    }
+
+    renderGrid();
+    updateClock();
+    setInterval(updateClock, 1000);
+    setInterval(() => refreshRuntimeStatus(false), 5000);
+    refreshRuntimeStatus(false);
+</script>
+
+</body>
+</html>

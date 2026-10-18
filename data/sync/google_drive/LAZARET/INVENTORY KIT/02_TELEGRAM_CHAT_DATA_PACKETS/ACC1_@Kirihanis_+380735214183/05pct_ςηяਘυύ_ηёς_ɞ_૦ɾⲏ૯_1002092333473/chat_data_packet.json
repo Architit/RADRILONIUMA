@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.139286+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": -1002092333473,
+    "title": "ςηяਘυύ ηёς ɞ ૦ɾⲏ૯",
+    "username": "@aIenwtf",
+    "phone": "",
+    "chat_type": "CHANNEL_BROADCAST",
+    "unread_count": 1,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 5,
+    "priority_tier": "P4_CHANNEL (Инфо-канал)",
+    "rationale": "Канал вещания — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-15 14:48",
+      "direction": "IN (Собеседник)",
+      "text": "Прочитав комментарии, напишу: \"еду из Новороссийска в Абхазию, через Питер\""
+    }
+  ]
+}

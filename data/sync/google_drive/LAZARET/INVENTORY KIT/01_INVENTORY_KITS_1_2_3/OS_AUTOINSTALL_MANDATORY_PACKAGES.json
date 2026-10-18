@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.2.0",
+  "updated_at": "2026-10-17T17:31:51Z",
+  "description": "Mandatory OS Auto-Install Packages including CLI Screenshot & Clipboard Paste Bridge libraries",
+  "apt_packages": [
+    "python3",
+    "python3-pip",
+    "python3-venv",
+    "python3-pil",
+    "python3-pyperclip",
+    "python3-tk",
+    "nodejs",
+    "npm",
+    "curl",
+    "wget",
+    "git",
+    "htop",
+    "net-tools",
+    "openssh-server",
+    "xclip",
+    "xsel",
+    "wl-clipboard",
+    "scrot",
+    "grim",
+    "slurp",
+    "imagemagick",
+    "libpng-dev",
+    "libjpeg-dev",
+    "libwebp-dev",
+    "ffmpeg",
+    "adb"
+  ],
+  "pip_packages": [
+    "pillow",
+    "pyperclip",
+    "pytest",
+    "requests"
+  ],
+  "windows_host_components": [
+    "C:\\Users\\BushM\\MobileKeyboard\\MobileKeyboardEnhancer.exe (ClipboardScreenshotBridge: CF_BITMAP -> PNG + CF_HDROP + CF_UNICODETEXT for Ctrl+V in CLI)",
+    "C:\\setup\\capture_screen.ps1 (Win32 GDI BitBlt + Hardware Cursor)"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.688137+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": -1004466397044,
+    "title": "6-ВзглядАсасина-6",
+    "username": "",
+    "phone": "",
+    "chat_type": "GROUP_CHAT",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 60,
+    "priority_tier": "P1_CORE_PROJECT (Штаб проекта)",
+    "rationale": "Целевая группа ядра проекта (OUT (Вы))",
+    "assigned_inventory_kit": "KIT_01 + KIT_02 + KIT_03 (Полный командный комплект Ковчега и Штаба)"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-13 21:51",
+      "direction": "OUT (Вы)",
+      "text": "Я сейчас запускаю здесь, в Алмере, большой проект — мы создаём круглосуточный координационный штаб и регистрир"
+    }
+  ]
+}

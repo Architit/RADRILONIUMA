@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.101848+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": -1001085702236,
+    "title": "Денис Борисов",
+    "username": "",
+    "phone": "",
+    "chat_type": "CHANNEL_BROADCAST",
+    "unread_count": 15,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 5,
+    "priority_tier": "P4_CHANNEL (Инфо-канал)",
+    "rationale": "Канал вещания — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-17 11:35",
+      "direction": "IN (Собеседник)",
+      "text": "https://youtu.be/51SAkMSVtgk  Эта книга входит в мой ТОП-10 лучших книг Человечества...."
+    }
+  ]
+}

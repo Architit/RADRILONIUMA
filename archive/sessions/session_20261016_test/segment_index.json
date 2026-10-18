@@ -1,0 +1,78 @@
+{
+  "session_id": "session_20261016_test",
+  "cluster_nodes": [
+    "DEV_01_BUSHMASTER",
+    "DEV_02_ATESIRT",
+    "DEV_03_UBUNTU_WSL2",
+    "DEV_04_SAMSUNG_T7_VAULT",
+    "DEV_05_LAO_SWARM_MATRIX"
+  ],
+  "harmonic_carrier_hz": "528 Hz / 432 Hz",
+  "total_sliced_steps": 110,
+  "active_window_steps": 50,
+  "active_metrics": {
+    "session_id": "session_20261016_test",
+    "session_file": "/root/RADRILONIUMA/.gateway/sessions/session_20261016_test.jsonl",
+    "step_count": 50,
+    "token_count": 60000,
+    "byte_size": 3200,
+    "status": "NORMAL",
+    "warning_triggered": false,
+    "warning_reasons": [],
+    "brake_applied": false,
+    "brake_reasons": [],
+    "thresholds": {
+      "warn_steps": 80,
+      "warn_tokens": 120000,
+      "brake_steps": 150,
+      "brake_tokens": 180000,
+      "brake_bytes": 4194304
+    },
+    "inspected_at_utc": "2026-10-16T04:56:00.295858+00:00"
+  },
+  "total_segments_count": 3,
+  "segments": [
+    {
+      "segment_id": "segment_001",
+      "file_gz": "segment_001.jsonl.gz",
+      "step_count": 50,
+      "step_offset_start": 1,
+      "step_offset_end": 50,
+      "token_count": 60000,
+      "bytes_uncompressed": 3080,
+      "bytes_compressed": 340,
+      "sha256_uncompressed": "a3b696686e3fca6f274431b8f134d0d0601bb96435a693b3d00407cab972aceb",
+      "sha256_compressed": "d0bf9a13f071c6fb133e0a3a1386e800e6ce2dc67183d7c3c3d7b72e389f460e",
+      "created_at_utc": "2026-10-16T04:56:00.292515+00:00"
+    },
+    {
+      "segment_id": "segment_002",
+      "file_gz": "segment_002.jsonl.gz",
+      "step_count": 50,
+      "step_offset_start": 51,
+      "step_offset_end": 100,
+      "token_count": 60000,
+      "bytes_uncompressed": 3100,
+      "bytes_compressed": 336,
+      "sha256_uncompressed": "544b08f46dc1d133d62da9d439d0b37b12dd13e742691b1e18fc31e4daf74cdf",
+      "sha256_compressed": "abf269bac99dc3d985b39b29829dd9ef91b8f036152dacdeeaf1678104dbf808",
+      "created_at_utc": "2026-10-16T04:56:00.293820+00:00"
+    },
+    {
+      "segment_id": "segment_003",
+      "file_gz": "segment_003.jsonl.gz",
+      "step_count": 10,
+      "step_offset_start": 101,
+      "step_offset_end": 110,
+      "token_count": 12000,
+      "bytes_uncompressed": 640,
+      "bytes_compressed": 148,
+      "sha256_uncompressed": "438f27f244a965f0a42d92c7e6fa03dcc414689dbce30f4ccdcdf5055d965207",
+      "sha256_compressed": "419c5086f5e174bc9ad0fea61dd67ab31ff4f61c16d6afc52c7059fec3d6b55d",
+      "created_at_utc": "2026-10-16T04:56:00.294478+00:00"
+    }
+  ],
+  "last_sliced_at_utc": "2026-10-16T04:56:00.295917+00:00",
+  "brake_released": true,
+  "p0_safety_attestation": "MIRASHANI_AUDIT_VERIFIED_NON_DESTRUCTIVE"
+}

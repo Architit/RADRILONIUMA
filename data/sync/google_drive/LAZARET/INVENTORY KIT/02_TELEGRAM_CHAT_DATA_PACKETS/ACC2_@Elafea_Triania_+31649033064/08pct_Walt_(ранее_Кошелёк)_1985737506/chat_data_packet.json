@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.949805+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": 1985737506,
+    "title": "Walt (ранее Кошелёк)",
+    "username": "",
+    "phone": "",
+    "chat_type": "BOT",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 8,
+    "priority_tier": "P4_BOT (Авто-бот)",
+    "rationale": "Сервисный бот — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-06-05 00:58",
+      "direction": "IN (Собеседник)",
+      "text": "TON Кошелёк теперь DeFi Счёт  Мы переименовали TON Кошелёк, чтобы разделить два продукта внутри одного приложе"
+    }
+  ]
+}

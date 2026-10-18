@@ -1,0 +1,56 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.334969+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 1331972020,
+    "title": "Кен",
+    "username": "@Ken1Ryuguji1",
+    "phone": "+380506069913",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 85,
+    "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+    "rationale": "Ключевой личный/семейный контакт — ваше сообщение отправлено, ожидание обратной связи",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 257256,
+      "date_utc": "2026-10-17 17:46",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    },
+    {
+      "id": 257257,
+      "date_utc": "2026-10-17 17:46",
+      "direction": "IN (Собеседник)",
+      "text": "Выйду с альновума"
+    },
+    {
+      "id": 257258,
+      "date_utc": "2026-10-17 17:46",
+      "direction": "IN (Собеседник)",
+      "text": "На лево на право?"
+    },
+    {
+      "id": 257259,
+      "date_utc": "2026-10-17 17:47",
+      "direction": "IN (Собеседник)",
+      "text": ""
+    },
+    {
+      "id": 257260,
+      "date_utc": "2026-10-17 17:47",
+      "direction": "OUT (Вы)",
+      "text": "Пздц включи компас на север) на лево"
+    }
+  ]
+}

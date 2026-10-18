@@ -1,0 +1,32 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:28.977097+00:00",
+  "account": {
+    "name": "𝕶𝖔𝖇𝖆𝖗𝖉 ☬ Trianium 🪷",
+    "username": "@Kirihanis",
+    "phone": "+380735214183"
+  },
+  "chat": {
+    "chat_id": 551136684,
+    "title": "Skillbox",
+    "username": "@skillbox_main_bot",
+    "phone": "",
+    "chat_type": "BOT",
+    "unread_count": 98,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 8,
+    "priority_tier": "P4_BOT (Авто-бот)",
+    "rationale": "Сервисный бот — ответ не требуется",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 0,
+      "date_utc": "2026-10-17 12:52",
+      "direction": "IN (Собеседник)",
+      "text": "Фотосессия без фотографа, рилс без монтажа — научитесь так же за 3 дня ✌  ИИ уже столько всего умеет: и реалис"
+    }
+  ]
+}

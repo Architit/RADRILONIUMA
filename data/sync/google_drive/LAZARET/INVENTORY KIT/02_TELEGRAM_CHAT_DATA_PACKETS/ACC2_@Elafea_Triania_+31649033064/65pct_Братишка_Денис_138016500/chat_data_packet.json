@@ -1,0 +1,38 @@
+{
+  "packet_version": "1.0.0",
+  "exported_at_utc": "2026-10-17T18:03:29.608094+00:00",
+  "account": {
+    "name": "Trianiuma",
+    "username": "@Elafea_Triania",
+    "phone": "+31649033064"
+  },
+  "chat": {
+    "chat_id": 138016500,
+    "title": "Братишка Денис",
+    "username": "",
+    "phone": "+79220607375",
+    "chat_type": "DIRECT_USER",
+    "unread_count": 0,
+    "unread_mentions": 0
+  },
+  "prioritization": {
+    "reply_confidence_pct": 65,
+    "priority_tier": "P1_KEY_CONTACT (Контроль связи / Ожидание ответа)",
+    "rationale": "Ключевой личный/семейный контакт — ваше сообщение отправлено, ожидание обратной связи",
+    "assigned_inventory_kit": "KIT_01 (Базовый связной и координационный комплект) + Пакет стажировки/партнерства Stichting NL"
+  },
+  "recent_messages": [
+    {
+      "id": 16171,
+      "date_utc": "2026-01-05 14:12",
+      "direction": "OUT (Вы)",
+      "text": ""
+    },
+    {
+      "id": 16327,
+      "date_utc": "2026-06-25 07:37",
+      "direction": "OUT (Вы)",
+      "text": "https://t.me/+jyjKbHSh0bs5MTY0"
+    }
+  ]
+}

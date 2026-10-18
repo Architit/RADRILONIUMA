@@ -1,0 +1,556 @@
+{
+  "system": "LAO_POPUP_AGENT_MANAGER",
+  "resonance_hz": 528.0,
+  "active_popups": {
+    "pop_ba987898": {
+      "popup_id": "pop_ba987898",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Входящий вызов управления кластером",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 20.0,
+      "remaining_sec": 20.0,
+      "created_at": "2026-10-14T10:09:28.852864+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_3fe195d8": {
+      "popup_id": "pop_3fe195d8",
+      "title": "Low Notice",
+      "message": "Low",
+      "popup_type": "NOTIFICATION",
+      "priority": 4,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.852988+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_48f525cb": {
+      "popup_id": "pop_48f525cb",
+      "title": "Critical Alert",
+      "message": "Crit",
+      "popup_type": "NOTIFICATION",
+      "priority": 1,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853026+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_735226e8": {
+      "popup_id": "pop_735226e8",
+      "title": "High Alert",
+      "message": "High",
+      "popup_type": "NOTIFICATION",
+      "priority": 2,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853039+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_ec0dc3d8": {
+      "popup_id": "pop_ec0dc3d8",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Запрос на синхронизацию экрана",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 15.0,
+      "remaining_sec": 15.0,
+      "created_at": "2026-10-14T10:09:28.853051+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_51fdfba8": {
+      "popup_id": "pop_51fdfba8",
+      "title": "Cluster Sync",
+      "message": "Sync complete",
+      "popup_type": "NOTIFICATION",
+      "priority": 3,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "DEV_02_ATESIRT",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853063+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_0f140df5": {
+      "popup_id": "pop_0f140df5",
+      "title": "Low Notice",
+      "message": "Low",
+      "popup_type": "NOTIFICATION",
+      "priority": 4,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853074+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_bf472d6f": {
+      "popup_id": "pop_bf472d6f",
+      "title": "Critical Alert",
+      "message": "Crit",
+      "popup_type": "NOTIFICATION",
+      "priority": 1,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853085+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_67358b66": {
+      "popup_id": "pop_67358b66",
+      "title": "High Alert",
+      "message": "High",
+      "popup_type": "NOTIFICATION",
+      "priority": 2,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853097+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_373f61e9": {
+      "popup_id": "pop_373f61e9",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Запрос на синхронизацию экрана",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 15.0,
+      "remaining_sec": 15.0,
+      "created_at": "2026-10-14T10:09:28.853179+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_9bc93d07": {
+      "popup_id": "pop_9bc93d07",
+      "title": "Cluster Sync",
+      "message": "Sync complete",
+      "popup_type": "NOTIFICATION",
+      "priority": 3,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "DEV_02_ATESIRT",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853218+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_422b4ca7": {
+      "popup_id": "pop_422b4ca7",
+      "title": "Low Notice",
+      "message": "Low",
+      "popup_type": "NOTIFICATION",
+      "priority": 4,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853245+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_be113bf0": {
+      "popup_id": "pop_be113bf0",
+      "title": "Critical Alert",
+      "message": "Crit",
+      "popup_type": "NOTIFICATION",
+      "priority": 1,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853256+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_6f62f5f8": {
+      "popup_id": "pop_6f62f5f8",
+      "title": "High Alert",
+      "message": "High",
+      "popup_type": "NOTIFICATION",
+      "priority": 2,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853267+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_a8e9879e": {
+      "popup_id": "pop_a8e9879e",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Запрос на синхронизацию экрана",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 15.0,
+      "remaining_sec": 15.0,
+      "created_at": "2026-10-14T10:09:28.853278+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_43c18f29": {
+      "popup_id": "pop_43c18f29",
+      "title": "Cluster Sync",
+      "message": "Sync complete",
+      "popup_type": "NOTIFICATION",
+      "priority": 3,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "DEV_02_ATESIRT",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853289+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_d86ab84a": {
+      "popup_id": "pop_d86ab84a",
+      "title": "Low Notice",
+      "message": "Low",
+      "popup_type": "NOTIFICATION",
+      "priority": 4,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853300+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_bbcea8b1": {
+      "popup_id": "pop_bbcea8b1",
+      "title": "Critical Alert",
+      "message": "Crit",
+      "popup_type": "NOTIFICATION",
+      "priority": 1,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853310+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_80bdf39c": {
+      "popup_id": "pop_80bdf39c",
+      "title": "High Alert",
+      "message": "High",
+      "popup_type": "NOTIFICATION",
+      "priority": 2,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853321+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_ccecc956": {
+      "popup_id": "pop_ccecc956",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Запрос на синхронизацию экрана",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 15.0,
+      "remaining_sec": 15.0,
+      "created_at": "2026-10-14T10:09:28.853331+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_0472f84f": {
+      "popup_id": "pop_0472f84f",
+      "title": "Cluster Sync",
+      "message": "Sync complete",
+      "popup_type": "NOTIFICATION",
+      "priority": 3,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "DEV_02_ATESIRT",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853342+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_e8c0a9dd": {
+      "popup_id": "pop_e8c0a9dd",
+      "title": "Low Notice",
+      "message": "Low",
+      "popup_type": "NOTIFICATION",
+      "priority": 4,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853352+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_de28d47f": {
+      "popup_id": "pop_de28d47f",
+      "title": "Critical Alert",
+      "message": "Crit",
+      "popup_type": "NOTIFICATION",
+      "priority": 1,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853364+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_6c5063d2": {
+      "popup_id": "pop_6c5063d2",
+      "title": "High Alert",
+      "message": "High",
+      "popup_type": "NOTIFICATION",
+      "priority": 2,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "ALL",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853375+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    },
+    "pop_581fcc34": {
+      "popup_id": "pop_581fcc34",
+      "title": "ВЫЗОВ: J.A.R.V.I.S",
+      "message": "Узел [DEV_02_ATESIRT]: Запрос на синхронизацию экрана",
+      "popup_type": "CALL",
+      "priority": 2,
+      "source_agent": "J.A.R.V.I.S",
+      "target_device": "DEV_01_BUSHMASTER",
+      "actions": [
+        {
+          "id": "answer",
+          "label": "📞 ПРИНЯТЬ",
+          "action": "ACCEPT_CALL",
+          "style": "btn-action-green"
+        },
+        {
+          "id": "mute",
+          "label": "🔕 БЕЗ ЗВУКА",
+          "action": "MUTE_CALL",
+          "style": "btn-action-yellow"
+        },
+        {
+          "id": "decline",
+          "label": "✖ СВЕРНУТЬ",
+          "action": "DECLINE_CALL",
+          "style": "btn-action-red"
+        }
+      ],
+      "timeout_sec": 15.0,
+      "remaining_sec": 15.0,
+      "created_at": "2026-10-14T10:09:28.853386+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {
+        "caller_node": "DEV_02_ATESIRT",
+        "chime_hz": 528.0
+      }
+    },
+    "pop_3e39706b": {
+      "popup_id": "pop_3e39706b",
+      "title": "Cluster Sync",
+      "message": "Sync complete",
+      "popup_type": "NOTIFICATION",
+      "priority": 3,
+      "source_agent": "LAO_SYSTEM",
+      "target_device": "DEV_02_ATESIRT",
+      "actions": [],
+      "timeout_sec": 6.0,
+      "remaining_sec": 6.0,
+      "created_at": "2026-10-14T10:09:28.853465+00:00",
+      "state": "ACTIVE",
+      "resolved_action": null,
+      "meta": {}
+    }
+  },
+  "history": [],
+  "updated_at": "2026-10-14T10:09:28.853755+00:00"
+}

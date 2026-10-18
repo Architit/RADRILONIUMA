@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.radriloniuma.core'
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.radriloniuma.core"
+        minSdkVersion 24
+        targetSdkVersion 28 // Bypass Android 10+ W^X and execve restrictions
+        versionCode 20261014
+        versionName "4.0.0-ARGON-MONOLITH"
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-O3 -Wall -fPIC"
+                arguments "-DANDROID_STL=c++_static"
+            }
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true // extractNativeLibs: true in Manifest
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+            version "3.22.1"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+}

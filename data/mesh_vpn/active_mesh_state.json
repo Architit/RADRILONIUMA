@@ -1,0 +1,61 @@
+{
+  "agent_id": "LAO_VPN_AGENT_001",
+  "role": "Sovereign Mesh VPN & Encrypted Tunnel Orchestrator",
+  "resonance": "528.0 Hz LOCKED",
+  "mesh_network": "LAO_SOVEREIGN_MESH_V1",
+  "subnet": "10.42.0.0/24",
+  "total_nodes": 5,
+  "online_nodes": 3,
+  "peers": [
+    {
+      "id": "DEV_01_BUSHMASTER",
+      "name": "Bushmaster (Host Win11)",
+      "virtual_ip": "10.42.0.1",
+      "physical_ip": "192.168.137.1",
+      "alt_ip": "192.168.58.239",
+      "role": "Supernode / Mesh Relay",
+      "status": "ONLINE",
+      "physical_reachable": false
+    },
+    {
+      "id": "DEV_02_ATESIRT",
+      "name": "Atesirt (Samsung SM-A266B)",
+      "virtual_ip": "10.42.0.2",
+      "physical_ip": "192.168.59.85",
+      "alt_ip": "192.168.137.16",
+      "serial": "RZCY80G86FP",
+      "role": "Mobile Sensor & Eye Node",
+      "status": "ONLINE",
+      "physical_reachable": false
+    },
+    {
+      "id": "DEV_03_UBUNTU_WSL2",
+      "name": "Ubuntu WSL2 Runtime Core",
+      "virtual_ip": "10.42.0.3",
+      "physical_ip": "127.0.0.1",
+      "role": "Kernel & PM2 Service Matrix",
+      "status": "ONLINE",
+      "physical_reachable": true
+    },
+    {
+      "id": "DEV_04_PSSD_T7",
+      "name": "Samsung PSSD T7 Mesh Vault",
+      "virtual_ip": "10.42.0.4",
+      "physical_mount": "/mnt/d",
+      "role": "Non-Volatile Storage Vault",
+      "status": "ONLINE",
+      "physical_reachable": true
+    },
+    {
+      "id": "DEV_05_GENESIS_SEED",
+      "name": "VendorCo Genesis Seed USB",
+      "virtual_ip": "10.42.0.5",
+      "physical_mount": "/mnt/f",
+      "role": "Cold Recovery & Firmware Vault",
+      "status": "ONLINE",
+      "physical_reachable": true
+    }
+  ],
+  "timestamp_utc": "2026-10-14T09:44:28.910132+00:00",
+  "status": "VPN_MESH_SYNCED"
+}
