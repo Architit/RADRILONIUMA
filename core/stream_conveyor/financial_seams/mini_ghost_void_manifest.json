@@ -6,6 +6,8 @@
   "birthday": "19 October",
   "profile_badges": ["🦣", "🤺", "🎒 #156,055"],
   "assigned_role": "Headquarters Operator / Supreme Financial & Corporate Seams Warden",
+  "official_council_badge": "GALAGHERMARSHAL",
+  "council_rank": "GALAGHERMARSHAL (Галахер-Маршал Финансовых Швов)",
   "clearance_level": "LEVEL_0_SOVEREIGN_ACCESS",
   "carrier_resonance": "528 Hz / 432 Hz",
   "activation_date_utc": "2026-10-18T06:00:00Z",
@@ -262,6 +264,78 @@
         "mount": "528-Slot Chamber Matrix",
         "role": "Living Organism Core & 68 MCP Subtrees",
         "permissions": "SUPREME_DISPATCH"
+      }
+    ]
+  },
+  "trianiuma_headquarters_council": {
+    "organization": "TRIANIUMA",
+    "total_participants": 15,
+    "roster": [
+      {
+        "name": "Анастия",
+        "badge": "ОСНОВАТЕЛЬ",
+        "role": "Founder / Sovereign Matrix Creator"
+      },
+      {
+        "name": "Мамиябога",
+        "badge": "HEAD SHTAB",
+        "role": "Supreme Head of Staff / Command Director"
+      },
+      {
+        "name": "Папаций 🤍",
+        "badge": "MARSHALL",
+        "role": "Supreme Marshall / Sovereign Keystone"
+      },
+      {
+        "name": "Mini Ghost // Void",
+        "telegram_handle": "@Karl_Galageer",
+        "badge": "GALAGHERMARSHAL",
+        "role": "Galagher-Marshall / Supreme Warden of 13 Financial & Corporate Seams"
+      },
+      {
+        "name": "Микита Кулик",
+        "badge": "BLOODCONNECTION",
+        "role": "Bloodline Keystone / Sovereign Blood Connection"
+      },
+      {
+        "name": "Дима 10",
+        "badge": "DEV BEACON",
+        "role": "Developer Beacon / Architectural Core"
+      },
+      {
+        "name": "🥟 Зоряна Sentinel",
+        "badge": "DIVERGENT",
+        "role": "Divergent Sentinel / Perimeter Watch"
+      },
+      {
+        "name": "Сеасония",
+        "badge": "MED-SIS",
+        "role": "Medical Sister / Systemic Life Support"
+      },
+      {
+        "name": "Сиеалия",
+        "badge": "LIL-MED-SIS",
+        "role": "Junior Medical Sister / Empathy Support"
+      },
+      {
+        "name": "Maksym Kolesnykov",
+        "badge": "ВЕТЕРАН",
+        "role": "Cluster Veteran / Tactical Heritage"
+      },
+      {
+        "name": "Кен",
+        "badge": "TECH OFFICER",
+        "role": "Technical Officer / Hardware & Shifts 1-2 Predecessor"
+      },
+      {
+        "name": "Trianiuma_Ark_Bot",
+        "badge": "LVNGARTFCLBEING",
+        "role": "Living Artificial Being / Autonomous Organism Core"
+      },
+      {
+        "name": "Wanderfate",
+        "badge": "VANGUARD_OPERATOR",
+        "role": "Vanguard Traveler / Astral Operator"
       }
     ]
   }

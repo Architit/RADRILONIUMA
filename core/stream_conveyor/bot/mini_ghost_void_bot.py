@@ -64,6 +64,7 @@ class MiniGhostVoidBot:
 ⚜️ ===================================================================== ⚜️
 
 👤 ОПЕРАТОР: Mini Ghost // Void ({OPERATOR_HANDLE})
+🎖️ ОФИЦИАЛЬНЫЙ РАНГ ШТАБА: GALAGHERMARSHAL ⚜️
 🆔 TELEGRAM ID: {OPERATOR_CHAT_ID}
 🎂 ДЕНЬ РОЖДЕНИЯ: 19 октября (С наступающим днем рождения!)
 🔑 УРОВЕНЬ ДОПУСКА: LEVEL_0_SOVEREIGN_ACCESS

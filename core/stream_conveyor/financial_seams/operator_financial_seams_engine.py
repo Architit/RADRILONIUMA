@@ -98,6 +98,7 @@ class FinancialSeamsEngine:
 
         op = self.manifest
         print(f"👤 OPERATOR CALL-SIGN : {op.get('call_sign')} ({op.get('telegram_handle')})")
+        print(f"🎖️ COUNCIL BADGE      : {op.get('official_council_badge', 'GALAGHERMARSHAL')} [{op.get('council_rank', 'GALAGHERMARSHAL')}]")
         print(f"🆔 TELEGRAM ID        : {op.get('telegram_id')}")
         print(f"🎂 BIRTHDAY           : {op.get('birthday')}")
         print(f"🛡️ ASSIGNED ROLE      : {op.get('assigned_role')}")
