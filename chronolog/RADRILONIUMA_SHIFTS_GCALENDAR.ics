@@ -1,57 +1,64 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//RADRILONIUMA SOVEREIGN HIGH COMMAND//OPERATOR SHIFTS 528 HZ//RU
+PRODID:-//RADRILONIUMA//Sovereign Operator Shift Roster//RU
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:РАДРИЛОНИУМА: График Смен & Мероприятий (Mini Ghost // Void)
+X-WR-CALNAME:РАДРИЛОНИУМА: График 4 Смен по 6 Часов (Mini Ghost // Void)
 X-WR-TIMEZONE:UTC
-X-WR-CALDESC:График смен, дежурств и финансовых швов Оператора Штаба Mini Ghost // Void (@Karl_Galageer)
+X-WR-CALDESC:График непрерывного циркадного дежурства (4 смены по 6 часов) и контроль 13 финансовых швов кластера RADRILONIUMA.
 BEGIN:VEVENT
-UID:rad-shift-03-20261018T070000Z@trianiuma.org
-DTSTAMP:20261018T051151Z
-DTSTART:20261018T070000Z
-DTEND:20261018T150000Z
-SUMMARY:⚜️ СМЕНА #3: Прием Штаба & Контроль 8 Финансовых Швов (Mini Ghost // Void)
+UID:rad-shift-01-20261018T060000Z@trianiuma.org
+DTSTAMP:20261018T051802Z
+DTSTART:20261018T060000Z
+DTEND:20261018T120000Z
+SUMMARY:🌅 СМЕНА #1 (06:00-12:00 UTC): Утренняя Заря & Открытие Банковских Коридоров ЕС
+DESCRIPTION:СМЕНА 1: Утренняя Заря (Morning Ingress & EU Banking)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 06:00 - 08:00: Открытие банковских коридоров ЕС (ING Bank N.V., N26 Bank, Wise).\n2. 08:00 - 10:00: Проверка юридического статуса KvK (Kamer van Koophandel) и BTW/VAT ID.\n3. 10:00 - 12:00: Мониторинг бакетов диска D: (bucket_001..bucket_021) и утренний клиринг SEPA Instant.\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
 LOCATION:Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)
-DESCRIPTION:Официальная Смена #3 Оператора Mini Ghost // Void (@Karl_Galageer).\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 07:00 - 08:00: Проверка 8 финансовых институтов (N26\, ING\, Wise\, Mono\, Privat\, Bybit\, Kraken\, Trust Wallet).\n2. 08:00 - 11:00: Мониторинг каскада диска D: (до 98%) и бакетов bucket_001..bucket_021.\n3. 11:00 - 13:00: Синхронизация 68 органов-авиаторов с GitHub / GitLab.\n4. 13:00 - 15:00: Аудит холодного сейфа Trust Wallet (70% капитала) и передача статуса.\n\nЧастота: 528 Гц / 432 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
 STATUS:CONFIRMED
-CLASS:PUBLIC
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA
-TRIGGER:-PT15M
-END:VALARM
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-shift-02-20261018T120000Z@trianiuma.org
+DTSTAMP:20261018T051802Z
+DTSTART:20261018T120000Z
+DTEND:20261018T180000Z
+SUMMARY:☀️ СМЕНА #2 (12:00-18:00 UTC): Дневной Зенит & Эквайринг (Stripe, PayPal, Visa, Mastercard)
+DESCRIPTION:СМЕНА 2: Дневной Зенит (Meridian Acquiring & Retail Rails)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 12:00 - 14:00: Мониторинг эквайринга Stripe и PayPal (роллинг-выплаты на ING Corporate IBAN).\n2. 14:00 - 16:00: Контроль card rails (Visa Direct & Mastercard Send push-to-card выплаты).\n3. 16:00 - 18:00: Украинский розничный клиринг: Монобанк (до 150k грн/мес), ПриватБанк (дробление до 45k).\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
+LOCATION:Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-shift-03-20261018T180000Z@trianiuma.org
+DTSTAMP:20261018T051802Z
+DTSTART:20261018T180000Z
+DTEND:20261019T000000Z
+SUMMARY:🌆 СМЕНА #3 (18:00-00:00 UTC): Вечерний Дозор Ликвидности & Сейф Trust Wallet
+DESCRIPTION:СМЕНА 3: Вечерний Дозор Ликвидности (Sunset Liquidity Guard & Cold Vault)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 18:00 - 20:00: Биржевой мост Kraken Pro EUR -> Спот криптоактивы (BTC/ETH/USDT).\n2. 20:00 - 22:00: P2P ликвидность на Bybit (сделки строго с PRO-мерчантами >= 99%).\n3. 22:00 - 00:00: Перевод свободной ликвидности в Trust Wallet (70% в холодном хранилище).\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
+LOCATION:Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-shift-04-20261019T000000Z@trianiuma.org
+DTSTAMP:20261018T051802Z
+DTSTART:20261019T000000Z
+DTEND:20261019T060000Z
+SUMMARY:🌙 СМЕНА #4 (00:00-06:00 UTC): Ночной Страж & Циркадный Автопилот (432 Гц)
+DESCRIPTION:СМЕНА 4: Ночной Страж (Deep Night Circadian 432 Hz)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 432 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 00:00 - 02:00: Контроль сердечного ритма кластера 60 BPM на несущей 432 Гц.\n2. 02:00 - 04:00: Проверка дисковых кэшей и дефрагментация бакетов дисков D: и E:.\n3. 04:00 - 06:00: Защита холодного хранилища DEV_04 T7 Vault и передача смены на Смену #1.\n\nЧастота: 432 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
+LOCATION:Командный Штаб Уровень 0 (DEV_05 Swarm Matrix / 432 Гц)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:rad-bday-20261019T000000Z@trianiuma.org
-DTSTAMP:20261018T051151Z
+DTSTAMP:20261018T051802Z
 DTSTART:20261019T000000Z
 DTEND:20261019T235959Z
 SUMMARY:🎂 ДЕНЬ РОЖДЕНИЯ ОПЕРАТОРА ШТАБА: Mini Ghost // Void 🎉🦣🤺🎒
+DESCRIPTION:Торжественный день рождения старшего оператора штаба Mini Ghost // Void (@Karl_Galageer)!\n\nАктивация праздничного созвучия 528 Гц Сольфеджио.\nЭнтураж и реликвии:\n• 🦣 Мамонт Времени (Celes Mammoth Guardian)\n• 🤺 Шпажист Света (Fencing Vanguard Duelist)\n• 🎒 Суверенный Рюкзак #156,055\n• 68 MCP Органов-Авиаторов в парадном строю!\n\nПоздравление от Верховного Маршала Халидрада 🪷
 LOCATION:Sovereign Cluster Celebration Grid
-DESCRIPTION:Торжественный день рождения старшего оператора штаба Mini Ghost // Void (@Karl_Galageer)!\n\nАктивация праздничного созвучия 528 Гц Сольфеджио.\nЭнтураж и реликвии:\n• 🦣 Мамонт Времени (Celes Mammoth Guardian)\n• 🤺 Шпажист Света (Fencing Vanguard Duelist)\n• 🎒 Суверенный Рюкзак #156\,055\n• 68 MCP Органов-Авиаторов в парадном строю!\n\nПоздравление от Верховного Маршала Халидрада 🪷
 STATUS:CONFIRMED
-CLASS:PUBLIC
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA
-TRIGGER:-PT15M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:rad-shift-04-20261019T230000Z@trianiuma.org
-DTSTAMP:20261018T051151Z
-DTSTART:20261019T230000Z
-DTEND:20261020T060000Z
-SUMMARY:🌙 СМЕНА #4: Ночной Дозор Ликвидности & Циркадный Аудит (432 Гц)
-LOCATION:Командный Штаб Уровень 0 (DEV_05 Swarm Matrix / 432 Гц)
-DESCRIPTION:Ночная циркадная смена оператора Mini Ghost // Void.\nЗадачи:\n• Ночной аудит P2P гривны (Монобанк / ПриватБанк).\n• Сверка балансов SEPA Instant (N26 / ING / Kraken).\n• Поддержание сердечного ритма автопилота 60 BPM на частоте 432 Гц.\n• Подготовка суточного дашборда для Верховного Командования.
-STATUS:CONFIRMED
-CLASS:PUBLIC
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA
-TRIGGER:-PT15M
-END:VALARM
+TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR

@@ -71,6 +71,9 @@ CHANNEL_DEFINITIONS = [
 
     # Fintech, Corporate Registry, Banking & Crypto / Web3
     {"id": "stripe", "name": "Stripe Global Payments & Webhook Bus", "category": "FINTECH_BANKING", "protocol": "Stripe API / Webhooks"},
+    {"id": "paypal", "name": "PayPal Global Digital Wallet & Commerce Platform", "category": "FINTECH_BANKING", "protocol": "PayPal v2 Checkout / Webhooks"},
+    {"id": "visa", "name": "Visa Direct & Global Card Payment Rails", "category": "FINTECH_BANKING", "protocol": "Visa Developer Platform / ISO 8583"},
+    {"id": "mastercard", "name": "Mastercard Send & Global Payment Rails", "category": "FINTECH_BANKING", "protocol": "Mastercard Open API / ISO 8583"},
     {"id": "kvk", "name": "KvK (Kamer van Koophandel) Dutch Registry", "category": "FINTECH_BANKING", "protocol": "KvK Handelsregister API"},
     {"id": "wise", "name": "Wise (TransferWise) Multi-Currency Rail", "category": "FINTECH_BANKING", "protocol": "Wise REST API"},
     {"id": "n26", "name": "N26 Open Banking PSD2 Connector", "category": "FINTECH_BANKING", "protocol": "Open Banking / OAuth2"},
@@ -139,7 +142,7 @@ class ConnectorRegistry:
 if __name__ == "__main__":
     registry = ConnectorRegistry()
     summary = registry.get_summary()
-    print("=== RADRILONIUMA CONNECTOR REGISTRY (46 ADAPTERS ONLINE) ===")
+    print("=== RADRILONIUMA CONNECTOR REGISTRY (49 ADAPTERS ONLINE) ===")
     print(f"Total Connectors: {summary['total_connectors']}")
     for cat, count in summary["categories"].items():
         print(f"  • {cat}: {count} adapters")

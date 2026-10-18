@@ -5,35 +5,115 @@
   "telegram_id": "6365581133",
   "birthday": "19 October",
   "profile_badges": ["🦣", "🤺", "🎒 #156,055"],
-  "assigned_role": "Headquarters Operator / Supreme Financial Seams Warden",
+  "assigned_role": "Headquarters Operator / Supreme Financial & Corporate Seams Warden",
   "clearance_level": "LEVEL_0_SOVEREIGN_ACCESS",
   "carrier_resonance": "528 Hz / 432 Hz",
-  "activation_date_utc": "2026-10-18T07:00:00Z",
-  "shift_assignment": {
-    "shift_name": "Shift 3 / Sovereign Liquidity Guard",
-    "duration_hours": "5-8 hours (Flexible Circadian)",
-    "predecessor": "Operator Ken (Shift 1 & 2)",
-    "handover_status": "COMPLETED_HANDOVER"
+  "activation_date_utc": "2026-10-18T06:00:00Z",
+  "circadian_shift_schedule": {
+    "model": "4_SHIFTS_X_6_HOURS",
+    "cycle_duration_hours": 24,
+    "shift_duration_hours": 6,
+    "shifts": [
+      {
+        "shift_index": 1,
+        "name": "Смена 1: Утренняя Заря (Morning Ingress & EU Banking)",
+        "start_utc": "06:00",
+        "end_utc": "12:00",
+        "resonance": "528 Hz",
+        "primary_conduits": ["ing", "n26", "kvk", "wise"],
+        "focus": "Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков."
+      },
+      {
+        "shift_index": 2,
+        "name": "Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails)",
+        "start_utc": "12:00",
+        "end_utc": "18:00",
+        "resonance": "528 Hz",
+        "primary_conduits": ["stripe", "paypal", "visa", "mastercard", "monobank", "privatbank"],
+        "focus": "Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P заказов Bybit."
+      },
+      {
+        "shift_index": 3,
+        "name": "Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault)",
+        "start_utc": "18:00",
+        "end_utc": "00:00",
+        "resonance": "528 Hz",
+        "primary_conduits": ["kraken", "bybit", "trustwallet"],
+        "focus": "Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище)."
+      },
+      {
+        "shift_index": 4,
+        "name": "Смена 4: Ночной Страж (Deep Night Circadian 432 Hz)",
+        "start_utc": "00:00",
+        "end_utc": "06:00",
+        "resonance": "432 Hz",
+        "primary_conduits": ["trustwallet", "t7_vault", "autopilot_core", "swarm_matrix"],
+        "focus": "Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed-хранилища на DEV_04 T7 Vault."
+      }
+    ]
   },
   "financial_seams_matrix": {
+    "corporate_registry_corridor": {
+      "kvk": {
+        "institution": "KvK (Kamer van Koophandel) Netherlands Commercial Register",
+        "region": "Netherlands / European Union",
+        "role": "Corporate Legal Spine, KvK-nummer, BTW/VAT ID, RSIN & UBO Transparency",
+        "liquidity_allocation_pct": 0,
+        "aml_protocol": "Official corporate registration backing Dutch ING corporate banking, Stripe business acquiring, and EU-compliant invoices."
+      }
+    },
     "european_fiat_corridor": {
+      "ing": {
+        "institution": "ING Bank N.V. / ING DiBa",
+        "region": "European Union (Netherlands / Germany)",
+        "currency": "EUR",
+        "role": "Anchor Corporate & Institutional Capital Vault (Linked to KvK)",
+        "liquidity_allocation_pct": 30,
+        "max_daily_limit_eur": 50000,
+        "aml_protocol": "Primary corporate capital store. Corporate SEPA B2B and institutional transfers to Kraken."
+      },
       "n26": {
         "institution": "N26 Bank AG",
         "region": "European Union (Germany)",
         "currency": "EUR",
-        "role": "Fast Operational SEPA Buffer & Card Rails",
+        "role": "Fast Operational SEPA Instant Buffer & Card Rails",
         "liquidity_allocation_pct": 15,
         "max_daily_limit_eur": 5000,
-        "aml_protocol": "Strict Same-Name Transfers (N26 <-> Kraken / N26 <-> Wise). No Direct P2P with Strangers."
+        "aml_protocol": "Strict Same-Name Transfers (N26 <-> Kraken / N26 <-> Wise). Zero direct P2P with strangers."
+      }
+    },
+    "merchant_acquiring_corridor": {
+      "stripe": {
+        "institution": "Stripe Payments Europe Ltd",
+        "region": "Global (EU / US / UK)",
+        "currencies": ["EUR", "USD", "GBP", "Multi-Currency"],
+        "role": "Primary Global Merchant Acquiring, Checkout API & SaaS Invoicing",
+        "liquidity_allocation_pct": 5,
+        "payout_rails": "Automated 2-day rolling payout to ING Corporate IBAN",
+        "aml_protocol": "Stripe Radar machine-learning fraud protection, 3D-Secure 2.0 mandatory, dispute rate < 0.75%."
       },
-      "ing": {
-        "institution": "ING DiBa / ING Groep NV",
-        "region": "European Union (Netherlands / Germany)",
-        "currency": "EUR",
-        "role": "Anchor Institutional Savings & Proof-of-Funds Vault",
-        "liquidity_allocation_pct": 30,
-        "max_daily_limit_eur": 25000,
-        "aml_protocol": "Primary Corporate/Personal Capital Store. SEPA/SWIFT with Tier-1 Regulated Institutions Only (Kraken)."
+      "paypal": {
+        "institution": "PayPal (Europe) S.à r.l. et Cie, S.C.A.",
+        "region": "Global",
+        "currencies": ["EUR", "USD", "GBP"],
+        "role": "Secondary Global Digital Wallet & Alternative Merchant Checkout",
+        "liquidity_allocation_pct": 5,
+        "payout_rails": "Automated sweep to linked ING or N26 accounts",
+        "aml_protocol": "Verified PayPal Business status, Seller Protection protocol, instant resolution of dispute holds."
+      }
+    },
+    "card_network_rails_corridor": {
+      "visa": {
+        "network": "Visa Inc (Visa International)",
+        "role": "Visa Direct Push-to-Card Instant Settlement & Card Rails",
+        "features": ["Visa Direct Real-Time Payouts (< 30 sec)", "Verified by Visa (EMV 3DS)", "Tokenization"],
+        "issuing_partners": ["Wise Visa Debit", "Monobank Visa", "PrivatBank Visa", "Bybit Visa Card"]
+      },
+      "mastercard": {
+        "network": "Mastercard Worldwide",
+        "role": "Mastercard Send Instant Disbursements & Interchange Rails",
+        "features": ["Mastercard Send Cross-Border Rail", "Mastercard Identity Check", "Mastercard Debit/Credit"],
+        "issuing_partners": ["ING Mastercard", "N26 Mastercard", "Monobank Mastercard Platinum", "Kraken Card"]
       }
     },
     "global_clearing_corridor": {
@@ -41,10 +121,10 @@
         "institution": "Wise Payments Ltd",
         "region": "Global (UK / EU / US)",
         "currencies": ["EUR", "USD", "GBP", "PLN", "CHF"],
-        "role": "Multi-Currency Cross-Border Converter & Virtual Debit Rails",
+        "role": "Multi-Currency Cross-Border Converter & International Contractor Rails",
         "liquidity_allocation_pct": 10,
-        "max_daily_limit_eur": 10000,
-        "aml_protocol": "Zero Direct Crypto Mentions. Bridge Only via ING/N26 Personal IBANs."
+        "max_daily_limit_eur": 15000,
+        "aml_protocol": "Zero Direct Crypto Mentions. Bridge Only via ING/N26 Personal/Corporate IBANs."
       }
     },
     "ukrainian_fiat_corridor": {
@@ -96,7 +176,7 @@
   },
   "emergency_kill_switch_protocol": {
     "action": "Immediate freeze of API keys and withdrawal to Trust Wallet / ING cold buffer",
-    "triggers": ["Suspicious login IP", "Bank compliance audit notice", "P2P dispute", "CEX withdrawal halt rumor"],
+    "triggers": ["Suspicious login IP", "Bank compliance audit notice", "P2P dispute", "CEX withdrawal halt rumor", "Stripe Radar spike"],
     "channel_escalation": "Telegram Bot Broadcast -> Windows Toast -> Android Notification"
   },
   "entourage_assignment": {

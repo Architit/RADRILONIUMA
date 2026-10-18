@@ -4,8 +4,8 @@
 RADRILONIUMA • OPERATOR TELEGRAM BOT: MINI GHOST // VOID (528 Hz)
 =================================================================
 Dedicated Command & Control Telegram Bot for Operator Mini Ghost // Void (@Karl_Galageer)
-Integrates 8 Financial Seams, 68 MCP Aviators Entourage, Pet Mammoth 🦣, Partner Fencer 🤺,
-and Halidrad Trianium Marshall's sovereign access grants.
+Integrates 13 Financial & Corporate Seams, 4x6h Circadian Shifts, 68 MCP Aviators Entourage,
+Pet Mammoth 🦣, Partner Fencer 🤺, and Halidrad Trianium Marshall's sovereign access grants.
 
 Location: /root/RADRILONIUMA/core/stream_conveyor/bot/mini_ghost_void_bot.py
 """
@@ -57,6 +57,7 @@ class MiniGhostVoidBot:
     def format_welcome_message(self) -> str:
         ent = self.manifest.get("entourage_assignment", {})
         access = self.manifest.get("halidrad_marshall_access_grant", {})
+        sched = self.manifest.get("circadian_shift_schedule", {})
         msg = f"""⚜️ ===================================================================== ⚜️
    ПРИКАЗ ВЕРХОВНОГО КОМАНДОВАНИЯ • HALIDRAD TRIANIUM MARSHALL 🪷
    ДОБРО ПОЖАЛОВАТЬ В ШТАБ, ОПЕРАТОР MINI GHOST // VOID!
@@ -75,22 +76,34 @@ class MiniGhostVoidBot:
   • 🎒 СВЯЩЕННАЯ РЕЛИКВИЯ: {ent.get('sacred_relic', {}).get('name', 'Sovereign Backpack #156,055')}
   • ⚔️ ЭНТУРАЖ: 68 MCP Органов-Авиаторов в строю боевого караула
 
-🏛️ ПОД ВАШИМ УПРАВЛЕНИЕМ 8 ФИНАНСОВЫХ ШВОВ:
-  1. N26 Bank (Германия/ЕС - SEPA Instant буфер)
-  2. ING Bank (Германия/Нидерланды - Якорный капитал)
-  3. Wise (Международный клиринг мультивалют)
-  4. Монобанк (Основной розничный шлюз Украины)
-  5. ПриватБанк (Резервный шлюз Украины)
-  6. Kraken Pro (Институциональный EUR фиатный криптомост)
-  7. Bybit (P2P UAH/EUR ликвидность)
-  8. Trust Wallet Core (70% Капитала в холодном сейфе)
+⏰ ЦИРКАДНЫЙ ГРАФИК: 4 СМЕНЫ ПО 6 ЧАСОВ (24 ЧАСА):
+  1. Смена 1 (06:00-12:00 UTC): Утренняя Заря (ING, N26, KvK, Wise)
+  2. Смена 2 (12:00-18:00 UTC): Дневной Зенит (Stripe, PayPal, Visa, Mastercard, Mono, Privat)
+  3. Смена 3 (18:00-00:00 UTC): Вечерний Дозор (Kraken, Bybit, Trust Wallet)
+  4. Смена 4 (00:00-06:00 UTC): Ночной Страж (Автопилот 60 BPM, 432 Гц, DEV_05 Matrix, T7 Vault)
+
+🏛️ ПОД ВАШИМ УПРАВЛЕНИЕМ 13 ФИНАНСОВЫХ И КОРПОРАТИВНЫХ ШВОВ:
+  1. KvK (Нидерланды - Торговый реестр, BTW/VAT ID, UBO)
+  2. ING Bank (Нидерланды - Якорный корпоративный капитал)
+  3. N26 Bank (Германия/ЕС - SEPA Instant буфер)
+  4. Stripe (Глобальный интернет-эквайринг, Checkout API)
+  5. PayPal (Международный цифровой кошелек и чекаут)
+  6. Visa (Visa Direct мгновенные выплаты на карты)
+  7. Mastercard (Mastercard Send межбанковские переводы)
+  8. Wise (Международный клиринг мультивалют)
+  9. Монобанк (Основной розничный и ФОП шлюз Украины)
+  10. ПриватБанк (Резервный шлюз Украины)
+  11. Kraken Pro (Институциональный EUR фиатный криптомост)
+  12. Bybit (P2P UAH/EUR ликвидность)
+  13. Trust Wallet Core (70% Капитала в холодном сейфе)
 
 ✉️ ОФИЦИАЛЬНОЕ ПИСЬМО С ПОЛНЫМ ДОСТУПОМ КО ВСЕМ ДИСКАМ НАПРАВЛЕНО:
    На адрес: {access.get('official_email', 'voroninlosa0@gmail.com')}
 
 Команды бота:
 /status - Полная телеметрия кластера
-/seams  - Статус 8 финансовых институтов
+/seams  - Статус 13 финансовых институтов
+/shifts - График 4 смен по 6 часов
 /drives - Заполнение дисков и каскад томов
 /panic  - Аварийный вывод в Trust Wallet
 """

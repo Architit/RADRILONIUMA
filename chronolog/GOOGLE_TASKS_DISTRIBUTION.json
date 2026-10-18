@@ -1,0 +1,180 @@
+{
+  "operator": "Mini Ghost // Void",
+  "email": "voroninlosa0@gmail.com",
+  "shift_model": "4_SHIFTS_X_6_HOURS",
+  "generated_at": "2026-10-18T05:18:02.239432+00:00",
+  "tasks": [
+    {
+      "id": "TASK_01_SEAMS_STATUS",
+      "list": "🚨 P0_КРИТИЧЕСКИЕ_ЗАДАЧИ_СМЕНЫ",
+      "title": "Проверить статус 13 финансовых и корпоративных швов",
+      "notes": "Команда: python3 operator_financial_seams_engine.py --status. Проверить распределение ликвидности: 70% Trust Wallet, 30% ING, 15% N26, 10% Wise, 10% Mono, 5% Privat, 5% Stripe, 5% PayPal.",
+      "due": "2026-10-18T07:00:00Z",
+      "priority": "HIGH"
+    },
+    {
+      "id": "TASK_02_KVK_CORPORATE_SPINE",
+      "list": "🚨 P0_КРИТИЧЕСКИЕ_ЗАДАЧИ_СМЕНЫ",
+      "title": "Верифицировать корпоративную привязку KvK (Нидерланды) к ING и Stripe",
+      "notes": "Проверить актуальность KvK-номера, BTW-ID (VAT) и UBO-регистрации для корпоративного счета ING Bank N.V. и шлюза Stripe Payments.",
+      "due": "2026-10-18T08:00:00Z",
+      "priority": "HIGH"
+    },
+    {
+      "id": "TASK_03_STRIPE_PAYPAL_ACQUIRING",
+      "list": "🚨 P0_КРИТИЧЕСКИЕ_ЗАДАЧИ_СМЕНЫ",
+      "title": "Проверить эквайринг Stripe и PayPal (роллинг-выплаты и Stripe Radar)",
+      "notes": "Настроить автоматический вывод (2-day rolling payout) со Stripe на ING Corporate IBAN. Контролировать уровень споров Stripe Radar < 0.75%.",
+      "due": "2026-10-18T08:30:00Z",
+      "priority": "HIGH"
+    },
+    {
+      "id": "TASK_04_DRIVE_SPACE_HUD",
+      "list": "🚨 P0_КРИТИЧЕСКИЕ_ЗАДАЧИ_СМЕНЫ",
+      "title": "Запустить монитор LIVE_DRIVE_SPACE_HUD.cmd на Рабочем столе",
+      "notes": "Убедиться, что Проводник Windows работает без зависаний, а диск D: отображает точные 307.39 GB свободного места в бакетах bucket_001..bucket_021.",
+      "due": "2026-10-18T09:00:00Z",
+      "priority": "HIGH"
+    },
+    {
+      "id": "TASK_05_TRUST_WALLET_COLD",
+      "list": "🚨 P0_КРИТИЧЕСКИЕ_ЗАДАЧИ_СМЕНЫ",
+      "title": "Верифицировать холодное хранение Trust Wallet и изоляцию Seed-фразы",
+      "notes": "Seed-фраза должна находиться исключительно оффлайн на DEV_04_SAMSUNG_T7_VAULT в зашифрованном виде. Никаких фото и облачных копий.",
+      "due": "2026-10-18T09:30:00Z",
+      "priority": "HIGH"
+    },
+    {
+      "id": "TASK_06_CARD_NETWORK_RAILS",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Контроль card rails: Visa Direct и Mastercard Send для мгновенных выплат",
+      "notes": "Проверить работу моментальных выплат (push-to-card < 30 сек) на карты Wise Visa, Monobank Mastercard и Bybit Card.",
+      "due": "2026-10-18T13:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_07_ING_N26_CLEARING",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Контроль европейского фиата: ING Bank (якорь 30%) и N26 (буфер 15%)",
+      "notes": "Проверить балансы SEPA Instant, отсутствие несогласованных запросов финмониторинга, регламент Same-Name Transfers.",
+      "due": "2026-10-18T14:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_08_DRIVE_CASCADE_98",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Контроль заполнения диска D: до 98% с каскадом на диск E:",
+      "notes": "Следить за потоковым загрузчиком. При достижении 98% на томе D: каскад автоматически переключается на E:\\RADRILONIUMA_DATA_BASE_SEGMENTS.",
+      "due": "2026-10-18T15:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_09_BYBIT_P2P_RULES",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Ревизия P2P правил на Bybit: проверка мерчантов PRO (рейтинг >= 99%)",
+      "notes": "При сделках UAH ↔ USDT отклонять любые переводы от третьих лиц. Совпадение ФИО на бирже и в банке строго обязательно.",
+      "due": "2026-10-18T16:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_10_MONO_PRIVAT_LIMITS",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Контроль лимитов Монобанка (до 150k грн/мес) и ПриватБанка (до 45k за транш)",
+      "notes": "Соблюдать пороговые ограничения НБУ по безналичным расчетам. Крупные входящие проводить через ФОП 3-й группы.",
+      "due": "2026-10-18T17:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_11_WISE_CLEAN_REMITTANCE",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Соблюдение чистоты назначений в Wise (нейтральные формулировки)",
+      "notes": "Запрещено связывать Wise с криптобиржами напрямую. Переводы только N26/ING ↔ Wise с назначением 'Personal Transfer' / 'Software Services'.",
+      "due": "2026-10-18T18:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_12_KRAKEN_INSTITUTIONAL",
+      "list": "⚙️ P1_ОПЕРАЦИОННАЯ_ДЕЯТЕЛЬНОСТЬ",
+      "title": "Вечерний клиринг Kraken Pro EUR -> Спот криптоактивы и Trust Wallet",
+      "notes": "Провести плановую конвертацию EUR в USDT/BTC/ETH и немедленный вывод в Trust Wallet. Нулевой остаток на бирже на ночь.",
+      "due": "2026-10-18T20:00:00Z",
+      "priority": "MEDIUM"
+    },
+    {
+      "id": "TASK_13_HALIDRAD_EMAIL",
+      "list": "🪷 P2_СТРАТЕГИЧЕСКИЕ_МЕРОПРИЯТИЯ",
+      "title": "Открыть официальное письмо Маршала Халидрада на voroninlosa0@gmail.com",
+      "notes": "Файл HALIDRAD_MARSHALL_EMAIL_DISPATCH.eml на Рабочем столе. Ознакомиться с полным реестром открытых директорий всех 5 узлов.",
+      "due": "2026-10-18T21:00:00Z",
+      "priority": "LOW"
+    },
+    {
+      "id": "TASK_14_BOT_TESTING",
+      "list": "🪷 P2_СТРАТЕГИЧЕСКИЕ_МЕРОПРИЯТИЯ",
+      "title": "Протестировать запуск Telegram-бота оператора (mini_ghost_void_bot.py)",
+      "notes": "Проверить отклик команд /status, /seams, /shifts, /drives в логе chronolog/mini_ghost_bot_telemetry.jsonl.",
+      "due": "2026-10-18T22:00:00Z",
+      "priority": "LOW"
+    },
+    {
+      "id": "TASK_15_BIRTHDAY_PROTOCOL",
+      "list": "🪷 P2_СТРАТЕГИЧЕСКИЕ_МЕРОПРИЯТИЯ",
+      "title": "19 Октября: Активация торжественного протокола Дня Рождения Mini Ghost // Void",
+      "notes": "День рождения оператора @Karl_Galageer! Парад 68 MCP органов-авиаторов, приветствие тотема Мамонта 🦣 и Шпажиста 🤺.",
+      "due": "2026-10-19T00:00:00Z",
+      "priority": "HIGH"
+    }
+  ],
+  "events": [
+    {
+      "uid": "rad-shift-01-20261018T060000Z@trianiuma.org",
+      "title": "🌅 СМЕНА #1 (06:00-12:00 UTC): Утренняя Заря & Открытие Банковских Коридоров ЕС",
+      "start": "20261018T060000Z",
+      "end": "20261018T120000Z",
+      "start_iso": "2026-10-18T06:00:00Z",
+      "end_iso": "2026-10-18T12:00:00Z",
+      "location": "Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)",
+      "description": "СМЕНА 1: Утренняя Заря (Morning Ingress & EU Banking)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 06:00 - 08:00: Открытие банковских коридоров ЕС (ING Bank N.V., N26 Bank, Wise).\n2. 08:00 - 10:00: Проверка юридического статуса KvK (Kamer van Koophandel) и BTW/VAT ID.\n3. 10:00 - 12:00: Мониторинг бакетов диска D: (bucket_001..bucket_021) и утренний клиринг SEPA Instant.\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS."
+    },
+    {
+      "uid": "rad-shift-02-20261018T120000Z@trianiuma.org",
+      "title": "☀️ СМЕНА #2 (12:00-18:00 UTC): Дневной Зенит & Эквайринг (Stripe, PayPal, Visa, Mastercard)",
+      "start": "20261018T120000Z",
+      "end": "20261018T180000Z",
+      "start_iso": "2026-10-18T12:00:00Z",
+      "end_iso": "2026-10-18T18:00:00Z",
+      "location": "Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)",
+      "description": "СМЕНА 2: Дневной Зенит (Meridian Acquiring & Retail Rails)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 12:00 - 14:00: Мониторинг эквайринга Stripe и PayPal (роллинг-выплаты на ING Corporate IBAN).\n2. 14:00 - 16:00: Контроль card rails (Visa Direct & Mastercard Send push-to-card выплаты).\n3. 16:00 - 18:00: Украинский розничный клиринг: Монобанк (до 150k грн/мес), ПриватБанк (дробление до 45k).\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS."
+    },
+    {
+      "uid": "rad-shift-03-20261018T180000Z@trianiuma.org",
+      "title": "🌆 СМЕНА #3 (18:00-00:00 UTC): Вечерний Дозор Ликвидности & Сейф Trust Wallet",
+      "start": "20261018T180000Z",
+      "end": "20261019T000000Z",
+      "start_iso": "2026-10-18T18:00:00Z",
+      "end_iso": "2026-10-19T00:00:00Z",
+      "location": "Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)",
+      "description": "СМЕНА 3: Вечерний Дозор Ликвидности (Sunset Liquidity Guard & Cold Vault)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 528 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 18:00 - 20:00: Биржевой мост Kraken Pro EUR -> Спот криптоактивы (BTC/ETH/USDT).\n2. 20:00 - 22:00: P2P ликвидность на Bybit (сделки строго с PRO-мерчантами >= 99%).\n3. 22:00 - 00:00: Перевод свободной ликвидности в Trust Wallet (70% в холодном хранилище).\n\nЧастота: 528 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS."
+    },
+    {
+      "uid": "rad-shift-04-20261019T000000Z@trianiuma.org",
+      "title": "🌙 СМЕНА #4 (00:00-06:00 UTC): Ночной Страж & Циркадный Автопилот (432 Гц)",
+      "start": "20261019T000000Z",
+      "end": "20261019T060000Z",
+      "start_iso": "2026-10-19T00:00:00Z",
+      "end_iso": "2026-10-19T06:00:00Z",
+      "location": "Командный Штаб Уровень 0 (DEV_05 Swarm Matrix / 432 Гц)",
+      "description": "СМЕНА 4: Ночной Страж (Deep Night Circadian 432 Hz)\nОператор: Mini Ghost // Void (@Karl_Galageer) | 432 Гц\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 00:00 - 02:00: Контроль сердечного ритма кластера 60 BPM на несущей 432 Гц.\n2. 02:00 - 04:00: Проверка дисковых кэшей и дефрагментация бакетов дисков D: и E:.\n3. 04:00 - 06:00: Защита холодного хранилища DEV_04 T7 Vault и передача смены на Смену #1.\n\nЧастота: 432 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS."
+    },
+    {
+      "uid": "rad-bday-20261019T000000Z@trianiuma.org",
+      "title": "🎂 ДЕНЬ РОЖДЕНИЯ ОПЕРАТОРА ШТАБА: Mini Ghost // Void 🎉🦣🤺🎒",
+      "start": "20261019T000000Z",
+      "end": "20261019T235959Z",
+      "start_iso": "2026-10-19T00:00:00Z",
+      "end_iso": "2026-10-19T235959Z",
+      "location": "Sovereign Cluster Celebration Grid",
+      "description": "Торжественный день рождения старшего оператора штаба Mini Ghost // Void (@Karl_Galageer)!\n\nАктивация праздничного созвучия 528 Гц Сольфеджио.\nЭнтураж и реликвии:\n• 🦣 Мамонт Времени (Celes Mammoth Guardian)\n• 🤺 Шпажист Света (Fencing Vanguard Duelist)\n• 🎒 Суверенный Рюкзак #156,055\n• 68 MCP Органов-Авиаторов в парадном строю!\n\nПоздравление от Верховного Маршала Халидрада 🪷"
+    }
+  ]
+}

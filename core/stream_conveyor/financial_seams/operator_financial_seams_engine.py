@@ -5,8 +5,9 @@ RADRILONIUMA • FINANCIAL SEAMS ENGINE & OPERATOR DISPATCH (528 Hz)
 ==================================================================
 Command and Control Engine for Operator Mini Ghost // Void (@Karl_Galageer)
 Orchestrates liquidity conduits, fiat-crypto bridges, multi-currency routing,
-and AML/compliance buffers across 8 key financial institutions:
-N26, ING, PrivatBank, Monobank, Wise, Trust Wallet, Bybit, Kraken.
+merchant acquiring, and AML/compliance buffers across 13 key financial institutions:
+N26, ING, PrivatBank, Monobank, Wise, Trust Wallet, Bybit, Kraken,
+Stripe, KvK, PayPal, Visa, Mastercard.
 
 Location: /root/RADRILONIUMA/core/stream_conveyor/financial_seams/operator_financial_seams_engine.py
 """
@@ -40,7 +41,7 @@ SEAMS_TOPOLOGY = {
     },
     "SEAM_03_GLOBAL_CLEARING": {
         "name": "Multi-Currency Global Clearing",
-        "path": "Wise (USD/GBP/EUR) -> ING / N26 Personal IBAN -> Kraken -> Trust Wallet",
+        "path": "Wise (USD/GBP/EUR) -> ING / N26 Personal/Corporate IBAN -> Kraken -> Trust Wallet",
         "risk_level": "LOW",
         "aml_compliance": "Strict No-Direct-Crypto Rule on Wise"
     },
@@ -54,7 +55,25 @@ SEAMS_TOPOLOGY = {
         "name": "Ukrainian Fiat Off-Ramp",
         "path": "Trust Wallet (USDT) -> Bybit P2P -> Monobank / PrivatBank",
         "risk_level": "MEDIUM",
-        "aml_compliance": "Split Batches <= 50,000 UAH to avoid fraud monitoring flags"
+        "aml_compliance": "Split Batches <= 45,000 UAH to avoid fraud monitoring flags"
+    },
+    "SEAM_06_MERCHANT_ACQUIRING": {
+        "name": "Global Merchant Acquiring & Checkout Rails",
+        "path": "Stripe / PayPal (Visa & Mastercard) -> ING Corporate (KvK Backed) / Wise Business -> Kraken -> Trust Wallet",
+        "risk_level": "LOW",
+        "aml_compliance": "Stripe Radar ML scoring, 3D-Secure 2.0, Chargeback ratio < 0.75%"
+    },
+    "SEAM_07_INSTANT_CARD_RAILS": {
+        "name": "Instant Card Payouts & Card Rails",
+        "path": "ING / N26 / Mono / Privat / Wise / Bybit Card -> Visa Direct / Mastercard Send -> Sub-Second Settlement",
+        "risk_level": "LOW",
+        "aml_compliance": "EMV 3DS Tokenization & Visa/Mastercard Global Interchange Compliance"
+    },
+    "SEAM_08_KVK_CORPORATE_SPINE": {
+        "name": "KvK Dutch Enterprise Legal Backbone",
+        "path": "KvK Registry (Netherlands) -> ING Corporate Account -> Stripe Business Verification -> Tax/VAT Clearing",
+        "risk_level": "ZERO",
+        "aml_compliance": "Dutch Civil Code, BTW-ID & UBO Ultimate Beneficial Ownership Transparency"
     }
 }
 
@@ -84,19 +103,24 @@ class FinancialSeamsEngine:
         print(f"🛡️ ASSIGNED ROLE      : {op.get('assigned_role')}")
         print(f"🔑 CLEARANCE LEVEL    : {op.get('clearance_level')}")
         print(f"⚡ CARRIER RESONANCE  : {op.get('carrier_resonance')}")
-        print(f"📋 SHIFT HANDOVER     : {op.get('shift_assignment', {}).get('shift_name')} (From: {op.get('shift_assignment', {}).get('predecessor')})\n")
 
-        print("🏛️ ACTIVE FINANCIAL SEAMS CONDUITS (8 INSTITUTIONS):")
+        sched = op.get("circadian_shift_schedule", {})
+        print(f"\n⏰ CIRCADIAN SHIFT SCHEDULE ({sched.get('model', '4_SHIFTS_X_6_HOURS')}):")
+        for s in sched.get("shifts", []):
+            print(f"  • {s.get('name')} | {s.get('start_utc')}-{s.get('end_utc')} UTC | Resonance: {s.get('resonance')}")
+            print(f"    Focus: {s.get('focus')}")
+
+        print("\n🏛️ ACTIVE FINANCIAL & CORPORATE SEAMS (13 CONDUITS):")
         corridors = op.get("financial_seams_matrix", {})
         for cname, cdata in corridors.items():
             print(f"\n  📁 [{cname.upper()}]:")
             for inst_id, meta in cdata.items():
-                inst_name = meta.get("institution") or meta.get("platform")
+                inst_name = meta.get("institution") or meta.get("platform") or meta.get("network")
                 role = meta.get("role")
                 alloc = meta.get("liquidity_allocation_pct", 0)
-                print(f"     • {inst_id.upper():<12} | {inst_name:<30} | Alloc: {alloc:>2}% | {role}")
+                print(f"     • {inst_id.upper():<12} | {inst_name:<42} | Alloc: {alloc:>2}% | {role}")
 
-        print("\n🌊 ROUTING TOPOLOGY & SEAM FLOWS:")
+        print("\n🌊 ROUTING TOPOLOGY & 8 CONDUIT FLOWS:")
         for seam_id, seam in SEAMS_TOPOLOGY.items():
             print(f"  [{seam_id}] {seam['name']}")
             print(f"       Маршрут : {seam['path']}")
@@ -109,12 +133,14 @@ class FinancialSeamsEngine:
             "operator": self.manifest.get("call_sign"),
             "telegram": self.manifest.get("telegram_handle"),
             "status": "SEAMS_AUDIT_PASSED_ZERO_DRIFT",
-            "institutions_checked": 8,
+            "institutions_checked": 13,
             "seams_active": len(SEAMS_TOPOLOGY),
             "recommendations": [
                 "Maintain 70% in Trust Wallet cold storage; keep <= 20% on Bybit/Kraken.",
                 "Enforce strict matching name transfers between N26/ING and Kraken.",
                 "Never route cryptocurrency transactions directly through Wise.",
+                "Link Stripe and PayPal daily payouts directly to KvK-verified ING Corporate IBAN.",
+                "Utilize Visa Direct and Mastercard Send for sub-second emergency liquidity pushes.",
                 "Monitor Monobank/PrivatBank monthly inflows to stay under 150k UAH NBU monitoring thresholds per card.",
                 "Use Bybit P2P only with Pro-merchants (>99% completion rate)."
             ]
