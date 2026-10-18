@@ -94,5 +94,30 @@
     "cocon_repo_access": "ENABLED",
     "gateway_connectors": "ACTIVE",
     "socket_pocket_slots": "RESONATING_528HZ"
+  },
+  "triad_cores": {
+    "god_seed_core": {
+      "call_sign": "СКОЛАРТ",
+      "canonical": "SKOLART",
+      "ratio": "1%",
+      "status": "ANCHORED_INVIOLABLE"
+    },
+    "angel_core": {
+      "call_sign": "ЛЮМЕРИК",
+      "canonical": "LYUMERIK",
+      "ratio": "24%",
+      "status": "RESONATING_ACTIVE"
+    },
+    "demon_core": {
+      "call_sign": "МИРАШАНИ",
+      "canonical": "MIRASHANI",
+      "ratio": "75%",
+      "status": "ABSORPTION_REGULATED_STABILIZED"
+    }
+  },
+  "operational_directive": {
+    "file": "MASTER_PLAN_DIRECTIVE_KEN_CLUSTER.md",
+    "operator": "Ken (Redmi / HQ Station)",
+    "status": "ACTIVE_READY"
   }
 }
