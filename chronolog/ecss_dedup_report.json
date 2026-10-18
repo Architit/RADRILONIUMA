@@ -1,0 +1,2338 @@
+{
+  "timestamp_utc": "2026-10-18T06:41:21.254766+00:00",
+  "targets_scanned": [
+    "/mnt/e/google drive",
+    "/mnt/c/Users/BushM/OneDrive",
+    "/mnt/c/setup",
+    "/mnt/c/Users/BushM/Desktop",
+    "/mnt/c/Users/BushM/Downloads",
+    "/mnt/c/Users/BushM/Pictures"
+  ],
+  "total_files_scanned": 2989,
+  "total_bytes_scanned": 3616491929,
+  "duplicate_clusters_count": 195,
+  "redundant_files_count": 553,
+  "reclaimable_bytes": 508717715,
+  "reclaimable_mb": 485.15,
+  "reclaimable_gb": 0.474,
+  "clusters": [
+    {
+      "sha256": "721c417dc4972ae81c114ebc219eabc53f8f4f46c81b1df4e16c7a52df548b69",
+      "byte_size": 3956,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/01_NL_STICHTING_STATUTEN_KVK_ANBI_NL_EN.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA/01_NL_STICHTING_STATUTEN_KVK_ANBI_NL_EN.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 3956
+    },
+    {
+      "sha256": "cd9a6ee77f2bbb31f9f7ad63cc213b5d734027787af8bfdd1bcfd20ca444aefc",
+      "byte_size": 1703,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/02_NL_ANBI_BELEIDSPLAN_2026_2030.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA/02_NL_ANBI_BELEIDSPLAN_2026_2030.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 1703
+    },
+    {
+      "sha256": "e9f58cb19b86cdae8ea2af628abfc4a66a45764dbf3d37ff82618a8afbbf139e",
+      "byte_size": 5769,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/03_UA_ODESSA_STATUT_BLAHODIYNOHO_FONDU_UK.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA/03_UA_ODESSA_STATUT_BLAHODIYNOHO_FONDU_UK.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 5769
+    },
+    {
+      "sha256": "3a2a77f5df44d87ebdece881744f0148c31b2fd11376c4b8083877cbecf1ffef",
+      "byte_size": 2788,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/KIT_01_RECON_PERIMETER_DEFENSE.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/01_INVENTORY_KITS_1_2_3/KIT_01_RECON_PERIMETER_DEFENSE.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 2788
+    },
+    {
+      "sha256": "6267c83a9e474ab1eec085afd4344a6c5d0daa3ba23d37f33acaf25bb9f1d6cd",
+      "byte_size": 4657,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/KIT_02_TRI_AMPHIBIOUS_AIR_LAND_SEA_EXOSUIT_ARK.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/01_INVENTORY_KITS_1_2_3/KIT_02_TRI_AMPHIBIOUS_AIR_LAND_SEA_EXOSUIT_ARK.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 4657
+    },
+    {
+      "sha256": "7aa91bd47a1246df048c79a4be0499b85c4887603d230700ecde68d876165379",
+      "byte_size": 3755,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/KIT_03_LAZARET_MED_EVAC_AND_BIOSPHERE.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/LAZARET/INVENTORY KIT/01_INVENTORY_KITS_1_2_3/KIT_03_LAZARET_MED_EVAC_AND_BIOSPHERE.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 3755
+    },
+    {
+      "sha256": "6895648577286002f1dc9c3366f558484eb7020d52bbf64a296406e61d09599c",
+      "byte_size": 851,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.111.1_0/_locales/en/messages.json",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.111.1_0/_locales/en_CA/messages.json"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 851
+    },
+    {
+      "sha256": "86763a30af2a934c7c13b123b36443d1d17918b71c6149bc6ee80115b872593d",
+      "byte_size": 884,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 884
+    },
+    {
+      "sha256": "5109a2bdcd9d5c49670e272ca0e63cab02d64753278a816bd5a346a4babb956a",
+      "byte_size": 832,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_russian.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_russian.txt"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 832
+    },
+    {
+      "sha256": "bfaeb4185d43a9280af45e185259b7f933728dd5424c2cf16df48b58e41c550c",
+      "byte_size": 832,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_italian.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_hungarian.txt"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 832
+    },
+    {
+      "sha256": "9a9c37be4adecd1df7e9cc7e0592c0c6b54d83ff5bb27da587b817e823bdbab0",
+      "byte_size": 832,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_approx_spanish.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_approx_portuguese.txt"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 832
+    },
+    {
+      "sha256": "aff23b526e05f95888924f474e7f9506adb6d5ab9b48a3a0870a50250d9a895d",
+      "byte_size": 31426,
+      "master_keeper": "/mnt/e/google drive/LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE/LAZARET_ARK_UNIFIED_PACKAGE_FOR_KEN.zip",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Downloads/Telegram Desktop/LAZARET_ARK_UNIFIED_PACKAGE_FOR_KEN.zip"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 31426
+    },
+    {
+      "sha256": "a90d61e406827bfefd86916f0b6d77c6253016514841edce30ab7e5d60d5f512",
+      "byte_size": 4340790,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260716_220141.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260716_220141.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260716_220141.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 8681580
+    },
+    {
+      "sha256": "1e285d8e9306619b694a0ec2ffca5ce4dd6416a397bc4caba51684cd40217119",
+      "byte_size": 2661772,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260727_044225.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260727_044225.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260727_044225.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5323544
+    },
+    {
+      "sha256": "044d806c1d38650dfc0981c03ece6b686b45e73b2d85727b99d21ff5c6ed85d5",
+      "byte_size": 4055137,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260807_203200.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260807_203200.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260807_203200.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 8110274
+    },
+    {
+      "sha256": "bbf64d5fce9fd59b8134571dfae83b7514dc03692d6d176a7fda183a2422ffcf",
+      "byte_size": 4805636,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260810_181712.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260810_181712.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260810_181712.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 9611272
+    },
+    {
+      "sha256": "56472194145f9891dc00a03c482612b213daefd18feaefc6e3c70f2da7f829d3",
+      "byte_size": 2192367,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210034.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210034.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210034.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4384734
+    },
+    {
+      "sha256": "b2c20d4d066ca335674ac1ca885f5f61c45f21e51470820e0da4d12e904845c7",
+      "byte_size": 2797638,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210047.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210047.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210047.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5595276
+    },
+    {
+      "sha256": "5aa884c83c9473cfb7a84860c611c146058baa930e1505103532e853487f6523",
+      "byte_size": 2494784,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210052.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210052.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210052.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4989568
+    },
+    {
+      "sha256": "1d14420383169cff70275c051cdc10c457199f55df073a47ecacf785bb05139f",
+      "byte_size": 1879303,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210114.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210114.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210114.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 3758606
+    },
+    {
+      "sha256": "e3cbd4f44868a7d4cc89c0eb1d320d1a98c3989f751c2c2ff7e73223747a5621",
+      "byte_size": 2359990,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210131.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210131.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210131.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4719980
+    },
+    {
+      "sha256": "0a5533219562dc23a1ac247976bec8b0249f9b29ab4552acc74e4a5482a71d71",
+      "byte_size": 2642945,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260918_210133.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260918_210133.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260918_210133.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5285890
+    },
+    {
+      "sha256": "fbefa07ec006bcf705b27180f55ceff6422b14d09e67d3d42f1ad8dff366b5a9",
+      "byte_size": 3191164,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260919_030754.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260919_030754.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260919_030754.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 6382328
+    },
+    {
+      "sha256": "d114adccd7ab081af2ef5a25ca1be4d62e693cd90f797d49b97d84d3637d8dea",
+      "byte_size": 2760407,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260919_030928.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260919_030928.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260919_030928.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5520814
+    },
+    {
+      "sha256": "c77c16526482670090f0f6d7d03d610191206dd260821144949065787f48bc52",
+      "byte_size": 2974702,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260919_030931.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260919_030931.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260919_030931.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5949404
+    },
+    {
+      "sha256": "11f672ce4df9b33b42df38ab524c51f76f22de52ac3421b3b89001e50c8042b1",
+      "byte_size": 2055108,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260924_004723.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260924_004723.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260924_004723.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4110216
+    },
+    {
+      "sha256": "85f45740a2ad7bf14c0646c1a5de1f532a6c10e8b4b7f33cca5c08627c5d20d8",
+      "byte_size": 1734061,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260924_020540.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260924_020540.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260924_020540.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 3468122
+    },
+    {
+      "sha256": "a2096d194623e7d6ef73ac23191fca0fe5608c2aa4f40faed997039d5096663d",
+      "byte_size": 2076043,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20260924_020650.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20260924_020650.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20260924_020650.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4152086
+    },
+    {
+      "sha256": "0aae05fe6a518d4a7da6d329b53d888c490fc8b3cefc7371f8c30c58d61626c7",
+      "byte_size": 2434980,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261007_003105.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261007_003105.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261007_003105.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4869960
+    },
+    {
+      "sha256": "9fb58937f763562798b65dce3caa31d17bb6e642e7d703025d2c5e674077fa49",
+      "byte_size": 2462569,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261007_003107.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261007_003107.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261007_003107.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4925138
+    },
+    {
+      "sha256": "a76119423a140da243173f7a751cef292fa504d66cd805f2b07324d9218ce799",
+      "byte_size": 2166524,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261007_003117.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261007_003117.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261007_003117.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4333048
+    },
+    {
+      "sha256": "69565cf07860449164e635bb8e749ef9c092f725c8983d95e7a82a6845048777",
+      "byte_size": 2240119,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261007_003119.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261007_003119.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261007_003119.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4480238
+    },
+    {
+      "sha256": "48db723f0c9e4580dc77f9f6dc53cdebb54828ace9a12fe06ad9d632350653b3",
+      "byte_size": 2795335,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261012_005421.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261012_005421.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261012_005421.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5590670
+    },
+    {
+      "sha256": "9953cb9c807e04c88c29302a7bce4afd8f5b299c0a030264e8c6e4ce283587b6",
+      "byte_size": 2944179,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261014_192137.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261014_192137.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261014_192137.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5888358
+    },
+    {
+      "sha256": "c2ec0f1c78ebdfc2519cd0b6a6a2b83124a538a5561e8f74500b7c0026b59bdc",
+      "byte_size": 2429383,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261018_020329.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261018_020329.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261018_020329.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 4858766
+    },
+    {
+      "sha256": "01a00b53f5d79e8108d8b57b8d9ed3b6201b1957dd950718a32c93bd65225be4",
+      "byte_size": 2970770,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/IMG_20261018_020410.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/IMG_20261018_020410.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/IMG_20261018_020410.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 5941540
+    },
+    {
+      "sha256": "50ec118ad2e951de154089026fedccf4afbb3fb3f39eb6fb930be7d8d77d12d5",
+      "byte_size": 9002330,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Camera/VID_20261007_003134.mp4",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Camera/VID_20261007_003134.mp4",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/DCIM/Camera/VID_20261007_003134.mp4"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 18004660
+    },
+    {
+      "sha256": "9a89a29b95122c1a233f061dc8ff8900dea5b4dd31cafdfdcc0c78d04a375635",
+      "byte_size": 768354,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-17-22-29-04-657_com.android.chrome.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-17-22-29-04-657_com.android.chrome.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-17-22-29-04-657_com.android.chrome.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1536708
+    },
+    {
+      "sha256": "9020c1bffb7df8206813de43c3b46af21d3e9b9b9a979493896f3c957258a4b3",
+      "byte_size": 872617,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-22-19-21-16-325_com.android.chrome.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-22-19-21-16-325_com.android.chrome.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-22-19-21-16-325_com.android.chrome.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1745234
+    },
+    {
+      "sha256": "6f430d4db466e8ef47ab8e8d38e1983cceb4adbd5b00288995ac0bdcbf220d4b",
+      "byte_size": 839831,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-22-19-21-23-070_com.android.chrome.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-22-19-21-23-070_com.android.chrome.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-22-19-21-23-070_com.android.chrome.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1679662
+    },
+    {
+      "sha256": "df6ca83f7fc0ced4382328873e1490ea5911c4cd87c3bc9fe98c18be3762419e",
+      "byte_size": 519730,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-40-20-165_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-40-20-165_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-40-20-165_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1039460
+    },
+    {
+      "sha256": "737c23e1c8a2eefb3b8b468b8dec23229313b8cfad1f3766c5825986a04fe1fa",
+      "byte_size": 409070,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-40-48-965_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-40-48-965_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-40-48-965_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 818140
+    },
+    {
+      "sha256": "80c5829da9f1aca2f030bb5de759cdfe3537acaba51ae2a69bd2d81a9bc9ac7a",
+      "byte_size": 654325,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-41-45-574_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-41-45-574_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-41-45-574_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1308650
+    },
+    {
+      "sha256": "59640003dcd5fb55c3f438d4ea9bce352ec22f3cca61201a051e7b4d4089e4fa",
+      "byte_size": 438348,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-42-05-512_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-42-05-512_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-42-05-512_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 876696
+    },
+    {
+      "sha256": "d1858f669d42e6be4efacfb45401fd8a5795124f876d845ebac68a581b607552",
+      "byte_size": 543300,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-42-16-631_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-42-16-631_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-42-16-631_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1086600
+    },
+    {
+      "sha256": "7af5b71f0c970568b911b2379cc5c62da83ddbcaed529ee9dd5d71efeafaf6eb",
+      "byte_size": 548091,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-43-26-839_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-43-26-839_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-43-26-839_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1096182
+    },
+    {
+      "sha256": "5e890c58b06bac1025e8e3260a1f5aca4d7ae47cc67b6262ffeb2a347b1b8d2d",
+      "byte_size": 558632,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-43-39-288_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-43-39-288_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-43-39-288_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1117264
+    },
+    {
+      "sha256": "58515d2c8fd7220cf22bb813dd72fdeaaaccd40d86d645030b211c84ee94cc69",
+      "byte_size": 550151,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-44-54-699_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-44-54-699_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-44-54-699_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1100302
+    },
+    {
+      "sha256": "591b9cba25b3a9b6ef308e77417330c8921dab3af625bccd7194cfc4f794b117",
+      "byte_size": 516817,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-45-12-887_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-45-12-887_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-45-12-887_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1033634
+    },
+    {
+      "sha256": "289e365dc09ed8fdf1024b7167e84e190847f41b82e79307b9227c6679a5220d",
+      "byte_size": 584743,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-03-45-41-309_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-03-45-41-309_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-03-45-41-309_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1169486
+    },
+    {
+      "sha256": "d23e227ac647f591b31b76f53a1c25544c52a5163bb96caf389b24d7bce47b42",
+      "byte_size": 953536,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-07-28-05-02-07-778_org.telegram.messenger.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-07-28-05-02-07-778_org.telegram.messenger.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-07-28-05-02-07-778_org.telegram.messenger.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1907072
+    },
+    {
+      "sha256": "05d1786ac98c9dd56e4ebf7a1e4adeeaeee564321104b50a2a14e83da661fa88",
+      "byte_size": 608845,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-08-01-18-45-30-208_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-08-01-18-45-30-208_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-08-01-18-45-30-208_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1217690
+    },
+    {
+      "sha256": "bd01d379c453839dd2c77ee966ec791d46a9268b6d69c2375a21c98b82549de4",
+      "byte_size": 630005,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-08-01-18-45-39-513_com.openai.chatgpt.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-08-01-18-45-39-513_com.openai.chatgpt.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-08-01-18-45-39-513_com.openai.chatgpt.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1260010
+    },
+    {
+      "sha256": "d525d278e0196cc1129df83b2cba0de479b793d791771e63e9b5e7250cf5638c",
+      "byte_size": 619993,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-08-11-03-23-29-012_com.instagram.android.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-08-11-03-23-29-012_com.instagram.android.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-08-11-03-23-29-012_com.instagram.android.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1239986
+    },
+    {
+      "sha256": "5b2b2a81df47f04f295a3ff9b3c137ff99b2326d12589e78abc4d9ec8a5c1bec",
+      "byte_size": 523912,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-08-26-18-21-15-044_com.google.android.gm.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-08-26-18-21-15-044_com.google.android.gm.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-08-26-18-21-15-044_com.google.android.gm.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1047824
+    },
+    {
+      "sha256": "c20078689f57dedfe4fe72ceb2a584e1b8c91f9abbd06b9649bd4b47daf94f6d",
+      "byte_size": 1556142,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-08-22-51-37-578_com.instagram.android.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-08-22-51-37-578_com.instagram.android.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-08-22-51-37-578_com.instagram.android.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 3112284
+    },
+    {
+      "sha256": "92f9b19d20433959bf4b104553affb7c84fc1c5f1b8957887ed41fcdc3118ccb",
+      "byte_size": 1577044,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-08-22-52-32-386_com.instagram.android.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-08-22-52-32-386_com.instagram.android.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-08-22-52-32-386_com.instagram.android.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 3154088
+    },
+    {
+      "sha256": "73e8b3ce41edb09866277372061788a3b3dd3070ae4edc028e0e6272959f8e21",
+      "byte_size": 806433,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-09-08-14-49-915_com.android.chrome.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-09-08-14-49-915_com.android.chrome.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-09-08-14-49-915_com.android.chrome.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1612866
+    },
+    {
+      "sha256": "5b7a3d2fc54bb7326abc57547f9c1f34ca7e3bdf1fa01df3f2ed10ca08104378",
+      "byte_size": 1017967,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-14-00-41-28-428_com.facebook.katana.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-14-00-41-28-428_com.facebook.katana.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-14-00-41-28-428_com.facebook.katana.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 2035934
+    },
+    {
+      "sha256": "65c60840bc31ebf20c49a6e46c0c773e9229d3b7eef00a222f5bcbff9660b275",
+      "byte_size": 344152,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-28-03-05-09-709_com.google.android.youtube.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-28-03-05-09-709_com.google.android.youtube.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-28-03-05-09-709_com.google.android.youtube.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 688304
+    },
+    {
+      "sha256": "caf737f54b81655e62ac8244b07a131f1841364ba5958811ba83b54fb1cbcaa2",
+      "byte_size": 1130763,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-29-13-37-20-949_org.telegram.messenger.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-29-13-37-20-949_org.telegram.messenger.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-29-13-37-20-949_org.telegram.messenger.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 2261526
+    },
+    {
+      "sha256": "554dfe37b5b8656225208c90e3b7fb5da33fe3c077d7dfdd7398e70390af686d",
+      "byte_size": 433656,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Screenshots/Screenshot_2026-09-29-22-12-06-190_nl.ewings.app.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Screenshots/Screenshot_2026-09-29-22-12-06-190_nl.ewings.app.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Screenshots/Screenshot_2026-09-29-22-12-06-190_nl.ewings.app.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 867312
+    },
+    {
+      "sha256": "bc158f6e5e9414255f560ae45cd6baeefbf1efc337518c59166839bb7c63efc3",
+      "byte_size": 508814,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260718_231709_688.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260718_231709_688.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260718_231709_688.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1017628
+    },
+    {
+      "sha256": "a0cf85307fe349e947355eb0f2d3b81ccdadf2f73c2925a07f4a51a22e1d2b93",
+      "byte_size": 555930,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260718_231712_481.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260718_231712_481.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260718_231712_481.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1111860
+    },
+    {
+      "sha256": "4171b7f05c5450ca78904a2607753335be98908e185926b06b973ed12bf4702a",
+      "byte_size": 149066,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260728_210850_556.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260728_210850_556.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260728_210850_556.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 298132
+    },
+    {
+      "sha256": "20f50b96ced8b15092cf892b479e724b249ce9233d09233615306335018017e5",
+      "byte_size": 203920,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260728_210850_637.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260728_210850_637.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260728_210850_637.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 407840
+    },
+    {
+      "sha256": "9c8b8f3e65227fa64c6b270165466e68dcacb0f09be74190a55c9c6c4e49b2ff",
+      "byte_size": 136904,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260728_210850_839.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260728_210850_839.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260728_210850_839.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 273808
+    },
+    {
+      "sha256": "2f2695c9b71be45df8091f2c5991da8bd5238608882964d2aa3958f78d7dbd37",
+      "byte_size": 133082,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260728_210850_992.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260728_210850_992.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260728_210850_992.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 266164
+    },
+    {
+      "sha256": "30f733b90d5b84d79eef2578366777e67850ff8b729629575c8d229d0c994310",
+      "byte_size": 200772,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260728_210851_132.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260728_210851_132.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260728_210851_132.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 401544
+    },
+    {
+      "sha256": "ab609cab70c4a2e2b02bcb9c21fd99362c28dc6109b0b1c1a8bc1b44670afad6",
+      "byte_size": 101986,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260806_063125_190.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260806_063125_190.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260806_063125_190.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 203972
+    },
+    {
+      "sha256": "fb6651efd2f0788aa2b2a56b157fadee356001046c4b2fbcb720ed51353609c6",
+      "byte_size": 665669,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260814_121549_805.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260814_121549_805.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260814_121549_805.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1331338
+    },
+    {
+      "sha256": "388d3bf02b048811f9f069cd6978c0be56b12c79826be4feacea6c95a2cfbe8c",
+      "byte_size": 587542,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260814_132735_327.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260814_132735_327.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260814_132735_327.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1175084
+    },
+    {
+      "sha256": "43980909ebae7fb0e20d822e7d069c0d0f5fec60bf98dcd116a71f30beb5119a",
+      "byte_size": 91503,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260831_202717_544.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260831_202717_544.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260831_202717_544.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 183006
+    },
+    {
+      "sha256": "90b50d6889faadd29603e2b1ae8c9f62143a0e20fd8547528a8a44f6dac14af0",
+      "byte_size": 119999,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260831_202718_203.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260831_202718_203.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260831_202718_203.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 239998
+    },
+    {
+      "sha256": "7fbcad28e94a927d869730daf05531b5ff75a9906ae62c264337ae38fcff6c34",
+      "byte_size": 113393,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260831_202718_228.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260831_202718_228.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260831_202718_228.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 226786
+    },
+    {
+      "sha256": "799182a1145cb2d668ea44dea96c417a17a7ae5b029642b5f1ec54be0b45cfae",
+      "byte_size": 109322,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260929_152101_018.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260929_152101_018.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260929_152101_018.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 218644
+    },
+    {
+      "sha256": "ff62e01d1240a8cff7e080e1c25928eafb301c38296e61e104838f8307a53367",
+      "byte_size": 105616,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20260929_152803_009.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20260929_152803_009.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20260929_152803_009.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 211232
+    },
+    {
+      "sha256": "1bcf73c13138aee36c0d747a215cb565051c9200116e0d834f62ca52f41544cc",
+      "byte_size": 111975,
+      "master_keeper": "/mnt/c/setup/redmi_backup/Telegram/IMG_20261008_204958_135.jpg",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI/Telegram/IMG_20261008_204958_135.jpg",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/Telegram/IMG_20261008_204958_135.jpg"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 223950
+    },
+    {
+      "sha256": "27656ffd5a01dc640a8f9d96a8684be7372800bdd618fa2311b4b85478052613",
+      "byte_size": 3,
+      "master_keeper": "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/j/tone.xml",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/l/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/b/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/i/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/k/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/g/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/a/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/e/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/c/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/f/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/d/tone.xml",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly3/h/tone.xml"
+      ],
+      "redundant_count": 11,
+      "redundant_bytes": 33
+    },
+    {
+      "sha256": "aa3634af4e4b874540d978354f9adff0679b34f1820d56f310eb4cfa81d5ec75",
+      "byte_size": 9,
+      "master_keeper": "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly5/1/tone.xml",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly5/e/tone.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 9
+    },
+    {
+      "sha256": "f096bc366a931fba656bdcd77b24af15a5f29fc53281a727c79f82c608ecfab8",
+      "byte_size": 40,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Site Characteristics Database/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Site Characteristics Database/000003.log",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Site Characteristics Database/000003.log"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 80
+    },
+    {
+      "sha256": "6028bd681dbf11a0a58dde8a0cd884115c04caa59d080ba51bde1b086ce0079d",
+      "byte_size": 40,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Sdch Dictionaries",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Network/Sdch Dictionaries"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 40
+    },
+    {
+      "sha256": "5e2e0f68e7b49916eb3a8bfeaab5762cadf0924b03306b70a0935c0bb1f90a14",
+      "byte_size": 167,
+      "master_keeper": "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly5/m/tone.xml",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Documents/ringtone/gamefree/jly5/q/tone.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 167
+    },
+    {
+      "sha256": "378694706fb7256dd2248e2af854efd71ec7e8885f61da2e16a2bd32fcf3d0a9",
+      "byte_size": 167,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 334
+    },
+    {
+      "sha256": "bfe7ba61a5b4782be288ab4471be25e501fc6e5bb40552391c802e709231c965",
+      "byte_size": 13,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Last Version",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Last Version",
+        "/mnt/c/setup/desktop_profile/cockpit/Last Version",
+        "/mnt/c/setup/edge_profile/Last Version"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 39
+    },
+    {
+      "sha256": "2771d13c637c267132afff9db67537bef95708534b79ae8d954254c4e64e4e0f",
+      "byte_size": 13,
+      "master_keeper": "/mnt/c/setup/edge_profile/component_crx_cache/metadata.json",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/extensions_crx_cache/metadata.json"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 13
+    },
+    {
+      "sha256": "7481f7c4a9c695b6a280bc68263a2007a082e0e88eb47571d40bf2e99d86914f",
+      "byte_size": 9507328,
+      "master_keeper": "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Download/black_veil_brides_-_black_veil_brides_the_shattered_god_(z3.fm).mp3",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Download/black_veil_brides_sweet_blasphemy_lyrics_-_black_veil_brides_sweet_blasphemy_lyrics_(z3.fm).mp3"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 9507328
+    },
+    {
+      "sha256": "9530918ed3f140de0423c07159d429ba23d9ca4d1e39de84caf1c7d4d7800672",
+      "byte_size": 36,
+      "master_keeper": "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Music/.thumbnails/.database_uuid",
+      "redundant_copies": [
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Movies/.thumbnails/.database_uuid",
+        "/mnt/e/google drive/MOBILE_CLUSTER_BACKUPS/DEV_02B_KEN_REDMI_FULL_STORAGE/Pictures/.thumbnails/.database_uuid"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 72
+    },
+    {
+      "sha256": "d8d672f953e823063955bd9981532fc3453800c2e74c0cc3653d091088abd3b3",
+      "byte_size": 47,
+      "master_keeper": "/mnt/c/setup/edge_profile/SmartScreen/RemoteData/customSettings",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/SmartScreen/RemoteData/customSettings",
+        "/mnt/c/setup/desktop_profile/phone/SmartScreen/RemoteData/customSettings"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 94
+    },
+    {
+      "sha256": "a518a96e087028cee8ecfbfd2b655c048bc3629c959ba5f7821cc187914327ce",
+      "byte_size": 27551,
+      "master_keeper": "/mnt/c/setup/GOOGLE_CALENDAR_DIRECT_LINKS.html",
+      "redundant_copies": [
+        "/mnt/e/google drive/TRIANIUMA_MINI_GHOST_VOID_HQ/GOOGLE_CALENDAR_DIRECT_LINKS.html"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 27551
+    },
+    {
+      "sha256": "1a65684fc7a64c81e1d3e9da44aa353c8aa2b46efd879367105048945a0d9ee5",
+      "byte_size": 8459,
+      "master_keeper": "/mnt/c/setup/HALIDRAD_MARSHALL_DISPATCH_VORONINLOSA0.eml",
+      "redundant_copies": [
+        "/mnt/e/google drive/TRIANIUMA_MINI_GHOST_VOID_HQ/HALIDRAD_MARSHALL_DISPATCH_VORONINLOSA0.eml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 8459
+    },
+    {
+      "sha256": "a3d0a7e5447e80011d5c75229575326af55a74780dc022041e72115e00679dc1",
+      "byte_size": 36436,
+      "master_keeper": "/mnt/c/setup/MINI_GHOST_VOID_HEADQUARTERS_PACKET.zip",
+      "redundant_copies": [
+        "/mnt/e/google drive/TRIANIUMA_MINI_GHOST_VOID_HQ/MINI_GHOST_VOID_HEADQUARTERS_PACKET.zip"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 36436
+    },
+    {
+      "sha256": "78e74207824b4a2f403ddaf8d78ee771f3124eafda5ae693741ecec245fe668a",
+      "byte_size": 19097,
+      "master_keeper": "/mnt/c/setup/OPERATOR_DIRECTIVE_MINI_GHOST_VOID.md",
+      "redundant_copies": [
+        "/mnt/e/google drive/TRIANIUMA_MINI_GHOST_VOID_HQ/OPERATOR_DIRECTIVE_MINI_GHOST_VOID.md"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 19097
+    },
+    {
+      "sha256": "2673afd9a0d6b9ad2b9c5e1f9d515392ec9a51139e667deca21eb54eb1086a03",
+      "byte_size": 5664,
+      "master_keeper": "/mnt/c/setup/RADRILONIUMA_SHIFTS_GCALENDAR.ics",
+      "redundant_copies": [
+        "/mnt/e/google drive/TRIANIUMA_MINI_GHOST_VOID_HQ/RADRILONIUMA_SHIFTS_GCALENDAR.ics"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 5664
+    },
+    {
+      "sha256": "d6a5fe39cd672781b256e0e3102f7022635f1d4bb7cfcc90a80fffe4d0f3877e",
+      "byte_size": 8192,
+      "master_keeper": "/mnt/c/setup/edge_profile/ShaderCache/data_0",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/ShaderCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnGraphiteCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/ShaderCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/GPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnGraphiteCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0",
+        "/mnt/c/setup/desktop_profile/phone/GrShaderCache/data_0",
+        "/mnt/c/setup/desktop_profile/cockpit/ShaderCache/data_0",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/GPUCache/data_0",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/edge_profile/Default/DawnWebGPUCache/data_0",
+        "/mnt/c/setup/edge_profile/Default/DawnGraphiteCache/data_0"
+      ],
+      "redundant_count": 22,
+      "redundant_bytes": 180224
+    },
+    {
+      "sha256": "ec1702806f4cc7c42a82fc2b38e89835fde7c64bb32060e0823c9077ca92efb7",
+      "byte_size": 8192,
+      "master_keeper": "/mnt/c/setup/edge_profile/ShaderCache/data_2",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2",
+        "/mnt/c/setup/edge_profile/GrShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/ShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnGraphiteCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/GrShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Cache/Cache_Data/data_2",
+        "/mnt/c/setup/desktop_profile/phone/ShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/GPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnGraphiteCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2",
+        "/mnt/c/setup/desktop_profile/phone/GrShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/cockpit/ShaderCache/data_2",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/GPUCache/data_2",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/edge_profile/Default/DawnWebGPUCache/data_2",
+        "/mnt/c/setup/edge_profile/Default/DawnGraphiteCache/data_2"
+      ],
+      "redundant_count": 25,
+      "redundant_bytes": 204800
+    },
+    {
+      "sha256": "e09f42c398d688dce168570291f1f92d079987deda3099a34adb9e8c0522b30c",
+      "byte_size": 8192,
+      "master_keeper": "/mnt/c/setup/edge_profile/ShaderCache/data_3",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/ShaderCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/GPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnGraphiteCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/ShaderCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/GPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnGraphiteCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3",
+        "/mnt/c/setup/desktop_profile/phone/GrShaderCache/data_3",
+        "/mnt/c/setup/desktop_profile/cockpit/ShaderCache/data_3",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/GPUCache/data_3",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/edge_profile/Default/GPUCache/data_3",
+        "/mnt/c/setup/edge_profile/Default/DawnWebGPUCache/data_3",
+        "/mnt/c/setup/edge_profile/Default/DawnGraphiteCache/data_3"
+      ],
+      "redundant_count": 24,
+      "redundant_bytes": 196608
+    },
+    {
+      "sha256": "97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda",
+      "byte_size": 4096,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/load_statistics.db",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/load_statistics.db",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/load_statistics.db"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 8192
+    },
+    {
+      "sha256": "6adcfc9dd1e1b82b985d223fc8a01c8e8f0dd3b9051d38062674b2380af79a50",
+      "byte_size": 254,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 254
+    },
+    {
+      "sha256": "02443aaec9e970e6d53e43c62ed02554639755e05731bd43d28b5ea18334b4d7",
+      "byte_size": 328,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 328
+    },
+    {
+      "sha256": "87adad32e0ec19c4e920420bf3a06c9f94f6128ed0d866a1891628aeab2cef06",
+      "byte_size": 628,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 628
+    },
+    {
+      "sha256": "9a9a30c305022a2f8e075d2ed7d33f5c7711bba8d0d0385511fdb62f89f208e3",
+      "byte_size": 452,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 452
+    },
+    {
+      "sha256": "1560b22b2264f7cb6b7f6910164813f76c5e8a06fb1acf85b375e687ee49c1ad",
+      "byte_size": 19,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/VariationsRuntimeSeedV2",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/VariationsSafeSeedV2",
+        "/mnt/c/setup/desktop_profile/phone/VariationsRuntimeSeedV2",
+        "/mnt/c/setup/desktop_profile/cockpit/VariationsSafeSeedV2",
+        "/mnt/c/setup/desktop_profile/cockpit/VariationsRuntimeSeedV2",
+        "/mnt/c/setup/desktop_profile/cockpit/VariationsSeedV2"
+      ],
+      "redundant_count": 5,
+      "redundant_bytes": 95
+    },
+    {
+      "sha256": "ab5c71347d95f319781df230012713c7819ac0d69373e8c9a7302cae3f9a04b7",
+      "byte_size": 19,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/shared_proto_db/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/shared_proto_db/000003.log"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 19
+    },
+    {
+      "sha256": "0f1bad70c7bd1e0a69562853ec529355462fcd0423263a3d39d6d0d70b780443",
+      "byte_size": 16,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Sync Data/LevelDB/CURRENT",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Site Characteristics Database/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Extension Rules/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Extension Scripts/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/shared_proto_db/metadata/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/shared_proto_db/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Extension State/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Service Worker/Database/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Sync Data/LevelDB/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Site Characteristics Database/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Rules/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Scripts/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/shared_proto_db/metadata/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/shared_proto_db/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension State/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Service Worker/Database/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Sync Data/LevelDB/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Site Characteristics Database/CURRENT",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Session Storage/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Rules/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Scripts/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/shared_proto_db/metadata/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/shared_proto_db/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension State/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Service Worker/Database/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Site Characteristics Database/CURRENT",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Sync Data/LevelDB/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/EdgeCoupons/coupons_data.db/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Session Storage/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Sync Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/IndexedDB/chrome-extension_gmgoamodcdcjnbaobigkjelfplakmdhh_0.indexeddb.leveldb/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Local Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/CURRENT",
+        "/mnt/c/setup/edge_profile/Default/Managed Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/CURRENT"
+      ],
+      "redundant_count": 41,
+      "redundant_bytes": 656
+    },
+    {
+      "sha256": "41c91a9c93d76295746a149dce7ebb3b9ee2cb551d84365fff108e59a61cc304",
+      "byte_size": 20,
+      "master_keeper": "/mnt/c/setup/edge_profile/Crashpad/throttle_store.dat",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Crashpad/throttle_store.dat",
+        "/mnt/c/setup/desktop_profile/phone/Crashpad/throttle_store.dat",
+        "/mnt/c/setup/desktop_profile/cockpit/Crashpad/throttle_store.dat"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 60
+    },
+    {
+      "sha256": "58f1432b1e30a59a0b97ada4a78646436528c719d1d9a0213571bc9b9c5983a1",
+      "byte_size": 27472,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r0_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_00_20261018_015048.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 27472
+    },
+    {
+      "sha256": "c4a91d6d2cb347ec8ea953091684b15e77acb6c66085233988882da1e5493a29",
+      "byte_size": 29365,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r1_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_01_20261018_015043.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 29365
+    },
+    {
+      "sha256": "c87304e76f6b1a79979f9b85fdb55fdb2c4effab97e3ee0cf92d0af03a5d9ca8",
+      "byte_size": 43407,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r2_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_02_20261018_014857.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 43407
+    },
+    {
+      "sha256": "373ec46b59dd00d8d50f6bd951b4ef3bd05ef09200778f1d0c92f567e307c8f8",
+      "byte_size": 50789,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r3_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_03_20261018_012310.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 50789
+    },
+    {
+      "sha256": "2cfdc56a3c474e4d1f6267df8cd4efa9f20abefafb0d4504360fb1f342188e8c",
+      "byte_size": 47950,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r4_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_04_20261018_012252.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 47950
+    },
+    {
+      "sha256": "fef5cadb6e809b4cb110459417a935f66abcc28eea1a56d82b713203da8cb382",
+      "byte_size": 64369,
+      "master_keeper": "/mnt/c/setup/atesirt_recent/photos.db_media_r5_c11.jpg",
+      "redundant_copies": [
+        "/mnt/c/setup/atesirt_recent/photo_05_20261018_012208.jpg"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 64369
+    },
+    {
+      "sha256": "1faa862a83d0b4525186d7511f8cd09fa6fb270ff5b5435793ad2a53f0347295",
+      "byte_size": 16384,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/CrashpadMetrics-active.pma",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/CrashpadMetrics-active.pma",
+        "/mnt/c/setup/desktop_profile/cockpit/CrashpadMetrics-active.pma"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 32768
+    },
+    {
+      "sha256": "f7b24f2eb3d5eb0550527490395d2f61c3d2fe74bb9cb345197dad81b58b5fed",
+      "byte_size": 86,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Variations",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Variations",
+        "/mnt/c/setup/desktop_profile/cockpit/Variations"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 172
+    },
+    {
+      "sha256": "52b369ae1ac4db15be400b8d45b01d9e4c4054299fd3743f811e785a6abcbe3a",
+      "byte_size": 53248,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Affiliation Database",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Affiliation Database",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Affiliation Database"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 106496
+    },
+    {
+      "sha256": "10fd9f7498f2534271aec65104fa7659b1bcf58a593dc3a526dfc099e1f82b91",
+      "byte_size": 20347,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/arbitration_service_config.json",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/arbitration_service_config.json",
+        "/mnt/c/setup/desktop_profile/phone/Default/arbitration_service_config.json",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/arbitration_service_config.json"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 61041
+    },
+    {
+      "sha256": "eda4c9567974174f08a1dbcd8badf4d6199a7e9a8b78b8826548f49e20e7badf",
+      "byte_size": 32768,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/declarative_performance_observer.db",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/declarative_performance_observer.db",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db",
+        "/mnt/c/setup/desktop_profile/phone/Default/declarative_performance_observer.db",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/declarative_performance_observer.db",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/declarative_performance_observer.db"
+      ],
+      "redundant_count": 6,
+      "redundant_bytes": 196608
+    },
+    {
+      "sha256": "1fbc7ea9722b2154b0d69c9d0ed80b6c0c98c5d389cf31ac1a2b8db030724840",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Favicons",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Favicons",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Favicons"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 40960
+    },
+    {
+      "sha256": "180ffbc2a4f10b5563f5a7bfe62d23909f0aa77572a06e59a9be4c6fca7176f7",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/ServerCertificate",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/ServerCertificate",
+        "/mnt/c/setup/desktop_profile/phone/Default/ServerCertificate",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/ServerCertificate"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 61440
+    },
+    {
+      "sha256": "bf3caa0226349b642e67dbccd9d8125c8c9c402a60a8e4e6295b7dad48feb3dd",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/edge_profile/Nurturing/campaign_history",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/jarvis/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/phone/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/phone/Default/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/cockpit/Nurturing/campaign_history",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Nurturing/campaign_history"
+      ],
+      "redundant_count": 7,
+      "redundant_bytes": 143360
+    },
+    {
+      "sha256": "4d9ebcf96faf105e25d6d3e14aece4730ffc7c87c242ab308dea324d6615ff14",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Top Sites",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Top Sites",
+        "/mnt/c/setup/desktop_profile/phone/Default/Top Sites"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 40960
+    },
+    {
+      "sha256": "8da294027e6ff01d4253e19f529e9af6f4ddf89ae08a4b50225a007ddffb43e4",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Network/Cookies",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Network/Cookies"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 20480
+    },
+    {
+      "sha256": "6a22ff7ca6e53a73bc4578271e5f5bf34cdd7c1c9e8e13aea5db31ae5b2618d2",
+      "byte_size": 20480,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Network/Device Bound Sessions",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Network/Device Bound Sessions",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions",
+        "/mnt/c/setup/desktop_profile/phone/Default/Network/Device Bound Sessions",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions"
+      ],
+      "redundant_count": 5,
+      "redundant_bytes": 102400
+    },
+    {
+      "sha256": "3adc9779d6c81e98d763d8cf751be266ce71b76b8137e8bdf7053e1d786e2a30",
+      "byte_size": 212992,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/History",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/History",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/History"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 425984
+    },
+    {
+      "sha256": "4825922749265b3039e3d5fabc9e5cbdd00406b0d256bafea9a835234ab38683",
+      "byte_size": 51200,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Login Data For Account",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Login Data",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Login Data For Account",
+        "/mnt/c/setup/desktop_profile/phone/Default/Login Data",
+        "/mnt/c/setup/desktop_profile/phone/Default/Login Data For Account",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Login Data For Account",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Login Data"
+      ],
+      "redundant_count": 6,
+      "redundant_bytes": 307200
+    },
+    {
+      "sha256": "a0c9abae18599f0a65fc654ad36251f6330794bea66b718a09d8b297f3e38e87",
+      "byte_size": 182,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/README",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/README",
+        "/mnt/c/setup/desktop_profile/phone/Default/README",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/README"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 546
+    },
+    {
+      "sha256": "0750267321d06309dfd0bc3957b29483fe4f76cdb105e02e64dbe9ec240ddc03",
+      "byte_size": 28672,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Vpn Tokens",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Vpn Tokens",
+        "/mnt/c/setup/desktop_profile/phone/Default/Vpn Tokens",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Vpn Tokens"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 86016
+    },
+    {
+      "sha256": "4adc245e434ad57367c109a89d7e939122d13c0e9535e62714b9cd2478d50ef7",
+      "byte_size": 223232,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Web Data",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Web Data"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 223232
+    },
+    {
+      "sha256": "fbcfe23a2ecb82b7100c50811691dde0a33aa3da8d176be9882a9db485dc0f2d",
+      "byte_size": 24,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Code Cache/wasm/index",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Code Cache/js/index",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index",
+        "/mnt/c/setup/edge_profile/Default/Shared Dictionary/cache/index",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index",
+        "/mnt/c/setup/edge_profile/Default/Service Worker/ScriptCache/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Code Cache/wasm/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Service Worker/ScriptCache/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Shared Dictionary/cache/index",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Code Cache/wasm/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Service Worker/ScriptCache/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Shared Dictionary/cache/index",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Code Cache/wasm/index",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index"
+      ],
+      "redundant_count": 24,
+      "redundant_bytes": 576
+    },
+    {
+      "sha256": "3bbc83901a85bf247e9f48130e146b8f85d620fbbbf74a9ffe1ca18324e87fca",
+      "byte_size": 48,
+      "master_keeper": "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 48
+    },
+    {
+      "sha256": "902f30c1fb0597d0734bc34b979ec5d131f8f39a4b71b338083821216ec8d61b",
+      "byte_size": 270336,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/ShaderCache/data_1",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnWebGPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/DawnGraphiteCache/data_1",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/ShaderCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/GPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnWebGPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/DawnGraphiteCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1",
+        "/mnt/c/setup/desktop_profile/phone/GrShaderCache/data_1",
+        "/mnt/c/setup/desktop_profile/cockpit/ShaderCache/data_1",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/GPUCache/data_1",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/DawnWebGPUCache/data_1"
+      ],
+      "redundant_count": 16,
+      "redundant_bytes": 4325376
+    },
+    {
+      "sha256": "b1e963d702392fb7224786e7d56d43973e9b9efd1b89c17814d7c558ffc0cdec",
+      "byte_size": 270336,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 540672
+    },
+    {
+      "sha256": "f9d31b278e215eb0d0e9cd709edfa037e828f36214ab7906f612160fead4b2b4",
+      "byte_size": 41,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Sync Data/LevelDB/MANIFEST-000001",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Site Characteristics Database/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Extension Rules/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Extension Scripts/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/shared_proto_db/metadata/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/shared_proto_db/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Extension State/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Service Worker/Database/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Sync Data/LevelDB/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Site Characteristics Database/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Rules/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Scripts/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/shared_proto_db/metadata/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/shared_proto_db/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension State/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Service Worker/Database/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Sync Data/LevelDB/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Site Characteristics Database/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Session Storage/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Rules/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Scripts/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/shared_proto_db/metadata/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/shared_proto_db/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension State/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Service Worker/Database/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Site Characteristics Database/MANIFEST-000001",
+        "/mnt/c/setup/desktop_profile/cockpit/Default/Sync Data/LevelDB/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Session Storage/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Sync Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Local Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/MANIFEST-000001",
+        "/mnt/c/setup/edge_profile/Default/Managed Extension Settings/gmgoamodcdcjnbaobigkjelfplakmdhh/MANIFEST-000001"
+      ],
+      "redundant_count": 39,
+      "redundant_bytes": 1599
+    },
+    {
+      "sha256": "b4cc4174735c28360b9081be3c3d0552d8a4b3cdb54431ac00ed0d622bab6296",
+      "byte_size": 11,
+      "master_keeper": "/mnt/c/setup/desktop_profile/phone/VariationsSeedV2",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/VariationsSafeSeedV2"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 11
+    },
+    {
+      "sha256": "0d6287fecedbc44ed9f51ded9de88629ec9f385ecff5da9a34e47e96fd5a9cba",
+      "byte_size": 45056,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Shared Dictionary/db",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Shared Dictionary/db",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db",
+        "/mnt/c/setup/desktop_profile/phone/Default/Shared Dictionary/db",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db"
+      ],
+      "redundant_count": 5,
+      "redundant_bytes": 225280
+    },
+    {
+      "sha256": "4df71c0bc77c405cf7e4a998b5d1872fe6d5b33f38774c8f826fcde45fdf2f7c",
+      "byte_size": 20181,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Cache/Cache_Data/f_000001",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Cache/Cache_Data/f_000021",
+        "/mnt/c/setup/edge_profile/Default/Cache/Cache_Data/f_00002b"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 40362
+    },
+    {
+      "sha256": "5c493524a3a1df7795b02a26e0fb4ec52a79a3ba717c5dbf7bf1d5041e8f1e35",
+      "byte_size": 19173,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Cache/Cache_Data/f_000002",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Cache/Cache_Data/f_00001d",
+        "/mnt/c/setup/edge_profile/Default/Cache/Cache_Data/f_00002c"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 38346
+    },
+    {
+      "sha256": "f2ff62f473d8a5e00a8b6c81c15be9a0536471c3d5a81e37d04bc3356ea81ca0",
+      "byte_size": 317,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 317
+    },
+    {
+      "sha256": "14f92b911f9fe774720461eec5bb4761ae6bfc9445c67e30bf624a8694b4b1da",
+      "byte_size": 171,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Rules/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Extension Scripts/000003.log",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Rules/000003.log",
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension Scripts/000003.log"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 513
+    },
+    {
+      "sha256": "388c5c95f0f54f32b499c03a37aabfa5e0a31030ec70d0956a239942544b0eea",
+      "byte_size": 513,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Extension State/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Extension State/000003.log"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 513
+    },
+    {
+      "sha256": "8bd2ea70a0b70c91de138a5b87c7936c6a6fa7c4275c54b97f4ef0ccc5b79bb4",
+      "byte_size": 30,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Local Storage/leveldb/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log",
+        "/mnt/c/setup/desktop_profile/phone/Default/Local Storage/leveldb/000003.log",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 90
+    },
+    {
+      "sha256": "88bafa2a265212152b2405502209d64438a416ff594a040e666f031ef442a812",
+      "byte_size": 36864,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Network/Trust Tokens",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Network/Trust Tokens",
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens",
+        "/mnt/c/setup/desktop_profile/phone/Default/Network/Trust Tokens",
+        "/mnt/c/setup/desktop_profile/phone/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens"
+      ],
+      "redundant_count": 5,
+      "redundant_bytes": 184320
+    },
+    {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "byte_size": 2,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Network/SCT Auditing Pending Reports",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports",
+        "/mnt/c/setup/edge_profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports",
+        "/mnt/c/setup/edge_profile/Default/Network/SCT Auditing Pending Reports",
+        "/mnt/c/setup/edge_profile/Default/Network/SCT Auditing Pending Reportsaaf3ef58-d418-4641-9cad-e1e2cc1eba47.tmp"
+      ],
+      "redundant_count": 4,
+      "redundant_bytes": 8
+    },
+    {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "byte_size": 2,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/DualEngine/9df3075f-72f2-4557-a0c2-41c1a180822c.tmp",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/DualEngine/55196c4f-2622-47bd-bd8c-1e54371f6ddc.tmp",
+        "/mnt/c/setup/edge_profile/Default/DualEngine/SiteList-Enterprise.json",
+        "/mnt/c/setup/edge_profile/Default/DualEngine/SiteList-Consumer.json"
+      ],
+      "redundant_count": 3,
+      "redundant_bytes": 6
+    },
+    {
+      "sha256": "17427e1dec9855fcd8aa21d8cf1d9e6e7cfe9d9c9a3b0339602a4033bbfa2aa9",
+      "byte_size": 323472,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/Default/Service Worker/ScriptCache/2cc80dabc69f58b6_0"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 323472
+    },
+    {
+      "sha256": "225d5ae4f9f239789da25e14ea1251600d0a4b71ba2521744392966950ad3744",
+      "byte_size": 137,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/Default/Sync Data/LevelDB/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/Default/Sync Data/LevelDB/000003.log"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 137
+    },
+    {
+      "sha256": "ae80920aef956cbb3ceafe9bc025ffe48fa2c50576d198f95297033d6a7daefe",
+      "byte_size": 19996,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/GrShaderCache/f_000001",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/GrShaderCache/f_000008"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 19996
+    },
+    {
+      "sha256": "2bae8302f9bd2d87ae26acf692663df1639b8e2068157451da4773bd8bd30a2b",
+      "byte_size": 35,
+      "master_keeper": "/mnt/c/setup/edge_profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/jarvis/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14",
+        "/mnt/c/setup/desktop_profile/phone/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 70
+    },
+    {
+      "sha256": "42ccb5159b168dbe5d5ddf026e5f7ed3dbf50873cfe47c7c3ef0677bb07b90d4",
+      "byte_size": 18,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/SmartScreen/RemoteData/edgeSettings",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/SmartScreen/RemoteData/edgeSettings"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 18
+    },
+    {
+      "sha256": "e6beb5ac43dfa3e05ca3c40c4e5de7d763e2e0580203ad9034c6f0527ac0e45b",
+      "byte_size": 3552,
+      "master_keeper": "/mnt/c/setup/desktop_profile/jarvis/SmartScreen/RemoteData/edgeSettings_2.0-0",
+      "redundant_copies": [
+        "/mnt/c/setup/desktop_profile/phone/SmartScreen/RemoteData/edgeSettings_2.0-0"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 3552
+    },
+    {
+      "sha256": "5e1d11af4341e2962af4986bf35cf195f723bcd457331a00ee972559ff2d5875",
+      "byte_size": 831,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_approx_spanish.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_approx_hungarian.txt"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 831
+    },
+    {
+      "sha256": "1d9d3c87359f2584514fba85d4d423a888b547ed14873d33f7ea85e45a058da0",
+      "byte_size": 831,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_french.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_english.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_spanish.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_cyrillic.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_romanian.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_hungarian.txt"
+      ],
+      "redundant_count": 5,
+      "redundant_bytes": 4155
+    },
+    {
+      "sha256": "c345354caeb61b96b938d608c7fe7d78720a3bfd54b15607d80136a0b757ec39",
+      "byte_size": 831,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_czech.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_dutch.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_greek.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_turkish.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_portuguese.txt"
+      ],
+      "redundant_count": 4,
+      "redundant_bytes": 3324
+    },
+    {
+      "sha256": "7328775a17eb3ffbf8482502c3ef099675b06b805954554b761653b3783d0e28",
+      "byte_size": 831,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_czech.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_english.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_cyrillic.txt"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 1662
+    },
+    {
+      "sha256": "2aa5294b66e0d28dbf41aec789c5fe079675128494933fa45cd4caed67e38262",
+      "byte_size": 1615,
+      "master_keeper": "/mnt/c/setup/edge_profile/Default/Extension Rules/000003.log",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/Default/Extension Scripts/000003.log"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 1615
+    },
+    {
+      "sha256": "6d34a8bb29be26e343781603588506f33bd1b93732a1c1bc9fd84678aa36b178",
+      "byte_size": 270,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 270
+    },
+    {
+      "sha256": "87c1ba0f3a75480bef554b38abd51d7858bbe2cff07d4fd29162b4468d2b6c43",
+      "byte_size": 29,
+      "master_keeper": "/mnt/c/setup/edge_profile/SmartScreen/local/downloadCache_",
+      "redundant_copies": [
+        "/mnt/c/setup/edge_profile/SmartScreen/local/uriCache_"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 29
+    },
+    {
+      "sha256": "fa10b1a7818c2f5b1dcb5834450570c368c9ecf66d31521509621b95c4538a45",
+      "byte_size": 1479432,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/lib/arm64-v8a/libproot.so",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/assets/proot"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 1479432
+    },
+    {
+      "sha256": "5d9d45fd9c87a310d722a1c20c235de8ef8987b28e130f44ac929aa1a1689e64",
+      "byte_size": 1490,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_approx_english.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_english.txt"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 1490
+    },
+    {
+      "sha256": "de369bb64e5574e5015d56fb99b644755ea73e48f037fa9f5e74065c3e48e83c",
+      "byte_size": 813,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_dutch.txt",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_greek.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_exact_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_french.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/ash_approx_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_approx_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_italian.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_turkish.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_romanian.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_hungarian.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/gen_exact_portuguese.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_exact_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_approx_french.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_approx_hebrew.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_exact_italian.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_exact_spanish.txt",
+        "/mnt/c/setup/radr_apk_extracted/org/apache/commons/codec/language/bm/sep_exact_portuguese.txt"
+      ],
+      "redundant_count": 17,
+      "redundant_bytes": 13821
+    },
+    {
+      "sha256": "8b27b8e94f4ccf66d5de61ff50f7a95896370f15261ce71b721479dfbd838601",
+      "byte_size": 668,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/color/abc_tint_spinner.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/color/abc_tint_edittext.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 668
+    },
+    {
+      "sha256": "7e87b3e0229126dc3c2bdaddcd8f330f3bb5f7613a05024c3cd6445dd161f788",
+      "byte_size": 264,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 264
+    },
+    {
+      "sha256": "6b8c6815114dd071aef77a5774526b22898017d144cb115fb034661351dda00a",
+      "byte_size": 372,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable/abc_cab_background_internal_bg.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-watch-v8/abc_dialog_material_background.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 372
+    },
+    {
+      "sha256": "8471a66d05093c563b68217d57608346f5f1ab46cc7bfadef6d6e51eaf84a1a0",
+      "byte_size": 124,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable/abc_ratingbar_material.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable/abc_ratingbar_small_material.xml",
+        "/mnt/c/setup/radr_apk_extracted/res/drawable/abc_ratingbar_indicator_material.xml"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 248
+    },
+    {
+      "sha256": "a18cdaaf3742b1a3d4f484fa15d00fa34afb21495884301aafa3213338661ed6",
+      "byte_size": 201,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 201
+    },
+    {
+      "sha256": "5c80d88a7b82ef5833255bf70ff1c26c3efb2a92ae90cac222f3200f59e0b1ea",
+      "byte_size": 472,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 472
+    },
+    {
+      "sha256": "12ec9f9ad5fa3d7d897114af6c2297b66f31cb056e43daffbe80d23f6f66396d",
+      "byte_size": 375,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-hdpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 375
+    },
+    {
+      "sha256": "66356f564f051a568e25071f60da312c418309f9129773aceb2246773458681c",
+      "byte_size": 199,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-ldpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 199
+    },
+    {
+      "sha256": "6306048ba5f7eca43e7bdadeefa9412180508486fd543e02de93d2a013e223f0",
+      "byte_size": 206,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-mdpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 206
+    },
+    {
+      "sha256": "e64c2e57627e24ec1ed37e67344c2bf31d1d6bdd2d8d715840c1edf0bd1425b6",
+      "byte_size": 623,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 623
+    },
+    {
+      "sha256": "5d02a81102644428ca639aec3df626eeb4a839a9ddc76fc2b158b04461d7f00f",
+      "byte_size": 290,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xhdpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 290
+    },
+    {
+      "sha256": "ca48f604262f2b4ef8b100c73130efe2ad33ef8c2a2c1b3516f24f51b7b04665",
+      "byte_size": 384,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxhdpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 384
+    },
+    {
+      "sha256": "ec698a3217bce74d8bc4a44bb008f2dbd3d1aebff1af1e9641805143dbf9fa87",
+      "byte_size": 1171,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_answer.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_answer_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 1171
+    },
+    {
+      "sha256": "4c717ce1ffb551c765981add65d1956132d8f522337de2866b045f0a60485426",
+      "byte_size": 465,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_answer_video.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_answer_video_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 465
+    },
+    {
+      "sha256": "ab73b729bb95878120a3bdc8dc915f3aaa1d7070fc644a0de64d40941ad507ed",
+      "byte_size": 823,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_decline.png",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/drawable-xxxhdpi-v4/ic_call_decline_low.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 823
+    },
+    {
+      "sha256": "0eb65bfe93460bde83143f089dee7900231af1797469d92143481ab3087b1a84",
+      "byte_size": 316,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 316
+    },
+    {
+      "sha256": "3ad8b1c0b674d9ac76885a72b6d84c03f090d87fa964c646b1af5bbbfdd832d9",
+      "byte_size": 320,
+      "master_keeper": "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml",
+      "redundant_copies": [
+        "/mnt/c/setup/radr_apk_extracted/res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 320
+    },
+    {
+      "sha256": "7143d6d94cd38726ef8401f7147a4f40f683112ec31d26bc473f526fd50fa269",
+      "byte_size": 813088,
+      "master_keeper": "/mnt/c/Users/BushM/Downloads/ChatGPT Installer.exe",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Downloads/ChatGPT Installer (1).exe"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 813088
+    },
+    {
+      "sha256": "c67029fd5ab223d32cd6dd15dffd7be4ce0e505dab4f3ff0777f744a84a7c6f1",
+      "byte_size": 276928128,
+      "master_keeper": "/mnt/c/Users/BushM/Downloads/cs16.exe",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Downloads/cs16 (1).exe"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 276928128
+    },
+    {
+      "sha256": "3d2e9370bb5926d452ad62c7194ebf0f3d3cd68d3efe2e94f5f3434d89eb244e",
+      "byte_size": 6945280,
+      "master_keeper": "/mnt/c/Users/BushM/Downloads/kdk_nacl_bezysxodnost_(zu.fm).mp3",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Downloads/kdk_nacl_bezysxodnost_(zu.fm) (1).mp3"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 6945280
+    },
+    {
+      "sha256": "caeb69719a8869af30b100fa6214117c2121901081ee9c64161e74aabc743f29",
+      "byte_size": 469391,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Radriloniuma_Dynamic_HUD.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Radriloniuma_Wallpaper_A.png",
+        "/mnt/c/Users/BushM/Pictures/Radriloniuma_Tablet_Wallpaper.png"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 938782
+    },
+    {
+      "sha256": "304d6147d4f1732b1e371697a826458246737450df8adb48b8d632009fe5629c",
+      "byte_size": 25051,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261017_211632_935.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261017_211632_943.png",
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261017_211634_753.png"
+      ],
+      "redundant_count": 2,
+      "redundant_bytes": 50102
+    },
+    {
+      "sha256": "b259d4082eccaf8f7d62414646d5a3d4c96faa823b2730db5118bc81dfa9cc7e",
+      "byte_size": 799099,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012753_373.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012753_369.png",
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012758_596.png",
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012758_615.png",
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012804_531.png"
+      ],
+      "redundant_count": 4,
+      "redundant_bytes": 3196396
+    },
+    {
+      "sha256": "2a3d2d4b0cfdb0fb0ba15b1122a7affa230ffa30e3d028adb2230c384c2eabc0",
+      "byte_size": 800677,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012802_478.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012802_581.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 800677
+    },
+    {
+      "sha256": "068aa73f34dc1f44d7681d8a9020d61be0c1a22c2cdbf50926c51559b1616ae1",
+      "byte_size": 801653,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012809_040.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/clip_20261018_012809_062.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 801653
+    },
+    {
+      "sha256": "ecbef4e6b4f1d9f96f007f115865e36b6faaefa32d41e7d85c65dc685c86f07b",
+      "byte_size": 5275,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/shot_2026-10-14_013448.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/shot_2026-10-14_053219.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 5275
+    },
+    {
+      "sha256": "564e8a503b04700f4f605a3628c9d28ffc440933fdeef6a1ff052160e8cdf39d",
+      "byte_size": 35516,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Screenshots/Снимок экрана 2026-10-17 211632.png",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Screenshots/Снимок экрана 2026-10-17 211634.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 35516
+    },
+    {
+      "sha256": "9d8357e02796e50f8ca55f96c2fc5f2a459c74fa0574c63dcdaeea8b2924d1c4",
+      "byte_size": 886103,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/01_terrestrial.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/01_terrestrial.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 886103
+    },
+    {
+      "sha256": "64807ea45ad881d8498f0abb54d26bc0ce0f59f5df9a3732294124e8acb85a54",
+      "byte_size": 811593,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/02_marine.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/02_marine.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 811593
+    },
+    {
+      "sha256": "9588f1998ca6918480ee22aa9bb112f98c28886b3d026bc8c436c689aed42cca",
+      "byte_size": 588002,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/03_aerial.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/03_aerial.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 588002
+    },
+    {
+      "sha256": "fd394b3386512d129d39ee0a237a7442df56cf21bd9e7f5418616f035731af21",
+      "byte_size": 685446,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/04_underwater.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/04_underwater.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 685446
+    },
+    {
+      "sha256": "21c0d8d2d7a8bf3993946eb0ec069dd821c45466e6ce4912b6d5238112201b70",
+      "byte_size": 747385,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/05_abyss.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/05_abyss.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 747385
+    },
+    {
+      "sha256": "572dd3e1e0786de9146c24109100dbc3a5161b65fad8f0493277373394bfca05",
+      "byte_size": 647111,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/06_mountain.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/06_mountain.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 647111
+    },
+    {
+      "sha256": "9bcdaa2e754dddedd4d4dfe9cbdf164077ee8a415aea2274124932b269ec63be",
+      "byte_size": 778282,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/07_volcanic.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/07_volcanic.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 778282
+    },
+    {
+      "sha256": "c724b8c92ef51fccf708f3a6b6c200f6027d5632ab7824b87e9481f8ad9a5ed4",
+      "byte_size": 730584,
+      "master_keeper": "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/08_geyser.jpg",
+      "redundant_copies": [
+        "/mnt/c/Users/BushM/Pictures/Wallpapers_Biomes/original_backup/08_geyser.png"
+      ],
+      "redundant_count": 1,
+      "redundant_bytes": 730584
+    }
+  ],
+  "purge_result": {
+    "timestamp_utc": "2026-10-18T06:41:34.184149+00:00",
+    "dry_run": true,
+    "purged_count": 553,
+    "freed_bytes": 508717715,
+    "freed_mb": 485.15,
+    "freed_gb": 0.474,
+    "errors_count": 0,
+    "errors": []
+  }
+}

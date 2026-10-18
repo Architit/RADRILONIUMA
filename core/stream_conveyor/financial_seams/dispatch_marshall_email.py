@@ -84,9 +84,23 @@ GALAGHERMARSHAL в составе Верховного Совета Штаба T
        • F:\\ (/mnt/f) - Неприкосновенное хранилище Genesis Seed, холодные ключи
    [5] DEV_05_LAO_SWARM_MATRIX:
        • 528-Slot Chamber Matrix - Живой организм и автопилот 60 BPM (432 Гц)
-   [6] GOOGLE DRIVE CLOUD VAULT:
-       • https://drive.google.com/drive/my-drive
-       • E:\\google drive\\TRIANIUMA_MINI_GHOST_VOID_HQ (Локальное облачное зеркало)
+   [6] ДИРЕКТОРИИ ПРЯМОГО ДОСТУПА RCLONE (ГРАНУЛЯРНЫЙ РЕЕСТР):
+       • gdrive:LAZARET/INVENTORY KIT/00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA (Уставы Stichting, ANBI, Одесса)
+         Локально: C:\\Users\\BushM\google drive\LAZARET\INVENTORY KIT\00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA
+         CLI: rclone lsf "gdrive:LAZARET/INVENTORY KIT/00_LEGAL_CHARTERS_EU_NL_AND_UA_ODESSA"
+       • gdrive:LAZARET/INVENTORY KIT/01_INVENTORY_KITS_1_2_3 (Recon, Tri-Amphibious Ark, Med-Evac)
+         Локально: C:\\Users\\BushM\google drive\LAZARET\INVENTORY KIT\01_INVENTORY_KITS_1_2_3
+         CLI: rclone lsf "gdrive:LAZARET/INVENTORY KIT/01_INVENTORY_KITS_1_2_3"
+       • gdrive:LAZARET/INVENTORY KIT/02_TELEGRAM_CHAT_DATA_PACKETS (ACC1 @Kirihanis, ACC2 @Elafea_Triania)
+         Локально: C:\\Users\\BushM\google drive\LAZARET\INVENTORY KIT\02_TELEGRAM_CHAT_DATA_PACKETS
+         CLI: rclone lsf "gdrive:LAZARET/INVENTORY KIT/02_TELEGRAM_CHAT_DATA_PACKETS"
+       • gdrive:LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE (Master Dossier Ken HTML/MD/ZIP)
+         Локально: C:\\Users\\BushM\google drive\LAZARET\INVENTORY KIT\03_KEN_UNIFIED_PACKAGE
+         CLI: rclone lsf "gdrive:LAZARET/INVENTORY KIT/03_KEN_UNIFIED_PACKAGE"
+       • onedrive:Documents & onedrive:Pictures (C:\\Users\\BushM\OneDrive\Documents)
+       • t7_vault:casper & t7_vault:nocloud (Ubuntu 24.04 Server Live Kernel & Cloud-Init)
+       • radriloniuma:data/local/AELARIA/chat_sessions (32 сессии транскриптов AELARIA)
+       • ИНТЕРАКТИВНЫЙ КАТАЛОГ: C:\\Users\\BushM\Desktop\RCLONE_DIRECTORY_ACCESS_CATALOG.html
 
 2. 🏛️ ВАШИ ДИРЕКТИВЫ ПО 13 ФИНАНСОВЫМ И КОРПОРАТИВНЫМ ШВАМ:
    • KvK (Нидерланды): Корпоративный реестр, BTW/VAT ID, UBO — правовой фундамент.

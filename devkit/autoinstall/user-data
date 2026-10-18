@@ -52,14 +52,9 @@ autoinstall:
     - chmod 700 /target/root/.ssh && chmod 600 /target/root/.ssh/authorized_keys 2>/dev/null || true
     # 3. Global PM2 Installation
     - curtin in-target --target=/target -- npm install -g pm2
-    # 4. Copy REBIRTH.sh, Root Tree Tarball, Drivers Bundle & Hardware Discovery Module
+    # 4. Copy REBIRTH.sh & First-Boot Unit
     - cp /cdrom/GOD_SEED_INIT/REBIRTH.sh /target/root/REBIRTH.sh 2>/dev/null || cp /target/home/architit/REBIRTH.sh /target/root/REBIRTH.sh 2>/dev/null || true
     - chmod +x /target/root/REBIRTH.sh 2>/dev/null || true
-    - cp /cdrom/GOD_SEED_INIT/radriloniuma_root_tree_branch.tar.gz /target/root/radriloniuma_root_tree_branch.tar.gz 2>/dev/null || true
-    - mkdir -p /target/opt/radriloniuma_drivers
-    - cp -r /cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/* /target/opt/radriloniuma_drivers/ 2>/dev/null || true
-    - cp /cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/radriloniuma_hardware_module_discovery.sh /target/usr/local/bin/radriloniuma_hardware_module_discovery.sh 2>/dev/null || true
-    - chmod 0755 /target/usr/local/bin/radriloniuma_hardware_module_discovery.sh 2>/dev/null || true
     # 5. Copy post_install_upgrade.sh to /target/usr/local/bin
     - cp /cdrom/nocloud/post_install_upgrade.sh /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || cp /cdrom/post_install_upgrade.sh /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || true
     - chmod 0755 /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || true

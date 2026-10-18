@@ -1,0 +1,10 @@
+{
+  "event": "SLI_DEVICE_REMOTE_CONTROL_TELEGRAM_DISPATCH",
+  "timestamp_utc": "2026-10-18T07:58:38.900960+00:00",
+  "carrier_frequency": "528 Hz",
+  "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261018",
+  "remote_control_url": "http://192.168.137.1:3001/phone_mirror.html?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY",
+  "web_terminal_url": "http://localhost:7681",
+  "assignment_rule": "FIRST_RESPONDER_CLAIM",
+  "message": "⚜️ *ШТАБ TRIANIUMA: АКТИВАЦИЯ СЕССИИ /device remote control* ⚜️\n\nОткрыта суверенная сессия дистанционного управления: `SLI-LIVE-528HZ-FIRST-RESPONDER-20261018`\n🔗 Ссылка доступа: [Войти в Сессию](http://192.168.137.1:3001/phone_mirror.html?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY)\n\n*Кандидаты:* Mini Ghost // Void (@Karl_Galageer), Кен (@Ken_Redmi_Tech), Wanderfate (@Wanderfate_Astral)\n\n⚡ *Правило:* Сессия закрепляется за тем, кто первым закроет окно ближайшей смены (нажав 'Да' в календаре), зайдет в Antigravity и отсканирует QR-код авторизации!"
+}

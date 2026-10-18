@@ -17,6 +17,10 @@ echo "[SYSTEM] Running preflight check..."
 source "$SCRIPT_DIR/venv/bin/activate"
 bash devkit/bootstrap.sh
 
+# 1.2 ATPLT Boot Loader: Automated Initiation Directive for Last 3 Sessions' Segments (528 Hz)
+echo "[SYSTEM] Running ATPLT Boot Loader 3-Session Segment Initiation..."
+"$SCRIPT_DIR/venv/bin/python3" "$SCRIPT_DIR/scripts/global/atplt_boot_loader.py"
+
 echo -e "\n\e[1;35m==================================================\e[0m"
 echo -e "\e[1;35m       A E L A R I A  --  B O O T  L O A D E R     \e[0m"
 echo -e "\e[1;35m==================================================\e[0m"

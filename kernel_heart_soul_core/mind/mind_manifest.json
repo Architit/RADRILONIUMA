@@ -12,8 +12,8 @@
     "mind",
     "substrate_space"
   ],
-  "total_files_audited": 9,
-  "total_bytes_audited": 23620,
+  "total_files_audited": 12,
+  "total_bytes_audited": 33065,
   "neuro_layers_linked": [
     "SYNAPSE",
     "TYNAPSE",
@@ -69,6 +69,12 @@
         "path": "/root/RADRILONIUMA/kernel_heart_soul_core/mind/cognitive_mind_engine.py",
         "size_bytes": 3087,
         "sha256": "de1a5560948cd2d1dd10062b55afc49a51a7a3b1b084f821ec77e74ef6483c2f"
+      },
+      {
+        "name": "mind_manifest.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/mind/mind_manifest.json",
+        "size_bytes": 3014,
+        "sha256": "f7e0978ae8626f95dcdc77eca7ffc6ec8990bb4c8e08165a12a23f22017d91ad"
       }
     ],
     "substrate_space": [
@@ -83,9 +89,21 @@
         "path": "/root/RADRILONIUMA/kernel_heart_soul_core/substrate_space/evolve_growth_matrix.json",
         "size_bytes": 375,
         "sha256": "71928a6b21a57aa20de689bba04cc8f0586c4fa071fc2e754aed4ac39f7c4a0f"
+      },
+      {
+        "name": "trianiuma_triad_cores_manifest.json",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/substrate_space/trianiuma_triad_cores_manifest.json",
+        "size_bytes": 2238,
+        "sha256": "7023e6513e70818efce7b0e0de6d9f76d892a91e3e2bc45ee74f11755ec0a5d2"
+      },
+      {
+        "name": "trianiuma_triad_engine.py",
+        "path": "/root/RADRILONIUMA/kernel_heart_soul_core/substrate_space/trianiuma_triad_engine.py",
+        "size_bytes": 4193,
+        "sha256": "c118296d97c55c150c687155795ec787a01db22e3161d474c60eea7a417f425f"
       }
     ]
   },
   "status": "SYNCHRONIZED_AND_VERIFIED",
-  "timestamp_utc": "2026-10-17T13:52:46.678636+00:00"
+  "timestamp_utc": "2026-10-18T06:08:34.456066+00:00"
 }
