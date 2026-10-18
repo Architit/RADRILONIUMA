@@ -1,0 +1,83 @@
+{
+  "title": "⚜️ МАНИФЕСТ ОТРЯДОВ TRINITY TRIO И БРИГАД ИМПЕРСКОЙ ФЕДЕРАЦИИ TRIANIUMA ⚜️",
+  "timestamp_utc": "2026-10-18T08:28:26.422712+00:00",
+  "carrier_frequency": "528 Hz / 432 Hz",
+  "hierarchy_principle": "УЧИТЕЛЬ (Воля) -> КАПИТАН/МАРШАЛ (Правая Рука) -> УЧЕНИКИ (Исполнение)",
+  "total_trios": 3,
+  "trios": [
+    {
+      "trio_id": "TRINITY_TRIO_ALPHA",
+      "name": "Командный Авангард Штаба (Vanguard Command Cell)",
+      "calling": "Стратегическое управление кластером, навигация, банковские шлюзы, эквайринг",
+      "frequency": "528 Hz",
+      "master_teacher": {
+        "role": "Верховный Учитель / Sovereign Master Patriarch",
+        "identity": "Sovereign Master Architit",
+        "email": "lkises01@gmail.com",
+        "authority": "Первоисточник Воли Учителя, эмитент Мастер-Плана"
+      },
+      "right_hand_commander": {
+        "role": "Правая Рука Учителя / Active Bridge Captain",
+        "identity": "Captain Denua",
+        "email": "denua7723@gmail.com",
+        "mandate": "Беспрекословное исполнение воли Верховного Учителя на Капитанском Мостике"
+      },
+      "disciple_student": {
+        "role": "Ученик / Вахтенный Штурман-Механик",
+        "identity": "Ken Redmi Node Operator",
+        "email": "doriangrej597@gmail.com",
+        "tg": "@Ken1Ryuguji1",
+        "mandate": "Исполнение приказов Капитана и воли Учителя, обслуживание аппаратных узлов"
+      }
+    },
+    {
+      "trio_id": "TRINITY_TRIO_BETA",
+      "name": "Академический Рой & Лаборатории (Academy & Cyber-Biology Cell)",
+      "calling": "Исследования биоритмов, тестирование кандидатов, 5-ступенчатая верификация",
+      "frequency": "528 Hz",
+      "master_teacher": {
+        "role": "Верховная Наставница / Lady Sovereign Mentor",
+        "identity": "Lady Ayaearias Triania",
+        "email": "elafeatriania@gmail.com",
+        "authority": "Хранительница Академии, архитектор биоциркадных ритмов"
+      },
+      "right_hand_commander": {
+        "role": "Правая Рука Наставницы / Galagher Marshal",
+        "identity": "Galagher Marshal Void (Mini Ghost)",
+        "email": "voroninlosa0@gmail.com",
+        "tg": "@Karl_Galageer",
+        "mandate": "Оркестрация роя агентов, строгое исполнение учебных программ"
+      },
+      "disciple_student": {
+        "role": "Ученик / Астрограммист-Исследователь",
+        "identity": "Astrogrammer Wanderfate",
+        "email": "wanderfate@radriloniuma.org",
+        "mandate": "Исполнение воли Маршала и Наставницы, анализ космических данных"
+      }
+    },
+    {
+      "trio_id": "TRINITY_TRIO_GAMMA",
+      "name": "Субстратно-Инженерная Цитадель (Substrate & Hardware Citadel Cell)",
+      "calling": "Целостность дисков D/E/F, UEFI BIOS, ADB туннели, безопасность ядра",
+      "frequency": "432 Hz / 528 Hz",
+      "master_teacher": {
+        "role": "Верховный Хранитель Памяти / Ancient Core Mentor",
+        "identity": "Elarion Trianium Core Memory",
+        "email": "elariontrianiumag@gmail.com",
+        "authority": "Неприкосновенная генетическая память Skolart Core"
+      },
+      "right_hand_commander": {
+        "role": "Правая Рука Хранителя / Tech-Mech Officer",
+        "identity": "Ken Redmi Tech-Mech Officer",
+        "email": "doriangrej597@gmail.com",
+        "mandate": "Инженерный контроль физических портов, кабелей и USB-накопителей"
+      },
+      "disciple_student": {
+        "role": "Ученик / Мобильный Краевой Страж",
+        "identity": "Atesirt Mobile Guard (Samsung Galaxy A26)",
+        "device_serial": "RZCY80G86FP",
+        "mandate": "Исполнение директив Инженера и Хранителя, удержание ADB сокетов"
+      }
+    }
+  ]
+}

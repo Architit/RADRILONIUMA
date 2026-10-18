@@ -1,7 +1,7 @@
 {
   "event": "DIRECTIVE_INIT_LAST_3_SESSIONS_SEGMENTS",
-  "timestamp_utc": "2026-10-18T07:54:59.172164+00:00",
-  "emitter": "LAO_ATPLT_BOOT_LOADER_V2",
+  "timestamp_utc": "2026-10-18T08:28:26.401367+00:00",
+  "emitter": "ATPLT_BOOT_LOADER_SOVEREIGN_SUPREME",
   "carrier_frequency": "528 Hz / 432 Hz",
   "metabolic_pulse": "60 BPM",
   "axiom_compliance": [
@@ -43,5 +43,6 @@
       "resonance": "528 Hz"
     }
   ],
+  "active_cli_session": "b80ce36c-ce34-44b8-b5f3-aced0ce6f2cf",
   "initiation_status": "AUTOMATICALLY_DISPATCHED_AND_CONFIRMED"
 }

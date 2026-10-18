@@ -1,33 +1,31 @@
 {
   "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261018",
-  "created_at_utc": "2026-10-18T07:58:38.901261+00:00",
+  "created_at_utc": "2026-10-18T08:28:26.732894+00:00",
   "status": "AWAITING_FIRST_RESPONDER_ACCEPTANCE",
-  "candidate_operators": [
+  "lease_rule": "FIRST_TO_PRESS_YES_IN_CALENDAR_GAINS_CLI_SESSION_CONTROL",
+  "eligible_master_operators": [
     {
-      "name": "Mini Ghost // Void",
-      "handle": "@Karl_Galageer",
-      "email": "voroninlosa0@gmail.com",
-      "rank": "GALAGHERMARSHAL",
-      "badges": "🦣 🤺 🎒"
+      "name": "Primary Master (Architit)",
+      "email": "lkises01@gmail.com",
+      "tg": "@Kirihanis",
+      "rank": 1
     },
     {
-      "name": "Кен",
-      "handle": "@Ken_Redmi_Tech",
-      "email": "ken.redmi@radriloniuma.org",
-      "rank": "TECH OFFICER",
-      "badges": "🔧 ⚡"
+      "name": "Lady Ayaearias Triania",
+      "email": "elafeatriania@gmail.com",
+      "tg": "@AyaeariasTriania",
+      "rank": 2
     },
     {
-      "name": "Wanderfate",
-      "handle": "@Wanderfate_Astral",
-      "email": "wanderfate@radriloniuma.org",
-      "rank": "VANGUARD_OPERATOR",
-      "badges": "🌌 🔭"
+      "name": "Captain Denua",
+      "email": "denua7723@gmail.com",
+      "tg": "@DenuaCaptain",
+      "rank": 3
     }
   ],
-  "accepted_operator": null,
-  "accepted_at_utc": null,
-  "qr_card_path": "/root/RADRILONIUMA/chronolog/SLI_DEVICE_REMOTE_CONTROL_QR.png",
-  "remote_control_url": "http://192.168.137.1:3001/phone_mirror.html?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY",
+  "assigned_operator": null,
+  "assigned_at_utc": null,
+  "remote_control_url": "http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY",
+  "qr_image_path": "/root/RADRILONIUMA/chronolog/SLI_DEVICE_REMOTE_CONTROL_QR.png",
   "carrier_frequency": "528 Hz"
 }
