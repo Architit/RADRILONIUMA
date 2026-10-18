@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-10-18T02:07:36.567203+00:00",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "devices": {
+    "DEV_02_ATESIRT": {
+      "serial": "RZCY80G86FP",
+      "model": "Samsung SM-A266B",
+      "archive": "DEV_02_ATESIRT_BACKUP_20261018_013059.tar.gz",
+      "size_bytes": 16401,
+      "status": "BACKED_UP_AND_STAGED"
+    },
+    "DEV_02B_KEN_REDMI": {
+      "serial": "9TU4QOTKXOAQUOLV",
+      "model": "Xiaomi REDMI Note 15",
+      "archive": "DEV_02B_KEN_REDMI_BACKUP_20261018.tar.gz",
+      "size_bytes": 94100577,
+      "status": "BACKED_UP_AND_STAGED"
+    }
+  },
+  "destinations": [
+    "E:\\google drive\\MOBILE_CLUSTER_BACKUPS",
+    "E:\\RADRILONIUMA_ARCHIVE_2026_10_18\\DEV_02B_KEN_REDMI",
+    "E:\\RADRILONIUMA_ARCHIVE_2026_10_18\\DEV_02_ATESIRT_PHONE",
+    "F:\\ATESIRT_VAULT_ARCHIVE\\sessions",
+    "github.com/Architit/RADRILONIUMA.git",
+    "gitlab.com/Architit/RADRILONIUMA.git"
+  ]
+}

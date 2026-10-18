@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-10-18T01:31:02.149719+00:00",
+  "carrier_hz": "528 Hz",
+  "backups": [
+    {
+      "node_id": "DEV_02_ATESIRT",
+      "serial": "RZCY80G86FP",
+      "tarball": "/root/RADRILONIUMA/data/sync/mobile_cloud_backup/DEV_02_ATESIRT_BACKUP_20261018_013059.tar.gz",
+      "size_kb": 16,
+      "status": "BACKUP_COMPLETED",
+      "timestamp_utc": "2026-10-18T01:31:02.149642+00:00"
+    }
+  ]
+}
