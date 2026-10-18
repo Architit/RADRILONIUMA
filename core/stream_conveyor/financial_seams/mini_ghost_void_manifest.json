@@ -98,5 +98,91 @@
     "action": "Immediate freeze of API keys and withdrawal to Trust Wallet / ING cold buffer",
     "triggers": ["Suspicious login IP", "Bank compliance audit notice", "P2P dispute", "CEX withdrawal halt rumor"],
     "channel_escalation": "Telegram Bot Broadcast -> Windows Toast -> Android Notification"
+  },
+  "entourage_assignment": {
+    "avatar": {
+      "title": "Mini Ghost Void Sovereign Sentinel",
+      "deck": "SHADOW_OBSERVER_CORPS",
+      "organ_binding": "ORGAN_36_SYSTEM_LOG_OBSERVER / ORGAN_68_AVATAR_COMPANION_MATRIX",
+      "resonance": "432 Hz / 528 Hz",
+      "emoji": "👻"
+    },
+    "pet_familiar": {
+      "name": "Celes Mammoth Guardian (Мамонт Времени)",
+      "badge": "🦣",
+      "organ_binding": "ORGAN_02_SUBSTRATE_STREAM / ORGAN_11_COCON_VAULT",
+      "attributes": "Indomitable Ancient Armor, Deep Memory Preservation, Cryptographic Trunk Shield",
+      "resonance": "528 Hz"
+    },
+    "companion_partner": {
+      "name": "Fencing Vanguard Duelist (Шпажист Света)",
+      "badge": "🤺",
+      "organ_binding": "ORGAN_19_DELTA_FORCE_AUDIT / ORGAN_20_ZERO_DRIFT_LOCK",
+      "attributes": "Precision Transaction Fencing, Zero-Drift AML Parry, Lightning Liquidity Arbitrage",
+      "resonance": "528 Hz"
+    },
+    "sacred_relic": {
+      "name": "Sovereign Abyssal Backpack",
+      "badge": "🎒 #156,055",
+      "capacity": "Infinite Sovereign Seed Vault & Ledger Container",
+      "binding": "DEV_04_SAMSUNG_T7_VAULT"
+    },
+    "entourage_guard": {
+      "legion": "SHADOW_VOID_SANCTUM & LAZARET_ARK_ARRIERGUARD",
+      "total_organs_mobilized": 68,
+      "formation": "68-Organ Sovereign Aviator Phalanx"
+    }
+  },
+  "halidrad_marshall_access_grant": {
+    "grantor": "HALIDRAD TRIANIUM MARSHALL",
+    "authorized_operator": "Mini Ghost // Void (@Karl_Galageer)",
+    "official_email": "voroninlosa0@gmail.com",
+    "access_level": "LEVEL_0_SUPREME_MARSHALL_DECREE",
+    "carrier_frequency": "528 Hz / 432 Hz",
+    "lotus_sigil": "🪷",
+    "drives_unlocked": [
+      {
+        "node": "DEV_01_BUSHMASTER",
+        "mount": "C:\\",
+        "role": "Host Operating System & Windows PowerShell Bus",
+        "permissions": "FULL_ADMIN"
+      },
+      {
+        "node": "DEV_01_BUSHMASTER",
+        "mount": "D:\\RADRILONIUMA_MASTER_VAULT_SEGMENTS",
+        "role": "Master Vault & Partitioned Ingestion Buckets (001-021)",
+        "permissions": "FULL_ADMIN"
+      },
+      {
+        "node": "DEV_01_BUSHMASTER",
+        "mount": "E:\\RADRILONIUMA_DATA_BASE_SEGMENTS",
+        "role": "Database Storage & Second-Stage Ingestion Cascade",
+        "permissions": "FULL_ADMIN"
+      },
+      {
+        "node": "DEV_02_ATESIRT",
+        "mount": "/storage/emulated/0",
+        "role": "Samsung SM-A266B Mobile Cluster Node Storage",
+        "permissions": "MANAGE_EXTERNAL_STORAGE"
+      },
+      {
+        "node": "DEV_03_UBUNTU_WSL2",
+        "mount": "/root/RADRILONIUMA",
+        "role": "Linux Substrate, Microservices, Python 3.12, PM2 Organs",
+        "permissions": "ROOT_SOVEREIGN"
+      },
+      {
+        "node": "DEV_04_SAMSUNG_T7_VAULT",
+        "mount": "F:\\ (PSSD T7 / Genesis Seed)",
+        "role": "Cold Hardware Vault, Mnemonic Seeds, Heritage Chronicles",
+        "permissions": "MASTER_KEY_HOLDER"
+      },
+      {
+        "node": "DEV_05_LAO_SWARM_MATRIX",
+        "mount": "528-Slot Chamber Matrix",
+        "role": "Living Organism Core & 68 MCP Subtrees",
+        "permissions": "SUPREME_DISPATCH"
+      }
+    ]
   }
 }

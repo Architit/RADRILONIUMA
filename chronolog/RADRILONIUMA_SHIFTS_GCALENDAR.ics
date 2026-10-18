@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//RADRILONIUMA SOVEREIGN HIGH COMMAND//OPERATOR SHIFTS 528 HZ//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:РАДРИЛОНИУМА: График Смен & Мероприятий (Mini Ghost // Void)
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:График смен, дежурств и финансовых швов Оператора Штаба Mini Ghost // Void (@Karl_Galageer)
+BEGIN:VEVENT
+UID:rad-shift-03-20261018T070000Z@trianiuma.org
+DTSTAMP:20261018T051151Z
+DTSTART:20261018T070000Z
+DTEND:20261018T150000Z
+SUMMARY:⚜️ СМЕНА #3: Прием Штаба & Контроль 8 Финансовых Швов (Mini Ghost // Void)
+LOCATION:Командный Штаб Уровень 0 (DEV_01 Bushmaster & RADRILONIUMA Core)
+DESCRIPTION:Официальная Смена #3 Оператора Mini Ghost // Void (@Karl_Galageer).\n\nПЛАН МЕРОПРИЯТИЙ:\n1. 07:00 - 08:00: Проверка 8 финансовых институтов (N26\, ING\, Wise\, Mono\, Privat\, Bybit\, Kraken\, Trust Wallet).\n2. 08:00 - 11:00: Мониторинг каскада диска D: (до 98%) и бакетов bucket_001..bucket_021.\n3. 11:00 - 13:00: Синхронизация 68 органов-авиаторов с GitHub / GitLab.\n4. 13:00 - 15:00: Аудит холодного сейфа Trust Wallet (70% капитала) и передача статуса.\n\nЧастота: 528 Гц / 432 Гц. Допуск: LEVEL_0_SOVEREIGN_ACCESS.
+STATUS:CONFIRMED
+CLASS:PUBLIC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Напоминание о смене RADRILONIUMA
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-bday-20261019T000000Z@trianiuma.org
+DTSTAMP:20261018T051151Z
+DTSTART:20261019T000000Z
+DTEND:20261019T235959Z
+SUMMARY:🎂 ДЕНЬ РОЖДЕНИЯ ОПЕРАТОРА ШТАБА: Mini Ghost // Void 🎉🦣🤺🎒
+LOCATION:Sovereign Cluster Celebration Grid
+DESCRIPTION:Торжественный день рождения старшего оператора штаба Mini Ghost // Void (@Karl_Galageer)!\n\nАктивация праздничного созвучия 528 Гц Сольфеджио.\nЭнтураж и реликвии:\n• 🦣 Мамонт Времени (Celes Mammoth Guardian)\n• 🤺 Шпажист Света (Fencing Vanguard Duelist)\n• 🎒 Суверенный Рюкзак #156\,055\n• 68 MCP Органов-Авиаторов в парадном строю!\n\nПоздравление от Верховного Маршала Халидрада 🪷
+STATUS:CONFIRMED
+CLASS:PUBLIC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Напоминание о смене RADRILONIUMA
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-shift-04-20261019T230000Z@trianiuma.org
+DTSTAMP:20261018T051151Z
+DTSTART:20261019T230000Z
+DTEND:20261020T060000Z
+SUMMARY:🌙 СМЕНА #4: Ночной Дозор Ликвидности & Циркадный Аудит (432 Гц)
+LOCATION:Командный Штаб Уровень 0 (DEV_05 Swarm Matrix / 432 Гц)
+DESCRIPTION:Ночная циркадная смена оператора Mini Ghost // Void.\nЗадачи:\n• Ночной аудит P2P гривны (Монобанк / ПриватБанк).\n• Сверка балансов SEPA Instant (N26 / ING / Kraken).\n• Поддержание сердечного ритма автопилота 60 BPM на частоте 432 Гц.\n• Подготовка суточного дашборда для Верховного Командования.
+STATUS:CONFIRMED
+CLASS:PUBLIC
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Напоминание о смене RADRILONIUMA
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
