@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-42-telegram-bot-mesh",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA Telegram Encrypted Command Channel • Omni-Channel Herald & Ambassador",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-42-telegram-bot-mesh.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "042",
+    "deck": "portals",
+    "resonance": "528 Hz",
+    "entourage": "INTERSTELLAR_DISPATCH_CORPS",
+    "avatar_title": "Omni-Channel Herald & Ambassador",
+    "companion_type": "SOCIAL_TELEMETRY_PARTNER",
+    "deck_role": "High-Speed Socket & Secure Messaging Portals",
+    "tool_name": "enqueue_task_organ_42_telegram_bot_mesh"
+  }
+}

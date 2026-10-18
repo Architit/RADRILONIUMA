@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-13-vision-surgeon",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA Vision Grounding & OCR Engine • LAM Space Navigator & Pilot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-13-vision-surgeon.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "013",
+    "deck": "lam",
+    "resonance": "528 Hz",
+    "entourage": "VISION_AUTOPILOT_WING",
+    "avatar_title": "LAM Space Navigator & Pilot",
+    "companion_type": "AUTONOMOUS_FLIGHT_COMPANION",
+    "deck_role": "Vision Grounding & Mission Targeter",
+    "tool_name": "enqueue_task_organ_13_vision_surgeon"
+  }
+}

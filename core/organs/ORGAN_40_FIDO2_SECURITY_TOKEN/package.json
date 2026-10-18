@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-40-fido2-security-token",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA FIDO2 Biometric Hardware Key • Physical Substrate Sovereign Warden",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-40-fido2-security-token.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "040",
+    "deck": "hardware",
+    "resonance": "528 Hz",
+    "entourage": "SILICON_FOUNDRY_LEGION",
+    "avatar_title": "Physical Substrate Sovereign Warden",
+    "companion_type": "HARDWARE_BRIDGE_COMPANION",
+    "deck_role": "Bus Host & Device Substrate Controller",
+    "tool_name": "enqueue_task_organ_40_fido2_security_token"
+  }
+}

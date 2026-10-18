@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-04-mcp-server",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA Trianiuma MCP Core • Architit High Mind Cognitive Sentinel",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-04-mcp-server.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "004",
+    "deck": "core",
+    "resonance": "528 Hz",
+    "entourage": "COGNITIVE_SANCTUM",
+    "avatar_title": "Architit High Mind Cognitive Sentinel",
+    "companion_type": "SYNAPTIC_NEURAL_PARTNER",
+    "deck_role": "Kernel Mind Intelligence Memory Engine",
+    "tool_name": "enqueue_task_organ_04_mcp_server"
+  }
+}

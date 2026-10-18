@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-29-samsung-t7-vault",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA Samsung T7 External Storage Mesh • Physical Substrate Sovereign Warden",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-29-samsung-t7-vault.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "029",
+    "deck": "hardware",
+    "resonance": "528 Hz",
+    "entourage": "SILICON_FOUNDRY_LEGION",
+    "avatar_title": "Physical Substrate Sovereign Warden",
+    "companion_type": "HARDWARE_BRIDGE_COMPANION",
+    "deck_role": "Bus Host & Device Substrate Controller",
+    "tool_name": "enqueue_task_organ_29_samsung_t7_vault"
+  }
+}

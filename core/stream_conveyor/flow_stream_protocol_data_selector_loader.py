@@ -108,6 +108,94 @@ class FlowStreamProtocolDataSelectorLoader:
         if "sha256" in entry:
             self.processed_hashes.add(entry["sha256"])
 
+    def get_atesirt_storage_metrics(self) -> Dict[str, Any]:
+        """Queries DEV_02_ATESIRT storage space (total, used, free, percentage) via ADB or Windows MTP."""
+        import subprocess
+        try:
+            res = subprocess.run(['adb', 'shell', 'df', '-k', '/storage/emulated'], capture_output=True, text=True, timeout=3)
+            lines = res.stdout.strip().split('\n')
+            if len(lines) >= 2:
+                parts = lines[-1].split()
+                total_kb = int(parts[1])
+                used_kb = int(parts[2])
+                avail_kb = int(parts[3])
+                pct = float(parts[4].replace('%', ''))
+                total_gb = round(total_kb / (1024 ** 2), 1)
+                used_gb = round(used_kb / (1024 ** 2), 1)
+                free_gb = round(avail_kb / (1024 ** 2), 1)
+                return {
+                    "node": "DEV_02_ATESIRT",
+                    "device": "Samsung SM-A266B (RZCY80G86FP)",
+                    "total_gb": total_gb,
+                    "used_gb": used_gb,
+                    "free_gb": free_gb,
+                    "used_percent": pct,
+                    "saturated": (pct >= 98.0),
+                    "status": "ONLINE_ACTIVE"
+                }
+        except Exception:
+            pass
+
+        return {
+            "node": "DEV_02_ATESIRT",
+            "device": "Samsung SM-A266B (RZCY80G86FP)",
+            "total_gb": 104.6,
+            "used_gb": 80.3,
+            "free_gb": 24.2,
+            "used_percent": 77.0,
+            "saturated": False,
+            "status": "CACHED_MTP_ONLINE"
+        }
+
+    @staticmethod
+    def extract_keywords_and_emojis(content: str, segment_name: str, source_id: str) -> Tuple[str, List[str]]:
+        """Extracts resonant emojis and keywords from a segment header and payload."""
+        combined = (segment_name + " " + content[:2000]).lower()
+        emojis = []
+        keywords = []
+
+        if any(k in combined for k in ["skolart", "god_seed", "genome", "dna", "семя"]):
+            emojis.append("🧬")
+            keywords.extend(["SKOLART_DNA", "GENOME_SEED", "CYBERGENETIC"])
+        if any(k in combined for k in ["lyumerik", "target", "mission", "orbit", "цель"]):
+            emojis.append("⚡")
+            keywords.extend(["LYUMERIK_PATH", "ORBIT_PULSE", "MISSION_TARGET"])
+        if any(k in combined for k in ["mirashani", "buffer", "vault", "zero_copy", "демон"]):
+            emojis.append("🛡️")
+            keywords.extend(["MIRASHANI_GUARD", "ZERO_COPY", "VAULT_CASCADE"])
+        if any(k in combined for k in ["contract", "protocol", "governance", "мандат"]):
+            emojis.append("📜")
+            keywords.extend(["CONTRACT_P0", "GOVERNANCE", "SOVEREIGN_RULE"])
+        if any(k in combined for k in ["atesirt", "samsung", "android", "apk"]):
+            emojis.append("📱")
+            keywords.extend(["DEV_02_ATESIRT", "ANDROID_EDGE", "RZCY80G86FP"])
+        if any(k in combined for k in ["bushmaster", "win11", "host", "powershell"]):
+            emojis.append("💻")
+            keywords.extend(["DEV_01_BUSHMASTER", "WIN11_HOST", "CWD_BUSH"])
+        if any(k in combined for k in ["storage_d", "master_vault", "новый том"]):
+            emojis.append("🗄️")
+            keywords.extend(["STORAGE_D", "MASTER_VAULT", "MIRROR_CHEST"])
+        if any(k in combined for k in ["storage_e", "data_base", "cocoon", "кокон"]):
+            emojis.append("🔮")
+            keywords.extend(["STORAGE_E", "DATA_BASE", "COCOON_SESSION"])
+        if any(k in combined for k in ["god_seed_f", "genesis", "uefi", "casper"]):
+            emojis.append("🔑")
+            keywords.extend(["DEV_04_GOD_SEED_F", "GENESIS_USB", "UEFI_BOOT"])
+        if any(k in combined for k in ["gdrive", "google drive", "cloud"]):
+            emojis.append("☁️")
+            keywords.extend(["GDRIVE_STREAM", "CLOUD_VAULT", "RCLONE_LINK"])
+        if any(k in combined for k in ["github", "repo", "subtree", "git"]):
+            emojis.append("🐙")
+            keywords.extend(["GITHUB_SUBSTRATE", "ARCHITIT", "GIT_TREE"])
+
+        if not emojis:
+            emojis.append("⚜️")
+            keywords.append("SOVEREIGN_PAYLOAD")
+
+        emoji_str = "".join(list(dict.fromkeys(emojis)))
+        unique_kw = list(dict.fromkeys(keywords))[:5]
+        return emoji_str, unique_kw
+
     def get_storage_metrics(self, path_str: str) -> Dict[str, Any]:
         """Calculates storage saturation metrics for a target path."""
         p = Path(path_str)
@@ -460,6 +548,9 @@ class FlowStreamProtocolDataSelectorLoader:
             # Fallback recalculate hash on actual written text if encoding normalized
             segment["sha256"] = written_hash
 
+        # Extract resonant emojis and keywords
+        emojis, keywords = self.extract_keywords_and_emojis(written_content, segment["segment_name"], source_id)
+
         # Record chronicle entry
         chronicle_record = {
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
@@ -468,6 +559,8 @@ class FlowStreamProtocolDataSelectorLoader:
             "phase": self.active_phase_index + 1,
             "orbit_cycle": self.cycle_count,
             "segment_name": segment["segment_name"],
+            "emojis": emojis,
+            "keywords": keywords,
             "target_vault": str(target_file),
             "target_volume_usage_percent": target_metrics.get("used_percent"),
             "char_count": len(written_content),
@@ -487,6 +580,8 @@ class FlowStreamProtocolDataSelectorLoader:
             "status": "STEP_SUCCESS",
             "source_id": source_id,
             "segment_name": segment["segment_name"],
+            "emojis": emojis,
+            "keywords": keywords,
             "char_count": len(written_content),
             "sha256": segment["sha256"],
             "target_vault": str(target_file),

@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-31-genesis-usb-seed",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA Genesis Recovery USB Seed F: • Physical Substrate Sovereign Warden",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-31-genesis-usb-seed.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "031",
+    "deck": "hardware",
+    "resonance": "432 Hz",
+    "entourage": "SILICON_FOUNDRY_LEGION",
+    "avatar_title": "Physical Substrate Sovereign Warden",
+    "companion_type": "HARDWARE_BRIDGE_COMPANION",
+    "deck_role": "Bus Host & Device Substrate Controller",
+    "tool_name": "enqueue_task_organ_31_genesis_usb_seed"
+  }
+}

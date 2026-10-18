@@ -1,0 +1,26 @@
+{
+  "name": "@architit/trianiuma-organ-59-patient-record-cipher",
+  "version": "2026.18.10.03.37.23",
+  "description": "RADRILONIUMA AES-256-GCM Patient Record Cipher • Ark Sovereign Physician & Legal Guardian",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Architit/trianiuma-organ-59-patient-record-cipher.git"
+  },
+  "author": "Architit Sovereign Cluster (528 Hz)",
+  "license": "UNLICENSED",
+  "radriloniuma": {
+    "slot": "059",
+    "deck": "special",
+    "resonance": "528 Hz",
+    "entourage": "LAZARET_ARK_ARRIERGUARD",
+    "avatar_title": "Ark Sovereign Physician & Legal Guardian",
+    "companion_type": "HEALING_SHIELD_COMPANION",
+    "deck_role": "Cocon Shell Membrane & Emergency Lazaret",
+    "tool_name": "enqueue_task_organ_59_patient_record_cipher"
+  }
+}
