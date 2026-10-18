@@ -1,0 +1,13 @@
+{
+  "slot": "024",
+  "organ_id": "ORGAN_24_AXIS_EXTRUDER_MATH",
+  "name": "6-Axis Extruder Kinematics",
+  "slug": "trianiuma-organ-24-axis-extruder-math",
+  "tool_name": "enqueue_task_organ_24_axis_extruder_math",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "lam",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

@@ -1,0 +1,83 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  identity:
+    hostname: radriloniuma-node
+    username: architit
+    # Password: radriloniuma (SHA-512 crypt hash)
+    password: "$6$rounds=4096$radriloniuma$W8sZeq3z0q1EsmQzJ6f5mC5BqE4vC21I8kH0l7mP3rQ8sT5uV1wX4yZ9aB2cD5eF8gH1iJ4kL7mN0oP3rS6tU9"
+  ssh:
+    install-server: true
+    allow-pw: true
+    authorized-keys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGW5+H6N+Z1g4radriloniuma_sovereign_root_key architit@radriloniuma"
+  packages:
+    - python3
+    - python3-pip
+    - python3-venv
+    - python3-pil
+    - python3-pyperclip
+    - python3-tk
+    - nodejs
+    - npm
+    - curl
+    - wget
+    - git
+    - htop
+    - net-tools
+    - openssh-server
+    - xclip
+    - xsel
+    - wl-clipboard
+    - scrot
+    - grim
+    - slurp
+    - imagemagick
+    - libpng-dev
+    - libjpeg-dev
+    - libwebp-dev
+    - ffmpeg
+    - adb
+  late-commands:
+    # 1. Configure passwordless sudo for user architit
+    - echo "architit ALL=(ALL) NOPASSWD:ALL" > /target/etc/sudoers.d/architit
+    - chmod 0440 /target/etc/sudoers.d/architit
+    # 2. Permit Root SSH Login & Authorized Keys
+    - sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /target/etc/ssh/sshd_config
+    - mkdir -p /target/root/.ssh
+    - cp /target/home/architit/.ssh/authorized_keys /target/root/.ssh/authorized_keys 2>/dev/null || true
+    - chmod 700 /target/root/.ssh && chmod 600 /target/root/.ssh/authorized_keys 2>/dev/null || true
+    # 3. Global PM2 Installation
+    - curtin in-target --target=/target -- npm install -g pm2
+    # 4. Copy REBIRTH.sh, Root Tree Tarball, Drivers Bundle & Hardware Discovery Module
+    - cp /cdrom/GOD_SEED_INIT/REBIRTH.sh /target/root/REBIRTH.sh 2>/dev/null || cp /target/home/architit/REBIRTH.sh /target/root/REBIRTH.sh 2>/dev/null || true
+    - chmod +x /target/root/REBIRTH.sh 2>/dev/null || true
+    - cp /cdrom/GOD_SEED_INIT/radriloniuma_root_tree_branch.tar.gz /target/root/radriloniuma_root_tree_branch.tar.gz 2>/dev/null || true
+    - mkdir -p /target/opt/radriloniuma_drivers
+    - cp -r /cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/* /target/opt/radriloniuma_drivers/ 2>/dev/null || true
+    - cp /cdrom/GOD_SEED_INIT/DRIVERS_BUNDLE/radriloniuma_hardware_module_discovery.sh /target/usr/local/bin/radriloniuma_hardware_module_discovery.sh 2>/dev/null || true
+    - chmod 0755 /target/usr/local/bin/radriloniuma_hardware_module_discovery.sh 2>/dev/null || true
+    # 5. Copy post_install_upgrade.sh to /target/usr/local/bin
+    - cp /cdrom/nocloud/post_install_upgrade.sh /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || cp /cdrom/post_install_upgrade.sh /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || true
+    - chmod 0755 /target/usr/local/bin/post_install_upgrade.sh 2>/dev/null || true
+    # 6. Setup first-boot systemd service for REBIRTH.sh & Upgrade Pipeline
+    - |
+      cat << 'EOF' > /target/etc/systemd/system/radriloniuma-firstboot.service
+      [Unit]
+      Description=RADRILONIUMA First Boot Rebirth & Upgrade Service
+      After=network-online.target
+      Wants=network-online.target
+
+      [Service]
+      Type=oneshot
+      ExecStart=/usr/local/bin/post_install_upgrade.sh
+      RemainAfterExit=true
+      StandardOutput=journal+console
+
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+    - curtin in-target --target=/target -- systemctl enable radriloniuma-firstboot.service

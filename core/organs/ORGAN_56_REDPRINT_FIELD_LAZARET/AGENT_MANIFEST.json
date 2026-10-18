@@ -1,0 +1,13 @@
+{
+  "slot": "056",
+  "organ_id": "ORGAN_56_REDPRINT_FIELD_LAZARET",
+  "name": "Redprint Med-Rescue Corps Lazaret",
+  "slug": "trianiuma-organ-56-redprint-field-lazaret",
+  "tool_name": "enqueue_task_organ_56_redprint_field_lazaret",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "special",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

@@ -1,0 +1,13 @@
+{
+  "slot": "025",
+  "organ_id": "ORGAN_25_VFD_PID_LOOP",
+  "name": "VFD Motor Frequency & PID Loop",
+  "slug": "trianiuma-organ-25-vfd-pid-loop",
+  "tool_name": "enqueue_task_organ_25_vfd_pid_loop",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "432 Hz",
+  "deck": "lam",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

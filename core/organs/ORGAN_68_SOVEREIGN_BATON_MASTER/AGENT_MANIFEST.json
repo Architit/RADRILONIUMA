@@ -1,0 +1,13 @@
+{
+  "slot": "068",
+  "organ_id": "ORGAN_68_SOVEREIGN_BATON_MASTER",
+  "name": "Sovereign Master Baton 68/68 Active",
+  "slug": "trianiuma-organ-68-sovereign-baton-master",
+  "tool_name": "enqueue_task_organ_68_sovereign_baton_master",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "special",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

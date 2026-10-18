@@ -1,0 +1,13 @@
+{
+  "slot": "058",
+  "organ_id": "ORGAN_58_JUNGLE_VAULT_ALMERE",
+  "name": "Jungle Vault NL Almere Ledger",
+  "slug": "trianiuma-organ-58-jungle-vault-almere",
+  "tool_name": "enqueue_task_organ_58_jungle_vault_almere",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "special",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

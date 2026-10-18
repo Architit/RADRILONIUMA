@@ -1,0 +1,13 @@
+{
+  "slot": "003",
+  "organ_id": "ORGAN_03_SWARM_ORCHESTRATOR",
+  "name": "Swarm Orchestrator",
+  "slug": "trianiuma-organ-03-swarm-orchestrator",
+  "tool_name": "enqueue_task_organ_03_swarm_orchestrator",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "core",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

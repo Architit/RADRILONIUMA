@@ -1,0 +1,13 @@
+{
+  "slot": "028",
+  "organ_id": "ORGAN_28_WSL2_UBUNTU_ROOT",
+  "name": "WSL2 Ubuntu 26.04 Rootfs Core",
+  "slug": "trianiuma-organ-28-wsl2-ubuntu-root",
+  "tool_name": "enqueue_task_organ_28_wsl2_ubuntu_root",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "432 Hz",
+  "deck": "hardware",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

@@ -1,0 +1,13 @@
+{
+  "slot": "048",
+  "organ_id": "ORGAN_48_OBSIDIAN_VAULT_HUB",
+  "name": "Obsidian Vault DeepResearch Hub",
+  "slug": "trianiuma-organ-48-obsidian-vault-hub",
+  "tool_name": "enqueue_task_organ_48_obsidian_vault_hub",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "portals",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

@@ -12,3 +12,8 @@ node_modules/
 *.env
 github.env
 gemini.cli.env
+
+venv/
+venv_py312/
+.venv/
+venv

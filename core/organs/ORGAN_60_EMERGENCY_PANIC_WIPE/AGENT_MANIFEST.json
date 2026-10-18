@@ -1,0 +1,13 @@
+{
+  "slot": "060",
+  "organ_id": "ORGAN_60_EMERGENCY_PANIC_WIPE",
+  "name": "Panic Wipe Cryptographic Shredder",
+  "slug": "trianiuma-organ-60-emergency-panic-wipe",
+  "tool_name": "enqueue_task_organ_60_emergency_panic_wipe",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "special",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

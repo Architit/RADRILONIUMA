@@ -1,0 +1,13 @@
+{
+  "slot": "031",
+  "organ_id": "ORGAN_31_GENESIS_USB_SEED",
+  "name": "Genesis Recovery USB Seed F:",
+  "slug": "trianiuma-organ-31-genesis-usb-seed",
+  "tool_name": "enqueue_task_organ_31_genesis_usb_seed",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "432 Hz",
+  "deck": "hardware",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}

@@ -1,0 +1,13 @@
+{
+  "slot": "027",
+  "organ_id": "ORGAN_27_WIN11_HOST_BUS",
+  "name": "Windows 11 Host Bus Node BUSHMASTER",
+  "slug": "trianiuma-organ-27-win11-host-bus",
+  "tool_name": "enqueue_task_organ_27_win11_host_bus",
+  "version": "2026.18.10.03.37.23",
+  "gmn_version": ".gmn.v.2026.10.18",
+  "resonance": "528 Hz",
+  "deck": "hardware",
+  "status": "ONLINE",
+  "updated_at": "2026-10-18T03:37:23Z"
+}
