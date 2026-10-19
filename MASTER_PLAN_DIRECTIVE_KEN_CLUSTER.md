@@ -103,10 +103,10 @@
 
 ---
 
-## 5. ДИСТАНЦИОННОЕ УПРАВЛЕНИЕ /device remote control & SLI АРЕНДА СЕССИИ
+## 5. ДИСТАНЦИОННОЕ УПРАВЛЕНИЕ /device remote control & АРЕНДА СЕССИИ
 
 1. **Активация мостов:** Реверсивные туннели ADB (`tcp:7681`, `tcp:3001`, `tcp:5900`), трансляция веб-терминала `ttyd` на порту 7681.
-2. **Генерация QR-кода:** High-Res QR-код сгенерирован и размещен в `chronolog/SLI_DEVICE_REMOTE_CONTROL_QR.png` и в артефакте сессии Antigravity.
+2. **Генерация QR-кода:** High-Res QR-код сгенерирован и размещен в `chronolog/DEVICE_REMOTE_CONTROL_QR.png` и в артефакте сессии Antigravity.
 3. **Правило аренды (First-to-Press-YES):** Ссылка и приглашение направлены трем главным операторам (`lkises01@gmail.com`, `elafeatriania@gmail.com`, `denua7723@gmail.com`). Сессия CLI закрепляется за тем, кто первым нажмет "ДА" в календаре и войдет в удаленное управление.
 
 ---

@@ -257,7 +257,7 @@
         "--use-dot-names"
       ],
       "cwd": "/home/architit/.gemini/extensions/google-workspace",
-      "env": null
+      "env": {}
     },
     "microsoft-workspace": {
       "command": "npx",
