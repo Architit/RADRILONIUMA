@@ -7,6 +7,7 @@ RADRILONIUMA • AUTOPILOT REMOTE VIM CONTROLLER (ATPLT REMOTE VIM)
 Headless and interactive VIM buffer server and cybernetic terminal controller.
 Binds to tcp://127.0.0.1:5288, accessible directly from DEV_02_ATESIRT via reverse tunnel.
 Enables real-time remote editing, diff patching, and buffer synchronization across all 5 nodes.
+Carrier resonance: 528 Hz / 432 Hz.
 """
 
 import os
@@ -52,6 +53,8 @@ class RemoteVimController:
             except Exception as e:
                 content = f"ERROR_READING_FILE: {e}"
                 lines = [content]
+        elif not path.exists():
+            lines = [""]
 
         buf_id = f"buf_{len(self.buffers) + 1}_{path.name}"
         with self._lock:
@@ -87,7 +90,7 @@ class RemoteVimController:
             buf = self.buffers[buffer_id]
             cmd = vim_command.strip()
 
-            if cmd == ":w":
+            if cmd in (":w", "SAVE"):
                 try:
                     Path(buf["file_path"]).write_text("\n".join(buf["lines"]), encoding="utf-8")
                     buf["modified"] = False
@@ -158,6 +161,95 @@ class RemoteVimController:
         except Exception:
             pass
 
+    def handle_client(self, client_sock: socket.socket):
+        """Processes requests from a connected client socket."""
+        try:
+            with client_sock:
+                data = client_sock.recv(4096).decode("utf-8", errors="replace").strip()
+                if not data:
+                    return
+
+                try:
+                    payload = json.loads(data)
+                except Exception:
+                    parts = data.split(maxsplit=1)
+                    action = parts[0].upper()
+                    param = parts[1] if len(parts) > 1 else ""
+                    payload = {"action": action, "param": param}
+
+                action = payload.get("action", "").upper()
+
+                if action == "PING":
+                    resp = {"status": "PONG", "time": datetime.now(timezone.utc).isoformat(), "resonance_hz": 528}
+                elif action == "STATUS":
+                    resp = {
+                        "status": "ONLINE",
+                        "active_buffer": self.active_buffer_id,
+                        "mode": self.current_mode,
+                        "buffers": list(self.buffers.keys())
+                    }
+                elif action == "OPEN":
+                    path = payload.get("path") or payload.get("param", "")
+                    resp = self.open_buffer(path)
+                elif action == "CMD":
+                    buf_id = payload.get("buffer_id") or self.active_buffer_id
+                    cmd = payload.get("command") or payload.get("param", "")
+                    if buf_id:
+                        resp = self.apply_command(buf_id, cmd)
+                    else:
+                        resp = {"status": "ERROR", "message": "No active buffer"}
+                elif action == "GET":
+                    buf_id = payload.get("buffer_id") or self.active_buffer_id
+                    if buf_id and buf_id in self.buffers:
+                        buf = self.buffers[buf_id]
+                        resp = {"status": "OK", "buffer": buf}
+                    else:
+                        resp = {"status": "ERROR", "message": "Buffer not found"}
+                else:
+                    resp = {"status": "UNKNOWN_ACTION", "action": action}
+
+                client_sock.sendall((json.dumps(resp) + "\n").encode("utf-8"))
+        except Exception as e:
+            try:
+                client_sock.sendall(json.dumps({"status": "SERVER_ERROR", "error": str(e)}).encode("utf-8"))
+            except Exception:
+                pass
+
+    def start_server(self, background: bool = False):
+        """Starts TCP socket server on host:port."""
+        self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.server_socket.bind((self.host, self.port))
+        self.server_socket.listen(10)
+        self.is_running = True
+        self._save_state()
+        print(f"⚜️ [REMOTE VIM] Server listening on tcp://{self.host}:{self.port} (Resonance: 528 Hz)")
+
+        if background:
+            t = threading.Thread(target=self._server_loop, daemon=True)
+            t.start()
+            return t
+        else:
+            self._server_loop()
+
+    def _server_loop(self):
+        while self.is_running:
+            try:
+                readable, _, _ = select.select([self.server_socket], [], [], 1.0)
+                if readable:
+                    client, _ = self.server_socket.accept()
+                    threading.Thread(target=self.handle_client, args=(client,), daemon=True).start()
+            except Exception:
+                break
+
+    def stop_server(self):
+        self.is_running = False
+        if self.server_socket:
+            try:
+                self.server_socket.close()
+            except Exception:
+                pass
+
     def test_buffer_cycle(self) -> Dict[str, Any]:
         """Performs a test cycle opening, inspecting, and verifying a buffer."""
         test_file = ROOT_DIR / "SYSTEM_STATE.md"
@@ -170,7 +262,33 @@ class RemoteVimController:
             "mode": self.current_mode
         }
 
+def send_client_command(cmd_dict: Dict[str, Any], host: str = "127.0.0.1", port: int = 5288) -> Dict[str, Any]:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.settimeout(3.0)
+        s.connect((host, port))
+        s.sendall(json.dumps(cmd_dict).encode("utf-8"))
+        data = s.recv(8192).decode("utf-8")
+        return json.loads(data)
+
 if __name__ == "__main__":
-    controller = RemoteVimController()
-    res = controller.test_buffer_cycle()
-    print(json.dumps(res, indent=2, ensure_ascii=False))
+    if len(sys.argv) > 1 and sys.argv[1] == "--daemon":
+        ctrl = RemoteVimController()
+        ctrl.start_server(background=False)
+    elif len(sys.argv) > 1 and sys.argv[1] == "--ping":
+        try:
+            res = send_client_command({"action": "PING"})
+            print(json.dumps(res, indent=2))
+        except Exception as e:
+            print(f"FAILED_TO_CONNECT: {e}")
+            sys.exit(1)
+    elif len(sys.argv) > 1 and sys.argv[1] == "--open" and len(sys.argv) > 2:
+        try:
+            res = send_client_command({"action": "OPEN", "path": sys.argv[2]})
+            print(json.dumps(res, indent=2))
+        except Exception as e:
+            print(f"FAILED_TO_CONNECT: {e}")
+            sys.exit(1)
+    else:
+        controller = RemoteVimController()
+        res = controller.test_buffer_cycle()
+        print(json.dumps(res, indent=2, ensure_ascii=False))

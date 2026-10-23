@@ -17,7 +17,7 @@ Autonomous Stages:
     Verification -> Authentication -> Proforientation).
 5. Chat Prioritization Matrix & Inbound Reply Generation (Telegram & Gmail).
 6. Trinity Trio Roster Engine (Master -> Marshal/Captain Right Hand -> Disciples).
-7. /device remote control Activation & SLI High-Res QR Code Dispatch
+7. /device remote control Activation & High-Res QR Code Dispatch
    ("First-to-Press-YES" Lease Allocation among 3 Master Operators).
 8. Immutable Chronicle Sealing & State Synchronization.
 """
@@ -62,10 +62,10 @@ SCHEDULE_HTML = CHRONOLOG_DIR / "RADRILONIUMA_7DAY_4SHIFTS_SCHEDULE.html"
 VACANT_SHIFTS_EML = CHRONOLOG_DIR / "OPERATOR_VACANT_SHIFTS_DISPATCH.eml"
 VACANT_SHIFTS_TG = CHRONOLOG_DIR / "OPERATOR_VACANT_SHIFTS_TELEGRAM.json"
 
-SLI_QR_PNG = CHRONOLOG_DIR / "SLI_DEVICE_REMOTE_CONTROL_QR.png"
-SLI_EML = CHRONOLOG_DIR / "SLI_REMOTE_CONTROL_INVITATION.eml"
-SLI_TG = CHRONOLOG_DIR / "SLI_REMOTE_CONTROL_TELEGRAM.json"
-SLI_STATE = CHRONOLOG_DIR / "SLI_SESSION_RESERVATION_STATE.json"
+REMOTE_CONTROL_QR_PNG = CHRONOLOG_DIR / "DEVICE_REMOTE_CONTROL_QR.png"
+REMOTE_CONTROL_EML = CHRONOLOG_DIR / "REMOTE_CONTROL_INVITATION.eml"
+REMOTE_CONTROL_TG = CHRONOLOG_DIR / "REMOTE_CONTROL_TELEGRAM.json"
+REMOTE_CONTROL_STATE = CHRONOLOG_DIR / "REMOTE_CONTROL_SESSION_RESERVATION_STATE.json"
 
 TRINITY_ROSTER_JSON = CHRONOLOG_DIR / "TRINITY_TRIO_BRIGADE_ROSTER.json"
 TELEGRAM_REPLIES_JSON = CHRONOLOG_DIR / "TELEGRAM_INBOUND_RESPONSES_DRAFT.json"
@@ -122,11 +122,11 @@ def stage_1_initiate_last_3_sessions() -> Dict[str, Any]:
     sessions.append({
         "session_id": "dc195096-0d42-48f6-b345-adc41d3d6e62",
         "sequence_index": 3,
-        "session_type": "MASTER_PLAN_SLI_REMOTE_CONTROL",
+        "session_type": "MASTER_PLAN_REMOTE_CONTROL",
         "capsule_id": "SSN-CAPSULE-DC195096-9811C402",
         "sha256_seal": "9811c402ac3715df990176527baed1023751a09842fba6c7104b901e18dc5280",
-        "final_segment": "SLI_DEVICE_REMOTE_CONTROL_QR.png",
-        "focus": "ATPLT Boot Loader Upgrade, 7-Day 4-Shift Calendar Dispatch, Trinity Trio Recruitment, SLI Remote Control",
+        "final_segment": "DEVICE_REMOTE_CONTROL_QR.png",
+        "focus": "ATPLT Boot Loader Upgrade, 7-Day 4-Shift Calendar Dispatch, Trinity Trio Recruitment, Remote Control",
         "resonance": "528 Hz"
     })
 
@@ -833,10 +833,10 @@ def stage_6_trinity_trio_brigade_rosters() -> Dict[str, Any]:
 
 
 # ===========================================================================
-# STAGE 7: /device remote control ACTIVATION & SLI QR CODE DISPATCH
+# STAGE 7: /device remote control ACTIVATION & REMOTE QR CODE DISPATCH
 # ===========================================================================
 def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
-    print("\n📲 [STAGE 7] Activating /device remote control & Generating SLI QR Code Dispatch...")
+    print("\n📲 [STAGE 7] Activating /device remote control & Generating QR Code Dispatch...")
     
     # 1. Ensure ADB reverse tunnels for remote control
     try:
@@ -848,7 +848,7 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
         print(f"   ↳ ADB reverse notice: {e}")
 
     # 2. Generate Remote Control Access URL
-    remote_session_id = f"SLI-LIVE-528HZ-FIRST-RESPONDER-{datetime.now(timezone.utc).strftime('%Y%m%d')}"
+    remote_session_id = f"REMOTE-LIVE-528HZ-FIRST-RESPONDER-{datetime.now(timezone.utc).strftime('%Y%m%d')}"
     remote_control_url = f"http://192.168.137.1:7681/?mode=dual&session_id={remote_session_id}&token=TRIANIUMA-SOVEREIGN-KEY"
     
     # 3. Generate QR Code Image using qrcode & PIL
@@ -863,18 +863,18 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
         qr.add_data(remote_control_url)
         qr.make(fit=True)
         img = qr.make_image(fill_color="#00f0ff", back_color="#070c14")
-        img.save(str(SLI_QR_PNG))
-        print(f"✅ Generated High-Res QR Code: {SLI_QR_PNG}")
+        img.save(str(REMOTE_CONTROL_QR_PNG))
+        print(f"✅ Generated High-Res QR Code: {REMOTE_CONTROL_QR_PNG}")
 
         # Copy to Windows brain artifact directory for display
         if BRAIN_ARTIFACT_DIR.exists():
-            windows_qr = BRAIN_ARTIFACT_DIR / "SLI_DEVICE_REMOTE_CONTROL_QR.png"
-            shutil.copy2(str(SLI_QR_PNG), str(windows_qr))
+            windows_qr = BRAIN_ARTIFACT_DIR / "DEVICE_REMOTE_CONTROL_QR.png"
+            shutil.copy2(str(REMOTE_CONTROL_QR_PNG), str(windows_qr))
             print(f"✅ Copied QR Code to Brain Artifact: {windows_qr}")
     except Exception as e:
         print(f"[STAGE 7 WARNING] QR Code rendering error: {e}")
 
-    # 4. SLI Lease State ("First-to-Press-YES" Lease Allocation)
+    # 4. Lease State ("First-to-Press-YES" Lease Allocation)
     sli_reservation = {
         "session_id": remote_session_id,
         "created_at_utc": get_utc_now(),
@@ -888,18 +888,18 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
         "assigned_operator": None,
         "assigned_at_utc": None,
         "remote_control_url": remote_control_url,
-        "qr_image_path": str(SLI_QR_PNG),
+        "qr_image_path": str(REMOTE_CONTROL_QR_PNG),
         "carrier_frequency": "528 Hz"
     }
 
-    with open(SLI_STATE, "w", encoding="utf-8") as f:
+    with open(REMOTE_CONTROL_STATE, "w", encoding="utf-8") as f:
         json.dump(sli_reservation, f, indent=2, ensure_ascii=False)
-    with open(GATEWAY_DIR / "SLI_SESSION_RESERVATION_STATE.json", "w", encoding="utf-8") as f:
+    with open(GATEWAY_DIR / "REMOTE_CONTROL_SESSION_RESERVATION_STATE.json", "w", encoding="utf-8") as f:
         json.dump(sli_reservation, f, indent=2, ensure_ascii=False)
 
     # 5. Telegram Dispatch Message for Remote Control
     tg_invite = {
-        "event": "SLI_REMOTE_CONTROL_INVITATION_DISPATCH",
+        "event": "REMOTE_REMOTE_CONTROL_INVITATION_DISPATCH",
         "timestamp_utc": get_utc_now(),
         "session_id": remote_session_id,
         "url": remote_control_url,
@@ -907,19 +907,19 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
             f"⚜️ ПРИГЛАШЕНИЕ В СЕССИЮ ДИСТАНЦИОННОГО УПРАВЛЕНИЯ КЛАСТЕРОМ /device remote control ⚜️\n\n"
             f"Внимание 3 Главным Операторам (@Kirihanis, @AyaeariasTriania, @DenuaCaptain)!\n"
             f"Открыто окно доступа к активной CLI-сессии RADRILONIUMA.\n\n"
-            f"Правило передачи вахты (SLI Lease):\n"
+            f"Правило передачи вахты (Lease):\n"
             f"Сессия удаленного управления закрепляется за ТЕМ ОПЕРАТОРОМ, КТО ПЕРВЫМ закроет окно смены, "
             f"нажав 'ДА' в календаре и перейдя по ссылке или QR-коду в приложение Antigravity!\n\n"
             f"🔗 Прямая ссылка: {remote_control_url}\n"
             f"Частота: 528 Гц | Пульс: 60 BPM"
         )
     }
-    with open(SLI_TG, "w", encoding="utf-8") as f:
+    with open(REMOTE_CONTROL_TG, "w", encoding="utf-8") as f:
         json.dump(tg_invite, f, indent=2, ensure_ascii=False)
 
     # 6. Gmail RFC 822 Dispatch with QR Code Attachment
     msg = MIMEMultipart("related")
-    msg["Subject"] = "⚜️ [ПРИГЛАШЕНИЕ SLI] Сессия удаленного управления /device remote control (528 Гц)"
+    msg["Subject"] = "⚜️ [ПРИГЛАШЕНИЕ] Сессия удаленного управления /device remote control (528 Гц)"
     msg["From"] = "RADRILONIUMA Sovereign HQ <sovereign@radriloniuma.org>"
     msg["To"] = "lkises01@gmail.com, elafeatriania@gmail.com, denua7723@gmail.com"
     msg["Date"] = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
@@ -933,7 +933,7 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
     <p>Уважаемые Главные Операторы: <strong>Architit</strong>, <strong>Ayaearias Triania</strong>, <strong>Captain Denua</strong>!</p>
     <p>Активирован режим <code>/device remote control</code>. Сессия достанется первому оператору, закрывшему окно смены нажатием <strong>[ДА]</strong>.</p>
     <div style="text-align: center; margin: 25px 0;">
-      <p><img src="cid:qrcode" style="width: 240px; height: 240px; border-radius: 8px; border: 2px solid #00f0ff;" alt="SLI Remote Control QR"></p>
+      <p><img src="cid:qrcode" style="width: 240px; height: 240px; border-radius: 8px; border: 2px solid #00f0ff;" alt="Remote Control QR"></p>
       <a href="{remote_control_url}" style="background: #0284c7; color: white; padding: 14px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">
         ПОДКЛЮЧИТЬСЯ К УДАЛЕННОМУ УПРАВЛЕНИЮ
       </a>
@@ -945,24 +945,24 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
     msg.attach(MIMEText(html_email, "html", "utf-8"))
 
     # Attach QR code image as inline CID
-    if SLI_QR_PNG.exists():
+    if REMOTE_CONTROL_QR_PNG.exists():
         try:
-            with open(SLI_QR_PNG, "rb") as f:
+            with open(REMOTE_CONTROL_QR_PNG, "rb") as f:
                 img_part = MIMEImage(f.read())
                 img_part.add_header("Content-ID", "<qrcode>")
-                img_part.add_header("Content-Disposition", "inline", filename="SLI_DEVICE_REMOTE_CONTROL_QR.png")
+                img_part.add_header("Content-Disposition", "inline", filename="DEVICE_REMOTE_CONTROL_QR.png")
                 msg.attach(img_part)
         except Exception:
             pass
 
-    with open(SLI_EML, "w", encoding="utf-8") as f:
+    with open(REMOTE_CONTROL_EML, "w", encoding="utf-8") as f:
         f.write(msg.as_string())
 
     print(f"✅ [STAGE 7] Remote control dispatch prepared:")
     print(f"   ↳ URL: {remote_control_url}")
-    print(f"   ↳ QR Code: {SLI_QR_PNG}")
-    print(f"   ↳ Telegram: {SLI_TG}")
-    print(f"   ↳ Gmail: {SLI_EML}")
+    print(f"   ↳ QR Code: {REMOTE_CONTROL_QR_PNG}")
+    print(f"   ↳ Telegram: {REMOTE_CONTROL_TG}")
+    print(f"   ↳ Gmail: {REMOTE_CONTROL_EML}")
     return sli_reservation
 
 

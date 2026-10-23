@@ -5,7 +5,7 @@
 
 ## 1. PRINCIPLE OF SHIFT VACANCY & ZERO HARDCODED ATTENDEES
 1. **Vacant Event Baseline:**
-   - Any scheduled circadian shift created in SLI / Google Calendar (`content://com.android.calendar/events`) MUST NOT contain hardcoded pre-assigned guests/attendees.
+   - Any scheduled circadian shift created in Google Calendar (`content://com.android.calendar/events`) MUST NOT contain hardcoded pre-assigned guests/attendees.
    - The event serves strictly as a **Market Offer / Shift Vacancy (Свободные места)** issued by the Headquarters Organizer (`lkises01@gmail.com`).
 2. **Registration Gate (Strict Acceptance Ingress):**
    - An operator is NEVER registered as a guest (`attendee`) in advance.
