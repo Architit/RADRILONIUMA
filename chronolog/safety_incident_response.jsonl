@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-10-19T22:36:31.690623+00:00", "incident_type": "OPERATOR_CLAIM_REJECTED", "details": {"shift_id": "SHIFT_02", "operator_email": "nazarzadoyanchuk5x@gmail.com", "reason": "CAPACITY_AUDIT_FAILED_INCAPACITATED", "details": {"cognitive_readiness": false, "reaction_latency_ms": 190, "hardware_quorum": false, "sober_attestation": false}}}

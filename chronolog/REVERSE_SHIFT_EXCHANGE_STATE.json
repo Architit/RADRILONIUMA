@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-10-19T22:20:16.175809+00:00",
+  "shifts": {
+    "SHIFT_01": {
+      "status": "VACANT_CASCADE",
+      "accepted_operators": [],
+      "current_wave_index": 0,
+      "dispatched_at_ts": 1792794058.866375,
+      "deadline_ts": 1792794358.866375,
+      "invited_candidates": [
+        "doriangrej597@gmail.com",
+        "denua7723@gmail.com",
+        "voroninlosa0@gmail.com",
+        "wanderfate5000@gmail.com"
+      ]
+    },
+    "SHIFT_02": {
+      "status": "FILLED",
+      "accepted_operators": [
+        "doriangrej597@gmail.com"
+      ],
+      "current_wave_index": 1,
+      "dispatched_at_ts": 1792448416.175857,
+      "deadline_ts": 1792448716.175857,
+      "invited_candidates": [
+        "elafeatriania@gmail.com",
+        "elariontrianiumag@gmail.com",
+        "nazarzadoyanchuk5x@gmail.com",
+        "bolu7604@gmail.com"
+      ],
+      "sealed_at_utc": "2026-10-19T22:36:34.314845+00:00",
+      "qualification_details": {
+        "tier": "LVL_2_COPILOT",
+        "readiness_pct": 82,
+        "safety_mode": "AUTOPILOT_SENTRY_CO_PILOT",
+        "autopilot_guard": "DEV_05_SWARM_MATRIX_432HZ_ACTIVE"
+      }
+    },
+    "SHIFT_03": {
+      "status": "VACANT_CASCADE",
+      "accepted_operators": [],
+      "current_wave_index": 0,
+      "dispatched_at_ts": 1792794058.866375,
+      "deadline_ts": 1792794358.866375,
+      "invited_candidates": [
+        "doriangrej597@gmail.com",
+        "denua7723@gmail.com",
+        "voroninlosa0@gmail.com",
+        "wanderfate5000@gmail.com"
+      ]
+    },
+    "SHIFT_04": {
+      "status": "VACANT_CASCADE",
+      "accepted_operators": [],
+      "current_wave_index": 0,
+      "dispatched_at_ts": 1792794058.866375,
+      "deadline_ts": 1792794358.866375,
+      "invited_candidates": [
+        "doriangrej597@gmail.com",
+        "denua7723@gmail.com",
+        "voroninlosa0@gmail.com",
+        "wanderfate5000@gmail.com"
+      ]
+    }
+  },
+  "active_waves": {},
+  "last_updated_utc": "2026-10-23T22:21:08.436760+00:00"
+}

@@ -1,427 +1,317 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//RADRILONIUMA//TRIANIUMA SHIFT DISPATCHER 528HZ//RU
+PRODID:-//RADRILONIUMA//7-Day 4-Shift Circadian Matrix//RU
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:RADRILONIUMA Sovereign 7-Day 4-Shifts Matrix
+X-WR-CALNAME:РАДРИЛОНИУМА: График 7 Дней / 4 Смены по 6 Часов (528 Гц)
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:Полная матрица 28 смен на 7 дней кластера RADRILONIUMA. Операторы: Mini Ghost // Void, Кен, Wanderfate.
 BEGIN:VEVENT
-UID:RADR-SHIFT-1-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261018T000000Z
-DTEND:20261018T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-18&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:RADR-SHIFT-2-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-18-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261018T060000Z
 DTEND:20261018T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [CONFIRMED_YES]
-DESCRIPTION:Оператор: Кен (Ken Redmi Node Operator)\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-18&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [ACCEPTED_YES]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: Mini Ghost // Void (@Karl_Galageer)\nСтатус: ACCEPTED_YES\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
 STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-3-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-18-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261018T120000Z
 DTEND:20261018T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [CONFIRMED_YES]
-DESCRIPTION:Оператор: Primary Master (Architit)\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-18&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [ACCEPTED_YES]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: Mini Ghost // Void (@Karl_Galageer)\nСтатус: ACCEPTED_YES\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
 STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-4-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-18-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261018T180000Z
-DTEND:20261018T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [CONFIRMED_YES]
-DESCRIPTION:Оператор: Lady Ayaearias Triania\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-18&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
+DTEND:20261019T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [ACCEPTED_YES]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: Wanderfate (@Wanderfate_Astral)\nСтатус: ACCEPTED_YES\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
 STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-5-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261019T000000Z
-DTEND:20261019T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-19&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-18-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261018T000000Z
+DTEND:20261018T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [ACCEPTED_YES]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: Кен (@Ken_Redmi_Tech)\nСтатус: ACCEPTED_YES\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-6-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-19-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261019T060000Z
 DTEND:20261019T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [CONFIRMED_YES]
-DESCRIPTION:Оператор: Captain Denua\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-19&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [ACCEPTED_YES]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: Mini Ghost // Void (@Karl_Galageer)\nСтатус: ACCEPTED_YES\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
 STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-7-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-19-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261019T120000Z
 DTEND:20261019T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-19&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-8-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-19-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261019T180000Z
-DTEND:20261019T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-19&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261020T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-9-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261020T000000Z
-DTEND:20261020T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-20&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-19-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261019T000000Z
+DTEND:20261019T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-10-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-20-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261020T060000Z
 DTEND:20261020T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-20&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [VACANT]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-11-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-20-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261020T120000Z
 DTEND:20261020T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-20&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-12-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-20-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261020T180000Z
-DTEND:20261020T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-20&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261021T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-13-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261021T000000Z
-DTEND:20261021T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-21&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-20-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261020T000000Z
+DTEND:20261020T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-14-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-21-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261021T060000Z
 DTEND:20261021T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-21&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [VACANT]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-15-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-21-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261021T120000Z
 DTEND:20261021T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-21&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-16-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-21-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261021T180000Z
-DTEND:20261021T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-21&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261022T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-17-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261022T000000Z
-DTEND:20261022T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-22&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-21-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261021T000000Z
+DTEND:20261021T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-18-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-22-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261022T060000Z
 DTEND:20261022T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-22&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [VACANT]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-19-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-22-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261022T120000Z
 DTEND:20261022T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-22&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-20-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-22-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261022T180000Z
-DTEND:20261022T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-22&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261023T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-21-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261023T000000Z
-DTEND:20261023T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-23&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-22-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261022T000000Z
+DTEND:20261022T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-22-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-23-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261023T060000Z
 DTEND:20261023T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-23&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [VACANT]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-23-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-23-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261023T120000Z
 DTEND:20261023T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-23&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-24-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-23-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261023T180000Z
-DTEND:20261023T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-23&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261024T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-25-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
-DTSTART:20261024T000000Z
-DTEND:20261024T060000Z
-SUMMARY:⚜️ Смена #1: Ночная Стража (Night Watch) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Ядерная оптимизация, сброс кэшей, фоновая синхронизация томов D: и E:\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-24&shift=1&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+UID:rad-shift-2026-10-23-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261023T000000Z
+DTEND:20261023T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-26-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-24-s1@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261024T060000Z
 DTEND:20261024T120000Z
-SUMMARY:⚜️ Смена #2: Утренняя Стража (Morning Awakening & Ingress) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Пробуждение кластера, частотная гармонизация 528 Гц, банковские коридоры\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-24&shift=2&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 1: Утренняя Заря (Morning Ingress & EU Banking) [VACANT]
+DESCRIPTION:Смена #1 (06:00 - 12:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Европейский фиат, открытие банковских коридоров (ING, N26, KvK, Wise), утренний клиринг SEPA, запуск потоковых загрузчиков.\nШлюзы: ing, n26, kvk, wise
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-27-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-24-s2@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261024T120000Z
 DTEND:20261024T180000Z
-SUMMARY:⚜️ Смена #3: Дневная Стража (Zenith Deep Work) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Глубокая разработка, тестирование кандидатов Академии, эквайринг, пуш subtree\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-24&shift=3&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+SUMMARY:⚜️ Смена 2: Дневной Зенит (Meridian Acquiring & Retail Rails) [VACANT]
+DESCRIPTION:Смена #2 (12:00 - 18:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Эквайринг и биллинг (Stripe, PayPal, Visa, Mastercard rails), украинский фиат (Монобанк, ПриватБанк), обработка P2P Bybit.\nШлюзы: stripe, paypal, visa, mastercard, monobank, privatbank
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:RADR-SHIFT-28-20261018@trianiuma.org
-DTSTAMP:20261018T082826Z
+UID:rad-shift-2026-10-24-s3@trianiuma.org
+DTSTAMP:20261019T211453Z
 DTSTART:20261024T180000Z
-DTEND:20261024T235959Z
-SUMMARY:⚜️ Смена #4: Вечерняя Стража (Evening Handover & Sealing) [VACANT_AWAITING_OPERATOR_SELECTION]
-DESCRIPTION:Оператор: ТРЕБУЕТСЯ ВЫБОР ОПЕРАТОРА\nФокус: Подведение итогов, фиксация хроник chronolog, передача дежурства, сейф 70%\nПодтверждение ДА: http://192.168.137.1:7681/shift_confirm?date=2026-10-24&shift=4&action=YES
-LOCATION:Уровень 0 (Штаб TRIANIUMA / DEV_01 Bushmaster & Atesirt Node)
-STATUS:TENTATIVE
-BEGIN:VALARM
-TRIGGER:-PT1H
-ACTION:DISPLAY
-DESCRIPTION:Напоминание о смене RADRILONIUMA (528 Hz)
-END:VALARM
+DTEND:20261025T000000Z
+SUMMARY:⚜️ Смена 3: Вечерний Дозор (Sunset Liquidity Guard & Cold Vault) [VACANT]
+DESCRIPTION:Смена #3 (18:00 - 00:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 528 Hz\nФокус: Биржевой мост Kraken EUR -> Crypto, фиксация прибыли, вывод свободной ликвидности в Trust Wallet (70% холодное хранилище).\nШлюзы: kraken, bybit, trustwallet
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:rad-shift-2026-10-24-s4@trianiuma.org
+DTSTAMP:20261019T211453Z
+DTSTART:20261024T000000Z
+DTEND:20261024T060000Z
+SUMMARY:⚜️ Смена 4: Ночной Страж (Deep Night Circadian & Autopilot) [VACANT]
+DESCRIPTION:Смена #4 (00:00 - 06:00 UTC)\nОператор: VACANT_SLOT (NONE)\nСтатус: VACANT\nНесущая: 432 Hz\nФокус: Автопилот кластера 60 BPM (DEV_05 Swarm Matrix, 432 Гц), дефрагментация бакетов дисков D: и E:, проверка кэшей ядра, защита Seed на DEV_04 T7 Vault.\nШлюзы: trustwallet, t7_vault, autopilot_core, swarm_matrix
+LOCATION:Командный Штаб TRIANIUMA (DEV_01 Bushmaster)
+TENTATIVE
+TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR

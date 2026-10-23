@@ -1,6 +1,6 @@
 {
   "event": "DIRECTIVE_INIT_LAST_3_SESSIONS_SEGMENTS",
-  "timestamp_utc": "2026-10-18T08:28:26.401367+00:00",
+  "timestamp_utc": "2026-10-19T19:42:18.227701+00:00",
   "emitter": "ATPLT_BOOT_LOADER_SOVEREIGN_SUPREME",
   "carrier_frequency": "528 Hz / 432 Hz",
   "metabolic_pulse": "60 BPM",
@@ -16,8 +16,8 @@
       "session_id": "ca2d944d-e99b-4ec1-9a27-7fa50f96003f",
       "sequence_index": 1,
       "session_type": "ARCHIVE_TRANSFER_CAPSULE",
-      "capsule_id": "SSN-CAPSULE-CA2D944D-4B1E3028",
-      "sha256_seal": "4b1e3028b56cda7117f7980475e07144386233752125d6df12dab02eb51a0a01",
+      "capsule_id": "SSN-CAPSULE-CA2D944D-B1A797D8",
+      "sha256_seal": "b1a797d8823fb955af7e5c1cd30f23cd3479b98182dc87bcd4e558ff0ac186cd",
       "final_segment": "Archivator_Agent_20260305_024118.tgz.seg_00044_cefe365b.bin",
       "focus": "G.V.11 Target Matrix, 8-Source Saturation, Transfer Capsule Sealing",
       "resonance": "528 Hz"

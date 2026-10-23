@@ -1,0 +1,1127 @@
+{
+  "year": 2026,
+  "month": 10,
+  "month_name": "October",
+  "total_days": 31,
+  "total_seats": 93,
+  "vacant_seats": 93,
+  "reserved_seats": 0,
+  "days": {
+    "2026-10-01": {
+      "day": 1,
+      "weekday": "Thursday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-01_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-01_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-01_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-02": {
+      "day": 2,
+      "weekday": "Friday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-02_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-02_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-02_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-03": {
+      "day": 3,
+      "weekday": "Saturday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-03_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-03_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-03_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-04": {
+      "day": 4,
+      "weekday": "Sunday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-04_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-04_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-04_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-05": {
+      "day": 5,
+      "weekday": "Monday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-05_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-05_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-05_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-06": {
+      "day": 6,
+      "weekday": "Tuesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-06_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-06_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-06_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-07": {
+      "day": 7,
+      "weekday": "Wednesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-07_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-07_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-07_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-08": {
+      "day": 8,
+      "weekday": "Thursday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-08_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-08_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-08_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-09": {
+      "day": 9,
+      "weekday": "Friday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-09_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-09_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-09_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-10": {
+      "day": 10,
+      "weekday": "Saturday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-10_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-10_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-10_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-11": {
+      "day": 11,
+      "weekday": "Sunday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-11_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-11_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-11_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-12": {
+      "day": 12,
+      "weekday": "Monday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-12_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-12_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-12_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-13": {
+      "day": 13,
+      "weekday": "Tuesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-13_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-13_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-13_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-14": {
+      "day": 14,
+      "weekday": "Wednesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-14_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-14_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-14_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-15": {
+      "day": 15,
+      "weekday": "Thursday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-15_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-15_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-15_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-16": {
+      "day": 16,
+      "weekday": "Friday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-16_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-16_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-16_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-17": {
+      "day": 17,
+      "weekday": "Saturday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-17_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-17_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-17_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-18": {
+      "day": 18,
+      "weekday": "Sunday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-18_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-18_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-18_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-19": {
+      "day": 19,
+      "weekday": "Monday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-19_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-19_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-19_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-20": {
+      "day": 20,
+      "weekday": "Tuesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-20_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-20_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-20_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-21": {
+      "day": 21,
+      "weekday": "Wednesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-21_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-21_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-21_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-22": {
+      "day": 22,
+      "weekday": "Thursday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-22_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-22_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-22_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-23": {
+      "day": 23,
+      "weekday": "Friday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-23_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-23_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-23_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-24": {
+      "day": 24,
+      "weekday": "Saturday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-24_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-24_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-24_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-25": {
+      "day": 25,
+      "weekday": "Sunday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-25_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-25_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-25_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-26": {
+      "day": 26,
+      "weekday": "Monday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-26_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-26_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-26_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-27": {
+      "day": 27,
+      "weekday": "Tuesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-27_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-27_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-27_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-28": {
+      "day": 28,
+      "weekday": "Wednesday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-28_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-28_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-28_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-29": {
+      "day": 29,
+      "weekday": "Thursday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-29_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-29_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-29_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-30": {
+      "day": 30,
+      "weekday": "Friday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-30_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-30_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-30_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    },
+    "2026-10-31": {
+      "day": 31,
+      "weekday": "Saturday",
+      "slots": {
+        "1": {
+          "slot_id": "2026-10-31_S1",
+          "name": "Смена 1 Штаба (Ночной Дозор - Архитектура)",
+          "hours": "21:00 - 05:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Архитектура штаба, установка и настройка компонентов ядра, выпуск директив, аудит репозиториев и целостности узлов DEV_01..DEV_05.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "2": {
+          "slot_id": "2026-10-31_S2",
+          "name": "Смена 2 Штаба (Утренняя Вахта - Инженерный Контроль)",
+          "hours": "05:00 - 13:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль накопителей D, E, F, мониторинг конвейера данных Zero Copy, синхронизация 68 органов кластера, удержание сокетов ADB/USB-C.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        },
+        "3": {
+          "slot_id": "2026-10-31_S3",
+          "name": "Смена 3 Штаба (Дневной Дозор - Оркестрация)",
+          "hours": "13:00 - 21:00",
+          "status": "VACANT_SEAT",
+          "booked_by": null,
+          "operator_email": null,
+          "focus": "Контроль 7 демонов PM2, сопровождение задач кластера, координация мобильных узлов, тестирование компонентов и связь с операторами.",
+          "supervision_mode": "AUTOPILOT_CO_PILOT_READY"
+        }
+      }
+    }
+  }
+}

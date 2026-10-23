@@ -1,6 +1,6 @@
 {
-  "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261018",
-  "created_at_utc": "2026-10-18T08:28:26.732894+00:00",
+  "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261019",
+  "created_at_utc": "2026-10-19T19:42:18.634264+00:00",
   "status": "AWAITING_FIRST_RESPONDER_ACCEPTANCE",
   "lease_rule": "FIRST_TO_PRESS_YES_IN_CALENDAR_GAINS_CLI_SESSION_CONTROL",
   "eligible_master_operators": [
@@ -25,7 +25,7 @@
   ],
   "assigned_operator": null,
   "assigned_at_utc": null,
-  "remote_control_url": "http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY",
+  "remote_control_url": "http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261019&token=TRIANIUMA-SOVEREIGN-KEY",
   "qr_image_path": "/root/RADRILONIUMA/chronolog/SLI_DEVICE_REMOTE_CONTROL_QR.png",
   "carrier_frequency": "528 Hz"
 }

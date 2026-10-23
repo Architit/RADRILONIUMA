@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "2026-10-23T22:21:19.114943+00:00",
+  "type": "WEEKLY_OPERATIONAL_SURVEY",
+  "recipients": [
+    "doriangrej597@gmail.com",
+    "wanderfate5000@gmail.com",
+    "voroninlosa0@gmail.com",
+    "nazarzadoyanchuk5x@gmail.com",
+    "denua7723@gmail.com"
+  ],
+  "subject": "⚜️ ЕЖЕНЕДЕЛЬНЫЙ ОПРОС ШТАБА: Выбор смен, выходных и больничных на предстоящую неделю",
+  "bot_ingress": "https://t.me/Trianiuma_Bot/shift_claim?startapp=weekly_survey"
+}

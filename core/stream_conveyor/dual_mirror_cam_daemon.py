@@ -34,19 +34,25 @@ def get_adb() -> str:
 
 def enforce_permanent_trust(adb_bin: str) -> None:
     for pkg in ("com.microsoft.appmanager", "com.samsung.android.mdx", "com.android.chrome"):
-        subprocess.run(
-            [adb_bin, "-s", SERIAL, "shell", "cmd", "appops", "set", pkg, "PROJECT_MEDIA", "allow"],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            timeout=4,
-        )
+        try:
+            subprocess.run(
+                [adb_bin, "-s", SERIAL, "shell", "cmd", "appops", "set", pkg, "PROJECT_MEDIA", "allow"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=4,
+            )
+        except Exception:
+            pass
     for port in ("3001", "3000", "5280"):
-        subprocess.run(
-            [adb_bin, "-s", SERIAL, "reverse", f"tcp:{port}", f"tcp:{port}"],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            timeout=4,
-        )
+        try:
+            subprocess.run(
+                [adb_bin, "-s", SERIAL, "reverse", f"tcp:{port}", f"tcp:{port}"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=4,
+            )
+        except Exception:
+            pass
 
 
 def auto_approve_media_projection_if_present(adb_bin: str) -> bool:
@@ -147,7 +153,7 @@ def main() -> None:
         except Exception:
             pass
 
-        time.sleep(0.65)
+        time.sleep(3.0)
 
 
 if __name__ == "__main__":

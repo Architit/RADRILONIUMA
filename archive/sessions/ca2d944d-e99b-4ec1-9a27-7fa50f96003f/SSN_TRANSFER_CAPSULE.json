@@ -1,11 +1,11 @@
 {
-  "capsule_id": "SSN-CAPSULE-CA2D944D-4B1E3028",
-  "sha256_seal": "4b1e3028b56cda7117f7980475e07144386233752125d6df12dab02eb51a0a01",
+  "capsule_id": "SSN-CAPSULE-CA2D944D-8EC9C56B",
+  "sha256_seal": "8ec9c56bb785a28b9c4c8be2284655edb9ed3da83be7b21d580c2884ca75ec53",
   "status": "SEALED_TRANSFER_CAPSULE",
   "payload": {
     "capsule_version": "1.0.0",
     "source_session_id": "ca2d944d-e99b-4ec1-9a27-7fa50f96003f",
-    "created_at_utc": "2026-10-18T06:08:34.174277+00:00",
+    "created_at_utc": "2026-10-23T20:45:43.045887+00:00",
     "hard_deadline_lock": {
       "target_generation": "G.V.11 (AETHER ASTRAL APEX)",
       "deadline_date": "2026.11.29",

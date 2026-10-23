@@ -1,7 +1,7 @@
 {
   "event": "SLI_REMOTE_CONTROL_INVITATION_DISPATCH",
-  "timestamp_utc": "2026-10-18T08:28:26.733535+00:00",
-  "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261018",
-  "url": "http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY",
-  "caption": "⚜️ ПРИГЛАШЕНИЕ В СЕССИЮ ДИСТАНЦИОННОГО УПРАВЛЕНИЯ КЛАСТЕРОМ /device remote control ⚜️\n\nВнимание 3 Главным Операторам (@Kirihanis, @AyaeariasTriania, @DenuaCaptain)!\nОткрыто окно доступа к активной CLI-сессии RADRILONIUMA.\n\nПравило передачи вахты (SLI Lease):\nСессия удаленного управления закрепляется за ТЕМ ОПЕРАТОРОМ, КТО ПЕРВЫМ закроет окно смены, нажав 'ДА' в календаре и перейдя по ссылке или QR-коду в приложение Antigravity!\n\n🔗 Прямая ссылка: http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261018&token=TRIANIUMA-SOVEREIGN-KEY\nЧастота: 528 Гц | Пульс: 60 BPM"
+  "timestamp_utc": "2026-10-19T19:42:18.635165+00:00",
+  "session_id": "SLI-LIVE-528HZ-FIRST-RESPONDER-20261019",
+  "url": "http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261019&token=TRIANIUMA-SOVEREIGN-KEY",
+  "caption": "⚜️ ПРИГЛАШЕНИЕ В СЕССИЮ ДИСТАНЦИОННОГО УПРАВЛЕНИЯ КЛАСТЕРОМ /device remote control ⚜️\n\nВнимание 3 Главным Операторам (@Kirihanis, @AyaeariasTriania, @DenuaCaptain)!\nОткрыто окно доступа к активной CLI-сессии RADRILONIUMA.\n\nПравило передачи вахты (SLI Lease):\nСессия удаленного управления закрепляется за ТЕМ ОПЕРАТОРОМ, КТО ПЕРВЫМ закроет окно смены, нажав 'ДА' в календаре и перейдя по ссылке или QR-коду в приложение Antigravity!\n\n🔗 Прямая ссылка: http://192.168.137.1:7681/?mode=dual&session_id=SLI-LIVE-528HZ-FIRST-RESPONDER-20261019&token=TRIANIUMA-SOVEREIGN-KEY\nЧастота: 528 Гц | Пульс: 60 BPM"
 }
