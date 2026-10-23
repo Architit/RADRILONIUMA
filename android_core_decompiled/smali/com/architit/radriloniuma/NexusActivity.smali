@@ -440,7 +440,7 @@
 
     invoke-direct {v4, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v7, "RADRILONIUMA OS v00.00.00"
+    const-string v7, "RADRILONIUMA OS v00.10.14-V10"
 
     .line 84
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -788,11 +788,13 @@
     .line 174
     iget-object v1, p0, Lcom/architit/radriloniuma/NexusActivity;->startMenu:Landroid/widget/LinearLayout;
 
-    const-string v2, "\u2728 GEMINI CORE"
+    new-instance v2, Lcom/architit/radriloniuma/NexusActivity$GeminiListener;
 
-    const/4 v3, 0x0
+    invoke-direct {v2, p0}, Lcom/architit/radriloniuma/NexusActivity$GeminiListener;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
 
-    invoke-direct {p0, v2, v3}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
+    const-string v3, "\u2728 GEMINI CORE"
+
+    invoke-direct {p0, v3, v2}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -801,9 +803,13 @@
     .line 175
     iget-object v1, p0, Lcom/architit/radriloniuma/NexusActivity;->startMenu:Landroid/widget/LinearLayout;
 
-    const-string v2, "\ud83e\udd16 AGENTS"
+    new-instance v2, Lcom/architit/radriloniuma/NexusActivity$AgentsListener;
 
-    invoke-direct {p0, v2, v3}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
+    invoke-direct {v2, p0}, Lcom/architit/radriloniuma/NexusActivity$AgentsListener;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    const-string v3, "\ud83e\udd16 AGENTS"
+
+    invoke-direct {p0, v3, v2}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -817,6 +823,21 @@
     invoke-direct {v2, p0}, Lcom/architit/radriloniuma/NexusActivity$4;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
 
     const-string v3, "\u2699\ufe0f SETTINGS"
+
+    invoke-direct {p0, v3, v2}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 177
+    iget-object v1, p0, Lcom/architit/radriloniuma/NexusActivity;->startMenu:Landroid/widget/LinearLayout;
+
+    new-instance v2, Lcom/architit/radriloniuma/NexusActivity$ExitListener;
+
+    invoke-direct {v2, p0}, Lcom/architit/radriloniuma/NexusActivity$ExitListener;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    const-string v3, "\ud83d\udeaa EXIT TO PHONE"
 
     invoke-direct {p0, v3, v2}, Lcom/architit/radriloniuma/NexusActivity;->createStartMenuItem(Ljava/lang/String;Landroid/view/View$OnClickListener;)Landroid/widget/TextView;
 
@@ -1104,6 +1125,12 @@
     invoke-direct {p0, v1}, Lcom/architit/radriloniuma/NexusActivity;->createSettingAction(Ljava/lang/String;)Landroid/widget/Button;
 
     move-result-object v1
+
+    new-instance v4, Lcom/architit/radriloniuma/NexusActivity$SyncListener;
+
+    invoke-direct {v4, p0}, Lcom/architit/radriloniuma/NexusActivity$SyncListener;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    invoke-virtual {v1, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 307
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -2150,9 +2177,54 @@
     goto :goto_0
 
     :cond_0
-    const-string v0, "[CRITICAL] OS Bootstrapping in progress. Please wait.\n"
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    .line 531
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const-string v3, "/system/bin/sh"
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    invoke-virtual {v1, v2}, Ljava/lang/Runtime;->exec([Ljava/lang/String;)Ljava/lang/Process;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/architit/radriloniuma/NexusActivity;->cliProcess:Ljava/lang/Process;
+
+    invoke-virtual {v0}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/architit/radriloniuma/NexusActivity;->cliOut:Ljava/io/OutputStream;
+
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lcom/architit/radriloniuma/NexusActivity$13;
+
+    invoke-direct {v1, p0}, Lcom/architit/radriloniuma/NexusActivity$13;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lcom/architit/radriloniuma/NexusActivity$14;
+
+    invoke-direct {v1, p0}, Lcom/architit/radriloniuma/NexusActivity$14;-><init>(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    const-string v0, "[SYS] Native Android Terminal Spawned (/system/bin/sh).\n\n"
+
     invoke-direct {p0, v0}, Lcom/architit/radriloniuma/NexusActivity;->appendOutput(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0

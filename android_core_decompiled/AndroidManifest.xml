@@ -10,8 +10,8 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <application android:allowBackup="true" android:icon="@drawable/ic_logo" android:label="LAM Core V10" android:requestLegacyExternalStorage="true" android:roundIcon="@drawable/ic_logo" android:theme="@android:style/Theme.NoTitleBar">
-        <activity android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleInstance" android:name=".NexusActivity" android:windowSoftInputMode="adjustResize">
+    <application android:allowBackup="true" android:icon="@drawable/ic_logo" android:label="RADRILONIUMA OS" android:requestLegacyExternalStorage="true" android:roundIcon="@drawable/ic_logo" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:exported="true" android:label="RADRILONIUMA OS" android:launchMode="singleInstance" android:name=".NexusActivity" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
