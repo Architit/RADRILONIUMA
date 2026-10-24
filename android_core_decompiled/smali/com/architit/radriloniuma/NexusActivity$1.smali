@@ -3,12 +3,12 @@
 .source "NexusActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/architit/radriloniuma/NexusActivity;->onCreate(Landroid/os/Bundle;)V
+    value = Lcom/architit/radriloniuma/NexusActivity;->buildBottomDock()Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,23 @@
 # instance fields
 .field final synthetic this$0:Lcom/architit/radriloniuma/NexusActivity;
 
+.field final synthetic val$tabIndex:I
+
 
 # direct methods
-.method constructor <init>(Lcom/architit/radriloniuma/NexusActivity;)V
+.method constructor <init>(Lcom/architit/radriloniuma/NexusActivity;I)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x8010
-        }
-        names = {
-            null
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
         }
     .end annotation
 
-    .line 58
+    .prologue
+    .line 290
     iput-object p1, p0, Lcom/architit/radriloniuma/NexusActivity$1;->this$0:Lcom/architit/radriloniuma/NexusActivity;
+
+    iput p2, p0, Lcom/architit/radriloniuma/NexusActivity$1;->val$tabIndex:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,13 +45,17 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 2
 
-    .line 61
+    .prologue
+    .line 293
     iget-object v0, p0, Lcom/architit/radriloniuma/NexusActivity$1;->this$0:Lcom/architit/radriloniuma/NexusActivity;
 
-    invoke-static {v0}, Lcom/architit/radriloniuma/NexusActivity;->access$000(Lcom/architit/radriloniuma/NexusActivity;)V
+    iget v1, p0, Lcom/architit/radriloniuma/NexusActivity$1;->val$tabIndex:I
 
+    invoke-static {v0, v1}, Lcom/architit/radriloniuma/NexusActivity;->access$100(Lcom/architit/radriloniuma/NexusActivity;I)V
+
+    .line 294
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/architit/radriloniuma/NexusActivity;->buildOSLayout()V
+    value = Lcom/architit/radriloniuma/NexusActivity;->buildOrgansTabView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,23 @@
 # instance fields
 .field final synthetic this$0:Lcom/architit/radriloniuma/NexusActivity;
 
+.field final synthetic val$deck:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/architit/radriloniuma/NexusActivity;)V
+.method constructor <init>(Lcom/architit/radriloniuma/NexusActivity;Ljava/lang/String;)V
     .locals 0
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x8010
-        }
-        names = {
-            null
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
         }
     .end annotation
 
-    .line 121
+    .prologue
+    .line 577
     iput-object p1, p0, Lcom/architit/radriloniuma/NexusActivity$2;->this$0:Lcom/architit/radriloniuma/NexusActivity;
+
+    iput-object p2, p0, Lcom/architit/radriloniuma/NexusActivity$2;->val$deck:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,12 +46,21 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 0
+    .locals 2
 
-    .line 123
-    iget-object p1, p0, Lcom/architit/radriloniuma/NexusActivity$2;->this$0:Lcom/architit/radriloniuma/NexusActivity;
+    .prologue
+    .line 580
+    iget-object v0, p0, Lcom/architit/radriloniuma/NexusActivity$2;->this$0:Lcom/architit/radriloniuma/NexusActivity;
 
-    invoke-static {p1}, Lcom/architit/radriloniuma/NexusActivity;->access$100(Lcom/architit/radriloniuma/NexusActivity;)V
+    iget-object v1, p0, Lcom/architit/radriloniuma/NexusActivity$2;->val$deck:Ljava/lang/String;
 
+    invoke-static {v0, v1}, Lcom/architit/radriloniuma/NexusActivity;->access$202(Lcom/architit/radriloniuma/NexusActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 581
+    iget-object v0, p0, Lcom/architit/radriloniuma/NexusActivity$2;->this$0:Lcom/architit/radriloniuma/NexusActivity;
+
+    invoke-static {v0}, Lcom/architit/radriloniuma/NexusActivity;->access$300(Lcom/architit/radriloniuma/NexusActivity;)V
+
+    .line 582
     return-void
 .end method
