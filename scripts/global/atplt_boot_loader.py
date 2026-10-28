@@ -43,7 +43,11 @@ REPO_ROOT = Path("/root/RADRILONIUMA")
 GATEWAY_DIR = REPO_ROOT / ".gateway"
 CHRONOLOG_DIR = REPO_ROOT / "chronolog"
 ARCHIVE_SESSIONS_DIR = REPO_ROOT / "archive/sessions"
-BRAIN_ARTIFACT_DIR = Path("/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/b80ce36c-ce34-44b8-b5f3-aced0ce6f2cf")
+BRAIN_BASE_DIR = Path("/mnt/c/Users/BushM/.gemini/antigravity-cli/brain")
+BRAIN_ARTIFACT_DIRS = [
+    Path("/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/dc195096-0d42-48f6-b345-adc41d3d6e62"),
+    Path("/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/b80ce36c-ce34-44b8-b5f3-aced0ce6f2cf")
+]
 
 GATEWAY_DIR.mkdir(parents=True, exist_ok=True)
 CHRONOLOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -866,11 +870,12 @@ def stage_7_remote_control_and_qr_dispatch() -> Dict[str, Any]:
         img.save(str(REMOTE_CONTROL_QR_PNG))
         print(f"✅ Generated High-Res QR Code: {REMOTE_CONTROL_QR_PNG}")
 
-        # Copy to Windows brain artifact directory for display
-        if BRAIN_ARTIFACT_DIR.exists():
-            windows_qr = BRAIN_ARTIFACT_DIR / "DEVICE_REMOTE_CONTROL_QR.png"
-            shutil.copy2(str(REMOTE_CONTROL_QR_PNG), str(windows_qr))
-            print(f"✅ Copied QR Code to Brain Artifact: {windows_qr}")
+        # Copy to Windows brain artifact directories for display
+        for b_dir in BRAIN_ARTIFACT_DIRS:
+            if b_dir.exists():
+                windows_qr = b_dir / "DEVICE_REMOTE_CONTROL_QR.png"
+                shutil.copy2(str(REMOTE_CONTROL_QR_PNG), str(windows_qr))
+                print(f"✅ Copied QR Code to Brain Artifact: {windows_qr}")
     except Exception as e:
         print(f"[STAGE 7 WARNING] QR Code rendering error: {e}")
 
