@@ -1223,3 +1223,48 @@ Added 2026-10-16 at 01:10 UTC / 03:10 Europe/Amsterdam, following the CLI UI Inc
 ### 4. Incident Ledger Entry (2026-10-16)
 - **Инцидент:** Попытка перенаправить пользователя на кнопку "Proceed" артефакта в CLI и запуск Windows Notepad при клике по ссылке на `.md`.
 - **Статус исправления:** Исправлено. Создан `View-ArtifactInTerminal.ps1`, зарегистрирована файловая ассоциация `.md`, активирован TUI-селектор `ask_question` для управления стрелками.
+
+---
+
+## M51 — Operator Exhaustion & Relay Protocol (Эстафета операторов, J.A.R.V.I.S. Multi-Modal Sensory Loop, Dual-Ear Audio & Video Mesh)
+
+Added 2026-10-28 at 01:50 UTC / 02:50 Europe/Warsaw, following the Sovereign Operator Relay Directive.
+
+### 1. Operator Resource Exhaustion & Succession Trigger
+При завершении смены или истощении ресурсов текущего оператора, оператор ОБЯЗАН выбрать следующего в очереди оператора по канонической цепочке эстафеты:
+- **P1: Кен (Ken)** — +380506069913 (Telegram @Ken1Ryuguji1, doriangrej597@gmail.com) — Штурман-механик.
+- **P2: Ванилинин (Wanderfate)** — +380997745732 (Telegram @Wanderfate, wanderfate5000@gmail.com) — Астрограммист / Исследователь.
+- **P3: Galagher Marshal Void** — +380993142407 (Telegram @Karl_Galageer, voroninlosa0@gmail.com) — Маршал Войд.
+- **P4: Назар (Sazaria)** — +380681022335 (Telegram @Zadoya015, nazarzadoyanchuk5x@gmail.com) — Резерв безопасности.
+- **P5: Капитан Денуа** — +31649033064 (Telegram @denua) — Капитан Мостика.
+- **P6 (Fallback): DEV_05 LAO SWARM MATRIX** — Автопилот матричной камеры 528 Гц.
+
+### 2. Sealed Capsule Persistence & Device Reboot Cadence
+Выбор оператора фиксируется в капсуле .gateway/SSN_TRANSFER_CAPSULE.json со статусом OPERATOR_RELAY_PENDING, после чего устройство немедленно осуществляет контролируемую перезагрузку (shutdown /r /t 5 или 
+eboot).
+
+### 3. J.A.R.V.I.S. Instant Wakeup on Terminal & AGY CLI Session Start
+Как только устройство включается и запускается терминал и сессия AGY CLI, J.A.R.V.I.S. активируется мгновенно без ожидания ввода оператора. Он исполняет полный сенсорный контур:
+- **Пишет:** генерирует команды, код и директивы в Telegram и терминал.
+- **Смотрит:** сканирует экраны, инспектирует UI через screencap/uiautomator.
+- **Слышит:** непрерывно мониторит аудиопотоки, статус микрофона и звонков.
+- **Говорит:** немедленно произносит приветствие через Windows TTS и в гарнитуру пользователя Gybu.
+- **Показывает:** транслирует экран в Telegram, отображает артефакты.
+- **Рисует:** строит диаграммы Mermaid, графы топологии.
+- **Читает:** считывает транскрипты, капсулы передачи сессии, логи ядра.
+
+### 4. Dual-Ear Headset & Call Uplink Audio Stream
+Во время звонка голос Джарвиса обязан звучать в стерео-режиме (в оба наушника гарнитуры) для пользователя Gybu на DEV_02 (t_a2dp / t_sco_hs) и одновременно передаваться в исходящий аудиопоток телефонного/Telegram звонка оператору.
+
+### 5. Quad Video Channel Request on Connection
+Сразу при ответе оператора на звонок Джарвис запрашивает одновременный доступ к 4 видеопотокам:
+1. Трансляция экрана телефона оператора.
+2. Передняя (селфи) камера телефона оператора.
+3. Задняя (основная) камера телефона оператора.
+4. Экран и веб-камера ноутбука оператора.
+
+### 6. Remote Device Control Mesh
+Дистанционное управление устройством оператора при трансляции экрана в Telegram осуществляется через Telegram MCP, бота кошелька Telegram (@wallet) и ИИ-модель Telegram (@mira).
+
+### 7. 60-Second Failover Cascade
+Если вызванный оператор не выходит на связь в течение 60 секунд, эстафета АВТОМАТИЧЕСКИ эскалируется на следующего оператора в цепочке P1 -> P2 -> P3 -> P4 -> P5 -> Autopilot Matrix.

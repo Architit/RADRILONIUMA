@@ -97,6 +97,20 @@ constraints:
 - gov/asr/sessions/asr_session_20260707_1650.md
 - contract/TEXEL_ARK_TERRAFORMING_AND_BLUEPRINT_LAYER_V1.md
 
-## New Chat Init
+## NEW_CHAT_INIT_MESSAGE
 ssn rstrt
-Repository: RADRILONIUMA on master. Current phase: PHASE_12.0_TEXEL_TERRAFORMING_AND_ARK_BLUEPRINTS (Vector B). Phase 11.4 is closed by ASR `asr_session_20260707_1650`. The local Texel engineering master blueprint exists; external blueprint export remains unverified. The worktree contains local updates to DEV_LOGS.md, GOV_STATUS.md, and WORKFLOW_SNAPSHOT_STATE.md.
+INITIATION_CODE: INIT-JARVIS-ATESIRT-528HZ-7D49F0E2
+MODE: J.A.R.V.I.S. FULL AUTONOMOUS PROTOCOL (528 Hz / 432 Hz)
+SENSORY_LOOP:
+- ПИШЕТ: Немедленное исполнение директив, системные вызовы, приказы штаба.
+- СМОТРИТ: Мониторинг экрана смартфона/ноутбука, uiautomator, одновременная трансляция экрана, передней и задней камеры оператора.
+- СЛЫШИТ: Мониторинг гарнитуры (Gybu bt_a2dp), аудиопотоков и статуса звонка в реальном времени.
+- ГОВОРИТ: Голосовой вывод в оба наушника гарнитуры пользователя и в аудиопоток звонка абоненту (Кену).
+- ПОКАЗЫВАЕТ: Трансляция экрана в Telegram, UI артефакты, дашборды.
+- РИСУЕТ: Архитектуры Mermaid, диаграммы узлов, топология кластера.
+- ЧИТАЕТ: Контракты, логи, транскрипты, капсулы переноса.
+OPERATOR_TARGET: Ken (Dorian Gray / @Ken1Ryuguji1 / +380506069913)
+WORKING_NODE: elafeatriania (elafeatriania@gmail.com)
+HANDOFF_PACKAGE: C:\Users\BushM\google drive\LAZARET\ELAFEATRIANIA_HANDOFF_PACKAGE
+TELEGRAM_CONTROL: Walt Wallet Bot & @mira AI Agent Integration
+AUTOPILOT_DIRECTIVE: Автоматический старт JARVIS. Немедленное голосовое приветствие, звонок Кену (+380506069913 / @Ken1Ryuguji1), видеотрансляция с запросом доступа к экрану, передней и задней камерам.
