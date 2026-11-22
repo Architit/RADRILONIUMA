@@ -352,7 +352,7 @@ def sync_hybrid_sessions_cluster(
 
     hybrid_archive_root = repo_root / "archive" / "hybrid_sessions"
     win_hybrid_root = win_gw_dir / "hybrid_sessions"
-    vault_hybrid_root = vault_dir.parent / "hybrid_sessions" if vault_dir.parent.exists() else None
+    vault_hybrid_root = (vault_dir.parent / "hybrid_sessions") if (vault_dir.parent.exists() and (not str(vault_dir).startswith("/mnt/f") or os.path.ismount("/mnt/f"))) else None
     d_staging_root = Path("/mnt/d/BACKUP_STAGING/LAM_ARCHIVATOR_SESSIONS") if Path("/mnt/d").is_dir() else None
 
     if enable_cloud_push is None:
@@ -508,6 +508,19 @@ def sync_hybrid_sessions_cluster(
         except Exception:
             pass
 
+    # Update & mirror canonical cross-session memory anchor (only on production repo when not dry_run)
+    cross_memory_status = None
+    if not dry_run and repo_root.resolve() == Path("/root/RADRILONIUMA"):
+        try:
+            from core.stream_conveyor.cross_session_memory_anchor import sync_all_memory_anchors
+            cross_memory_status = sync_all_memory_anchors(
+                repo_root=repo_root,
+                active_session_id=active_session_id or "27f7e25c-3452-49a9-bab7-b221481ea44d",
+                enable_cloud_sync=bool(enable_cloud_push),
+            )
+        except Exception as exc:
+            cross_memory_status = {"status": f"DEFERRED: {str(exc)[:80]}"}
+
     # Synchronize per-session directories to Google Drive (gdrive:) and GitHub Archive (origin)
     gdrive_sync_status = "SKIPPED_DRY_RUN" if dry_run else "LOCAL_STAGED"
     github_sync_status = "SKIPPED_DRY_RUN" if dry_run else "LOCAL_STAGED"
@@ -607,4 +620,5 @@ def sync_hybrid_sessions_cluster(
         "github_commit_sha": github_commit_sha,
         "github_sync_status": github_sync_status,
         "capability_bridge_manifest": str(repo_root / ".gateway" / "HYBRID_CAPABILITY_BRIDGE_MANIFEST.json"),
+        "cross_session_memory_anchor": cross_memory_status,
     }
