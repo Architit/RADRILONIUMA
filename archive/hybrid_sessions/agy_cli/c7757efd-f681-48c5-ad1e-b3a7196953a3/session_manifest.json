@@ -1,0 +1,18 @@
+{
+  "schema": "LAM_HYBRID_SESSION_DIRECTORY_MANIFEST_V2",
+  "session_id": "c7757efd-f681-48c5-ad1e-b3a7196953a3",
+  "surface": "agy_cli",
+  "created_or_updated_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "source_dir": "/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/c7757efd-f681-48c5-ad1e-b3a7196953a3",
+  "transcript_present": true,
+  "total_steps": 110,
+  "total_bytes": 146981,
+  "packet_count": 5,
+  "cluster_merkle_sha256": "a5ad3f4d9cd0779b1d33cc557c427d58e6277be2b7d687f238b05b655fbbf738",
+  "archive_paths": {
+    "repo_github_archive_dir": "/root/RADRILONIUMA/archive/hybrid_sessions/agy_cli/c7757efd-f681-48c5-ad1e-b3a7196953a3",
+    "windows_gateway_dir": "/mnt/c/Users/BushM/.gateway/hybrid_sessions/agy_cli/c7757efd-f681-48c5-ad1e-b3a7196953a3",
+    "gdrive_remote_dir": "gdrive:RADRILONIUMA_HYBRID_SESSIONS/agy_cli/c7757efd-f681-48c5-ad1e-b3a7196953a3",
+    "github_remote_path": "archive/hybrid_sessions/agy_cli/c7757efd-f681-48c5-ad1e-b3a7196953a3"
+  }
+}

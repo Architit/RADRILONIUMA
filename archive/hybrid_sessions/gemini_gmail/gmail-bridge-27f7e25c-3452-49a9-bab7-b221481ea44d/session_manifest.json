@@ -1,0 +1,18 @@
+{
+  "schema": "LAM_HYBRID_SESSION_DIRECTORY_MANIFEST_V2",
+  "session_id": "gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_gmail",
+  "created_or_updated_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "source_dir": "/root/RADRILONIUMA/.gateway/hybrid_surfaces/gemini_gmail",
+  "transcript_present": false,
+  "total_steps": 0,
+  "total_bytes": 0,
+  "packet_count": 1,
+  "cluster_merkle_sha256": "300ace27494ad727d3908f7d6c6fe52fb7de973586dd8bf671492dc04db35672",
+  "archive_paths": {
+    "repo_github_archive_dir": "/root/RADRILONIUMA/archive/hybrid_sessions/gemini_gmail/gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "windows_gateway_dir": "/mnt/c/Users/BushM/.gateway/hybrid_sessions/gemini_gmail/gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "gdrive_remote_dir": "gdrive:RADRILONIUMA_HYBRID_SESSIONS/gemini_gmail/gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "github_remote_path": "archive/hybrid_sessions/gemini_gmail/gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d"
+  }
+}

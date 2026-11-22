@@ -1,0 +1,18 @@
+{
+  "schema": "LAM_HYBRID_SESSION_DIRECTORY_MANIFEST_V2",
+  "session_id": "gdrive-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_gdrive",
+  "created_or_updated_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "source_dir": "/root/RADRILONIUMA/.gateway/hybrid_surfaces/gemini_gdrive",
+  "transcript_present": false,
+  "total_steps": 0,
+  "total_bytes": 0,
+  "packet_count": 1,
+  "cluster_merkle_sha256": "4c5c246de42ad00cab1ad3c54afd122a1ed6737657d553e20a3f9fa36585c1ee",
+  "archive_paths": {
+    "repo_github_archive_dir": "/root/RADRILONIUMA/archive/hybrid_sessions/gemini_gdrive/gdrive-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "windows_gateway_dir": "/mnt/c/Users/BushM/.gateway/hybrid_sessions/gemini_gdrive/gdrive-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "gdrive_remote_dir": "gdrive:RADRILONIUMA_HYBRID_SESSIONS/gemini_gdrive/gdrive-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "github_remote_path": "archive/hybrid_sessions/gemini_gdrive/gdrive-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d"
+  }
+}

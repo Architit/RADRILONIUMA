@@ -1,0 +1,63 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "382e6be7-d076-4485-81a4-19d9a3f365a8",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:39.012295+00:00",
+  "total_steps": 69,
+  "total_bytes": 64034,
+  "total_input_tokens": 80137,
+  "total_output_tokens": 4843,
+  "packet_step_window": 25,
+  "packet_count": 3,
+  "packets": [
+    {
+      "packet_id": "PKT-382E6BE7-0001",
+      "session_id": "382e6be7-d076-4485-81a4-19d9a3f365a8",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 25,
+      "step_count": 25,
+      "input_tokens": 33450,
+      "output_tokens": 2113,
+      "roles": [
+        "SYSTEM_MESSAGE",
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "166a151892c69c3fc6b27b5143360a1719e41b3a526d4e8efe32cb98bbd50e81"
+    },
+    {
+      "packet_id": "PKT-382E6BE7-0002",
+      "session_id": "382e6be7-d076-4485-81a4-19d9a3f365a8",
+      "surface": "agy_cli",
+      "step_start": 26,
+      "step_end": 50,
+      "step_count": 25,
+      "input_tokens": 28454,
+      "output_tokens": 1479,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "f620b84a19ca64e18ca805715f11a4de425f70c6c0945ee6b8e0dd3600dda393"
+    },
+    {
+      "packet_id": "PKT-382E6BE7-0003",
+      "session_id": "382e6be7-d076-4485-81a4-19d9a3f365a8",
+      "surface": "agy_cli",
+      "step_start": 51,
+      "step_end": 69,
+      "step_count": 19,
+      "input_tokens": 18233,
+      "output_tokens": 1251,
+      "roles": [
+        "GENERIC",
+        "PLANNER_RESPONSE",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "18d3ae90fcae168d2205be955b75d705c867bd63cbe2b17df75f32658710d23d"
+    }
+  ],
+  "cluster_merkle_sha256": "ff096e4f39aac560e84aace6b08be3861f9890043cdb536e7189a5cc0b4b80cb"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "exe-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_exe",
+  "clustered_at_utc": "2026-11-22T10:52:27.548149+00:00",
+  "total_steps": 0,
+  "total_bytes": 0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "packet_step_window": 25,
+  "packet_count": 1,
+  "packets": [
+    {
+      "packet_id": "PKT-EXE-BRID-0001",
+      "session_id": "exe-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+      "surface": "gemini_exe",
+      "step_start": 0,
+      "step_end": 0,
+      "step_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "state": "INITIALIZED_EMPTY_OR_METADATA_ONLY",
+      "packet_sha256": "47ddd3d57e962886ed9e6639135b6a3e2453ef51d770d0cb40bdcf07e85af33b"
+    }
+  ],
+  "cluster_merkle_sha256": "147539dc307c89fc4ef134aacabdd9b1478efa9515ee83e3df9be07c6ae89ce8"
+}

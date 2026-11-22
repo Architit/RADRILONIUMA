@@ -1,0 +1,122 @@
+{
+  "schema": "LAM_HYBRID_CAPABILITY_BRIDGE_V2",
+  "session_id": "eadcd260-3caa-416c-ae19-8b8384a29721",
+  "primary_surface": "agy_cli",
+  "linked_active_agy_session_id": "27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "target_handoff_session_id": "9ebf1ab2-3f1f-40e3-9597-67a4be832155",
+  "capsule_id": "SSN-CAPSULE-27F7E25C-D6B0ED13",
+  "synchronized_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "surface_capabilities": {
+    "surface_id": "agy_cli",
+    "legacy_code": "bin",
+    "native_capabilities": [
+      "local_shell_execution_powershell_bash",
+      "filesystem_read_write_edit",
+      "wsl2_ubuntu_kernel_substrate",
+      "mcp_server_orchestration_68_organs",
+      "chrome_devtools_cdp_automation",
+      "adb_hardware_mesh_control",
+      "sqlite_wal_sovereign_vault",
+      "git_github_rclone_sync"
+    ],
+    "bridged_to_surfaces": [
+      "gemini_apk",
+      "gemini_exe",
+      "gemini_gmail",
+      "gemini_gdrive"
+    ],
+    "ingress_endpoint": "http://127.0.0.1:5280/v1/google-node-gateway/input-point/import",
+    "outbox_bridge": ".gateway/extrnl_query_export_outbox.json",
+    "inbox_bridge": ".gateway/intrnl_answer_import_inbox.json"
+  },
+  "global_capability_matrix": {
+    "agy_cli": {
+      "surface_id": "agy_cli",
+      "legacy_code": "bin",
+      "native_capabilities": [
+        "local_shell_execution_powershell_bash",
+        "filesystem_read_write_edit",
+        "wsl2_ubuntu_kernel_substrate",
+        "mcp_server_orchestration_68_organs",
+        "chrome_devtools_cdp_automation",
+        "adb_hardware_mesh_control",
+        "sqlite_wal_sovereign_vault",
+        "git_github_rclone_sync"
+      ],
+      "bridged_to_surfaces": [
+        "gemini_apk",
+        "gemini_exe",
+        "gemini_gmail",
+        "gemini_gdrive"
+      ],
+      "ingress_endpoint": "http://127.0.0.1:5280/v1/google-node-gateway/input-point/import",
+      "outbox_bridge": ".gateway/extrnl_query_export_outbox.json",
+      "inbox_bridge": ".gateway/intrnl_answer_import_inbox.json"
+    },
+    "gemini_apk": {
+      "surface_id": "gemini_apk",
+      "legacy_code": "apk",
+      "package": "com.google.android.apps.bard",
+      "native_capabilities": [
+        "android_live_voice_barge_in",
+        "mobile_camera_screen_vision_stream",
+        "google_assistant_system_intents",
+        "mobile_notifications_and_clipboard_toast"
+      ],
+      "bridged_to_surfaces": [
+        "agy_cli",
+        "gemini_exe",
+        "gemini_gmail",
+        "gemini_gdrive"
+      ],
+      "spool_dir": ".gateway/edge_spool"
+    },
+    "gemini_exe": {
+      "surface_id": "gemini_exe",
+      "legacy_code": "exe",
+      "app_id": "com.google.gemini.windows",
+      "native_capabilities": [
+        "windows_desktop_pwa_overlay",
+        "desktop_clipboard_and_drag_drop",
+        "google_account_extensions_workspace"
+      ],
+      "bridged_to_surfaces": [
+        "agy_cli",
+        "gemini_apk",
+        "gemini_gmail",
+        "gemini_gdrive"
+      ]
+    },
+    "gemini_gmail": {
+      "surface_id": "gemini_gmail",
+      "legacy_code": "web_gmail",
+      "native_capabilities": [
+        "gmail_thread_summarization_and_search",
+        "email_draft_generation_and_legal_dispatch",
+        "workspace_contact_and_attachment_context"
+      ],
+      "bridged_to_surfaces": [
+        "agy_cli",
+        "gemini_apk",
+        "gemini_exe",
+        "gemini_gdrive"
+      ]
+    },
+    "gemini_gdrive": {
+      "surface_id": "gemini_gdrive",
+      "legacy_code": "web_gdrive",
+      "native_capabilities": [
+        "google_drive_document_grounding",
+        "cross_session_cloud_folder_indexing",
+        "pdf_sheets_docs_semantic_retrieval"
+      ],
+      "bridged_to_surfaces": [
+        "agy_cli",
+        "gemini_apk",
+        "gemini_exe",
+        "gemini_gmail"
+      ]
+    }
+  },
+  "cross_surface_context_merkle_sha256": "2c82a6a8a2fa52ecd18d12de616fd8dc8c822465bf603d7cec5cb45ace224c59"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "LAM_HYBRID_SESSION_DIRECTORY_MANIFEST_V2",
+  "session_id": "apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_apk",
+  "created_or_updated_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "source_dir": "/root/RADRILONIUMA/.gateway/edge_spool",
+  "transcript_present": false,
+  "total_steps": 0,
+  "total_bytes": 0,
+  "packet_count": 1,
+  "cluster_merkle_sha256": "a40a7ee27fe86e976b7eacfe5ef3c7355f83db06aac9e9e19072db5d93345119",
+  "archive_paths": {
+    "repo_github_archive_dir": "/root/RADRILONIUMA/archive/hybrid_sessions/gemini_apk/apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "windows_gateway_dir": "/mnt/c/Users/BushM/.gateway/hybrid_sessions/gemini_apk/apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "gdrive_remote_dir": "gdrive:RADRILONIUMA_HYBRID_SESSIONS/gemini_apk/apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+    "github_remote_path": "archive/hybrid_sessions/gemini_apk/apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d"
+  }
+}

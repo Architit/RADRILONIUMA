@@ -1,0 +1,31 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "3ba8dccb-e3d3-43ca-b2c7-d92ee2d4062b",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:52:25.389938+00:00",
+  "total_steps": 19,
+  "total_bytes": 37752,
+  "total_input_tokens": 116893,
+  "total_output_tokens": 7945,
+  "packet_step_window": 25,
+  "packet_count": 1,
+  "packets": [
+    {
+      "packet_id": "PKT-3BA8DCCB-0001",
+      "session_id": "3ba8dccb-e3d3-43ca-b2c7-d92ee2d4062b",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 19,
+      "step_count": 19,
+      "input_tokens": 116893,
+      "output_tokens": 7945,
+      "roles": [
+        "USER_INPUT",
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "a18e5810dbd35b5291e24e659cce1b0da7d0b96062f5af24ccca44cf1ed38fd4"
+    }
+  ],
+  "cluster_merkle_sha256": "5f25d9f94eafd45873561d2cb026e6ba7266ad8478efe0434c24df27c19f2ec1"
+}

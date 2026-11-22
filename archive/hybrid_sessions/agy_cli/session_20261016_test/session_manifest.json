@@ -1,0 +1,18 @@
+{
+  "schema": "LAM_HYBRID_SESSION_DIRECTORY_MANIFEST_V2",
+  "session_id": "session_20261016_test",
+  "surface": "agy_cli",
+  "created_or_updated_at_utc": "2026-11-22T10:51:06.382857+00:00",
+  "source_dir": "/root/RADRILONIUMA/.gateway/sessions",
+  "transcript_present": true,
+  "total_steps": 50,
+  "total_bytes": 3200,
+  "packet_count": 2,
+  "cluster_merkle_sha256": "f4574456a727d71a19e7686886a1787648ae5a9b2481f6dfb8fe77b7084fa018",
+  "archive_paths": {
+    "repo_github_archive_dir": "/root/RADRILONIUMA/archive/hybrid_sessions/agy_cli/session_20261016_test",
+    "windows_gateway_dir": "/mnt/c/Users/BushM/.gateway/hybrid_sessions/agy_cli/session_20261016_test",
+    "gdrive_remote_dir": "gdrive:RADRILONIUMA_HYBRID_SESSIONS/agy_cli/session_20261016_test",
+    "github_remote_path": "archive/hybrid_sessions/agy_cli/session_20261016_test"
+  }
+}

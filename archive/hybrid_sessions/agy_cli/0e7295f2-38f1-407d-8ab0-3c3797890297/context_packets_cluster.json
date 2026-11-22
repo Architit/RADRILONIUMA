@@ -1,0 +1,81 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "0e7295f2-38f1-407d-8ab0-3c3797890297",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:39.689571+00:00",
+  "total_steps": 78,
+  "total_bytes": 187745,
+  "total_input_tokens": 600995,
+  "total_output_tokens": 42713,
+  "packet_step_window": 25,
+  "packet_count": 4,
+  "packets": [
+    {
+      "packet_id": "PKT-0E7295F2-0001",
+      "session_id": "0e7295f2-38f1-407d-8ab0-3c3797890297",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 25,
+      "step_count": 25,
+      "input_tokens": 191656,
+      "output_tokens": 16474,
+      "roles": [
+        "USER_INPUT",
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "8a255fe06fd1a9a1978487d900404698ceeffa0e75f7365011ae7a2796047528"
+    },
+    {
+      "packet_id": "PKT-0E7295F2-0002",
+      "session_id": "0e7295f2-38f1-407d-8ab0-3c3797890297",
+      "surface": "agy_cli",
+      "step_start": 26,
+      "step_end": 50,
+      "step_count": 25,
+      "input_tokens": 123065,
+      "output_tokens": 12415,
+      "roles": [
+        "SYSTEM_MESSAGE",
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "USER_INPUT"
+      ],
+      "payload_sha256": "568cbea17d957048347041004186a7d8a2c28ffa06040f14d3270ad421a19732"
+    },
+    {
+      "packet_id": "PKT-0E7295F2-0003",
+      "session_id": "0e7295f2-38f1-407d-8ab0-3c3797890297",
+      "surface": "agy_cli",
+      "step_start": 51,
+      "step_end": 75,
+      "step_count": 25,
+      "input_tokens": 138281,
+      "output_tokens": 12065,
+      "roles": [
+        "GENERIC",
+        "PLANNER_RESPONSE",
+        "SYSTEM_MESSAGE",
+        "USER_INPUT"
+      ],
+      "payload_sha256": "d22e0749e5ee4b4dd9c74e0396c817c924d7142715eedeab2744b5d21c5bbb4a"
+    },
+    {
+      "packet_id": "PKT-0E7295F2-0004",
+      "session_id": "0e7295f2-38f1-407d-8ab0-3c3797890297",
+      "surface": "agy_cli",
+      "step_start": 76,
+      "step_end": 78,
+      "step_count": 3,
+      "input_tokens": 147993,
+      "output_tokens": 1759,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "USER_INPUT"
+      ],
+      "payload_sha256": "c08c22fe397c932cda3c9c629fde6cf2edd42519d0434298f503c5516041b0f0"
+    }
+  ],
+  "cluster_merkle_sha256": "6d24281b9bc22a7f2570196534e0c72a7e1b7f33521a85af33dd9479fe6b23ef"
+}

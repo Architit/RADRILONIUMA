@@ -1,0 +1,27 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_gmail",
+  "clustered_at_utc": "2026-11-22T10:52:27.751406+00:00",
+  "total_steps": 0,
+  "total_bytes": 0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "packet_step_window": 25,
+  "packet_count": 1,
+  "packets": [
+    {
+      "packet_id": "PKT-GMAIL-BR-0001",
+      "session_id": "gmail-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+      "surface": "gemini_gmail",
+      "step_start": 0,
+      "step_end": 0,
+      "step_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "state": "INITIALIZED_EMPTY_OR_METADATA_ONLY",
+      "packet_sha256": "63473a0bdbc3f8f0ca4634210b6cc675b9c50bea67d88bd0137b8cc4651c9b55"
+    }
+  ],
+  "cluster_merkle_sha256": "300ace27494ad727d3908f7d6c6fe52fb7de973586dd8bf671492dc04db35672"
+}

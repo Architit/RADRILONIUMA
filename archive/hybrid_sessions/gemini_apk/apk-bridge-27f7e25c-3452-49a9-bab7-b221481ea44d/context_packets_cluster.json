@@ -1,0 +1,27 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+  "surface": "gemini_apk",
+  "clustered_at_utc": "2026-11-22T10:52:27.342118+00:00",
+  "total_steps": 0,
+  "total_bytes": 0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "packet_step_window": 25,
+  "packet_count": 1,
+  "packets": [
+    {
+      "packet_id": "PKT-APK-BRID-0001",
+      "session_id": "apk-bridge-27f7e25c-3452-49a9-bab7-b221481ea44d",
+      "surface": "gemini_apk",
+      "step_start": 0,
+      "step_end": 0,
+      "step_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "state": "INITIALIZED_EMPTY_OR_METADATA_ONLY",
+      "packet_sha256": "765d15916d46404d48c14dddc6b87863ed3d10cba75054b8bece8324e70fd343"
+    }
+  ],
+  "cluster_merkle_sha256": "a40a7ee27fe86e976b7eacfe5ef3c7355f83db06aac9e9e19072db5d93345119"
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "517a9d2a-ffe4-433b-9ce0-d84f027f5ec8",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:54.289954+00:00",
+  "total_steps": 83,
+  "total_bytes": 128997,
+  "total_input_tokens": 146554,
+  "total_output_tokens": 30867,
+  "packet_step_window": 25,
+  "packet_count": 4,
+  "packets": [
+    {
+      "packet_id": "PKT-517A9D2A-0001",
+      "session_id": "517a9d2a-ffe4-433b-9ce0-d84f027f5ec8",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 25,
+      "step_count": 25,
+      "input_tokens": 61971,
+      "output_tokens": 5862,
+      "roles": [
+        "SYSTEM_MESSAGE",
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "be17751db95e9dad871fa1e63d6b5c7d32f8ebc18131eb9e418cf6b8bcf35c71"
+    },
+    {
+      "packet_id": "PKT-517A9D2A-0002",
+      "session_id": "517a9d2a-ffe4-433b-9ce0-d84f027f5ec8",
+      "surface": "agy_cli",
+      "step_start": 26,
+      "step_end": 50,
+      "step_count": 25,
+      "input_tokens": 35366,
+      "output_tokens": 3376,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "0c64e98dc0d609bf05bd2ad7ea9db0307137ededf43058d0145976b812fa6189"
+    },
+    {
+      "packet_id": "PKT-517A9D2A-0003",
+      "session_id": "517a9d2a-ffe4-433b-9ce0-d84f027f5ec8",
+      "surface": "agy_cli",
+      "step_start": 51,
+      "step_end": 75,
+      "step_count": 25,
+      "input_tokens": 36275,
+      "output_tokens": 15478,
+      "roles": [
+        "GENERIC",
+        "PLANNER_RESPONSE",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "b2cd6f97bd04cc3db304a638b31887685b339e75fa3ac2b3480a90ee117d989c"
+    },
+    {
+      "packet_id": "PKT-517A9D2A-0004",
+      "session_id": "517a9d2a-ffe4-433b-9ce0-d84f027f5ec8",
+      "surface": "agy_cli",
+      "step_start": 76,
+      "step_end": 83,
+      "step_count": 8,
+      "input_tokens": 12942,
+      "output_tokens": 6151,
+      "roles": [
+        "GENERIC",
+        "PLANNER_RESPONSE"
+      ],
+      "payload_sha256": "1a6905cbf3d38c2922bed6d41ddd8b46398a4471b63e3f002dbc4cc8397d0057"
+    }
+  ],
+  "cluster_merkle_sha256": "b930d2da6e1053d5adc394c8c05aee861c842d688f87638091df997f8ff189c3"
+}

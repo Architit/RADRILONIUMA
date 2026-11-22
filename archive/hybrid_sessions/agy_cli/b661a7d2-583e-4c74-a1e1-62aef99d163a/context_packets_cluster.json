@@ -1,0 +1,76 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "b661a7d2-583e-4c74-a1e1-62aef99d163a",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:53.637740+00:00",
+  "total_steps": 80,
+  "total_bytes": 135416,
+  "total_input_tokens": 195540,
+  "total_output_tokens": 47990,
+  "packet_step_window": 25,
+  "packet_count": 4,
+  "packets": [
+    {
+      "packet_id": "PKT-B661A7D2-0001",
+      "session_id": "b661a7d2-583e-4c74-a1e1-62aef99d163a",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 25,
+      "step_count": 25,
+      "input_tokens": 95106,
+      "output_tokens": 4169,
+      "roles": [
+        "SYSTEM_MESSAGE",
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "0f15633714a859e751a47f64562f0cafbeca90cc4de9071b1d27aa91ea822fd2"
+    },
+    {
+      "packet_id": "PKT-B661A7D2-0002",
+      "session_id": "b661a7d2-583e-4c74-a1e1-62aef99d163a",
+      "surface": "agy_cli",
+      "step_start": 26,
+      "step_end": 50,
+      "step_count": 25,
+      "input_tokens": 46125,
+      "output_tokens": 13774,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "c40556d8c45faf463255ab243cadd17253973867d6631e712abd47b97984234b"
+    },
+    {
+      "packet_id": "PKT-B661A7D2-0003",
+      "session_id": "b661a7d2-583e-4c74-a1e1-62aef99d163a",
+      "surface": "agy_cli",
+      "step_start": 51,
+      "step_end": 75,
+      "step_count": 25,
+      "input_tokens": 39089,
+      "output_tokens": 29062,
+      "roles": [
+        "GENERIC",
+        "PLANNER_RESPONSE"
+      ],
+      "payload_sha256": "54ec49ffe4d111eeafceb9595a2031150a7b7420fa2c6327d51e2e370ecb2a8d"
+    },
+    {
+      "packet_id": "PKT-B661A7D2-0004",
+      "session_id": "b661a7d2-583e-4c74-a1e1-62aef99d163a",
+      "surface": "agy_cli",
+      "step_start": 76,
+      "step_end": 80,
+      "step_count": 5,
+      "input_tokens": 15220,
+      "output_tokens": 985,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "6fb6ba245541f5debb6e66734292fe63bb4492c4c5232dc79be0c1e7ed588257"
+    }
+  ],
+  "cluster_merkle_sha256": "0e880e57c03d2249f8572765737c31e5973e8dc8bb3c69d8c8153d169588c0dd"
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "993592a8-88b5-4497-96c8-03946e03a242",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:21.458419+00:00",
+  "total_steps": 78,
+  "total_bytes": 159971,
+  "total_input_tokens": 147997,
+  "total_output_tokens": 28020,
+  "packet_step_window": 25,
+  "packet_count": 4,
+  "packets": [
+    {
+      "packet_id": "PKT-993592A8-0001",
+      "session_id": "993592a8-88b5-4497-96c8-03946e03a242",
+      "surface": "agy_cli",
+      "step_start": 1,
+      "step_end": 25,
+      "step_count": 25,
+      "input_tokens": 63498,
+      "output_tokens": 4479,
+      "roles": [
+        "SYSTEM_MESSAGE",
+        "PLANNER_RESPONSE",
+        "GENERIC"
+      ],
+      "payload_sha256": "ebb8ef64e39706f9cd30e8d60f0da07bc89cada43fbd24a7b39320ac55ad9088"
+    },
+    {
+      "packet_id": "PKT-993592A8-0002",
+      "session_id": "993592a8-88b5-4497-96c8-03946e03a242",
+      "surface": "agy_cli",
+      "step_start": 26,
+      "step_end": 50,
+      "step_count": 25,
+      "input_tokens": 45202,
+      "output_tokens": 20483,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "f549d7148f944563d7e70b6c273deefedd1601e6541887cf4b32e34a47285a14"
+    },
+    {
+      "packet_id": "PKT-993592A8-0003",
+      "session_id": "993592a8-88b5-4497-96c8-03946e03a242",
+      "surface": "agy_cli",
+      "step_start": 51,
+      "step_end": 75,
+      "step_count": 25,
+      "input_tokens": 39297,
+      "output_tokens": 3058,
+      "roles": [
+        "PLANNER_RESPONSE",
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "548551aac431b5c2730242f7c2ec0f6433c6d6407a4766010d0770cd649e6bfa"
+    },
+    {
+      "packet_id": "PKT-993592A8-0004",
+      "session_id": "993592a8-88b5-4497-96c8-03946e03a242",
+      "surface": "agy_cli",
+      "step_start": 76,
+      "step_end": 78,
+      "step_count": 3,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "roles": [
+        "GENERIC",
+        "SYSTEM_MESSAGE"
+      ],
+      "payload_sha256": "03b80ae12eaec5bcdebec6c165e2faee05ba372fbd7594964127f0d29b5d2157"
+    }
+  ],
+  "cluster_merkle_sha256": "835b0fc521a0c046dd7c7805ee47c64543e48be9ad479e65f1df90c54169b5cc"
+}

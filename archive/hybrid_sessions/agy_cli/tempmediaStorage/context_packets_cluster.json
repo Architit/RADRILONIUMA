@@ -1,0 +1,27 @@
+{
+  "schema": "LAM_ARCHIVATOR_CONTEXT_PACKET_CLUSTER_V2",
+  "session_id": "tempmediaStorage",
+  "surface": "agy_cli",
+  "clustered_at_utc": "2026-11-22T10:51:13.392311+00:00",
+  "total_steps": 0,
+  "total_bytes": 0,
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "packet_step_window": 25,
+  "packet_count": 1,
+  "packets": [
+    {
+      "packet_id": "PKT-TEMPMEDI-0001",
+      "session_id": "tempmediaStorage",
+      "surface": "agy_cli",
+      "step_start": 0,
+      "step_end": 0,
+      "step_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "state": "INITIALIZED_EMPTY_OR_METADATA_ONLY",
+      "packet_sha256": "0d698060686ddde1d0ddba3a9cebad848148bc1b1dda8a3742c26b44088a1f05"
+    }
+  ],
+  "cluster_merkle_sha256": "befb95e32da18cfa5d94a8fd90791ed7f0ef0d4a14d37c9a26f780265cf70dd5"
+}
