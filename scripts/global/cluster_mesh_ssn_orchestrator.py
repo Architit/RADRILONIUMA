@@ -258,7 +258,7 @@ def _preflight_enable_hotspot_and_probe_mobile() -> Dict[str, Any]:
         "  } "
         "} catch { $tetheringState = 'WINRT_UNAVAILABLE' }; "
         "$hsIp = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.IPAddress -like '192.168.137.*' } | Select-Object -ExpandProperty IPAddress -First 1); "
-        "$arpClients = @(arp -a | Select-String '192\.168\.137\.(?!1\b|255\b)\d+' | ForEach-Object { $_.Matches[0].Value } | Select-Object -Unique); "
+        r"$arpClients = @(arp -a | Select-String '192\.168\.137\.(?!1\b|255\b)\d+' | ForEach-Object { $_.Matches[0].Value } | Select-Object -Unique); "
         "$reachableIps = @(); "
         "$adb = 'C:/setup/platform-tools/adb.exe'; "
         "foreach ($ip in $arpClients) { "
@@ -268,7 +268,7 @@ def _preflight_enable_hotspot_and_probe_mobile() -> Dict[str, Any]:
         "  } "
         "}; "
         "$adbLines = @(); "
-        "if (Test-Path $adb) { $adbLines = @(& $adb devices -l | Where-Object { $_ -match '\sdevice(\s|$)' }) }; "
+        r"if (Test-Path $adb) { $adbLines = @(& $adb devices -l | Where-Object { $_ -match '\sdevice(\s|$)' }) }; "
         "$out = @{ tethering_state = $tetheringState; hotspot_ip = ($hsIp -as [string]); arp_clients = $arpClients; reachable_ips = $reachableIps; adb_devices = $adbLines }; "
         "$out | ConvertTo-Json -Compress"
     )

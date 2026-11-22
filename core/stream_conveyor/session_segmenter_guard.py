@@ -156,6 +156,8 @@ class SessionSegmenterGuard:
             if part in ("brain", "chat_sessions", "sessions") and i + 1 < len(parts):
                 candidate = parts[i + 1]
                 if candidate not in (".system_generated", "logs", "active_session.jsonl"):
+                    if candidate.endswith(".jsonl"):
+                        candidate = candidate[:-6]
                     return candidate
 
         stem = target_path.stem
@@ -183,7 +185,21 @@ class SessionSegmenterGuard:
                     return cand
 
         sid = str(session_path_or_id).strip()
-        candidates = [
+        env_brain = os.environ.get("RADR_WIN_BRAIN_DIR", "").strip()
+        env_repo = os.environ.get("RADR_REPO_ROOT", "").strip()
+        dyn_root = Path(env_repo) if env_repo else (
+            self.archive_base_dir.parent.parent
+            if self.archive_base_dir and self.archive_base_dir.name == "sessions"
+            else RADRILONIUMA_ROOT
+        )
+        candidates = []
+        if env_brain:
+            candidates.append(Path(env_brain) / sid / ".system_generated" / "logs" / "transcript.jsonl")
+            candidates.append(Path(env_brain) / sid / "transcript.jsonl")
+        candidates.extend([
+            dyn_root / ".gateway" / "sessions" / f"{sid}.jsonl",
+            dyn_root / "chronolog" / f"{sid}.jsonl",
+            dyn_root / "archive" / "sessions" / sid / "active_session.jsonl",
             # 1. Antigravity Brain Storage (Linux WSL and Windows paths)
             Path(f"/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/{sid}/.system_generated/logs/transcript.jsonl"),
             Path(f"C:/Users/BushM/.gemini/antigravity-cli/brain/{sid}/.system_generated/logs/transcript.jsonl"),
@@ -196,7 +212,7 @@ class SessionSegmenterGuard:
             # 4. Antigravity Conversation paths
             Path(f"/mnt/c/Users/BushM/.gemini/antigravity-cli/conversations/{sid}.jsonl"),
             Path(f"C:/Users/BushM/.gemini/antigravity-cli/conversations/{sid}.jsonl"),
-        ]
+        ])
         for c in candidates:
             if c.exists() and c.is_file():
                 return c

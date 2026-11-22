@@ -50,17 +50,88 @@ except ImportError:
     SessionSegmenterGuard = None
 
 TRANSFER_LOCK = threading.RLock()
+_STATUS_CACHE_LOCK = threading.Lock()
+_DISPATCH_LOCK = threading.Lock()
+_SEGMENTER_STATUS_CACHE: Dict[str, tuple[int, int, Dict[str, Any]]] = {}
+_WIN_BRAIN_MIRROR_CACHE: Dict[str, tuple[str, str]] = {}
+_MIRROR_THROTTLE_TS: Dict[str, tuple[str, float]] = {}
 
 
-def _write_json_atomically(target_path: Path, data: Any, indent: int = 2) -> None:
+def _mirror_json_throttled(target_path: Path, data: Any, ttl_sec: float = 5.0, sig: str = "") -> None:
+    """Mirror JSON to slow external/9p mounts without redundant identical writes during bursts."""
+    now_ts = datetime.now(timezone.utc).timestamp()
+    key = str(target_path)
+    prev_sig, last_ts = _MIRROR_THROTTLE_TS.get(key, ("", 0.0))
+    if prev_sig == sig and last_ts > 0.0 and (now_ts - last_ts) < ttl_sec:
+        return
+    try:
+        _write_json_atomically(target_path, data, fsync=False)
+        _MIRROR_THROTTLE_TS[key] = (sig, now_ts)
+    except Exception:
+        pass
+
+
+def _record_gateway_dispatch(body_json: Dict[str, Any], raw_bytes: bytes) -> Dict[str, Any]:
+    """Persists incoming Google-node / Gemini surface dispatches to the gateway ledger."""
+    now_iso = datetime.now(timezone.utc).isoformat()
+    prompt_text = str(body_json.get("prompt") or "")
+    payload_sha256 = hashlib.sha256(raw_bytes).hexdigest()
+    prompt_sha256 = hashlib.sha256(prompt_text.encode("utf-8")).hexdigest() if prompt_text else payload_sha256
+    dispatch_id = f"gng-{prompt_sha256[:12]}"
+    surface = str(body_json.get("surface") or "gateway")
+    source = str(body_json.get("source") or "external")
+    dispatch_file = GATEWAY_DIR / "google_node_gateway_dispatch.jsonl"
+
+    entry = {
+        "dispatch_id": dispatch_id,
+        "surface": surface,
+        "source": source,
+        "prompt_sha256": prompt_sha256,
+        "payload_sha256": payload_sha256,
+        "prompt_bytes": len(prompt_text.encode("utf-8")),
+        "received_bytes": len(raw_bytes),
+        "timestamp_utc": now_iso,
+    }
+    persisted = False
+    if body_json.get("persist", True) is not False:
+        with _DISPATCH_LOCK:
+            dispatch_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(dispatch_file, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+            persisted = True
+
+    return {
+        "status": "ACCEPTED_BY_SOCKET_INGRESS_GATEWAY",
+        "dispatch_id": dispatch_id,
+        "surface": surface,
+        "source": source,
+        "persisted": persisted,
+        "dispatch_file": str(dispatch_file) if persisted else None,
+        "prompt_sha256": prompt_sha256,
+        "payload_sha256": payload_sha256,
+        "received_bytes": len(raw_bytes),
+        "timestamp_utc": now_iso,
+        "node_binding": f"POST_PORT:{DEFAULT_PORT}",
+    }
+
+
+def _write_json_atomically(
+    target_path: Path,
+    data: Any,
+    indent: int = 2,
+    fsync: Optional[bool] = None,
+) -> None:
     target_path = Path(target_path)
     target_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = target_path.with_name(f"{target_path.name}.tmp.{os.getpid()}.{threading.get_ident()}")
+    if fsync is None:
+        fsync = os.environ.get("RADR_STRICT_FSYNC") == "1"
     try:
         with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=indent, ensure_ascii=False)
             f.flush()
-            os.fsync(f.fileno())
+            if fsync and not str(target_path).startswith("/mnt/"):
+                os.fsync(f.fileno())
         os.replace(tmp_path, target_path)
     finally:
         if tmp_path.exists():
@@ -226,9 +297,43 @@ def build_transfer_capsule(source_session_id: str = HISTORICAL_SESSION_ID) -> Di
     }
 
 
+def _resolve_win_gateway_mirror_dir() -> Optional[Path]:
+    env_win_gw = os.environ.get("RADR_WIN_GATEWAY_DIR", "").strip()
+    if env_win_gw:
+        return Path(env_win_gw)
+    try:
+        sibling = GATEWAY_DIR.parent.parent / "win_bushm" / ".gateway"
+        if sibling.exists():
+            return sibling
+    except Exception:
+        pass
+    if GATEWAY_DIR == Path("/root/RADRILONIUMA/.gateway"):
+        default_win_gw = Path("/mnt/c/Users/BushM/.gateway")
+        if default_win_gw.parent.exists():
+            return default_win_gw
+    return None
+
+
+def _is_valid_capsule_doc(doc: Any) -> bool:
+    if not isinstance(doc, dict):
+        return False
+    payload = doc.get("payload")
+    seal = doc.get("sha256_seal")
+    cid = doc.get("capsule_id")
+    return (
+        isinstance(payload, dict)
+        and bool(str(payload.get("source_session_id") or "").strip())
+        and isinstance(seal, str)
+        and len(seal) == 64
+        and isinstance(cid, str)
+        and bool(cid.strip())
+    )
+
+
 def export_transfer_capsule(
     source_session_id: str = HISTORICAL_SESSION_ID,
-    output_path: Optional[Path] = None
+    output_path: Optional[Path] = None,
+    force: bool = False,
 ) -> Dict[str, Any]:
     with TRANSFER_LOCK:
         source_id = str(source_session_id).strip() if source_session_id is not None and str(source_session_id).strip() else HISTORICAL_SESSION_ID
@@ -236,34 +341,62 @@ def export_transfer_capsule(
         GATEWAY_DIR.mkdir(parents=True, exist_ok=True)
 
         dest = output_path or (GATEWAY_DIR / "SSN_TRANSFER_CAPSULE.json")
-        _write_json_atomically(dest, capsule)
-
-        # Archive copy
         hist_archive = ARCHIVE_DIR / source_id
         hist_archive.mkdir(parents=True, exist_ok=True)
-        _write_json_atomically(hist_archive / "SSN_TRANSFER_CAPSULE.json", capsule)
+        archive_capsule_path = hist_archive / "SSN_TRANSFER_CAPSULE.json"
+
+        preserved_active = False
+        active_capsule_id = None
+        active_source_session_id = None
+
+        if output_path is None and not force and dest.exists():
+            try:
+                existing = json.loads(dest.read_text(encoding="utf-8"))
+                if _is_valid_capsule_doc(existing):
+                    existing_payload = existing["payload"]
+                    existing_src = str(existing_payload.get("source_session_id") or "").strip()
+                    existing_ts = str(existing_payload.get("created_at_utc") or "")
+                    new_ts = str(capsule["payload"].get("created_at_utc") or "")
+                    if existing_src != HISTORICAL_SESSION_ID and (
+                        source_id == HISTORICAL_SESSION_ID or existing_ts > new_ts
+                    ):
+                        preserved_active = True
+                        active_capsule_id = existing.get("capsule_id")
+                        active_source_session_id = existing_src
+            except Exception:
+                pass
+
+        if not preserved_active:
+            _write_json_atomically(dest, capsule)
+            if output_path is None:
+                win_gw_dir = _resolve_win_gateway_mirror_dir()
+                if win_gw_dir is not None:
+                    _mirror_json_throttled(win_gw_dir / "SSN_TRANSFER_CAPSULE.json", capsule, sig=source_id)
+
+        # Archive copy
+        _write_json_atomically(archive_capsule_path, capsule)
 
         # Mirror to DEV_04_SAMSUNG_T7_VAULT
         vault_dest = None
         if T7_VAULT_SESSIONS.parent.exists():
-            try:
-                vault_session_dir = T7_VAULT_SESSIONS / source_id
-                vault_session_dir.mkdir(parents=True, exist_ok=True)
-                vault_dest = vault_session_dir / "SSN_TRANSFER_CAPSULE.json"
-                _write_json_atomically(vault_dest, capsule)
-            except Exception:
-                pass
+            vault_dest = T7_VAULT_SESSIONS / source_id / "SSN_TRANSFER_CAPSULE.json"
+            _mirror_json_throttled(vault_dest, capsule, sig=source_id)
 
-        return {
+        result = {
             "exported": True,
             "source_session_id": source_id,
             "capsule_id": capsule["capsule_id"],
             "sha256_seal": capsule["sha256_seal"],
-            "export_path": str(dest),
-            "archive_path": str(hist_archive / "SSN_TRANSFER_CAPSULE.json"),
+            "export_path": str(archive_capsule_path if preserved_active else dest),
+            "archive_path": str(archive_capsule_path),
             "vault_mirror_path": str(vault_dest) if vault_dest else None,
-            "timestamp_utc": datetime.now(timezone.utc).isoformat()
+            "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+            "preserved_active_capsule": preserved_active,
         }
+        if preserved_active:
+            result["active_capsule_id"] = active_capsule_id
+            result["active_source_session_id"] = active_source_session_id
+        return result
 
 
 def ingest_transfer_capsule(
@@ -304,11 +437,24 @@ def ingest_transfer_capsule(
         pointer_file = GATEWAY_DIR / "SSN_TRANSFER_POINTER.json"
         _write_json_atomically(pointer_file, pointer_data)
 
-        # Mirror pointer to Windows brain directory if accessible
+        # Mirror pointer to Windows .gateway directory when configured or active
+        win_gw_dir = _resolve_win_gateway_mirror_dir()
+        if win_gw_dir is not None:
+            _mirror_json_throttled(
+                win_gw_dir / "SSN_TRANSFER_POINTER.json",
+                pointer_data,
+                sig=f"{capsule['capsule_id']}:{target_id}",
+            )
+
+        # Mirror pointer to Windows brain directory if accessible (skip duplicate 9p writes for same seal/target)
         win_brain = Path(f"/mnt/c/Users/BushM/.gemini/antigravity-cli/brain/{target_id}")
         if win_brain.exists():
             try:
-                _write_json_atomically(win_brain / "SSN_TRANSFER_POINTER.json", pointer_data)
+                win_ptr_path = win_brain / "SSN_TRANSFER_POINTER.json"
+                mirror_sig = (capsule["capsule_id"], target_id)
+                if _WIN_BRAIN_MIRROR_CACHE.get(str(win_ptr_path)) != mirror_sig or not win_ptr_path.exists():
+                    _write_json_atomically(win_ptr_path, pointer_data, fsync=False)
+                    _WIN_BRAIN_MIRROR_CACHE[str(win_ptr_path)] = mirror_sig
             except Exception:
                 pass
 
@@ -364,16 +510,32 @@ def ingest_transfer_capsule(
         }
 
 
+def _inspect_session_cached(guard: Any, session_path: Path) -> Dict[str, Any]:
+    st = session_path.stat()
+    key = str(session_path)
+    with _STATUS_CACHE_LOCK:
+        cached = _SEGMENTER_STATUS_CACHE.get(key)
+        if cached and cached[0] == st.st_mtime_ns and cached[1] == st.st_size:
+            return dict(cached[2])
+    inspected = guard.inspect_session(key)
+    with _STATUS_CACHE_LOCK:
+        _SEGMENTER_STATUS_CACHE[key] = (st.st_mtime_ns, st.st_size, dict(inspected))
+    return inspected
+
+
 def get_segmenter_status() -> Dict[str, Any]:
-    guard = SessionSegmenterGuard() if SessionSegmenterGuard else None
+    guard = (
+        SessionSegmenterGuard(archive_base_dir=ARCHIVE_DIR, vault_mirror_dir=T7_VAULT_SESSIONS)
+        if SessionSegmenterGuard
+        else None
+    )
     active_sessions = []
     
     # Check chronolog conveyor ledger
     conveyor_ledger = REPO_ROOT / "chronolog" / "stream_conveyor_ledger.jsonl"
     if conveyor_ledger.exists() and guard:
         try:
-            m = guard.inspect_session(str(conveyor_ledger))
-            active_sessions.append(m)
+            active_sessions.append(_inspect_session_cached(guard, conveyor_ledger))
         except Exception:
             pass
 
@@ -382,8 +544,7 @@ def get_segmenter_status() -> Dict[str, Any]:
     if gateway_sessions.exists() and guard:
         for s_file in gateway_sessions.glob("*.jsonl"):
             try:
-                m = guard.inspect_session(str(s_file))
-                active_sessions.append(m)
+                active_sessions.append(_inspect_session_cached(guard, s_file))
             except Exception:
                 pass
 
@@ -429,7 +590,10 @@ class SocketIngressHTTPHandler(BaseHTTPRequestHandler):
         if not hasattr(self, "_headers_buffer"):
             self._headers_buffer = []
         self._headers_buffer.append(b"\r\n" + body)
-        self.flush_headers()
+        try:
+            self.flush_headers()
+        except (BrokenPipeError, ConnectionResetError):
+            pass
 
     def do_OPTIONS(self):
         self._set_headers(204)
@@ -454,6 +618,29 @@ class SocketIngressHTTPHandler(BaseHTTPRequestHandler):
             elif path == "/api/ssn/transfer/import":
                 ing_data = ingest_transfer_capsule()
                 self._send_json(200, ing_data)
+            elif path == "/api/ssn/archivator/init":
+                import importlib.util
+                import urllib.parse
+                init_script = Path(__file__).resolve().parents[2] / "scripts" / "global" / "lam_archivator_init.py"
+                spec = importlib.util.spec_from_file_location("lam_archivator_init", str(init_script))
+                mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                qs = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
+                mode = (qs.get("mode") or ["both"])[0]
+                dry_run = (qs.get("dry_run") or ["false"])[0].lower() in ("1", "true", "yes")
+                auto_slice = (qs.get("auto_slice") or ["false"])[0].lower() in ("1", "true", "yes")
+                src_sid = (qs.get("source_session_id") or [None])[0]
+                tgt_sid = (qs.get("target_session_id") or [None])[0]
+                arch_data = mod.run_lam_archivator_init(
+                    mode=mode,
+                    source_session_id=src_sid,
+                    target_session_id=tgt_sid,
+                    auto_slice=auto_slice,
+                    dry_run=dry_run,
+                    repo_root=REPO_ROOT,
+                    vault_sessions_dir=T7_VAULT_SESSIONS,
+                )
+                self._send_json(200, arch_data)
             else:
                 self._set_headers(404)
                 self.wfile.write(json.dumps({"error": f"Path not found: {path}", "status": "NOT_FOUND"}).encode("utf-8"))
@@ -508,13 +695,24 @@ class SocketIngressHTTPHandler(BaseHTTPRequestHandler):
                 res = ingest_transfer_capsule(target_id)
                 self._send_json(200, res)
             elif path in ("/v1/google-node-gateway/input-point/import", "/api/google-node-gateway/import"):
-                self._set_headers(200)
-                self.wfile.write(json.dumps({
-                    "status": "ACCEPTED_BY_SOCKET_INGRESS_GATEWAY",
-                    "received_bytes": len(post_body),
-                    "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-                    "node_binding": "POST_PORT:5280"
-                }).encode("utf-8"))
+                res = _record_gateway_dispatch(body_json, post_body)
+                self._send_json(200, res)
+            elif path == "/api/ssn/archivator/init":
+                import importlib.util
+                init_script = Path(__file__).resolve().parents[2] / "scripts" / "global" / "lam_archivator_init.py"
+                spec = importlib.util.spec_from_file_location("lam_archivator_init", str(init_script))
+                mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                res = mod.run_lam_archivator_init(
+                    mode=str(body_json.get("mode") or "both"),
+                    source_session_id=body_json.get("source_session_id"),
+                    target_session_id=body_json.get("target_session_id"),
+                    auto_slice=bool(body_json.get("auto_slice", False)),
+                    dry_run=bool(body_json.get("dry_run", False)),
+                    repo_root=body_json.get("repo_root") or REPO_ROOT,
+                    vault_sessions_dir=T7_VAULT_SESSIONS,
+                )
+                self._send_json(200, res)
             else:
                 self._set_headers(404)
                 self.wfile.write(json.dumps({"error": f"POST path not found: {path}", "status": "NOT_FOUND"}).encode("utf-8"))
@@ -565,7 +763,27 @@ if __name__ == "__main__":
         out = ingest_transfer_capsule(target_session_id=args.target_session_id)
         print(json.dumps(out, indent=2))
     else:
-        # Also ensure capsule is exported at startup
-        export_transfer_capsule(source_session_id=args.source_session_id)
-        ingest_transfer_capsule(target_session_id=args.target_session_id)
+        # Ensure capsule and pointer exist at startup without overwriting an active capsule
+        capsule_path = GATEWAY_DIR / "SSN_TRANSFER_CAPSULE.json"
+        pointer_path = GATEWAY_DIR / "SSN_TRANSFER_POINTER.json"
+        need_export = True
+        if capsule_path.exists():
+            try:
+                existing_cap = json.loads(capsule_path.read_text(encoding="utf-8"))
+                need_export = not _is_valid_capsule_doc(existing_cap)
+            except Exception:
+                need_export = True
+        if need_export:
+            export_transfer_capsule(source_session_id=args.source_session_id)
+
+        need_ingest = True
+        if pointer_path.exists():
+            try:
+                existing_ptr = json.loads(pointer_path.read_text(encoding="utf-8"))
+                need_ingest = not (isinstance(existing_ptr, dict) and bool(existing_ptr.get("capsule_id")))
+            except Exception:
+                need_ingest = True
+        if need_ingest:
+            ingest_transfer_capsule(target_session_id=args.target_session_id)
+
         run_socket_server(args.host, args.port)

@@ -24,9 +24,11 @@ jobs:
         pip install flake8 pytest
     - name: Lint with flake8
       run: |
-        flake8 scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py --count --exit-zero --max-complexity=15 --max-line-length=140 --statistics
+        flake8 scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py scripts/global/cluster_mesh_ssn_orchestrator.py --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py scripts/global/cluster_mesh_ssn_orchestrator.py --count --exit-zero --max-complexity=25 --max-line-length=160 --statistics
     - name: Verify Core Modules Compilation & Archivator Protocol
+      env:
+        PYTHONPATH: .
       run: |
         python -m py_compile scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py scripts/global/cluster_mesh_ssn_orchestrator.py
         pytest tests/test_lam_archivator_init_protocol.py -q
