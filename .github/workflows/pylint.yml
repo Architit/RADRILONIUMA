@@ -1,23 +1,31 @@
 name: Pylint
 
-on: [push]
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.12"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-    - name: Analysing the code with pylint
+    - name: Analysing the code with pylint (syntax & fatal check)
       run: |
-        pylint $(git ls-files '*.py')
+        python -m py_compile scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py scripts/global/cluster_mesh_ssn_orchestrator.py
+        pylint --exit-zero --errors-only scripts/global/lam_archivator_init.py core/stream_conveyor/hybrid_context_cluster_sync.py

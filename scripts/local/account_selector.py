@@ -19,9 +19,10 @@ CLI_TOKEN_FILE = CLI_DIR / "antigravity-oauth-token"
 CLI_CREDS_FILE = CLI_DIR / "oauth_creds.json"
 
 GEMINI_ACCOUNTS_FILE = HOME / ".gemini" / "google_accounts.json"
-GATEWAY_ACCOUNT_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "active_account.json"
-QUOTA_EXHAUSTED_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "quota_exhausted.json"
-HIERARCHY_CONFIG_FILE = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "account_hierarchy.json"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+GATEWAY_ACCOUNT_FILE = REPO_ROOT / ".gateway" / "active_account.json"
+QUOTA_EXHAUSTED_FILE = REPO_ROOT / ".gateway" / "quota_exhausted.json"
+HIERARCHY_CONFIG_FILE = REPO_ROOT / ".gateway" / "account_hierarchy.json"
 PROFILES_DIR = HOME / ".config" / "antigravity_profiles"
 
 QUOTA_RESET_WINDOW_SEC = 86400
@@ -238,10 +239,15 @@ def create_calendar_quota_sleep_block(email):
     sleep_state_file = HOME / "LAM_CORE" / "RADRILONIUMA" / ".gateway" / "calendar_quota_sleep.json"
     try:
         sleep_state_file.parent.mkdir(parents=True, exist_ok=True)
+        now_ts = time.time()
         sleep_state_file.write_text(json.dumps({
             "email": email,
-            "sleep_started_at": time.time(),
-            "quota_reset_expected_at": time.time() + QUOTA_RESET_WINDOW_SEC,
+            "sleep_started_at": now_ts,
+            "min_phase_window_minutes": 90,
+            "min_phase_window_hhmm": "01:30",
+            "min_phase_wake_at": now_ts + 5400,
+            "quota_reset_expected_at": now_ts + QUOTA_RESET_WINDOW_SEC,
+            "sleep_trigger": "QUOTA_LIMIT_OR_MIN_1H30_PHASE",
             "status": "SLEEPING"
         }, indent=2))
         print("\033[1;32m[CALENDAR ACTIVATION] Google Calendar Quota Sleep Event Logged.\033[0m")
@@ -281,6 +287,34 @@ def check_primary_recovery_and_prompt():
             return True
     return False
 
+
+def activate_local_gemma_quota_failover(exhausted_email=None, reason="CLOUD_QUOTA_EXHAUSTED_GEMINI_ARGON_NEON_HYDROGEN"):
+    """
+    When cloud quota limits for Gemini / Argon / Neon / Hydrogen are exhausted,
+    automatically switches inference routing to local device compute:
+    Gemma / Local LAM Model Engine (http://127.0.0.1:11435/agent/infer_20k & Edge Gallery Gemma).
+    """
+    failover_state_path = REPO_ROOT / ".gateway" / "local_gemma_failover_state.json"
+    now_ts = time.time()
+    payload = {
+        "status": "ACTIVE_LOCAL_GEMMA_FAILOVER",
+        "mode": "LOCAL_DEVICE_COMPUTE_GEMMA_LAM_KERNEL",
+        "trigger_reason": reason,
+        "exhausted_cloud_account": exhausted_email,
+        "exhausted_tiers": ["GEMINI_CLOUD", "ARGON", "NEON", "HYDROGEN"],
+        "active_local_model": "gemma-edge-lam-core:00.10.14",
+        "local_infer_endpoint": "http://127.0.0.1:11435/agent/infer_20k",
+        "router_module": "core/trilaptop_agent_engine/gemma_edge_lam_bidirectional_router.py",
+        "activated_at_epoch": now_ts,
+    }
+    try:
+        failover_state_path.parent.mkdir(parents=True, exist_ok=True)
+        failover_state_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    except Exception:
+        pass
+    print("\033[1;32m[LOCAL GEMMA FAILOVER] Cloud quota exhausted (Gemini/Argon/Neon/Hydrogen) -> Switched to Local Device Gemma Compute (:11435)!\033[0m")
+    return payload
+
 def handle_quota_exhaustion(exhausted_email=None):
     if exhausted_email:
         mark_account_exhausted(exhausted_email)
@@ -299,6 +333,7 @@ def handle_quota_exhaustion(exhausted_email=None):
     
     available_accounts = [a for a in accounts if a != exhausted_email and a not in exhausted_map]
     if not available_accounts:
+        activate_local_gemma_quota_failover(exhausted_email)
         available_accounts = accounts
 
     for idx, acc in enumerate(available_accounts, 1):
