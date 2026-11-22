@@ -1,15 +1,15 @@
 # SOVEREIGN CROSS-SESSION & CROSS-ENVIRONMENT MEMORY ANCHOR
 
-- **Updated (UTC):** `2026-11-22T11:53:51Z`
+- **Updated (UTC):** `2026-11-22T12:02:46Z`
 - **Active Session:** `27f7e25c-3452-49a9-bab7-b221481ea44d`
 - **Synced Surfaces:** `agy_cli, gemini_apk, gemini_exe, gemini_gmail, gemini_gdrive`
-- **Integrity SHA-256:** `5c9736e845c135c6`
+- **Integrity SHA-256:** `9c685db0ed1346a9`
 
 ## 1. Live Hardware & Storage Truth (NO STALE ASSUMPTIONS)
 - **C: (NVMe):** `SAMSUNG MZYLF128HCHP-000L2 (119.24 GB NVMe/SATA, S/N S28YNX0H741215)` — `13.34 GB` free / `118.26 GB`
 - **D: (Samsung T7 P1):** `208.48 GB` free / `500.0 GB`
 - **E: (Samsung T7 P2 `DATA_BASE`):** `141.19 GB` free / `431.51 GB`
-- **F: (CURRENT USB):** **`PHILIPS USB` (Label `PHILIPS UFD`, `FAT32`, `29.28 GB` total, `21.64 GB` free)** — **REPLACED broken `VendorCo 250GB` USB (corrupt 0xFF/0x00 + bent connector 45 deg on Nov 20–21, 2026)!**
+- **F: (CURRENT USB):** **`PHILIPS USB` (Label `PHILIPS UFD`, `FAT32`, `29.28 GB` total, `18.59 GB` free)** — **REPLACED broken `VendorCo 250GB` USB (corrupt 0xFF/0x00 + bent connector 45 deg on Nov 20–21, 2026)!**
 
 ## 2. Mandatory Durable Facts (Recalled Across ALL AGY CLI & Gemini Sessions)
 - **[FACT-HW-F-REPLACEMENT | 2026-11-22]:** Старая флешка F: (VendorCo 250GB, S/N 5981171117099154059) сломана (битая память 0xFF/0x00 + погнут разъём на 45° после падения ноутбука 20-21.11). Текущая F: — НОВАЯ флешка PHILIPS USB (метка PHILIPS UFD, 29.28 GB FAT32, MBR). Она загружена целыми образами Ubuntu 26.04 (minimal.squashfs hsqs), GOD_SEED_INIT, USB_G_RESCUE, Play Release 2026.11.22, Master Plan Bundle и холодным бэкапом Telegram tdata.
